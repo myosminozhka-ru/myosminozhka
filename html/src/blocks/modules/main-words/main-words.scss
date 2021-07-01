@@ -1,0 +1,31 @@
+.main-words {
+  overflow: hidden;
+  margin-bottom: vw(80);
+  &-wrap {
+    @extend %flex-center-center;
+    @extend %zero-font-size;
+  }
+  //   &__animated &-wrap__left {
+  //     transform: translateX(#{vw(430)});
+  //   }
+  //   &__animated &-wrap__right {
+  //     transform: translateX(#{vw(-430)});
+  //   }
+  &-item {
+    font-weight: 600;
+    font-size: vw(280);
+    line-height: vw(280);
+    margin: 0 vw(139);
+    text-transform: uppercase;
+    color: #929292;
+    pointer-events: none;
+    transform: translateX(#{vw(2500)});
+    transition: 1s transform var(--delay) ease, color 0.3s ease;
+  }
+  &-wrap > &-item__active {
+    @extend %white;
+  }
+  &-wrap > &-item__loaded {
+    transform: translateX(0);
+  }
+}

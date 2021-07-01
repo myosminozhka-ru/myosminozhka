@@ -1,0 +1,23 @@
+.call-to-action {
+  padding: 0 vw(286) vw(129);
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  z-index: 2;
+  &-left {
+    width: vw(814);
+  }
+  &-right {
+    width: calc(100% - #{vw(814)});
+  }
+  &-text {
+    font-weight: 300;
+    font-size: vw(40);
+    line-height: vw(50);
+    margin-bottom: vw(50);
+    @extend %white;
+  }
+  &-button {
+    width: vw(327);
+  }
+}

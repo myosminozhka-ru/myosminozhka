@@ -1,0 +1,129 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+h1 {
+  font-size: vw(250);
+  line-height: vw(250);
+}
+h3 {
+  font-size: vw(120);
+  line-height: vw(100);
+}
+h4 {
+  font-size: vw(70);
+  line-height: vw(70);
+}
+
+.container {
+  @include container();
+  @include sm(max-width, rem(510));
+  @include md(max-width, rem(690));
+  @include lg(max-width, rem(930));
+  @include xl(max-width, rem(1110));
+}
+
+body {
+  background: $bgColor;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+}
+
+.first-frame {
+  position: relative;
+  z-index: 1;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: vw(500);
+    z-index: 0;
+    background: linear-gradient(to top, #{$bgColor} 30%, transparent 100%);
+  }
+}
+
+.button {
+  border-radius: vw(10);
+  border: none;
+  background: transparent;
+  padding: vw(30) vw(60);
+  font-weight: 500;
+  font-size: vw(25);
+  line-height: vw(25);
+  text-decoration: none;
+  text-align: center;
+  @extend %block;
+  &--main {
+    background: $mainColor;
+    @extend %white;
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $bgColor;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $mainColor;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $mainColor;
+}
+
+// placeholders
+
+%flex-center-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+%flex-center-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+%flex-start-between {
+  display: flex;
+  align-items: flex-start;
+  justify-content: between;
+}
+%flex-start-end {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+%block {
+  display: block;
+}
+%inline-block {
+  display: inline-block;
+}
+
+%white {
+  color: #fff;
+}
+%transition {
+  transition: all 0.3s ease;
+}
+
+%zero-font-size {
+  font-size: 0;
+}
