@@ -4,6 +4,7 @@
   overflow: hidden;
   box-sizing: border-box;
   font-size: 0;
+  background: $bgColor;
   &-info {
     @extend %flex-start-between;
   }

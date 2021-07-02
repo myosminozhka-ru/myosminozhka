@@ -11,86 +11,30 @@ const mainWeb = class Mainweb {
         this.trigger = trigger;
     }
     animateElement() {
-        // gsap.to(this.element, {
-        //     scrollTrigger: {
-        //         trigger: this.trigger,
-        //         start: 'center center',
-        //         end: 'bottom center',
-        //         scrub: 3,
-        //         // markers: true
-        //     },
-        //     x: 0 ,
-        // })
-        gsap.to('.web-title', {
+        gsap.utils.toArray(".web-right-image").forEach((item, i) => {
+            ScrollTrigger.create({
+                trigger: item,
+                start: "top top", 
+                pin: true, 
+                pinSpacing: false,
+                snap: 1,
+                onUpdate: (item) => {
+                    console.log(item)
+                },
+            });
+        });
+        gsap.to('.web-data-in', {
             scrollTrigger: {
-                trigger: '.trigger-wrapper-top',
-                start: 'center center+=200px',
-                end: 'bottom-=200px bottom',
-                scrub: 3,
+                trigger: '.web-data',
+                start: 'top top',
+                end: 'bottom bottom',
+                scrub: 1,
+                pin: true,
+                pinSpacing: false
                 // markers: true
             },
-            x: 0 ,
+            x: 0,
         })
-        // gsap.to('.web-what-is-it', {
-        //     scrollTrigger: {
-        //         trigger: '.trigger-wrapper-top',
-        //         start: 'bottom bottom',
-        //         end: 'bottom bottom',
-        //         scrub: 1,
-        //         // markers: true
-        //     },
-        //     y: 0 ,
-        // })
-        // gsap.to('.web-text', {
-        //     scrollTrigger: {
-        //         trigger: '.trigger-wrapper-top',
-        //         start: 'bottom bottom',
-        //         end: 'bottom bottom',
-        //         scrub: 1,
-        //         // markers: true
-        //     },
-        //     x: 0 ,
-        // })
-        // gsap.to('.web-button', {
-        //     scrollTrigger: {
-        //         trigger: '.trigger-wrapper-top',
-        //         start: 'bottom bottom',
-        //         end: 'bottom bottom',
-        //         scrub: 1,
-        //         // markers: true
-        //     },
-        //     y: 0 ,
-        // })
-        // gsap.to('.web-right-clip--main', {
-        //     scrollTrigger: {
-        //         trigger: '.trigger-wrapper-top',
-        //         start: 'center top',
-        //         end: 'center center',
-        //         scrub: 2,
-        //         // markers: true
-        //     },
-        //     webkitClipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)' ,
-        // })
-        // gsap.to('.web-right-clip--grey', {
-        //     scrollTrigger: {
-        //         trigger: '.trigger-wrapper-top',
-        //         start: 'center top',
-        //         end: 'center center',
-        //         scrub: 3,
-        //         // markers: true
-        //     },
-        //     webkitClipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)' ,
-        // })
-        // gsap.to('.web-right-image', 2, {
-        //     scrollTrigger: {
-        //         trigger: '.trigger-wrapper-top',
-        //         start: 'center top',
-        //         end: 'center center',
-        //         scrub: 3,
-        //         // markers: true
-        //     },
-        //     webkitClipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)' ,
-        // })
     }
 }
 export default mainWeb;
