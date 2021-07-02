@@ -5,7 +5,7 @@ import mainAbout from "%modules%/main-about/main-about";
 import cursorAnimation from "%modules%/cursor-animation/cursor-animation";
 
 
-const app = new Vue({
+window.app = new Vue({
     el: '#app',
     data: () => ({
         mainWords: new mainWords({
