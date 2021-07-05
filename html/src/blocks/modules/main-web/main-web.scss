@@ -24,10 +24,21 @@
     padding-right: vw(400);
     box-sizing: border-box;
   }
+  &-subtitles {
+    position: relative;
+    height: vw(30);
+    margin-bottom: vw(30);
+    overflow: hidden;
+  }
   &-subtitle {
     font-size: vw(30);
     line-height: vw(30);
-    margin-bottom: vw(30);
+    transform: translateY(-100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     @extend %white;
   }
   &-titles {
@@ -43,7 +54,7 @@
     transform: translateY(-100%);
     text-transform: uppercase;
     position: absolute;
-    top: 10;
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
@@ -51,15 +62,39 @@
   }
   &-texts {
     width: vw(810);
+    height: vw(300);
+    position: relative;
+    overflow: hidden;
   }
   &-text {
     font-size: vw(30);
     line-height: vw(50);
+    max-height: 100%;
+    transform: translateY(-100%);
+    overflow: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     @extend %white;
   }
   &-buttons {
     width: vw(272);
     margin-top: vw(70);
+    height: vw(85);
+    position: relative;
+    overflow: hidden;
+  }
+  &-button {
+    height: vw(85);
+    box-sizing: border-box;
+    transform: translateY(-100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
   &-right-image {
     height: 100vh;

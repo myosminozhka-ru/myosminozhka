@@ -17,10 +17,34 @@ const mainWeb = class Mainweb {
                 start: "top top", 
                 pin: true, 
                 pinSpacing: false,
-                snap: 1,
+                // snap: 1,
                 onUpdate: (item) => {
-                    console.log(item)
-                },
+                    console.log(item);
+                    gsap.to(`.web-title:not([data-item-id="${item.trigger.dataset.itemId}"])`, 1, {
+                        y: '-100%'
+                    })
+                    gsap.to(`.web-title[data-item-id="${item.trigger.dataset.itemId}"]`, 1, {
+                        y: 0
+                    })
+                    gsap.to(`.web-subtitle:not([data-item-id="${item.trigger.dataset.itemId}"])`, 1, {
+                        y: '-100%'
+                    })
+                    gsap.to(`.web-subtitle[data-item-id="${item.trigger.dataset.itemId}"]`, 1, {
+                        y: 0
+                    })
+                    gsap.to(`.web-text:not([data-item-id="${item.trigger.dataset.itemId}"])`, 1, {
+                        y: '-100%'
+                    })
+                    gsap.to(`.web-text[data-item-id="${item.trigger.dataset.itemId}"]`, 1, {
+                        y: 0
+                    })
+                    gsap.to(`.web-button:not([data-item-id="${item.trigger.dataset.itemId}"])`, 1, {
+                        y: '-100%'
+                    })
+                    gsap.to(`.web-button[data-item-id="${item.trigger.dataset.itemId}"]`, 1, {
+                        y: 0
+                    })
+                }
             });
         });
         gsap.to('.web-data-in', {

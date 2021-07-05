@@ -86,7 +86,7 @@ const mainAbout = class MainAbout {
                 pin: true,
                 // pinSpacing: false
             },
-            right: 0
+            right: '100%'
         })
     }
 }

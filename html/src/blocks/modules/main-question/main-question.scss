@@ -22,7 +22,7 @@
     margin-bottom: vw(60);
     position: relative;
     z-index: 2;
-    mix-blend-mode: difference;
+    
     @extend %white;
   }
   &-subtitle {
@@ -31,13 +31,13 @@
     margin-bottom: vw(50);
     position: relative;
     z-index: 2;
-    mix-blend-mode: difference;
+    
     @extend %white;
   }
   &-form {
     position: relative;
     z-index: 2;
-    mix-blend-mode: difference;
+    
   }
   &-inputs {
     font-size: 0;

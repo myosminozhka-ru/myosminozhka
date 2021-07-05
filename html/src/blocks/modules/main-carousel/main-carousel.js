@@ -1,13 +1,93 @@
-modules.define('main-carousel', ['i-bem-dom'], function(provide, bemDom) {
+const mainCarousel = class MainCarousel {
+    constructor() {}
+    init() {
+        var carousel = document.querySelector('.main-carousel-carousel');
+        var cells = carousel.querySelectorAll('.main-carousel-cell');
+        var cellCount; // cellCount set from cells-range input value
+        var selectedIndex = 5;
+        var cellWidth = carousel.offsetWidth;
+        var cellHeight = carousel.offsetHeight;
+        var isHorizontal = true;
+        var rotateFn = isHorizontal ? 'rotateY' : 'rotateX';
+        var radius, theta;
+        // console.log( cellWidth, cellHeight );
 
-provide(bemDom.declBlock(this.name, {
-    onSetMod: {
-        js: {
-            inited: function() {
-                
+        function rotateCarousel() {
+        var angle = theta * selectedIndex * -1;
+        carousel.style.transform = 'translateZ(' + -radius + 'px) ' + 
+            rotateFn + '(' + angle + 'deg)';
+        }
+
+        var prevButton = document.querySelector('.previous-button');
+        prevButton.addEventListener( 'click', function() {
+        selectedIndex--;
+        rotateCarousel();
+        });
+
+        var nextButton = document.querySelector('.next-button');
+        nextButton.addEventListener( 'click', function() {
+        selectedIndex++;
+        rotateCarousel();
+        });
+
+        var cellsRange = document.querySelector('.cells-range');
+        cellsRange.addEventListener( 'change', changeCarousel );
+        cellsRange.addEventListener( 'input', changeCarousel );
+
+
+
+        function changeCarousel() {
+        cellCount = cellsRange.value;
+        theta = 360 / cellCount;
+        var cellSize = isHorizontal ? cellWidth : cellHeight;
+        radius = Math.round( ( cellSize / 2) / Math.tan( Math.PI / cellCount ) );
+        for ( var i=0; i < cells.length; i++ ) {
+            var cell = cells[i];
+            if ( i < cellCount ) {
+            // visible cell
+            cell.style.opacity = 1;
+            var cellAngle = theta * i;
+            cell.style.transform = rotateFn + '(' + cellAngle + 'deg) translateZ(' + radius + 'px)';
+            } else {
+            // hidden cell
+            cell.style.opacity = 0;
+            cell.style.transform = 'none';
             }
         }
-    }
-}));
 
-});
+        rotateCarousel();
+        }
+
+        var orientationRadios = document.querySelectorAll('input[name="orientation"]');
+        ( function() {
+        for ( var i=0; i < orientationRadios.length; i++ ) {
+            var radio = orientationRadios[i];
+            radio.addEventListener( 'change', onOrientationChange );
+        }
+        })();
+
+        function onOrientationChange() {
+        var checkedRadio = document.querySelector('input[name="orientation"]:checked');
+        isHorizontal = checkedRadio.value == 'horizontal';
+        rotateFn = isHorizontal ? 'rotateY' : 'rotateX';
+        changeCarousel();
+        }
+        function chooseElem(index) {
+            selectedIndex = index;
+        rotateCarousel();
+        }
+
+        document.addEventListener('click', function(event) {
+            if (event.target.dataset.cellIndex) {
+                console.log(event.target.dataset.cellIndex - 1);
+                chooseElem(event.target.dataset.cellIndex - 1)
+            }
+        });
+
+        // set initials
+        onOrientationChange();
+    }
+}
+
+
+export default mainCarousel;

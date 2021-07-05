@@ -2,6 +2,7 @@ import Vue from 'vue';
 import mainWords from "%modules%/main-words/main-words";
 import mainWeb from "%modules%/main-web/main-web";
 import mainAbout from "%modules%/main-about/main-about";
+import mainCarousel from "%modules%/main-carousel/main-carousel";
 import cursorAnimation from "%modules%/cursor-animation/cursor-animation";
 
 
@@ -16,6 +17,7 @@ window.app = new Vue({
             element: '.web-tentacle',
             trigger: '.first-frame'
         }),
+        mainCarousel: new mainCarousel(),
         cursorAnimation: new cursorAnimation(),
         mainAbout: new mainAbout(),
         isMounted: false
@@ -26,9 +28,9 @@ window.app = new Vue({
             this.mainWeb.animateElement();
             this.mainAbout.animateCircle();
             this.cursorAnimation.init();
+            this.mainCarousel.init();
             window.addEventListener('resize', () => this.cursorAnimation.updateCanvasSize());
             window.addEventListener('mousemove', (event) => {
-                // this.cursorAnimation.updateColor()
                 this.cursorAnimation.animate({
                     x: event.pageX,
                     y: event.pageY,
