@@ -36,6 +36,6 @@ window.app = new Vue({
                     y: event.pageY,
                 })
             });
-        }, 200);
+        }, 250);
     },
 });
