@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>gulp-scss-starter</title>
+        <meta name="theme-color" content="#fff">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+        <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+        <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+        <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+        <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+        <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="styles/main.min.css">
+    </head>
+    <body>
+        <div class="wrapper" id="app">
+            <!-- TODO добавить анимацию наведения на пункт меню https://codepen.io/mburakerman/pen/xpZJYL -->
+            <!-- TODO добавить кружок двигающийся за мышью https://kota.co.uk/contact -->
+            <div class="trigger-wrapper-top">
+                <section class="first-frame">
+                    <div class="cursor">
+    <img class="cursor-shape" src="img/shape.png" alt="">
+    <canvas id="cursor"></canvas>
+</div>
+                    <header class="header">
+    <a href="/" class="header-logo">
+        <img src="img/logo.png" width="100%" height="100%" alt="">
+    </a>
+    <nav class="header-menu">
+        <ul>
+            <li><a href="#">Услуги</a></li>
+            <li><a href="#">Портфолио</a></li>
+            <li><a href="#">О компании</a></li>
+            <li><a href="#">Команда</a></li>
+            <li><a href="#">Отзывы</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+    </nav>
+    <ul class="header-lang">
+        <li><a href="#">Ru</a></li>
+        <li class="header-lang__delim">/</li>
+        <li><a href="#">En</a></li>
+    </ul>
+</header>
+                    <div class="main-words" :class="{'main-words__animated': mainWords.isAnimated}">
+    <div :class="`main-words-wrap main-words-wrap__${this.mainWords.x.position}`">
+        <div class="main-words-item" :class="{'main-words-item__active' : this.mainWords.x.position == 'left', 'main-words-item__loaded': isMounted}" style="--delay: 0s;">digital</div>
+        <div class="main-words-item" :class="{'main-words-item__active' : this.mainWords.x.position == 'right', 'main-words-item__loaded': isMounted}" style="--delay: 0.2s;">agency</div>
+    </div>
+</div>
+                    <div class="call-to-action">
+    <div class="call-to-action-left"></div>
+    <div class="call-to-action-right">
+        <div class="call-to-action-text">Мы растем, пока другие усыхают и чахнут</div>
+        <div class="call-to-action-button">
+            <!-- TODO сделать аномацию кнопки https://videinfra.com/ -->
+            <a href="#" class="button button--main">Стать клиентом</a>
+        </div>
+    </div>
+</div>
+                </section>
+            </div>
+            
+<section class="web">
+    <div class="web-tentacle">
+        <img src="img/svg/tentacle.svg" width="100%" alt="">
+    </div>
+    <div class="web-data">
+        <div class="web-data-in">
+            <div class="web-subtitles">
+                <div class="web-subtitle" data-item-id="0">
+                    Аутстаф IT персонала
+                </div>
+                <div class="web-subtitle" data-item-id="1">
+                    Аутстаф IT персонала 2
+                </div>
+                <div class="web-subtitle" data-item-id="2">
+                    Аутстаф IT персонала 3
+                </div>
+            </div>
+            <div class="web-titles">
+                <div class="web-title" data-item-id="0">
+                    Web разработка 1
+                </div>
+                <div class="web-title" data-item-id="1">
+                    Web разработка 2
+                </div>
+                <div class="web-title" data-item-id="2">
+                    Web разработка 3
+                </div>
+            </div>
+            <div class="web-texts">
+                <div class="web-text" data-item-id="0">
+                    Это прогрессивное дизайнерское агентство, обладающее техническими и творческими навыками, чтобы воплотить ваш бренд стал лучше. Наш подход к дизайну и разработке создает впечатляющие, привлекательные бренды, которые возвращают вам творческий потенциал.
+                </div>
+                <div class="web-text" data-item-id="1">
+                    Это прогрессивное дизайнерское агентство, обладающее техническими и творческими навыками, чтобы воплотить ваш бренд стал лучше. Наш подход к дизайну и разработке создает впечатляющие, привлекательные бренды, которые возвращают вам творческий потенциал.
+                    Это прогрессивное дизайнерское агентство, обладающее техническими и творческими навыками, чтобы воплотить ваш бренд стал лучше. Наш подход к дизайну и разработке создает впечатляющие, привлекательные бренды, которые возвращают вам творческий потенциал.
+                </div>
+                <div class="web-text" data-item-id="2">
+                    Это прогрессивное дизайнерское агентство, обладающее техническими и творческими навыками, чтобы воплотить ваш бренд стал лучше. Наш подход к дизайну и разработке создает впечатляющие, привлекательные бренды, которые возвращают вам творческий потенциал.
+                    Это прогрессивное дизайнерское агентство, обладающее техническими и творческими навыками, чтобы воплотить ваш бренд стал лучше. Наш подход к дизайну и разработке создает впечатляющие, привлекательные бренды, которые возвращают вам творческий потенциал.
+                </div>
+            </div>
+            <div class="web-buttons">
+                <a href="#" class="web-button button button--main" data-item-id="0">Подробнее</a>
+                <a href="#" class="web-button button button--main" data-item-id="1">Подробнее</a>
+                <a href="#" class="web-button button button--main" data-item-id="2">Подробнее</a>
+            </div>
+        </div>
+    </div>
+    <div class="web-images">
+        <div class="web-right-image" data-item-id="0">
+            <img src="https://picsum.photos/1900" alt="">
+        </div>
+        <div class="web-right-image" data-item-id="1">
+            <img src="https://picsum.photos/1910" alt="">
+        </div>
+        <div class="web-right-image" data-item-id="2">
+            <img src="https://picsum.photos/1920" alt="">
+        </div>
+    </div>
+</section>
+            <div class="trigger-wrapper-about">
+                <section class="main-about">
+    <div class="main-about-info">
+        <div class="main-about-circle"></div>
+        <div class="main-about-left">
+            <h1 class="main-about-title">о нас</h1>
+        </div>
+        <div class="main-about-right">
+            <div class="main-about-name">Осьминожка</div>
+            <div class="main-about-text">
+                - это прогрессивное дизайнерское агентство, обладающее техническими и творческими навыками, чтобы воплотить ваш бренд
+                стал лучше. Наш подход к дизайну и разработке создает впечатляющие, привлекательные бренды, которые возвращают вам
+                творческий потенциал.
+            </div>
+            <div class="main-about-video">
+                <div class="main-about-preview">
+                    <div class="main-about-play">
+                        <img src="img/svg/play.svg" width="100%" alt="">
+                    </div>
+                    <img width="100%" src="img/video_preview.png" alt="">
+                </div>
+                <div class="main-about-video-shadow"></div>
+            </div>
+        </div>
+    </div>
+    <div class="main-about-advantages">
+        <div class="main-about-advantage">
+            <div class="count">3</div>
+            <div class="text">Года работы</div>
+        </div>
+        <div class="main-about-advantage">
+            <div class="count">159</div>
+            <div class="text">Проектов</div>
+        </div>
+        <div class="main-about-advantage">
+            <div class="count">10</div>
+            <div class="text">Сотрудников</div>
+        </div>
+        <div class="main-about-advantage">
+            <div class="count">10</div>
+            <div class="text">Сотрудников</div>
+        </div>
+    </div>
+</section>
+                <section class="main-question">
+    <div class="main-question-tentacle">
+        <img src="img/svg/big_tentacle.svg" alt="">
+    </div>
+    <h4 class="main-question-title">Вы все еще здесь?</h4>
+    <div class="main-question-subtitle">Тогда вам точно что-то нужно!</div>
+    <form action="#">
+        <div class="main-question-form">
+            <div class="main-question-inputs">
+                <input type="text" placeholder="ФИО">
+                <input type="tel" placeholder="Телефон">
+                <input type="text" placeholder="Мой вопрос">
+            </div>
+        </div>
+        <div class="main-question-button">
+            <button type="submit" class="button button--main">Отправить заявку</button>
+        </div>
+    </form>
+</section>  
+                <section class="main-carousel">
+    <div class="main-carousel__title">Награды</div>
+    <div class="main-carousel__body">
+        <div class="main-carousel-scene">
+            <div class="main-carousel-carousel">
+                <div class="main-carousel-cell" data-cell-index="1">1</div>
+                <div class="main-carousel-cell" data-cell-index="2">2</div>
+                <div class="main-carousel-cell" data-cell-index="3">3</div>
+                <div class="main-carousel-cell" data-cell-index="4">4</div>
+                <div class="main-carousel-cell" data-cell-index="5">5</div>
+                <div class="main-carousel-cell" data-cell-index="6">6</div>
+                <div class="main-carousel-cell" data-cell-index="7">7</div>
+                <div class="main-carousel-cell" data-cell-index="8">8</div>
+                <div class="main-carousel-cell" data-cell-index="9">9</div>
+                <div class="main-carousel-cell" data-cell-index="10">10</div>
+                <div class="main-carousel-cell" data-cell-index="11">11</div>
+                <div class="main-carousel-cell" data-cell-index="12">12</div>
+                <div class="main-carousel-cell" data-cell-index="13">13</div>
+                <div class="main-carousel-cell" data-cell-index="14">14</div>
+                <div class="main-carousel-cell" data-cell-index="15">15</div>
+            </div>
+        </div>
+        <div class="carousel-options">
+            <p>
+              <label>
+                Cells
+                <input class="cells-range" type="range" min="3" max="15" value="9" />
+              </label>
+            </p>
+            <p>
+              <button class="previous-button">Previous</button>
+              <button class="next-button">Next</button>
+            </p>
+            <p>
+              Orientation:
+              <label>
+                <input type="radio" name="orientation" value="horizontal" checked />
+                horizontal
+              </label>
+              <label>
+                <input type="radio" name="orientation" value="vertical" />
+                vertical
+              </label>
+            </p>
+          </div>
+        <div class="main-carousel__text">
+            <div class="title">Высший грейд А+ RUWARD
+                в заказной разработке</div>
+            <div class="text">Отмечена центром сертификации наивысшим рейтингом. Отмечена центром сертификации наивысшим
+                рейтингом</div>
+        </div>
+    </div>
+</section>
+            </div>
+            
+        </div>
+        <script src="js/main.min.js"></script>
+        <script src="js/vendor.min.js"></script>
+    </body>
+</html>
