@@ -13,7 +13,9 @@
             </div>
         </div>
         <div class="main-question-button">
-            <button type="submit" class="button button--main">Отправить заявку</button>
+            <button type="submit" class="button button--main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
+                <div class="text">Отправить заявку</div>
+            </button>
         </div>
     </form>
 </section>  

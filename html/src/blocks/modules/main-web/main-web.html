@@ -41,9 +41,15 @@
                 </div>
             </div>
             <div class="web-buttons">
-                <a href="#" class="web-button button button--main" data-item-id="0">Подробнее</a>
-                <a href="#" class="web-button button button--main" data-item-id="1">Подробнее</a>
-                <a href="#" class="web-button button button--main" data-item-id="2">Подробнее</a>
+                <a href="#" class="web-button button button--main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave" data-item-id="0">
+                    <div class="text">Подробнее</div>
+                </a>
+                <a href="#" class="web-button button button--main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave" data-item-id="1">
+                    <div class="text">Подробнее</div>
+                </a>
+                <a href="#" class="web-button button button--main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave" data-item-id="2">
+                    <div class="text">Подробнее</div>
+                </a>
             </div>
         </div>
     </div>

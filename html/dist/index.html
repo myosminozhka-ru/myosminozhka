@@ -34,32 +34,35 @@
         <div class="wrapper" id="app">
             <!-- TODO добавить анимацию наведения на пункт меню https://codepen.io/mburakerman/pen/xpZJYL -->
             <!-- TODO добавить кружок двигающийся за мышью https://kota.co.uk/contact -->
+            <header class="header">
+    <div class="header-blur"></div>
+    <div class="header-in">
+        <a href="/" class="header-logo">
+            <img src="img/logo.png" width="100%" height="100%" alt="">
+        </a>
+        <nav class="header-menu">
+            <ul>
+                <li><a href="#">Услуги</a></li>
+                <li><a href="#">Портфолио</a></li>
+                <li><a href="#">О компании</a></li>
+                <li><a href="#">Команда</a></li>
+                <li><a href="#">Отзывы</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </nav>
+        <ul class="header-lang">
+            <li><a href="#">Ru</a></li>
+            <li class="header-lang__delim">/</li>
+            <li><a href="#">En</a></li>
+        </ul>
+    </div>
+</header>
             <div class="trigger-wrapper-top">
                 <section class="first-frame">
                     <div class="cursor">
     <img class="cursor-shape" src="img/shape.png" alt="">
     <canvas id="cursor"></canvas>
 </div>
-                    <header class="header">
-    <a href="/" class="header-logo">
-        <img src="img/logo.png" width="100%" height="100%" alt="">
-    </a>
-    <nav class="header-menu">
-        <ul>
-            <li><a href="#">Услуги</a></li>
-            <li><a href="#">Портфолио</a></li>
-            <li><a href="#">О компании</a></li>
-            <li><a href="#">Команда</a></li>
-            <li><a href="#">Отзывы</a></li>
-            <li><a href="#">Контакты</a></li>
-        </ul>
-    </nav>
-    <ul class="header-lang">
-        <li><a href="#">Ru</a></li>
-        <li class="header-lang__delim">/</li>
-        <li><a href="#">En</a></li>
-    </ul>
-</header>
                     <div class="main-words" :class="{'main-words__animated': mainWords.isAnimated}">
     <div :class="`main-words-wrap main-words-wrap__${this.mainWords.x.position}`">
         <div class="main-words-item" :class="{'main-words-item__active' : this.mainWords.x.position == 'left', 'main-words-item__loaded': isMounted}" style="--delay: 0s;">digital</div>
@@ -72,7 +75,7 @@
         <div class="call-to-action-text">Мы растем, пока другие усыхают и чахнут</div>
         <div class="call-to-action-button">
             <!-- TODO сделать аномацию кнопки https://videinfra.com/ -->
-            <a href="#" class="button button--main">Стать клиентом</a>
+            <a href="#" class="button button--main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><div class="text">Стать клиентом</div></a>
         </div>
     </div>
 </div>
@@ -121,9 +124,15 @@
                 </div>
             </div>
             <div class="web-buttons">
-                <a href="#" class="web-button button button--main" data-item-id="0">Подробнее</a>
-                <a href="#" class="web-button button button--main" data-item-id="1">Подробнее</a>
-                <a href="#" class="web-button button button--main" data-item-id="2">Подробнее</a>
+                <a href="#" class="web-button button button--main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave" data-item-id="0">
+                    <div class="text">Подробнее</div>
+                </a>
+                <a href="#" class="web-button button button--main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave" data-item-id="1">
+                    <div class="text">Подробнее</div>
+                </a>
+                <a href="#" class="web-button button button--main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave" data-item-id="2">
+                    <div class="text">Подробнее</div>
+                </a>
             </div>
         </div>
     </div>
@@ -198,7 +207,9 @@
             </div>
         </div>
         <div class="main-question-button">
-            <button type="submit" class="button button--main">Отправить заявку</button>
+            <button type="submit" class="button button--main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
+                <div class="text">Отправить заявку</div>
+            </button>
         </div>
     </form>
 </section>  
@@ -389,7 +400,9 @@
                 <div class="input">
                     <input type="email" placeholder="E-mail:">
                 </div>
-                <button type="submit" class="button button--main">Подписаться</button>
+                <button type="submit" class="button button--main button--main-border" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
+                    <div class="text">Подписаться</div>
+                </button>
             </form>
         </div>
     </div>
@@ -468,7 +481,9 @@
                     <span>+ Прикрепить резюме</span>
                 </label>
                 <div class="main-question-form-item">
-                    <button type="submit" class="button button--main">Отправить резюме</button>
+                    <button type="submit" class="button button--main"  @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
+                        <div class="text">Отправить резюме</div>
+                    </button>
                 </div>
             </div>
         </div>

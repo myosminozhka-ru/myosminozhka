@@ -12,7 +12,9 @@
                     <span>+ Прикрепить резюме</span>
                 </label>
                 <div class="main-question-form-item">
-                    <button type="submit" class="button button--main">Отправить резюме</button>
+                    <button type="submit" class="button button--main"  @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
+                        <div class="text">Отправить резюме</div>
+                    </button>
                 </div>
             </div>
         </div>

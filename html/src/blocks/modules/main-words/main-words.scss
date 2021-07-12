@@ -1,5 +1,6 @@
 .main-words {
   overflow: hidden;
+  padding-top: vw(336);
   margin-bottom: vw(80);
   &-wrap {
     @extend %flex-center-center;

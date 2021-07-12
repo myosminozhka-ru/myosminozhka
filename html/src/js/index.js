@@ -6,6 +6,9 @@ import mainCarousel from "%modules%/main-carousel/main-carousel";
 import newsAndTrends from "%modules%/main-news-and-trends/main-news-and-trends";
 import mainCases from "%modules%/main-cases/main-cases";
 import cursorAnimation from "%modules%/cursor-animation/cursor-animation";
+import header from "%modules%/header/header";
+
+import gsap from 'gsap';
 
 
 window.app = new Vue({
@@ -34,6 +37,7 @@ window.app = new Vue({
         mainCases: new mainCases({
             itemsClass: '.main-cases-item'
         }),
+        header: new header(),
         isMounted: false
     }),
     mounted() {
@@ -45,6 +49,7 @@ window.app = new Vue({
             this.mainCarousel.init();
             this.newsAndTrends.init();
             this.mainCases.init();
+            this.header.init();
             window.addEventListener('resize', () => this.cursorAnimation.updateCanvasSize());
             window.addEventListener('mousemove', (event) => {
                 this.cursorAnimation.animate({
@@ -54,4 +59,38 @@ window.app = new Vue({
             });
         }, 250);
     },
+    methods: {
+        buttonMouseEnter(event) {
+            let x = event.offsetX;
+            let y = event.offsetY;
+            let circle = document.createElement("div");
+            circle.classList.add('button-circle');
+            event.target.appendChild(circle);
+            event.target.children[1].style.left = x+'px';
+            event.target.children[1].style.top = y+'px';
+            gsap.to(event.target.children[1], 0.5, {
+                width: 800,
+                height: 800,
+                x: -400,
+                y: -400,
+            })
+        },
+        buttonMouseLeave(event) {
+            let x = event.offsetX;
+            let y = event.offsetY;
+
+            event.target.children[1].style.left = x + 'px';
+            event.target.children[1].style.top = y + 'px';
+
+            gsap.to(event.target.children[1], 0.3, {
+                width: 0,
+                height: 0,
+                x: 0,
+                y: 0,
+                onComplete: () => {
+                    event.target.removeChild(event.target.children[1])
+                }
+            })
+        }
+    }
 });
