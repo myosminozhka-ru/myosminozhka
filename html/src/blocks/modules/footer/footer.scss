@@ -4,7 +4,7 @@
     position: relative;
     &-tentacle {
         position: absolute;
-        top: vw(-648);
+        top: vw(-700);
         left: 0;
         right: 0;
     }
@@ -14,7 +14,7 @@
         position: relative;
         z-index: 4;
         display: grid;
-        grid-template-columns: vw(619) vw(131) vw(58) vw(390) vw(92) vw(135) vw(100) vw(66) vw(102);
+        grid-template-columns: vw(639) vw(111) vw(58) vw(390) vw(92) vw(135) vw(100) vw(66) vw(102);
         grid-template-rows: auto vw(62) auto vw(80) auto vw(20) auto vw(30) vw(20) auto;
     }
     &-menu {
@@ -41,6 +41,29 @@
         color: #4F4F4F;
         &:not(:last-child) {
             margin-bottom: vw(20);
+        }
+    }
+    &-info {
+        display: flex;
+        align-items: flex-start;
+        .icon {
+            width: vw(29);
+            height: vw(27);
+            margin-right: vw(30);
+            padding-top: vw(6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .text {
+            width: calc(100% - #{vw(59)});
+            font-weight: 500;
+            font-size: vw(30);
+            line-height: vw(45);
+            color: #4F4F4F;
+        }
+        a.text {
+            color: $mainColor;
         }
     }
     &-menu-first {
@@ -77,5 +100,61 @@
                 margin-bottom: vw(20);
             }
         }
+    }
+    &-social {
+        display: block;
+        width: vw(102);
+        height: vw(102);
+        overflow: hidden;
+        border-radius: 50%;
+        border: 1px solid $mainColor;
+        &:not(:last-child) {
+            margin-bottom: vw(50);
+        }
+        &, svg  {
+            @extend %transition;
+        }
+        &:hover {
+            background: $mainColor;
+            svg {
+                fill: #fff;
+            }
+        }
+    }
+    &-address {
+        grid-row-start: 5;
+        grid-row-end: 6;
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    &-presentation {
+        grid-row-start: 7;
+        grid-row-end: 8;
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    &-bank {
+        grid-row-start: 10;
+        grid-row-end: 11;
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    &-bookkeeping {
+        grid-row-start: 5;
+        grid-row-end: 6;
+        grid-column-start: 3;
+        grid-column-end: 6;
+    }
+    &-email {
+        grid-row-start: 7;
+        grid-row-end: 8;
+        grid-column-start: 3;
+        grid-column-end: 6;
+    }
+    &-socials {
+        grid-row-start: 3;
+        grid-row-end: 9;
+        grid-column-start: 9;
+        grid-column-end: 10;
     }
 }
