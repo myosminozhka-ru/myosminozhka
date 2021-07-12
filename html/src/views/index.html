@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>gulp-scss-starter</title>
+        <title>Осьминожка-Главная</title>
         <meta name="theme-color" content="#fff">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -48,6 +48,13 @@
                 @@include("../blocks/modules/main-question/main-question.html")
                 @@include("../blocks/modules/main-carousel/main-carousel.html")
             </div>
+            <div class="news-and-trends-spacer"></div>
+            <div class="news-and-trends-trigger">
+                @@include("../blocks/modules/main-news-and-trends/main-news-and-trends.html")
+                <div class="news-and-trends-screen"></div>
+            </div>
+            @@include("../blocks/modules/main-cases/main-cases.html")
+            @@include("../blocks/modules/main-resume-form/main-resume-form.html")
             @@include("../blocks/modules/footer/footer.html")
         </div>
         <script src="js/main.js"></script>

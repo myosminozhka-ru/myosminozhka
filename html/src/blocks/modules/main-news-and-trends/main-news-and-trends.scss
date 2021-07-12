@@ -1,0 +1,177 @@
+.news-and-trends {
+    padding: vw(100) 0 vw(250) vw(50);
+    &-spacer {
+        padding-top: vw(200);
+        background: #fff;
+    }
+    &-trigger {
+        background: #fff;
+    }
+    &-title {
+        color: #4F4F4F;
+        margin-bottom: vw(60);
+    }
+    &-buttons {
+        margin-bottom: vw(70);
+        display: flex;
+        align-items: center;
+    }
+    &-button {
+        padding: 0;
+        margin: 0;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-weight: 500;
+        font-size: vw(20);
+        line-height: vw(20);
+        padding: vw(20) vw(30);
+        border-radius: vw(10);
+        @extend %white;
+        &:not(:last-child) {
+            margin-right: vw(30);
+        }
+        &__main {
+            background: $mainColor;
+        }
+        &__mint {
+            background: #00B4A9;
+        }
+        &__green {
+            background: #31A500;
+        }
+    }
+    &-items,
+    &-right-items {
+        display: flex;
+        align-items: flex-start;
+    }
+    &-left {
+        width: vw(747);
+        margin-right: vw(112);
+    }
+    &-right {
+        width: calc(100% - #{vw(747)} - #{vw(112)});
+        overflow: hidden;
+    }
+    &-big {
+        height: vw(717);
+        position: relative;
+        overflow: hidden;
+        .image {
+            width: 100%;
+            height: 100%;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: 50% 50%;
+            }
+        }
+        .gradient {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+            background: linear-gradient(to top, #FF4978 0%, rgba(255, 73, 120, 0) 140%);
+            @extend %transition;
+        }
+        .text {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -100%;
+            padding: 0 vw(250) vw(100) vw(50);
+            font-weight: 600;
+            font-size: vw(30);
+            line-height: vw(35);
+            @extend %transition;
+            @extend %white;
+        }
+        &:hover {
+            .text {
+                bottom: 0;
+            }
+            .gradient {
+                opacity: 1;
+            }
+        }
+    }
+    &-items {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        overflow: hidden;
+    }
+    &-item {
+        min-width: vw(347);
+        height: vw(390);
+        border: vw(5) solid $mainColor;
+        &:not(:last-child) {
+            margin-right: vw(112);
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 50%;
+        }
+    }
+    &-arrows {
+        padding-left: vw(475);
+        margin-bottom: vw(100);
+        display: flex;
+        align-items: center;
+        .arrow {
+            width: vw(86);
+            height: vw(38);
+            background: url('../img/svg/arrow.svg') 50% 50%/cover no-repeat;
+            cursor: pointer;
+            &.prev {
+                transform: rotate(180deg);
+                margin-right: vw(95);
+            }
+            &.disabled {
+                opacity: 0.5;
+                cursor: not-allowed;
+                pointer-events: none;
+            }
+        }
+    }
+    &-form {
+        width: vw(593);
+        .title {
+            margin-bottom: vw(30);
+            font-size: vw(30);
+            line-height: vw(30);
+            color: #4F4F4F;
+        }
+        .input {
+            margin-bottom: vw(19);
+            input {
+                width: 100%;
+                height: vw(85);
+                padding: vw(30);
+                border: vw(2) solid #FF4978;
+                box-sizing: border-box;
+                border-radius: vw(10);
+                outline: none;
+                &, &::placeholder {
+                    font-weight: 300;
+                    font-size: vw(25);
+                    line-height: vw(25);
+                    color: $mainColor;
+                }
+            }
+        }
+        .button {
+            width: vw(293);
+            margin-left: auto;
+        }
+    }
+    &-screen {
+        height: 50vh;
+    }
+}

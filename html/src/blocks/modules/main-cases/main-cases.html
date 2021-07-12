@@ -1,0 +1,18 @@
+<section class="main-cases">
+    <h1 class="main-cases-title">
+        Кейсы
+    </h1>
+    <div class="main-cases-items">
+        <div class="main-cases-items-in">
+            @@for (var i = 0; i < 6; i++) {
+                <article class="main-cases-item">
+                    <div class="image" style="--image: url('https://picsum.photos/30`+ i +`')">
+                        <img src="https://picsum.photos/30`+ i +`" width="100%" alt="">
+                    </div>
+                    <div class="title">Название проекта</div>
+                    <div class="text">Краткое описание</div>
+                </article>
+            }
+        </div>
+    </div>
+</section>

@@ -1,3 +1,121 @@
+// const mainCarousel = class MainCarousel {
+//     constructor({
+//         carouselClass,
+//         cellClass,
+//         cellsRangeClass,
+//         cellCount = 7,
+//         isHorizontal = true,
+//         selectedIndex = 5,
+//         prevButtonClass = '.prev-button',
+//         nextButtonClass = '.next-button'
+//     }) {
+//         this.carouselClass = carouselClass;
+//         this.cellClass = cellClass;
+//         this.cellsRangeClass = cellsRangeClass;
+//         this.cellCount = cellCount;
+//         this.isHorizontal = isHorizontal;
+//         this.rotateFn = this.isHorizontal ? 'rotateY' : 'rotateX';
+//         this.carousel = document.querySelector(this.carouselClass);
+//         this.cells = this.carousel.querySelectorAll(this.cellClass);
+//         this.cellsRange = document.querySelector(this.cellsRangeClass);
+//         this.cellWidth = this.carousel.offsetWidth;
+//         this.cellHeight = this.carousel.offsetHeight;
+//         this.selectedIndex = selectedIndex;
+//         this.prevButtonClass = prevButtonClass;
+//         this.nextButtonClass = nextButtonClass;
+//         this.theta;
+//         this.radius;
+//     }
+//     prev() {
+//         this.selectedIndex--;
+//         this.rotateCarousel();
+//         console.log('prev')
+//     }
+//     next() {
+//         this.selectedIndex++;
+//         this.rotateCarousel();
+//         console.log('next')
+//     }
+//     init() {
+//         document.querySelector(this.prevButtonClass).addEventListener('click', () => this.prev);
+//         document.querySelector(this.nextButtonClass).addEventListener('click', () => this.next);
+
+//         this.cellsRange.addEventListener( 'change', () => this.changeCarousel );
+//         this.cellsRange.addEventListener( 'input', () => this.changeCarousel );
+
+//         var orientationRadios = document.querySelectorAll('input[name="orientation"]');
+//         ( function() {
+//         for ( var i=0; i < orientationRadios.length; i++ ) {
+//             var radio = orientationRadios[i];
+//             radio.addEventListener( 'change', () => this.onOrientationChange );
+//         }
+//         })();
+
+        
+
+//         document.addEventListener('click', event => {
+//             if (event.target.dataset.cellIndex) {
+//                 console.log(event.target.dataset.cellIndex - 1);
+//                 this.chooseElem(event.target.dataset.cellIndex - 1)
+//             }
+//         });
+
+//         // set initials
+//         this.onOrientationChange();
+//     }
+    
+//     rotateCarousel() {
+//         var angle = this.theta * this.selectedIndex * -1;
+//         this.carousel.style.transform = 'translateZ(' + -this.radius + 'px) ' + 
+//         this.rotateFn + '(' + angle + 'deg)';
+//     }
+//     changeCarousel() {
+//         console.log('change')
+//         this.cellCount = this.cellsRange.value;
+//         this.theta = 360 / this.cellCount;
+//         var cellSize = this.isHorizontal ? this.cellWidth : this.cellHeight;
+//         this.radius = Math.round( ( cellSize / 2) / Math.tan( Math.PI / this.cellCount ) );
+//         for ( var i=0; i < this.cells.length; i++ ) {
+//             var cell = this.cells[i];
+//             if ( i < this.cellCount ) {
+//             // visible cell
+//             cell.style.opacity = 1;
+//             var cellAngle = this.theta * i;
+//             cell.style.transform = this.rotateFn + '(' + cellAngle + 'deg) translateZ(' + this.radius + 'px)';
+//             } else {
+//             // hidden cell
+//             cell.style.opacity = 0;
+//             cell.style.transform = 'none';
+//             }
+//         }
+
+//         this.rotateCarousel();
+//     }
+//     onOrientationChange() {
+//         var checkedRadio = document.querySelector('input[name="orientation"]:checked');
+//         this.isHorizontal = checkedRadio.value == 'horizontal';
+//         this.rotateFn = this.isHorizontal ? 'rotateY' : 'rotateX';
+//         this.changeCarousel();
+//     }
+//     chooseElem(index) {
+//         this.selectedIndex = index;
+//         this.rotateCarousel();
+//     }
+    
+// }
+
+
+// export default mainCarousel;
+
+
+
+
+
+
+
+
+
+
 const mainCarousel = class MainCarousel {
     constructor() {}
     init() {

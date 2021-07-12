@@ -1,8 +1,8 @@
 .main-question {
+  $root: &;
   padding: vw(120) vw(50) vw(514);
   background: #fff;
   position: relative;
-
   &-tentacle {
     height: vw(1498);
     position: absolute;
@@ -37,25 +37,35 @@
   &-form {
     position: relative;
     z-index: 2;
-    
+    label {
+      cursor: pointer;
+    }
   }
   &-inputs {
     font-size: 0;
 
-    input {
+    input,
+    textarea,
+    #{$root}-form-item {
       box-sizing: border-box;
       background: transparent;
       border: none;
       padding: vw(20) 0;
+      margin-bottom: vw(40);
       outline: none;
-      &:not(:last-child) {
+      &:not(:nth-child(3n+3)) {
         margin-right: vw(136);
       }
     }
+    textarea,
+    #{$root}-form-item,
     input[type="text"],
     input[type="tel"],
     input[type="email"] {
+      display: inline-block;
+      vertical-align: top;
       width: calc(100% / 3 - #{vw(136)} * 2 / 3);
+      max-width: calc(100% / 3 - #{vw(136)} * 2 / 3);
       border-bottom: vw(1) solid #ffffff;
       font-weight: 300;
       &,
@@ -66,6 +76,16 @@
       }
     }
   }
+  &-form-item {
+    border-bottom: none !important;
+    input[type="file"] {
+      display: none;
+    }
+    button {
+      margin-left: auto;
+    }
+  }
+  
   &-button {
     margin-top: vw(40);
     padding-left: vw(1290);

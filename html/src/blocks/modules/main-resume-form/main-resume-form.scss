@@ -1,0 +1,10 @@
+.main-resume {
+    padding: 0 vw(50) vw(150);
+    position: relative;
+    z-index: 3;
+    &-title {
+        text-transform: uppercase;
+        margin-bottom: vw(80);
+        @extend %white;
+    }
+}
