@@ -16,16 +16,6 @@ const header = class Header {
                 return 100 * 100 / window.innerWidth + 'vw'
             }
         })
-        gsap.to('.header-blur', {
-            scrollTrigger: {
-                trigger: '.wrapper',
-                start: 'top top',
-                end: 'top+=400 top',
-                scrub: 1,
-                markers: true,
-            },
-            opacity: 1
-        })
         gsap.to('.header-in', {
             scrollTrigger: {
                 trigger: '.wrapper',
