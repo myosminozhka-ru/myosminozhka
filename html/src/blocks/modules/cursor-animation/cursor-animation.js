@@ -6,14 +6,14 @@ const cursorAnimation = class CursorAnimation {
         color: '#FF4978', 
         radius: 40, 
         speed: 0.7,
-        lifetime: 500,
+        lifetime: 100,
         element: 'cursor',
         link_to_shape: document.querySelector('.cursor-shape').src,
-        shape: new Image()
+        shape: new Image(),
     }) {
         this.params = params;
         this.circles = [];
-        this.params.shape.src = this.params.link_to_shape
+        this.params.shape.src = this.params.link_to_shape;
     }
     setCanvasSize() {
         return this.params;
@@ -31,6 +31,9 @@ const cursorAnimation = class CursorAnimation {
             } else {
                 reject(new Error('params.element in not defined'))
             }
+            this.gradient = this.ctx.createLinearGradient(0, 0, window.innerWidth, 0);
+            this.gradient.addColorStop(0, "#FF4978");
+            this.gradient.addColorStop(1, "#430A66");
         })
     }
     updateCanvasSize() {
@@ -41,12 +44,11 @@ const cursorAnimation = class CursorAnimation {
                     height: this.height = this.canvas.height = document.querySelector('.first-frame').clientHeight,
                 })
             } else {
-                return reject(new Error('params.element in not defined'))
+                return reject(new Error('params.element is not defined'))
             }
         })
     }
     updateColor() {
-        
         return this.params.color+=0.01;
     }
     pushCircleObject(x, y) {
@@ -58,8 +60,8 @@ const cursorAnimation = class CursorAnimation {
     animate({x, y}) {
         this.pushCircleObject(x, y)
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.fillStyle = this.params.color;
-        this.ctx.strokeStyle = this.params.color;
+        this.ctx.fillStyle = this.gradient;
+        this.ctx.strokeStyle = this.gradient;
         // this.ctx.drawImage(this.params.shape, 0, 0, this.canvas.width, this.canvas.height);
         for (var i = 1; i < this.circles.length; i++) {
             
