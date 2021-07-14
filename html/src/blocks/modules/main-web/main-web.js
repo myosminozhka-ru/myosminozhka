@@ -19,7 +19,6 @@ const mainWeb = class Mainweb {
                 pinSpacing: false,
                 // snap: 1,
                 onUpdate: (item) => {
-                    console.log(item);
                     gsap.to(`.web-title:not([data-item-id="${item.trigger.dataset.itemId}"])`, 1, {
                         y: '-100%'
                     })

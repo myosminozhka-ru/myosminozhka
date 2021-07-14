@@ -457,6 +457,54 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 /***/ }),
 
+/***/ "./src/blocks/modules/company-video/company-video.js":
+/*!***********************************************************!*\
+  !*** ./src/blocks/modules/company-video/company-video.js ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var video_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! video.js */ "./node_modules/video.js/dist/video.es.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var companyVideo = /*#__PURE__*/function () {
+  function companyVideo() {
+    _classCallCheck(this, companyVideo);
+
+    this.player;
+  }
+
+  _createClass(companyVideo, [{
+    key: "init",
+    value: function init() {
+      if (!document.getElementById('player')) return;
+      this.player = Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player', {
+        fluid: true,
+        controls: true,
+        aspectRatio: '16:9',
+        sources: [{
+          src: '../videos/pv.mp4',
+          type: 'video/mp4'
+        }]
+      });
+    }
+  }]);
+
+  return companyVideo;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (companyVideo);
+
+/***/ }),
+
 /***/ "./src/blocks/modules/cursor-animation/cursor-animation.js":
 /*!*****************************************************************!*\
   !*** ./src/blocks/modules/cursor-animation/cursor-animation.js ***!
@@ -483,16 +531,13 @@ var cursorAnimation = /*#__PURE__*/function () {
       radius: 40,
       speed: 0.7,
       lifetime: 100,
-      element: 'cursor',
-      link_to_shape: document.querySelector('.cursor-shape').src,
-      shape: new Image()
+      element: 'cursor'
     };
 
     _classCallCheck(this, CursorAnimation);
 
     this.params = params;
     this.circles = [];
-    this.params.shape.src = this.params.link_to_shape;
   }
 
   _createClass(CursorAnimation, [{
@@ -506,7 +551,8 @@ var cursorAnimation = /*#__PURE__*/function () {
       var _this = this;
 
       return new Promise(function (resolve, reject) {
-        if (_this.params.element) {
+        if (document.getElementById(_this.params.element)) {
+          console.log(123);
           resolve({
             canvas: _this.canvas = document.getElementById(_this.params.element),
             ctx: _this.canvas ? _this.ctx = _this.canvas.getContext('2d') : null,
@@ -514,7 +560,7 @@ var cursorAnimation = /*#__PURE__*/function () {
             height: _this.height = _this.canvas.height = document.querySelector('.first-frame').clientHeight
           });
         } else {
-          reject(new Error('params.element in not defined'));
+          reject(new Error('params.element is not defined'));
         }
 
         _this.gradient = _this.ctx.createLinearGradient(0, 0, window.innerWidth, 0);
@@ -561,6 +607,7 @@ var cursorAnimation = /*#__PURE__*/function () {
     value: function animate(_ref) {
       var x = _ref.x,
           y = _ref.y;
+      if (!this.canvas) return;
       this.pushCircleObject(x, y);
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
       this.ctx.fillStyle = this.gradient;
@@ -585,17 +632,30 @@ var cursorAnimation = /*#__PURE__*/function () {
           this.ctx.closePath();
           this.ctx.fill();
         }
-      } // window.requestAnimationFrame(() => this.animate());
+      }
 
+      this.onAnimate();
     }
   }, {
     key: "init",
     value: function init() {
       var _this3 = this;
 
-      this.createCanvas().then(function (result) {
-        console.log('canvas created', result, _this3.width);
+      this.createCanvas().then(function () {
+        _this3.onInit();
+      })["catch"](function (error) {
+        console.warn(error);
       });
+    }
+  }, {
+    key: "onInit",
+    value: function onInit() {
+      console.log('Анимация движения курсора инициирована');
+    }
+  }, {
+    key: "onAnimate",
+    value: function onAnimate() {
+      console.log('Анимируем червячка )');
     }
   }]);
 
@@ -632,7 +692,8 @@ var header = /*#__PURE__*/function () {
   _createClass(Header, [{
     key: "init",
     value: function init() {
-      console.log('header inited');
+      var _this = this;
+
       gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.header-logo', {
         scrollTrigger: {
           trigger: '.wrapper',
@@ -643,6 +704,9 @@ var header = /*#__PURE__*/function () {
         },
         width: function width() {
           return 100 * 100 / window.innerWidth + 'vw';
+        },
+        onComplete: function onComplete() {
+          _this.logoAnimationComplete();
         }
       });
       gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.header-in', {
@@ -658,8 +722,27 @@ var header = /*#__PURE__*/function () {
         },
         paddingBottom: function paddingBottom() {
           return 10 * 100 / window.innerWidth + 'vw';
+        },
+        onComplete: function onComplete() {
+          _this.headerInAnimationComplete();
         }
       });
+      this.onInit();
+    }
+  }, {
+    key: "onInit",
+    value: function onInit() {
+      console.log('Анимация шапки инициирована');
+    }
+  }, {
+    key: "logoAnimationComplete",
+    value: function logoAnimationComplete() {
+      console.log('Анимация логотипа окончена');
+    }
+  }, {
+    key: "headerInAnimationComplete",
+    value: function headerInAnimationComplete() {
+      console.log('Анимация шапки окончена');
     }
   }]);
 
@@ -806,103 +889,6 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-// const mainCarousel = class MainCarousel {
-//     constructor({
-//         carouselClass,
-//         cellClass,
-//         cellsRangeClass,
-//         cellCount = 7,
-//         isHorizontal = true,
-//         selectedIndex = 5,
-//         prevButtonClass = '.prev-button',
-//         nextButtonClass = '.next-button'
-//     }) {
-//         this.carouselClass = carouselClass;
-//         this.cellClass = cellClass;
-//         this.cellsRangeClass = cellsRangeClass;
-//         this.cellCount = cellCount;
-//         this.isHorizontal = isHorizontal;
-//         this.rotateFn = this.isHorizontal ? 'rotateY' : 'rotateX';
-//         this.carousel = document.querySelector(this.carouselClass);
-//         this.cells = this.carousel.querySelectorAll(this.cellClass);
-//         this.cellsRange = document.querySelector(this.cellsRangeClass);
-//         this.cellWidth = this.carousel.offsetWidth;
-//         this.cellHeight = this.carousel.offsetHeight;
-//         this.selectedIndex = selectedIndex;
-//         this.prevButtonClass = prevButtonClass;
-//         this.nextButtonClass = nextButtonClass;
-//         this.theta;
-//         this.radius;
-//     }
-//     prev() {
-//         this.selectedIndex--;
-//         this.rotateCarousel();
-//         console.log('prev')
-//     }
-//     next() {
-//         this.selectedIndex++;
-//         this.rotateCarousel();
-//         console.log('next')
-//     }
-//     init() {
-//         document.querySelector(this.prevButtonClass).addEventListener('click', () => this.prev);
-//         document.querySelector(this.nextButtonClass).addEventListener('click', () => this.next);
-//         this.cellsRange.addEventListener( 'change', () => this.changeCarousel );
-//         this.cellsRange.addEventListener( 'input', () => this.changeCarousel );
-//         var orientationRadios = document.querySelectorAll('input[name="orientation"]');
-//         ( function() {
-//         for ( var i=0; i < orientationRadios.length; i++ ) {
-//             var radio = orientationRadios[i];
-//             radio.addEventListener( 'change', () => this.onOrientationChange );
-//         }
-//         })();
-//         document.addEventListener('click', event => {
-//             if (event.target.dataset.cellIndex) {
-//                 console.log(event.target.dataset.cellIndex - 1);
-//                 this.chooseElem(event.target.dataset.cellIndex - 1)
-//             }
-//         });
-//         // set initials
-//         this.onOrientationChange();
-//     }
-//     rotateCarousel() {
-//         var angle = this.theta * this.selectedIndex * -1;
-//         this.carousel.style.transform = 'translateZ(' + -this.radius + 'px) ' + 
-//         this.rotateFn + '(' + angle + 'deg)';
-//     }
-//     changeCarousel() {
-//         console.log('change')
-//         this.cellCount = this.cellsRange.value;
-//         this.theta = 360 / this.cellCount;
-//         var cellSize = this.isHorizontal ? this.cellWidth : this.cellHeight;
-//         this.radius = Math.round( ( cellSize / 2) / Math.tan( Math.PI / this.cellCount ) );
-//         for ( var i=0; i < this.cells.length; i++ ) {
-//             var cell = this.cells[i];
-//             if ( i < this.cellCount ) {
-//             // visible cell
-//             cell.style.opacity = 1;
-//             var cellAngle = this.theta * i;
-//             cell.style.transform = this.rotateFn + '(' + cellAngle + 'deg) translateZ(' + this.radius + 'px)';
-//             } else {
-//             // hidden cell
-//             cell.style.opacity = 0;
-//             cell.style.transform = 'none';
-//             }
-//         }
-//         this.rotateCarousel();
-//     }
-//     onOrientationChange() {
-//         var checkedRadio = document.querySelector('input[name="orientation"]:checked');
-//         this.isHorizontal = checkedRadio.value == 'horizontal';
-//         this.rotateFn = this.isHorizontal ? 'rotateY' : 'rotateX';
-//         this.changeCarousel();
-//     }
-//     chooseElem(index) {
-//         this.selectedIndex = index;
-//         this.rotateCarousel();
-//     }
-// }
-// export default mainCarousel;
 var mainCarousel = /*#__PURE__*/function () {
   function MainCarousel() {
     _classCallCheck(this, MainCarousel);
@@ -912,6 +898,7 @@ var mainCarousel = /*#__PURE__*/function () {
     key: "init",
     value: function init() {
       var carousel = document.querySelector('.main-carousel-carousel');
+      if (!carousel) return;
       var cells = carousel.querySelectorAll('.main-carousel-cell');
       var cellCount; // cellCount set from cells-range input value
 
@@ -920,7 +907,7 @@ var mainCarousel = /*#__PURE__*/function () {
       var cellHeight = carousel.offsetHeight;
       var isHorizontal = true;
       var rotateFn = isHorizontal ? 'rotateY' : 'rotateX';
-      var radius, theta; // console.log( cellWidth, cellHeight );
+      var radius, theta;
 
       function rotateCarousel() {
         var angle = theta * selectedIndex * -1;
@@ -988,7 +975,6 @@ var mainCarousel = /*#__PURE__*/function () {
 
       document.addEventListener('click', function (event) {
         if (event.target.dataset.cellIndex) {
-          console.log(event.target.dataset.cellIndex - 1);
           chooseElem(event.target.dataset.cellIndex - 1);
         }
       }); // set initials
@@ -1096,8 +1082,6 @@ var newsAndTrends = /*#__PURE__*/function () {
       var _this = this;
 
       document.addEventListener('scroll', function () {
-        console.log(_this.animation.ratio);
-
         if (_this.animation.ratio >= 0.99) {
           document.querySelector('.news-and-trends-arrows .next').classList.add('disabled');
         }
@@ -1138,7 +1122,6 @@ var newsAndTrends = /*#__PURE__*/function () {
       // if (this.animation.ratio > 0) {
 
       document.querySelector('.news-and-trends-arrows .prev').addEventListener('mousedown', function () {
-        console.log(123);
         prevInterval = setInterval(function () {
           _this2.pageOffset = window.pageYOffset;
           window.scrollTo(0, _this2.pageOffset -= 10);
@@ -1165,8 +1148,6 @@ var newsAndTrends = /*#__PURE__*/function () {
     key: "resizeItems",
     value: function resizeItems(items) {
       if (!items) return;
-      console.log(items);
-      console.log(this.currentDate);
 
       for (var i = 0; i < items.length; i++) {
         items[i].style.transform = "scale(".concat(1 - this.currentDate.diff(moment__WEBPACK_IMPORTED_MODULE_0___default()(items[i].dataset.createdAt).format(), 'days') / 10, ")");
@@ -1192,6 +1173,7 @@ var newsAndTrends = /*#__PURE__*/function () {
     value: function init() {
       var _this4 = this;
 
+      if (!document.querySelector('.news-and-trends')) return;
       this.loadItems().then(function (items) {
         _this4.resizeItems(items);
 
@@ -1200,7 +1182,7 @@ var newsAndTrends = /*#__PURE__*/function () {
         _this4.scrollWindow();
 
         _this4.checkProgress();
-      }); // console.log(moment("20120620", "YYYYMMDD").fromNow());
+      });
     }
   }]);
 
@@ -1254,7 +1236,6 @@ var mainWeb = /*#__PURE__*/function () {
           pinSpacing: false,
           // snap: 1,
           onUpdate: function onUpdate(item) {
-            console.log(item);
             gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to(".web-title:not([data-item-id=\"".concat(item.trigger.dataset.itemId, "\"])"), 1, {
               y: '-100%'
             });
@@ -1341,6 +1322,7 @@ var mainWords = /*#__PURE__*/function () {
     this.delay = delay;
     this.element = element;
     this.countPosition();
+    this.onInit();
   }
 
   _createClass(MainWords, [{
@@ -1378,6 +1360,11 @@ var mainWords = /*#__PURE__*/function () {
         ease: gsap__WEBPACK_IMPORTED_MODULE_0__["Power1"].Circ
       });
     }
+  }, {
+    key: "onInit",
+    value: function onInit() {
+      console.log('Анимация слов инициирована');
+    }
   }]);
 
   return MainWords;
@@ -1405,8 +1392,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_main_news_and_trends_main_news_and_trends__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! %modules%/main-news-and-trends/main-news-and-trends */ "./src/blocks/modules/main-news-and-trends/main-news-and-trends.js");
 /* harmony import */ var _modules_main_cases_main_cases__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! %modules%/main-cases/main-cases */ "./src/blocks/modules/main-cases/main-cases.js");
 /* harmony import */ var _modules_cursor_animation_cursor_animation__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! %modules%/cursor-animation/cursor-animation */ "./src/blocks/modules/cursor-animation/cursor-animation.js");
-/* harmony import */ var _modules_header_header__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! %modules%/header/header */ "./src/blocks/modules/header/header.js");
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var _modules_company_video_company_video__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! %modules%/company-video/company-video */ "./src/blocks/modules/company-video/company-video.js");
+/* harmony import */ var _modules_header_header__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! %modules%/header/header */ "./src/blocks/modules/header/header.js");
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+
 
 
 
@@ -1438,7 +1427,8 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       mainCases: new _modules_main_cases_main_cases__WEBPACK_IMPORTED_MODULE_6__["default"]({
         itemsClass: '.main-cases-item'
       }),
-      header: new _modules_header_header__WEBPACK_IMPORTED_MODULE_8__["default"](),
+      companyVideo: new _modules_company_video_company_video__WEBPACK_IMPORTED_MODULE_8__["default"](),
+      header: new _modules_header_header__WEBPACK_IMPORTED_MODULE_9__["default"](),
       isMounted: false
     };
   },
@@ -1462,15 +1452,20 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 
       _this.header.init();
 
+      _this.companyVideo.init();
+
       window.addEventListener('resize', function () {
         return _this.cursorAnimation.updateCanvasSize();
       });
-      window.addEventListener('mousemove', function (event) {
-        _this.cursorAnimation.animate({
-          x: event.pageX,
-          y: event.pageY
+
+      if (document.querySelector('.first-frame')) {
+        document.querySelector('.first-frame').addEventListener('mousemove', function (event) {
+          _this.cursorAnimation.animate({
+            x: event.pageX,
+            y: event.pageY
+          });
         });
-      });
+      }
     }, 250);
   },
   methods: {
@@ -1482,7 +1477,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       event.target.appendChild(circle);
       event.target.children[1].style.left = x + 'px';
       event.target.children[1].style.top = y + 'px';
-      gsap__WEBPACK_IMPORTED_MODULE_9__["default"].to(event.target.children[1], 0.5, {
+      gsap__WEBPACK_IMPORTED_MODULE_10__["default"].to(event.target.children[1], 0.5, {
         width: 800,
         height: 800,
         x: -400,
@@ -1494,7 +1489,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       var y = event.offsetY;
       event.target.children[1].style.left = x + 'px';
       event.target.children[1].style.top = y + 'px';
-      gsap__WEBPACK_IMPORTED_MODULE_9__["default"].to(event.target.children[1], 0.3, {
+      gsap__WEBPACK_IMPORTED_MODULE_10__["default"].to(event.target.children[1], 0.3, {
         width: 0,
         height: 0,
         x: 0,
@@ -1506,6 +1501,17 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     }
   }
 });
+
+/***/ }),
+
+/***/ 0:
+/*!******************************!*\
+  !*** min-document (ignored) ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
 
 /***/ })
 

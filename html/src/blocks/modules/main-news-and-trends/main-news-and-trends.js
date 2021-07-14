@@ -11,7 +11,6 @@ const newsAndTrends = class NewsAndTrends {
     }
     checkProgress() {
         document.addEventListener('scroll', () => {
-            console.log(this.animation.ratio);
             if (this.animation.ratio >= 0.99) {
                 document.querySelector('.news-and-trends-arrows .next').classList.add('disabled')
             }
@@ -46,7 +45,6 @@ const newsAndTrends = class NewsAndTrends {
         // }
         // if (this.animation.ratio > 0) {
             document.querySelector('.news-and-trends-arrows .prev').addEventListener('mousedown', () => {
-                console.log(123)
                 prevInterval = setInterval(() => {
                     this.pageOffset = window.pageYOffset;
                     window.scrollTo(0, this.pageOffset -= 10)
@@ -68,8 +66,6 @@ const newsAndTrends = class NewsAndTrends {
     }
     resizeItems(items) {
         if (!items) return;
-        console.log(items);
-        console.log(this.currentDate);
         for (let i = 0; i < items.length; i++) {
             items[i].style.transform = `scale(${
                 1 - this.currentDate.diff(moment(items[i].dataset.createdAt).format(), 'days') / 10
@@ -90,13 +86,13 @@ const newsAndTrends = class NewsAndTrends {
         })
     }
     init() {
+        if (!document.querySelector('.news-and-trends')) return;
         this.loadItems().then(items => {
             this.resizeItems(items);
             this.animateItems();
             this.scrollWindow();
             this.checkProgress();
         })
-        // console.log(moment("20120620", "YYYYMMDD").fromNow());
     }
 }
 

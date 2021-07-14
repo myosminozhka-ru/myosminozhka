@@ -8,12 +8,9 @@ const cursorAnimation = class CursorAnimation {
         speed: 0.7,
         lifetime: 100,
         element: 'cursor',
-        link_to_shape: document.querySelector('.cursor-shape').src,
-        shape: new Image(),
     }) {
         this.params = params;
         this.circles = [];
-        this.params.shape.src = this.params.link_to_shape;
     }
     setCanvasSize() {
         return this.params;
@@ -21,7 +18,8 @@ const cursorAnimation = class CursorAnimation {
     createCanvas() {
         
         return new Promise((resolve, reject) => {
-            if (this.params.element) {
+            if (document.getElementById(this.params.element)) {
+                console.log(123)
                 resolve({
                     canvas: this.canvas = document.getElementById(this.params.element),
                     ctx: this.canvas ? this.ctx = this.canvas.getContext('2d') : null,
@@ -29,7 +27,7 @@ const cursorAnimation = class CursorAnimation {
                     height: this.height = this.canvas.height = document.querySelector('.first-frame').clientHeight,
                 })
             } else {
-                reject(new Error('params.element in not defined'))
+                reject(new Error('params.element is not defined'))
             }
             this.gradient = this.ctx.createLinearGradient(0, 0, window.innerWidth, 0);
             this.gradient.addColorStop(0, "#FF4978");
@@ -58,14 +56,14 @@ const cursorAnimation = class CursorAnimation {
         this.circles.push(circle)
     }
     animate({x, y}) {
+        if (!this.canvas) return;
         this.pushCircleObject(x, y)
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         this.ctx.fillStyle = this.gradient;
         this.ctx.strokeStyle = this.gradient;
         // this.ctx.drawImage(this.params.shape, 0, 0, this.canvas.width, this.canvas.height);
         for (var i = 1; i < this.circles.length; i++) {
-            
-            
+
             this.circles[i].lifetime -= this.params.speed;
             if (this.circles[i].lifetime <= 0) {
                 this.circles.splice(i, 1);
@@ -83,12 +81,20 @@ const cursorAnimation = class CursorAnimation {
                 this.ctx.fill()
             }
         }
-        // window.requestAnimationFrame(() => this.animate());
+        this.onAnimate();
     }
     init() {
-        this.createCanvas().then(result => {
-            console.log('canvas created', result, this.width)
+        this.createCanvas().then(() => {
+            this.onInit()
+        }).catch(error => {
+            console.warn(error)
         });
+    }
+    onInit() {
+        console.log('Анимация движения курсора инициирована')
+    }
+    onAnimate() {
+        console.log('Анимируем червячка )')
     }
 }
 

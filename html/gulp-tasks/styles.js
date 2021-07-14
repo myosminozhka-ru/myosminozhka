@@ -21,7 +21,11 @@ gulp.task("styles", () => {
     return gulp.src(paths.styles.src)
         .pipe(gulpif(!production, sourcemaps.init()))
         .pipe(plumber())
-        .pipe(sass())
+        .pipe(sass(
+            {
+                includePaths: paths.styles.includePaths
+            }
+        ))
         .pipe(groupmedia())
         .pipe(gulpif(production, autoprefixer({
             cascade: false,

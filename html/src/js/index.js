@@ -6,6 +6,7 @@ import mainCarousel from "%modules%/main-carousel/main-carousel";
 import newsAndTrends from "%modules%/main-news-and-trends/main-news-and-trends";
 import mainCases from "%modules%/main-cases/main-cases";
 import cursorAnimation from "%modules%/cursor-animation/cursor-animation";
+import companyVideo from "%modules%/company-video/company-video";
 import header from "%modules%/header/header";
 
 import gsap from 'gsap';
@@ -37,6 +38,7 @@ window.app = new Vue({
         mainCases: new mainCases({
             itemsClass: '.main-cases-item'
         }),
+        companyVideo: new companyVideo(),
         header: new header(),
         isMounted: false
     }),
@@ -50,13 +52,16 @@ window.app = new Vue({
             this.newsAndTrends.init();
             this.mainCases.init();
             this.header.init();
+            this.companyVideo.init();
             window.addEventListener('resize', () => this.cursorAnimation.updateCanvasSize());
-            window.addEventListener('mousemove', (event) => {
-                this.cursorAnimation.animate({
-                    x: event.pageX,
-                    y: event.pageY,
-                })
-            });
+            if (document.querySelector('.first-frame')) {
+               document.querySelector('.first-frame').addEventListener('mousemove', (event) => {
+                    this.cursorAnimation.animate({
+                        x: event.pageX,
+                        y: event.pageY,
+                    })
+                });
+            }
         }, 250);
     },
     methods: {

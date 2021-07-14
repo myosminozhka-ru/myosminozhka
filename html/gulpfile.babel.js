@@ -21,6 +21,9 @@ const requireDir = require("require-dir"),
             watch: [
                 "./src/blocks/**/*.{scss,sass}",
                 "./src/styles/**/*.{scss,sass}"
+            ],
+            includePaths: [
+                './node_modules/'
             ]
         },
         scripts: {
@@ -49,6 +52,11 @@ const requireDir = require("require-dir"),
             dist: "./dist/fonts/",
             watch: "./src/fonts/**/*.{woff,woff2}"
         },
+        videos: {
+            src: "./src/videos/*",
+            dist: "./dist/videos/",
+            watch: "./src/videos/*"
+        },
         favicons: {
             src: "./src/img/favicon/*.{jpg,jpeg,png,gif}",
             dist: "./dist/img/favicons/",
@@ -64,10 +72,10 @@ requireDir("./gulp-tasks/");
 export { paths };
 
 export const development = gulp.series("clean", "smart-grid",
-    gulp.parallel(["views", "styles", "scripts", "images", "webp", "sprites", "fonts", "favicons"]),
+    gulp.parallel(["views", "styles", "scripts", "images", "webp", "sprites", "fonts", "videos", "favicons"]),
     gulp.parallel("serve"));
 
 export const prod = gulp.series("clean",
-    gulp.parallel(["views", "styles", "scripts", "images", "webp", "sprites", "fonts", "favicons", "gzip"]));
+    gulp.parallel(["views", "styles", "scripts", "images", "webp", "sprites", "fonts", "videos", "favicons", "gzip"]));
 
 export default development;

@@ -14,7 +14,7 @@ const mainWords = class MainWords {
         this.delay = delay;
         this.element = element;
         this.countPosition()
-        
+        this.onInit();
     }
     countPosition() {
         if (!document) return;
@@ -43,6 +43,9 @@ const mainWords = class MainWords {
             translateX: -this.x.coordinate + window.innerWidth / 2,
             ease: Power1.Circ,
         });
+    }
+    onInit() {
+        console.log('Анимация слов инициирована');
     }
 }
 
