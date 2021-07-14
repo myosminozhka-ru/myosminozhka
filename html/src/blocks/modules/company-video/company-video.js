@@ -10,7 +10,7 @@ const companyVideo = class companyVideo {
             controls: true,
             aspectRatio: '16:9',
             sources: [{
-                src: '../videos/pv.mp4',
+                src: 'videos/pv.mp4',
                 type: 'video/mp4'
             }]
         });
