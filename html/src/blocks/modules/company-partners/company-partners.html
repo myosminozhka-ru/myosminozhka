@@ -1,0 +1,23 @@
+<section class="company-partners">
+    <h1 class="company-partners-title">
+        Наши партнеры
+    </h1>
+    <div class="glide company-partners-slider">
+        <div class="glide__track company-partners-track" data-glide-el="track">
+            <ul class="glide__slides">
+                @@for (var i = 0; i < 10; i++) {
+                    <li class="glide__slide">
+                        <div class="company-partners-item-title">avg</div>
+                        <div class="company-partners-item-text">
+                            Это прогрессивное дизайнерское агентство, обладающее техническими и творческими навыками, чтобы воплотить ваш бренд стал лучше. Наш подход к дизайну и разработке создает впечатляющие, привлекательные бренды, которые возвращают вам творческий потенциал.
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+        <div class="glide__arrows company-partners-arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+          </div> 
+    </div>
+</section>

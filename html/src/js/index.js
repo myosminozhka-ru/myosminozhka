@@ -7,6 +7,8 @@ import newsAndTrends from "%modules%/main-news-and-trends/main-news-and-trends";
 import mainCases from "%modules%/main-cases/main-cases";
 import cursorAnimation from "%modules%/cursor-animation/cursor-animation";
 import companyVideo from "%modules%/company-video/company-video";
+import companyPrinciples from "%modules%/company-principles/company-principles";
+import companyPartners from "%modules%/company-partners/company-partners";
 import header from "%modules%/header/header";
 
 import gsap from 'gsap';
@@ -23,13 +25,7 @@ window.app = new Vue({
             element: '.web-tentacle',
             trigger: '.first-frame'
         }),
-        mainCarousel: new mainCarousel(
-            // {
-            //     carouselClass: '.main-carousel-carousel',
-            //     cellClass: '.main-carousel-cell',
-            //     cellsRangeClass: '.cells-range',
-            // }
-        ),
+        mainCarousel: new mainCarousel(),
         cursorAnimation: new cursorAnimation(),
         mainAbout: new mainAbout(),
         newsAndTrends: new newsAndTrends({
@@ -38,7 +34,9 @@ window.app = new Vue({
         mainCases: new mainCases({
             itemsClass: '.main-cases-item'
         }),
+        companyPrinciples: new companyPrinciples(),
         companyVideo: new companyVideo(),
+        companyPartners: new companyPartners(),
         header: new header(),
         isMounted: false
     }),
@@ -53,6 +51,10 @@ window.app = new Vue({
             this.mainCases.init();
             this.header.init();
             this.companyVideo.init();
+            this.companyPrinciples.init();
+            this.companyPartners.init({
+                sliderClass: '.glide'
+            });
             window.addEventListener('resize', () => this.cursorAnimation.updateCanvasSize());
             if (document.querySelector('.first-frame')) {
                document.querySelector('.first-frame').addEventListener('mousemove', (event) => {

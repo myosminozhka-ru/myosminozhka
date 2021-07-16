@@ -1,0 +1,10 @@
+.company-partners {
+    padding-top: vw(486);
+    overflow: hidden;
+    &-title {
+        mix-blend-mode: difference;
+        white-space: nowrap;
+        margin-bottom: vw(70);
+        @extend %white;
+    }
+}

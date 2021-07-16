@@ -19,30 +19,51 @@ const mainWeb = class Mainweb {
                 pinSpacing: false,
                 // snap: 1,
                 onUpdate: (item) => {
-                    gsap.to(`.web-title:not([data-item-id="${item.trigger.dataset.itemId}"])`, 1, {
-                        y: '-100%'
-                    })
-                    gsap.to(`.web-title[data-item-id="${item.trigger.dataset.itemId}"]`, 1, {
-                        y: 0
-                    })
-                    gsap.to(`.web-subtitle:not([data-item-id="${item.trigger.dataset.itemId}"])`, 1, {
-                        y: '-100%'
-                    })
-                    gsap.to(`.web-subtitle[data-item-id="${item.trigger.dataset.itemId}"]`, 1, {
-                        y: 0
-                    })
-                    gsap.to(`.web-text:not([data-item-id="${item.trigger.dataset.itemId}"])`, 1, {
-                        y: '-100%'
-                    })
-                    gsap.to(`.web-text[data-item-id="${item.trigger.dataset.itemId}"]`, 1, {
-                        y: 0
-                    })
-                    gsap.to(`.web-button:not([data-item-id="${item.trigger.dataset.itemId}"])`, 1, {
-                        y: '-100%'
-                    })
-                    gsap.to(`.web-button[data-item-id="${item.trigger.dataset.itemId}"]`, 1, {
-                        y: 0
-                    })
+                    if (item.progress > 0.01) {
+                        gsap.to(`.web-title:not([data-item-id="${item.trigger.dataset.itemId}"])`, 0.3, {
+                            y: '-100%',
+                            opacity: 0,
+                            onComplete: () => {
+                                gsap.to(`.web-title[data-item-id="${item.trigger.dataset.itemId}"]`, 0.3, {
+                                    y: 0,
+                                    opacity: 1,
+                                })
+                            }
+                        })
+                        
+                        gsap.to(`.web-subtitle:not([data-item-id="${item.trigger.dataset.itemId}"])`, 0.3, {
+                            y: '-100%',
+                            opacity: 0,
+                            onComplete: () => {
+                                gsap.to(`.web-subtitle[data-item-id="${item.trigger.dataset.itemId}"]`, 0.3, {
+                                    y: 0,
+                                    opacity: 1
+                                })
+                            }
+                        })
+                        
+                        gsap.to(`.web-text:not([data-item-id="${item.trigger.dataset.itemId}"])`, 0.3, {
+                            y: '-100%',
+                            opacity: 0,
+                            onComplete: () => {
+                                gsap.to(`.web-text[data-item-id="${item.trigger.dataset.itemId}"]`, 0.3, {
+                                    y: 0,
+                                    opacity: 1
+                                })
+                            }
+                        })
+                        
+                        gsap.to(`.web-button:not([data-item-id="${item.trigger.dataset.itemId}"])`, 0.3, {
+                            y: '-100%',
+                            opacity: 0,
+                            onComplete: () => {
+                                gsap.to(`.web-button[data-item-id="${item.trigger.dataset.itemId}"]`, 0.3, {
+                                    y: 0,
+                                    opacity: 1
+                                })
+                            }
+                        })
+                    }
                 }
             });
         });

@@ -73,6 +73,7 @@
         "yargs": "^15.4.1"
     },
     "dependencies": {
+        "@glidejs/glide": "^3.4.1",
         "gsap": "^3.7.0",
         "moment": "^2.29.1",
         "smart-grid": "^2.1.2",
