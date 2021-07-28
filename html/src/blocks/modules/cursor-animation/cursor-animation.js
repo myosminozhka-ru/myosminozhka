@@ -3,9 +3,12 @@ import gsap from 'gsap';
 const cursorAnimation = class CursorAnimation {
     constructor(params = {
         count: 100,
-        color: '#FF4978', 
+        colors: [
+            '#FF4978',
+            '#430A66',
+        ], 
         radius: 40, 
-        speed: 0.7,
+        speed: 5,
         lifetime: 100,
         element: 'cursor',
     }) {
@@ -30,8 +33,9 @@ const cursorAnimation = class CursorAnimation {
                 reject(new Error('params.element is not defined'))
             }
             this.gradient = this.ctx.createLinearGradient(0, 0, window.innerWidth, 0);
-            this.gradient.addColorStop(0, "#FF4978");
-            this.gradient.addColorStop(1, "#430A66");
+            for (let i = 0; i < this.params.colors.length; i++) {
+                this.gradient.addColorStop(i, this.params.colors[i]);
+            }
         })
     }
     updateCanvasSize() {
@@ -45,9 +49,6 @@ const cursorAnimation = class CursorAnimation {
                 return reject(new Error('params.element is not defined'))
             }
         })
-    }
-    updateColor() {
-        return this.params.color+=0.01;
     }
     pushCircleObject(x, y) {
         const circle = {

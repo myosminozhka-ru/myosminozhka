@@ -697,9 +697,9 @@ var cursorAnimation = /*#__PURE__*/function () {
   function CursorAnimation() {
     var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
       count: 100,
-      color: '#FF4978',
+      colors: ['#FF4978', '#430A66'],
       radius: 40,
-      speed: 0.7,
+      speed: 5,
       lifetime: 100,
       element: 'cursor'
     };
@@ -735,9 +735,9 @@ var cursorAnimation = /*#__PURE__*/function () {
 
         _this.gradient = _this.ctx.createLinearGradient(0, 0, window.innerWidth, 0);
 
-        _this.gradient.addColorStop(0, "#FF4978");
-
-        _this.gradient.addColorStop(1, "#430A66");
+        for (var i = 0; i < _this.params.colors.length; i++) {
+          _this.gradient.addColorStop(i, _this.params.colors[i]);
+        }
       });
     }
   }, {
@@ -755,11 +755,6 @@ var cursorAnimation = /*#__PURE__*/function () {
           return reject(new Error('params.element is not defined'));
         }
       });
-    }
-  }, {
-    key: "updateColor",
-    value: function updateColor() {
-      return this.params.color += 0.01;
     }
   }, {
     key: "pushCircleObject",
