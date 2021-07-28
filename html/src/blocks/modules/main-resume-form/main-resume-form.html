@@ -9,7 +9,8 @@
                 <textarea placeholder="Расскажите о себе"></textarea>
                 <label class="main-question-form-item">
                     <input type="file">
-                    <span>+ Прикрепить резюме</span>
+                    <span v-if="!mainQuestionForm.hasFile">+ Прикрепить резюме</span>
+                    <span v-if="mainQuestionForm.hasFile && mainQuestionForm.file.name">+ {{mainQuestionForm.file.name}}</span>
                 </label>
                 <div class="main-question-form-item">
                     <button type="submit" class="button button--main"  @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">

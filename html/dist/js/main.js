@@ -850,7 +850,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
 var header = /*#__PURE__*/function () {
-  function Header() {
+  function Header() {// this.setHeaderWavePositionOnLoad();
+
     _classCallCheck(this, Header);
   }
 
@@ -892,6 +893,7 @@ var header = /*#__PURE__*/function () {
           _this.headerInAnimationComplete();
         }
       });
+      this.setHeaderWavePositionOnLoad();
       this.onInit();
     }
   }, {
@@ -908,6 +910,22 @@ var header = /*#__PURE__*/function () {
     key: "headerInAnimationComplete",
     value: function headerInAnimationComplete() {
       console.log('Анимация шапки окончена');
+    }
+  }, {
+    key: "setHeaderWavePositionOnLoad",
+    value: function setHeaderWavePositionOnLoad() {
+      var active_menu = document.querySelector('.header-menu li.isActive');
+      console.log(active_menu, active_menu.offsetWidth);
+      gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.header-menu-wave', {
+        left: active_menu.offsetLeft + active_menu.offsetWidth / 2
+      });
+    }
+  }, {
+    key: "setHeaderWavePosition",
+    value: function setHeaderWavePosition() {
+      gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.header-menu-wave', {
+        left: event.target.offsetLeft + event.target.offsetWidth / 2
+      });
     }
   }]);
 
@@ -1358,6 +1376,71 @@ var newsAndTrends = /*#__PURE__*/function () {
 
 /***/ }),
 
+/***/ "./src/blocks/modules/main-question/main-question.js":
+/*!***********************************************************!*\
+  !*** ./src/blocks/modules/main-question/main-question.js ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var mainQuestionForm = /*#__PURE__*/function () {
+  function mainQuestionForm(_ref) {
+    var inputSelector = _ref.inputSelector;
+
+    _classCallCheck(this, mainQuestionForm);
+
+    this.inputSelector = inputSelector;
+    this.file = '';
+    this.hasFile = false;
+  }
+
+  _createClass(mainQuestionForm, [{
+    key: "onInputChange",
+    value: function onInputChange(event) {
+      if (!event.target.files.length) {
+        this.hasFile = false;
+        this.file = null;
+        return;
+      }
+
+      ;
+      this.hasFile = true;
+      this.file = _objectSpread({}, event.target.files)[0];
+      console.log(this.file, this.hasFile);
+    }
+  }, {
+    key: "init",
+    value: function init() {
+      var _this = this;
+
+      var fileInput = document.querySelector(this.inputSelector);
+      fileInput.addEventListener('change', function () {
+        return _this.onInputChange(event);
+      });
+    }
+  }]);
+
+  return mainQuestionForm;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (mainQuestionForm);
+
+/***/ }),
+
 /***/ "./src/blocks/modules/main-web/main-web.js":
 /*!*************************************************!*\
   !*** ./src/blocks/modules/main-web/main-web.js ***!
@@ -1579,7 +1662,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_company_principles_company_principles__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! %modules%/company-principles/company-principles */ "./src/blocks/modules/company-principles/company-principles.js");
 /* harmony import */ var _modules_company_partners_company_partners__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! %modules%/company-partners/company-partners */ "./src/blocks/modules/company-partners/company-partners.js");
 /* harmony import */ var _modules_header_header__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! %modules%/header/header */ "./src/blocks/modules/header/header.js");
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var _modules_main_question_main_question__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! %modules%/main-question/main-question */ "./src/blocks/modules/main-question/main-question.js");
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+
 
 
 
@@ -1613,6 +1698,10 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       }),
       mainCases: new _modules_main_cases_main_cases__WEBPACK_IMPORTED_MODULE_6__["default"]({
         itemsClass: '.main-cases-item'
+      }),
+      mainQuestionForm: new _modules_main_question_main_question__WEBPACK_IMPORTED_MODULE_12__["default"]({
+        inputSelector: '.main-question-form-item [type="file"]',
+        textSelector: '.main-question-form-item span'
       }),
       companyPrinciples: new _modules_company_principles_company_principles__WEBPACK_IMPORTED_MODULE_9__["default"](),
       companyVideo: new _modules_company_video_company_video__WEBPACK_IMPORTED_MODULE_8__["default"](),
@@ -1649,18 +1738,17 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
         sliderClass: '.glide'
       });
 
+      _this.mainQuestionForm.init();
+
       window.addEventListener('resize', function () {
         return _this.cursorAnimation.updateCanvasSize();
       });
-
-      if (document.querySelector('.first-frame')) {
-        document.querySelector('.first-frame').addEventListener('mousemove', function (event) {
-          _this.cursorAnimation.animate({
-            x: event.pageX,
-            y: event.pageY
-          });
+      document.addEventListener('mousemove', function (event) {
+        _this.cursorAnimation.animate({
+          x: event.pageX,
+          y: event.pageY
         });
-      }
+      });
     }, 250);
   },
   methods: {
@@ -1672,7 +1760,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       event.target.appendChild(circle);
       event.target.children[1].style.left = x + 'px';
       event.target.children[1].style.top = y + 'px';
-      gsap__WEBPACK_IMPORTED_MODULE_12__["default"].to(event.target.children[1], 0.5, {
+      gsap__WEBPACK_IMPORTED_MODULE_13__["default"].to(event.target.children[1], 0.5, {
         width: 800,
         height: 800,
         x: -400,
@@ -1684,7 +1772,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       var y = event.offsetY;
       event.target.children[1].style.left = x + 'px';
       event.target.children[1].style.top = y + 'px';
-      gsap__WEBPACK_IMPORTED_MODULE_12__["default"].to(event.target.children[1], 0.3, {
+      gsap__WEBPACK_IMPORTED_MODULE_13__["default"].to(event.target.children[1], 0.3, {
         width: 0,
         height: 0,
         x: 0,

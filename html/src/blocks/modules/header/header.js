@@ -1,7 +1,9 @@
 import gsap from 'gsap';
 
 const header = class Header {
-    constructor() {}
+    constructor() {
+        // this.setHeaderWavePositionOnLoad();
+    }
     init() {
         gsap.to('.header-logo', {
             scrollTrigger: {
@@ -36,6 +38,7 @@ const header = class Header {
                 this.headerInAnimationComplete();
             },
         })
+        this.setHeaderWavePositionOnLoad();
         this.onInit();
     }
     onInit() {
@@ -46,6 +49,18 @@ const header = class Header {
     }
     headerInAnimationComplete() {
         console.log('Анимация шапки окончена');
+    }
+    setHeaderWavePositionOnLoad() {
+        let active_menu = document.querySelector('.header-menu li.isActive');
+        console.log(active_menu,active_menu.offsetWidth);
+        gsap.to('.header-menu-wave', {
+            left: active_menu.offsetLeft + active_menu.offsetWidth / 2
+        })
+    }
+    setHeaderWavePosition() {
+        gsap.to('.header-menu-wave', {
+            left: event.target.offsetLeft + event.target.offsetWidth / 2
+        })
     }
 }
 

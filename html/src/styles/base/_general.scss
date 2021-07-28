@@ -179,3 +179,10 @@ body {
 .carousel-options {
   display: none;
 }
+
+a {
+  @extend %transition;
+  &:hover {
+    color: $mainColor !important;
+  }
+}

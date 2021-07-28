@@ -10,6 +10,7 @@ import companyVideo from "%modules%/company-video/company-video";
 import companyPrinciples from "%modules%/company-principles/company-principles";
 import companyPartners from "%modules%/company-partners/company-partners";
 import header from "%modules%/header/header";
+import mainQuestionForm from "%modules%/main-question/main-question";
 
 import gsap from 'gsap';
 
@@ -34,6 +35,10 @@ window.app = new Vue({
         mainCases: new mainCases({
             itemsClass: '.main-cases-item'
         }),
+        mainQuestionForm: new mainQuestionForm({
+            inputSelector: '.main-question-form-item [type="file"]',
+            textSelector: '.main-question-form-item span'
+        }),
         companyPrinciples: new companyPrinciples(),
         companyVideo: new companyVideo(),
         companyPartners: new companyPartners(),
@@ -55,15 +60,14 @@ window.app = new Vue({
             this.companyPartners.init({
                 sliderClass: '.glide'
             });
+            this.mainQuestionForm.init();
             window.addEventListener('resize', () => this.cursorAnimation.updateCanvasSize());
-            if (document.querySelector('.first-frame')) {
-               document.querySelector('.first-frame').addEventListener('mousemove', (event) => {
-                    this.cursorAnimation.animate({
-                        x: event.pageX,
-                        y: event.pageY,
-                    })
-                });
-            }
+            document.addEventListener('mousemove', (event) => {
+                this.cursorAnimation.animate({
+                    x: event.pageX,
+                    y: event.pageY,
+                })
+            });
         }, 250);
     },
     methods: {

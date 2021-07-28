@@ -2533,6 +2533,7 @@ body {
 }
 
 .button .text,
+a,
 .header-lang a,
 .news-and-trends-big .gradient,
 .news-and-trends-big .text,
@@ -2545,6 +2546,7 @@ body {
 
 .header-logo,
 .header-menu ul,
+.header-menu-wave,
 .header-lang,
 .main-words-wrap {
   font-size: 0;
@@ -2552,6 +2554,10 @@ body {
 
 .carousel-options {
   display: none;
+}
+
+a:hover {
+  color: #E54A72 !important;
 }
 
 .header {
@@ -2583,6 +2589,11 @@ body {
   width: 15.625vw;
 }
 
+.header-menu {
+  position: relative;
+  border-bottom: 0.10417vw solid #E54A72;
+}
+
 .header-menu ul {
   list-style: none;
 }
@@ -2599,6 +2610,16 @@ body {
   font-weight: 600;
   font-size: 1.04167vw;
   line-height: 1.04167vw;
+}
+
+.header-menu-wave {
+  position: absolute;
+  left: 0;
+  bottom: -0.10417vw;
+  width: 1.04167vw;
+  height: 0.625vw;
+  background: #4f4f4f;
+  transform: translateX(-50%);
 }
 
 .header-lang li {
@@ -4126,6 +4147,11 @@ body {
   font-size: 1.5625vw;
   line-height: 2.34375vw;
   color: #4F4F4F;
+}
+
+.footer-info .text a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .footer-info a.text {

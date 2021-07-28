@@ -61,6 +61,10 @@
             font-size: vw(30);
             line-height: vw(45);
             color: #4F4F4F;
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
         }
         a.text {
             color: $mainColor;
