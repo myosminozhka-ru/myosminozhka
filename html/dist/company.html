@@ -42,13 +42,14 @@
         </a>
         <nav class="header-menu">
             <ul>
-                <li @mouseenter="header.setHeaderWavePosition"><a href="#">Услуги</a></li>
-                <li @mouseenter="header.setHeaderWavePosition"><a href="#">Портфолио</a></li>
-                <li @mouseenter="header.setHeaderWavePosition"><a href="company.html">О компании</a></li>
-                <li @mouseenter="header.setHeaderWavePosition"><a href="#">Команда</a></li>
-                <li class="isActive" @mouseenter="header.setHeaderWavePosition"><a href="#">Отзывы</a></li>
-                <li @mouseenter="header.setHeaderWavePosition"><a href="#">Контакты</a></li>
+                <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="#">Услуги</a></li>
+                <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="#">Портфолио</a></li>
+                <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="company.html">О компании</a></li>
+                <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="#">Команда</a></li>
+                <li class="isActive" @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="#">Отзывы</a></li>
+                <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="#">Контакты</a></li>
             </ul>
+            <div class="header-menu-border"></div>
             <div class="header-menu-wave">
                 <svg width="100%" height="100%" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 11V11C1.85178 11 3.54446 9.95326 4.37176 8.29656L6.91016 3.21324C8.16237 0.705607 11.758 0.75631 12.939 3.29826L15.0498 7.84153C15.9448 9.76782 17.876 11 20 11V11" stroke="#E54A72" stroke-width="2"/>

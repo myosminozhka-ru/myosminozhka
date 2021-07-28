@@ -39,6 +39,10 @@ window.app = new Vue({
             inputSelector: '.main-question-form-item [type="file"]',
             textSelector: '.main-question-form-item span'
         }),
+        mainQuestionForm: new mainQuestionForm({
+            inputSelector: '.main-question-form-item [type="file"]',
+            textSelector: '.main-question-form-item span'
+        }),
         companyPrinciples: new companyPrinciples(),
         companyVideo: new companyVideo(),
         companyPartners: new companyPartners(),

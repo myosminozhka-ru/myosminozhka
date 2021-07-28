@@ -2591,7 +2591,6 @@ a:hover {
 
 .header-menu {
   position: relative;
-  border-bottom: 0.10417vw solid #E54A72;
 }
 
 .header-menu ul {
@@ -2615,11 +2614,20 @@ a:hover {
 .header-menu-wave {
   position: absolute;
   left: 0;
-  bottom: -0.10417vw;
+  bottom: 0;
   width: 1.04167vw;
   height: 0.625vw;
   background: #4f4f4f;
   transform: translateX(-50%);
+}
+
+.header-menu-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0.10417vw;
+  background: #E54A72;
 }
 
 .header-lang li {

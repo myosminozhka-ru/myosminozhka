@@ -850,9 +850,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
 var header = /*#__PURE__*/function () {
-  function Header() {// this.setHeaderWavePositionOnLoad();
-
+  function Header() {
     _classCallCheck(this, Header);
+
+    this.countedWidth = 0;
+    this.self = this; // this.setHeaderWavePositionOnLoad();
   }
 
   _createClass(Header, [{
@@ -912,10 +914,23 @@ var header = /*#__PURE__*/function () {
       console.log('Анимация шапки окончена');
     }
   }, {
+    key: "getNextSiblingWidth",
+    value: function getNextSiblingWidth(nextElem) {
+      console.log(this);
+      console.log('counting');
+      if (!nextElem) return;
+      this.countedWidth += nextElem.offsetWidth; // this.getNextSiblingWidth(nextElem.nextSibling)
+    }
+  }, {
     key: "setHeaderWavePositionOnLoad",
     value: function setHeaderWavePositionOnLoad() {
       var active_menu = document.querySelector('.header-menu li.isActive');
       console.log(active_menu, active_menu.offsetWidth);
+      gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.header-menu-border', {
+        left: active_menu.offsetLeft,
+        width: active_menu.offsetWidth,
+        right: 'auto'
+      });
       gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.header-menu-wave', {
         left: active_menu.offsetLeft + active_menu.offsetWidth / 2
       });
@@ -923,6 +938,15 @@ var header = /*#__PURE__*/function () {
   }, {
     key: "setHeaderWavePosition",
     value: function setHeaderWavePosition() {
+      // console.log(this.countedWidth);
+      // this.getNextSiblingWidth(event.target.nextSibling)
+      // console.log(this.countedWidth);
+      console.log('counting completed');
+      gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.header-menu-border', {
+        left: event.target.offsetLeft,
+        width: event.target.offsetWidth,
+        right: 'auto'
+      });
       gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.header-menu-wave', {
         left: event.target.offsetLeft + event.target.offsetWidth / 2
       });
@@ -1664,6 +1688,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_header_header__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! %modules%/header/header */ "./src/blocks/modules/header/header.js");
 /* harmony import */ var _modules_main_question_main_question__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! %modules%/main-question/main-question */ "./src/blocks/modules/main-question/main-question.js");
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -1681,7 +1707,9 @@ __webpack_require__.r(__webpack_exports__);
 window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
   data: function data() {
-    return {
+    var _ref;
+
+    return _ref = {
       mainWords: new _modules_main_words_main_words__WEBPACK_IMPORTED_MODULE_1__["default"]({
         delay: 1,
         element: '.main-words-wrap'
@@ -1702,13 +1730,11 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       mainQuestionForm: new _modules_main_question_main_question__WEBPACK_IMPORTED_MODULE_12__["default"]({
         inputSelector: '.main-question-form-item [type="file"]',
         textSelector: '.main-question-form-item span'
-      }),
-      companyPrinciples: new _modules_company_principles_company_principles__WEBPACK_IMPORTED_MODULE_9__["default"](),
-      companyVideo: new _modules_company_video_company_video__WEBPACK_IMPORTED_MODULE_8__["default"](),
-      companyPartners: new _modules_company_partners_company_partners__WEBPACK_IMPORTED_MODULE_10__["default"](),
-      header: new _modules_header_header__WEBPACK_IMPORTED_MODULE_11__["default"](),
-      isMounted: false
-    };
+      })
+    }, _defineProperty(_ref, "mainQuestionForm", new _modules_main_question_main_question__WEBPACK_IMPORTED_MODULE_12__["default"]({
+      inputSelector: '.main-question-form-item [type="file"]',
+      textSelector: '.main-question-form-item span'
+    })), _defineProperty(_ref, "companyPrinciples", new _modules_company_principles_company_principles__WEBPACK_IMPORTED_MODULE_9__["default"]()), _defineProperty(_ref, "companyVideo", new _modules_company_video_company_video__WEBPACK_IMPORTED_MODULE_8__["default"]()), _defineProperty(_ref, "companyPartners", new _modules_company_partners_company_partners__WEBPACK_IMPORTED_MODULE_10__["default"]()), _defineProperty(_ref, "header", new _modules_header_header__WEBPACK_IMPORTED_MODULE_11__["default"]()), _defineProperty(_ref, "isMounted", false), _ref;
   },
   mounted: function mounted() {
     var _this = this;

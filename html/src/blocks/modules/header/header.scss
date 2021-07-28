@@ -27,7 +27,6 @@
   }
   &-menu {
     position: relative;
-    border-bottom: vw(2) solid $mainColor;
     ul {
       list-style: none;
       @extend %zero-font-size;
@@ -50,12 +49,20 @@
   &-menu-wave {
     position: absolute;
     left: 0;
-    bottom: vw(-2);
+    bottom: 0;
     width: vw(20);
     height: vw(12);
     background: $bgColor;
     transform: translateX(-50%);
     @extend %zero-font-size;
+  }
+  &-menu-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: vw(2);
+    background: $mainColor;
   }
   &-lang {
     @extend %zero-font-size;
