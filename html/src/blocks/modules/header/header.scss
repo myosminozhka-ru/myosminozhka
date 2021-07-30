@@ -37,13 +37,15 @@
     }
     a {
       text-decoration: none;
-      margin: 0 vw(20);
-      padding: vw(20) 0;
+      padding: vw(20);
       font-weight: 600;
       font-size: vw(20);
       line-height: vw(20);
       @extend %white;
       @extend %block;
+    }
+    li.isActive a {
+      color: $mainColor;
     }
   }
   &-menu-wave {
@@ -54,6 +56,7 @@
     height: vw(12);
     background: $bgColor;
     transform: translateX(-50%);
+    display: none;
     @extend %zero-font-size;
   }
   &-menu-border {
@@ -63,6 +66,7 @@
     right: 0;
     height: vw(2);
     background: $mainColor;
+    pointer-events: none;
   }
   &-lang {
     @extend %zero-font-size;

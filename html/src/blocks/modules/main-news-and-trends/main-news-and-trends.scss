@@ -107,7 +107,8 @@
     }
     &-item {
         min-width: vw(347);
-        height: vw(390);
+        max-width: vw(347);
+        font-size: 0;
         border: vw(5) solid $mainColor;
         &:not(:last-child) {
             margin-right: vw(112);
@@ -118,6 +119,12 @@
             object-fit: cover;
             object-position: 50% 50%;
         }
+    }
+    &-left-in {
+        display: flex;
+    }
+    &-left-track {
+        overflow: hidden;
     }
     &-arrows {
         padding-left: vw(475);

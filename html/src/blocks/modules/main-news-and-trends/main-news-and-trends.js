@@ -1,5 +1,6 @@
 import moment from 'moment';
 import gsap from 'gsap';
+import Glide from '@glidejs/glide'
 
 const newsAndTrends = class NewsAndTrends {
     constructor({itemsSelector}) {
@@ -8,6 +9,14 @@ const newsAndTrends = class NewsAndTrends {
         this.items = [];
         this.pageOffset;
         this.animation;
+        this.slider;
+    }
+    initSlider() {
+        new Glide('.news-and-trends-left-glide', {
+            type: 'carousel',
+            startAt: 0,
+            perView: 1
+        }).mount();
     }
     checkProgress() {
         document.addEventListener('scroll', () => {
@@ -65,12 +74,17 @@ const newsAndTrends = class NewsAndTrends {
         })
     }
     resizeItems(items) {
-        if (!items) return;
-        for (let i = 0; i < items.length; i++) {
-            items[i].style.transform = `scale(${
-                1 - this.currentDate.diff(moment(items[i].dataset.createdAt).format(), 'days') / 10
-            })`
-        }
+        
+        return new Promise((resolve, reject) => {
+            if (!items) {
+                reject(new Error('Нет элементов'))
+            };
+            for (let i = 0; i < items.length; i++) {
+                console.log(items[i].offsetWidth)
+                items[i].style.minWidth = items[i].offsetWidth / this.currentDate.diff(moment(items[i].dataset.createdAt).format(), 'days') * 10 + 'px' 
+            }
+            resolve(items);
+        })
     }
     animateItems() {
         this.animation = gsap.to('.news-and-trends-right-items', {
@@ -88,10 +102,15 @@ const newsAndTrends = class NewsAndTrends {
     init() {
         if (!document.querySelector('.news-and-trends')) return;
         this.loadItems().then(items => {
-            this.resizeItems(items);
-            this.animateItems();
-            this.scrollWindow();
-            this.checkProgress();
+            this.resizeItems(items).then(() => {
+                setTimeout(() => {
+                    this.animateItems();
+                    this.scrollWindow();
+                    this.checkProgress();
+                    this.initSlider();
+                }, 200)
+            })
+            
         })
     }
 }

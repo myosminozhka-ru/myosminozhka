@@ -914,14 +914,6 @@ var header = /*#__PURE__*/function () {
       console.log('Анимация шапки окончена');
     }
   }, {
-    key: "getNextSiblingWidth",
-    value: function getNextSiblingWidth(nextElem) {
-      console.log(this);
-      console.log('counting');
-      if (!nextElem) return;
-      this.countedWidth += nextElem.offsetWidth; // this.getNextSiblingWidth(nextElem.nextSibling)
-    }
-  }, {
     key: "setHeaderWavePositionOnLoad",
     value: function setHeaderWavePositionOnLoad() {
       var active_menu = document.querySelector('.header-menu li.isActive');
@@ -938,17 +930,14 @@ var header = /*#__PURE__*/function () {
   }, {
     key: "setHeaderWavePosition",
     value: function setHeaderWavePosition() {
-      // console.log(this.countedWidth);
-      // this.getNextSiblingWidth(event.target.nextSibling)
-      // console.log(this.countedWidth);
-      console.log('counting completed');
+      console.log('counting completed'); // gsap.to('.header-menu-wave', {
+      //     left: event.target.offsetLeft + event.target.offsetWidth / 2
+      // })
+
       gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.header-menu-border', {
         left: event.target.offsetLeft,
         width: event.target.offsetWidth,
         right: 'auto'
-      });
-      gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.header-menu-wave', {
-        left: event.target.offsetLeft + event.target.offsetWidth / 2
       });
     }
   }]);
@@ -1261,11 +1250,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var _glidejs_glide__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @glidejs/glide */ "./node_modules/@glidejs/glide/dist/glide.esm.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 
 
 
@@ -1281,9 +1272,19 @@ var newsAndTrends = /*#__PURE__*/function () {
     this.items = [];
     this.pageOffset;
     this.animation;
+    this.slider;
   }
 
   _createClass(NewsAndTrends, [{
+    key: "initSlider",
+    value: function initSlider() {
+      new _glidejs_glide__WEBPACK_IMPORTED_MODULE_2__["default"]('.news-and-trends-left-glide', {
+        type: 'carousel',
+        startAt: 0,
+        perView: 1
+      }).mount();
+    }
+  }, {
     key: "checkProgress",
     value: function checkProgress() {
       var _this = this;
@@ -1354,11 +1355,22 @@ var newsAndTrends = /*#__PURE__*/function () {
   }, {
     key: "resizeItems",
     value: function resizeItems(items) {
-      if (!items) return;
+      var _this4 = this;
 
-      for (var i = 0; i < items.length; i++) {
-        items[i].style.transform = "scale(".concat(1 - this.currentDate.diff(moment__WEBPACK_IMPORTED_MODULE_0___default()(items[i].dataset.createdAt).format(), 'days') / 10, ")");
-      }
+      return new Promise(function (resolve, reject) {
+        if (!items) {
+          reject(new Error('Нет элементов'));
+        }
+
+        ;
+
+        for (var i = 0; i < items.length; i++) {
+          console.log(items[i].offsetWidth);
+          items[i].style.minWidth = items[i].offsetWidth / _this4.currentDate.diff(moment__WEBPACK_IMPORTED_MODULE_0___default()(items[i].dataset.createdAt).format(), 'days') * 10 + 'px';
+        }
+
+        resolve(items);
+      });
     }
   }, {
     key: "animateItems",
@@ -1378,17 +1390,21 @@ var newsAndTrends = /*#__PURE__*/function () {
   }, {
     key: "init",
     value: function init() {
-      var _this4 = this;
+      var _this5 = this;
 
       if (!document.querySelector('.news-and-trends')) return;
       this.loadItems().then(function (items) {
-        _this4.resizeItems(items);
+        _this5.resizeItems(items).then(function () {
+          setTimeout(function () {
+            _this5.animateItems();
 
-        _this4.animateItems();
+            _this5.scrollWindow();
 
-        _this4.scrollWindow();
+            _this5.checkProgress();
 
-        _this4.checkProgress();
+            _this5.initSlider();
+          }, 200);
+        });
       });
     }
   }]);
@@ -1508,47 +1524,63 @@ var mainWeb = /*#__PURE__*/function () {
           pinSpacing: false,
           // snap: 1,
           onUpdate: function onUpdate(item) {
-            if (item.progress > 0.01) {
-              gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to(".web-title:not([data-item-id=\"".concat(item.trigger.dataset.itemId, "\"])"), 0.3, {
-                y: '-100%',
-                opacity: 0,
-                onComplete: function onComplete() {
-                  gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to(".web-title[data-item-id=\"".concat(item.trigger.dataset.itemId, "\"]"), 0.3, {
-                    y: 0,
-                    opacity: 1
-                  });
-                }
+            if (item.progress > 0) {
+              console.log(item.trigger.dataset.itemId);
+              document.querySelectorAll(".web-subtitle").forEach(function (item) {
+                item.classList.remove('isActive');
               });
-              gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to(".web-subtitle:not([data-item-id=\"".concat(item.trigger.dataset.itemId, "\"])"), 0.3, {
-                y: '-100%',
-                opacity: 0,
-                onComplete: function onComplete() {
-                  gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to(".web-subtitle[data-item-id=\"".concat(item.trigger.dataset.itemId, "\"]"), 0.3, {
-                    y: 0,
-                    opacity: 1
-                  });
-                }
+              document.querySelector(".web-subtitle[data-item-id=\"".concat(item.trigger.dataset.itemId, "\"]")).classList.add('isActive');
+              document.querySelectorAll(".web-title").forEach(function (item) {
+                item.classList.remove('isActive');
               });
-              gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to(".web-text:not([data-item-id=\"".concat(item.trigger.dataset.itemId, "\"])"), 0.3, {
-                y: '-100%',
-                opacity: 0,
-                onComplete: function onComplete() {
-                  gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to(".web-text[data-item-id=\"".concat(item.trigger.dataset.itemId, "\"]"), 0.3, {
-                    y: 0,
-                    opacity: 1
-                  });
-                }
+              document.querySelector(".web-title[data-item-id=\"".concat(item.trigger.dataset.itemId, "\"]")).classList.add('isActive');
+              document.querySelectorAll(".web-text").forEach(function (item) {
+                item.classList.remove('isActive');
               });
-              gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to(".web-button:not([data-item-id=\"".concat(item.trigger.dataset.itemId, "\"])"), 0.3, {
-                y: '-100%',
-                opacity: 0,
-                onComplete: function onComplete() {
-                  gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to(".web-button[data-item-id=\"".concat(item.trigger.dataset.itemId, "\"]"), 0.3, {
-                    y: 0,
-                    opacity: 1
-                  });
-                }
+              document.querySelector(".web-text[data-item-id=\"".concat(item.trigger.dataset.itemId, "\"]")).classList.add('isActive');
+              document.querySelectorAll(".web-button").forEach(function (item) {
+                item.classList.remove('isActive');
               });
+              document.querySelector(".web-button[data-item-id=\"".concat(item.trigger.dataset.itemId, "\"]")).classList.add('isActive'); // gsap.to(`.web-title:not([data-item-id="${item.trigger.dataset.itemId}"])`, 1, {
+              //     y: '-100%',
+              //     opacity: 0,
+              //     onComplete: () => {
+              //         gsap.to(`.web-title[data-item-id="${item.trigger.dataset.itemId}"]`, 1, {
+              //             y: 0,
+              //             opacity: 1,
+              //         })
+              //     }
+              // })
+              // gsap.to(`.web-subtitle:not([data-item-id="${item.trigger.dataset.itemId}"])`, 1, {
+              //     y: '-100%',
+              //     opacity: 0,
+              //     onComplete: () => {
+              //         gsap.to(`.web-subtitle[data-item-id="${item.trigger.dataset.itemId}"]`, 1, {
+              //             y: 0,
+              //             opacity: 1
+              //         })
+              //     }
+              // })
+              // gsap.to(`.web-text:not([data-item-id="${item.trigger.dataset.itemId}"])`, 1, {
+              //     y: '-100%',
+              //     opacity: 0,
+              //     onComplete: () => {
+              //         gsap.to(`.web-text[data-item-id="${item.trigger.dataset.itemId}"]`, 1, {
+              //             y: 0,
+              //             opacity: 1
+              //         })
+              //     }
+              // })
+              // gsap.to(`.web-button:not([data-item-id="${item.trigger.dataset.itemId}"])`, 1, {
+              //     y: '-100%',
+              //     opacity: 0,
+              //     onComplete: () => {
+              //         gsap.to(`.web-button[data-item-id="${item.trigger.dataset.itemId}"]`, 1, {
+              //             y: 0,
+              //             opacity: 1
+              //         })
+              //     }
+              // })
             }
           }
         });
