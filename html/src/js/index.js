@@ -11,6 +11,7 @@ import companyPrinciples from "%modules%/company-principles/company-principles";
 import companyPartners from "%modules%/company-partners/company-partners";
 import header from "%modules%/header/header";
 import mainQuestionForm from "%modules%/main-question/main-question";
+import companyAbout from "%modules%/company-about/company-about";
 
 import gsap from 'gsap';
 
@@ -47,6 +48,9 @@ window.app = new Vue({
         companyVideo: new companyVideo(),
         companyPartners: new companyPartners(),
         header: new header(),
+        companyAbout: new companyAbout({
+            selector: '.company-about'
+        }),
         isMounted: false
     }),
     mounted() {
@@ -65,6 +69,7 @@ window.app = new Vue({
                 sliderClass: '.glide'
             });
             this.mainQuestionForm.init();
+            this.companyAbout.init();
             window.addEventListener('resize', () => this.cursorAnimation.updateCanvasSize());
             document.addEventListener('mousemove', (event) => {
                 this.cursorAnimation.animate({

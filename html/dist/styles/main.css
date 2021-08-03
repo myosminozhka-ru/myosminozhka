@@ -3645,6 +3645,7 @@ a:hover {
 
 .company-about {
   padding: 9.94792vw 2.60417vw 2.60417vw;
+  clip-path: circle(1920px at 15.625vw 15.625vw);
 }
 
 .company-about-title {

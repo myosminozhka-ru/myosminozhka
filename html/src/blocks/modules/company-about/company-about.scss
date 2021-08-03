@@ -1,5 +1,6 @@
 .company-about {
     padding: vw(191) vw(50) vw(50);
+    clip-path: circle(1920px at #{vw(300)} #{vw(300)});
     &-title {
         font-weight: 600;
         font-size: vw(280);

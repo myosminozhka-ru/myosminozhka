@@ -15,6 +15,7 @@ const mainQuestionForm = class mainQuestionForm {
         console.log(this.file, this.hasFile);
     }
     init() {
+        if (!document.querySelector(this.inputSelector)) return;
         let fileInput = document.querySelector(this.inputSelector);
         fileInput.addEventListener('change', () => this.onInputChange(event));
     }

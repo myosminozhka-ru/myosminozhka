@@ -457,6 +457,60 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 /***/ }),
 
+/***/ "./src/blocks/modules/company-about/company-about.js":
+/*!***********************************************************!*\
+  !*** ./src/blocks/modules/company-about/company-about.js ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var companyAbout = /*#__PURE__*/function () {
+  function CompanyAbout(_ref) {
+    var selector = _ref.selector;
+
+    _classCallCheck(this, CompanyAbout);
+
+    this.selector = selector;
+  }
+
+  _createClass(CompanyAbout, [{
+    key: "init",
+    value: function init() {
+      var _this = this;
+
+      console.log();
+      document.querySelector(this.selector).addEventListener('mousemove', function (e) {
+        // console.log(e)
+        gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(_this.selector, {
+          "clip-path": "circle(".concat(200 * 100 / window.innerWidth, "vw at ").concat(e.clientX, "px ").concat(e.clientY, "px)")
+        });
+      });
+      document.querySelector(this.selector).addEventListener('mouseleave', function (e) {
+        gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(_this.selector, 2, {
+          "clip-path": "circle(1920px at ".concat(e.clientX, "px ").concat(e.clientY, "px)")
+        });
+      });
+    }
+  }]);
+
+  return CompanyAbout;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (companyAbout);
+
+/***/ }),
+
 /***/ "./src/blocks/modules/company-partners/company-partners.js":
 /*!*****************************************************************!*\
   !*** ./src/blocks/modules/company-partners/company-partners.js ***!
@@ -1467,6 +1521,7 @@ var mainQuestionForm = /*#__PURE__*/function () {
     value: function init() {
       var _this = this;
 
+      if (!document.querySelector(this.inputSelector)) return;
       var fileInput = document.querySelector(this.inputSelector);
       fileInput.addEventListener('change', function () {
         return _this.onInputChange(event);
@@ -1719,8 +1774,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_company_partners_company_partners__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! %modules%/company-partners/company-partners */ "./src/blocks/modules/company-partners/company-partners.js");
 /* harmony import */ var _modules_header_header__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! %modules%/header/header */ "./src/blocks/modules/header/header.js");
 /* harmony import */ var _modules_main_question_main_question__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! %modules%/main-question/main-question */ "./src/blocks/modules/main-question/main-question.js");
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var _modules_company_about_company_about__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! %modules%/company-about/company-about */ "./src/blocks/modules/company-about/company-about.js");
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -1766,7 +1823,9 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     }, _defineProperty(_ref, "mainQuestionForm", new _modules_main_question_main_question__WEBPACK_IMPORTED_MODULE_12__["default"]({
       inputSelector: '.main-question-form-item [type="file"]',
       textSelector: '.main-question-form-item span'
-    })), _defineProperty(_ref, "companyPrinciples", new _modules_company_principles_company_principles__WEBPACK_IMPORTED_MODULE_9__["default"]()), _defineProperty(_ref, "companyVideo", new _modules_company_video_company_video__WEBPACK_IMPORTED_MODULE_8__["default"]()), _defineProperty(_ref, "companyPartners", new _modules_company_partners_company_partners__WEBPACK_IMPORTED_MODULE_10__["default"]()), _defineProperty(_ref, "header", new _modules_header_header__WEBPACK_IMPORTED_MODULE_11__["default"]()), _defineProperty(_ref, "isMounted", false), _ref;
+    })), _defineProperty(_ref, "companyPrinciples", new _modules_company_principles_company_principles__WEBPACK_IMPORTED_MODULE_9__["default"]()), _defineProperty(_ref, "companyVideo", new _modules_company_video_company_video__WEBPACK_IMPORTED_MODULE_8__["default"]()), _defineProperty(_ref, "companyPartners", new _modules_company_partners_company_partners__WEBPACK_IMPORTED_MODULE_10__["default"]()), _defineProperty(_ref, "header", new _modules_header_header__WEBPACK_IMPORTED_MODULE_11__["default"]()), _defineProperty(_ref, "companyAbout", new _modules_company_about_company_about__WEBPACK_IMPORTED_MODULE_13__["default"]({
+      selector: '.company-about'
+    })), _defineProperty(_ref, "isMounted", false), _ref;
   },
   mounted: function mounted() {
     var _this = this;
@@ -1798,6 +1857,8 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 
       _this.mainQuestionForm.init();
 
+      _this.companyAbout.init();
+
       window.addEventListener('resize', function () {
         return _this.cursorAnimation.updateCanvasSize();
       });
@@ -1818,7 +1879,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       event.target.appendChild(circle);
       event.target.children[1].style.left = x + 'px';
       event.target.children[1].style.top = y + 'px';
-      gsap__WEBPACK_IMPORTED_MODULE_13__["default"].to(event.target.children[1], 0.5, {
+      gsap__WEBPACK_IMPORTED_MODULE_14__["default"].to(event.target.children[1], 0.5, {
         width: 800,
         height: 800,
         x: -400,
@@ -1830,7 +1891,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       var y = event.offsetY;
       event.target.children[1].style.left = x + 'px';
       event.target.children[1].style.top = y + 'px';
-      gsap__WEBPACK_IMPORTED_MODULE_13__["default"].to(event.target.children[1], 0.3, {
+      gsap__WEBPACK_IMPORTED_MODULE_14__["default"].to(event.target.children[1], 0.3, {
         width: 0,
         height: 0,
         x: 0,
