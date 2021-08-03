@@ -1,4 +1,3 @@
-import gsap from 'gsap';
 
 const cursorAnimation = class CursorAnimation {
     constructor(params = {
@@ -18,8 +17,7 @@ const cursorAnimation = class CursorAnimation {
     setCanvasSize() {
         return this.params;
     }
-    createCanvas() {
-        
+    createCanvas() {        
         return new Promise((resolve, reject) => {
             if (document.getElementById(this.params.element)) {
                 console.log(123)
