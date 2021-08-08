@@ -12,7 +12,6 @@ const companyPrinciples = class CompanyPrinciples {
         var rotateFn = isHorizontal ? 'rotateY' : 'rotateX';
         var radius, theta;
 
-
         function rotateCarousel() {
             
             var angle = theta * selectedIndex * -1;
