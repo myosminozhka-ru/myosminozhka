@@ -2630,7 +2630,8 @@ a,
 .company-principles-text .counter,
 .company-principles-text .text,
 .footer-social,
-.footer-social svg {
+.footer-social svg,
+.footer-bank .copy {
   transition: all 0.3s ease;
 }
 
@@ -3163,6 +3164,21 @@ a:hover {
 
 .main-question-form-item button {
   margin-left: auto;
+}
+
+.main-question-form-item > span {
+  display: flex;
+  align-items: center;
+}
+
+.main-question-form-item .icon {
+  width: 1.04167vw;
+  height: 1.35417vw;
+  margin-right: 1.04167vw;
+}
+
+.main-question-form-item > span > .text {
+  color: #E54A72;
 }
 
 .main-question-button {
@@ -4372,6 +4388,24 @@ a:hover {
   grid-row-end: 11;
   grid-column-start: 1;
   grid-column-end: 2;
+  position: relative;
+}
+
+.footer-bank .copy {
+  position: absolute;
+  top: 0;
+  right: -1.04167vw;
+  width: 1.5625vw;
+  height: 1.5625vw;
+  padding-top: 0.3125vw;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.footer-bank:hover .copy {
+  opacity: 1;
+  visibility: visible;
 }
 
 .footer-bookkeeping {

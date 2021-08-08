@@ -84,6 +84,18 @@
     button {
       margin-left: auto;
     }
+    & > span {
+      display: flex;
+      align-items: center;
+    }
+    .icon {
+      width: vw(20);
+      height: vw(26);
+      margin-right: vw(20);
+    }
+    & > span > .text {
+      color: $mainColor;
+    }
   }
   
   &-button {

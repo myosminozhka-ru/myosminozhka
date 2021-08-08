@@ -12,6 +12,7 @@ import companyPartners from "%modules%/company-partners/company-partners";
 import header from "%modules%/header/header";
 import mainQuestionForm from "%modules%/main-question/main-question";
 import companyAbout from "%modules%/company-about/company-about";
+import footer from "%modules%/footer/footer";
 
 import gsap from 'gsap';
 
@@ -51,6 +52,7 @@ window.app = new Vue({
         companyAbout: new companyAbout({
             selector: '.company-about'
         }),
+        footer: new footer(),
         isMounted: false
     }),
     mounted() {
@@ -77,6 +79,9 @@ window.app = new Vue({
                     y: event.pageY,
                 })
             });
+            document.querySelector('.footer-bank .copy').addEventListener('click', () => this.footer.copyText({
+                text: 'ИНН/КПП: 6317139806/631701001 Банк: АО "Тинькофф Банк" БИК: 044525974 Р/С: 40702810010000559615 Р/С: 40702810010000559615'
+            }))
         }, 250);
     },
     methods: {

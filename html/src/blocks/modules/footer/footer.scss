@@ -142,6 +142,23 @@
         grid-row-end: 11;
         grid-column-start: 1;
         grid-column-end: 2;
+        position: relative;
+        & .copy {
+            position: absolute;
+            top: 0;
+            right: vw(-20);
+            width: vw(30);
+            height: vw(30);
+            padding-top: vw(6);
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            @extend %transition;
+        }
+        &:hover .copy {
+            opacity: 1;
+            visibility: visible;
+        }
     }
     &-bookkeeping {
         grid-row-start: 5;
