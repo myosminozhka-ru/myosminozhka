@@ -489,7 +489,7 @@ var companyAbout = /*#__PURE__*/function () {
     value: function init() {
       var _this = this;
 
-      console.log();
+      if (!document.querySelector(this.selector)) return;
       document.querySelector(this.selector).addEventListener('mousemove', function (e) {
         // console.log(e)
         gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(_this.selector, {

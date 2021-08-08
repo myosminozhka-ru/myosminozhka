@@ -5,7 +5,7 @@ const companyAbout = class CompanyAbout {
         this.selector = selector
     }
     init() {
-        console.log()
+        if (!document.querySelector(this.selector)) return;
         document.querySelector(this.selector).addEventListener('mousemove', (e) => {
             // console.log(e)
             gsap.to(this.selector, {
