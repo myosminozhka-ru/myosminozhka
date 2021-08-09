@@ -12,7 +12,7 @@ const newsAndTrends = class NewsAndTrends {
         this.slider;
     }
     initSlider() {
-        new Glide('.news-and-trends-left-glide', {
+        this.slider = new Glide('.news-and-trends-left-glide', {
             type: 'carousel',
             startAt: 0,
             perView: 1
@@ -73,8 +73,7 @@ const newsAndTrends = class NewsAndTrends {
             resolve(this.items);
         })
     }
-    resizeItems(items) {
-        
+    resizeItems(items) {        
         return new Promise((resolve, reject) => {
             if (!items) {
                 reject(new Error('Нет элементов'))
@@ -93,11 +92,14 @@ const newsAndTrends = class NewsAndTrends {
                 start: 'top top',
                 end: 'bottom top',
                 scrub: 1,
-                // markers: true,
                 pin: true,
             },
             x: '-100%'
         })
+    }
+    chooseElement(element) {
+        console.log(element)
+        this.slider.go(`=${element.dataset.itemId}`)
     }
     init() {
         if (!document.querySelector('.news-and-trends')) return;
@@ -108,6 +110,10 @@ const newsAndTrends = class NewsAndTrends {
                     this.scrollWindow();
                     this.checkProgress();
                     this.initSlider();
+
+                    document.querySelectorAll('.news-and-trends-item').forEach(item => {
+                        item.addEventListener('click', () => this.chooseElement(item))
+                    })
                 }, 200)
             })
             

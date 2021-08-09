@@ -1374,7 +1374,7 @@ var newsAndTrends = /*#__PURE__*/function () {
   _createClass(NewsAndTrends, [{
     key: "initSlider",
     value: function initSlider() {
-      new _glidejs_glide__WEBPACK_IMPORTED_MODULE_2__["default"]('.news-and-trends-left-glide', {
+      this.slider = new _glidejs_glide__WEBPACK_IMPORTED_MODULE_2__["default"]('.news-and-trends-left-glide', {
         type: 'carousel',
         startAt: 0,
         perView: 1
@@ -1477,11 +1477,16 @@ var newsAndTrends = /*#__PURE__*/function () {
           start: 'top top',
           end: 'bottom top',
           scrub: 1,
-          // markers: true,
           pin: true
         },
         x: '-100%'
       });
+    }
+  }, {
+    key: "chooseElement",
+    value: function chooseElement(element) {
+      console.log(element);
+      this.slider.go("=".concat(element.dataset.itemId));
     }
   }, {
     key: "init",
@@ -1499,6 +1504,12 @@ var newsAndTrends = /*#__PURE__*/function () {
             _this5.checkProgress();
 
             _this5.initSlider();
+
+            document.querySelectorAll('.news-and-trends-item').forEach(function (item) {
+              item.addEventListener('click', function () {
+                return _this5.chooseElement(item);
+              });
+            });
           }, 200);
         });
       });

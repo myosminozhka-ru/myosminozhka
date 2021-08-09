@@ -3360,6 +3360,7 @@ a:hover {
 .news-and-trends-title {
   color: #4F4F4F;
   margin-bottom: 3.125vw;
+  font-size: 4.6875vw;
 }
 
 .news-and-trends-buttons {
@@ -3438,7 +3439,18 @@ a:hover {
   right: 0;
   bottom: 0;
   opacity: 0;
+}
+
+.news-and-trends-big-trend .gradient {
   background: linear-gradient(to top, #FF4978 0%, rgba(255, 73, 120, 0) 140%);
+}
+
+.news-and-trends-big-news .gradient {
+  background: linear-gradient(to top, #00B4A9 0%, rgba(255, 73, 120, 0) 140%);
+}
+
+.news-and-trends-big-green .gradient {
+  background: linear-gradient(to top, #31A500 0%, rgba(255, 73, 120, 0) 140%);
 }
 
 .news-and-trends-big .text {
@@ -3465,13 +3477,13 @@ a:hover {
   align-items: flex-start;
   flex-wrap: nowrap;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .news-and-trends-item {
   min-width: 18.07292vw;
   max-width: 18.07292vw;
   font-size: 0;
-  border: 0.26042vw solid #E54A72;
 }
 
 .news-and-trends-item:not(:last-child) {
@@ -3483,6 +3495,18 @@ a:hover {
   height: 100%;
   object-fit: cover;
   object-position: 50% 50%;
+}
+
+.news-and-trends-item-trend {
+  border: 0.26042vw solid #E54A72;
+}
+
+.news-and-trends-item-news {
+  border: 0.26042vw solid #00B4A9;
+}
+
+.news-and-trends-item-green {
+  border: 0.26042vw solid #31A500;
 }
 
 .news-and-trends-left-in {
@@ -3503,7 +3527,6 @@ a:hover {
 .news-and-trends-arrows .arrow {
   width: 4.47917vw;
   height: 1.97917vw;
-  background: url("../img/svg/arrow.svg") 50% 50%/cover no-repeat;
   cursor: pointer;
 }
 
@@ -3516,6 +3539,10 @@ a:hover {
   opacity: 0.5;
   cursor: not-allowed;
   pointer-events: none;
+}
+
+.news-and-trends-arrows .arrow:not(.disabled):hover svg {
+  fill: #E54A72;
 }
 
 .news-and-trends-form {
@@ -3577,6 +3604,7 @@ a:hover {
   bottom: 0;
   z-index: 14;
   background: url("../img/svg/cases.svg") 50% 0/cover no-repeat;
+  pointer-events: none;
 }
 
 .main-cases-title {

@@ -15,6 +15,7 @@
     &-title {
         color: #4F4F4F;
         margin-bottom: vw(60);
+        font-size: vw(90);
     }
     &-buttons {
         margin-bottom: vw(70);
@@ -80,8 +81,16 @@
             right: 0;
             bottom: 0;
             opacity: 0;
-            background: linear-gradient(to top, #FF4978 0%, rgba(255, 73, 120, 0) 140%);
             @extend %transition;
+        }
+        &-trend .gradient {
+            background: linear-gradient(to top, #FF4978 0%, rgba(255, 73, 120, 0) 140%);
+        }
+        &-news .gradient {
+            background: linear-gradient(to top, #00B4A9 0%, rgba(255, 73, 120, 0) 140%);
+        }
+        &-green .gradient {
+            background: linear-gradient(to top, #31A500 0%, rgba(255, 73, 120, 0) 140%);
         }
         .text {
             position: absolute;
@@ -109,12 +118,12 @@
         align-items: flex-start;
         flex-wrap: nowrap;
         overflow: hidden;
+        cursor: pointer;
     }
     &-item {
         min-width: vw(347);
         max-width: vw(347);
         font-size: 0;
-        border: vw(5) solid $mainColor;
         &:not(:last-child) {
             margin-right: vw(112);
         }
@@ -123,6 +132,15 @@
             height: 100%;
             object-fit: cover;
             object-position: 50% 50%;
+        }
+        &-trend {
+            border: vw(5) solid $mainColor;
+        }
+        &-news {
+            border: vw(5) solid #00B4A9;
+        }
+        &-green {
+            border: vw(5) solid #31A500;
         }
     }
     &-left-in {
@@ -139,7 +157,6 @@
         .arrow {
             width: vw(86);
             height: vw(38);
-            background: url('../img/svg/arrow.svg') 50% 50%/cover no-repeat;
             cursor: pointer;
             &.prev {
                 transform: rotate(180deg);
@@ -149,6 +166,11 @@
                 opacity: 0.5;
                 cursor: not-allowed;
                 pointer-events: none;
+            }
+            &:not(.disabled):hover {
+                svg {
+                    fill: $mainColor;
+                }
             }
         }
     }
