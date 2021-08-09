@@ -492,12 +492,12 @@ var companyAbout = /*#__PURE__*/function () {
       if (!document.querySelector(this.selector)) return;
       document.querySelector(this.selector).addEventListener('mousemove', function (e) {
         // console.log(e)
-        gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(_this.selector, {
-          "clip-path": "circle(".concat(200 * 100 / window.innerWidth, "vw at ").concat(e.clientX, "px ").concat(e.clientY, "px)")
-        });
+        document.querySelector(_this.selector).style.clipPath = "circle(".concat(200 * 100 / window.innerWidth, "vw at ").concat(e.clientX, "px ").concat(e.clientY, "px)"); // gsap.to(this.selector, {
+        //     "clip-path" : `circle(${200 * 100 / window.innerWidth}vw at ${e.clientX}px ${e.clientY}px)`
+        // })
       });
       document.querySelector(this.selector).addEventListener('mouseleave', function (e) {
-        gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(_this.selector, 2, {
+        gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(_this.selector, 0.5, {
           "clip-path": "circle(1920px at ".concat(e.clientX, "px ").concat(e.clientY, "px)")
         });
       });

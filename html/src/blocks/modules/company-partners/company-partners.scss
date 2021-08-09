@@ -1,10 +1,53 @@
 .company-partners {
     padding-top: vw(486);
+    padding-bottom: 70px;
     overflow: hidden;
+    &-slider {
+        position: relative;
+    }
+    &-track {
+        font-size: 0;
+    }
     &-title {
         mix-blend-mode: difference;
         white-space: nowrap;
         margin-bottom: vw(70);
         @extend %white;
+    }
+    &-item {
+        padding: vw(71);
+        margin: 0;
+        @extend %transition;
+        &:hover {
+            background: #fff;
+        }
+    }
+    &-item-title {
+        mix-blend-mode: difference;
+        margin-bottom: vw(30);
+        font-weight: bold;
+        font-size: vw(120);
+        line-height: vw(100);
+        text-transform: uppercase;
+        @extend %white;
+    }
+    &-item-text {
+        mix-blend-mode: difference;
+        font-weight: normal;
+        font-size: vw(30);
+        line-height: vw(50);
+        @extend %white;
+    }
+    &-arrows {
+        position: absolute;
+        bottom: vw(-70);
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: flex-end;
+        button {
+            position: static;
+            transform: none;
+        }
     }
 }

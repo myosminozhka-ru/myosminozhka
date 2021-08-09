@@ -14,6 +14,7 @@
         grid-column-end: 11;
     }
     &-in {
+        pointer-events: none;
         display: grid;
         grid-template-columns: vw(42) vw(241) vw(58) vw(191) vw(82) vw(50) vw(143) vw(101) vw(40) vw(128) vw(44) vw(110) vw(58) vw(53) vw(48) vw(69) vw(82) vw(48) vw(40) vw(98) auto;
         grid-template-rows: vw(156) vw(52) vw(32) vw(20) vw(52) vw(28) vw(96) vw(52) vw(54) vw(29) vw(17) vw(80) vw(60) vw(56) vw(20) vw(14);
