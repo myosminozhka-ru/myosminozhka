@@ -1144,7 +1144,7 @@ var mainAbout = /*#__PURE__*/function () {
           pin: true // pinSpacing: false
 
         },
-        right: '100%'
+        right: '50%'
       });
     }
   }]);
