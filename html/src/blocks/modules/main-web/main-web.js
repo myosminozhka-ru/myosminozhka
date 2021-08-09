@@ -15,8 +15,8 @@ const mainWeb = class Mainweb {
             ScrollTrigger.create({
                 trigger: item,
                 start: "top top", 
-                pin: true, 
-                pinSpacing: false,
+                // pin: true, 
+                // pinSpacing: false,
                 // snap: 1,
                 onUpdate: (item) => {
                     if (item.progress > 0) {

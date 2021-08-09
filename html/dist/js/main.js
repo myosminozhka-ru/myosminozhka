@@ -1607,8 +1607,8 @@ var mainWeb = /*#__PURE__*/function () {
         gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__["ScrollTrigger"].create({
           trigger: item,
           start: "top top",
-          pin: true,
-          pinSpacing: false,
+          // pin: true, 
+          // pinSpacing: false,
           // snap: 1,
           onUpdate: function onUpdate(item) {
             if (item.progress > 0) {

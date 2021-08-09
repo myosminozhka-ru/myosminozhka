@@ -2821,7 +2821,7 @@ a:hover {
 .web-data-in {
   width: 100%;
   padding-left: 2.60417vw;
-  padding-right: 20.83333vw;
+  padding-right: 10.41667vw;
   box-sizing: border-box;
 }
 
@@ -3237,9 +3237,12 @@ a:hover {
   box-sizing: border-box;
   transition: transform 1s, opacity 1s;
   cursor: pointer;
+  backface-visibility: hidden;
 }
 
 .main-carousel-cell-image {
+  border-radius: 0.26042vw;
+  overflow: hidden;
   pointer-events: none;
   width: 100%;
   height: 100%;
@@ -3881,9 +3884,12 @@ a:hover {
   box-sizing: border-box;
   transition: transform 1s, opacity 1s;
   cursor: pointer;
+  backface-visibility: hidden;
 }
 
 .company-principles-cell-image {
+  border-radius: 0.26042vw;
+  overflow: hidden;
   pointer-events: none;
   width: 100%;
   height: 100%;
