@@ -13,7 +13,7 @@ const header = class Header {
                 start: 'top top',
                 end: 'top+=400 top',
                 scrub: 1,
-                markers: true,
+                // markers: true,
             },
             width: () => {
                 return 100 * 100 / window.innerWidth + 'vw'
@@ -28,7 +28,7 @@ const header = class Header {
                 start: 'top top',
                 end: 'top+=400 top',
                 scrub: 1,
-                markers: true,
+                // markers: true,
             },
             paddingTop: () => {
                 return 10 * 100 / window.innerWidth + 'vw'

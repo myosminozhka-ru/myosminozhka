@@ -91,9 +91,9 @@ const newsAndTrends = class NewsAndTrends {
             scrollTrigger: {
                 trigger: '.news-and-trends-trigger',
                 start: 'top top',
-                end: 'bottom bottom',
+                end: 'bottom top',
                 scrub: 1,
-                markers: true,
+                // markers: true,
                 pin: true,
             },
             x: '-100%'

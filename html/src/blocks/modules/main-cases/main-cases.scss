@@ -1,9 +1,20 @@
 .main-cases {
-    padding: 0 0 vw(208) 0;
-    margin-top: -50vw;
     position: relative;
-    z-index: 3  ;
-    background: url('../img/svg/cases.svg') 50% 0 / cover no-repeat;
+    z-index: 3;
+    padding-top: vw(326);
+    padding-bottom: vw(208);
+    background: #fff;
+
+    &-bg {
+        content: "";
+        position: absolute;
+        top: vw(-30);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 14;
+        background: url('../img/svg/cases.svg') 50% 0 / cover no-repeat;
+    }
     &-title {
         padding-top: vw(400);
         padding-left: vw(50);
@@ -11,13 +22,18 @@
         font-size: vw(300);
         line-height: vw(300);
         margin-bottom: vw(102);
+        position: relative;
+        z-index: 15;
         @extend %white;
+        
     }
     &-items-in {
         // width: vw(1985);
+        position: relative;
+        z-index: 16;
         overflow: hidden;
         display: grid;
-        grid-template-columns: vw(80) vw(334) vw(73) vw(84) vw(248) vw(312) vw(102) vw(272) vw(344) vw(138);
+        grid-template-columns: vw(80) vw(334) vw(73) vw(84) vw(248) vw(312) vw(102) vw(272) vw(344) vw(138) vw(80) vw(334) vw(73) vw(84) vw(248) vw(312) vw(102) vw(272) vw(344) vw(138);
         grid-template-rows: vw(67) vw(109) vw(402) vw(102) vw(74) vw(92) vw(234) vw(278) vw(77) vw(41);
     }
     &-item {
@@ -82,6 +98,42 @@
             grid-row-end: 9;
             grid-column-start: 9;
             grid-column-end: 11;
+        }
+        &:nth-child(7) {
+            grid-row-start: 3;
+            grid-row-end: 4;
+            grid-column-start: 11;
+            grid-column-end: 13;
+        }
+        &:nth-child(8) {
+            grid-row-start: 1;
+            grid-row-end: 7;
+            grid-column-start: 15;
+            grid-column-end: 17;
+        }
+        &:nth-child(9) {
+            grid-row-start: 2;
+            grid-row-end: 4;
+            grid-column-start: 18;
+            grid-column-end: 20;
+        }
+        &:nth-child(10) {
+            grid-row-start: 6;
+            grid-row-end: 10;
+            grid-column-start: 11;
+            grid-column-end: 13;
+        }
+        &:nth-child(11) {
+            grid-row-start: 8;
+            grid-row-end: 11;
+            grid-column-start: 16;
+            grid-column-end: 18;
+        }
+        &:nth-child(12) {
+            grid-row-start: 5;
+            grid-row-end: 9;
+            grid-column-start: 19;
+            grid-column-end: 21;
         }
     }
 }

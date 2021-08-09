@@ -953,8 +953,8 @@ var header = /*#__PURE__*/function () {
           trigger: '.wrapper',
           start: 'top top',
           end: 'top+=400 top',
-          scrub: 1,
-          markers: true
+          scrub: 1 // markers: true,
+
         },
         width: function width() {
           return 100 * 100 / window.innerWidth + 'vw';
@@ -968,8 +968,8 @@ var header = /*#__PURE__*/function () {
           trigger: '.wrapper',
           start: 'top top',
           end: 'top+=400 top',
-          scrub: 1,
-          markers: true
+          scrub: 1 // markers: true,
+
         },
         paddingTop: function paddingTop() {
           return 10 * 100 / window.innerWidth + 'vw';
@@ -1302,16 +1302,26 @@ var mainCases = /*#__PURE__*/function () {
   _createClass(MainCases, [{
     key: "init",
     value: function init() {
+      gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.main-cases-bg', {
+        scrollTrigger: {
+          trigger: '.news-and-trends-trigger',
+          start: 'top+=500 top+=500',
+          end: 'bottom+=500 top+=500',
+          scrub: 3 // markers: true
+
+        },
+        top: -100
+      });
       gsap__WEBPACK_IMPORTED_MODULE_0__["default"].utils.toArray(".main-cases-item").forEach(function (item, i) {
         gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(item, {
           scrollTrigger: {
             trigger: item,
-            start: 'top top',
-            end: 'bottom top',
-            scrub: 3,
-            markers: true
+            start: 'top+=400 top+=400',
+            end: 'bottom+=400 top+=400',
+            scrub: 3 // markers: true
+
           },
-          x: -500
+          x: '-110vw'
         });
       });
     }
@@ -1465,9 +1475,9 @@ var newsAndTrends = /*#__PURE__*/function () {
         scrollTrigger: {
           trigger: '.news-and-trends-trigger',
           start: 'top top',
-          end: 'bottom bottom',
+          end: 'bottom top',
           scrub: 1,
-          markers: true,
+          // markers: true,
           pin: true
         },
         x: '-100%'

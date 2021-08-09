@@ -3339,11 +3339,17 @@ a:hover {
 }
 
 .news-and-trends {
-  padding: 5.20833vw 0 13.02083vw 2.60417vw;
+  padding: 5.20833vw 0 0 2.60417vw;
+  position: relative;
+  z-index: 17;
 }
 
 .news-and-trends-spacer {
   padding-top: 10.41667vw;
+  background: #fff;
+}
+
+.news-and-trends-spacer + .pin-spacer {
   background: #fff;
 }
 
@@ -3555,10 +3561,21 @@ a:hover {
 }
 
 .main-cases {
-  padding: 0 0 10.83333vw 0;
-  margin-top: -50vw;
   position: relative;
   z-index: 3;
+  padding-top: 16.97917vw;
+  padding-bottom: 10.83333vw;
+  background: #fff;
+}
+
+.main-cases-bg {
+  content: "";
+  position: absolute;
+  top: -1.5625vw;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 14;
   background: url("../img/svg/cases.svg") 50% 0/cover no-repeat;
 }
 
@@ -3569,12 +3586,16 @@ a:hover {
   font-size: 15.625vw;
   line-height: 15.625vw;
   margin-bottom: 5.3125vw;
+  position: relative;
+  z-index: 15;
 }
 
 .main-cases-items-in {
+  position: relative;
+  z-index: 16;
   overflow: hidden;
   display: grid;
-  grid-template-columns: 4.16667vw 17.39583vw 3.80208vw 4.375vw 12.91667vw 16.25vw 5.3125vw 14.16667vw 17.91667vw 7.1875vw;
+  grid-template-columns: 4.16667vw 17.39583vw 3.80208vw 4.375vw 12.91667vw 16.25vw 5.3125vw 14.16667vw 17.91667vw 7.1875vw 4.16667vw 17.39583vw 3.80208vw 4.375vw 12.91667vw 16.25vw 5.3125vw 14.16667vw 17.91667vw 7.1875vw;
   grid-template-rows: 3.48958vw 5.67708vw 20.9375vw 5.3125vw 3.85417vw 4.79167vw 12.1875vw 14.47917vw 4.01042vw 2.13542vw;
 }
 
@@ -3649,6 +3670,48 @@ a:hover {
   grid-row-end: 9;
   grid-column-start: 9;
   grid-column-end: 11;
+}
+
+.main-cases-item:nth-child(7) {
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 11;
+  grid-column-end: 13;
+}
+
+.main-cases-item:nth-child(8) {
+  grid-row-start: 1;
+  grid-row-end: 7;
+  grid-column-start: 15;
+  grid-column-end: 17;
+}
+
+.main-cases-item:nth-child(9) {
+  grid-row-start: 2;
+  grid-row-end: 4;
+  grid-column-start: 18;
+  grid-column-end: 20;
+}
+
+.main-cases-item:nth-child(10) {
+  grid-row-start: 6;
+  grid-row-end: 10;
+  grid-column-start: 11;
+  grid-column-end: 13;
+}
+
+.main-cases-item:nth-child(11) {
+  grid-row-start: 8;
+  grid-row-end: 11;
+  grid-column-start: 16;
+  grid-column-end: 18;
+}
+
+.main-cases-item:nth-child(12) {
+  grid-row-start: 5;
+  grid-row-end: 9;
+  grid-column-start: 19;
+  grid-column-end: 21;
 }
 
 .main-resume {

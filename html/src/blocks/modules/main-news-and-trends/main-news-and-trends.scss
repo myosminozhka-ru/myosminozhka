@@ -1,8 +1,13 @@
 .news-and-trends {
-    padding: vw(100) 0 vw(250) vw(50);
+    padding: vw(100) 0 0 vw(50);
+    position: relative;
+        z-index: 17;
     &-spacer {
         padding-top: vw(200);
         background: #fff;
+        & + .pin-spacer {
+            background: #fff;
+        }
     }
     &-trigger {
         background: #fff;
