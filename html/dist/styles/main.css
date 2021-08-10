@@ -4315,12 +4315,14 @@ a:hover {
 
 .company-partners {
   padding-top: 25.3125vw;
-  padding-bottom: 70px;
+  padding-bottom: 6.77083vw;
   overflow: hidden;
+  position: relative;
+  z-index: 10;
 }
 
 .company-partners-slider {
-  position: relative;
+  position: static;
 }
 
 .company-partners-track {
@@ -4360,16 +4362,36 @@ a:hover {
 
 .company-partners-arrows {
   position: absolute;
-  bottom: -3.64583vw;
+  bottom: 0;
   left: 0;
   right: 0;
   display: flex;
   justify-content: flex-end;
+  background: #fff;
 }
 
 .company-partners-arrows button {
   position: static;
-  transform: none;
+}
+
+.company-partners-arrow {
+  border: none;
+  background: none;
+  font-size: 0;
+  display: block;
+  cursor: pointer;
+  width: 4.63542vw;
+  height: 1.97917vw;
+  padding: 2.60417vw;
+  box-sizing: content-box;
+}
+
+.company-partners-arrow:hover svg {
+  fill: #E54A72;
+}
+
+.company-partners-arrow--prev {
+  transform: rotate(180deg);
 }
 
 .footer {

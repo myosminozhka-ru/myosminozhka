@@ -1,9 +1,11 @@
 .company-partners {
     padding-top: vw(486);
-    padding-bottom: 70px;
+    padding-bottom: vw(130);
     overflow: hidden;
+    position: relative;
+    z-index: 10;
     &-slider {
-        position: relative;
+        position: static;
     }
     &-track {
         font-size: 0;
@@ -40,14 +42,36 @@
     }
     &-arrows {
         position: absolute;
-        bottom: vw(-70);
+        // top: calc(100% + #{vw(70)});
+        bottom: 0;
         left: 0;
         right: 0;
         display: flex;
         justify-content: flex-end;
+        background: #fff;
         button {
             position: static;
-            transform: none;
+        }
+    }
+    &-arrow {
+        border: none;
+        background: none;
+        font-size: 0;
+        display: block;
+        cursor: pointer;
+        width: vw(89);
+        height: vw(38);
+        padding: vw(50);
+        box-sizing: content-box;
+
+        &:hover {
+            svg {
+                fill: $mainColor;
+            }
+        }
+
+        &--prev {
+            transform: rotate(180deg);
         }
     }
 }
