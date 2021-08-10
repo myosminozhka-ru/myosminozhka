@@ -5,10 +5,10 @@ const companyPartners = class companyPartners {
         this.sliderClass = sliderClass;
     }
     init() {
-        if (!document.querySelector('.glide')) return;
-        new Glide('.glide', {
+        if (!document.querySelector('.company-partners-slider')) return;
+        new Glide('.company-partners-slider', {
             startAt: 0,
-            perView: 2
+            perView: 2,
         }).mount();
     }
 }

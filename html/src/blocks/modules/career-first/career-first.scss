@@ -1,0 +1,25 @@
+.career-first {
+    padding-top: vw(101);
+    padding-bottom: vw(109);
+    &-title {
+        padding: vw(50);
+        text-transform: uppercase;
+        color: #929292;
+    }
+    &-info {
+        display: flex;
+        align-items: flex-start;
+    }
+    &-text {
+        width: vw(730);
+        margin-left: vw(100);
+        padding-right: vw(86);
+        font-weight: 300;
+        font-size: vw(40);
+        line-height: vw(50);
+        @extend %white;
+    }
+    &-tentacle {
+        width: calc(100% - #{vw(830)});
+    }
+}

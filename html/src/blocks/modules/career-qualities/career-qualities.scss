@@ -1,0 +1,37 @@
+.career-qualities {
+    padding: vw(50);
+    overflow: hidden;
+    &-title {
+        text-transform: uppercase;
+        white-space: nowrap;
+        margin-bottom: vw(118);
+        @extend %white;
+    }
+    &-items {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &-item {
+        width: vw(250);
+        &:not(:nth-child(5n+5)) {
+            margin-right: vw(140);
+        }
+        &:nth-child(n+6) {
+            margin-top: vw(140);
+        }
+        .icon {
+            width: vw(170);
+            height: vw(140);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: vw(30);
+        }
+        .text {
+            font-weight: 300;
+            font-size: vw(30);
+            line-height: vw(40);
+            @extend %white;
+        }
+    }
+}

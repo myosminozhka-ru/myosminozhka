@@ -9,6 +9,7 @@ import cursorAnimation from "%modules%/cursor-animation/cursor-animation";
 import companyVideo from "%modules%/company-video/company-video";
 import companyPrinciples from "%modules%/company-principles/company-principles";
 import companyPartners from "%modules%/company-partners/company-partners";
+import companyReviews from "%modules%/company-reviews/company-reviews";
 import header from "%modules%/header/header";
 import mainQuestionForm from "%modules%/main-question/main-question";
 import companyAbout from "%modules%/company-about/company-about";
@@ -48,6 +49,7 @@ window.app = new Vue({
         companyPrinciples: new companyPrinciples(),
         companyVideo: new companyVideo(),
         companyPartners: new companyPartners(),
+        companyReviews: new companyReviews(),
         header: new header(),
         companyAbout: new companyAbout({
             selector: '.company-about'
@@ -68,6 +70,9 @@ window.app = new Vue({
             this.companyVideo.init();
             this.companyPrinciples.init();
             this.companyPartners.init({
+                sliderClass: '.glide'
+            });
+            this.companyReviews.init({
                 sliderClass: '.glide'
             });
             this.mainQuestionForm.init();

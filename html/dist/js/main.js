@@ -539,8 +539,8 @@ var companyPartners = /*#__PURE__*/function () {
   _createClass(companyPartners, [{
     key: "init",
     value: function init() {
-      if (!document.querySelector('.glide')) return;
-      new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.glide', {
+      if (!document.querySelector('.company-partners-slider')) return;
+      new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.company-partners-slider', {
         startAt: 0,
         perView: 2
       }).mount();
@@ -678,6 +678,78 @@ var companyPrinciples = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (companyPrinciples);
+
+/***/ }),
+
+/***/ "./src/blocks/modules/company-reviews/company-reviews.js":
+/*!***************************************************************!*\
+  !*** ./src/blocks/modules/company-reviews/company-reviews.js ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @glidejs/glide */ "./node_modules/@glidejs/glide/dist/glide.esm.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var companyReviews = /*#__PURE__*/function () {
+  function companyReviews(sliderClass) {
+    _classCallCheck(this, companyReviews);
+
+    this.sliderClass = sliderClass;
+    this.translate = 0;
+    this.elementWidth = 0;
+  }
+
+  _createClass(companyReviews, [{
+    key: "countElementWidth",
+    value: function countElementWidth() {
+      this.elementWidth = document.querySelector('.company-reviews-item:not(glide__slide--active)').offsetWidth + 100;
+    }
+  }, {
+    key: "init",
+    value: function init() {
+      if (!document.querySelector('.company-reviews-slider')) return; // let self = this;
+      // var FixBoundPeek = function (Glide, Components, Events) {
+      //     console.log(Events)
+      //     return {
+      //       /**
+      //        * Fix peek 'after' with 'bound' option.
+      //        *
+      //        * @param  {Number} translate
+      //        * @return {Number}
+      //        */
+      //       modify (translate) {
+      //         console.log(self.translate);
+      //         self.translate += self.elementWidth;  
+      //         return self.translate;
+      //       }
+      //     }
+      //   }
+
+      new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.company-reviews-slider', {
+        type: 'slider',
+        focusAt: 'center',
+        startAt: 1,
+        perView: 3,
+        gap: 100
+      }).mount(); // .mutate([FixBoundPeek])
+
+      this.countElementWidth();
+    }
+  }]);
+
+  return companyReviews;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (companyReviews);
 
 /***/ }),
 
@@ -1825,12 +1897,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_company_video_company_video__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! %modules%/company-video/company-video */ "./src/blocks/modules/company-video/company-video.js");
 /* harmony import */ var _modules_company_principles_company_principles__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! %modules%/company-principles/company-principles */ "./src/blocks/modules/company-principles/company-principles.js");
 /* harmony import */ var _modules_company_partners_company_partners__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! %modules%/company-partners/company-partners */ "./src/blocks/modules/company-partners/company-partners.js");
-/* harmony import */ var _modules_header_header__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! %modules%/header/header */ "./src/blocks/modules/header/header.js");
-/* harmony import */ var _modules_main_question_main_question__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! %modules%/main-question/main-question */ "./src/blocks/modules/main-question/main-question.js");
-/* harmony import */ var _modules_company_about_company_about__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! %modules%/company-about/company-about */ "./src/blocks/modules/company-about/company-about.js");
-/* harmony import */ var _modules_footer_footer__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! %modules%/footer/footer */ "./src/blocks/modules/footer/footer.js");
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var _modules_company_reviews_company_reviews__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! %modules%/company-reviews/company-reviews */ "./src/blocks/modules/company-reviews/company-reviews.js");
+/* harmony import */ var _modules_header_header__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! %modules%/header/header */ "./src/blocks/modules/header/header.js");
+/* harmony import */ var _modules_main_question_main_question__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! %modules%/main-question/main-question */ "./src/blocks/modules/main-question/main-question.js");
+/* harmony import */ var _modules_company_about_company_about__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! %modules%/company-about/company-about */ "./src/blocks/modules/company-about/company-about.js");
+/* harmony import */ var _modules_footer_footer__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! %modules%/footer/footer */ "./src/blocks/modules/footer/footer.js");
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -1871,16 +1945,16 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       mainCases: new _modules_main_cases_main_cases__WEBPACK_IMPORTED_MODULE_6__["default"]({
         itemsClass: '.main-cases-item'
       }),
-      mainQuestionForm: new _modules_main_question_main_question__WEBPACK_IMPORTED_MODULE_12__["default"]({
+      mainQuestionForm: new _modules_main_question_main_question__WEBPACK_IMPORTED_MODULE_13__["default"]({
         inputSelector: '.main-question-form-item [type="file"]',
         textSelector: '.main-question-form-item span'
       })
-    }, _defineProperty(_ref, "mainQuestionForm", new _modules_main_question_main_question__WEBPACK_IMPORTED_MODULE_12__["default"]({
+    }, _defineProperty(_ref, "mainQuestionForm", new _modules_main_question_main_question__WEBPACK_IMPORTED_MODULE_13__["default"]({
       inputSelector: '.main-question-form-item [type="file"]',
       textSelector: '.main-question-form-item span'
-    })), _defineProperty(_ref, "companyPrinciples", new _modules_company_principles_company_principles__WEBPACK_IMPORTED_MODULE_9__["default"]()), _defineProperty(_ref, "companyVideo", new _modules_company_video_company_video__WEBPACK_IMPORTED_MODULE_8__["default"]()), _defineProperty(_ref, "companyPartners", new _modules_company_partners_company_partners__WEBPACK_IMPORTED_MODULE_10__["default"]()), _defineProperty(_ref, "header", new _modules_header_header__WEBPACK_IMPORTED_MODULE_11__["default"]()), _defineProperty(_ref, "companyAbout", new _modules_company_about_company_about__WEBPACK_IMPORTED_MODULE_13__["default"]({
+    })), _defineProperty(_ref, "companyPrinciples", new _modules_company_principles_company_principles__WEBPACK_IMPORTED_MODULE_9__["default"]()), _defineProperty(_ref, "companyVideo", new _modules_company_video_company_video__WEBPACK_IMPORTED_MODULE_8__["default"]()), _defineProperty(_ref, "companyPartners", new _modules_company_partners_company_partners__WEBPACK_IMPORTED_MODULE_10__["default"]()), _defineProperty(_ref, "companyReviews", new _modules_company_reviews_company_reviews__WEBPACK_IMPORTED_MODULE_11__["default"]()), _defineProperty(_ref, "header", new _modules_header_header__WEBPACK_IMPORTED_MODULE_12__["default"]()), _defineProperty(_ref, "companyAbout", new _modules_company_about_company_about__WEBPACK_IMPORTED_MODULE_14__["default"]({
       selector: '.company-about'
-    })), _defineProperty(_ref, "footer", new _modules_footer_footer__WEBPACK_IMPORTED_MODULE_14__["default"]()), _defineProperty(_ref, "isMounted", false), _ref;
+    })), _defineProperty(_ref, "footer", new _modules_footer_footer__WEBPACK_IMPORTED_MODULE_15__["default"]()), _defineProperty(_ref, "isMounted", false), _ref;
   },
   mounted: function mounted() {
     var _this = this;
@@ -1907,6 +1981,10 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       _this.companyPrinciples.init();
 
       _this.companyPartners.init({
+        sliderClass: '.glide'
+      });
+
+      _this.companyReviews.init({
         sliderClass: '.glide'
       });
 
@@ -1939,7 +2017,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       event.target.appendChild(circle);
       event.target.children[1].style.left = x + 'px';
       event.target.children[1].style.top = y + 'px';
-      gsap__WEBPACK_IMPORTED_MODULE_15__["default"].to(event.target.children[1], 0.5, {
+      gsap__WEBPACK_IMPORTED_MODULE_16__["default"].to(event.target.children[1], 0.5, {
         width: 800,
         height: 800,
         x: -400,
@@ -1951,7 +2029,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       var y = event.offsetY;
       event.target.children[1].style.left = x + 'px';
       event.target.children[1].style.top = y + 'px';
-      gsap__WEBPACK_IMPORTED_MODULE_15__["default"].to(event.target.children[1], 0.3, {
+      gsap__WEBPACK_IMPORTED_MODULE_16__["default"].to(event.target.children[1], 0.3, {
         width: 0,
         height: 0,
         x: 0,

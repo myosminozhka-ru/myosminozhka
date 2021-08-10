@@ -2620,7 +2620,10 @@ body {
 .company-raiting-title,
 .company-partners-title,
 .company-partners-item-title,
-.company-partners-item-text {
+.company-partners-item-text,
+.career-first-text,
+.career-qualities-title,
+.career-qualities-item .text {
   color: #fff;
 }
 
@@ -4318,7 +4321,6 @@ a:hover {
   padding-bottom: 6.77083vw;
   overflow: hidden;
   position: relative;
-  z-index: 10;
 }
 
 .company-partners-slider {
@@ -4392,6 +4394,159 @@ a:hover {
 
 .company-partners-arrow--prev {
   transform: rotate(180deg);
+}
+
+.company-reviews {
+  padding: 0 2.60417vw;
+  overflow: hidden;
+  background: #fff;
+}
+
+.company-reviews-title {
+  white-space: nowrap;
+  text-transform: uppercase;
+  margin-bottom: 7.8125vw;
+}
+
+.company-reviews-track,
+.company-reviews-track * {
+  overflow: visible;
+}
+
+.company-reviews-item {
+  background: #FFFFFF;
+  box-shadow: 0px 0.20833vw 0.52083vw rgba(64, 64, 64, 0.34);
+  border-radius: 0.52083vw;
+  display: flex;
+  padding: 2.08333vw;
+}
+
+.company-reviews-item-left {
+  width: 9.73958vw;
+  padding-right: 2.08333vw;
+  box-sizing: border-box;
+}
+
+.company-reviews-item-right {
+  width: calc(100% - 9.73958vw);
+  padding-left: 2.08333vw;
+  box-sizing: border-box;
+  border-left: 3px solid rgba(79, 79, 79, 0.6);
+  overflow: hidden;
+  transition: width .3s ease;
+}
+
+.company-reviews-item:not(.glide__slide--active) .company-reviews-item-left {
+  padding-left: 4.375vw;
+  padding-right: 4.375vw;
+  width: 100%;
+}
+
+.company-reviews-item:not(.glide__slide--active) .company-reviews-item-right {
+  width: 0;
+  height: 0;
+}
+
+.company-reviews-arrows {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.company-reviews-arrows button {
+  position: static;
+}
+
+.company-reviews-arrow {
+  border: none;
+  background: none;
+  font-size: 0;
+  display: block;
+  cursor: pointer;
+  width: 4.63542vw;
+  height: 1.97917vw;
+  padding: 2.60417vw;
+  box-sizing: content-box;
+}
+
+.company-reviews-arrow:hover svg {
+  fill: #E54A72;
+}
+
+.company-reviews-arrow--prev {
+  transform: rotate(180deg);
+}
+
+.career-first {
+  padding-top: 5.26042vw;
+  padding-bottom: 5.67708vw;
+}
+
+.career-first-title {
+  padding: 2.60417vw;
+  text-transform: uppercase;
+  color: #929292;
+}
+
+.career-first-info {
+  display: flex;
+  align-items: flex-start;
+}
+
+.career-first-text {
+  width: 38.02083vw;
+  margin-left: 5.20833vw;
+  padding-right: 4.47917vw;
+  font-weight: 300;
+  font-size: 2.08333vw;
+  line-height: 2.60417vw;
+}
+
+.career-first-tentacle {
+  width: calc(100% - 43.22917vw);
+}
+
+.career-qualities {
+  padding: 2.60417vw;
+  overflow: hidden;
+}
+
+.career-qualities-title {
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin-bottom: 6.14583vw;
+}
+
+.career-qualities-items {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.career-qualities-item {
+  width: 13.02083vw;
+}
+
+.career-qualities-item:not(:nth-child(5n+5)) {
+  margin-right: 7.29167vw;
+}
+
+.career-qualities-item:nth-child(n+6) {
+  margin-top: 7.29167vw;
+}
+
+.career-qualities-item .icon {
+  width: 8.85417vw;
+  height: 7.29167vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5625vw;
+}
+
+.career-qualities-item .text {
+  font-weight: 300;
+  font-size: 1.5625vw;
+  line-height: 2.08333vw;
 }
 
 .footer {
