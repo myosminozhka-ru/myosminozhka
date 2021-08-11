@@ -11,6 +11,7 @@ const mainWeb = class Mainweb {
         this.trigger = trigger;
     }
     animateElement() {
+        if (!document.querySelector('.web-right-image')) return;
         gsap.utils.toArray(".web-right-image").forEach((item, i) => {
             ScrollTrigger.create({
                 trigger: item,

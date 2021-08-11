@@ -3749,7 +3749,7 @@ a:hover {
 }
 
 .main-resume {
-  padding: 0 2.60417vw 7.8125vw;
+  padding: 0 2.60417vw 5.20833vw;
   position: relative;
   z-index: 3;
 }
@@ -4547,6 +4547,133 @@ a:hover {
   font-weight: 300;
   font-size: 1.5625vw;
   line-height: 2.08333vw;
+}
+
+.career-blocks {
+  background: #fff;
+}
+
+.career-blocks-item {
+  background: #fff;
+}
+
+.career-blocks-item:not(:last-child) {
+  margin-bottom: 10.78125vw;
+}
+
+.career-blocks-item-in {
+  display: flex;
+  height: 100vh;
+}
+
+.career-blocks-item-scroller {
+  height: 100vh;
+}
+
+.career-blocks-left {
+  width: calc(100% - 42.55208vw);
+  padding: 7.8125vw 4.01042vw 2.60417vw 2.60417vw;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(100%);
+}
+
+.career-blocks-title {
+  font-weight: bold;
+  font-size: 4.6875vw;
+  line-height: 5.72917vw;
+  margin-bottom: 1.5625vw;
+  text-transform: uppercase;
+  color: #4F4F4F;
+}
+
+.career-blocks-text {
+  font-size: 1.5625vw;
+  line-height: 2.60417vw;
+  padding-right: 2.60417vw;
+  color: #4F4F4F;
+  flex: 1 1 auto;
+  overflow: auto;
+}
+
+.career-blocks-text p {
+  margin: 0;
+}
+
+.career-blocks-text p:not(:last-child) {
+  margin-bottom: 2.60417vw;
+}
+
+.career-blocks-right {
+  width: 42.55208vw;
+  height: 100%;
+}
+
+.career-blocks-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.career-blog {
+  background: #fff;
+  position: relative;
+  padding: 5.20833vw 2.60417vw 13.02083vw;
+}
+
+.career-blog-title {
+  text-transform: uppercase;
+  color: #4f4f4f;
+  margin-bottom: 2.08333vw;
+}
+
+.career-blog-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3.125vw;
+}
+
+.career-blog-items-slides {
+  align-items: center;
+}
+
+.career-blog-item-image {
+  font-size: 0;
+  margin-bottom: 1.5625vw;
+}
+
+.career-blog-item-date {
+  font-weight: 300;
+  font-size: 1.04167vw;
+  line-height: 1.04167vw;
+  margin-bottom: 0.52083vw;
+  color: #4f4f4f;
+}
+
+.career-blog-item-title {
+  font-weight: 600;
+  font-size: 2.08333vw;
+  line-height: 2.08333vw;
+  margin-bottom: 0.52083vw;
+  color: #E54A72;
+}
+
+.career-blog-item[data-ctegory="team"] .career-blog-item-title {
+  color: #E54A72;
+}
+
+.career-blog-item[data-ctegory="development"] .career-blog-item-title {
+  color: #00B4A9;
+}
+
+.career-blog-item-description {
+  font-weight: 300;
+  font-size: 1.5625vw;
+  line-height: 1.5625vw;
+  margin: 0;
+  color: #4f4f4f;
 }
 
 .footer {

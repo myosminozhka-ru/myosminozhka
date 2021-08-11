@@ -1,0 +1,50 @@
+.career-blog {
+    background: #fff;
+    position: relative;
+    padding: vw(100) vw(50) vw(250);
+    &-title {
+        text-transform: uppercase;
+        color: $bgColor;
+        margin-bottom: vw(40);
+    }
+    &-buttons {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: vw(60);
+    }
+    &-items-slides {
+        align-items: center;
+    }
+    &-item-image {
+        font-size: 0;
+        margin-bottom: vw(30);
+    }
+    &-item-date {
+        font-weight: 300;
+        font-size: vw(20);
+        line-height: vw(20);
+        margin-bottom: vw(10);
+        color: $bgColor;
+    }
+    &-item-title {
+        font-weight: 600;
+        font-size: vw(40);
+        line-height: vw(40);
+        margin-bottom: vw(10);
+        color: $mainColor;
+    }
+    &-item[data-ctegory="team"] &-item-title {
+        color: $mainColor;
+    }
+    &-item[data-ctegory="development"] &-item-title {
+        color: #00B4A9;
+    }
+    &-item-description {
+        font-weight: 300;
+        font-size: vw(30);
+        line-height: vw(30);
+        margin: 0;
+        color: $bgColor;
+    }
+}

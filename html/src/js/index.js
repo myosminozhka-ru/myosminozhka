@@ -13,6 +13,8 @@ import companyReviews from "%modules%/company-reviews/company-reviews";
 import header from "%modules%/header/header";
 import mainQuestionForm from "%modules%/main-question/main-question";
 import companyAbout from "%modules%/company-about/company-about";
+import careerBlocks from "%modules%/career-blocks/career-blocks";
+import careerBlog from "%modules%/career-blog/career-blog";
 import footer from "%modules%/footer/footer";
 
 import gsap from 'gsap';
@@ -49,11 +51,13 @@ window.app = new Vue({
         companyPrinciples: new companyPrinciples(),
         companyVideo: new companyVideo(),
         companyPartners: new companyPartners(),
+        careerBlog: new careerBlog(),
         companyReviews: new companyReviews(),
         header: new header(),
         companyAbout: new companyAbout({
             selector: '.company-about'
         }),
+        careerBlocks: new careerBlocks(),
         footer: new footer(),
         isMounted: false
     }),
@@ -77,6 +81,8 @@ window.app = new Vue({
             });
             this.mainQuestionForm.init();
             this.companyAbout.init();
+            this.careerBlocks.init();
+            this.careerBlog.init();
             window.addEventListener('resize', () => this.cursorAnimation.updateCanvasSize());
             document.addEventListener('mousemove', (event) => {
                 this.cursorAnimation.animate({
