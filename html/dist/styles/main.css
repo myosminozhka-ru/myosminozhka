@@ -2703,7 +2703,10 @@ body {
 .company-partners-item-text,
 .career-first-text,
 .career-qualities-title,
-.career-qualities-item .text {
+.career-qualities-item .text,
+.blog-items-post-date,
+.blog-items-post-title,
+.blog-items-post-description {
   color: #fff;
 }
 
@@ -3484,6 +3487,18 @@ a:hover {
 
 .news-and-trends-button__green {
   background: #31A500;
+}
+
+.news-and-trends-button__purple {
+  background: #9958A2;
+}
+
+.news-and-trends-button__blue {
+  background: #006ECC;
+}
+
+.news-and-trends-button__brown {
+  background: #A37300;
 }
 
 .news-and-trends-items,
@@ -4812,6 +4827,103 @@ a:hover {
 
 .vacancies-tabs-item.is-active .vacancies-tabs-item-title .icon {
   transform: rotate(0);
+}
+
+.blog-items {
+  padding: 0 2.60417vw 100vh;
+}
+
+.blog-items-buttons {
+  margin-bottom: 3.64583vw;
+}
+
+.blog-items-posts {
+  display: grid;
+  grid-template-columns: 21.77083vw 5.72917vw 7.29167vw 21.875vw 5.72917vw 6.82292vw 25vw;
+}
+
+.blog-items-post {
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-items-post:nth-child(6n+1),
+.blog-items-post:nth-child(6n+4) {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.blog-items-post:nth-child(6n+2) {
+  grid-column-start: 3;
+  grid-column-end: 5;
+}
+
+.blog-items-post:nth-child(6n+3) {
+  grid-column-start: 6;
+  grid-column-end: 8;
+}
+
+.blog-items-post:nth-child(6n+5) {
+  grid-column-start: 4;
+  grid-column-end: 5;
+}
+
+.blog-items-post:nth-child(6n+6) {
+  grid-column-start: 7;
+  grid-column-end: 8;
+}
+
+.blog-items-post:nth-child(1) {
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+
+.blog-items-post:nth-child(2) {
+  grid-row-start: 1;
+  grid-row-end: 6;
+}
+
+.blog-items-post:nth-child(3) {
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+
+.blog-items-post:nth-child(4) {
+  grid-row-start: 6;
+  grid-row-end: 10;
+}
+
+.blog-items-post-image {
+  flex: 1 1 auto;
+  margin-bottom: 3.125vw;
+}
+
+.blog-items-post-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.blog-items-post-date {
+  font-weight: 300;
+  font-size: 1.04167vw;
+  line-height: 1.04167vw;
+  margin-bottom: 0.52083vw;
+}
+
+.blog-items-post-title {
+  font-weight: 600;
+  font-size: 2.08333vw;
+  line-height: 2.08333vw;
+  margin-bottom: 0.52083vw;
+}
+
+.blog-items-post-description {
+  margin: 0;
+  font-weight: 300;
+  font-size: 1.5625vw;
+  line-height: 1.5625vw;
 }
 
 .footer {
