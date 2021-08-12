@@ -1,0 +1,52 @@
+.vacancies-tabs {
+    background: #fff;
+    padding: vw(300) vw(50);
+    &-items {
+        padding-right: vw(309);
+    }
+    &-item {}
+    &-item-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: vw(40) 0;
+        cursor: pointer;
+        border-bottom: vw(3) solid $mainColor;
+        .text {
+            font-size: vw(50);
+            line-height: vw(50);
+            color: #4F4F4F;
+            @extend %transition;
+        }
+        .icon {
+            width: vw(51);
+            height: vw(28);
+            transform: rotate(180deg);
+            @extend %transition;
+        }
+    }
+    &-item-body {
+        height: 0;
+        overflow: hidden;
+        p {
+            font-size: vw(30);
+            line-height: vw(50);
+            margin-bottom: vw(25);
+            margin-top: 0;
+            color: #4F4F4F;
+        }
+    }
+    &-item-body-fake {
+        height: vw(200);
+    }
+    &-item.is-active &-item-title {
+        .text {
+            font-weight: bold;
+            font-size: vw(80);
+            line-height: vw(80);
+        }
+        .icon {
+            transform: rotate(0)
+        }
+    }
+}

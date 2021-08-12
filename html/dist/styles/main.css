@@ -2275,6 +2275,86 @@ video::-webkit-media-text-track-display {
   outline: none;
 }
 
+/*!
+ * Accordion v3.1.1
+ * Simple accordion created in pure Javascript.
+ * https://github.com/michu2k/Accordion
+ *
+ * Copyright (c) Michał Strumpf
+ * Published under MIT License
+ */
+
+.ac {
+  margin-top: 10px;
+  border: 1px solid #eee;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.ac .ac-header {
+  margin: 0;
+  padding: 0;
+}
+
+.ac .ac-trigger {
+  font: bold 16px Arial,sans-serif;
+  color: #111;
+  text-align: left;
+  width: 100%;
+  padding: 10px 30px 10px 10px;
+  display: block;
+  cursor: pointer;
+  background-color: transparent;
+  -webkit-transition: color .25s ease;
+  transition: color .25s ease;
+  position: relative;
+  text-decoration: none;
+  margin: 0;
+  border: 0;
+}
+
+.ac .ac-trigger::after {
+  content: '+';
+  text-align: center;
+  width: 15px;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  position: absolute;
+  right: 10px;
+  top: 50%;
+}
+
+.ac .ac-trigger:focus {
+  color: #8a8a8a;
+}
+
+.ac .ac-panel {
+  overflow: hidden;
+  -webkit-transition-property: height,visibility;
+  transition-property: height,visibility;
+  -webkit-transition-timing-function: ease;
+  transition-timing-function: ease;
+}
+
+.ac .ac-panel .ac-text {
+  font: 15px/24px Arial,sans-serif;
+  color: #111;
+  padding: 10px;
+  margin: 0;
+}
+
+.ac.js-enabled .ac-panel {
+  visibility: hidden;
+}
+
+.ac.is-active .ac-panel {
+  visibility: visible;
+}
+
+.ac.is-active > .ac-header .ac-trigger::after {
+  content: '\2013';
+}
+
 .glide {
   position: relative;
   width: 100%;
@@ -2635,6 +2715,8 @@ a,
 .company-principles-text .counter,
 .company-principles-text .text,
 .company-partners-item,
+.vacancies-tabs-item-title .text,
+.vacancies-tabs-item-title .icon,
 .footer-social,
 .footer-social svg,
 .footer-bank .copy {
@@ -3614,7 +3696,6 @@ a:hover {
 }
 
 .main-cases-title {
-  padding-top: 20.83333vw;
   padding-left: 2.60417vw;
   font-weight: 600;
   font-size: 15.625vw;
@@ -4674,6 +4755,63 @@ a:hover {
   line-height: 1.5625vw;
   margin: 0;
   color: #4f4f4f;
+}
+
+.vacancies-tabs {
+  background: #fff;
+  padding: 15.625vw 2.60417vw;
+}
+
+.vacancies-tabs-items {
+  padding-right: 16.09375vw;
+}
+
+.vacancies-tabs-item-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.08333vw 0;
+  cursor: pointer;
+  border-bottom: 0.15625vw solid #E54A72;
+}
+
+.vacancies-tabs-item-title .text {
+  font-size: 2.60417vw;
+  line-height: 2.60417vw;
+  color: #4F4F4F;
+}
+
+.vacancies-tabs-item-title .icon {
+  width: 2.65625vw;
+  height: 1.45833vw;
+  transform: rotate(180deg);
+}
+
+.vacancies-tabs-item-body {
+  height: 0;
+  overflow: hidden;
+}
+
+.vacancies-tabs-item-body p {
+  font-size: 1.5625vw;
+  line-height: 2.60417vw;
+  margin-bottom: 1.30208vw;
+  margin-top: 0;
+  color: #4F4F4F;
+}
+
+.vacancies-tabs-item-body-fake {
+  height: 10.41667vw;
+}
+
+.vacancies-tabs-item.is-active .vacancies-tabs-item-title .text {
+  font-weight: bold;
+  font-size: 4.16667vw;
+  line-height: 4.16667vw;
+}
+
+.vacancies-tabs-item.is-active .vacancies-tabs-item-title .icon {
+  transform: rotate(0);
 }
 
 .footer {

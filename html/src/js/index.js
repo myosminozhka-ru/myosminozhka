@@ -15,6 +15,7 @@ import mainQuestionForm from "%modules%/main-question/main-question";
 import companyAbout from "%modules%/company-about/company-about";
 import careerBlocks from "%modules%/career-blocks/career-blocks";
 import careerBlog from "%modules%/career-blog/career-blog";
+import vacanciesTabs from "%modules%/vacancies-tabs/vacancies-tabs";
 import footer from "%modules%/footer/footer";
 
 import gsap from 'gsap';
@@ -57,6 +58,7 @@ window.app = new Vue({
         companyAbout: new companyAbout({
             selector: '.company-about'
         }),
+        vacanciesTabs: new vacanciesTabs(),
         careerBlocks: new careerBlocks(),
         footer: new footer(),
         isMounted: false
@@ -83,6 +85,7 @@ window.app = new Vue({
             this.companyAbout.init();
             this.careerBlocks.init();
             this.careerBlog.init();
+            this.vacanciesTabs.init();
             window.addEventListener('resize', () => this.cursorAnimation.updateCanvasSize());
             document.addEventListener('mousemove', (event) => {
                 this.cursorAnimation.animate({
