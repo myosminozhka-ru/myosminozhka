@@ -7,10 +7,10 @@
         <button class="news-and-trends-button news-and-trends-button__blue">Команда</button>
         <button class="news-and-trends-button news-and-trends-button__brown">СМИ</button>
     </div>
-    <div class="blog-items-posts">
-        @@for (var i = 1; i < 7; i++) {
+    <div class="blog-items-posts blog-items-posts-twice">
+        @@for (var i = 1; i < 13; i++) {
             <article class="blog-items-post">
-                <div class="blog-items-post-image">
+                <div class="blog-items-post-image" style='--image:url("../img/main_news_image.png");'>
                     <img src="img/main_news_image.png" width="100%" height="100%" alt="">
                 </div>
                 <time class="blog-items-post-date">3.06.2021</time>
@@ -19,4 +19,5 @@
             </article>
         }
     </div>
+    <button class="news-and-trends-button news-and-trends-button__main">Показать еще</button>
 </div>
