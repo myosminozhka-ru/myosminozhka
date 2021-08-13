@@ -1,0 +1,34 @@
+<section class="cases-items">
+    <div class="cases-items-buttons">
+        <button class="news-and-trends-button news-and-trends-button__main">Мероприятия</button>
+        <button class="news-and-trends-button news-and-trends-button__mint">Команда</button>
+        <button class="news-and-trends-button news-and-trends-button__green">Аналитика</button>
+        <button class="news-and-trends-button news-and-trends-button__purple">Мероприятия</button>
+        <button class="news-and-trends-button news-and-trends-button__blue">Команда</button>
+        <button class="news-and-trends-button news-and-trends-button__brown">СМИ</button>
+    </div>
+    <div class="cases-items-posts">
+        @@for (var i = 1; i < 13; i++) {
+            <article class="cases-items-post">
+                <div class="cases-items-post-image" style='--image:url("../img/main_news_image.png");'>
+                    <img src="img/main_news_image.png" width="100%" height="100%" alt="">
+                </div>
+                <div class="cases-items-post-text">
+                    <div class="top">
+                        <time class="cases-items-post-date">3.06.2021</time>
+                    </div>
+                    <div class="middle">
+                        <h5 class="cases-items-post-title">Название проекта</h5>
+                        <p class="cases-items-post-description">Лендинг</p>
+                    </div>
+                    <div class="bottom">
+                        <div class="cases-items-post-category">Дизайн, IOS, Android</div>
+                    </div>
+                </div>
+            </article>
+        }
+    </div>
+    <div class="cases-items-info-text">
+        С 2016 года мы запустили более 100 проектов. Только часть из них попали на эту страницу. 
+    </div>  
+</section>
