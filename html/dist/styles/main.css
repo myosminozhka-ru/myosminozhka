@@ -5172,7 +5172,7 @@ a:hover {
 .job-info {
   display: flex;
   align-items: flex-start;
-  padding: 0 2.60417vw 100vh;
+  padding: 0 2.60417vw 7.8125vw;
 }
 
 .job-info-left {
@@ -5188,6 +5188,7 @@ a:hover {
   font-weight: normal;
   font-size: 1.5625vw;
   line-height: 1.5625vw;
+  cursor: pointer;
 }
 
 .job-info-title.isActive {

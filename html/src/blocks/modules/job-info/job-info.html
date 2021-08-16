@@ -1,12 +1,9 @@
 <section class="job-info">
     <div class="job-info-left">
         <div class="job-info-titles">
-            <h5 class="job-info-title">Высоконагруженные сервисы (онлайн-школы и т.д.)</h5>
-            <h5 class="job-info-title isActive">Интернет-магазины</h5>
-            <h5 class="job-info-title">Интернет-каталоги для B2B сегмента</h5>
-            <h5 class="job-info-title">Корпоративные сайты</h5>
-            <h5 class="job-info-title">Промо сайты</h5>
-            <h5 class="job-info-title">Лендинги</h5>
+            @@for (var i = 0; i < 6; i++) {
+                <h5 class="job-info-title" data-item-id="`+ i +`">Интернет-магазины</h5>
+            }
         </div>
         <div class="job-info-button">
             <a href="#" class="button button--main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><div class="text">Перейти к кейсу</div></a>
@@ -15,7 +12,7 @@
     <div class="job-info-right job-info-right-slider">
         <div class="glide__track job-info-track" data-glide-el="track">
             <ul class="glide__slides">
-                @@for (var i = 0; i < 10; i++) {
+                @@for (var i = 0; i < 6; i++) {
                     <li class="glide__slide job-info-item">
                         <div class="job-info-logos">
                             <div class="job-info-logo">
@@ -32,6 +29,7 @@
                             </div>
                         </div>
                         <div class="job-info-item-text">
+                            ` + i + `
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla mi eu egestas porttitor. In aliquet, libero eget pharetra fringilla, justo nulla tristique sem, vitae viverra nibh dolor ut arcu. Duis lobortis est diam, sed tempus lorem pulvinar a. Morbi iaculis mauris purus, sit amet tincidunt arcu pellentesque et. Nunc accumsan bibendum accumsan. Nullam non bibendum mauris. Praesent tempus varius elit, nec malesuada libero mattis nec. Cras hendrerit nunc at nulla sagittis fermentu.
                         </div>
                     </li>

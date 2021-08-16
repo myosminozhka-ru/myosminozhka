@@ -1,7 +1,7 @@
 .job-info {
     display: flex;
     align-items: flex-start;
-    padding: 0 vw(50) 100vh;
+    padding: 0 vw(50) vw(150);
     &-left {
         width: vw(880);
     }
@@ -13,6 +13,7 @@
         font-weight: normal;
         font-size: vw(30);
         line-height: vw(30);
+        cursor: pointer;
         @extend %white;
         @extend %transition;
         &.isActive {
