@@ -2715,7 +2715,8 @@ body {
 .cases-items-post-category,
 .cases-items-info-text,
 .job-info-title,
-.job-info-item-text {
+.job-info-item-text,
+.job-team-title {
   color: #fff;
 }
 
@@ -5227,6 +5228,34 @@ a:hover {
 
 .job-info-logo:not(:last-child) {
   margin-right: 2.60417vw;
+}
+
+.job-team {
+  padding: 4.16667vw 2.60417vw 5.98958vw;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.job-team-circle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  transform: translateX(50%) translateY(50%);
+  background: #fff;
+  border-radius: 50%;
+}
+
+.job-team-title {
+  text-transform: uppercase;
+  mix-blend-mode: difference;
+  margin-bottom: 8.33333vw;
+}
+
+.job-team-map {
+  position: relative;
 }
 
 .footer {
