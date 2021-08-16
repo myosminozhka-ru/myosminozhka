@@ -5,6 +5,7 @@ import gsap from 'gsap';
 const vacanciesTabs = class vacanciesTabs {
     constructor() {}
     init() {
+      if (!document.querySelector('.vacancies-tabs-items')) return;
         new Accordion('.vacancies-tabs-items', {
             duration: 400,
             showMultiple: true,

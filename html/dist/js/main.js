@@ -1223,6 +1223,47 @@ var header = /*#__PURE__*/function () {
 
 /***/ }),
 
+/***/ "./src/blocks/modules/job-info/job-info.js":
+/*!*************************************************!*\
+  !*** ./src/blocks/modules/job-info/job-info.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @glidejs/glide */ "./node_modules/@glidejs/glide/dist/glide.esm.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var jobInfo = /*#__PURE__*/function () {
+  function jobInfo() {
+    _classCallCheck(this, jobInfo);
+  }
+
+  _createClass(jobInfo, [{
+    key: "init",
+    value: function init() {
+      if (!document.querySelector('.job-info-right-slider')) return;
+      new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.job-info-right-slider', {
+        startAt: 0,
+        perView: 1
+      }).mount();
+    }
+  }]);
+
+  return jobInfo;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (jobInfo);
+
+/***/ }),
+
 /***/ "./src/blocks/modules/main-about/main-about.js":
 /*!*****************************************************!*\
   !*** ./src/blocks/modules/main-about/main-about.js ***!
@@ -1838,46 +1879,7 @@ var mainWeb = /*#__PURE__*/function () {
               document.querySelectorAll(".web-button").forEach(function (item) {
                 item.classList.remove('isActive');
               });
-              document.querySelector(".web-button[data-item-id=\"".concat(item.trigger.dataset.itemId, "\"]")).classList.add('isActive'); // gsap.to(`.web-title:not([data-item-id="${item.trigger.dataset.itemId}"])`, 1, {
-              //     y: '-100%',
-              //     opacity: 0,
-              //     onComplete: () => {
-              //         gsap.to(`.web-title[data-item-id="${item.trigger.dataset.itemId}"]`, 1, {
-              //             y: 0,
-              //             opacity: 1,
-              //         })
-              //     }
-              // })
-              // gsap.to(`.web-subtitle:not([data-item-id="${item.trigger.dataset.itemId}"])`, 1, {
-              //     y: '-100%',
-              //     opacity: 0,
-              //     onComplete: () => {
-              //         gsap.to(`.web-subtitle[data-item-id="${item.trigger.dataset.itemId}"]`, 1, {
-              //             y: 0,
-              //             opacity: 1
-              //         })
-              //     }
-              // })
-              // gsap.to(`.web-text:not([data-item-id="${item.trigger.dataset.itemId}"])`, 1, {
-              //     y: '-100%',
-              //     opacity: 0,
-              //     onComplete: () => {
-              //         gsap.to(`.web-text[data-item-id="${item.trigger.dataset.itemId}"]`, 1, {
-              //             y: 0,
-              //             opacity: 1
-              //         })
-              //     }
-              // })
-              // gsap.to(`.web-button:not([data-item-id="${item.trigger.dataset.itemId}"])`, 1, {
-              //     y: '-100%',
-              //     opacity: 0,
-              //     onComplete: () => {
-              //         gsap.to(`.web-button[data-item-id="${item.trigger.dataset.itemId}"]`, 1, {
-              //             y: 0,
-              //             opacity: 1
-              //         })
-              //     }
-              // })
+              document.querySelector(".web-button[data-item-id=\"".concat(item.trigger.dataset.itemId, "\"]")).classList.add('isActive');
             }
           }
         });
@@ -2022,6 +2024,7 @@ var vacanciesTabs = /*#__PURE__*/function () {
   _createClass(vacanciesTabs, [{
     key: "init",
     value: function init() {
+      if (!document.querySelector('.vacancies-tabs-items')) return;
       new accordion_js__WEBPACK_IMPORTED_MODULE_0___default.a('.vacancies-tabs-items', {
         duration: 400,
         showMultiple: true,
@@ -2072,9 +2075,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_career_blocks_career_blocks__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! %modules%/career-blocks/career-blocks */ "./src/blocks/modules/career-blocks/career-blocks.js");
 /* harmony import */ var _modules_career_blog_career_blog__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! %modules%/career-blog/career-blog */ "./src/blocks/modules/career-blog/career-blog.js");
 /* harmony import */ var _modules_vacancies_tabs_vacancies_tabs__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! %modules%/vacancies-tabs/vacancies-tabs */ "./src/blocks/modules/vacancies-tabs/vacancies-tabs.js");
-/* harmony import */ var _modules_footer_footer__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! %modules%/footer/footer */ "./src/blocks/modules/footer/footer.js");
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var _modules_job_info_job_info__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! %modules%/job-info/job-info */ "./src/blocks/modules/job-info/job-info.js");
+/* harmony import */ var _modules_footer_footer__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! %modules%/footer/footer */ "./src/blocks/modules/footer/footer.js");
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -2128,7 +2133,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       textSelector: '.main-question-form-item span'
     })), _defineProperty(_ref, "companyPrinciples", new _modules_company_principles_company_principles__WEBPACK_IMPORTED_MODULE_9__["default"]()), _defineProperty(_ref, "companyVideo", new _modules_company_video_company_video__WEBPACK_IMPORTED_MODULE_8__["default"]()), _defineProperty(_ref, "companyPartners", new _modules_company_partners_company_partners__WEBPACK_IMPORTED_MODULE_10__["default"]()), _defineProperty(_ref, "careerBlog", new _modules_career_blog_career_blog__WEBPACK_IMPORTED_MODULE_16__["default"]()), _defineProperty(_ref, "companyReviews", new _modules_company_reviews_company_reviews__WEBPACK_IMPORTED_MODULE_11__["default"]()), _defineProperty(_ref, "header", new _modules_header_header__WEBPACK_IMPORTED_MODULE_12__["default"]()), _defineProperty(_ref, "companyAbout", new _modules_company_about_company_about__WEBPACK_IMPORTED_MODULE_14__["default"]({
       selector: '.company-about'
-    })), _defineProperty(_ref, "vacanciesTabs", new _modules_vacancies_tabs_vacancies_tabs__WEBPACK_IMPORTED_MODULE_17__["default"]()), _defineProperty(_ref, "careerBlocks", new _modules_career_blocks_career_blocks__WEBPACK_IMPORTED_MODULE_15__["default"]()), _defineProperty(_ref, "footer", new _modules_footer_footer__WEBPACK_IMPORTED_MODULE_18__["default"]()), _defineProperty(_ref, "isMounted", false), _ref;
+    })), _defineProperty(_ref, "vacanciesTabs", new _modules_vacancies_tabs_vacancies_tabs__WEBPACK_IMPORTED_MODULE_17__["default"]()), _defineProperty(_ref, "careerBlocks", new _modules_career_blocks_career_blocks__WEBPACK_IMPORTED_MODULE_15__["default"]()), _defineProperty(_ref, "jobInfo", new _modules_job_info_job_info__WEBPACK_IMPORTED_MODULE_18__["default"]()), _defineProperty(_ref, "footer", new _modules_footer_footer__WEBPACK_IMPORTED_MODULE_19__["default"]()), _defineProperty(_ref, "isMounted", false), _ref;
   },
   mounted: function mounted() {
     var _this = this;
@@ -2172,6 +2177,8 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 
       _this.vacanciesTabs.init();
 
+      _this.jobInfo.init();
+
       window.addEventListener('resize', function () {
         return _this.cursorAnimation.updateCanvasSize();
       });
@@ -2197,7 +2204,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       event.target.appendChild(circle);
       event.target.children[1].style.left = x + 'px';
       event.target.children[1].style.top = y + 'px';
-      gsap__WEBPACK_IMPORTED_MODULE_19__["default"].to(event.target.children[1], 0.5, {
+      gsap__WEBPACK_IMPORTED_MODULE_20__["default"].to(event.target.children[1], 0.5, {
         width: 800,
         height: 800,
         x: -400,
@@ -2209,7 +2216,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       var y = event.offsetY;
       event.target.children[1].style.left = x + 'px';
       event.target.children[1].style.top = y + 'px';
-      gsap__WEBPACK_IMPORTED_MODULE_19__["default"].to(event.target.children[1], 0.3, {
+      gsap__WEBPACK_IMPORTED_MODULE_20__["default"].to(event.target.children[1], 0.3, {
         width: 0,
         height: 0,
         x: 0,

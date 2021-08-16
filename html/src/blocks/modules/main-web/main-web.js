@@ -38,49 +38,6 @@ const mainWeb = class Mainweb {
                             item.classList.remove('isActive');
                         })
                         document.querySelector(`.web-button[data-item-id="${item.trigger.dataset.itemId}"]`).classList.add('isActive');
-                        // gsap.to(`.web-title:not([data-item-id="${item.trigger.dataset.itemId}"])`, 1, {
-                        //     y: '-100%',
-                        //     opacity: 0,
-                        //     onComplete: () => {
-                        //         gsap.to(`.web-title[data-item-id="${item.trigger.dataset.itemId}"]`, 1, {
-                        //             y: 0,
-                        //             opacity: 1,
-                        //         })
-                        //     }
-                        // })
-                        
-                        // gsap.to(`.web-subtitle:not([data-item-id="${item.trigger.dataset.itemId}"])`, 1, {
-                        //     y: '-100%',
-                        //     opacity: 0,
-                        //     onComplete: () => {
-                        //         gsap.to(`.web-subtitle[data-item-id="${item.trigger.dataset.itemId}"]`, 1, {
-                        //             y: 0,
-                        //             opacity: 1
-                        //         })
-                        //     }
-                        // })
-                        
-                        // gsap.to(`.web-text:not([data-item-id="${item.trigger.dataset.itemId}"])`, 1, {
-                        //     y: '-100%',
-                        //     opacity: 0,
-                        //     onComplete: () => {
-                        //         gsap.to(`.web-text[data-item-id="${item.trigger.dataset.itemId}"]`, 1, {
-                        //             y: 0,
-                        //             opacity: 1
-                        //         })
-                        //     }
-                        // })
-                        
-                        // gsap.to(`.web-button:not([data-item-id="${item.trigger.dataset.itemId}"])`, 1, {
-                        //     y: '-100%',
-                        //     opacity: 0,
-                        //     onComplete: () => {
-                        //         gsap.to(`.web-button[data-item-id="${item.trigger.dataset.itemId}"]`, 1, {
-                        //             y: 0,
-                        //             opacity: 1
-                        //         })
-                        //     }
-                        // })
                     }
                 }
             });
