@@ -18,6 +18,7 @@ import careerBlog from "%modules%/career-blog/career-blog";
 import vacanciesTabs from "%modules%/vacancies-tabs/vacancies-tabs";
 import jobInfo from "%modules%/job-info/job-info";
 import jobTeam from "%modules%/job-team/job-team";
+import jobStages from "%modules%/job-stages/job-stages";
 import footer from "%modules%/footer/footer";
 
 import gsap from 'gsap';
@@ -64,6 +65,7 @@ window.app = new Vue({
         careerBlocks: new careerBlocks(),
         jobInfo: new jobInfo(),
         jobTeam: new jobTeam(),
+        jobStages: new jobStages(),
         footer: new footer(),
         isMounted: false
     }),
@@ -92,6 +94,7 @@ window.app = new Vue({
             this.vacanciesTabs.init();
             this.jobInfo.init();
             this.jobTeam.init();
+            this.jobStages.init();
             window.addEventListener('resize', () => this.cursorAnimation.updateCanvasSize());
             document.addEventListener('mousemove', (event) => {
                 this.cursorAnimation.animate({

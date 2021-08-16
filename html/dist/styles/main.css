@@ -2526,6 +2526,11 @@ h1 {
   line-height: 13.02083vw;
 }
 
+h2 {
+  font-size: 7.8125vw;
+  line-height: 13.02083vw;
+}
+
 h3 {
   font-size: 6.25vw;
   line-height: 5.20833vw;
@@ -2547,6 +2552,10 @@ body {
   background: #4f4f4f;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .first-frame {
@@ -2716,7 +2725,9 @@ body {
 .cases-items-info-text,
 .job-info-title,
 .job-info-item-text,
-.job-team-title {
+.job-team-title,
+.job-stages-support-title,
+.job-stages-support-text {
   color: #fff;
 }
 
@@ -5233,7 +5244,7 @@ a:hover {
 .job-team {
   padding: 4.16667vw 2.60417vw 5.98958vw;
   position: relative;
-  z-index: 10;
+  z-index: 9;
   overflow: hidden;
 }
 
@@ -5256,6 +5267,257 @@ a:hover {
 
 .job-team-map {
   position: relative;
+}
+
+.job-stages {
+  background: #fff;
+  padding: 0 0 0 2.60417vw;
+  overflow: hidden;
+}
+
+.job-stages-title {
+  text-transform: uppercase;
+  margin-bottom: 1.04167vw;
+}
+
+.job-stages-triggers {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5.20833vw;
+}
+
+.job-stages-trigger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 13.54167vw;
+  height: 13.54167vw;
+  border-radius: 50%;
+  border: 0.10417vw solid #4f4f4f;
+  margin: -0.26042vw;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.job-stages-trigger .button-circle {
+  background: #4f4f4f;
+  z-index: 1;
+}
+
+.job-stages-trigger .in {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  mix-blend-mode: difference;
+}
+
+.job-stages-trigger .number {
+  font-weight: bold;
+  font-size: 5.20833vw;
+  line-height: 5.20833vw;
+  margin-bottom: 1.5625vw;
+  color: #fff;
+}
+
+.job-stages-trigger .text {
+  font-weight: 500;
+  font-size: 1.04167vw;
+  line-height: 1.04167vw;
+  color: #fff;
+}
+
+.job-stages-slides {
+  padding-bottom: 2.91667vw;
+}
+
+.job-stages-arrows {
+  display: inline-flex;
+  align-items: center;
+  border-bottom: 0.36458vw solid #4f4f4f;
+  margin-bottom: 3.125vw;
+}
+
+.job-stages-arrows button {
+  position: static;
+}
+
+.job-stages-arrow {
+  border: none;
+  background: none;
+  font-size: 0;
+  display: block;
+  cursor: pointer;
+  width: 4.63542vw;
+  height: 1.97917vw;
+  padding: 0.88542vw;
+  box-sizing: content-box;
+}
+
+.job-stages-arrow:hover svg {
+  fill: #E54A72;
+}
+
+.job-stages-arrow--prev {
+  transform: rotate(180deg);
+}
+
+.job-stages-item-text {
+  font-weight: normal;
+  font-size: 1.5625vw;
+  line-height: 2.60417vw;
+  color: #4f4f4f;
+}
+
+.job-stages-support {
+  padding: 12.55208vw 2.60417vw;
+  margin: 0 -2.60417vw;
+  background: #4f4f4f;
+  display: flex;
+}
+
+.job-stages-support-left {
+  width: calc(100% - 50.88542vw);
+}
+
+.job-stages-support-left .job-stages-trigger {
+  border-color: #fff;
+  margin: -5.20833vw 0 3.64583vw;
+}
+
+.job-stages-support-right {
+  width: 50.88542vw;
+  pointer-events: none;
+}
+
+.job-stages-support-title {
+  font-weight: bold;
+  font-size: 6.25vw;
+  line-height: 6.25vw;
+  text-transform: uppercase;
+  margin-bottom: 2.60417vw;
+}
+
+.job-stages-support-text {
+  font-weight: normal;
+  font-size: 1.5625vw;
+  line-height: 2.60417vw;
+  padding-right: 3.90625vw;
+  white-space: initial;
+}
+
+.job-stages-support-arrows {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 2.60417vw;
+}
+
+.job-stages-support-arrows button {
+  position: static;
+}
+
+.job-stages-support-arrow {
+  border: none;
+  background: none;
+  font-size: 0;
+  display: block;
+  cursor: pointer;
+  width: 4.63542vw;
+  height: 1.97917vw;
+  padding: 0.88542vw;
+  box-sizing: content-box;
+}
+
+.job-stages-support-arrow svg {
+  fill: #fff;
+}
+
+.job-stages-support-arrow:hover svg {
+  fill: #E54A72;
+}
+
+.job-stages-support-arrow--prev {
+  transform: rotate(180deg);
+}
+
+.job-stages-support-right-item {
+  font-size: 0;
+}
+
+.job-stages-management {
+  padding: 8.85417vw 0 0;
+}
+
+.job-stages-management-top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 7.65625vw;
+}
+
+.job-stages-management-top .job-stages-trigger {
+  margin: 0;
+}
+
+.job-stages-management-top-right {
+  width: calc( 100% - 8.80208vw - 13.54167vw);
+  padding-right: 3.64583vw;
+  margin-left: 8.80208vw;
+}
+
+.job-stages-management-top-right .title {
+  font-weight: bold;
+  font-size: 6.25vw;
+  line-height: 5.20833vw;
+  margin-bottom: 5.20833vw;
+  text-transform: uppercase;
+  text-align: center;
+  color: #4f4f4f;
+}
+
+.job-stages-management-top-right .text {
+  font-weight: 500;
+  font-size: 1.5625vw;
+  line-height: 2.60417vw;
+  color: #4f4f4f;
+}
+
+.job-stages-management-bottom {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+}
+
+.job-stages-management-bottom-left {
+  width: calc(100% - 50.88542vw);
+}
+
+.job-stages-management-bottom-left p {
+  padding-right: 3.125vw;
+  margin: 0;
+  font-size: 1.5625vw;
+  line-height: 2.60417vw;
+  color: #4f4f4f;
+}
+
+.job-stages-management-bottom-left p:not(:last-child) {
+  margin-bottom: 3.64583vw;
+}
+
+.job-stages-management-bottom-right {
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  bottom: 0;
+  left: calc(100% - 50.88542vw);
+  right: 0;
+}
+
+.job-stages-management-bottom-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
 }
 
 .footer {
