@@ -1305,6 +1305,8 @@ var jobInfo = /*#__PURE__*/function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @glidejs/glide */ "./node_modules/@glidejs/glide/dist/glide.esm.js");
+/* harmony import */ var accordion_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! accordion-js */ "./node_modules/accordion-js/dist/accordion.min.js");
+/* harmony import */ var accordion_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(accordion_js__WEBPACK_IMPORTED_MODULE_1__);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -1313,11 +1315,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
 
+
 var jobStages = /*#__PURE__*/function () {
   function jobStages(sliderClass) {
     _classCallCheck(this, jobStages);
 
     this.sliderClass = sliderClass;
+    this.accorderon;
+    this.currentTab = 0;
 
     if (document.querySelector('.job-stages-support')) {
       this.supportSlider = new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.job-stages-support-slides', {
@@ -1338,11 +1343,78 @@ var jobStages = /*#__PURE__*/function () {
     value: function init() {
       var _this = this;
 
-      if (document.querySelector('.job-stages-slides')) {
-        new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.job-stages-slides', {
+      if (document.querySelector('.job-stages-tabs')) {
+        this.accorderon = new accordion_js__WEBPACK_IMPORTED_MODULE_1___default.a('.job-stages-tabs', {
+          duration: 400,
+          showMultiple: true,
+          elementClass: 'job-stages-slides',
+          triggerClass: 'job-stages-trig',
+          panelClass: 'job-stages-slide',
+          openOnInit: [0],
+          beforeOpen: function beforeOpen(currentElement) {
+            console.log(currentElement); //   gsap.to(currentElement.querySelector('.vacancies-tabs-item-body'), 1, {
+            //     heigth: currentElement.querySelector('.vacancies-tabs-item-body').offsetHeight
+            //   })
+          }
+        });
+        document.querySelectorAll('.job-stages-trigger[data-tab-id]').forEach(function (item) {
+          item.addEventListener('click', function (e) {
+            e.preventDefault();
+            if (_this.currentTab == +item.dataset.tabId) return;
+            document.querySelectorAll('.job-stages-trigger[data-tab-id]').forEach(function (item) {
+              item.classList.remove('isActive');
+            });
+            item.classList.add('isActive');
+
+            _this.accorderon.close(_this.currentTab);
+
+            _this.accorderon.open(+item.dataset.tabId);
+
+            _this.currentTab = +item.dataset.tabId;
+          });
+        });
+      }
+
+      ;
+
+      if (document.querySelector('.job-stages-slides--analitics')) {
+        new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.job-stages-slides--analitics', {
           startAt: 0,
           perView: 2,
           gap: 120,
+          type: 'carousel'
+        }).mount();
+      }
+
+      ;
+
+      if (document.querySelector('.job-stages-slides--projecting')) {
+        new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.job-stages-slides--projecting', {
+          startAt: 0,
+          perView: 2,
+          gap: 120,
+          type: 'carousel'
+        }).mount();
+      }
+
+      ;
+
+      if (document.querySelector('.job-stages-slides--design')) {
+        new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.job-stages-slides--design', {
+          startAt: 0,
+          perView: 1,
+          gap: 0,
+          type: 'carousel'
+        }).mount();
+      }
+
+      ;
+
+      if (document.querySelector('.job-stages-slides--development')) {
+        new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.job-stages-slides--development', {
+          startAt: 0,
+          perView: 1,
+          gap: 0,
           type: 'carousel'
         }).mount();
       }
@@ -1358,6 +1430,19 @@ var jobStages = /*#__PURE__*/function () {
       }
 
       ;
+
+      if (document.querySelector('.job-stages-title-triggers')) {
+        document.querySelectorAll('.job-stages-title-triggers').forEach(function (wrap) {
+          wrap.querySelectorAll('.job-stages-title-trigger').forEach(function (item) {
+            item.addEventListener('click', function () {
+              wrap.querySelectorAll('.job-stages-title-trigger').forEach(function (trigger) {
+                trigger.classList.remove('isActive');
+              });
+              item.classList.add('isActive');
+            });
+          });
+        });
+      }
     }
   }]);
 
