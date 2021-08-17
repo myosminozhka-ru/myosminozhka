@@ -22,22 +22,30 @@ const mainWeb = class Mainweb {
                 onUpdate: (item) => {
                     if (item.progress > 0) {
                         console.log(item.trigger.dataset.itemId)
-                        document.querySelectorAll(`.web-subtitle`).forEach(item => {
-                            item.classList.remove('isActive');
-                        })
-                        document.querySelector(`.web-subtitle[data-item-id="${item.trigger.dataset.itemId}"]`).classList.add('isActive');
-                        document.querySelectorAll(`.web-title`).forEach(item => {
-                            item.classList.remove('isActive');
-                        })
-                        document.querySelector(`.web-title[data-item-id="${item.trigger.dataset.itemId}"]`).classList.add('isActive');
-                        document.querySelectorAll(`.web-text`).forEach(item => {
-                            item.classList.remove('isActive');
-                        })
-                        document.querySelector(`.web-text[data-item-id="${item.trigger.dataset.itemId}"]`).classList.add('isActive');
-                        document.querySelectorAll(`.web-button`).forEach(item => {
-                            item.classList.remove('isActive');
-                        })
-                        document.querySelector(`.web-button[data-item-id="${item.trigger.dataset.itemId}"]`).classList.add('isActive');
+                        if (document.querySelector(`.web-subtitles`)) {
+                            document.querySelectorAll(`.web-subtitle`).forEach(item => {
+                                item.classList.remove('isActive');
+                            })
+                            document.querySelector(`.web-subtitle[data-item-id="${item.trigger.dataset.itemId}"]`).classList.add('isActive');
+                        }
+                        if (document.querySelector(`.web-titles`)) {
+                            document.querySelectorAll(`.web-title`).forEach(item => {
+                                item.classList.remove('isActive');
+                            })
+                            document.querySelector(`.web-title[data-item-id="${item.trigger.dataset.itemId}"]`).classList.add('isActive');
+                        }
+                        if (document.querySelector(`.web-texts`)) {
+                            document.querySelectorAll(`.web-text`).forEach(item => {
+                                item.classList.remove('isActive');
+                            })
+                            document.querySelector(`.web-text[data-item-id="${item.trigger.dataset.itemId}"]`).classList.add('isActive');
+                        }
+                        if (document.querySelector(`.web-buttons`)) {
+                            document.querySelectorAll(`.web-button`).forEach(item => {
+                                item.classList.remove('isActive');
+                            })
+                            document.querySelector(`.web-button[data-item-id="${item.trigger.dataset.itemId}"]`).classList.add('isActive');
+                        }
                     }
                 }
             });

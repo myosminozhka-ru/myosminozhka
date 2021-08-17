@@ -2701,8 +2701,6 @@ html {
 .main-cases-item .title,
 .main-cases-item .text,
 .main-resume-title,
-.company-ceo-title,
-.company-ceo-text,
 .company-principles-title,
 .company-principles-cell-text,
 .company-principles-text,
@@ -4006,43 +4004,17 @@ a:hover {
 }
 
 .company-ceo {
-  display: flex;
-  align-items: flex-start;
+  padding-bottom: 0;
 }
 
-.company-ceo-left {
-  padding: 7.8125vw 0 2.60417vw 2.60417vw;
-  width: calc(100% - 44.01042vw);
-  box-sizing: border-box;
-  position: relative;
-  z-index: 2;
-}
-
-.company-ceo-right {
-  width: 50.625vw;
-  margin-left: -6.61458vw;
-  font-size: 0;
-}
-
-.company-ceo-right img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 50%;
+.company-ceo-titles {
+  height: 11.45833vw;
 }
 
 .company-ceo-title {
-  font-weight: bold;
+  padding-right: 23.4375vw;
   font-size: 4.6875vw;
   line-height: 5.72917vw;
-  margin-bottom: 1.5625vw;
-  text-transform: uppercase;
-}
-
-.company-ceo-text {
-  font-size: 1.5625vw;
-  line-height: 2.60417vw;
-  padding-right: 10.78125vw;
 }
 
 .company-principles {
@@ -4255,6 +4227,7 @@ a:hover {
   font-size: 0;
   position: relative;
   z-index: 2;
+  transform: scale(0);
 }
 
 .company-team-item:nth-child(1) {
@@ -4353,6 +4326,11 @@ a:hover {
   flex-wrap: nowrap;
   padding: 0 3.54167vw;
   margin-bottom: 6.25vw;
+  overflow: auto;
+}
+
+.company-raiting-items::-webkit-scrollbar {
+  height: 0;
 }
 
 .company-raiting-item {
@@ -4374,10 +4352,16 @@ a:hover {
   justify-content: center;
 }
 
+.company-raiting-item.isActive {
+  background: #4f4f4f;
+}
+
+.company-raiting-item.isActive,
 .company-raiting-item:hover {
   z-index: 4;
 }
 
+.company-raiting-item.isActive .image,
 .company-raiting-item:hover .image {
   filter: brightness(100);
 }
@@ -4433,12 +4417,12 @@ a:hover {
 .company-raiting-texts-right-item {
   font-size: 1.5625vw;
   line-height: 2.60417vw;
+  white-space: initial;
   color: #4F4F4F;
 }
 
 .company-partners {
-  padding-top: 25.3125vw;
-  padding-bottom: 6.77083vw;
+  padding: 6.77083vw 0;
   overflow: hidden;
   position: relative;
 }
@@ -4541,6 +4525,14 @@ a:hover {
   padding: 2.08333vw;
 }
 
+.company-reviews-item:not(.glide__slide--active) {
+  width: 12.86458vw !important;
+}
+
+.company-reviews-item.glide__slide--active {
+  width: calc(100vw - 5.20833vw - 200px - 12.86458vw * 2) !important;
+}
+
 .company-reviews-item-left {
   width: 9.73958vw;
   padding-right: 2.08333vw;
@@ -4551,20 +4543,54 @@ a:hover {
   width: calc(100% - 9.73958vw);
   padding-left: 2.08333vw;
   box-sizing: border-box;
-  border-left: 3px solid rgba(79, 79, 79, 0.6);
+  border-left: 0.15625vw solid rgba(79, 79, 79, 0.6);
   overflow: hidden;
   transition: width .3s ease;
 }
 
+.company-reviews-item-name {
+  font-weight: 500;
+  font-size: 2.60417vw;
+  line-height: 3.125vw;
+  margin-bottom: 0.78125vw;
+  color: #4f4f4f;
+  transition: .3s all .3s ease;
+}
+
+.company-reviews-item-position {
+  font-weight: normal;
+  font-size: 1.30208vw;
+  line-height: 1.30208vw;
+  margin-bottom: 1.5625vw;
+  transition: .3s all .3s ease;
+}
+
+.company-reviews-item-text {
+  font-weight: normal;
+  font-size: 1.04167vw;
+  line-height: 1.5625vw;
+  margin-bottom: 2.08333vw;
+  transition: .3s all .3s ease;
+}
+
+.company-reviews-item-button {
+  max-width: 21.51042vw;
+}
+
 .company-reviews-item:not(.glide__slide--active) .company-reviews-item-left {
-  padding-left: 4.375vw;
-  padding-right: 4.375vw;
+  padding-left: 0;
+  padding-right: 0;
   width: 100%;
 }
 
 .company-reviews-item:not(.glide__slide--active) .company-reviews-item-right {
   width: 0;
   height: 0;
+  padding: 0;
+}
+
+.company-reviews-item:not(.glide__slide--active) .company-reviews-item-right * {
+  font-size: 0 !important;
 }
 
 .company-reviews-arrows {
@@ -4757,6 +4783,8 @@ a:hover {
 
 .career-blog-items-slides {
   align-items: center;
+  position: relative;
+  z-index: 9;
 }
 
 .career-blog-item-image {

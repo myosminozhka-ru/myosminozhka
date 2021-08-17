@@ -127,13 +127,71 @@
             <div class="company-video">
     <video id="player" class="video-js vjs-theme-city"></video>
 </div>
-            <section class="company-ceo">
-    <div class="company-ceo-left">
-        <div class="company-ceo-title">Вступительное слово директора</div>
-        <div class="company-ceo-text">Тут будет взрывная речь, а пока ее нет вставлю вот это: - это прогрессивное дизайнерское агентство, обладающее техническими и творческими навыками, чтобы воплотить ваш бренд стал лучше. Наш подход к дизайну и разработке создает впечатляющие, привлекательные бренды, которые возвращают вам творческий потенциал.</div>
+            
+<section class="web company-ceo">
+    <!-- <div class="web-tentacle">
+        <img src="img/svg/tentacle.svg" width="100%" alt="">
+    </div> -->
+    <div class="web-data">
+        <div class="web-data-in">
+            <!-- <div class="web-subtitles">
+                <div class="web-subtitle" data-item-id="0">
+                    Аутстаф IT персонала
+                </div>
+                <div class="web-subtitle" data-item-id="1">
+                    Аутстаф IT персонала
+                </div>
+                <div class="web-subtitle" data-item-id="2">
+                    Web разработка 
+                </div>
+            </div> -->
+            <div class="web-titles company-ceo-titles">
+                <div class="web-title company-ceo-title" data-item-id="0">
+                    Вступительное слово директора
+                </div>
+                <div class="web-title company-ceo-title" data-item-id="1">
+                    Аутстаф IT персонала
+                </div>
+                <div class="web-title company-ceo-title" data-item-id="2">
+                    Аутстаф IT персонала
+                </div>
+            </div>
+            <div class="web-texts">
+                <div class="web-text" data-item-id="0">
+                    Это прогрессивное дизайнерское агентство, обладающее техническими и творческими навыками, чтобы воплотить ваш бренд стал лучше. Наш подход к дизайну и разработке создает впечатляющие, привлекательные бренды, которые возвращают вам творческий потенциал.
+                </div>
+                <div class="web-text" data-item-id="1">
+                    Это прогрессивное дизайнерское агентство, обладающее техническими и творческими навыками, чтобы воплотить ваш бренд стал лучше. Наш подход к дизайну и разработке создает впечатляющие, привлекательные бренды, которые возвращают вам творческий потенциал.
+                    Это прогрессивное дизайнерское агентство, обладающее техническими и творческими навыками, чтобы воплотить ваш бренд стал лучше. Наш подход к дизайну и разработке создает впечатляющие, привлекательные бренды, которые возвращают вам творческий потенциал.
+                </div>
+                <div class="web-text" data-item-id="2">
+                    Это прогрессивное дизайнерское агентство, обладающее техническими и творческими навыками, чтобы воплотить ваш бренд стал лучше. Наш подход к дизайну и разработке создает впечатляющие, привлекательные бренды, которые возвращают вам творческий потенциал.
+                    Это прогрессивное дизайнерское агентство, обладающее техническими и творческими навыками, чтобы воплотить ваш бренд стал лучше. Наш подход к дизайну и разработке создает впечатляющие, привлекательные бренды, которые возвращают вам творческий потенциал.
+                </div>
+            </div>
+            <!-- <div class="web-buttons">
+                <a href="#" class="web-button button button--main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave" data-item-id="0">
+                    <div class="text">Подробнее</div>
+                </a>
+                <a href="#" class="web-button button button--main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave" data-item-id="1">
+                    <div class="text">Подробнее</div>
+                </a>
+                <a href="#" class="web-button button button--main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave" data-item-id="2">
+                    <div class="text">Подробнее</div>
+                </a>
+            </div> -->
+        </div>
     </div>
-    <div class="company-ceo-right">
-        <img src="img/ceo.jpg" alt="">
+    <div class="web-images">
+        <div class="web-right-image" data-item-id="0">
+            <img src="img/ceo.jpg" alt="">
+        </div>
+        <div class="web-right-image" data-item-id="1">
+            <img src="img/ceo.jpg" alt="">
+        </div>
+        <div class="web-right-image" data-item-id="2">
+            <img src="img/ceo.jpg" alt="">
+        </div>
     </div>
 </section>
             <section class="company-principles">
@@ -345,85 +403,212 @@
     <h1 class="company-raiting-title">Мы в рейтингах</h1>
     <div class="company-raiting-items">
         
-            <div class="company-raiting-item" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
+            <div class="company-raiting-item" data-item-id="0" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
                 <div class="image">
                     <img src="img/tagline.png" width="100%" height="100%" alt="">
                 </div>
             </div>
         
-            <div class="company-raiting-item" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
+            <div class="company-raiting-item" data-item-id="1" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
                 <div class="image">
                     <img src="img/tagline.png" width="100%" height="100%" alt="">
                 </div>
             </div>
         
-            <div class="company-raiting-item" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
+            <div class="company-raiting-item" data-item-id="2" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
                 <div class="image">
                     <img src="img/tagline.png" width="100%" height="100%" alt="">
                 </div>
             </div>
         
-            <div class="company-raiting-item" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
+            <div class="company-raiting-item" data-item-id="3" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
                 <div class="image">
                     <img src="img/tagline.png" width="100%" height="100%" alt="">
                 </div>
             </div>
         
-            <div class="company-raiting-item" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
+            <div class="company-raiting-item" data-item-id="4" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
                 <div class="image">
                     <img src="img/tagline.png" width="100%" height="100%" alt="">
                 </div>
             </div>
         
-            <div class="company-raiting-item" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
+            <div class="company-raiting-item" data-item-id="5" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
                 <div class="image">
                     <img src="img/tagline.png" width="100%" height="100%" alt="">
                 </div>
             </div>
         
-            <div class="company-raiting-item" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
+            <div class="company-raiting-item" data-item-id="6" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
                 <div class="image">
                     <img src="img/tagline.png" width="100%" height="100%" alt="">
                 </div>
             </div>
         
-            <div class="company-raiting-item" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
+            <div class="company-raiting-item" data-item-id="7" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
                 <div class="image">
                     <img src="img/tagline.png" width="100%" height="100%" alt="">
                 </div>
             </div>
         
-            <div class="company-raiting-item" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
+            <div class="company-raiting-item" data-item-id="8" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
                 <div class="image">
                     <img src="img/tagline.png" width="100%" height="100%" alt="">
                 </div>
             </div>
         
-            <div class="company-raiting-item" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
+            <div class="company-raiting-item" data-item-id="9" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
                 <div class="image">
                     <img src="img/tagline.png" width="100%" height="100%" alt="">
                 </div>
             </div>
         
     </div>
-    <div class="company-raiting-texts">
-        <div class="company-raiting-texts-left">
-            <div class="company-raiting-texts-left-item">
-                <div class="place">02 место</div>
-                <div class="year">2021 год</div>
-            </div>
-            <div class="company-raiting-texts-left-item">
-                <div class="place">02 место</div>
-                <div class="year">2021 год</div>
-            </div>
-        </div>
-        <div class="company-raiting-texts-right">
-            <div class="company-raiting-texts-right-item">
-                У нас стратегическое видение. Это значит, что каждым действием стоит понимние, что, зачем и как надо делать, чтобы добиться результата. Красивая верстка сайта не поможет вам больше зарабатывать....
-            </div>
-            <div class="company-raiting-texts-right-item">
-                У нас стратегическое видение. Это значит, что каждым действием стоит понимние, что, зачем и как надо делать, чтобы добиться результата. Красивая верстка сайта не поможет вам больше зарабатывать....
-            </div>
+    <div class="company-raiting-slider">
+        <div class="glide__track company-raiting-track" data-glide-el="track">
+            <ul class="glide__slides">
+                
+                    <li class="company-raiting-texts">
+                        <div class="company-raiting-texts-left">
+                            <div class="company-raiting-texts-left-item">
+                                <div class="place">02 место</div>
+                                <div class="year">2021 год</div>
+                            </div>
+                        </div>
+                        <div class="company-raiting-texts-right">
+                            <div class="company-raiting-texts-right-item">
+                                У нас стратегическое видение. Это значит, что каждым действием стоит понимние, что, зачем и как надо делать, чтобы добиться результата. Красивая верстка сайта не поможет вам больше зарабатывать....
+                            </div>
+                        </div>
+                    </li>
+                
+                    <li class="company-raiting-texts">
+                        <div class="company-raiting-texts-left">
+                            <div class="company-raiting-texts-left-item">
+                                <div class="place">02 место</div>
+                                <div class="year">2021 год</div>
+                            </div>
+                        </div>
+                        <div class="company-raiting-texts-right">
+                            <div class="company-raiting-texts-right-item">
+                                У нас стратегическое видение. Это значит, что каждым действием стоит понимние, что, зачем и как надо делать, чтобы добиться результата. Красивая верстка сайта не поможет вам больше зарабатывать....
+                            </div>
+                        </div>
+                    </li>
+                
+                    <li class="company-raiting-texts">
+                        <div class="company-raiting-texts-left">
+                            <div class="company-raiting-texts-left-item">
+                                <div class="place">02 место</div>
+                                <div class="year">2021 год</div>
+                            </div>
+                        </div>
+                        <div class="company-raiting-texts-right">
+                            <div class="company-raiting-texts-right-item">
+                                У нас стратегическое видение. Это значит, что каждым действием стоит понимние, что, зачем и как надо делать, чтобы добиться результата. Красивая верстка сайта не поможет вам больше зарабатывать....
+                            </div>
+                        </div>
+                    </li>
+                
+                    <li class="company-raiting-texts">
+                        <div class="company-raiting-texts-left">
+                            <div class="company-raiting-texts-left-item">
+                                <div class="place">02 место</div>
+                                <div class="year">2021 год</div>
+                            </div>
+                        </div>
+                        <div class="company-raiting-texts-right">
+                            <div class="company-raiting-texts-right-item">
+                                У нас стратегическое видение. Это значит, что каждым действием стоит понимние, что, зачем и как надо делать, чтобы добиться результата. Красивая верстка сайта не поможет вам больше зарабатывать....
+                            </div>
+                        </div>
+                    </li>
+                
+                    <li class="company-raiting-texts">
+                        <div class="company-raiting-texts-left">
+                            <div class="company-raiting-texts-left-item">
+                                <div class="place">02 место</div>
+                                <div class="year">2021 год</div>
+                            </div>
+                        </div>
+                        <div class="company-raiting-texts-right">
+                            <div class="company-raiting-texts-right-item">
+                                У нас стратегическое видение. Это значит, что каждым действием стоит понимние, что, зачем и как надо делать, чтобы добиться результата. Красивая верстка сайта не поможет вам больше зарабатывать....
+                            </div>
+                        </div>
+                    </li>
+                
+                    <li class="company-raiting-texts">
+                        <div class="company-raiting-texts-left">
+                            <div class="company-raiting-texts-left-item">
+                                <div class="place">02 место</div>
+                                <div class="year">2021 год</div>
+                            </div>
+                        </div>
+                        <div class="company-raiting-texts-right">
+                            <div class="company-raiting-texts-right-item">
+                                У нас стратегическое видение. Это значит, что каждым действием стоит понимние, что, зачем и как надо делать, чтобы добиться результата. Красивая верстка сайта не поможет вам больше зарабатывать....
+                            </div>
+                        </div>
+                    </li>
+                
+                    <li class="company-raiting-texts">
+                        <div class="company-raiting-texts-left">
+                            <div class="company-raiting-texts-left-item">
+                                <div class="place">02 место</div>
+                                <div class="year">2021 год</div>
+                            </div>
+                        </div>
+                        <div class="company-raiting-texts-right">
+                            <div class="company-raiting-texts-right-item">
+                                У нас стратегическое видение. Это значит, что каждым действием стоит понимние, что, зачем и как надо делать, чтобы добиться результата. Красивая верстка сайта не поможет вам больше зарабатывать....
+                            </div>
+                        </div>
+                    </li>
+                
+                    <li class="company-raiting-texts">
+                        <div class="company-raiting-texts-left">
+                            <div class="company-raiting-texts-left-item">
+                                <div class="place">02 место</div>
+                                <div class="year">2021 год</div>
+                            </div>
+                        </div>
+                        <div class="company-raiting-texts-right">
+                            <div class="company-raiting-texts-right-item">
+                                У нас стратегическое видение. Это значит, что каждым действием стоит понимние, что, зачем и как надо делать, чтобы добиться результата. Красивая верстка сайта не поможет вам больше зарабатывать....
+                            </div>
+                        </div>
+                    </li>
+                
+                    <li class="company-raiting-texts">
+                        <div class="company-raiting-texts-left">
+                            <div class="company-raiting-texts-left-item">
+                                <div class="place">02 место</div>
+                                <div class="year">2021 год</div>
+                            </div>
+                        </div>
+                        <div class="company-raiting-texts-right">
+                            <div class="company-raiting-texts-right-item">
+                                У нас стратегическое видение. Это значит, что каждым действием стоит понимние, что, зачем и как надо делать, чтобы добиться результата. Красивая верстка сайта не поможет вам больше зарабатывать....
+                            </div>
+                        </div>
+                    </li>
+                
+                    <li class="company-raiting-texts">
+                        <div class="company-raiting-texts-left">
+                            <div class="company-raiting-texts-left-item">
+                                <div class="place">02 место</div>
+                                <div class="year">2021 год</div>
+                            </div>
+                        </div>
+                        <div class="company-raiting-texts-right">
+                            <div class="company-raiting-texts-right-item">
+                                У нас стратегическое видение. Это значит, что каждым действием стоит понимние, что, зачем и как надо делать, чтобы добиться результата. Красивая верстка сайта не поможет вам больше зарабатывать....
+                            </div>
+                        </div>
+                    </li>
+                
+            </ul>
         </div>
     </div>
 </div>
@@ -695,8 +880,81 @@
           </div> 
     </div>
 </div>
-
-            <div style="height: 100vh;"></div>
+            <section class="career-blog">
+    <h1 class="career-blog-title">Блог</h1>
+    
+    <div class="glide career-blog-items">
+        <div class="career-blog-buttons">
+            <div class="career-blog-buttons-left">
+                <button class="news-and-trends-button news-and-trends-button__main">Команда</button>
+                <button class="news-and-trends-button news-and-trends-button__mint">Разработка</button>
+            </div>
+            <div data-glide-el="controls" class="glide__arrows company-reviews-arrows">
+                <button data-glide-dir="<" class="company-reviews-arrow company-reviews-arrow--prev">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 89 38" fill="#4F4F4F"><path d="M87.7678 20.7678C88.7441 19.7914 88.7441 18.2085 87.7678 17.2322L71.8579 1.32232C70.8816 0.346014 69.2986 0.346014 68.3223 1.32232C67.346 2.29864 67.346 3.88155 68.3223 4.85786L82.4645 19L68.3223 33.1421C67.346 34.1184 67.346 35.7014 68.3223 36.6777C69.2986 37.654 70.8816 37.654 71.8579 36.6777L87.7678 20.7678ZM2.18557e-07 21.5L86 21.5L86 16.5L-2.18557e-07 16.5L2.18557e-07 21.5Z"></path></svg>
+                </button>
+                <button data-glide-dir=">" class="company-reviews-arrow company-reviews-arrow company-reviews---next">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 89 38" fill="#4F4F4F"><path d="M87.7678 20.7678C88.7441 19.7914 88.7441 18.2085 87.7678 17.2322L71.8579 1.32232C70.8816 0.346014 69.2986 0.346014 68.3223 1.32232C67.346 2.29864 67.346 3.88155 68.3223 4.85786L82.4645 19L68.3223 33.1421C67.346 34.1184 67.346 35.7014 68.3223 36.6777C69.2986 37.654 70.8816 37.654 71.8579 36.6777L87.7678 20.7678ZM2.18557e-07 21.5L86 21.5L86 16.5L-2.18557e-07 16.5L2.18557e-07 21.5Z"></path></svg>
+                </button>
+            </div>
+        </div>
+        <div class="glide__track career-blog-items-track" data-glide-el="track">
+            <div class="glide__slides career-blog-items-slides">
+                
+                    <article class="glide__slide career-blog-item" data-ctegory="team">
+                        <div class="career-blog-item-image">
+                            <img src="https://picsum.photos/460/350" width="100%" height="100%" alt="">
+                        </div>
+                        <time pubdate datetime="21.04.2021" class="career-blog-item-date">21.04.2021</time>
+                        <h5 class="career-blog-item-title">Название проекта</h5>
+                        <p class="career-blog-item-description">Краткое описание</p>
+                    </article>
+                    <article class="glide__slide career-blog-item" data-ctegory="development">
+                        <div class="career-blog-item-image">
+                            <img src="https://picsum.photos/550/650" width="100%" height="100%" alt="">
+                        </div>
+                        <time pubdate datetime="21.04.2021" class="career-blog-item-date">21.04.2021</time>
+                        <h5 class="career-blog-item-title">Название проекта</h5>
+                        <p class="career-blog-item-description">Краткое описание</p>
+                    </article>
+                    <article class="glide__slide career-blog-item" data-ctegory="team">
+                        <div class="career-blog-item-image">
+                            <img src="https://picsum.photos/600/370" width="100%" height="100%" alt="">
+                        </div>
+                        <time pubdate datetime="21.04.2021" class="career-blog-item-date">21.04.2021</time>
+                        <h5 class="career-blog-item-title">Название проекта</h5>
+                        <p class="career-blog-item-description">Краткое описание</p>
+                    </article>
+                
+                    <article class="glide__slide career-blog-item" data-ctegory="team">
+                        <div class="career-blog-item-image">
+                            <img src="https://picsum.photos/460/350" width="100%" height="100%" alt="">
+                        </div>
+                        <time pubdate datetime="21.04.2021" class="career-blog-item-date">21.04.2021</time>
+                        <h5 class="career-blog-item-title">Название проекта</h5>
+                        <p class="career-blog-item-description">Краткое описание</p>
+                    </article>
+                    <article class="glide__slide career-blog-item" data-ctegory="development">
+                        <div class="career-blog-item-image">
+                            <img src="https://picsum.photos/550/650" width="100%" height="100%" alt="">
+                        </div>
+                        <time pubdate datetime="21.04.2021" class="career-blog-item-date">21.04.2021</time>
+                        <h5 class="career-blog-item-title">Название проекта</h5>
+                        <p class="career-blog-item-description">Краткое описание</p>
+                    </article>
+                    <article class="glide__slide career-blog-item" data-ctegory="team">
+                        <div class="career-blog-item-image">
+                            <img src="https://picsum.photos/600/370" width="100%" height="100%" alt="">
+                        </div>
+                        <time pubdate datetime="21.04.2021" class="career-blog-item-date">21.04.2021</time>
+                        <h5 class="career-blog-item-title">Название проекта</h5>
+                        <p class="career-blog-item-description">Краткое описание</p>
+                    </article>
+                
+            </div>
+        </div>
+    </div>
+</section>
             <footer class="footer">
     <div class="footer-tentacle">
         <img src="img/svg/footer_tentacle.svg" width="100%" alt="">

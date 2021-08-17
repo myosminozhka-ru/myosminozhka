@@ -36,6 +36,7 @@
         font-size: 0;
         position: relative;
         z-index: 2;
+        transform: scale(0);
         &:nth-child(1) {
             grid-row-start: 1;
             grid-row-end: 5;

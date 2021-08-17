@@ -12,7 +12,7 @@ const jobTeam = class jobTeam {
                 start: 'center center',
                 end: 'bottom+=1000 center',
                 scrub: 1,
-                markers: true
+                // markers: true
             },
             width: () => {
                 return 6200 * 100 / window.innerWidth + 'vw'

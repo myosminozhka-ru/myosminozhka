@@ -15,6 +15,10 @@
         flex-wrap: nowrap;
         padding: 0 vw(68);
         margin-bottom: vw(120);
+        overflow: auto;
+        &::-webkit-scrollbar {
+            height: 0;
+        }
     }
     &-item {
         min-width: vw(384);
@@ -33,6 +37,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        &.isActive {
+            background: $bgColor;
+        }
+        &.isActive,
         &:hover {
             z-index: 4;
             .image {
@@ -85,6 +93,7 @@
     &-texts-right-item {
         font-size: vw(30);
         line-height: vw(50);
+        white-space: initial;
         color: #4F4F4F;
     }
 }

@@ -23,7 +23,6 @@ const jobInfo = class jobInfo {
         this.changeSlide()
     }
     init() {
-        console.log(this.slider);
         if (this.slider) {
             this.slider.mount();
         }

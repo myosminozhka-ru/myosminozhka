@@ -10,9 +10,11 @@ import companyVideo from "%modules%/company-video/company-video";
 import companyPrinciples from "%modules%/company-principles/company-principles";
 import companyPartners from "%modules%/company-partners/company-partners";
 import companyReviews from "%modules%/company-reviews/company-reviews";
+import companyTeam from "%modules%/company-team/company-team";
 import header from "%modules%/header/header";
 import mainQuestionForm from "%modules%/main-question/main-question";
 import companyAbout from "%modules%/company-about/company-about";
+import companyRaiting from "%modules%/company-raiting/company-raiting";
 import careerBlocks from "%modules%/career-blocks/career-blocks";
 import careerBlog from "%modules%/career-blog/career-blog";
 import vacanciesTabs from "%modules%/vacancies-tabs/vacancies-tabs";
@@ -55,12 +57,14 @@ window.app = new Vue({
         companyPrinciples: new companyPrinciples(),
         companyVideo: new companyVideo(),
         companyPartners: new companyPartners(),
+        companyTeam: new companyTeam(),
         careerBlog: new careerBlog(),
         companyReviews: new companyReviews(),
         header: new header(),
         companyAbout: new companyAbout({
             selector: '.company-about'
         }),
+        companyRaiting: new companyRaiting(),
         vacanciesTabs: new vacanciesTabs(),
         careerBlocks: new careerBlocks(),
         jobInfo: new jobInfo(),
@@ -87,6 +91,8 @@ window.app = new Vue({
             this.companyReviews.init({
                 sliderClass: '.glide'
             });
+            this.companyRaiting.init();
+            this.companyTeam.init();
             this.mainQuestionForm.init();
             this.companyAbout.init();
             this.careerBlocks.init();
