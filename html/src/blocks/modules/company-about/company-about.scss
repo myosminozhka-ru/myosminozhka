@@ -1,25 +1,50 @@
 .company-about {
-    padding: vw(191) vw(50) vw(50);
-    clip-path: circle(1920px at #{vw(300)} #{vw(300)});
+    
+    &:not(.mobile) {
+        padding: vw(191) vw(50) vw(50);
+        clip-path: circle(1920px at #{vw(300)} #{vw(300)});
+    }
+    &.mobile {
+        padding: 110px 20px 184px;
+        clip-path: none !important;
+        position: relative;
+    }
     &-title {
         font-weight: 600;
-        font-size: vw(280);
-        line-height: vw(280);
         text-transform: uppercase;
         color: #929292;
-
+    }
+    &-tentacle {
+        position: absolute;
+        top: 180px;
+        right: -20px;
+        width: 312px;
+        transform: rotate(180deg);
+    }
+    &:not(.mobile) &-title  {
+        font-size: vw(280);
+        line-height: vw(280);
         grid-row-start: 1;
         grid-row-end: 6;
         grid-column-start: 1;
         grid-column-end: 11;
     }
+    &.mobile &-title  {
+        font-size: 50px;
+        line-height: 50px;
+    }
     &-in {
         pointer-events: none;
+    }
+    &:not(.mobile) &-in {
         display: grid;
         grid-template-columns: vw(42) vw(241) vw(58) vw(191) vw(82) vw(50) vw(143) vw(101) vw(40) vw(128) vw(44) vw(110) vw(58) vw(53) vw(48) vw(69) vw(82) vw(48) vw(40) vw(98) auto;
         grid-template-rows: vw(156) vw(52) vw(32) vw(20) vw(52) vw(28) vw(96) vw(52) vw(54) vw(29) vw(17) vw(80) vw(60) vw(56) vw(20) vw(14);
     }
-    &-image {
+    &.mobile  &-in {
+        display: block;
+    }
+    &:not(.mobile) &-image {
         img {
             width: 100%;
             height: 100%;
@@ -104,5 +129,8 @@
             grid-column-start: 20;
             grid-column-end: 22;
         }
+    }
+    &.mobile &-image {
+        display: none;
     }
 }

@@ -2300,12 +2300,15 @@ var mainWeb = /*#__PURE__*/function () {
 
     this.element = element;
     this.trigger = trigger;
-    this.slider = new _glidejs_glide__WEBPACK_IMPORTED_MODULE_2__["default"]('.web-slider', {
-      type: 'carousel',
-      startAt: 1,
-      perView: 1,
-      gap: 0
-    });
+
+    if (document.querySelector('.web-slider')) {
+      this.slider = new _glidejs_glide__WEBPACK_IMPORTED_MODULE_2__["default"]('.web-slider', {
+        type: 'carousel',
+        startAt: 1,
+        perView: 1,
+        gap: 0
+      });
+    }
   }
 
   _createClass(Mainweb, [{

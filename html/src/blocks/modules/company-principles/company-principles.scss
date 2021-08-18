@@ -1,130 +1,167 @@
 .company-principles {
+  overflow: hidden;
+  background: #fff;
+  &:not(.mobile) {
     padding: vw(118) 0 vw(192);
-    overflow: hidden;
-    background: #fff;
-    &-title {
-        text-transform: uppercase;
-        mix-blend-mode: difference;
-        white-space: nowrap;
-        margin-bottom: vw(96);
-        @extend %white;
-    }
-    &-in {
-        display: flex;
-        align-items: flex-start;
-        padding-left: vw(50);
-    }
-    &-left {
-        width: vw(1173);
-        padding-top: vw(155);
-    }
-    &-right {
-        position: relative;
-        width: calc(100% - #{vw(1173)});
-        display: flex;
-        justify-content: flex-end;
-        padding-right: vw(130);
-    }
-    &-scene {
-      width: vw(481);
-      height: vw(740);
-      perspective: 1000px;
-    }
-    &-carousel {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      transform: translateZ(-288px);
-      transform-style: preserve-3d;
-      transition: transform 1s;
-    }
-    
-    &-cell {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      left: 0;
-      top: 0;
-      padding: vw(10);
-      box-sizing: border-box;
-      transition: transform 1s, opacity 1s;
-      cursor: pointer;
-      backface-visibility: hidden;
-    }
-    &-cell-image {
-      border-radius: vw(5);
-      overflow: hidden;
-      pointer-events: none;
-      width: 100%;
-      height: 100%;
-      border: vw(2) solid $mainColor;
-      font-size: 0;
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-    &-cell-text {
-      pointer-events: none;
-      position: absolute;
-      left: vw(45);
-      top: vw(45);
-      font-weight: bold;
-      font-size: vw(80);
-      line-height: vw(80);
+  }
+  &.mobile {
+    padding: 60px 20px 102px;
+  }
+  &-title {
       text-transform: uppercase;
-  
-      @extend %white;
-    }
-    &-cell:nth-child(1) { transform: rotateY(  0deg) translateZ(288px); }
-    &-cell:nth-child(2) { transform: rotateY( 40deg) translateZ(288px); }
-    &-cell:nth-child(3) { transform: rotateY( 80deg) translateZ(288px); }
-    &-cell:nth-child(4) { transform: rotateY(120deg) translateZ(288px); }
-    &-cell:nth-child(5) { transform: rotateY(160deg) translateZ(288px); }
-    &-cell:nth-child(6) { transform: rotateY(200deg) translateZ(288px); }
-    &-cell:nth-child(7) { transform: rotateY(240deg) translateZ(288px); }
-    &-cell:nth-child(8) { transform: rotateY(280deg) translateZ(288px); }
-    &-cell:nth-child(9) { transform: rotateY(320deg) translateZ(288px); }
-
-    &-texts {
-      list-style: none;
-    }
-    &-text {
-      display: flex;
-      align-items: center;
       mix-blend-mode: difference;
-      font-style: normal;
-      font-weight: normal;
-      cursor: pointer;
       @extend %white;
-      &:not(:last-child) {
-        margin-bottom: vw(40);
-      }
+  }
+  &:not(.mobile) &-title {
+    white-space: nowrap;
+    margin-bottom: vw(96);
+  }
+  &.mobile &-title {
+    margin-bottom: 52px;
+    font-size: 45px;
+    line-height: 55px;
+  }
+  &:not(.mobile) &-in {
+    display: flex;
+    align-items: flex-start;
+    padding-left: vw(50);
+  }
+  &:not(.mobile) &-left {
+      width: vw(1173);
+      padding-top: vw(155);
+  }
+  &:not(.mobile) &-right {
+      position: relative;
+      width: calc(100% - #{vw(1173)});
+      display: flex;
+      justify-content: flex-end;
+      padding-right: vw(130);
+  }
+  &.mobile &-right {
+    display: none;
+  }
+  &-scene {
+    width: vw(481);
+    height: vw(740);
+    perspective: 1000px;
+  }
+  &-carousel {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform: translateZ(-288px);
+    transform-style: preserve-3d;
+    transition: transform 1s;
+  }
+  
+  &-cell {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    padding: vw(10);
+    box-sizing: border-box;
+    transition: transform 1s, opacity 1s;
+    cursor: pointer;
+    backface-visibility: hidden;
+  }
+  &-cell-image {
+    border-radius: vw(5);
+    overflow: hidden;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    border: vw(2) solid $mainColor;
+    font-size: 0;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &-cell-text {
+    pointer-events: none;
+    position: absolute;
+    left: vw(45);
+    top: vw(45);
+    font-weight: bold;
+    font-size: vw(80);
+    line-height: vw(80);
+    text-transform: uppercase;
+
+    @extend %white;
+  }
+  &-cell:nth-child(1) { transform: rotateY(  0deg) translateZ(288px); }
+  &-cell:nth-child(2) { transform: rotateY( 40deg) translateZ(288px); }
+  &-cell:nth-child(3) { transform: rotateY( 80deg) translateZ(288px); }
+  &-cell:nth-child(4) { transform: rotateY(120deg) translateZ(288px); }
+  &-cell:nth-child(5) { transform: rotateY(160deg) translateZ(288px); }
+  &-cell:nth-child(6) { transform: rotateY(200deg) translateZ(288px); }
+  &-cell:nth-child(7) { transform: rotateY(240deg) translateZ(288px); }
+  &-cell:nth-child(8) { transform: rotateY(280deg) translateZ(288px); }
+  &-cell:nth-child(9) { transform: rotateY(320deg) translateZ(288px); }
+
+  &-texts {
+    list-style: none;
+  }
+  &-text {
+    display: flex;
+    align-items: center;
+    mix-blend-mode: difference;
+    font-style: normal;
+    font-weight: normal;
+    cursor: pointer;
+    @extend %white;
+    
+    .counter {
+      pointer-events: none;
+      @extend %transition;
+    }
+    .text {
+      pointer-events: none;
+      @extend %transition;
+    }
+  }
+  &:not(.mobile) &-text {
+    &:not(:last-child) {
+      margin-bottom: vw(40);
+    }
+    .counter {
+      font-size: vw(30);
+      line-height: vw(30);
+      margin-right: vw(20);
+    }
+    .text {
+      font-size: vw(30);
+      line-height: vw(30);
+    }
+    &.isActive {
       .counter {
-        font-size: vw(30);
-        line-height: vw(30);
-        margin-right: vw(20);
-        pointer-events: none;
-        @extend %transition;
+        font-weight: bold;
+        margin-right: vw(30);
       }
       .text {
-        font-size: vw(30);
-        line-height: vw(30);
-        pointer-events: none;
-        @extend %transition;
-      }
-      &.isActive {
-        .counter {
-          font-weight: bold;
-          margin-right: vw(30);
-        }
-        .text {
-          text-transform: uppercase;
-          font-weight: bold;
-          font-size: vw(50);
-          line-height: vw(50);
-        }
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: vw(50);
+        line-height: vw(50);
       }
     }
+  }
+  &.mobile &-text {
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+    .counter {
+      font-size: 20px;
+      line-height: 20px;
+      margin-right: 20px;
+      width: 27px;
+    }
+    .text {
+      font-size: 16px;
+      line-height: 16px;
+    }
+  }
 }

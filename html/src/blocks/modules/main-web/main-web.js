@@ -10,12 +10,14 @@ const mainWeb = class Mainweb {
     constructor({element, trigger}) {
         this.element = element;
         this.trigger = trigger;
-        this.slider = new Glide('.web-slider', {
-            type: 'carousel',
-            startAt: 1,
-            perView: 1,
-            gap: 0,
-        });
+        if (document.querySelector('.web-slider')) {
+            this.slider = new Glide('.web-slider', {
+                type: 'carousel',
+                startAt: 1,
+                perView: 1,
+                gap: 0,
+            });
+        }
     }
     mobileSlider() {
         if (!this.slider) return;
