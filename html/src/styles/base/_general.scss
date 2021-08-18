@@ -10,8 +10,14 @@ ul {
   font-weight: bold;
 }
 h1 {
-  font-size: vw(250);
-  line-height: vw(250);
+  @media all and (min-width: 1281px) {
+    font-size: vw(250);
+    line-height: vw(250);
+  }
+  @media all and (max-width: 1280px) {
+    font-size: 80px;
+    line-height: 80px;
+  }
 }
 h2 {
   font-size: vw(150);
@@ -22,8 +28,14 @@ h3 {
   line-height: vw(100);
 }
 h4 {
-  font-size: vw(70);
-  line-height: vw(70);
+  @media all and (min-width: 1281px) {
+    font-size: vw(70);
+    line-height: vw(70);
+  }
+  @media all and (max-width: 1280px) {
+    font-size: 40px;
+    line-height: 50px;
+  }
 }
 
 .container {
@@ -48,7 +60,7 @@ html {
 .first-frame {
   position: relative;
   z-index: 1;
-  &:after {
+  &:not(.mobile):after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -61,19 +73,27 @@ html {
 }
 
 .button {
-  border-radius: vw(10);
   border: none;
   position: relative;
-  background: transparent;
-  padding: vw(30) vw(60);
+  background: transparent;  
   font-weight: 500;
-  font-size: vw(25);
-  line-height: vw(25);
   text-decoration: none;
   text-align: center;
   overflow: hidden;
   cursor: pointer;
   @extend %block;
+  @media all and (min-width: 1281px) {
+    border-radius: vw(10);
+    padding: vw(30) vw(60);
+    font-size: vw(25);
+    line-height: vw(25);
+  }
+  @media all and (max-width: 1280px) {
+    padding: 25px 35px;
+    font-size: 25px;
+    line-height: 25px;
+    border-radius: 10px;
+  }
   .text {
     position: relative;
     z-index: 1;

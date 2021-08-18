@@ -1,21 +1,37 @@
 .call-to-action {
-  padding: 0 vw(286) vw(129);
   display: flex;
   align-items: flex-start;
   position: relative;
   z-index: 2;
+  &:not(.mobile) {
+    padding: 0 vw(286) vw(129);
+  }
+  &.mobile {
+    padding: 0 0 89px 0;
+  }
   &-left {
     width: vw(814);
   }
-  &-right {
+  &:not(.mobile) &-right {
     width: calc(100% - #{vw(814)});
+  }
+  &.mobile &-right {
+    width: 100%;
+    text-align: center;
   }
   &-text {
     font-weight: 300;
+    @extend %white;
+  }
+  &:not(.mobile) &-text {
     font-size: vw(40);
     line-height: vw(50);
     margin-bottom: vw(50);
-    @extend %white;
+  }
+  &.mobile &-text {
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 40px;
   }
   &-button {
     width: vw(327);

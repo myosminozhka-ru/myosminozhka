@@ -1,10 +1,29 @@
 import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Glide from '@glidejs/glide'
+
+gsap.registerPlugin(ScrollTrigger);
 
 const mainCases = class MainCases {
     constructor({itemsClass}) {
         this.itemsClass = itemsClass;
+        this.slider = new Glide('.main-cases-slider', {
+            type: 'carousel',
+            startAt: 1,
+            perView: 1,
+            gap: 20,
+        });
+    }
+    initMobileSlider() {
+        if (!document.querySelector('.main-cases-slider')) return;
+        if (window.innerWidth < 1280) {
+            this.slider.mount();
+        } else {
+            this.slider.destroy();
+        }
     }
     init() {
+        this.initMobileSlider();
         gsap.to('.main-cases-bg', {
             scrollTrigger: {
                 trigger: '.news-and-trends-trigger',
@@ -15,19 +34,22 @@ const mainCases = class MainCases {
             },
             top: -100,
         });
-        gsap.utils.toArray(".main-cases-item").forEach((item, i) => {
-            gsap.to(item, {
-                scrollTrigger: {
-                    trigger: item,
-                    start: 'top+=400 top+=400',
-                    end: 'bottom+=400 top+=400',
-                    scrub: 3,
-                    // markers: true
-                },
-                x: '-110vw',
-            })
-        })
-        
+        ScrollTrigger.matchMedia({
+            "(min-width: 1281px)": () => {
+                gsap.utils.toArray(".main-cases-item").forEach((item, i) => {
+                    gsap.to(item, {
+                        scrollTrigger: {
+                            trigger: item,
+                            start: 'top+=400 top+=400',
+                            end: 'bottom+=400 top+=400',
+                            scrub: 3,
+                            // markers: true
+                        },
+                        x: '-110vw',
+                    })
+                })
+            }
+        });
     }
 }
 

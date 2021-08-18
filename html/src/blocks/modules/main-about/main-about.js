@@ -15,10 +15,10 @@ const mainAbout = class MainAbout {
                 // markers: true
             },
             width: () => {
-                return 4200 * 100 / window.innerWidth + 'vw'
+                return 7200 * 100 / window.innerWidth + 'vw'
             },
             height: () => {
-                return 2900 * 100 / window.innerWidth + 'vw'
+                return 4900 * 100 / window.innerWidth + 'vw'
             },
         })
         gsap.to('.main-about-title', {

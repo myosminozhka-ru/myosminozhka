@@ -1,7 +1,15 @@
 .news-and-trends {
-    padding: vw(100) 0 0 vw(50);
-    position: relative;
+    
+    &:not(.mobile) {
+        padding: vw(100) 0 0 vw(50);
+        position: relative;
         z-index: 17;
+    }
+    &.mobile {
+        padding: 30px 0 100px;
+        position: relative;
+        z-index: 9;
+    }
     &-spacer {
         padding-top: vw(200);
         background: #fff;
@@ -14,13 +22,33 @@
     }
     &-title {
         color: #4F4F4F;
+    }
+    &:not(.mobile) &-title  {
         margin-bottom: vw(60);
         font-size: vw(90);
+    }
+    &.mobile &-title  {
+        margin-bottom: 50px;
+        font-size: 40px;
+        line-height: 40px;
+        text-transform: uppercase;
+        padding: 0 20px;
     }
     &-buttons {
         margin-bottom: vw(70);
         display: flex;
         align-items: center;
+    }
+    &:not(.mobile) &-buttons {
+        margin-bottom: vw(70);
+    }
+    &.mobile &-buttons {
+        margin-bottom: 50px;
+        padding: 0 20px;
+        overflow: auto;
+        &::-webkit-scrollbar {
+            height: 0;
+        }
     }
     &-button {
         padding: 0;
@@ -29,14 +57,7 @@
         border: none;
         cursor: pointer;
         font-weight: 500;
-        font-size: vw(20);
-        line-height: vw(20);
-        padding: vw(20) vw(30);
-        border-radius: vw(10);
         @extend %white;
-        &:not(:last-child) {
-            margin-right: vw(30);
-        }
         &__main {
             background: $mainColor;
         }
@@ -56,21 +77,50 @@
             background: #A37300;
         }
     }
-    &-items,
-    &-right-items {
+    &:not(.mobile) &-button {
+        font-weight: 500;
+        font-size: vw(20);
+        line-height: vw(20);
+        padding: vw(20) vw(30);
+        border-radius: vw(10);
+        &:not(:last-child) {
+            margin-right: vw(30);
+        }
+    }
+    &.mobile &-button {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 14px;
+        padding: 14px 30px;
+        border-radius: 10px;
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+    &:not(.mobile) &-items,
+    &:not(.mobile) &-right-items {
         display: flex;
         align-items: flex-start;
     }
-    &-left {
+    &.mobile &-items,
+    &.mobile &-right-items{}
+    &:not(.mobile) &-left {
         width: vw(747);
         margin-right: vw(112);
     }
-    &-right {
+    &.mobile &-left {
+        width: 100%;
+        margin-bottom: 33px;
+        box-sizing: border-box;
+    }
+    &:not(.mobile) &-right {
         width: calc(100% - #{vw(747)} - #{vw(112)});
         overflow: hidden;
     }
+    &.mobile &-right {
+        padding: 0 20px;
+    }
     &-big {
-        height: vw(717);
         position: relative;
         overflow: hidden;
         .image {
@@ -89,8 +139,6 @@
             left: 0;
             right: 0;
             bottom: 0;
-            opacity: 0;
-            @extend %transition;
         }
         &-trend .gradient {
             background: linear-gradient(to top, #FF4978 0%, rgba(255, 73, 120, 0) 140%);
@@ -105,13 +153,22 @@
             position: absolute;
             left: 0;
             right: 0;
+            @extend %white;
+        }
+    }
+    &:not(.mobile) &-big {
+        height: vw(717);
+        .gradient {
+            opacity: 0;
+            @extend %transition;
+        }
+        .text {
             bottom: -100%;
             padding: 0 vw(250) vw(100) vw(50);
             font-weight: 600;
             font-size: vw(30);
             line-height: vw(35);
             @extend %transition;
-            @extend %white;
         }
         &:hover {
             .text {
@@ -122,16 +179,44 @@
             }
         }
     }
+    &.mobile &-big {
+        // height: vw(717);
+        padding: 0 20px;
+        .gradient {
+            left: 20px;
+            right: 20px;
+        }
+        .image {
+            padding-top: 100%;
+            position: relative;
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+        .text {
+            bottom: 0;
+            left: 20px;
+            right: 20px;
+            padding: 20px;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 30px;
+        }
+    }
+    
     &-items {
-        display: flex;
-        align-items: flex-start;
         flex-wrap: nowrap;
         overflow: hidden;
         cursor: pointer;
     }
+    &.mobile &-right &-right-items {
+        padding-left: 35px;
+        margin-bottom: 50px;
+    }
     &-item {
-        min-width: vw(347);
-        max-width: vw(347);
+        
         font-size: 0;
         &:not(:last-child) {
             margin-right: vw(112);
@@ -151,6 +236,26 @@
         &-green {
             border: vw(5) solid #31A500;
         }
+    }
+    &:not(.mobile) &-item {
+        min-width: vw(347);
+        max-width: vw(347);
+    }
+    &.mobile &-item {
+        max-width: 100%;
+        border-width: 5px !important;
+        box-sizing: border-box;
+        &:not(:last-child) {
+            margin-bottom: 34px;
+        }
+        &:nth-child(2n+2) {
+            margin-left: auto;
+        }
+    }
+    &-more {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 80px;
     }
     &-left-in {
         display: flex;
@@ -184,34 +289,68 @@
         }
     }
     &-form {
+        .title {
+            color: #4F4F4F;
+        }
+        .input {
+            input {
+                width: 100%;
+                box-sizing: border-box;
+                outline: none;
+                &, &::placeholder {
+                    font-weight: 300;
+                    color: $mainColor;
+                }
+            }
+        }
+    }
+    &:not(.mobile) &-form {
         width: vw(593);
         .title {
             margin-bottom: vw(30);
             font-size: vw(30);
             line-height: vw(30);
-            color: #4F4F4F;
         }
         .input {
             margin-bottom: vw(19);
             input {
-                width: 100%;
                 height: vw(85);
                 padding: vw(30);
                 border: vw(2) solid #FF4978;
-                box-sizing: border-box;
                 border-radius: vw(10);
-                outline: none;
                 &, &::placeholder {
-                    font-weight: 300;
                     font-size: vw(25);
                     line-height: vw(25);
-                    color: $mainColor;
                 }
             }
         }
         .button {
             width: vw(293);
             margin-left: auto;
+        }
+    }
+    &.mobile &-form {
+        .title {
+            margin-bottom: 30px;
+            font-size: 20px;
+            line-height: 30px;
+        }
+        .input {
+            margin-bottom: 50px;
+            input {
+                height: 56px;
+                padding: 20px;
+                border: 2px solid #FF4978;
+                border-radius: 10px;
+                &, &::placeholder {
+                    font-size: 16px;
+                    line-height: 16px;
+                }
+            }
+        }
+        .button {
+            width: 243px;
+            margin: 0 auto;
         }
     }
     &-screen {

@@ -1,21 +1,36 @@
 .main-carousel {
   position: relative;
-  z-index: 0;
-  padding: vw(50);
   box-sizing: border-box;
   background: #fff;
+  &:not(.mobile) {
+    z-index: 0;
+    padding: vw(50);
+  }
+  &.mobile {
+    padding: 50px 20px;
+  }
   &__title {
     font-family: "Montserrat";
     font-weight: 600;
+    color: #4f4f4f;
+  }
+  &:not(.mobile) &__title {
     font-size: vw(200);
     line-height: vw(200);
     margin-bottom: vw(400);
-    color: #4f4f4f;
   }
-  &__body {
+  &.mobile &__title {
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 9;
+  }
+  &:not(.mobile) &__body {
     display: flex;
     align-items: center;
   }
+  &.mobile &__body {}
   // .carousel-options {
   //   position: absolute;
   //   right: 0;
@@ -23,13 +38,20 @@
   //   z-index: 3;
   //   display: none;
   // }
-&-scene {
-  position: absolute;
-  bottom: 0;
-  width: vw(530);
-  height: vw(650);
-  perspective: 1000px;
-}
+  &-scene {
+    perspective: 1000px;
+  }
+  &:not(.mobile) &-scene  {
+    position: absolute;
+    bottom: 0;
+    width: vw(530);
+    height: vw(650);
+  }
+  &.mobile &-scene  {
+    width: 70%;
+    height: 356px;
+    margin-bottom: 54px;
+  }
   &-carousel {
     width: 100%;
     height: 100%;
@@ -45,19 +67,22 @@
     height: 100%;
     left: 0;
     top: 0;
-    padding: vw(10);
     box-sizing: border-box;
     transition: transform 1s, opacity 1s;
     cursor: pointer;
     backface-visibility: hidden;
   }
+  &:not(.mobile) &-cell {
+    padding: vw(10);
+  }
+  &.mobile &-cell {
+    padding: 15px;
+  }
   &-cell-image {
-    border-radius: vw(5);
     overflow: hidden;
     pointer-events: none;
     width: 100%;
     height: 100%;
-    border: vw(2) solid $mainColor;
     font-size: 0;
     img {
       width: 100%;
@@ -65,17 +90,33 @@
       object-fit: cover;
     }
   }
+  &:not(.mobile) &-cell-image {
+    border-radius: vw(5);
+    border: vw(2) solid $mainColor;
+  }
+  &.mobile &-cell-image {
+    border-radius: 5px;
+    border: 5px solid $mainColor;
+  }
   &-cell-text {
     pointer-events: none;
     position: absolute;
-    left: vw(45);
-    top: vw(45);
     font-weight: bold;
-    font-size: vw(80);
-    line-height: vw(80);
     text-transform: uppercase;
 
     @extend %white;
+  }
+  &:not(.mobile) &-cell-text {
+    left: vw(45);
+    top: vw(45);
+    font-size: vw(80);
+    line-height: vw(80);
+  }
+  &.mobile &-cell-text {
+    left: 30px;
+    top: 30px;
+    font-size: 30px;
+    line-height: 30px;
   }
   &-cell:nth-child(1) { transform: rotateY(  0deg) translateZ(288px); }
   &-cell:nth-child(2) { transform: rotateY( 40deg) translateZ(288px); }
@@ -87,21 +128,38 @@
   &-cell:nth-child(8) { transform: rotateY(280deg) translateZ(288px); }
   &-cell:nth-child(9) { transform: rotateY(320deg) translateZ(288px); }
   &__text {
-    padding-left: vw(950);
     .title {
       font-family: "Montserrat";
       font-weight: bold;
-      font-size: vw(50);
-      line-height: vw(70);
       text-transform: uppercase;
-      margin-bottom: vw(50);
       color: #ff4978;
     }
     .text {
       font-family: "Montserrat";
+      color: #4f4f4f;
+    }
+  }
+  &:not(.mobile) &__text  {
+    padding-left: vw(950);
+    .title {
+      font-size: vw(50);
+      line-height: vw(70);
+      margin-bottom: vw(50);
+    }
+    .text {
       font-size: vw(30);
       line-height: vw(50);
-      color: #4f4f4f;
+    }
+  }
+  &.mobile &__text  {
+    .title {
+      font-size: 25px;
+      line-height: 25px;
+      margin-bottom: 25px;
+    }
+    .text {
+      font-size: 16px;
+      line-height: 22px;
     }
   }
 }

@@ -71,7 +71,13 @@ window.app = new Vue({
         jobTeam: new jobTeam(),
         jobStages: new jobStages(),
         footer: new footer(),
-        isMounted: false
+        isMounted: false,
+        sizes: {
+            window: {
+                width: window.innerWidth,
+                height: window.innerHeight
+            }
+        }
     }),
     mounted() {
         setTimeout(() => {
@@ -101,6 +107,12 @@ window.app = new Vue({
             this.jobInfo.init();
             this.jobTeam.init();
             this.jobStages.init();
+            window.addEventListener('resize', () => {
+                this.window = {
+                    width: window.innerWidth,
+                    height: window.innerHeight,
+                }
+            });
             window.addEventListener('resize', () => this.cursorAnimation.updateCanvasSize());
             document.addEventListener('mousemove', (event) => {
                 this.cursorAnimation.animate({
@@ -112,6 +124,19 @@ window.app = new Vue({
                 text: 'ИНН/КПП: 6317139806/631701001 Банк: АО "Тинькофф Банк" БИК: 044525974 Р/С: 40702810010000559615 Р/С: 40702810010000559615'
             }))
         }, 250);
+    },
+    computed: {
+        window: {
+            get() {
+                return {
+                    width: this.sizes.window.width,
+                    height: this.sizes.window.height
+                }
+            },
+            set(newValue) {
+                this.sizes.window = newValue;
+            }
+        }
     },
     methods: {
         buttonMouseEnter(event) {

@@ -1,5 +1,6 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Glide from '@glidejs/glide'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -9,8 +10,23 @@ const mainWeb = class Mainweb {
     constructor({element, trigger}) {
         this.element = element;
         this.trigger = trigger;
+        this.slider = new Glide('.web-slider', {
+            type: 'carousel',
+            startAt: 1,
+            perView: 1,
+            gap: 0,
+        });
+    }
+    mobileSlider() {
+        if (!this.slider) return;
+        if (window.innerWidth < 1280) {
+            this.slider.mount();
+        } else {
+            this.slider.destroy();
+        }
     }
     animateElement() {
+        this.mobileSlider();
         if (!document.querySelector('.web-right-image')) return;
         gsap.utils.toArray(".web-right-image").forEach((item, i) => {
             ScrollTrigger.create({

@@ -53,16 +53,17 @@ const header = class Header {
         console.log('Анимация шапки окончена');
     }
     setHeaderWavePositionOnLoad() {
-        let active_menu = document.querySelector('.header-menu li.isActive');
-        console.log(active_menu,active_menu.offsetWidth);
-        gsap.to('.header-menu-border', {
-            left: active_menu.offsetLeft,
-            width: active_menu.offsetWidth,
-            right: 'auto'
-        })
-        gsap.to('.header-menu-wave', {
-            left: active_menu.offsetLeft + active_menu.offsetWidth / 2
-        })
+        if (document.querySelector('.header-menu')) {
+            let active_menu = document.querySelector('.header-menu li.isActive');
+            gsap.to('.header-menu-border', {
+                left: active_menu.offsetLeft,
+                width: active_menu.offsetWidth,
+                right: 'auto'
+            })
+            gsap.to('.header-menu-wave', {
+                left: active_menu.offsetLeft + active_menu.offsetWidth / 2
+            })
+        }
     }
     setHeaderWavePosition() {
         console.log('counting completed');

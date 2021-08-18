@@ -1346,16 +1346,17 @@ var header = /*#__PURE__*/function () {
   }, {
     key: "setHeaderWavePositionOnLoad",
     value: function setHeaderWavePositionOnLoad() {
-      var active_menu = document.querySelector('.header-menu li.isActive');
-      console.log(active_menu, active_menu.offsetWidth);
-      gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.header-menu-border', {
-        left: active_menu.offsetLeft,
-        width: active_menu.offsetWidth,
-        right: 'auto'
-      });
-      gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.header-menu-wave', {
-        left: active_menu.offsetLeft + active_menu.offsetWidth / 2
-      });
+      if (document.querySelector('.header-menu')) {
+        var active_menu = document.querySelector('.header-menu li.isActive');
+        gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.header-menu-border', {
+          left: active_menu.offsetLeft,
+          width: active_menu.offsetWidth,
+          right: 'auto'
+        });
+        gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.header-menu-wave', {
+          left: active_menu.offsetLeft + active_menu.offsetWidth / 2
+        });
+      }
     }
   }, {
     key: "setHeaderWavePosition",
@@ -1699,10 +1700,10 @@ var mainAbout = /*#__PURE__*/function () {
 
         },
         width: function width() {
-          return 4200 * 100 / window.innerWidth + 'vw';
+          return 7200 * 100 / window.innerWidth + 'vw';
         },
         height: function height() {
-          return 2900 * 100 / window.innerWidth + 'vw';
+          return 4900 * 100 / window.innerWidth + 'vw';
         }
       });
       gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to('.main-about-title', {
@@ -1908,6 +1909,8 @@ var mainCarousel = /*#__PURE__*/function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
+/* harmony import */ var _glidejs_glide__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @glidejs/glide */ "./node_modules/@glidejs/glide/dist/glide.esm.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -1916,6 +1919,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
 
+
+gsap__WEBPACK_IMPORTED_MODULE_0__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__["ScrollTrigger"]);
+
 var mainCases = /*#__PURE__*/function () {
   function MainCases(_ref) {
     var itemsClass = _ref.itemsClass;
@@ -1923,11 +1929,29 @@ var mainCases = /*#__PURE__*/function () {
     _classCallCheck(this, MainCases);
 
     this.itemsClass = itemsClass;
+    this.slider = new _glidejs_glide__WEBPACK_IMPORTED_MODULE_2__["default"]('.main-cases-slider', {
+      type: 'carousel',
+      startAt: 1,
+      perView: 1,
+      gap: 20
+    });
   }
 
   _createClass(MainCases, [{
+    key: "initMobileSlider",
+    value: function initMobileSlider() {
+      if (!document.querySelector('.main-cases-slider')) return;
+
+      if (window.innerWidth < 1280) {
+        this.slider.mount();
+      } else {
+        this.slider.destroy();
+      }
+    }
+  }, {
     key: "init",
     value: function init() {
+      this.initMobileSlider();
       gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.main-cases-bg', {
         scrollTrigger: {
           trigger: '.news-and-trends-trigger',
@@ -1938,17 +1962,21 @@ var mainCases = /*#__PURE__*/function () {
         },
         top: -100
       });
-      gsap__WEBPACK_IMPORTED_MODULE_0__["default"].utils.toArray(".main-cases-item").forEach(function (item, i) {
-        gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(item, {
-          scrollTrigger: {
-            trigger: item,
-            start: 'top+=400 top+=400',
-            end: 'bottom+=400 top+=400',
-            scrub: 3 // markers: true
+      gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__["ScrollTrigger"].matchMedia({
+        "(min-width: 1281px)": function minWidth1281px() {
+          gsap__WEBPACK_IMPORTED_MODULE_0__["default"].utils.toArray(".main-cases-item").forEach(function (item, i) {
+            gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(item, {
+              scrollTrigger: {
+                trigger: item,
+                start: 'top+=400 top+=400',
+                end: 'bottom+=400 top+=400',
+                scrub: 3 // markers: true
 
-          },
-          x: '-110vw'
-        });
+              },
+              x: '-110vw'
+            });
+          });
+        }
       });
     }
   }]);
@@ -1973,6 +2001,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 /* harmony import */ var _glidejs_glide__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @glidejs/glide */ "./node_modules/@glidejs/glide/dist/glide.esm.js");
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -1982,6 +2011,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
 
+
+gsap__WEBPACK_IMPORTED_MODULE_1__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_3__["ScrollTrigger"]);
 
 var newsAndTrends = /*#__PURE__*/function () {
   function NewsAndTrends(_ref) {
@@ -2011,21 +2042,25 @@ var newsAndTrends = /*#__PURE__*/function () {
     value: function checkProgress() {
       var _this = this;
 
-      document.addEventListener('scroll', function () {
-        if (_this.animation.ratio >= 0.99) {
-          document.querySelector('.news-and-trends-arrows .next').classList.add('disabled');
-        }
+      gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_3__["ScrollTrigger"].matchMedia({
+        "(min-width: 1281px)": function minWidth1281px() {
+          document.addEventListener('scroll', function () {
+            if (_this.animation.ratio >= 0.99) {
+              document.querySelector('.news-and-trends-arrows .next').classList.add('disabled');
+            }
 
-        if (_this.animation.ratio < 0.99) {
-          document.querySelector('.news-and-trends-arrows .next').classList.remove('disabled');
-        }
+            if (_this.animation.ratio < 0.99) {
+              document.querySelector('.news-and-trends-arrows .next').classList.remove('disabled');
+            }
 
-        if (_this.animation.ratio > 0) {
-          document.querySelector('.news-and-trends-arrows .prev').classList.remove('disabled');
-        }
+            if (_this.animation.ratio > 0) {
+              document.querySelector('.news-and-trends-arrows .prev').classList.remove('disabled');
+            }
 
-        if (_this.animation.ratio == 0) {
-          document.querySelector('.news-and-trends-arrows .prev').classList.add('disabled');
+            if (_this.animation.ratio == 0) {
+              document.querySelector('.news-and-trends-arrows .prev').classList.add('disabled');
+            }
+          });
         }
       });
     }
@@ -2034,34 +2069,38 @@ var newsAndTrends = /*#__PURE__*/function () {
     value: function scrollWindow() {
       var _this2 = this;
 
-      var nextInterval;
-      var prevInterval; // if (this.animation.ratio < 1) {
+      gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_3__["ScrollTrigger"].matchMedia({
+        "(min-width: 1281px)": function minWidth1281px() {
+          var nextInterval;
+          var prevInterval; // if (this.animation.ratio < 1) {
 
-      document.querySelector('.news-and-trends-arrows .next').addEventListener('mousedown', function () {
-        nextInterval = setInterval(function () {
-          _this2.pageOffset = window.pageYOffset;
-          window.scrollTo(0, _this2.pageOffset += 10);
-        }, 100);
-      });
-      document.querySelector('.news-and-trends-arrows .next').addEventListener('mouseup', function () {
-        clearInterval(nextInterval);
-      });
-      document.querySelector('.news-and-trends-arrows .next').addEventListener('mouseleave', function () {
-        clearInterval(nextInterval);
-      }); // }
-      // if (this.animation.ratio > 0) {
+          document.querySelector('.news-and-trends-arrows .next').addEventListener('mousedown', function () {
+            nextInterval = setInterval(function () {
+              _this2.pageOffset = window.pageYOffset;
+              window.scrollTo(0, _this2.pageOffset += 10);
+            }, 100);
+          });
+          document.querySelector('.news-and-trends-arrows .next').addEventListener('mouseup', function () {
+            clearInterval(nextInterval);
+          });
+          document.querySelector('.news-and-trends-arrows .next').addEventListener('mouseleave', function () {
+            clearInterval(nextInterval);
+          }); // }
+          // if (this.animation.ratio > 0) {
 
-      document.querySelector('.news-and-trends-arrows .prev').addEventListener('mousedown', function () {
-        prevInterval = setInterval(function () {
-          _this2.pageOffset = window.pageYOffset;
-          window.scrollTo(0, _this2.pageOffset -= 10);
-        }, 100);
-      });
-      document.querySelector('.news-and-trends-arrows .prev').addEventListener('mouseup', function () {
-        clearInterval(prevInterval);
-      });
-      document.querySelector('.news-and-trends-arrows .prev').addEventListener('mouseleave', function () {
-        clearInterval(prevInterval);
+          document.querySelector('.news-and-trends-arrows .prev').addEventListener('mousedown', function () {
+            prevInterval = setInterval(function () {
+              _this2.pageOffset = window.pageYOffset;
+              window.scrollTo(0, _this2.pageOffset -= 10);
+            }, 100);
+          });
+          document.querySelector('.news-and-trends-arrows .prev').addEventListener('mouseup', function () {
+            clearInterval(prevInterval);
+          });
+          document.querySelector('.news-and-trends-arrows .prev').addEventListener('mouseleave', function () {
+            clearInterval(prevInterval);
+          });
+        }
       }); // }
     }
   }, {
@@ -2085,27 +2124,41 @@ var newsAndTrends = /*#__PURE__*/function () {
         }
 
         ;
-
-        for (var i = 0; i < items.length; i++) {
-          console.log(items[i].offsetWidth);
-          items[i].style.minWidth = items[i].offsetWidth / _this4.currentDate.diff(moment__WEBPACK_IMPORTED_MODULE_0___default()(items[i].dataset.createdAt).format(), 'days') * 10 + 'px';
-        }
-
+        gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_3__["ScrollTrigger"].matchMedia({
+          "(min-width: 1281px)": function minWidth1281px() {
+            for (var i = 0; i < items.length; i++) {
+              console.log(items[i].offsetWidth);
+              items[i].style.minWidth = items[i].offsetWidth / _this4.currentDate.diff(moment__WEBPACK_IMPORTED_MODULE_0___default()(items[i].dataset.createdAt).format(), 'days') * 10 + 'px';
+            }
+          },
+          "(max-width: 1280px)": function maxWidth1280px() {
+            for (var i = 0; i < items.length; i++) {
+              console.log(items[i].offsetWidth);
+              items[i].style.width = items[i].offsetWidth / _this4.currentDate.diff(moment__WEBPACK_IMPORTED_MODULE_0___default()(items[i].dataset.createdAt).format(), 'days') * 5 + 'px';
+            }
+          }
+        });
         resolve(items);
       });
     }
   }, {
     key: "animateItems",
     value: function animateItems() {
-      this.animation = gsap__WEBPACK_IMPORTED_MODULE_1__["default"].to('.news-and-trends-right-items', {
-        scrollTrigger: {
-          trigger: '.news-and-trends-trigger',
-          start: 'top top',
-          end: 'bottom top',
-          scrub: 1,
-          pin: true
-        },
-        x: '-100%'
+      var _this5 = this;
+
+      gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_3__["ScrollTrigger"].matchMedia({
+        "(min-width: 1281px)": function minWidth1281px() {
+          _this5.animation = gsap__WEBPACK_IMPORTED_MODULE_1__["default"].to('.news-and-trends-right-items', {
+            scrollTrigger: {
+              trigger: '.news-and-trends-trigger',
+              start: 'top top',
+              end: 'bottom top',
+              scrub: 1,
+              pin: true
+            },
+            x: '-100%'
+          });
+        }
       });
     }
   }, {
@@ -2117,23 +2170,23 @@ var newsAndTrends = /*#__PURE__*/function () {
   }, {
     key: "init",
     value: function init() {
-      var _this5 = this;
+      var _this6 = this;
 
       if (!document.querySelector('.news-and-trends')) return;
       this.loadItems().then(function (items) {
-        _this5.resizeItems(items).then(function () {
+        _this6.resizeItems(items).then(function () {
           setTimeout(function () {
-            _this5.animateItems();
+            _this6.animateItems();
 
-            _this5.scrollWindow();
+            _this6.scrollWindow();
 
-            _this5.checkProgress();
+            _this6.checkProgress();
 
-            _this5.initSlider();
+            _this6.initSlider();
 
             document.querySelectorAll('.news-and-trends-item').forEach(function (item) {
               item.addEventListener('click', function () {
-                return _this5.chooseElement(item);
+                return _this6.chooseElement(item);
               });
             });
           }, 200);
@@ -2226,11 +2279,13 @@ var mainQuestionForm = /*#__PURE__*/function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 /* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
+/* harmony import */ var _glidejs_glide__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @glidejs/glide */ "./node_modules/@glidejs/glide/dist/glide.esm.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 
 
 
@@ -2245,11 +2300,29 @@ var mainWeb = /*#__PURE__*/function () {
 
     this.element = element;
     this.trigger = trigger;
+    this.slider = new _glidejs_glide__WEBPACK_IMPORTED_MODULE_2__["default"]('.web-slider', {
+      type: 'carousel',
+      startAt: 1,
+      perView: 1,
+      gap: 0
+    });
   }
 
   _createClass(Mainweb, [{
+    key: "mobileSlider",
+    value: function mobileSlider() {
+      if (!this.slider) return;
+
+      if (window.innerWidth < 1280) {
+        this.slider.mount();
+      } else {
+        this.slider.destroy();
+      }
+    }
+  }, {
     key: "animateElement",
     value: function animateElement() {
+      this.mobileSlider();
       if (!document.querySelector('.web-right-image')) return;
       gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].utils.toArray(".web-right-image").forEach(function (item, i) {
         gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__["ScrollTrigger"].create({
@@ -2550,7 +2623,12 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       textSelector: '.main-question-form-item span'
     })), _defineProperty(_ref, "companyPrinciples", new _modules_company_principles_company_principles__WEBPACK_IMPORTED_MODULE_9__["default"]()), _defineProperty(_ref, "companyVideo", new _modules_company_video_company_video__WEBPACK_IMPORTED_MODULE_8__["default"]()), _defineProperty(_ref, "companyPartners", new _modules_company_partners_company_partners__WEBPACK_IMPORTED_MODULE_10__["default"]()), _defineProperty(_ref, "companyTeam", new _modules_company_team_company_team__WEBPACK_IMPORTED_MODULE_12__["default"]()), _defineProperty(_ref, "careerBlog", new _modules_career_blog_career_blog__WEBPACK_IMPORTED_MODULE_18__["default"]()), _defineProperty(_ref, "companyReviews", new _modules_company_reviews_company_reviews__WEBPACK_IMPORTED_MODULE_11__["default"]()), _defineProperty(_ref, "header", new _modules_header_header__WEBPACK_IMPORTED_MODULE_13__["default"]()), _defineProperty(_ref, "companyAbout", new _modules_company_about_company_about__WEBPACK_IMPORTED_MODULE_15__["default"]({
       selector: '.company-about'
-    })), _defineProperty(_ref, "companyRaiting", new _modules_company_raiting_company_raiting__WEBPACK_IMPORTED_MODULE_16__["default"]()), _defineProperty(_ref, "vacanciesTabs", new _modules_vacancies_tabs_vacancies_tabs__WEBPACK_IMPORTED_MODULE_19__["default"]()), _defineProperty(_ref, "careerBlocks", new _modules_career_blocks_career_blocks__WEBPACK_IMPORTED_MODULE_17__["default"]()), _defineProperty(_ref, "jobInfo", new _modules_job_info_job_info__WEBPACK_IMPORTED_MODULE_20__["default"]()), _defineProperty(_ref, "jobTeam", new _modules_job_team_job_team__WEBPACK_IMPORTED_MODULE_21__["default"]()), _defineProperty(_ref, "jobStages", new _modules_job_stages_job_stages__WEBPACK_IMPORTED_MODULE_22__["default"]()), _defineProperty(_ref, "footer", new _modules_footer_footer__WEBPACK_IMPORTED_MODULE_23__["default"]()), _defineProperty(_ref, "isMounted", false), _ref;
+    })), _defineProperty(_ref, "companyRaiting", new _modules_company_raiting_company_raiting__WEBPACK_IMPORTED_MODULE_16__["default"]()), _defineProperty(_ref, "vacanciesTabs", new _modules_vacancies_tabs_vacancies_tabs__WEBPACK_IMPORTED_MODULE_19__["default"]()), _defineProperty(_ref, "careerBlocks", new _modules_career_blocks_career_blocks__WEBPACK_IMPORTED_MODULE_17__["default"]()), _defineProperty(_ref, "jobInfo", new _modules_job_info_job_info__WEBPACK_IMPORTED_MODULE_20__["default"]()), _defineProperty(_ref, "jobTeam", new _modules_job_team_job_team__WEBPACK_IMPORTED_MODULE_21__["default"]()), _defineProperty(_ref, "jobStages", new _modules_job_stages_job_stages__WEBPACK_IMPORTED_MODULE_22__["default"]()), _defineProperty(_ref, "footer", new _modules_footer_footer__WEBPACK_IMPORTED_MODULE_23__["default"]()), _defineProperty(_ref, "isMounted", false), _defineProperty(_ref, "sizes", {
+      window: {
+        width: window.innerWidth,
+        height: window.innerHeight
+      }
+    }), _ref;
   },
   mounted: function mounted() {
     var _this = this;
@@ -2605,6 +2683,12 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       _this.jobStages.init();
 
       window.addEventListener('resize', function () {
+        _this.window = {
+          width: window.innerWidth,
+          height: window.innerHeight
+        };
+      });
+      window.addEventListener('resize', function () {
         return _this.cursorAnimation.updateCanvasSize();
       });
       document.addEventListener('mousemove', function (event) {
@@ -2619,6 +2703,19 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
         });
       });
     }, 250);
+  },
+  computed: {
+    window: {
+      get: function get() {
+        return {
+          width: this.sizes.window.width,
+          height: this.sizes.window.height
+        };
+      },
+      set: function set(newValue) {
+        this.sizes.window = newValue;
+      }
+    }
   },
   methods: {
     buttonMouseEnter: function buttonMouseEnter(event) {

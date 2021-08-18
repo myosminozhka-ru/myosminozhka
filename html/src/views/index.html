@@ -36,7 +36,7 @@
             <!-- TODO добавить кружок двигающийся за мышью https://kota.co.uk/contact -->
             @@include("../blocks/modules/header/header.html")
             <div class="trigger-wrapper-top">
-                <section class="first-frame">
+                <section class="first-frame" :class="{'mobile': window.width <=1280}">
                     @@include("../blocks/modules/cursor-animation/cursor-animation.html")
                     @@include("../blocks/modules/main-words/main-words.html")
                     @@include("../blocks/modules/main-call-to-action/main-call-to-action.html")
@@ -48,7 +48,7 @@
                 @@include("../blocks/modules/main-question/main-question.html")
                 @@include("../blocks/modules/main-carousel/main-carousel.html")
             </div>
-            <div class="news-and-trends-spacer"></div>
+            <div class="news-and-trends-spacer" v-if="window.width > 1280"></div>
             <div class="news-and-trends-trigger">
                 @@include("../blocks/modules/main-news-and-trends/main-news-and-trends.html")
                 <!-- <div class="news-and-trends-screen"></div> -->
