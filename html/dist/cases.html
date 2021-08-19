@@ -32,13 +32,13 @@
     </head>
     <body>
         <div class="wrapper" id="app">
-            <header class="header">
+            <header class="header" :class="{'isOpened': header.isOpened, 'mobile': window.width <=1280}">
     <div class="header-blur"></div>
     <div class="header-in">
         <a href="/" class="header-logo" :class="{'mobile': window.width <=1280}">
             <img src="img/logo.png" width="100%" height="100%" alt="">
         </a>
-        <div class="header-menu-opener" v-if="window.width <= 1280">
+        <div class="header-menu-opener" :class="{'isOpened': header.isOpened}" @click="header.openMobileHeader()" v-if="window.width <= 1280">
             <div></div>
             <div></div>
             <div></div>
@@ -68,6 +68,19 @@
             <li><a href="#">En</a></li>
         </ul>
     </div>
+    <nav class="header-mobile-menu" :class="{'isOpened': header.isOpened}" v-if="window.width <= 1280">
+        <ul>
+            <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="job.html">Услуги</a></li>
+            <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="cases.html">Портфолио</a></li>
+            <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="company.html">О компании</a></li>
+            <!-- <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="#">Команда</a></li> -->
+            <li class="isActive" @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="#">Отзывы</a></li>
+            <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="contacts.html">Контакты</a></li>
+            <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="career.html">Карьера</a></li>
+            <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="vacancies.html">Вакансии</a></li>
+            <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="blog.html">Блог</a></li>
+        </ul>
+    </nav>
 </header>
             <section class="career-first" :class="{'mobile': window.width <=1280}">
     <h1 class="career-first-title">Кейсы</h1>

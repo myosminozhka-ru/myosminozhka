@@ -4,7 +4,11 @@ const header = class Header {
     constructor() {
         this.countedWidth = 0;
         this.self = this;
+        this.isOpened = false;
         // this.setHeaderWavePositionOnLoad();
+    }
+    openMobileHeader() {
+        this.isOpened = !this.isOpened;
     }
     init() {
         gsap.to('.header-logo', {

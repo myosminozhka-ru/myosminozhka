@@ -1307,10 +1307,16 @@ var header = /*#__PURE__*/function () {
     _classCallCheck(this, Header);
 
     this.countedWidth = 0;
-    this.self = this; // this.setHeaderWavePositionOnLoad();
+    this.self = this;
+    this.isOpened = false; // this.setHeaderWavePositionOnLoad();
   }
 
   _createClass(Header, [{
+    key: "openMobileHeader",
+    value: function openMobileHeader() {
+      this.isOpened = !this.isOpened;
+    }
+  }, {
     key: "init",
     value: function init() {
       var _this = this;

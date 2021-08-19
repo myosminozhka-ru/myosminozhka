@@ -2718,6 +2718,7 @@ html {
 .button .text,
 a,
 .header-lang a,
+.header-mobile-menu,
 .news-and-trends:not(.mobile) .news-and-trends-big .gradient,
 .news-and-trends:not(.mobile) .news-and-trends-big .text,
 .company-principles-text .counter,
@@ -2756,6 +2757,12 @@ a:hover {
   left: 0;
   right: 0;
   z-index: 10;
+}
+
+.header.mobile.isOpened {
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .header-blur {
@@ -2863,6 +2870,42 @@ a:hover {
 }
 
 .header-lang a:hover {
+  color: #E54A72;
+}
+
+.header-mobile-menu {
+  position: absolute;
+  transform: translateY(-150%);
+  flex: 1 1 auto;
+  z-index: 12;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-mobile-menu.isOpened {
+  position: relative;
+  transform: translateY(0);
+}
+
+.header-mobile-menu ul {
+  list-style: none;
+}
+
+.header-mobile-menu ul a {
+  font-size: 30px;
+  line-height: 40px;
+  font-weight: 600;
+  padding: 10px 20px;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.header-mobile-menu ul li.isActive a {
   color: #E54A72;
 }
 
