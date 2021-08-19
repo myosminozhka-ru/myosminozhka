@@ -1,11 +1,29 @@
 .blog-items {
-    padding: 0 vw(50) vw(200);
     position: relative;
     z-index: 2;
-    &-buttons {
+    &:not(.mobile) {
+        padding: 0 vw(50) vw(200);
+    }
+    &.mobile {
+        padding: 0 20px 100px;
+        z-index: 7;
+    }
+    &:not(.mobile) &-buttons {
         margin-bottom: vw(70);
     }
-    &-posts {
+    &.mobile &-buttons {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        overflow: auto;
+        margin: 0 -20px 50px;
+        padding-left: 20px;
+        padding-right: 20px;
+        &::-webkit-scrollbar {
+            height: 0;
+        }
+    }
+    &:not(.mobile) &-posts  {
         display: grid;
         grid-template-columns: vw(418) vw(110) vw(140) vw(420) vw(110) vw(131) vw(480);
         grid-template-rows: vw(64) vw(110) vw(433) vw(71) vw(74) vw(126) vw(202) vw(314) vw(70) vw(44) vw(95);
@@ -13,7 +31,10 @@
             grid-template-rows: vw(64) vw(110) vw(433) vw(71) vw(74) vw(126) vw(202) vw(314) vw(70) vw(44) vw(95) vw(64) vw(110) vw(433) vw(71) vw(74) vw(126) vw(202) vw(314) vw(70) vw(44) vw(95);
         }
     }
-    &-post {
+    // &.mobile &-posts  {
+    //     padding: 0 20px;
+    // }
+    &:not(.mobile) &-post {
         display: flex;
         flex-direction: column;
         max-height: 100%;
@@ -89,7 +110,12 @@
             grid-row-end: 20;
         }
     }
-    &-post-image {
+    &.mobile &-post {
+        &:not(:last-child) {
+            margin-bottom: 60px;
+        }
+    }
+    &:not(.mobile) &-post-image {
         flex: 1 1 auto;
         margin-bottom: vw(60);
         background: var(--image) 50% 50%/cover no-repeat;
@@ -97,25 +123,64 @@
             display: none;
         }
     }
+    &.mobile &-post-image {
+        margin-bottom: 20px;
+    }
     &-post-date {
         font-weight: 300;
+        @extend %white;
+    }
+    &:not(.mobile) &-post-date {
         font-size: vw(20);
         line-height: vw(20);
         margin-bottom: vw(10);
-        @extend %white;
+    }
+    &.mobile &-post-date {
+        display: block;
+        font-size: 16px;
+        line-height: 16px;
+        margin-bottom: 15px;
     }
     &-post-title {
         font-weight: 600;
+        @extend %white;
+    }
+    &:not(.mobile) &-post-title {
         font-size: vw(40);
         line-height: vw(40);
         margin-bottom: vw(10);
-        @extend %white;
+    }
+    &.mobile &-post-title {
+        font-size: 25px;
+        line-height: 25px;
+        margin-bottom: 15px;
     }
     &-post-description {
         margin: 0;
         font-weight: 300;
+        @extend %white;
+    }
+    &:not(.mobile) &-post-description {
         font-size: vw(30);
         line-height: vw(30);
-        @extend %white;
+    }
+    &.mobile &-post-description {
+        font-size: 16px;
+        line-height: 16px;
+    }
+    &.mobile .news-and-trends-button {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 14px;
+        padding: 14px 30px;
+        border-radius: 10px;
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+    &.mobile &-posts + .news-and-trends-button {
+        margin: 50px auto 0;
+        width: 210px;
+        display: block;
     }
 }

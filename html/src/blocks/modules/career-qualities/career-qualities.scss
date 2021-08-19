@@ -1,17 +1,40 @@
 .career-qualities {
-    padding: vw(50);
     overflow: hidden;
+    &:not(.mobile) {
+        padding: vw(50);
+    }
+    &.mobile {
+        padding: 0 20px 74px;
+    }
     &-title {
         text-transform: uppercase;
-        white-space: nowrap;
-        margin-bottom: vw(118);
         @extend %white;
     }
-    &-items {
+    &:not(.mobile) &-title  {
+        white-space: nowrap;
+        margin-bottom: vw(118);
+    }
+    &.mobile &-title  {
+        margin-bottom: 50px;
+        font-size: 45px;
+        line-height: 55px;
+    }
+    &:not(.mobile) &-items {
         display: flex;
         flex-wrap: wrap;
     }
     &-item {
+        .icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .text {
+            font-weight: 300;
+            @extend %white;
+        }
+    }
+    &:not(.mobile) &-item {
         width: vw(250);
         &:not(:nth-child(5n+5)) {
             margin-right: vw(140);
@@ -22,16 +45,27 @@
         .icon {
             width: vw(170);
             height: vw(140);
-            display: flex;
-            justify-content: center;
-            align-items: center;
             margin-bottom: vw(30);
         }
         .text {
-            font-weight: 300;
             font-size: vw(30);
             line-height: vw(40);
-            @extend %white;
+        }
+    }
+    &.mobile &-item {
+        width: 100%;
+        &:not(:last-child) {
+           margin-bottom: 50px;
+        }
+        .icon {
+            width: 103px;
+            height: 86px;
+            margin: 0 auto 30px;
+        }
+        .text {
+            font-size: 20px;
+            line-height: 20px;
+            text-align: center;
         }
     }
 }

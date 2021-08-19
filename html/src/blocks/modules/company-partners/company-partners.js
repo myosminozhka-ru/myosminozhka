@@ -9,6 +9,11 @@ const companyPartners = class companyPartners {
         new Glide('.company-partners-slider', {
             startAt: 0,
             perView: 2,
+            breakpoints: {
+                1280: {
+                    perView: 1,
+                },
+            },
         }).mount();
     }
 }

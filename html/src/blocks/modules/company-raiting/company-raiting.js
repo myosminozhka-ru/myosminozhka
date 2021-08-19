@@ -1,4 +1,8 @@
+import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Glide from '@glidejs/glide'
+
+gsap.registerPlugin(ScrollTrigger);
 
 const companyRaiting = class companyRaiting {
     constructor(sliderClass) {
@@ -11,14 +15,18 @@ const companyRaiting = class companyRaiting {
         }
     }
     scrollTriggers() {
-        if (!document.querySelector('.company-raiting-items')) return;
-        let triggersWrap = document.querySelector('.company-raiting-items');
-        document.querySelector('.company-raiting').addEventListener('mousemove', event => {
-            triggersWrap.scroll({
-                top: 0,
-                left: event.clientX
-            });
-        })
+        ScrollTrigger.matchMedia({
+            "(min-width: 1281px)": () => {
+                if (!document.querySelector('.company-raiting-items')) return;
+                let triggersWrap = document.querySelector('.company-raiting-items');
+                document.querySelector('.company-raiting').addEventListener('mousemove', event => {
+                    triggersWrap.scroll({
+                        top: 0,
+                        left: event.clientX
+                    });
+                })
+            }
+        });
     }
     changeSlide(item) {
         console.log(item);

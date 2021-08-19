@@ -69,8 +69,12 @@
         </ul>
     </div>
 </header>
-            <section class="career-first">
+            <section class="career-first" :class="{'mobile': window.width <=1280}">
     <h1 class="career-first-title">Web разработка</h1>
+    <div class="career-first-tentacle" v-if="window.width <=1280"><img src="img/svg/tentacle.svg" width="100%" alt=""></div>
+    <div class="career-first-text" v-if="window.width <=1280">
+        Настал тот самый момент, когда нам нужно еще больше свежих мозгов для самых смелых проектов
+    </div>
     
 </section>
             <section class="job-first">

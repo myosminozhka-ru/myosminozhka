@@ -10,7 +10,13 @@ const careerBlog = class careerBlog {
             startAt: 0,
             perView: 3,
             gap: 130,
-            type: 'carousel'
+            type: 'carousel',
+            breakpoints: {
+                1280: {
+                    perView: 1,
+                    gap: 20
+                }
+            }
         }).mount();
     }
 }

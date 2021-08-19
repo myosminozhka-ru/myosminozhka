@@ -487,32 +487,26 @@ var careerBlocks = /*#__PURE__*/function () {
     key: "animateItems",
     value: function animateItems() {
       if (!document.querySelector('.career-blocks-item')) return;
-      gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].utils.toArray(".career-blocks-item").forEach(function (item, i) {
-        gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__["ScrollTrigger"].create({
-          trigger: item,
-          start: "top top",
-          pin: true,
-          pinSpacing: false,
-          onUpdate: function onUpdate(item) {
-            // item.progress * 200
-            gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to(item.trigger.querySelector('.career-blocks-left'), 0, {
-              y: function y() {
-                return 100 - item.progress * 200 + '%';
+      gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__["ScrollTrigger"].matchMedia({
+        "(min-width: 1281px)": function minWidth1281px() {
+          gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].utils.toArray(".career-blocks-item").forEach(function (item, i) {
+            gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__["ScrollTrigger"].create({
+              trigger: item,
+              start: "top top",
+              pin: true,
+              pinSpacing: false,
+              onUpdate: function onUpdate(item) {
+                // item.progress * 200
+                gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to(item.trigger.querySelector('.career-blocks-left'), 0, {
+                  y: function y() {
+                    return 100 - item.progress * 200 + '%';
+                  }
+                });
               }
             });
-          }
-        });
-      }); // gsap.to('.career-blocks-items', {
-      //     scrollTrigger: {
-      //         trigger: '.career-blocks',
-      //         start: 'top top',
-      //         end: 'bottom bottom',
-      //         scrub: 1,
-      //         pin: true,
-      //         pinSpacing: false
-      //     },
-      //     x: 0,
-      // })
+          });
+        }
+      });
     }
   }, {
     key: "init",
@@ -562,7 +556,13 @@ var careerBlog = /*#__PURE__*/function () {
         startAt: 0,
         perView: 3,
         gap: 130,
-        type: 'carousel'
+        type: 'carousel',
+        breakpoints: {
+          1280: {
+            perView: 1,
+            gap: 20
+          }
+        }
       }).mount();
     }
   }]);
@@ -659,7 +659,12 @@ var companyPartners = /*#__PURE__*/function () {
       if (!document.querySelector('.company-partners-slider')) return;
       new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.company-partners-slider', {
         startAt: 0,
-        perView: 2
+        perView: 2,
+        breakpoints: {
+          1280: {
+            perView: 1
+          }
+        }
       }).mount();
     }
   }]);
@@ -807,7 +812,9 @@ var companyPrinciples = /*#__PURE__*/function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @glidejs/glide */ "./node_modules/@glidejs/glide/dist/glide.esm.js");
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
+/* harmony import */ var _glidejs_glide__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @glidejs/glide */ "./node_modules/@glidejs/glide/dist/glide.esm.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -816,12 +823,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
 
+
+gsap__WEBPACK_IMPORTED_MODULE_0__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__["ScrollTrigger"]);
+
 var companyRaiting = /*#__PURE__*/function () {
   function companyRaiting(sliderClass) {
     _classCallCheck(this, companyRaiting);
 
     if (document.querySelector('.company-raiting-slider')) {
-      this.slider = new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.company-raiting-slider', {
+      this.slider = new _glidejs_glide__WEBPACK_IMPORTED_MODULE_2__["default"]('.company-raiting-slider', {
         startAt: 0,
         perView: 1,
         gap: 0
@@ -832,13 +842,17 @@ var companyRaiting = /*#__PURE__*/function () {
   _createClass(companyRaiting, [{
     key: "scrollTriggers",
     value: function scrollTriggers() {
-      if (!document.querySelector('.company-raiting-items')) return;
-      var triggersWrap = document.querySelector('.company-raiting-items');
-      document.querySelector('.company-raiting').addEventListener('mousemove', function (event) {
-        triggersWrap.scroll({
-          top: 0,
-          left: event.clientX
-        });
+      gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__["ScrollTrigger"].matchMedia({
+        "(min-width: 1281px)": function minWidth1281px() {
+          if (!document.querySelector('.company-raiting-items')) return;
+          var triggersWrap = document.querySelector('.company-raiting-items');
+          document.querySelector('.company-raiting').addEventListener('mousemove', function (event) {
+            triggersWrap.scroll({
+              top: 0,
+              left: event.clientX
+            });
+          });
+        }
       });
     }
   }, {
@@ -913,7 +927,12 @@ var companyReviews = /*#__PURE__*/function () {
       focusAt: 'center',
       startAt: 1,
       perView: 3,
-      gap: 100
+      gap: 100,
+      breakpoints: {
+        1280: {
+          perView: 1
+        }
+      }
     });
     this.translate = 0;
     this.index = 0;
@@ -964,9 +983,13 @@ var companyReviews = /*#__PURE__*/function () {
         };
       };
 
-      this.slider.mutate([FixBoundPeek]).mount();
-      this.index = this.slider.index;
-      this.countElementWidth();
+      if (window.innerWidth > 1280) {
+        this.slider.mutate([FixBoundPeek]).mount();
+        this.index = this.slider.index;
+        this.countElementWidth();
+      } else {
+        this.slider.mount();
+      }
     }
   }]);
 

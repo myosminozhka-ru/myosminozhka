@@ -1,43 +1,89 @@
 .vacancies-tabs {
     background: #fff;
-    padding: vw(300) vw(50);
-    &-items {
+    
+    &:not(.mobile) {
+        padding: vw(300) vw(50);
+    }
+    &.mobile {
+        padding: 30px 0 50px;
+        margin-bottom: 50px;
+    }
+    
+    &:not(.mobile) &-items {
         padding-right: vw(309);
+    }
+    &.mobile &-items {
+        padding: 0 20px;
     }
     &-item {}
     &-item-title {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: vw(40) 0;
+        
         cursor: pointer;
-        border-bottom: vw(3) solid $mainColor;
+        
         .text {
-            font-size: vw(50);
-            line-height: vw(50);
             color: #4F4F4F;
             @extend %transition;
         }
         .icon {
-            width: vw(51);
-            height: vw(28);
             transform: rotate(180deg);
             @extend %transition;
+        }
+    }
+    &:not(.mobile) &-item-title {
+        border-bottom: vw(3) solid $mainColor;
+        padding: vw(40) 0;
+        .text {
+            font-size: vw(50);
+            line-height: vw(50);
+        }
+        .icon {
+            width: vw(51);
+            height: vw(28);
+        }
+    }
+    &.mobile &-item-title {
+        border-bottom: 3px solid $mainColor;
+        padding: 20px 0;
+        .text {
+            font-size: 30px;
+            line-height: 40px;
+        }
+        .icon {
+            width: 17px;
+            height: 9px;
         }
     }
     &-item-body {
         height: 0;
         overflow: hidden;
         p {
-            font-size: vw(30);
-            line-height: vw(50);
-            margin-bottom: vw(25);
             margin-top: 0;
             color: #4F4F4F;
         }
     }
-    &-item-body-fake {
+    &:not(.mobile) &-item-body {
+        p {
+            font-size: vw(30);
+            line-height: vw(50);
+            margin-bottom: vw(25);
+        }
+    }
+    &.mobile &-item-body {
+        padding: 20px 0 0 0;
+        p {
+            font-size: 16px;
+            line-height: 22px;
+            margin-bottom: 15px;
+        }
+    }
+    &:not(.mobile) &-item-body-fake {
         height: vw(200);
+    }
+    &.mobile &-item-body-fake {
+        height: 20px;
     }
     &-item.is-active &-item-title {
         .text {
@@ -47,6 +93,12 @@
         }
         .icon {
             transform: rotate(0)
+        }
+    }
+    &.mobile &-item.is-active &-item-title {
+        .text {
+            font-size: 30px;
+            line-height: 40px;
         }
     }
 }

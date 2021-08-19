@@ -8,6 +8,11 @@ const companyReviews = class companyReviews {
             startAt: 1,
             perView: 3,
             gap: 100,
+            breakpoints: {
+                1280: {
+                    perView: 1
+                }
+            }
         });
         this.translate = 0;
         this.index = 0;
@@ -50,9 +55,13 @@ const companyReviews = class companyReviews {
               }
             }
           }
-        this.slider.mutate([FixBoundPeek]).mount();
-        this.index = this.slider.index;
-        this.countElementWidth();
+        if (window.innerWidth > 1280) {
+            this.slider.mutate([FixBoundPeek]).mount();
+            this.index = this.slider.index;
+            this.countElementWidth();
+        } else {
+            this.slider.mount();
+        }
     }
 }
 

@@ -1,7 +1,12 @@
 .company-partners {
-    padding: vw(130) 0;
     overflow: hidden;
     position: relative;
+    &:not(.mobile) {
+        padding: vw(130) 0;
+    }
+    &.mobile {
+        padding: 40px 20px 56px;
+    }
     &-slider {
         position: static;
     }
@@ -10,33 +15,55 @@
     }
     &-title {
         mix-blend-mode: difference;
-        white-space: nowrap;
-        margin-bottom: vw(70);
         @extend %white;
     }
+    &:not(.mobile) &-title {
+        white-space: nowrap;
+        margin-bottom: vw(70);
+    }
+    &.mobile &-title {
+        font-size: 45px;
+        line-height: 55px;
+        margin-bottom: 70px;
+    }
     &-item {
-        padding: vw(71);
         margin: 0;
         @extend %transition;
         &:hover {
             background: #fff;
         }
     }
+    &:not(.mobile) &-item {
+        padding: vw(71);
+    }
     &-item-title {
         mix-blend-mode: difference;
-        margin-bottom: vw(30);
-        font-weight: bold;
-        font-size: vw(120);
-        line-height: vw(100);
+        font-weight: bold;        
         text-transform: uppercase;
         @extend %white;
+    }
+    &:not(.mobile) &-item-title {
+        font-size: vw(120);
+        line-height: vw(100);
+        margin-bottom: vw(30);
+    }
+    &.mobile &-item-title {
+        font-size: 50px;
+        line-height: 50px;
+        margin-bottom: 20px;
     }
     &-item-text {
         mix-blend-mode: difference;
         font-weight: normal;
+        @extend %white;
+    }
+    &:not(.mobile) &-item-text {
         font-size: vw(30);
         line-height: vw(50);
-        @extend %white;
+    }
+    &.mobile &-item-text {
+        font-size: 16px;
+        line-height: 22px;
     }
     &-arrows {
         position: absolute;
@@ -57,9 +84,6 @@
         font-size: 0;
         display: block;
         cursor: pointer;
-        width: vw(89);
-        height: vw(38);
-        padding: vw(50);
         box-sizing: content-box;
 
         &:hover {
@@ -71,5 +95,13 @@
         &--prev {
             transform: rotate(180deg);
         }
+    }
+    &:not(.mobile) &-arrow {
+        width: vw(89);
+        height: vw(38);
+        padding: vw(50);
+    }
+    &.mobile &-arrows {
+        display: none;
     }
 }
