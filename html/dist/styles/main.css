@@ -4334,7 +4334,7 @@ a:hover {
 }
 
 .main-cases.mobile {
-  padding: 65px 93px 65px 20px;
+  padding: 155px 93px 65px 20px;
   overflow: hidden;
 }
 
@@ -6756,6 +6756,17 @@ a:hover {
 
 .job-info-logo:not(:last-child) {
   margin-right: 2.60417vw;
+}
+
+.job-info.mobile .button {
+  padding: 10px;
+  font-size: 9px;
+  line-height: normal;
+  border-radius: 10px;
+}
+
+.job-info.mobile .job-info-button {
+  width: auto;
 }
 
 .job-team {

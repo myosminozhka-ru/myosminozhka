@@ -49,4 +49,15 @@
             margin-right: vw(50);
         }
     }
+    &.mobile {
+        .button {
+            padding: 10px;
+            font-size: 9px;
+            line-height: normal;
+            border-radius: 10px;
+        }
+        .job-info-button {
+            width: auto;
+        }
+    }
 }

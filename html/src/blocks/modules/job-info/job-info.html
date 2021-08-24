@@ -1,4 +1,4 @@
-<section class="job-info">
+<section class="job-info" :class="{'mobile': window.width <=1280}">
     <div class="job-info-left">
         <div class="job-info-titles">
             @@for (var i = 0; i < 6; i++) {
