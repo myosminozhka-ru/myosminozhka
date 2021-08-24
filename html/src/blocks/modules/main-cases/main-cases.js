@@ -24,32 +24,32 @@ const mainCases = class MainCases {
     }
     init() {
         this.initMobileSlider();
-        gsap.to('.main-cases-bg', {
-            scrollTrigger: {
-                trigger: '.news-and-trends-trigger',
-                start: 'top+=500 top+=500',
-                end: 'bottom+=500 top+=500',
-                scrub: 3,
-                // markers: true
-            },
-            top: -100,
-        });
-        ScrollTrigger.matchMedia({
-            "(min-width: 1281px)": () => {
-                gsap.utils.toArray(".main-cases-item").forEach((item, i) => {
-                    gsap.to(item, {
-                        scrollTrigger: {
-                            trigger: item,
-                            start: 'top+=400 top+=400',
-                            end: 'bottom+=400 top+=400',
-                            scrub: 3,
-                            // markers: true
-                        },
-                        x: '-110vw',
-                    })
-                })
-            }
-        });
+         gsap.to('.main-cases-bg', {
+             scrollTrigger: {
+                 trigger: '.news-and-trends-trigger',
+                 start: 'top+=500 top+=500',
+                 end: 'bottom+=500 top+=500',
+                 scrub: 3,
+                 // markers: true
+             },
+             top: -100,
+         });
+        // ScrollTrigger.matchMedia({
+        //     "(min-width: 1281px)": () => {
+        //         gsap.utils.toArray(".main-cases-item").forEach((item, i) => {
+        //             gsap.to(item, {
+        //                 scrollTrigger: {
+        //                     trigger: item,
+        //                     start: 'top+=400 top+=400',
+        //                     end: 'bottom+=400 top+=400',
+        //                     scrub: 3,
+        //                     // markers: true
+        //                 },
+        //                 x: '-110vw',
+        //             })
+        //         })
+        //     }
+        // });
     }
 }
 

@@ -604,20 +604,18 @@ var companyAbout = /*#__PURE__*/function () {
   _createClass(CompanyAbout, [{
     key: "init",
     value: function init() {
-      var _this = this;
-
-      if (!document.querySelector(this.selector)) return;
-      document.querySelector(this.selector).addEventListener('mousemove', function (e) {
-        // console.log(e)
-        document.querySelector(_this.selector).style.clipPath = "circle(".concat(200 * 100 / window.innerWidth, "vw at ").concat(e.clientX, "px ").concat(e.clientY, "px)"); // gsap.to(this.selector, {
-        //     "clip-path" : `circle(${200 * 100 / window.innerWidth}vw at ${e.clientX}px ${e.clientY}px)`
-        // })
-      });
-      document.querySelector(this.selector).addEventListener('mouseleave', function (e) {
-        gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(_this.selector, 0.5, {
-          "clip-path": "circle(1920px at ".concat(e.clientX, "px ").concat(e.clientY, "px)")
-        });
-      });
+      if (!document.querySelector(this.selector)) return; // document.querySelector(this.selector).addEventListener('mousemove', (e) => {
+      // console.log(e)
+      // document.querySelector(this.selector).style.clipPath = `circle(${200 * 100 / window.innerWidth}vw at ${e.clientX}px ${e.clientY}px)`;
+      // gsap.to(this.selector, {
+      //     "clip-path" : `circle(${200 * 100 / window.innerWidth}vw at ${e.clientX}px ${e.clientY}px)`
+      // })
+      // })
+      // document.querySelector(this.selector).addEventListener('mouseleave', (e) => {
+      //     gsap.to(this.selector, 0.5, {
+      //         "clip-path" : `circle(1920px at ${e.clientX}px ${e.clientY}px)`
+      //     })
+      // })
     }
   }]);
 
@@ -1720,88 +1718,90 @@ var mainAbout = /*#__PURE__*/function () {
   _createClass(MainAbout, [{
     key: "animateCircle",
     value: function animateCircle() {
-      gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to('.main-about-circle', {
-        scrollTrigger: {
-          trigger: '.trigger-wrapper-about',
-          start: 'top top',
-          end: 'top+=400 top',
-          scrub: 1 // markers: true
+      if (window.innerWidth > 1280) {
+        gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to('.main-about-circle', {
+          scrollTrigger: {
+            trigger: '.trigger-wrapper-about',
+            start: 'top top',
+            end: 'top+=400 top',
+            scrub: 1 // markers: true
 
-        },
-        width: function width() {
-          return 7200 * 100 / window.innerWidth + 'vw';
-        },
-        height: function height() {
-          return 4900 * 100 / window.innerWidth + 'vw';
-        }
-      });
-      gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to('.main-about-title', {
-        scrollTrigger: {
-          trigger: '.trigger-wrapper-about',
-          start: 'top+=600 top',
-          end: 'top+=1000 top',
-          scrub: 1
-        },
-        y: function y() {
-          return -100 * 100 / window.innerWidth + 'vw';
-        },
-        color: '#afa3a3'
-      });
-      gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to('.main-about-name', {
-        scrollTrigger: {
-          trigger: '.trigger-wrapper-about',
-          start: 'top+=500 top',
-          end: 'top+=900 top',
-          scrub: 1
-        },
-        y: function y() {
-          return -350 * 100 / window.innerWidth + 'vw';
-        }
-      });
-      gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to('.main-about-text', {
-        scrollTrigger: {
-          trigger: '.trigger-wrapper-about',
-          start: 'top+=530 top',
-          end: 'top+=930 top',
-          scrub: 1
-        },
-        y: function y() {
-          return -350 * 100 / window.innerWidth + 'vw';
-        }
-      });
-      gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to('.main-about-video-shadow', {
-        scrollTrigger: {
-          trigger: '.trigger-wrapper-about',
-          start: 'top+=530 top',
-          end: 'top+=930 top',
-          scrub: 1
-        },
-        left: 0,
-        top: 0
-      });
-      gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to('.main-about-video', {
-        scrollTrigger: {
-          trigger: '.trigger-wrapper-about',
-          start: 'top+=560 top',
-          end: 'top+=960 top',
-          scrub: 1
-        },
-        y: function y() {
-          return -350 * 100 / window.innerWidth + 'vw';
-        }
-      });
-      gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to('.main-about-advantages', {
-        scrollTrigger: {
-          trigger: '.trigger-wrapper-about',
-          start: 'top top',
-          end: 'bottom center',
-          scrub: 1,
-          // markers: true,
-          pin: true // pinSpacing: false
+          },
+          width: function width() {
+            return 7200 * 100 / window.innerWidth + 'vw';
+          },
+          height: function height() {
+            return 4900 * 100 / window.innerWidth + 'vw';
+          }
+        });
+        gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to('.main-about-title', {
+          scrollTrigger: {
+            trigger: '.trigger-wrapper-about',
+            start: 'top+=600 top',
+            end: 'top+=1000 top',
+            scrub: 1
+          },
+          y: function y() {
+            return -100 * 100 / window.innerWidth + 'vw';
+          },
+          color: '#afa3a3'
+        });
+        gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to('.main-about-name', {
+          scrollTrigger: {
+            trigger: '.trigger-wrapper-about',
+            start: 'top+=500 top',
+            end: 'top+=900 top',
+            scrub: 1
+          },
+          y: function y() {
+            return -350 * 100 / window.innerWidth + 'vw';
+          }
+        });
+        gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to('.main-about-text', {
+          scrollTrigger: {
+            trigger: '.trigger-wrapper-about',
+            start: 'top+=530 top',
+            end: 'top+=930 top',
+            scrub: 1
+          },
+          y: function y() {
+            return -350 * 100 / window.innerWidth + 'vw';
+          }
+        });
+        gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to('.main-about-video-shadow', {
+          scrollTrigger: {
+            trigger: '.trigger-wrapper-about',
+            start: 'top+=530 top',
+            end: 'top+=930 top',
+            scrub: 1
+          },
+          left: 0,
+          top: 0
+        });
+        gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to('.main-about-video', {
+          scrollTrigger: {
+            trigger: '.trigger-wrapper-about',
+            start: 'top+=560 top',
+            end: 'top+=960 top',
+            scrub: 1
+          },
+          y: function y() {
+            return -350 * 100 / window.innerWidth + 'vw';
+          }
+        });
+        gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to('.main-about-advantages', {
+          scrollTrigger: {
+            trigger: '.trigger-wrapper-about',
+            start: 'top top',
+            end: 'bottom center',
+            scrub: 1,
+            // markers: true,
+            pin: true // pinSpacing: false
 
-        },
-        right: '50%'
-      });
+          },
+          right: '100%'
+        });
+      } else {}
     }
   }]);
 
@@ -1990,23 +1990,22 @@ var mainCases = /*#__PURE__*/function () {
 
         },
         top: -100
-      });
-      gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__["ScrollTrigger"].matchMedia({
-        "(min-width: 1281px)": function minWidth1281px() {
-          gsap__WEBPACK_IMPORTED_MODULE_0__["default"].utils.toArray(".main-cases-item").forEach(function (item, i) {
-            gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(item, {
-              scrollTrigger: {
-                trigger: item,
-                start: 'top+=400 top+=400',
-                end: 'bottom+=400 top+=400',
-                scrub: 3 // markers: true
-
-              },
-              x: '-110vw'
-            });
-          });
-        }
-      });
+      }); // ScrollTrigger.matchMedia({
+      //     "(min-width: 1281px)": () => {
+      //         gsap.utils.toArray(".main-cases-item").forEach((item, i) => {
+      //             gsap.to(item, {
+      //                 scrollTrigger: {
+      //                     trigger: item,
+      //                     start: 'top+=400 top+=400',
+      //                     end: 'bottom+=400 top+=400',
+      //                     scrub: 3,
+      //                     // markers: true
+      //                 },
+      //                 x: '-110vw',
+      //             })
+      //         })
+      //     }
+      // });
     }
   }]);
 

@@ -1,4 +1,4 @@
-<section class="cases-items">
+<section class="cases-items" :class="{'mobile': window.width <=1280}">
     <div class="cases-items-buttons">
         <button class="news-and-trends-button news-and-trends-button__main">Мероприятия</button>
         <button class="news-and-trends-button news-and-trends-button__mint">Команда</button>
@@ -23,6 +23,7 @@
                     </div>
                     <div class="bottom">
                         <div class="cases-items-post-category">Дизайн, IOS, Android</div>
+                        <a href="#" class="more cases-items-post-category">Подробнее</a>
                     </div>
                 </div>
             </article>

@@ -79,7 +79,10 @@
     &-item-name {
         font-weight: 500;
         color: $bgColor;
-        transition: .3s all .3s ease; 
+        transition: 1s all .3s ease; 
+    }
+    .button {
+        overflow: hidden;
     }
     &:not(.mobile) &-item-name {
         font-size: vw(50);

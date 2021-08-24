@@ -12,6 +12,7 @@
   }
   &.mobile {
     padding: 0 20px 60px;
+    background: #fff;
   }
   &-info {
     @extend %flex-start-between;
@@ -172,4 +173,7 @@
       text-align: center;
     }
   }
+}
+.mobile .cursor {
+  display: none;
 }

@@ -45,6 +45,11 @@
         .middle {
             margin-bottom: vw(91);
         }
+        .bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
     }
     &-post:hover &-post-text {
         transform: translateY(0);
@@ -79,5 +84,26 @@
         text-align: center;
         text-transform: uppercase;
         @extend %white;
+    }
+    &.mobile {
+        .cases-items-buttons {
+            margin-bottom: 50px;
+            padding: 0 20px;
+            overflow: hidden;
+            padding-bottom: 10px;
+            overflow: auto;
+            display: flex;
+            align-items: center;
+            button.news-and-trends-button {
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 14px;
+                padding: 14px 30px;
+                border-radius: 10px;
+            }
+        }
+        .cases-items-post {
+            width: 100%;
+        }
     }
 }

@@ -12,6 +12,9 @@
       mix-blend-mode: difference;
       @extend %white;
   }
+  &-text {
+    color: #b5b5b5;
+  }
   &:not(.mobile) &-title {
     white-space: nowrap;
     margin-bottom: vw(96);

@@ -10,6 +10,8 @@
     &-title {
         mix-blend-mode: difference;
         @extend %white;
+        text-transform: uppercase;
+        color: #b5b5b5;
     }
     &:not(.mobile) &-title {
         padding: 0 vw(50) vw(178);
