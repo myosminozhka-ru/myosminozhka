@@ -1328,7 +1328,7 @@ var header = /*#__PURE__*/function () {
 
         },
         width: function width() {
-          return 100 * 100 / window.innerWidth + 'vw';
+          return 200 * 100 / window.innerWidth + 'vw';
         },
         onComplete: function onComplete() {
           _this.logoAnimationComplete();
@@ -1915,6 +1915,27 @@ var mainCarousel = /*#__PURE__*/function () {
         if (event.target.dataset.cellIndex) {
           chooseElem(event.target.dataset.cellIndex - 1);
         }
+      });
+      var interval = setInterval(function () {
+        selectedIndex++;
+        chooseElem(selectedIndex);
+      }, 5000);
+      document.querySelector('.main-carousel-scene').addEventListener('mousemove', function (event) {
+        if (event.target.dataset.cellIndex) {
+          // chooseElem(event.target.dataset.cellIndex - 1)
+          clearInterval(interval);
+          var style = window.getComputedStyle(document.querySelector('.main-carousel-carousel'));
+          var matrix = style.transform || style.webkitTransform || style.mozTransform;
+          var matrixType = matrix.includes('3d') ? '3d' : '2d';
+          var matrixValues = matrix.match(/matrix.*\((.+)\)/)[1].split(', ');
+          var z = 0;
+
+          if (matrixType === '3d') {
+            z = matrixValues[14];
+          }
+
+          document.querySelector('.main-carousel-carousel').style.transform = "translateZ(".concat(z, "px) rotateY(").concat(event.clientX / 10, "deg)");
+        }
       }); // set initials
 
       onOrientationChange();
@@ -1990,7 +2011,19 @@ var mainCases = /*#__PURE__*/function () {
 
         },
         top: -100
-      }); // ScrollTrigger.matchMedia({
+      });
+
+      if (window.innerWidth > 1280) {
+        gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.main-cases-items-in', {
+          scrollTrigger: {
+            trigger: '.main-cases',
+            start: '20%',
+            end: '120%',
+            scrub: 1
+          },
+          x: '-100%'
+        });
+      } else {} // ScrollTrigger.matchMedia({
       //     "(min-width: 1281px)": () => {
       //         gsap.utils.toArray(".main-cases-item").forEach((item, i) => {
       //             gsap.to(item, {
@@ -2006,6 +2039,7 @@ var mainCases = /*#__PURE__*/function () {
       //         })
       //     }
       // });
+
     }
   }]);
 
@@ -2181,8 +2215,8 @@ var newsAndTrends = /*#__PURE__*/function () {
               trigger: '.news-and-trends-trigger',
               start: 'top top',
               end: 'bottom top',
-              scrub: 1,
-              pin: true
+              scrub: 1 // pin: true
+
             },
             x: '-100%'
           });
@@ -2208,9 +2242,8 @@ var newsAndTrends = /*#__PURE__*/function () {
 
             _this6.scrollWindow();
 
-            _this6.checkProgress();
+            _this6.checkProgress(); // this.initSlider();
 
-            _this6.initSlider();
 
             document.querySelectorAll('.news-and-trends-item').forEach(function (item) {
               item.addEventListener('click', function () {
@@ -2358,7 +2391,8 @@ var mainWeb = /*#__PURE__*/function () {
       gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].utils.toArray(".web-right-image").forEach(function (item, i) {
         gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__["ScrollTrigger"].create({
           trigger: item,
-          start: "top top",
+          start: "top",
+          end: '1%',
           // pin: true, 
           // pinSpacing: false,
           // snap: 1,

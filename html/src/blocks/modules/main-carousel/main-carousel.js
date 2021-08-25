@@ -83,9 +83,29 @@ const mainCarousel = class MainCarousel {
                 chooseElem(event.target.dataset.cellIndex - 1)
             }
         });
+        var interval = setInterval(function () {
+            selectedIndex++;
+            chooseElem(selectedIndex);
+        }, 5000);
+        document.querySelector('.main-carousel-scene').addEventListener( 'mousemove', function(event) {
+            if (event.target.dataset.cellIndex) {
+                // chooseElem(event.target.dataset.cellIndex - 1)
+                clearInterval(interval);
+                const style = window.getComputedStyle(document.querySelector('.main-carousel-carousel'))
+                const matrix = style.transform || style.webkitTransform || style.mozTransform
+                const matrixType = matrix.includes('3d') ? '3d' : '2d'
+                const matrixValues = matrix.match(/matrix.*\((.+)\)/)[1].split(', ')
+                var z = 0
+                    if (matrixType === '3d') {
+                        z = matrixValues[14]
+                    }
+                document.querySelector('.main-carousel-carousel').style.transform = `translateZ(${z}px) rotateY(${event.clientX / 10}deg)`;
+            }
+        });
 
         // set initials
         onOrientationChange();
+
     }
 }
 

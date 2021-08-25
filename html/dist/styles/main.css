@@ -2756,7 +2756,7 @@ a:hover {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 10;
+  z-index: 100;
 }
 
 .header.mobile.isOpened {
@@ -3042,6 +3042,7 @@ a:hover {
   padding-left: 2.60417vw;
   padding-right: 10.41667vw;
   box-sizing: border-box;
+  height: 300px;
 }
 
 .web-subtitles {
@@ -4279,7 +4280,7 @@ a:hover {
 .news-and-trends-arrows {
   margin-top: 15px;
   padding-left: 24.73958vw;
-  margin-bottom: 5.20833vw;
+  margin-bottom: 2.60417vw;
   display: flex;
   align-items: center;
 }
@@ -4397,7 +4398,7 @@ a:hover {
 }
 
 .main-cases.mobile {
-  padding: 155px 93px 65px 20px;
+  padding: 155px 20px 65px 20px;
   overflow: hidden;
 }
 
@@ -4408,7 +4409,6 @@ a:hover {
   margin-top: 50px;
   left: 0;
   right: 0;
-  margin-right: -73px;
 }
 
 .main-cases-bg {
@@ -4447,6 +4447,7 @@ a:hover {
 
 .main-cases-items {
   overflow: hidden;
+  width: 100%;
 }
 
 .main-cases.mobile .main-cases-items {
@@ -4462,6 +4463,7 @@ a:hover {
   position: relative;
   z-index: 16;
   display: flex;
+  width: max-content;
 }
 
 .main-cases-item {
@@ -4480,13 +4482,14 @@ a:hover {
 
 .main-cases:not(.mobile) .main-cases-item {
   width: 100%;
-  flex: 0 0 410px;
-  margin-right: 20px;
+  flex: 0 0 21.35417vw;
+  margin-right: 1.04167vw;
 }
 
 .main-cases:not(.mobile) .main-cases-item .image {
   flex: 1 1 auto;
   width: 100%;
+  height: 21.35417vw;
 }
 
 .main-cases:not(.mobile) .main-cases-item .title {

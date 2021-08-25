@@ -20,7 +20,7 @@ const header = class Header {
                 // markers: true,
             },
             width: () => {
-                return 100 * 100 / window.innerWidth + 'vw'
+                return 200 * 100 / window.innerWidth + 'vw'
             },
             onComplete: () => {
                 this.logoAnimationComplete();

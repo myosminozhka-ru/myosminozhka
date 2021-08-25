@@ -34,6 +34,19 @@ const mainCases = class MainCases {
              },
              top: -100,
          });
+         if (window.innerWidth > 1280) {
+            gsap.to('.main-cases-items-in', {
+                scrollTrigger: {
+                    trigger: '.main-cases',
+                    start: '20%',
+                    end: '120%',
+                    scrub: 1
+                    
+                },
+                x: '-100%',
+            });
+            } else {
+        }
         // ScrollTrigger.matchMedia({
         //     "(min-width: 1281px)": () => {
         //         gsap.utils.toArray(".main-cases-item").forEach((item, i) => {

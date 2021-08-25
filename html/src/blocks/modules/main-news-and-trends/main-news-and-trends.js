@@ -114,8 +114,8 @@ const newsAndTrends = class NewsAndTrends {
                         trigger: '.news-and-trends-trigger',
                         start: 'top top',
                         end: 'bottom top',
-                        scrub: 1,
-                        pin: true,
+                        scrub: 1
+                        // pin: true
                     },
                     x: '-100%'
                 })
@@ -134,7 +134,7 @@ const newsAndTrends = class NewsAndTrends {
                     this.animateItems();
                     this.scrollWindow();
                     this.checkProgress();
-                    this.initSlider();
+                    // this.initSlider();
 
                     document.querySelectorAll('.news-and-trends-item').forEach(item => {
                         item.addEventListener('click', () => this.chooseElement(item))
