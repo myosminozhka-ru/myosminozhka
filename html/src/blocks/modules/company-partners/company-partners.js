@@ -8,6 +8,7 @@ const companyPartners = class companyPartners {
         if (!document.querySelector('.company-partners-slider')) return;
         new Glide('.company-partners-slider', {
             startAt: 0,
+            bound: 'Boolean',
             perView: 2,
             breakpoints: {
                 1280: {

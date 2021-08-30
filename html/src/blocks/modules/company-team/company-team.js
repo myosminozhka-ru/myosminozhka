@@ -8,10 +8,10 @@ const companytTeam = class companytTeam {
             gsap.to(item, {
                 scrollTrigger: {
                     trigger: item,
-                    start: 'top-=400 top',
+                    start: 'top-=800 top',
                     end: 'bottom-=400 top',
                     scrub: 1,
-                    // markers: true
+                    //markers: true
                 },
                 scale: 1,
             })

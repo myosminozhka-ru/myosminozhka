@@ -13,7 +13,7 @@
         right: 0;
     }
     &:not(.mobile) &-tentacle {
-        top: vw(-700);
+        top: vw(-800);
     }
     @media all and (max-width: 1280px) {
         &-tentacle {
@@ -225,6 +225,12 @@
                 fill: #fff;
             }
         }
+        &:active {
+            background: #DA3A63;
+            svg {
+                fill: #fff;
+            }
+        }
     }
     &:not(.mobile) &-social {
         width: vw(102);
@@ -307,3 +313,7 @@
         grid-column-end: 3;
     }
 }
+
+body.company .company-ceo:not(.mobile) {
+    background-size: 121.2%;
+  }

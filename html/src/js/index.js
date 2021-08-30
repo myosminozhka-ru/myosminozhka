@@ -21,6 +21,8 @@ import vacanciesTabs from "%modules%/vacancies-tabs/vacancies-tabs";
 import jobInfo from "%modules%/job-info/job-info";
 import jobTeam from "%modules%/job-team/job-team";
 import jobStages from "%modules%/job-stages/job-stages";
+import postInfo from "%modules%/posts-info/posts-info";
+import postBlog from "%modules%/posts-blog/posts-blog";
 import footer from "%modules%/footer/footer";
 
 import gsap from 'gsap';

@@ -35,6 +35,7 @@ const mainWeb = class Mainweb {
                 trigger: item,
                 start: "top", 
                 end: '1%',
+                markers: false,
                 // pin: true, 
                 // pinSpacing: false,
                 // snap: 1,

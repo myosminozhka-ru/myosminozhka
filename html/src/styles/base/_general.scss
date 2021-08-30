@@ -101,7 +101,7 @@ html {
   }
   &:hover {
     .text {
-      color: #000;
+      color: #fff;
     }
   }
   &--main {
@@ -116,7 +116,7 @@ html {
     pointer-events: none;
     width: 0;
     height: 0;
-    background: #fff;
+    background: #4F4F4F;
     border-radius: 50%;
     transform-origin: 50% 50%;
     // transform: translateX(-200px) translateY(-200px);

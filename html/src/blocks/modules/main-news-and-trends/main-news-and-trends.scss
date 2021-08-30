@@ -24,8 +24,9 @@
         color: #4F4F4F;
     }
     &:not(.mobile) &-title  {
+        text-transform: uppercase;
         margin-bottom: vw(60);
-        font-size: vw(90);
+        font-size: vw(70);
     }
     &.mobile &-title  {
         margin-bottom: 50px;

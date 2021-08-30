@@ -30,7 +30,7 @@
             rel="stylesheet">
         <link rel="stylesheet" href="styles/main.css">
     </head>
-    <body>
+    <body class="company">
         <div class="wrapper" id="app">
             <header class="header" :class="{'isOpened': header.isOpened, 'mobile': window.width <=1280}">
     <div class="header-blur"></div>
@@ -63,7 +63,7 @@
             </div>
         </nav>
         <ul class="header-lang" v-if="window.width > 1280">
-            <li><a href="#">Ru</a></li>
+            <li class="active"><a href="#">Ru</a></li>
             <li class="header-lang__delim">/</li>
             <li><a href="#">En</a></li>
         </ul>
@@ -996,7 +996,7 @@
     </div>
 </div>
             <section class="career-blog" :class="{'mobile': window.width <=1280}">
-    <h1 class="career-blog-title">Блог</h1>
+    <h1 class="career-blog-title">Мы&nbsp;на&nbsp;конференциях</h1>
     
     <div class="glide career-blog-items">
         <div class="career-blog-buttons">
@@ -1040,6 +1040,14 @@
                         <h5 class="career-blog-item-title">Название проекта</h5>
                         <p class="career-blog-item-description">Краткое описание</p>
                     </article>
+                    <article class="glide__slide career-blog-item" data-ctegory="development">
+                        <div class="career-blog-item-image">
+                            <img src="https://picsum.photos/550/650" width="100%" height="100%" alt="">
+                        </div>
+                        <time pubdate datetime="21.04.2021" class="career-blog-item-date">21.04.2021</time>
+                        <h5 class="career-blog-item-title">Название проекта</h5>
+                        <p class="career-blog-item-description">Краткое описание</p>
+                    </article>
                 
                     <article class="glide__slide career-blog-item" data-ctegory="team">
                         <div class="career-blog-item-image">
@@ -1060,6 +1068,14 @@
                     <article class="glide__slide career-blog-item" data-ctegory="team">
                         <div class="career-blog-item-image">
                             <img src="https://picsum.photos/600/370" width="100%" height="100%" alt="">
+                        </div>
+                        <time pubdate datetime="21.04.2021" class="career-blog-item-date">21.04.2021</time>
+                        <h5 class="career-blog-item-title">Название проекта</h5>
+                        <p class="career-blog-item-description">Краткое описание</p>
+                    </article>
+                    <article class="glide__slide career-blog-item" data-ctegory="development">
+                        <div class="career-blog-item-image">
+                            <img src="https://picsum.photos/550/650" width="100%" height="100%" alt="">
                         </div>
                         <time pubdate datetime="21.04.2021" class="career-blog-item-date">21.04.2021</time>
                         <h5 class="career-blog-item-title">Название проекта</h5>

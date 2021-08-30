@@ -279,3 +279,30 @@
         }
     }
 }
+.job-stages-trigger .in {
+    mix-blend-mode: unset
+}
+.job-stages-trigger .text {
+    color: #4F4F4F;
+}
+.job-stages-trigger:hover {
+    .number, .text {
+        color: #fff;
+    }
+}
+.job-stages-trigger.isActive {
+    .number, .text {
+        color: #fff;
+    }
+}
+#job-management {
+    .job-stages-trigger .in {
+        mix-blend-mode: unset
+    }
+    .job-stages-trigger .number, .job-stages-trigger .text {
+        color: #4F4F4F;
+    }
+}
+.job-stages-trigger .number {
+    color: #4F4F4F;
+}

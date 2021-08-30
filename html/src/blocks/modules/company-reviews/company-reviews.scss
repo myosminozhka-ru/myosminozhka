@@ -10,7 +10,7 @@
     &-title {
         white-space: nowrap;
         text-transform: uppercase;
-        
+        color: #4a4a4a;
     }
     &:not(.mobile) &-title {
         margin-bottom: vw(150);
@@ -79,7 +79,7 @@
     &-item-name {
         font-weight: 500;
         color: $bgColor;
-        transition: 1s all .3s ease; 
+        transition: .7s all .3s ease; 
     }
     .button {
         overflow: hidden;
@@ -126,8 +126,10 @@
         max-width: vw(413);
     }
     &.mobile &-item-button {
-        button {
+        button, a {
             padding: 25px;
+            max-width: 500px;
+            width: 100%;
         }
     }
     &-item:not(.glide__slide--active) &-item-left {
@@ -183,4 +185,11 @@
         height: 32px;
         padding: 20px;
     }
+}
+.glide__slides {
+    align-items: center;
+}
+.company-reviews .button {
+    padding-left: vw(10);
+    padding-right: vw(10);
 }

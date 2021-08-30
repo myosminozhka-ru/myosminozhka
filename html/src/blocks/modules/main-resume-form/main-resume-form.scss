@@ -15,5 +15,27 @@
         text-transform: uppercase;
         margin-bottom: vw(80);
         @extend %white;
+        margin-left: vw(-4);
+    }
+}
+.career .footer:not(.mobile) .footer-tentacle {
+    top: vw(-850);
+}
+.hh_block {
+    max-width: 410px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    &__img {
+        flex: 0 0 83px;
+        margin-right: 40px;
+    }
+    &__text {
+        font-style: normal;
+        font-weight: 300;
+        font-size: vw(30);
+        line-height: 40px;
     }
 }

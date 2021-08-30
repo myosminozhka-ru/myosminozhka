@@ -1,6 +1,18 @@
+.career {
+    .company-reviews-arrows {
+        justify-content: space-between;
+        max-width: 241px;
+        width: 100%;
+        button {
+            width: 86px;
+            height: 33px;
+        }
+    }
+}
 .career-blog {
     background: #fff;
     position: relative;
+    overflow: hidden;
     &:not(.mobile) {
         padding: vw(100) vw(50) vw(250);
     }

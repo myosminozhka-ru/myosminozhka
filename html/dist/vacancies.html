@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Осьминожка-Компания</title>
+        <title>Осьминожка-Вакансии</title>
         <meta name="theme-color" content="#fff">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -30,7 +30,7 @@
             rel="stylesheet">
         <link rel="stylesheet" href="styles/main.css">
     </head>
-    <body>
+    <body class="vacan">
         <div class="wrapper" id="app">
             <header class="header" :class="{'isOpened': header.isOpened, 'mobile': window.width <=1280}">
     <div class="header-blur"></div>
@@ -63,7 +63,7 @@
             </div>
         </nav>
         <ul class="header-lang" v-if="window.width > 1280">
-            <li><a href="#">Ru</a></li>
+            <li class="active"><a href="#">Ru</a></li>
             <li class="header-lang__delim">/</li>
             <li><a href="#">En</a></li>
         </ul>
@@ -177,7 +177,7 @@
     </div>
 </section>
             <section class="main-resume main-question" :class="{'mobile': window.width <=1280}">
-    <h4 class="main-resume-title">Работа у нас</h4>
+    <h4 class="main-resume-title">Обратная связь</h4>
     <form action="#">
         <div class="main-question-form">
             <div class="main-question-inputs">
@@ -205,6 +205,10 @@
             </div>
         </div>
     </form>
+    <a href="#" class="hh_block">
+        <div class="hh_block__img"><img src="img/svg/hh_svg.svg" alt=""></div>
+        <div class="hh_block__text">Посмотреть вакансии на hh</div>
+    </a>
 </section>
             <footer class="footer" :class="{'mobile': window.width <=1280}">
     <div class="footer-tentacle">

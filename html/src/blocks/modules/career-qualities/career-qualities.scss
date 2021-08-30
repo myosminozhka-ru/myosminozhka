@@ -1,7 +1,15 @@
+.career {
+    background: none;
+    &-first {
+        background: #4f4f4f;
+    }
+}
 .career-qualities {
     overflow: hidden;
     &:not(.mobile) {
         padding: vw(50);
+        background: url("data:image/svg+xml,%3Csvg width='1920' height='1268' viewBox='0 0 1920 1268' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-5 0H1925.5V781H1405H1085.49C669.305 781 272.779 958.084 -5 1268V781L-5 0Z' fill='%234F4F4F'/%3E%3C/svg%3E%0A") 0 0 / 100% no-repeat;
+        padding-bottom: vw(600);
     }
     &.mobile {
         padding: 0 20px 74px;

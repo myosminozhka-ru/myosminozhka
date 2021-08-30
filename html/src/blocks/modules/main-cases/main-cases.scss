@@ -56,6 +56,8 @@
     &-items {
         overflow: hidden;
         width: 100%;
+        padding-left: vw(300);
+        box-sizing: border-box;
     }
     &.mobile &-items {
         position: relative;

@@ -65,6 +65,7 @@
     justify-content: space-between;
     width: 40px;
     height: 21px;
+    cursor: pointer;
     div {
       width: 100%;
       height: 3px;
@@ -103,6 +104,9 @@
       line-height: vw(20);
       @extend %white;
       @extend %inline-block;
+      &.active {
+        color: #FF4978;
+      }
     }
     a {
       font-weight: inherit;
@@ -148,4 +152,8 @@
       }
     }
   }
+}
+.call-to-action-button a.button--main {
+    padding-left: vw(10);
+    padding-right: vw(10);
 }

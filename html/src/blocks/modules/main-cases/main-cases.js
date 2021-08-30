@@ -38,8 +38,8 @@ const mainCases = class MainCases {
             gsap.to('.main-cases-items-in', {
                 scrollTrigger: {
                     trigger: '.main-cases',
-                    start: '20%',
-                    end: '120%',
+                    start: '30%',
+                    end: '145%',
                     scrub: 1
                     
                 },

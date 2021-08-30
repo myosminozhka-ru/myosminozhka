@@ -2,7 +2,8 @@
   overflow: hidden;
   background: #fff;
   &:not(.mobile) {
-    padding: vw(118) 0 vw(192);
+    // padding: vw(118) 0 vw(192);
+    padding: 0 0 vw(192);
   }
   &.mobile {
     padding: 60px 20px 102px;
@@ -10,7 +11,7 @@
   &-title {
       text-transform: uppercase;
       mix-blend-mode: difference;
-      @extend %white;
+      color: #b5b5b5;
   }
   &-text {
     color: #b5b5b5;

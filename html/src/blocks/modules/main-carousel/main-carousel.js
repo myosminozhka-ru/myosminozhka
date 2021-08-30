@@ -89,7 +89,7 @@ const mainCarousel = class MainCarousel {
         }, 5000);
         document.querySelector('.main-carousel-scene').addEventListener( 'mousemove', function(event) {
             if (event.target.dataset.cellIndex) {
-                // chooseElem(event.target.dataset.cellIndex - 1)
+                chooseElem(event.target.dataset.cellIndex - 1)
                 clearInterval(interval);
                 const style = window.getComputedStyle(document.querySelector('.main-carousel-carousel'))
                 const matrix = style.transform || style.webkitTransform || style.mozTransform

@@ -63,7 +63,7 @@
             </div>
         </nav>
         <ul class="header-lang" v-if="window.width > 1280">
-            <li><a href="#">Ru</a></li>
+            <li class="active"><a href="#">Ru</a></li>
             <li class="header-lang__delim">/</li>
             <li><a href="#">En</a></li>
         </ul>
@@ -895,7 +895,7 @@
     </div>
 </section>
             <section class="main-resume main-question" :class="{'mobile': window.width <=1280}">
-    <h4 class="main-resume-title">Работа у нас</h4>
+    <h4 class="main-resume-title">Обратная связь</h4>
     <form action="#">
         <div class="main-question-form">
             <div class="main-question-inputs">
@@ -923,6 +923,10 @@
             </div>
         </div>
     </form>
+    <a href="#" class="hh_block">
+        <div class="hh_block__img"><img src="img/svg/hh_svg.svg" alt=""></div>
+        <div class="hh_block__text">Посмотреть вакансии на hh</div>
+    </a>
 </section>
             <footer class="footer" :class="{'mobile': window.width <=1280}">
     <div class="footer-tentacle">

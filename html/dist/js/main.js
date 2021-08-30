@@ -657,6 +657,7 @@ var companyPartners = /*#__PURE__*/function () {
       if (!document.querySelector('.company-partners-slider')) return;
       new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.company-partners-slider', {
         startAt: 0,
+        bound: 'Boolean',
         perView: 2,
         breakpoints: {
           1280: {
@@ -1028,9 +1029,9 @@ var companytTeam = /*#__PURE__*/function () {
         gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(item, {
           scrollTrigger: {
             trigger: item,
-            start: 'top-=400 top',
+            start: 'top-=800 top',
             end: 'bottom-=400 top',
-            scrub: 1 // markers: true
+            scrub: 1 //markers: true
 
           },
           scale: 1
@@ -1343,10 +1344,12 @@ var header = /*#__PURE__*/function () {
 
         },
         paddingTop: function paddingTop() {
-          return 10 * 100 / window.innerWidth + 'vw';
+          //return 10 * 100 / window.innerWidth + 'vw'
+          return 1 * 100 / window.innerWidth + 'vw';
         },
         paddingBottom: function paddingBottom() {
-          return 10 * 100 / window.innerWidth + 'vw';
+          //return 10 * 100 / window.innerWidth + 'vw'
+          return 1 * 100 / window.innerWidth + 'vw';
         },
         onComplete: function onComplete() {
           _this.headerInAnimationComplete();
@@ -1357,18 +1360,15 @@ var header = /*#__PURE__*/function () {
     }
   }, {
     key: "onInit",
-    value: function onInit() {
-      console.log('Анимация шапки инициирована');
+    value: function onInit() {//console.log('Анимация шапки инициирована');
     }
   }, {
     key: "logoAnimationComplete",
-    value: function logoAnimationComplete() {
-      console.log('Анимация логотипа окончена');
+    value: function logoAnimationComplete() {//console.log('Анимация логотипа окончена');
     }
   }, {
     key: "headerInAnimationComplete",
-    value: function headerInAnimationComplete() {
-      console.log('Анимация шапки окончена');
+    value: function headerInAnimationComplete() {//console.log('Анимация шапки окончена');
     }
   }, {
     key: "setHeaderWavePositionOnLoad",
@@ -1922,7 +1922,7 @@ var mainCarousel = /*#__PURE__*/function () {
       }, 5000);
       document.querySelector('.main-carousel-scene').addEventListener('mousemove', function (event) {
         if (event.target.dataset.cellIndex) {
-          // chooseElem(event.target.dataset.cellIndex - 1)
+          chooseElem(event.target.dataset.cellIndex - 1);
           clearInterval(interval);
           var style = window.getComputedStyle(document.querySelector('.main-carousel-carousel'));
           var matrix = style.transform || style.webkitTransform || style.mozTransform;
@@ -2017,8 +2017,8 @@ var mainCases = /*#__PURE__*/function () {
         gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.main-cases-items-in', {
           scrollTrigger: {
             trigger: '.main-cases',
-            start: '20%',
-            end: '120%',
+            start: '30%',
+            end: '145%',
             scrub: 1
           },
           x: '-100%'
@@ -2393,6 +2393,7 @@ var mainWeb = /*#__PURE__*/function () {
           trigger: item,
           start: "top",
           end: '1%',
+          markers: false,
           // pin: true, 
           // pinSpacing: false,
           // snap: 1,
@@ -2542,6 +2543,44 @@ var mainWords = /*#__PURE__*/function () {
 
 /***/ }),
 
+/***/ "./src/blocks/modules/posts-blog/posts-blog.js":
+/*!*****************************************************!*\
+  !*** ./src/blocks/modules/posts-blog/posts-blog.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var postBlog = function postBlog() {
+  _classCallCheck(this, postBlog);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (postBlog);
+
+/***/ }),
+
+/***/ "./src/blocks/modules/posts-info/posts-info.js":
+/*!*****************************************************!*\
+  !*** ./src/blocks/modules/posts-info/posts-info.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var postInfo = function postInfo() {
+  _classCallCheck(this, postInfo);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (postInfo);
+
+/***/ }),
+
 /***/ "./src/blocks/modules/vacancies-tabs/vacancies-tabs.js":
 /*!*************************************************************!*\
   !*** ./src/blocks/modules/vacancies-tabs/vacancies-tabs.js ***!
@@ -2627,9 +2666,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_job_info_job_info__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! %modules%/job-info/job-info */ "./src/blocks/modules/job-info/job-info.js");
 /* harmony import */ var _modules_job_team_job_team__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! %modules%/job-team/job-team */ "./src/blocks/modules/job-team/job-team.js");
 /* harmony import */ var _modules_job_stages_job_stages__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! %modules%/job-stages/job-stages */ "./src/blocks/modules/job-stages/job-stages.js");
-/* harmony import */ var _modules_footer_footer__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! %modules%/footer/footer */ "./src/blocks/modules/footer/footer.js");
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var _modules_posts_info_posts_info__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! %modules%/posts-info/posts-info */ "./src/blocks/modules/posts-info/posts-info.js");
+/* harmony import */ var _modules_posts_blog_posts_blog__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! %modules%/posts-blog/posts-blog */ "./src/blocks/modules/posts-blog/posts-blog.js");
+/* harmony import */ var _modules_footer_footer__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! %modules%/footer/footer */ "./src/blocks/modules/footer/footer.js");
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
 
 
 
@@ -2688,7 +2731,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       textSelector: '.main-question-form-item span'
     })), _defineProperty(_ref, "companyPrinciples", new _modules_company_principles_company_principles__WEBPACK_IMPORTED_MODULE_9__["default"]()), _defineProperty(_ref, "companyVideo", new _modules_company_video_company_video__WEBPACK_IMPORTED_MODULE_8__["default"]()), _defineProperty(_ref, "companyPartners", new _modules_company_partners_company_partners__WEBPACK_IMPORTED_MODULE_10__["default"]()), _defineProperty(_ref, "companyTeam", new _modules_company_team_company_team__WEBPACK_IMPORTED_MODULE_12__["default"]()), _defineProperty(_ref, "careerBlog", new _modules_career_blog_career_blog__WEBPACK_IMPORTED_MODULE_18__["default"]()), _defineProperty(_ref, "companyReviews", new _modules_company_reviews_company_reviews__WEBPACK_IMPORTED_MODULE_11__["default"]()), _defineProperty(_ref, "header", new _modules_header_header__WEBPACK_IMPORTED_MODULE_13__["default"]()), _defineProperty(_ref, "companyAbout", new _modules_company_about_company_about__WEBPACK_IMPORTED_MODULE_15__["default"]({
       selector: '.company-about'
-    })), _defineProperty(_ref, "companyRaiting", new _modules_company_raiting_company_raiting__WEBPACK_IMPORTED_MODULE_16__["default"]()), _defineProperty(_ref, "vacanciesTabs", new _modules_vacancies_tabs_vacancies_tabs__WEBPACK_IMPORTED_MODULE_19__["default"]()), _defineProperty(_ref, "careerBlocks", new _modules_career_blocks_career_blocks__WEBPACK_IMPORTED_MODULE_17__["default"]()), _defineProperty(_ref, "jobInfo", new _modules_job_info_job_info__WEBPACK_IMPORTED_MODULE_20__["default"]()), _defineProperty(_ref, "jobTeam", new _modules_job_team_job_team__WEBPACK_IMPORTED_MODULE_21__["default"]()), _defineProperty(_ref, "jobStages", new _modules_job_stages_job_stages__WEBPACK_IMPORTED_MODULE_22__["default"]()), _defineProperty(_ref, "footer", new _modules_footer_footer__WEBPACK_IMPORTED_MODULE_23__["default"]()), _defineProperty(_ref, "isMounted", false), _defineProperty(_ref, "sizes", {
+    })), _defineProperty(_ref, "companyRaiting", new _modules_company_raiting_company_raiting__WEBPACK_IMPORTED_MODULE_16__["default"]()), _defineProperty(_ref, "vacanciesTabs", new _modules_vacancies_tabs_vacancies_tabs__WEBPACK_IMPORTED_MODULE_19__["default"]()), _defineProperty(_ref, "careerBlocks", new _modules_career_blocks_career_blocks__WEBPACK_IMPORTED_MODULE_17__["default"]()), _defineProperty(_ref, "jobInfo", new _modules_job_info_job_info__WEBPACK_IMPORTED_MODULE_20__["default"]()), _defineProperty(_ref, "jobTeam", new _modules_job_team_job_team__WEBPACK_IMPORTED_MODULE_21__["default"]()), _defineProperty(_ref, "jobStages", new _modules_job_stages_job_stages__WEBPACK_IMPORTED_MODULE_22__["default"]()), _defineProperty(_ref, "footer", new _modules_footer_footer__WEBPACK_IMPORTED_MODULE_25__["default"]()), _defineProperty(_ref, "isMounted", false), _defineProperty(_ref, "sizes", {
       window: {
         width: window.innerWidth,
         height: window.innerHeight
@@ -2791,7 +2834,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       event.target.appendChild(circle);
       event.target.children[1].style.left = x + 'px';
       event.target.children[1].style.top = y + 'px';
-      gsap__WEBPACK_IMPORTED_MODULE_24__["default"].to(event.target.children[1], 0.5, {
+      gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(event.target.children[1], 0.5, {
         width: 800,
         height: 800,
         x: -400,
@@ -2803,7 +2846,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       var y = event.offsetY;
       event.target.children[1].style.left = x + 'px';
       event.target.children[1].style.top = y + 'px';
-      gsap__WEBPACK_IMPORTED_MODULE_24__["default"].to(event.target.children[1], 0.3, {
+      gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(event.target.children[1], 0.3, {
         width: 0,
         height: 0,
         x: 0,

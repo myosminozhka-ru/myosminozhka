@@ -142,6 +142,7 @@
     }
     .text {
       color: #4f4f4f;
+      text-transform: lowercase;
     }
   }
   &:not(.mobile) &-advantage {
