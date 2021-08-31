@@ -2599,7 +2599,7 @@ html {
   height: 0;
   background: #4F4F4F;
   border-radius: 50%;
-  transform-origin: 50% 50%;
+  transform-origin: 100% 100%;
 }
 
 /* width */
@@ -4576,7 +4576,7 @@ a:hover {
 
 .main-resume-title {
   text-transform: uppercase;
-  margin-bottom: 4.16667vw;
+  margin-bottom: 2.08333vw;
   margin-left: -0.20833vw;
 }
 
@@ -4821,7 +4821,7 @@ a:hover {
 .company-principles-title {
   text-transform: uppercase;
   mix-blend-mode: difference;
-  color: #b5b5b5;
+  color: #fff;
 }
 
 .company-principles-text {
@@ -5541,6 +5541,7 @@ body.company .company-ceo.mobile {
 
 .company-reviews:not(.mobile) {
   padding: 0 2.60417vw;
+  margin-top: -0.41667vw;
 }
 
 .company-reviews.mobile {
@@ -5694,8 +5695,9 @@ body.company .company-ceo.mobile {
 .company-reviews.mobile .company-reviews-item-button button,
 .company-reviews.mobile .company-reviews-item-button a {
   padding: 25px;
-  max-width: 500px;
+  max-width: 390px;
   width: 100%;
+  font-size: 20px;
 }
 
 .company-reviews-item:not(.glide__slide--active) .company-reviews-item-left {
@@ -6540,7 +6542,7 @@ body.company .company-ceo.mobile {
   font-weight: 500;
   font-size: 14px;
   line-height: 14px;
-  padding: 27px 30px;
+  padding: 13px 16px;
   border-radius: 10px;
 }
 
@@ -6718,7 +6720,7 @@ body.company .company-ceo.mobile {
 }
 
 .contacts-info.mobile .contacts-info-link {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 30px;
 }
 
@@ -6858,6 +6860,23 @@ body.company .company-ceo.mobile {
 
 .cases-items.mobile .cases-items-post-text {
   min-height: 320px;
+}
+
+.cases-items.mobile .cases-items-post-date {
+  font-size: 12px;
+}
+
+.cases-items.mobile .cases-items-post-title {
+  font-size: 24px;
+}
+
+.cases-items.mobile .cases-items-post-description,
+.cases-items.mobile .cases-items-post-category {
+  font-size: 14px;
+}
+
+.cases-items.mobile .cases-items-post-category {
+  font-size: 13px;
 }
 
 .job-first {
@@ -7357,6 +7376,11 @@ html:root body.posts .post_info__code--in {
 .job-stages-support-left .job-stages-trigger {
   border-color: #fff;
   margin: -5.20833vw 0 3.64583vw;
+}
+
+.job-stages-support-left .job-stages-trigger .number,
+.job-stages-support-left .job-stages-trigger .text {
+  color: #fff;
 }
 
 .job-stages-support-right {

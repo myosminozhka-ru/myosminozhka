@@ -159,6 +159,7 @@
         .job-stages-trigger {
             border-color: #fff;
             margin: vw(-100) 0 vw(70);
+            .number, .text {color: #fff;}
         }
     }
     &-support-right {
