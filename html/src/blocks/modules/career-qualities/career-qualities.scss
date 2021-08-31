@@ -3,6 +3,9 @@
     &-first {
         background: #4f4f4f;
     }
+    .footer:not(.mobile) .footer-tentacle {
+        top: vw(-800);
+    }
 }
 .career-qualities {
     overflow: hidden;

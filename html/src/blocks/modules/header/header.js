@@ -31,7 +31,7 @@ const header = class Header {
                 trigger: '.wrapper',
                 start: 'top top',
                 end: 'top+=400 top',
-                scrub: 1,
+                scrub: 0,
                 // markers: true,
             },
             paddingTop: () => {

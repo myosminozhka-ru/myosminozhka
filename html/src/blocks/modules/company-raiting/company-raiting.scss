@@ -1,9 +1,9 @@
 .company-raiting {
-    overflow: hidden;
+    //overflow: hidden;
     position: relative;
     z-index: 2;
     &:not(.mobile) {
-        padding: vw(70) 0 0;
+        // padding: vw(70) 0 0;
     }
     &.mobile {
         padding: 40px 0 150px;  
@@ -12,11 +12,13 @@
         mix-blend-mode: difference;
         @extend %white;
         text-transform: uppercase;
-        color: #b5b5b5;
+        color: #fff;
     }
     &:not(.mobile) &-title {
+        overflow: hidden;
         padding: 0 vw(50) vw(178);
         white-space: nowrap;
+        margin-top: vw(-580);
     }
     &.mobile &-title {
         padding: 0 20px 50px;
@@ -25,9 +27,11 @@
     }
     &-items {
         display: flex;
+        overflow: hidden;
         align-items: center;
         flex-wrap: nowrap;
         overflow: auto;
+        scrollbar-width: none;
         &::-webkit-scrollbar {
             height: 0;
         }

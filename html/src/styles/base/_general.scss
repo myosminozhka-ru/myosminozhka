@@ -1,3 +1,6 @@
+html {
+  font-size: 0;
+}
 h1,
 h2,
 h3,
@@ -101,7 +104,7 @@ html {
   }
   &:hover {
     .text {
-      color: #fff;
+      color: #FF4978;
     }
   }
   &--main {
@@ -116,13 +119,14 @@ html {
     pointer-events: none;
     width: 0;
     height: 0;
-    background: #4F4F4F;
-    border-radius: 50%;
-    transform-origin: 100% 100%;
+    background: #fff;
+    border-radius: 1000%;
+    transform-origin: 50% 50%;
     // transform: translateX(-200px) translateY(-200px);
     // animation: circleIn 1s forwards linear;
   }
 }
+
 
 
 // @keyframes circleIn {

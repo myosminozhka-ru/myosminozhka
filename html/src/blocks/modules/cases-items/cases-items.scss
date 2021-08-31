@@ -16,6 +16,9 @@
         cursor: pointer;
         &:nth-child(2n+3), &:nth-child(2n+4)  {
             min-height: 676px;     
+            .cases-items-post-text {
+                min-height: 676px;     
+            }
         }
     }
     &-post-image {

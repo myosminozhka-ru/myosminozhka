@@ -131,6 +131,16 @@
         font-size: 16px;
         line-height: 16px;
     }
+    .company-reviews-arrows {
+        max-width: 241px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        button {
+            max-width: 89px;
+            width: 100%;
+        }
+    }
     &.mobile .company-reviews-arrows {
         display: none;
     }

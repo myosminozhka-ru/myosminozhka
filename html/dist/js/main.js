@@ -1340,7 +1340,7 @@ var header = /*#__PURE__*/function () {
           trigger: '.wrapper',
           start: 'top top',
           end: 'top+=400 top',
-          scrub: 1 // markers: true,
+          scrub: 0 // markers: true,
 
         },
         paddingTop: function paddingTop() {
