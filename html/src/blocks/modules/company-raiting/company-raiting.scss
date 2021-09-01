@@ -9,7 +9,6 @@
         padding: 40px 0 150px;  
     }
     &-title {
-        mix-blend-mode: difference;
         @extend %white;
         text-transform: uppercase;
         color: #fff;
@@ -18,7 +17,7 @@
         overflow: hidden;
         padding: 0 vw(50) vw(178);
         white-space: nowrap;
-        margin-top: vw(-580);
+        margin-top: vw(60);
     }
     &.mobile &-title {
         padding: 0 20px 50px;

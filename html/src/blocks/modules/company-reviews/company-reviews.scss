@@ -124,7 +124,7 @@
         margin-bottom: 30px;     
     }
     &:not(.mobile) &-item-button {
-        max-width: vw(413);
+        max-width: vw(400);
     }
     &.mobile &-item-button {
         button, a {
@@ -194,4 +194,7 @@
 .company-reviews .button {
     padding-left: vw(10);
     padding-right: vw(10);
+    &:hover {
+        border-radius: 0;
+    }
 }

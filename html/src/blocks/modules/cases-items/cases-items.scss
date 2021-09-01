@@ -14,10 +14,15 @@
         position: relative;
         overflow: hidden;
         cursor: pointer;
-        &:nth-child(2n+3), &:nth-child(2n+4)  {
-            min-height: 676px;     
+        min-height: 538px;
+        max-height: 538px;
+        &:nth-child(4n+3), &:nth-child(4n+4)  {
+            min-height: 676px;    
+            box-sizing: border-box; 
             .cases-items-post-text {
-                min-height: 676px;     
+                min-height: 676px;
+                box-sizing: border-box;
+                max-height: 676px;     
             }
         }
     }
@@ -103,6 +108,7 @@
             overflow: auto;
             display: flex;
             align-items: center;
+            padding-left: 0;
             &::-webkit-scrollbar {
                 display: none;
             }
@@ -110,8 +116,9 @@
                 font-weight: 500;
                 font-size: 14px;
                 line-height: 14px;
-                padding: 14px 30px;
+                padding: 14px 16px;
                 border-radius: 10px;
+                margin-right: 20px;
             }
         }
         .cases-items-post {
