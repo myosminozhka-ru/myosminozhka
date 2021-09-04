@@ -40,8 +40,8 @@ const mainCases = class MainCases {
                     trigger: '.main-cases',
                     start: '30%',
                     end: '145%',
-                    scrub: 1
-                    
+                    scrub: 1,
+                    markers: true
                 },
                 x: '-100%',
             });

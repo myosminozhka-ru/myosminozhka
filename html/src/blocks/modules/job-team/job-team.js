@@ -6,6 +6,29 @@ gsap.registerPlugin(ScrollTrigger);
 const jobTeam = class jobTeam {
     constructor() {}
     init() {
+        gsap.utils.toArray(".job_tree_item").forEach((item, i) => {
+            gsap.to(item, {
+                scrollTrigger: {
+                    trigger: item,
+                    start: "center center", 
+                    end: 'center center',
+                    // markers: true,
+                },
+                fillOpacity: 1,
+                strokeOpacity: 1,
+            })
+        });
+        // Array.from(document.querySelectorAll('.job_tree_item')).map(item => {
+        //     gsap.to(item, {
+        //         scrollTrigger: {
+        //             trigger: item,
+        //             start: "center center", 
+        //             end: 'center center',
+        //             markers: true,
+        //         },
+        //         fillOpacity: 1
+        //     })
+        // })
         gsap.to('.job-team-circle', {
             scrollTrigger: {
                 trigger: '.job-info',

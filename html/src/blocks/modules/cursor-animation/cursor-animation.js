@@ -43,8 +43,6 @@ const cursorAnimation = class CursorAnimation {
                     width: this.width = this.canvas.width = document.querySelector('.first-frame').clientWidth,
                     height: this.height = this.canvas.height = document.querySelector('.first-frame').clientHeight,
                 })
-            } else {
-                return reject(new Error('params.element is not defined'))
             }
         })
     }

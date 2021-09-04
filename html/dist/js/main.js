@@ -1168,8 +1168,6 @@ var cursorAnimation = /*#__PURE__*/function () {
             width: _this2.width = _this2.canvas.width = document.querySelector('.first-frame').clientWidth,
             height: _this2.height = _this2.canvas.height = document.querySelector('.first-frame').clientHeight
           });
-        } else {
-          return reject(new Error('params.element is not defined'));
         }
       });
     }
@@ -1664,6 +1662,29 @@ var jobTeam = /*#__PURE__*/function () {
   _createClass(jobTeam, [{
     key: "init",
     value: function init() {
+      gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].utils.toArray(".job_tree_item").forEach(function (item, i) {
+        gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to(item, {
+          scrollTrigger: {
+            trigger: item,
+            start: "center center",
+            end: 'center center' // markers: true,
+
+          },
+          fillOpacity: 1,
+          strokeOpacity: 1
+        });
+      }); // Array.from(document.querySelectorAll('.job_tree_item')).map(item => {
+      //     gsap.to(item, {
+      //         scrollTrigger: {
+      //             trigger: item,
+      //             start: "center center", 
+      //             end: 'center center',
+      //             markers: true,
+      //         },
+      //         fillOpacity: 1
+      //     })
+      // })
+
       gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to('.job-team-circle', {
         scrollTrigger: {
           trigger: '.job-info',
@@ -2019,7 +2040,8 @@ var mainCases = /*#__PURE__*/function () {
             trigger: '.main-cases',
             start: '30%',
             end: '145%',
-            scrub: 1
+            scrub: 1,
+            markers: true
           },
           x: '-100%'
         });
