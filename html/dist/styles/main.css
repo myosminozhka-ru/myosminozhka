@@ -5680,7 +5680,7 @@ body.company .company-ceo.mobile {
   width: calc(100% - 9.73958vw);
   padding-left: 2.08333vw;
   border-left: 0.15625vw solid rgba(79, 79, 79, 0.6);
-  transition: width .3s ease;
+  transition: width .2s ease;
 }
 
 .company-reviews.mobile .company-reviews-item-right {
@@ -5692,7 +5692,7 @@ body.company .company-ceo.mobile {
 .company-reviews-item-name {
   font-weight: 500;
   color: #4f4f4f;
-  transition: .7s all .3s ease;
+  transition: .2s all .2s ease;
 }
 
 .company-reviews .button {
@@ -5719,7 +5719,7 @@ body.company .company-ceo.mobile {
   font-size: 1.30208vw;
   line-height: 1.30208vw;
   margin-bottom: 1.5625vw;
-  transition: .3s all .3s ease;
+  transition: .2s all .2s ease;
 }
 
 .company-reviews.mobile .company-reviews-item-position {
@@ -5736,7 +5736,7 @@ body.company .company-ceo.mobile {
   font-size: 1.04167vw;
   line-height: 1.5625vw;
   margin-bottom: 2.08333vw;
-  transition: .3s all .3s ease;
+  transition: .2s all .2s ease;
 }
 
 .company-reviews.mobile .company-reviews-item-text {
@@ -5823,6 +5823,7 @@ body.company .company-ceo.mobile {
 .company-reviews .button {
   padding-left: 0.52083vw;
   padding-right: 0.52083vw;
+  transition: all 0.2s ease;
 }
 
 .company-reviews .button:hover {
