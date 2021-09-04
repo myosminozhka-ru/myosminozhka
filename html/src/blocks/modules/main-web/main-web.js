@@ -33,9 +33,9 @@ const mainWeb = class Mainweb {
         gsap.utils.toArray(".web-right-image").forEach((item, i) => {
             ScrollTrigger.create({
                 trigger: item,
-                start: "top", 
-                end: '1%',
-                markers: false,
+                start: "top center", 
+                end: 'bottom bottom',
+                markers: true,
                 // pin: true, 
                 // pinSpacing: false,
                 // snap: 1,
