@@ -5,7 +5,8 @@ const companyVideo = class companyVideo {
     }
     init() {
         if (!document.getElementById('player')) return;
-        this.player = videojs('player', {
+        this.player = document.getElementById('player');
+        let video = videojs('player', {
             fluid: true,
             controls: false,
             autoplay: true,

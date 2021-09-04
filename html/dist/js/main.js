@@ -1076,7 +1076,8 @@ var companyVideo = /*#__PURE__*/function () {
     key: "init",
     value: function init() {
       if (!document.getElementById('player')) return;
-      this.player = Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player', {
+      this.player = document.getElementById('player');
+      var video = Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player', {
         fluid: true,
         controls: false,
         autoplay: true,

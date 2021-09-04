@@ -2,6 +2,8 @@
     padding-bottom: 0;
     &.mobile {
         padding-top: 20px;
+        padding-left: 0;
+        padding-right: 0;
         .web-slider-image-in {
             padding-top: 80%;
             img {
@@ -16,6 +18,11 @@
         .web-slider-title {
             position: relative;
             z-index: 1;
+        }
+        .web-slider-title,
+        .web-slider-text {
+            padding-left: 20px;
+            padding-right: 20px;
         }
     }
     &-titles {
