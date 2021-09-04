@@ -7,7 +7,8 @@ const companyVideo = class companyVideo {
         if (!document.getElementById('player')) return;
         this.player = videojs('player', {
             fluid: true,
-            controls: true,
+            controls: false,
+            autoplay: true,
             aspectRatio: '16:9',
             sources: [{
                 src: 'videos/pv.mp4',
