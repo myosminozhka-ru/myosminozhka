@@ -32,6 +32,15 @@
         line-height: 45px;
         text-transform: uppercase;
     }
+    &.mobile &-buttons-left {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        overflow: auto;
+        &::-webkit-scrollbar {
+            height: 0;
+        }
+    }
     &-buttons {
         display: flex;
         align-items: center;

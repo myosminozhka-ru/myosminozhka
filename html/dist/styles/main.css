@@ -6161,6 +6161,17 @@ body.company .company-ceo.mobile {
   text-transform: uppercase;
 }
 
+.career-blog.mobile .career-blog-buttons-left {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow: auto;
+}
+
+.career-blog.mobile .career-blog-buttons-left::-webkit-scrollbar {
+  height: 0;
+}
+
 .career-blog-buttons {
   display: flex;
   align-items: center;

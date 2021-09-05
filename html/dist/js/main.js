@@ -2417,7 +2417,7 @@ var mainWeb = /*#__PURE__*/function () {
           trigger: item,
           start: "top center",
           end: 'bottom bottom',
-          markers: true,
+          // markers: true,
           // pin: true, 
           // pinSpacing: false,
           // snap: 1,
