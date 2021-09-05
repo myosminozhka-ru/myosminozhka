@@ -2778,6 +2778,10 @@ a:hover {
   z-index: 1;
 }
 
+.header.mobile.isOpened .header-blur {
+  background: rgba(0, 0, 0, 0.9);
+}
+
 .header-in {
   padding: 1.5625vw 2.60417vw;
   position: relative;
@@ -2886,6 +2890,8 @@ a:hover {
 
 .header-mobile-menu {
   position: absolute;
+  left: 0;
+  right: 0;
   transform: translateY(-150%);
   flex: 1 1 auto;
   z-index: 12;

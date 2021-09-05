@@ -19,6 +19,9 @@
     bottom: 0;
     z-index: 1;
   }
+  &.mobile.isOpened &-blur {
+    background: rgba(0, 0, 0, 0.9);
+  }
   &-in {
     padding: vw(30) vw(50);
     @extend %flex-center-between;
@@ -123,6 +126,8 @@
   }
   &-mobile-menu {
     position: absolute;
+    left: 0;
+    right: 0;
     transform: translateY(-150%);
     flex: 1 1 auto;
     z-index: 12;
