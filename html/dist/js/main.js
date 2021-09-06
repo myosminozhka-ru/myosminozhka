@@ -1510,12 +1510,13 @@ var jobStages = /*#__PURE__*/function () {
       this.supportSlider = new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.job-stages-support-slides', {
         startAt: 0,
         perView: 1,
-        type: 'carousel'
+        type: 'slider'
       });
       this.supportImagesSlider = new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.job-stages-support-right', {
         startAt: 0,
         perView: 1,
-        type: 'carousel'
+        type: 'carousel',
+        transitionType: 'fade'
       });
     }
   }
@@ -2641,6 +2642,7 @@ var vacanciesTabs = /*#__PURE__*/function () {
         elementClass: 'vacancies-tabs-item',
         triggerClass: 'vacancies-tabs-item-title',
         panelClass: 'vacancies-tabs-item-body',
+        openOnInit: [0],
         beforeOpen: function beforeOpen(currentElement) {
           gsap__WEBPACK_IMPORTED_MODULE_1__["default"].to(currentElement.querySelector('.vacancies-tabs-item-body'), 1, {
             heigth: currentElement.querySelector('.vacancies-tabs-item-body').offsetHeight

@@ -5,7 +5,7 @@
         padding: vw(238) 0 vw(80) 0;
     }
     &.mobile {
-        padding: 100px 20px 190px;
+        padding: 100px 20px 38px;
     }
     &-tentacle {
         position: absolute;
@@ -197,8 +197,8 @@
     }
     &.mobile &-phones {
         a {
-            font-size: 30px;
-            line-height: 30px;
+            font-size: 29px;
+            line-height: 29px;
             &:not(:last-child) {
                 margin-bottom: 30px;
             }
@@ -276,6 +276,10 @@
             opacity: 1;
             visibility: visible;
         }
+        .text div {
+            font-size: inherit;
+            font-family: inherit;
+        }
     }
     &:not(.mobile) &-bank {
         grid-row-start: 10;
@@ -315,5 +319,5 @@
 }
 
 body.company .company-ceo:not(.mobile) {
-    background-size: 106.2%;
+    background-size: 100%;
 }

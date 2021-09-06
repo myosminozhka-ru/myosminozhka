@@ -157,6 +157,28 @@
         margin: 0 vw(-50);
         background: $bgColor;
         display: flex;
+        position: relative;
+    }
+    &:not(.mobile) &-support::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: vw(241);
+        background: #fff url('../img/svg/support_top.svg') 0 0 / calc(100% - #{vw(1010)}) no-repeat;
+    }
+    &:not(.mobile) &-support::after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: vw(241);
+        transform: rotateX(180deg);
+        background: #fff url('../img/svg/support_top.svg') 0 0 / calc(100% - #{vw(1010)}) no-repeat;
     }
     &-support-left {
         width: calc(100% - #{vw(977)});
@@ -232,9 +254,19 @@
         }
     }
     &-management-top-right {
+        position: relative;
         width: calc( 100% - #{vw(169) - #{vw(260)}} );
         padding-right: vw(70);
         margin-left: vw(169);
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: vw(-70);
+            left: vw(-160);
+            width: vw(267);
+            height: vw(7);
+            background: $bgColor;
+        }
         .title {
             font-weight: bold;
             font-size: vw(120);

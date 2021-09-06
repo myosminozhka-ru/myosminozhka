@@ -12,6 +12,7 @@ const vacanciesTabs = class vacanciesTabs {
             elementClass: 'vacancies-tabs-item',
             triggerClass: 'vacancies-tabs-item-title',
             panelClass: 'vacancies-tabs-item-body',
+            openOnInit: [0],
             beforeOpen: currentElement => {
               gsap.to(currentElement.querySelector('.vacancies-tabs-item-body'), 1, {
                 heigth: currentElement.querySelector('.vacancies-tabs-item-body').offsetHeight
