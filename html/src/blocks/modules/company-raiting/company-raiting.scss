@@ -11,7 +11,8 @@
     &-title {
         @extend %white;
         text-transform: uppercase;
-        color: #fff;
+        mix-blend-mode: exclusion;
+        color: #c7c7c7;
     }
     &:not(.mobile) &-title {
         overflow: hidden;

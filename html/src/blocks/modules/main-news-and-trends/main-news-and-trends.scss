@@ -58,24 +58,48 @@
         border: none;
         cursor: pointer;
         font-weight: 500;
+        position: relative;
+        overflow: hidden;
         @extend %white;
+        > span {
+            position: relative;
+            z-index: 2;
+        }
         &__main {
             background: $mainColor;
+            &:hover {
+                color: $mainColor;
+            }
         }
         &__mint {
             background: #00B4A9;
+            &:hover {
+                color: #00B4A9;
+            }
         }
         &__green {
             background: #31A500;
+            &:hover {
+                color: #31A500;
+            }
         }
         &__purple {
             background: #9958A2;
+            &:hover {
+                color: #9958A2;
+            }
         }
         &__blue {
             background: #006ECC;
+            &:hover {
+                color: #006ECC;
+            }
         }
         &__brown {
             background: #A37300;
+            &:hover {
+                color: #A37300;
+            }
         }
         font-weight: 500;
         font-size: vw(20);

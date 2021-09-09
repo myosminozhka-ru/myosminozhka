@@ -1,11 +1,11 @@
 <section class="cases-items" :class="{'mobile': window.width <=1280}">
     <div class="cases-items-buttons">
-        <button class="news-and-trends-button news-and-trends-button__main">Мероприятия</button>
-        <button class="news-and-trends-button news-and-trends-button__mint">Команда</button>
-        <button class="news-and-trends-button news-and-trends-button__green">Аналитика</button>
-        <button class="news-and-trends-button news-and-trends-button__purple">Мероприятия</button>
-        <button class="news-and-trends-button news-and-trends-button__blue">Команда</button>
-        <button class="news-and-trends-button news-and-trends-button__brown">СМИ</button>
+        <button class="news-and-trends-button news-and-trends-button__main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><span>Мероприятия</span></button>
+        <button class="news-and-trends-button news-and-trends-button__mint" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><span>Команда</span></button>
+        <button class="news-and-trends-button news-and-trends-button__green" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><span>Аналитика</span></button>
+        <button class="news-and-trends-button news-and-trends-button__purple" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><span>Мероприятия</span></button>
+        <button class="news-and-trends-button news-and-trends-button__blue" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><span>Команда</span></button>
+        <button class="news-and-trends-button news-and-trends-button__brown" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><span>СМИ</span></button>
     </div>
     <div class="cases-items-posts">
         @@for (var i = 1; i < 13; i++) {

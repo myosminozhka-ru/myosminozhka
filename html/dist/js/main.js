@@ -1082,6 +1082,7 @@ var companyVideo = /*#__PURE__*/function () {
         controls: false,
         autoplay: true,
         aspectRatio: '16:9',
+        poster: 'img/video_preview.png',
         sources: [{
           src: 'videos/pv.mp4',
           type: 'video/mp4'

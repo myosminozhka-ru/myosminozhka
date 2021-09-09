@@ -71,6 +71,7 @@
     transition: transform 1s, opacity 1s;
     cursor: pointer;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
   &:not(.mobile) &-cell {
     padding: vw(10);
