@@ -2,6 +2,8 @@
     background: #fff;
     position: relative;
     &:not(.mobile) {
+        position: relative;
+        z-index: 4;
         padding: vw(238) 0 vw(80) 0;
     }
     &.mobile {
@@ -9,11 +11,11 @@
     }
     &-tentacle {
         position: absolute;
-        left: 0;
         right: 0;
+        left: 0;
     }
     &:not(.mobile) &-tentacle {
-        top: vw(-800);
+        top: vw(-700);
     }
     @media all and (max-width: 1280px) {
         &-tentacle {

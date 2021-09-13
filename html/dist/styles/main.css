@@ -4494,6 +4494,10 @@ a:hover {
   right: 0;
 }
 
+.main-cases-items-scroller {
+  min-height: 100vh;
+}
+
 .main-cases-bg {
   content: "";
   position: absolute;
@@ -4502,7 +4506,7 @@ a:hover {
   right: 0;
   bottom: 0;
   z-index: 14;
-  background: url("../img/svg/cases.svg") 50% 0/cover no-repeat;
+  background: url("../img/svg/cases.svg") 50% 0/100% no-repeat;
   pointer-events: none;
 }
 
@@ -4663,7 +4667,7 @@ a:hover {
 .main-resume:not(.mobile) {
   padding: 0 2.60417vw 5.20833vw;
   position: relative;
-  z-index: 3;
+  z-index: 5;
 }
 
 .main-resume.mobile {
@@ -7768,6 +7772,8 @@ html:root body.posts .post_info__code--in {
 }
 
 .footer:not(.mobile) {
+  position: relative;
+  z-index: 4;
   padding: 12.39583vw 0 4.16667vw 0;
 }
 
@@ -7777,12 +7783,12 @@ html:root body.posts .post_info__code--in {
 
 .footer-tentacle {
   position: absolute;
-  left: 0;
   right: 0;
+  left: 0;
 }
 
 .footer:not(.mobile) .footer-tentacle {
-  top: -41.66667vw;
+  top: -36.45833vw;
 }
 
 .footer-in {

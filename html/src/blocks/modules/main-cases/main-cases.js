@@ -40,13 +40,23 @@ const mainCases = class MainCases {
                     trigger: '.main-cases',
                     start: '30%',
                     end: '145%',
-                    scrub: 1,
+                    scrub: 3,
                     markers: true
                 },
                 x: '-100%',
             });
-            } else {
-        }
+            gsap.to('.main-cases', {
+                scrollTrigger: {
+                    trigger: '.main-cases',
+                    start: 'top top-=400',
+                    end: 'bottom bottom-=400',
+                    pin: true,
+                    pinSpacing: false,
+                    markers: true
+                },
+                x: 0,
+            });
+        } else {}
         // ScrollTrigger.matchMedia({
         //     "(min-width: 1281px)": () => {
         //         gsap.utils.toArray(".main-cases-item").forEach((item, i) => {

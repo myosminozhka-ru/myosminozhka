@@ -2044,10 +2044,21 @@ var mainCases = /*#__PURE__*/function () {
             trigger: '.main-cases',
             start: '30%',
             end: '145%',
-            scrub: 1,
+            scrub: 3,
             markers: true
           },
           x: '-100%'
+        });
+        gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.main-cases', {
+          scrollTrigger: {
+            trigger: '.main-cases',
+            start: 'top top-=400',
+            end: 'bottom bottom-=400',
+            pin: true,
+            pinSpacing: false,
+            markers: true
+          },
+          x: 0
         });
       } else {} // ScrollTrigger.matchMedia({
       //     "(min-width: 1281px)": () => {
