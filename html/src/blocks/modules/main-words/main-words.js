@@ -17,7 +17,7 @@ const mainWords = class MainWords {
         this.onInit();
     }
     countPosition() {
-        if (!document) return;
+        if (!document.querySelector(this.element)) return;
 
         setTimeout(() => {
             document.addEventListener('mousemove', (event) => {
@@ -39,6 +39,7 @@ const mainWords = class MainWords {
         }, this.delay*1000)
     }
     animateElem() {
+        if (!document.querySelector(this.element)) return;
         TweenMax.to(this.element, 1, {
             translateX: -this.x.coordinate + window.innerWidth / 2,
             ease: Power1.Circ,

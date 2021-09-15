@@ -1,6 +1,6 @@
 .blog-items {
     position: relative;
-    z-index: 2;
+    z-index: 5;
     &:not(.mobile) {
         padding: 0 vw(50) vw(200);
     }
@@ -23,7 +23,7 @@
             height: 0;
         }
     }
-    &:not(.mobile) &-posts  {
+    &:not(.mobile) &-posts {
         display: grid;
         grid-template-columns: vw(418) vw(110) vw(140) vw(420) vw(110) vw(131) vw(480);
         grid-template-rows: vw(64) vw(110) vw(433) vw(71) vw(74) vw(126) vw(202) vw(314) vw(70) vw(44) vw(95);

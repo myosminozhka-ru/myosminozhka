@@ -6,6 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 const jobTeam = class jobTeam {
     constructor() {}
     init() {
+        if (!document.querySelector(".job_tree_item")) return;
         gsap.utils.toArray(".job_tree_item").forEach((item, i) => {
             gsap.to(item, {
                 scrollTrigger: {

@@ -23,6 +23,7 @@ const mainCases = class MainCases {
         }
     }
     init() {
+        if (!document.querySelector('.main-cases')) return;
         this.initMobileSlider();
          gsap.to('.main-cases-bg', {
              scrollTrigger: {

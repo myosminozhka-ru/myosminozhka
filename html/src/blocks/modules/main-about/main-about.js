@@ -6,6 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 const mainAbout = class MainAbout {
     constructor() {}
     animateCircle() {
+        if (!document.querySelector('.main-about')) return;
         if (window.innerWidth > 1280) {
             gsap.to('.main-about-circle', {
                 scrollTrigger: {

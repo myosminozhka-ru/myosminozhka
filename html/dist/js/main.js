@@ -553,18 +553,12 @@ var careerBlog = /*#__PURE__*/function () {
     value: function init() {
       if (!document.querySelector('.career-blog-items')) return;
 
-      if (window.offsetWidth > 1280) {
+      if (window.innerWidth > 1280) {
         new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.career-blog-items', {
           startAt: 0,
           perView: 3,
           gap: 130,
-          type: 'carousel',
-          breakpoints: {
-            1280: {
-              perView: 1,
-              gap: 20
-            }
-          }
+          type: 'carousel'
         }).mount();
       }
     }
@@ -607,18 +601,7 @@ var companyAbout = /*#__PURE__*/function () {
   _createClass(CompanyAbout, [{
     key: "init",
     value: function init() {
-      if (!document.querySelector(this.selector)) return; // document.querySelector(this.selector).addEventListener('mousemove', (e) => {
-      // console.log(e)
-      // document.querySelector(this.selector).style.clipPath = `circle(${200 * 100 / window.innerWidth}vw at ${e.clientX}px ${e.clientY}px)`;
-      // gsap.to(this.selector, {
-      //     "clip-path" : `circle(${200 * 100 / window.innerWidth}vw at ${e.clientX}px ${e.clientY}px)`
-      // })
-      // })
-      // document.querySelector(this.selector).addEventListener('mouseleave', (e) => {
-      //     gsap.to(this.selector, 0.5, {
-      //         "clip-path" : `circle(1920px at ${e.clientX}px ${e.clientY}px)`
-      //     })
-      // })
+      if (!document.querySelector(this.selector)) return;
     }
   }]);
 
@@ -1670,6 +1653,7 @@ var jobTeam = /*#__PURE__*/function () {
   _createClass(jobTeam, [{
     key: "init",
     value: function init() {
+      if (!document.querySelector(".job_tree_item")) return;
       gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].utils.toArray(".job_tree_item").forEach(function (item, i) {
         gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to(item, {
           scrollTrigger: {
@@ -1747,6 +1731,8 @@ var mainAbout = /*#__PURE__*/function () {
   _createClass(MainAbout, [{
     key: "animateCircle",
     value: function animateCircle() {
+      if (!document.querySelector('.main-about')) return;
+
       if (window.innerWidth > 1280) {
         gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to('.main-about-circle', {
           scrollTrigger: {
@@ -1873,7 +1859,7 @@ var mainCarousel = /*#__PURE__*/function () {
       var cells = carousel.querySelectorAll('.main-carousel-cell');
       var cellCount; // cellCount set from cells-range input value
 
-      var selectedIndex = 5;
+      var selectedIndex = 0;
       var cellWidth = carousel.offsetWidth;
       var cellHeight = carousel.offsetHeight;
       var isHorizontal = true;
@@ -2080,6 +2066,7 @@ var mainCases = /*#__PURE__*/function () {
   }, {
     key: "init",
     value: function init() {
+      if (!document.querySelector('.main-cases')) return;
       this.initMobileSlider();
       gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.main-cases-bg', {
         scrollTrigger: {
@@ -2590,7 +2577,7 @@ var mainWords = /*#__PURE__*/function () {
     value: function countPosition() {
       var _this = this;
 
-      if (!document) return;
+      if (!document.querySelector(this.element)) return;
       setTimeout(function () {
         document.addEventListener('mousemove', function (event) {
           _this.x.coordinate = event.clientX;
@@ -2615,6 +2602,7 @@ var mainWords = /*#__PURE__*/function () {
   }, {
     key: "animateElem",
     value: function animateElem() {
+      if (!document.querySelector(this.element)) return;
       gsap__WEBPACK_IMPORTED_MODULE_0__["TweenMax"].to(this.element, 1, {
         translateX: -this.x.coordinate + window.innerWidth / 2,
         ease: gsap__WEBPACK_IMPORTED_MODULE_0__["Power1"].Circ

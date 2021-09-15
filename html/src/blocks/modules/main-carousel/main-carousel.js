@@ -7,7 +7,7 @@ const mainCarousel = class MainCarousel {
         if (!carousel) return;
         var cells = carousel.querySelectorAll('.main-carousel-cell');
         var cellCount; // cellCount set from cells-range input value
-        var selectedIndex = 5;
+        var selectedIndex = 0;
         var cellWidth = carousel.offsetWidth;
         var cellHeight = carousel.offsetHeight;
         var isHorizontal = true;
