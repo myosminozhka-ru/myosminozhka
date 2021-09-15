@@ -31,9 +31,6 @@
             grid-template-rows: vw(64) vw(110) vw(433) vw(71) vw(74) vw(126) vw(202) vw(314) vw(70) vw(44) vw(95) vw(64) vw(110) vw(433) vw(71) vw(74) vw(126) vw(202) vw(314) vw(70) vw(44) vw(95);
         }
     }
-    // &.mobile &-posts  {
-    //     padding: 0 20px;
-    // }
     &:not(.mobile) &-post {
         text-decoration: none;
         display: flex;

@@ -139,7 +139,7 @@ const mainCarousel = class MainCarousel {
                             y = +matrixValues[14]
                         }
                     
-                    degs = y + (starCoord - event.clientX / 5);
+                    degs = y - (starCoord - event.clientX / 5);
                     document.querySelector('.main-carousel-carousel').style.transform = `translateZ(${z}px) rotateY(${degs}deg)`;
                 
             }
