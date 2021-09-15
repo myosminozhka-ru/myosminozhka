@@ -99,6 +99,7 @@ const jobStages = class jobStages {
                             trigger.classList.remove('isActive')
                         })
                         item.classList.add('isActive');
+                        console.log(item.dataset.targetType)
                     })
                 });
             });

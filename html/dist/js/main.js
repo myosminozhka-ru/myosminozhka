@@ -552,18 +552,21 @@ var careerBlog = /*#__PURE__*/function () {
     key: "init",
     value: function init() {
       if (!document.querySelector('.career-blog-items')) return;
-      new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.career-blog-items', {
-        startAt: 0,
-        perView: 3,
-        gap: 130,
-        type: 'carousel',
-        breakpoints: {
-          1280: {
-            perView: 1,
-            gap: 20
+
+      if (window.offsetWidth > 1280) {
+        new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.career-blog-items', {
+          startAt: 0,
+          perView: 3,
+          gap: 130,
+          type: 'carousel',
+          breakpoints: {
+            1280: {
+              perView: 1,
+              gap: 20
+            }
           }
-        }
-      }).mount();
+        }).mount();
+      }
     }
   }]);
 
@@ -1623,6 +1626,7 @@ var jobStages = /*#__PURE__*/function () {
                 trigger.classList.remove('isActive');
               });
               item.classList.add('isActive');
+              console.log(item.dataset.targetType);
             });
           });
         });
@@ -1846,11 +1850,15 @@ var mainAbout = /*#__PURE__*/function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var interactjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! interactjs */ "./node_modules/interactjs/dist/interact.min.js");
+/* harmony import */ var interactjs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(interactjs__WEBPACK_IMPORTED_MODULE_0__);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
 
 var mainCarousel = /*#__PURE__*/function () {
   function MainCarousel() {
@@ -1944,26 +1952,72 @@ var mainCarousel = /*#__PURE__*/function () {
       var interval = setInterval(function () {
         selectedIndex++;
         chooseElem(selectedIndex);
-      }, 5000);
-      document.querySelector('.main-carousel-scene').addEventListener('mousemove', function (event) {
-        if (event.target.dataset.cellIndex) {
-          chooseElem(event.target.dataset.cellIndex - 1);
-          clearInterval(interval);
-          var style = window.getComputedStyle(document.querySelector('.main-carousel-carousel'));
-          var matrix = style.transform || style.webkitTransform || style.mozTransform;
-          var matrixType = matrix.includes('3d') ? '3d' : '2d';
-          var matrixValues = matrix.match(/matrix.*\((.+)\)/)[1].split(', ');
-          var z = 0;
-
-          if (matrixType === '3d') {
-            z = matrixValues[14];
-          }
-
-          document.querySelector('.main-carousel-carousel').style.transform = "translateZ(".concat(z, "px) rotateY(").concat(event.clientX / 10, "deg)");
-        }
-      }); // set initials
+      }, 5000); // document.querySelector('.main-carousel-scene').addEventListener( 'mousemove mouseenter', function(event) {
+      //     console.log(12312313);
+      //     if (event.target.dataset.cellIndex) {
+      //         chooseElem(event.target.dataset.cellIndex - 1)
+      //         clearInterval(interval);
+      //         const style = window.getComputedStyle(document.querySelector('.main-carousel-carousel'))
+      //         const matrix = style.transform || style.webkitTransform || style.mozTransform
+      //         const matrixType = matrix.includes('3d') ? '3d' : '2d'
+      //         const matrixValues = matrix.match(/matrix.*\((.+)\)/)[1].split(', ')
+      //         var z = 0
+      //             if (matrixType === '3d') {
+      //                 z = matrixValues[14]
+      //             }
+      //         document.querySelector('.main-carousel-carousel').style.transform = `translateZ(${z}px) rotateY(${event.clientX / 10}deg)`;
+      //     }
+      // });
+      // set initials
 
       onOrientationChange();
+      var degs = 0;
+      var starCoord = 0;
+      interactjs__WEBPACK_IMPORTED_MODULE_0___default()('.main-carousel').draggable({
+        // make the element fire drag events
+        origin: 'self',
+        // (0, 0) will be the element's top-left
+        inertia: true,
+        // start inertial movement if thrown
+        // modifiers: [
+        // interact.modifiers.restrict({
+        //     restriction: 'self'           // keep the drag coords within the element
+        // })
+        // ],
+        // Step 3
+        listeners: {
+          move: function move(event) {
+            // chooseElem(event.target.dataset.cellIndex - 1)
+            console.log(starCoord);
+            clearInterval(interval);
+            var style = window.getComputedStyle(document.querySelector('.main-carousel-carousel'));
+            var matrix = style.transform || style.webkitTransform || style.mozTransform;
+            var matrixType = matrix.includes('3d') ? '3d' : '2d';
+            var matrixValues = matrix.match(/matrix.*\((.+)\)/)[1].split(', ');
+            var z = 0;
+
+            if (matrixType === '3d') {
+              z = +matrixValues[14];
+            }
+
+            var y = 0;
+
+            if (matrixType === '3d') {
+              y = +matrixValues[14];
+            }
+
+            degs = y + (starCoord - event.clientX / 5);
+            document.querySelector('.main-carousel-carousel').style.transform = "translateZ(".concat(z, "px) rotateY(").concat(degs, "deg)");
+          }
+        }
+      }).on('dragstart', function (event) {
+        starCoord = event.clientX;
+      }).on('dragmove', function () {
+        document.querySelector('.main-carousel-carousel').classList.add('isDragable');
+      }).on('dragend', function () {
+        console.log(degs - 360);
+        document.querySelector('.main-carousel-carousel').classList.remove('isDragable');
+      });
     }
   }]);
 

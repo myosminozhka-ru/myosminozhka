@@ -10,14 +10,19 @@
     }
 }
 .career-blog {
-    background: #fff;
     position: relative;
     overflow: hidden;
     &:not(.mobile) {
+        background: #fff;
         padding: vw(100) vw(50) vw(250);
     }
     &.mobile {
         padding: 0 20px;
+        position: relative;
+        z-index: 7;
+    }
+    &.mobile &-button button {
+        margin: 0 auto;
     }
     &-title {
         text-transform: uppercase;
@@ -69,10 +74,17 @@
     &:not(.mobile) &-items-slides {
         align-items: center;
     }
+    &.mobile &-items-slides {
+        display: block;
+    }
     &.mobile &-item {
-        padding: 20px;
         border-radius: 10px;
-        background: #fff;
+        &:not(:last-child) {
+            margin-bottom: 60px;
+        }
+        &:nth-child(n+4) {
+            display: none;
+        }
     }
     &-item-image {
         font-size: 0;        
@@ -84,7 +96,6 @@
         padding-top: 100%;
         position: relative;
         margin-bottom: 30px;
-        border-radius: 10px;
         overflow: hidden;
         img {
             position: absolute;
@@ -139,6 +150,7 @@
     &.mobile &-item-description {
         font-size: 16px;
         line-height: 16px;
+        mix-blend-mode: difference;
     }
     .company-reviews-arrows {
         max-width: 241px;

@@ -76,6 +76,7 @@
         "@glidejs/glide": "^3.4.1",
         "accordion-js": "^3.1.1",
         "gsap": "^3.7.0",
+        "interactjs": "^1.10.11",
         "moment": "^2.29.1",
         "smart-grid": "^2.1.2",
         "vue": "^2.6.14"

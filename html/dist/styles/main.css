@@ -3742,8 +3742,8 @@ a:hover {
 }
 
 .main-carousel {
-  position: relative;
   box-sizing: border-box;
+  position: relative;
   background: #fff;
 }
 
@@ -3769,11 +3769,11 @@ a:hover {
 }
 
 .main-carousel.mobile .main-carousel__title {
+  position: relative;
+  z-index: 9;
   font-size: 40px;
   line-height: 40px;
   margin-bottom: 50px;
-  position: relative;
-  z-index: 9;
 }
 
 .main-carousel:not(.mobile) .main-carousel__body {
@@ -3799,25 +3799,28 @@ a:hover {
 }
 
 .main-carousel-carousel {
+  position: absolute;
   width: 100%;
   height: 100%;
-  position: absolute;
   transform: translateZ(-288px);
   transform-style: preserve-3d;
+}
+
+.main-carousel-carousel:not(.isDragable) {
   transition: transform 1s;
 }
 
 .main-carousel-cell {
+  box-sizing: border-box;
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  left: 0;
-  top: 0;
-  box-sizing: border-box;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   transition: transform 1s, opacity 1s;
   cursor: pointer;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
 }
 
 .main-carousel:not(.mobile) .main-carousel-cell {
@@ -3829,10 +3832,10 @@ a:hover {
 }
 
 .main-carousel-cell-image {
-  overflow: hidden;
-  pointer-events: none;
   width: 100%;
   height: 100%;
+  overflow: hidden;
+  pointer-events: none;
   font-size: 0;
 }
 
@@ -3843,32 +3846,32 @@ a:hover {
 }
 
 .main-carousel:not(.mobile) .main-carousel-cell-image {
-  border-radius: 0.26042vw;
   border: 0.10417vw solid #FF4978;
+  border-radius: 0.26042vw;
 }
 
 .main-carousel.mobile .main-carousel-cell-image {
-  border-radius: 5px;
   border: 5px solid #FF4978;
+  border-radius: 5px;
 }
 
 .main-carousel-cell-text {
-  pointer-events: none;
   position: absolute;
+  pointer-events: none;
   font-weight: bold;
   text-transform: uppercase;
 }
 
 .main-carousel:not(.mobile) .main-carousel-cell-text {
-  left: 2.34375vw;
   top: 2.34375vw;
+  left: 2.34375vw;
   font-size: 4.16667vw;
   line-height: 4.16667vw;
 }
 
 .main-carousel.mobile .main-carousel-cell-text {
-  left: 30px;
   top: 30px;
+  left: 30px;
   font-size: 30px;
   line-height: 30px;
 }
@@ -6178,17 +6181,23 @@ body.company .company-ceo.mobile {
 }
 
 .career-blog {
-  background: #fff;
   position: relative;
   overflow: hidden;
 }
 
 .career-blog:not(.mobile) {
+  background: #fff;
   padding: 5.20833vw 2.60417vw 13.02083vw;
 }
 
 .career-blog.mobile {
   padding: 0 20px;
+  position: relative;
+  z-index: 7;
+}
+
+.career-blog.mobile .career-blog-button button {
+  margin: 0 auto;
 }
 
 .career-blog-title {
@@ -6253,10 +6262,20 @@ body.company .company-ceo.mobile {
   align-items: center;
 }
 
+.career-blog.mobile .career-blog-items-slides {
+  display: block;
+}
+
 .career-blog.mobile .career-blog-item {
-  padding: 20px;
   border-radius: 10px;
-  background: #fff;
+}
+
+.career-blog.mobile .career-blog-item:not(:last-child) {
+  margin-bottom: 60px;
+}
+
+.career-blog.mobile .career-blog-item:nth-child(n+4) {
+  display: none;
 }
 
 .career-blog-item-image {
@@ -6271,7 +6290,6 @@ body.company .company-ceo.mobile {
   padding-top: 100%;
   position: relative;
   margin-bottom: 30px;
-  border-radius: 10px;
   overflow: hidden;
 }
 
@@ -6338,6 +6356,7 @@ body.company .company-ceo.mobile {
 .career-blog.mobile .career-blog-item-description {
   font-size: 16px;
   line-height: 16px;
+  mix-blend-mode: difference;
 }
 
 .career-blog .company-reviews-arrows {
