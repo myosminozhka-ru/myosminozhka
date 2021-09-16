@@ -4518,7 +4518,6 @@ a:hover {
 .main-cases-items {
   overflow: hidden;
   width: 100%;
-  padding-left: 15.625vw;
   box-sizing: border-box;
 }
 
@@ -4535,7 +4534,14 @@ a:hover {
   position: relative;
   z-index: 16;
   display: flex;
-  width: max-content;
+  padding-left: 100%;
+  padding-right: 100%;
+  width: calc((21.35417vw + 1.04167vw) * var(--count));
+  transition: opacity 1s ease;
+}
+
+.main-cases:not(.mobile) .main-cases-items-in:not(.isInViewport) {
+  opacity: 0;
 }
 
 .main-cases-item {
@@ -4553,7 +4559,7 @@ a:hover {
 }
 
 .main-cases:not(.mobile) .main-cases-item {
-  width: 100%;
+  width: 21.35417vw;
   flex: 0 0 21.35417vw;
   margin-right: 1.04167vw;
 }

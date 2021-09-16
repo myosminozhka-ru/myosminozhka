@@ -39,8 +39,8 @@ const mainCases = class MainCases {
             gsap.to('.main-cases-items-in', {
                 scrollTrigger: {
                     trigger: '.main-cases',
-                    start: '30%',
-                    end: '145%',
+                    start: 'top top-=200',
+                    end: 'bottom bottom-=200',
                     scrub: 1,
                     // markers: true
                 },
@@ -49,10 +49,17 @@ const mainCases = class MainCases {
             gsap.to('.main-cases', {
                 scrollTrigger: {
                     trigger: '.main-cases',
-                    start: 'top top-=400',
-                    end: 'bottom bottom-=400',
+                    start: 'top top-=200',
+                    end: 'bottom bottom-=200',
                     pin: true,
                     pinSpacing: false,
+                    onUpdate: (item) => {
+                        if (item.progress > 0.05 && item.progress < 0.45) {
+                            document.querySelector('.main-cases-items-in').classList.add('isInViewport');
+                        } else {
+                            document.querySelector('.main-cases-items-in').classList.remove('isInViewport');
+                        }
+                    }
                     // markers: true
                 },
                 x: 0,
