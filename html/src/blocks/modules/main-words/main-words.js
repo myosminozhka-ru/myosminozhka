@@ -39,6 +39,7 @@ const mainWords = class MainWords {
         }, this.delay*1000)
     }
     animateElem() {
+        console.log(document.querySelector(this.element));
         if (!document.querySelector(this.element)) return;
         TweenMax.to(this.element, 1, {
             translateX: -this.x.coordinate + window.innerWidth / 2,

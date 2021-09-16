@@ -28,21 +28,21 @@
     font-size: vw(280);
     line-height: vw(280);
     margin: 0 vw(139);
-      &:not(:last-child) {
-        position: relative;
-        &:before {
-          position: absolute;
-          content: '';
-          top: 50%;
-          width: 98px;
-          height: 98px;
-          background: #FF4878;
-          border-radius: 50%;
-          right: vw(-180);
-          left: unset;
-          margin-top: -49px;
-        }
-      }
+      // &:not(:last-child) {
+      //   position: relative;
+      //   &:before {
+      //     position: absolute;
+      //     content: '';
+      //     top: 50%;
+      //     width: 98px;
+      //     height: 98px;
+      //     background: #FF4878;
+      //     border-radius: 50%;
+      //     right: vw(-180);
+      //     left: unset;
+      //     margin-top: -49px;
+      //   }
+      // }
   }
   &-wrap.mobile &-item {
     font-size: 80px;

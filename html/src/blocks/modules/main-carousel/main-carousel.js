@@ -89,22 +89,6 @@ const mainCarousel = class MainCarousel {
             selectedIndex++;
             chooseElem(selectedIndex);
         }, 5000);
-        // document.querySelector('.main-carousel-scene').addEventListener( 'mousemove mouseenter', function(event) {
-        //     console.log(12312313);
-        //     if (event.target.dataset.cellIndex) {
-        //         chooseElem(event.target.dataset.cellIndex - 1)
-        //         clearInterval(interval);
-        //         const style = window.getComputedStyle(document.querySelector('.main-carousel-carousel'))
-        //         const matrix = style.transform || style.webkitTransform || style.mozTransform
-        //         const matrixType = matrix.includes('3d') ? '3d' : '2d'
-        //         const matrixValues = matrix.match(/matrix.*\((.+)\)/)[1].split(', ')
-        //         var z = 0
-        //             if (matrixType === '3d') {
-        //                 z = matrixValues[14]
-        //             }
-        //         document.querySelector('.main-carousel-carousel').style.transform = `translateZ(${z}px) rotateY(${event.clientX / 10}deg)`;
-        //     }
-        // });
 
         // set initials
         onOrientationChange();
@@ -150,7 +134,7 @@ const mainCarousel = class MainCarousel {
             
             document.querySelector('.main-carousel-carousel').classList.add('isDragable');
         }).on('dragend', () => {
-            console.log(degs - 360)
+            chooseElem(Math.abs(Math.round(degs / cells.length / 10)));
             document.querySelector('.main-carousel-carousel').classList.remove('isDragable');
         })
 

@@ -35,6 +35,7 @@ const mainWeb = class Mainweb {
                 trigger: item,
                 start: "top center", 
                 end: 'bottom bottom',
+                // scrub: 4,
                 // markers: true,
                 // pin: true, 
                 // pinSpacing: false,

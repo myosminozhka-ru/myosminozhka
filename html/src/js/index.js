@@ -84,6 +84,7 @@ window.app = new Vue({
     mounted() {
         setTimeout(() => {
             this.isMounted = true;
+            this.mainWords.countPosition();
             this.mainWeb.animateElement();
             this.mainAbout.animateCircle();
             this.cursorAnimation.init();

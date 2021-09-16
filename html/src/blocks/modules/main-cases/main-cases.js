@@ -41,8 +41,8 @@ const mainCases = class MainCases {
                     trigger: '.main-cases',
                     start: '30%',
                     end: '145%',
-                    scrub: 3,
-                    markers: true
+                    scrub: 1,
+                    // markers: true
                 },
                 x: '-100%',
             });
@@ -53,7 +53,7 @@ const mainCases = class MainCases {
                     end: 'bottom bottom-=400',
                     pin: true,
                     pinSpacing: false,
-                    markers: true
+                    // markers: true
                 },
                 x: 0,
             });

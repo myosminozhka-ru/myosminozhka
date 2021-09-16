@@ -60,6 +60,8 @@
         font-weight: 500;
         position: relative;
         overflow: hidden;
+        box-sizing: border-box;
+        border: 1px solid transparent;
         @extend %white;
         > span {
             position: relative;
@@ -311,10 +313,6 @@
                 }
             }
         }
-    }
-    &:not(.mobile) &-item {
-        min-width: vw(347);
-        max-width: vw(347);
     }
     &.mobile &-item {
         max-width: 100%;
