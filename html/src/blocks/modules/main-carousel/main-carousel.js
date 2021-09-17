@@ -1,8 +1,18 @@
 import interact from 'interactjs'
+import Glide from '@glidejs/glide'
 
 const mainCarousel = class MainCarousel {
-    constructor() {}
+    constructor() {
+        this.slider = new Glide('.main-carousel__slider', {
+            type: 'carousel',
+            startAt: 1,
+            perView: 1,
+            gap: 0,
+        });
+    }
     init() {
+        this.slider.mount();
+        var self = this;
         var carousel = document.querySelector('.main-carousel-carousel');
         if (!carousel) return;
         var cells = carousel.querySelectorAll('.main-carousel-cell');
@@ -77,7 +87,8 @@ const mainCarousel = class MainCarousel {
         }
         function chooseElem(index) {
             selectedIndex = index;
-        rotateCarousel();
+            self.slider.go(`=${index}`);
+            rotateCarousel();
         }
 
         document.addEventListener('click', function(event) {

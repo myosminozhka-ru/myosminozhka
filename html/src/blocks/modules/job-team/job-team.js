@@ -11,8 +11,8 @@ const jobTeam = class jobTeam {
             gsap.to(item, {
                 scrollTrigger: {
                     trigger: item,
-                    start: "center center", 
-                    end: 'center center',
+                    start: "bottom-=50 bottom-=50", 
+                    end: 'bottom-=50 bottom-=50',
                     // markers: true,
                 },
                 fillOpacity: 1,

@@ -3895,6 +3895,10 @@ a:hover {
   transform: rotateY(320deg) translateZ(288px);
 }
 
+.main-carousel__text {
+  pointer-events: none;
+}
+
 .main-carousel__text .title {
   font-family: "Montserrat";
   font-weight: bold;
@@ -3908,18 +3912,21 @@ a:hover {
 }
 
 .main-carousel:not(.mobile) .main-carousel__text {
-  padding-left: 49.47917vw;
+  width: calc( 100% - 49.47917vw);
+  margin-left: auto;
 }
 
 .main-carousel:not(.mobile) .main-carousel__text .title {
   font-size: 2.60417vw;
   line-height: 3.64583vw;
   margin-bottom: 2.60417vw;
+  white-space: break-spaces;
 }
 
 .main-carousel:not(.mobile) .main-carousel__text .text {
   font-size: 1.5625vw;
   line-height: 2.60417vw;
+  white-space: break-spaces;
 }
 
 .main-carousel.mobile .main-carousel__text .title {

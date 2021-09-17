@@ -1356,8 +1356,8 @@ var jobTeam = /*#__PURE__*/function () {
         gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to(item, {
           scrollTrigger: {
             trigger: item,
-            start: "center center",
-            end: 'center center' // markers: true,
+            start: "bottom-=50 bottom-=50",
+            end: 'bottom-=50 bottom-=50' // markers: true,
 
           },
           fillOpacity: 1,
@@ -1536,6 +1536,7 @@ var mainAbout = /*#__PURE__*/function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var interactjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! interactjs */ "./node_modules/interactjs/dist/interact.min.js");
 /* harmony import */ var interactjs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(interactjs__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _glidejs_glide__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @glidejs/glide */ "./node_modules/@glidejs/glide/dist/glide.esm.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -1544,14 +1545,24 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
 
+
 var mainCarousel = /*#__PURE__*/function () {
   function MainCarousel() {
     _classCallCheck(this, MainCarousel);
+
+    this.slider = new _glidejs_glide__WEBPACK_IMPORTED_MODULE_1__["default"]('.main-carousel__slider', {
+      type: 'carousel',
+      startAt: 1,
+      perView: 1,
+      gap: 0
+    });
   }
 
   _createClass(MainCarousel, [{
     key: "init",
     value: function init() {
+      this.slider.mount();
+      var self = this;
       var carousel = document.querySelector('.main-carousel-carousel');
       if (!carousel) return;
       var cells = carousel.querySelectorAll('.main-carousel-cell');
@@ -1625,6 +1636,7 @@ var mainCarousel = /*#__PURE__*/function () {
 
       function chooseElem(index) {
         selectedIndex = index;
+        self.slider.go("=".concat(index));
         rotateCarousel();
       }
 
