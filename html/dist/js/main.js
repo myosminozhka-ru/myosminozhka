@@ -1826,7 +1826,9 @@ var mainCases = /*#__PURE__*/function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @glidejs/glide */ "./node_modules/@glidejs/glide/dist/glide.esm.js");
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
+/* harmony import */ var _glidejs_glide__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @glidejs/glide */ "./node_modules/@glidejs/glide/dist/glide.esm.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -1835,6 +1837,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
 
+
+gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__["ScrollTrigger"]);
+
 var newsAndTrends = /*#__PURE__*/function () {
   function NewsAndTrends(_ref) {
     var itemsSelector = _ref.itemsSelector;
@@ -1842,16 +1847,39 @@ var newsAndTrends = /*#__PURE__*/function () {
     _classCallCheck(this, NewsAndTrends);
 
     this.slider;
+    this.sliderItems;
   }
 
   _createClass(NewsAndTrends, [{
     key: "initSlider",
     value: function initSlider() {
-      this.slider = new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.news-and-trends-right-slider', {
+      var _this = this;
+
+      this.sliderItems = document.querySelectorAll('.news-and-trends-item');
+      this.slider = new _glidejs_glide__WEBPACK_IMPORTED_MODULE_2__["default"]('.news-and-trends-right-slider', {
         type: 'carousel',
         startAt: 0,
         perView: 5
       }).mount();
+      gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to('.news-and-trends-trigger', {
+        scrollTrigger: {
+          trigger: '.news-and-trends-trigger',
+          start: 'top top',
+          end: 'bottom bottom',
+          scrub: 1,
+          // markers: true,
+          pin: true,
+          pinSpacing: false,
+          onUpdate: function onUpdate(item) {
+            if (_this.slider.index === Math.round(+item.progress * 100 / +_this.sliderItems.length)) return;
+
+            _this.slider.go("=".concat(Math.round(+item.progress * 100 / +_this.sliderItems.length)));
+
+            console.log(Math.round(+item.progress * 100 / +_this.sliderItems.length));
+          }
+        },
+        x: '0'
+      });
     }
   }, {
     key: "init",
