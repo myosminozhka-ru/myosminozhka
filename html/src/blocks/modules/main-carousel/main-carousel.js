@@ -110,47 +110,47 @@ const mainCarousel = class MainCarousel {
         let degs = 0;
         let starCoord = 0;
         
-        interact('.main-carousel').draggable({                     // make the element fire drag events
-            origin: 'self',                   // (0, 0) will be the element's top-left
-            inertia: true,                    // start inertial movement if thrown
-            // modifiers: [
-            // interact.modifiers.restrict({
-            //     restriction: 'self'           // keep the drag coords within the element
-            // })
-            // ],
-            // Step 3
-            listeners: {
-            move (event) {
-                    // chooseElem(event.target.dataset.cellIndex - 1)
-                    console.log(starCoord);
-                    clearInterval(interval);
-                    let style = window.getComputedStyle(document.querySelector('.main-carousel-carousel'))
-                    let matrix = style.transform || style.webkitTransform || style.mozTransform
-                    let matrixType = matrix.includes('3d') ? '3d' : '2d'
-                    let matrixValues = matrix.match(/matrix.*\((.+)\)/)[1].split(', ')
-                    var z = 0
-                        if (matrixType === '3d') {
-                            z = +matrixValues[14]
-                        }
-                    var y = 0
-                        if (matrixType === '3d') {
-                            y = +matrixValues[14]
-                        }
+        // interact('.main-carousel').draggable({                     // make the element fire drag events
+        //     origin: 'self',                   // (0, 0) will be the element's top-left
+        //     inertia: true,                    // start inertial movement if thrown
+        //     // modifiers: [
+        //     // interact.modifiers.restrict({
+        //     //     restriction: 'self'           // keep the drag coords within the element
+        //     // })
+        //     // ],
+        //     // Step 3
+        //     listeners: {
+        //     move (event) {
+        //             // chooseElem(event.target.dataset.cellIndex - 1)
+        //             console.log(starCoord);
+        //             clearInterval(interval);
+        //             let style = window.getComputedStyle(document.querySelector('.main-carousel-carousel'))
+        //             let matrix = style.transform || style.webkitTransform || style.mozTransform
+        //             let matrixType = matrix.includes('3d') ? '3d' : '2d'
+        //             let matrixValues = matrix.match(/matrix.*\((.+)\)/)[1].split(', ')
+        //             var z = 0
+        //                 if (matrixType === '3d') {
+        //                     z = +matrixValues[14]
+        //                 }
+        //             var y = 0
+        //                 if (matrixType === '3d') {
+        //                     y = +matrixValues[14]
+        //                 }
                     
-                    degs = y - (starCoord - event.clientX / 5);
-                    document.querySelector('.main-carousel-carousel').style.transform = `translateZ(${z}px) rotateY(${degs}deg)`;
+        //             degs = y - (starCoord - event.clientX / 5);
+        //             document.querySelector('.main-carousel-carousel').style.transform = `translateZ(${z}px) rotateY(${degs}deg)`;
                 
-            }
-            }
-        }).on('dragstart', (event) => {
-           starCoord = event.clientX;
-        }).on('dragmove', () => {
+        //     }
+        //     }
+        // }).on('dragstart', (event) => {
+        //    starCoord = event.clientX;
+        // }).on('dragmove', () => {
             
-            document.querySelector('.main-carousel-carousel').classList.add('isDragable');
-        }).on('dragend', () => {
-            // chooseElem(Math.abs(Math.round(degs / cells.length / 10)));
-            document.querySelector('.main-carousel-carousel').classList.remove('isDragable');
-        })
+        //     document.querySelector('.main-carousel-carousel').classList.add('isDragable');
+        // }).on('dragend', () => {
+        //     // chooseElem(Math.abs(Math.round(degs / cells.length / 10)));
+        //     document.querySelector('.main-carousel-carousel').classList.remove('isDragable');
+        // })
 
     }
 }
