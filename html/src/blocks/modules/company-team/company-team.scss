@@ -72,6 +72,106 @@
         z-index: 3;
         transform: scale(0);
     }
+    &-item-info {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: vw(30);
+        opacity: 0;
+        @extend %transition;
+        .image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: 50% 50%;
+            }
+        }
+        .info {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+        }
+        .left {
+            flex: 1 1 auto;
+            padding-right: vw(30);
+        }
+        .name {
+            font-weight: 800;
+            font-size: vw(30);
+            line-height: vw(40);
+            margin-bottom: vw(10);
+            text-transform: uppercase;
+            color: #FFFFFF;
+        }
+        .position {
+            font-weight: 500;
+            font-size: vw(20);
+            line-height: vw(20);
+            color: #FFFFFF;
+        }
+        .right {
+            display: flex;
+            align-items: center;
+            a {
+                display: block;
+                width: vw(38);
+                height: vw(38);
+                text-align: center;
+                &:not(:last-child) {
+                    margin-right: vw(12);
+                }
+                svg {
+                    fill: #fff;
+                    transition: all .3s ease;
+                }
+                &:hover {
+                    svg {
+                        fill: $mainColor;
+                    }
+                }
+            }
+        }
+    }
+    &-item:hover &-item-info {
+        opacity: 1;
+    }
+    &.mobile &-item &-item-info {
+        opacity: 1;
+    }
+    &.mobile &-item-info {
+        padding: 20px;
+        .info {
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-start;
+        }
+        .left {
+            flex: none;
+            margin-bottom: 20px;
+        }
+        .right a {
+            width: 20px;
+            height: 20px;
+        }
+        .name {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .position {
+            font-size: 13px;
+        }
+    }
     &:not(.mobile) &-item {
         &:nth-child(1) {
             grid-row-start: 1;

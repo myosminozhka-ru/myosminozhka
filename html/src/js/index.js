@@ -189,7 +189,7 @@ window.app = new Vue({
                         end: 'bottom bottom',
                         pin: true,
                         pinSpacing: false,
-                        markers: true
+                        // markers: true
                     },
                     x: 0,
                     onComplete: (element) => {

@@ -2568,8 +2568,8 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
             start: 'bottom bottom-=100',
             end: 'bottom bottom',
             pin: true,
-            pinSpacing: false,
-            markers: true
+            pinSpacing: false // markers: true
+
           },
           x: 0,
           onComplete: function onComplete(element) {
