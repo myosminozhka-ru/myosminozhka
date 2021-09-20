@@ -55,7 +55,12 @@ const jobStages = class jobStages {
                 startAt: 0,
                 perView: 2,
                 gap: 120,
-                type: 'carousel'
+                type: 'carousel',
+                breakpoints: {
+                    800: {
+                        perView: 1,
+                    }
+                }
             }).mount();
         };
         if (document.querySelector('.job-stages-slides--projecting')) {
@@ -63,7 +68,12 @@ const jobStages = class jobStages {
                 startAt: 0,
                 perView: 2,
                 gap: 120,
-                type: 'carousel'
+                type: 'carousel',
+                breakpoints: {
+                    800: {
+                        perView: 1,
+                    }
+                }
             }).mount();
         };
         if (document.querySelector('.job-stages-slides--design')) {

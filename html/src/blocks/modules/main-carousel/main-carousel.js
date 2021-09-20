@@ -3,6 +3,7 @@ import Glide from '@glidejs/glide'
 
 const mainCarousel = class MainCarousel {
     constructor() {
+        if (!document.querySelector('.main-carousel__slider')) return ;
         this.slider = new Glide('.main-carousel__slider', {
             type: 'carousel',
             startAt: 1,
@@ -11,7 +12,9 @@ const mainCarousel = class MainCarousel {
         });
     }
     init() {
-        this.slider.mount();
+        if (this.slider) {
+            this.slider.mount();
+        }
         var self = this;
         var carousel = document.querySelector('.main-carousel-carousel');
         if (!carousel) return;
@@ -145,7 +148,7 @@ const mainCarousel = class MainCarousel {
             
             document.querySelector('.main-carousel-carousel').classList.add('isDragable');
         }).on('dragend', () => {
-            chooseElem(Math.abs(Math.round(degs / cells.length / 10)));
+            // chooseElem(Math.abs(Math.round(degs / cells.length / 10)));
             document.querySelector('.main-carousel-carousel').classList.remove('isDragable');
         })
 

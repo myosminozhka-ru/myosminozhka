@@ -16,14 +16,14 @@ const careerBlocks = class careerBlocks {
                         start: "top top",
                         pin: true,
                         pinSpacing: false,
-                        onUpdate: (item) => {
-                            // item.progress * 200
-                            gsap.to(item.trigger.querySelector('.career-blocks-left'), 0, {
-                                y: () => {
-                                    return 100 - item.progress * 200 + '%';
-                                }
-                            })
-                        }
+                        // onUpdate: (item) => {
+                        //     // item.progress * 200
+                        //     gsap.to(item.trigger.querySelector('.career-blocks-left'), 0, {
+                        //         y: () => {
+                        //             return 100 - item.progress * 200 + '%';
+                        //         }
+                        //     })
+                        // }
                     });
                 });
             }

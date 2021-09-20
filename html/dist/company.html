@@ -82,7 +82,27 @@
         </ul>
     </nav>
 </header>
-            <div class="company-about" :class="{'mobile': window.width <=1280}">
+            <template v-if="window.width <=1280">
+                <section class="career-first" :class="{'mobile': window.width <=1280}">
+    <h1 class="career-first-title">О нас</h1>
+    <div class="career-first-tentacle" v-if="window.width <=1280"><img src="img/svg/tentacle.svg" width="100%" alt=""></div>
+    <div class="career-first-text" v-if="window.width <=1280">
+        Настал тот самый момент, когда нам нужно еще больше свежих мозгов для самых смелых проектов
+    </div>
+    
+        <div class="career-first-info" v-if="window.width > 1280">
+            <div class="career-first-tentacle">
+                <img src="img/svg/tentacle.svg" width="100%" alt="">
+            </div>
+            <div class="career-first-text">
+                Настал тот самый момент, когда нам нужно еще больше свежих мозгов для самых смелых проектов
+            </div>
+        </div>
+    
+</section>
+            </template>
+            <template v-else>
+                <div class="company-about" :class="{'mobile': window.width <=1280}">
     <div class="company-about-in">
         <div class="company-about-title">
             О нас
@@ -145,6 +165,7 @@
         
     </div>
 </div>
+            </template>
             <div class="company-video">
     <video id="player" class="video-js vjs-theme-city"></video>
 </div>
@@ -310,7 +331,7 @@
     </div>
 </section>
             <section class="company-principles" :class="{'mobile': window.width <=1280}">
-    <h1 class="company-principles-title">Принципы работы</h1>
+    <h1 class="company-principles-title animated-title">Принципы работы</h1>
     <div class="company-principles-in">
         <div class="company-principles-left">
             <ul class="company-principles-texts">
@@ -447,7 +468,7 @@
     </div>
 </section>
             <section class="company-team" :class="{'mobile': window.width <=1280}">
-    <h1 class="company-team-title">
+    <h1 class="company-team-title animated-title">
         Команда
     </h1>
     <div class="company-team-items">
@@ -515,7 +536,7 @@
     </div>
 </section>
             <div class="company-raiting" :class="{'mobile': window.width <=1280}">
-    <h1 class="company-raiting-title">Мы в рейтингах</h1>
+    <h1 class="company-raiting-title animated-title">Мы в рейтингах</h1>
     <div class="company-raiting-items">
         
             <div class="company-raiting-item" data-item-id="0" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
@@ -728,7 +749,7 @@
     </div>
 </div>
             <section class="company-partners" :class="{'mobile': window.width <=1280}">
-    <h1 class="company-partners-title">
+    <h1 class="company-partners-title animated-title">
         Наши партнеры
     </h1>
     <div class="glide company-partners-slider">
@@ -818,7 +839,7 @@
     </div>
 </section>
             <div class="company-reviews" :class="{'mobile': window.width <=1280}">
-    <h1 class="company-reviews-title">Нам доверяют</h1>
+    <h1 class="company-reviews-title animated-title">Нам доверяют</h1>
     <div class="glide company-reviews-slider">
         <div class="glide__track company-reviews-track" data-glide-el="track">
             <ul class="glide__slides">
@@ -996,7 +1017,7 @@
     </div>
 </div>
             <section class="career-blog" :class="{'mobile': window.width <=1280}">
-    <h1 class="career-blog-title">Мы&nbsp;на&nbsp;конференциях</h1>
+    <h1 class="career-blog-title animated-title">Мы&nbsp;на&nbsp;конференциях</h1>
     
     <div class="glide career-blog-items">
         <div class="career-blog-buttons">

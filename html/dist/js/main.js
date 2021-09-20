@@ -192,15 +192,15 @@ var careerBlocks = /*#__PURE__*/function () {
               trigger: item,
               start: "top top",
               pin: true,
-              pinSpacing: false,
-              onUpdate: function onUpdate(item) {
-                // item.progress * 200
-                gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to(item.trigger.querySelector('.career-blocks-left'), 0, {
-                  y: function y() {
-                    return 100 - item.progress * 200 + '%';
-                  }
-                });
-              }
+              pinSpacing: false // onUpdate: (item) => {
+              //     // item.progress * 200
+              //     gsap.to(item.trigger.querySelector('.career-blocks-left'), 0, {
+              //         y: () => {
+              //             return 100 - item.progress * 200 + '%';
+              //         }
+              //     })
+              // }
+
             });
           });
         }
@@ -551,12 +551,20 @@ var companyRaiting = /*#__PURE__*/function () {
   }, {
     key: "onSliderInit",
     value: function onSliderInit() {
+      var _this = this;
+
       document.querySelector(".company-raiting-item[data-item-id=\"".concat(this.slider.index, "\"]")).classList.add('isActive');
+      this.slider.on('run.before', function (item) {
+        document.querySelectorAll('.company-raiting-item').forEach(function (trigger) {
+          trigger.classList.remove('isActive');
+        });
+        document.querySelector(".company-raiting-item[data-item-id=\"".concat(_this.slider.index, "\"]")).classList.add('isActive');
+      });
     }
   }, {
     key: "init",
     value: function init() {
-      var _this = this;
+      var _this2 = this;
 
       if (this.slider) {
         this.slider.mount();
@@ -569,7 +577,7 @@ var companyRaiting = /*#__PURE__*/function () {
         this.scrollTriggers();
         document.querySelectorAll('.company-raiting-item').forEach(function (item) {
           item.addEventListener('click', function () {
-            return _this.changeSlide(item);
+            return _this2.changeSlide(item);
           });
         });
       }
@@ -1114,43 +1122,55 @@ var jobInfo = /*#__PURE__*/function () {
   function jobInfo() {
     _classCallCheck(this, jobInfo);
 
-    if (document.querySelector('.job-info-right-slider')) {
-      this.slider = new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.job-info-right-slider', {
-        startAt: 1,
-        perView: 1
-      });
-    }
+    this.index = 0;
   }
 
   _createClass(jobInfo, [{
     key: "changeSlide",
-    value: function changeSlide() {
-      if (this.slider) {
-        document.querySelectorAll('.job-info-title').forEach(function (item) {
-          item.classList.remove('isActive');
-        });
-        document.querySelector(".job-info-title[data-item-id=\"".concat(this.slider.index, "\"]")).classList.add('isActive');
-      }
+    value: function changeSlide(index) {
+      document.querySelectorAll('.job-info-title').forEach(function (item) {
+        item.classList.remove('isActive');
+      });
+      document.querySelectorAll('.job-info-item').forEach(function (item) {
+        item.classList.remove('isActive');
+      });
+      console.log(document.querySelector(".job-info-item[data-target-id=\"".concat(index, "\"]")).clientHeight);
+      document.querySelector('.job-info-right').style.height = document.querySelector(".job-info-item[data-target-id=\"".concat(index, "\"]")).offsetHeight + 'px';
+      document.querySelector(".job-info-title[data-item-id=\"".concat(index, "\"]")).classList.add('isActive');
+      document.querySelector(".job-info-item[data-target-id=\"".concat(index, "\"]")).classList.add('isActive');
     }
   }, {
     key: "changeIndex",
     value: function changeIndex(event) {
       if (event.target.className != 'job-info-title') return;
-      this.slider.go("=".concat(event.target.dataset.itemId));
-      this.changeSlide();
+      console.log(event.target.dataset.itemId);
+      this.changeSlide(event.target.dataset.itemId);
+    }
+  }, {
+    key: "sliderInterval",
+    value: function sliderInterval() {
+      var _this = this;
+
+      setInterval(function () {
+        var index = _this.index++;
+
+        if (!document.querySelector(".job-info-title[data-item-id=\"".concat(++index, "\"]")) && !document.querySelector(".job-info-item[data-target-id=\"".concat(++index, "\"]"))) {
+          _this.index = 0;
+        }
+
+        _this.changeSlide(_this.index);
+      }, 5000);
     }
   }, {
     key: "init",
     value: function init() {
-      var _this = this;
+      var _this2 = this;
 
-      if (this.slider) {
-        this.slider.mount();
-      }
-
-      this.changeSlide();
+      if (!document.querySelector('.job-info')) return;
+      this.changeSlide(this.index);
+      this.sliderInterval();
       document.addEventListener('click', function (event) {
-        return _this.changeIndex(event);
+        return _this2.changeIndex(event);
       });
     }
   }]);
@@ -1250,7 +1270,12 @@ var jobStages = /*#__PURE__*/function () {
           startAt: 0,
           perView: 2,
           gap: 120,
-          type: 'carousel'
+          type: 'carousel',
+          breakpoints: {
+            800: {
+              perView: 1
+            }
+          }
         }).mount();
       }
 
@@ -1261,7 +1286,12 @@ var jobStages = /*#__PURE__*/function () {
           startAt: 0,
           perView: 2,
           gap: 120,
-          type: 'carousel'
+          type: 'carousel',
+          breakpoints: {
+            800: {
+              perView: 1
+            }
+          }
         }).mount();
       }
 
@@ -1550,6 +1580,7 @@ var mainCarousel = /*#__PURE__*/function () {
   function MainCarousel() {
     _classCallCheck(this, MainCarousel);
 
+    if (!document.querySelector('.main-carousel__slider')) return;
     this.slider = new _glidejs_glide__WEBPACK_IMPORTED_MODULE_1__["default"]('.main-carousel__slider', {
       type: 'carousel',
       startAt: 1,
@@ -1561,7 +1592,10 @@ var mainCarousel = /*#__PURE__*/function () {
   _createClass(MainCarousel, [{
     key: "init",
     value: function init() {
-      this.slider.mount();
+      if (this.slider) {
+        this.slider.mount();
+      }
+
       var self = this;
       var carousel = document.querySelector('.main-carousel-carousel');
       if (!carousel) return;
@@ -1695,7 +1729,7 @@ var mainCarousel = /*#__PURE__*/function () {
       }).on('dragmove', function () {
         document.querySelector('.main-carousel-carousel').classList.add('isDragable');
       }).on('dragend', function () {
-        chooseElem(Math.abs(Math.round(degs / cells.length / 10)));
+        // chooseElem(Math.abs(Math.round(degs / cells.length / 10)));
         document.querySelector('.main-carousel-carousel').classList.remove('isDragable');
       });
     }
@@ -1762,25 +1796,32 @@ var mainCases = /*#__PURE__*/function () {
     value: function init() {
       if (!document.querySelector('.main-cases')) return;
       this.initMobileSlider();
-      gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.main-cases-bg', {
-        scrollTrigger: {
-          trigger: '.news-and-trends-trigger',
-          start: 'top+=500 top+=500',
-          end: 'bottom+=500 top+=500',
-          scrub: 3 // markers: true
-
-        },
-        top: -100
-      });
 
       if (window.innerWidth > 1280) {
+        gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.main-cases-bg', {
+          scrollTrigger: {
+            trigger: '.news-and-trends-trigger',
+            start: 'top+=500 top+=500',
+            end: 'bottom+=500 top+=500',
+            scrub: 3 // markers: true
+
+          },
+          top: -100
+        });
         gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.main-cases-items-in', {
           scrollTrigger: {
             trigger: '.main-cases',
-            start: 'top top-=200',
+            start: 'top top',
             end: 'bottom bottom-=200',
-            scrub: 1 // markers: true
-
+            scrub: 1,
+            // markers: true,
+            onUpdate: function onUpdate(item) {
+              if (item.progress > 0.05 && item.progress < 0.45) {
+                document.querySelector('.main-cases-items-in').classList.add('isInViewport');
+              } else {
+                document.querySelector('.main-cases-items-in').classList.remove('isInViewport');
+              }
+            }
           },
           x: '-100%'
         });
@@ -1788,16 +1829,9 @@ var mainCases = /*#__PURE__*/function () {
           scrollTrigger: {
             trigger: '.main-cases',
             start: 'top top-=200',
-            end: 'bottom bottom-=200',
+            end: 'bottom bottom+=800',
             pin: true,
-            pinSpacing: false,
-            onUpdate: function onUpdate(item) {
-              if (item.progress > 0.05 && item.progress < 0.45) {
-                document.querySelector('.main-cases-items-in').classList.add('isInViewport');
-              } else {
-                document.querySelector('.main-cases-items-in').classList.remove('isInViewport');
-              }
-            } // markers: true
+            pinSpacing: false // markers: true
 
           },
           x: 0
@@ -1865,33 +1899,36 @@ var newsAndTrends = /*#__PURE__*/function () {
   _createClass(NewsAndTrends, [{
     key: "initSlider",
     value: function initSlider() {
-      var _this = this;
-
       this.sliderItems = document.querySelectorAll('.news-and-trends-item');
       this.slider = new _glidejs_glide__WEBPACK_IMPORTED_MODULE_2__["default"]('.news-and-trends-right-slider', {
         type: 'carousel',
         startAt: 0,
-        perView: 5
-      }).mount();
-      gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to('.news-and-trends-trigger', {
-        scrollTrigger: {
-          trigger: '.news-and-trends-trigger',
-          start: 'top top',
-          end: 'bottom bottom',
-          scrub: 1,
-          // markers: true,
-          pin: true,
-          pinSpacing: false,
-          onUpdate: function onUpdate(item) {
-            if (_this.slider.index === Math.round(+item.progress * 100 / +_this.sliderItems.length)) return;
-
-            _this.slider.go("=".concat(Math.round(+item.progress * 100 / +_this.sliderItems.length)));
-
-            console.log(Math.round(+item.progress * 100 / +_this.sliderItems.length));
+        perView: 5,
+        breakpoints: {
+          800: {
+            perView: 2
+          },
+          600: {
+            perView: 1
           }
-        },
-        x: '0'
-      });
+        }
+      }).mount(); // gsap.to('.news-and-trends-trigger', {
+      //     scrollTrigger: {
+      //         trigger: '.news-and-trends-trigger',
+      //         start: 'top top',
+      //         end: 'bottom bottom',
+      //         scrub: 1,
+      //         // markers: true,
+      //         pin: true,
+      //         pinSpacing: false,
+      //         onUpdate: (item) => {
+      //             if (this.slider.index === Math.round(+item.progress * 100 / +this.sliderItems.length)) return;
+      //             this.slider.go(`=${Math.round(+item.progress * 100 / +this.sliderItems.length)}`)
+      //             console.log(Math.round(+item.progress * 100 / +this.sliderItems.length));
+      //         }
+      //     },
+      //     x: '0',
+      // });
     }
   }, {
     key: "init",
@@ -2319,6 +2356,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_posts_blog_posts_blog__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! %modules%/posts-blog/posts-blog */ "./src/blocks/modules/posts-blog/posts-blog.js");
 /* harmony import */ var _modules_footer_footer__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! %modules%/footer/footer */ "./src/blocks/modules/footer/footer.js");
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
@@ -2348,6 +2386,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
+gsap__WEBPACK_IMPORTED_MODULE_26__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_27__["ScrollTrigger"]);
 window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
   data: function data() {
@@ -2456,11 +2496,16 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
           y: event.pageY
         });
       });
+      window.addEventListener("orientationchange", function (event) {
+        location.reload();
+      });
       document.querySelector('.footer-bank .copy').addEventListener('click', function () {
         return _this.footer.copyText({
           text: 'ИНН/КПП: 6317139806/631701001 Банк: АО "Тинькофф Банк" БИК: 044525974 Р/С: 40702810010000559615 Р/С: 40702810010000559615'
         });
       });
+
+      _this.animateTitles();
     }, 250);
   },
   computed: {
@@ -2505,6 +2550,35 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
         onComplete: function onComplete() {
           event.target.removeChild(event.target.children[1]);
         }
+      });
+    },
+    animateTitles: function animateTitles() {
+      gsap__WEBPACK_IMPORTED_MODULE_26__["default"].utils.toArray(".animated-title").forEach(function (item, i) {
+        gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item, {
+          scrollTrigger: {
+            trigger: item,
+            start: 'bottom bottom-=100',
+            end: 'bottom bottom',
+            pin: true,
+            pinSpacing: false,
+            markers: true
+          },
+          x: 0,
+          onComplete: function onComplete(element) {
+            console.log(item.offsetWidth - window.innerWidth - 100 * window.innerWidth / 1920);
+
+            if (item.offsetWidth > window.innerWidth - 100 * window.innerWidth / 1920) {
+              document.addEventListener('mousemove', function (event) {
+                gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item, 0, {
+                  translateX: function translateX() {
+                    if (-event.pageX + window.innerWidth / 4 > 0) return;
+                    return -event.pageX + window.innerWidth / 4;
+                  }
+                });
+              });
+            }
+          }
+        });
       });
     }
   }

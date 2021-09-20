@@ -1,7 +1,7 @@
 .news-and-trends {
     
     &:not(.mobile) {
-        padding: vw(100) 0 0 vw(150);
+        padding: vw(100) 0 0 0;
         position: relative;
         z-index: 17;
     }
@@ -23,12 +23,14 @@
     &-title {
         color: #4F4F4F;
     }
-    &:not(.mobile) &-title  {
+    &:not(.mobile) &-title {
         text-transform: uppercase;
         margin-bottom: vw(60);
         font-size: vw(70);
+        padding-left: vw(150);
     }
-    &.mobile &-title  {
+    
+    &.mobile &-title {
         margin-bottom: 50px;
         font-size: 40px;
         line-height: 40px;
@@ -42,6 +44,7 @@
     }
     &:not(.mobile) &-buttons {
         margin-bottom: vw(70);
+        padding-left: vw(150);
     }
     &.mobile &-buttons {
         margin-bottom: 50px;
@@ -379,7 +382,9 @@
         }
     }
     &:not(.mobile) &-form {
-        width: vw(593);
+        width: vw(733);
+        padding-left: vw(150);
+        box-sizing: border-box;
         .title {
             margin-bottom: vw(30);
             font-size: vw(30);

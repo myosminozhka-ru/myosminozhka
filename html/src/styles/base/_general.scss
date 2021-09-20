@@ -215,5 +215,20 @@ a {
   @extend %transition;
   &:hover {
     color: $mainColor !important;
+    text-decoration: underline !important;
+  }
+}
+
+.animated-title {
+  transform: translateX(100%);
+  width: max-content;
+  @media all and (max-width: 1280px) {
+    transform: translateX(0) !important;
+    overflow: auto;
+    width: 100% !important;
+    white-space: nowrap !important;
+    &::-webkit-scrollbar {
+      height: 0;
+    }
   }
 }

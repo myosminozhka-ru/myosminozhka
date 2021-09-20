@@ -2751,6 +2751,12 @@ a,
 
 a:hover {
   color: #FF4978 !important;
+  text-decoration: underline !important;
+}
+
+.animated-title {
+  transform: translateX(100%);
+  width: max-content;
 }
 
 .header {
@@ -3501,6 +3507,10 @@ a:hover {
   padding: 6.25vw 2.60417vw 26.77083vw;
 }
 
+.main-question:not(.mobile).dropped {
+  margin-bottom: -6.77083vw;
+}
+
 .main-question.mobile {
   padding: 110px 20px 173px !important;
 }
@@ -3904,11 +3914,13 @@ a:hover {
   font-weight: bold;
   text-transform: uppercase;
   color: #ff4978;
+  white-space: initial;
 }
 
 .main-carousel__text .text {
   font-family: "Montserrat";
   color: #4f4f4f;
+  white-space: initial;
 }
 
 .main-carousel:not(.mobile) .main-carousel__text {
@@ -3955,7 +3967,7 @@ a:hover {
 }
 
 .news-and-trends:not(.mobile) {
-  padding: 5.20833vw 0 0 7.8125vw;
+  padding: 5.20833vw 0 0 0;
   position: relative;
   z-index: 17;
 }
@@ -3987,6 +3999,7 @@ a:hover {
   text-transform: uppercase;
   margin-bottom: 3.125vw;
   font-size: 3.64583vw;
+  padding-left: 7.8125vw;
 }
 
 .news-and-trends.mobile .news-and-trends-title {
@@ -4005,6 +4018,7 @@ a:hover {
 
 .news-and-trends:not(.mobile) .news-and-trends-buttons {
   margin-bottom: 3.64583vw;
+  padding-left: 7.8125vw;
 }
 
 .news-and-trends.mobile .news-and-trends-buttons {
@@ -4396,7 +4410,9 @@ a:hover {
 }
 
 .news-and-trends:not(.mobile) .news-and-trends-form {
-  width: 30.88542vw;
+  width: 38.17708vw;
+  padding-left: 7.8125vw;
+  box-sizing: border-box;
 }
 
 .news-and-trends:not(.mobile) .news-and-trends-form .title {
@@ -4607,11 +4623,13 @@ a:hover {
   font-size: 20px;
   line-height: 20px;
   margin-bottom: 10px;
+  color: #4f4f4f;
 }
 
 .main-cases.mobile .main-cases-item .text {
   font-size: 16px;
   line-height: 16px;
+  color: #4f4f4f;
 }
 
 .main-resume:not(.mobile) {
@@ -5136,6 +5154,7 @@ a:hover {
 
 .company-team {
   background: #fff;
+  overflow: hidden;
 }
 
 .company-team-title {
@@ -5291,6 +5310,7 @@ a:hover {
 }
 
 .company-raiting {
+  overflow: hidden;
   position: relative;
   z-index: 2;
 }
@@ -5642,8 +5662,28 @@ body.company .company-ceo.mobile {
   padding: 2.60417vw;
 }
 
+.company-partners.mobile .company-partners-arrow {
+  width: 86px;
+  height: 32px;
+  padding: 20px 20px 20px;
+}
+
 .company-partners.mobile .company-partners-arrows {
-  display: none;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: #4f4f4f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: static;
+}
+
+.company-partners.mobile .company-partners-arrows svg {
+  fill: #fff;
+}
+
+.company-partners.mobile .company-partners-arrows svg:hover {
+  fill: #FF4978;
 }
 
 .company-reviews {
@@ -5702,6 +5742,10 @@ body.company .company-ceo.mobile {
   width: calc(100vw - 5.20833vw - 200px - 12.86458vw * 2) !important;
 }
 
+.company-reviews:not(.mobile) .company-reviews-item.glide__slide--active .company-reviews-item-right {
+  opacity: 1 !important;
+}
+
 .company-reviews.mobile .company-reviews-item {
   padding: 20px;
   box-shadow: 0px 4px 10px rgba(64, 64, 64, 0.34);
@@ -5735,7 +5779,8 @@ body.company .company-ceo.mobile {
   width: calc(100% - 9.73958vw);
   padding-left: 2.08333vw;
   border-left: 0.15625vw solid rgba(79, 79, 79, 0.6);
-  transition: width .2s ease;
+  transition: width .2s ease, 0.5s opacity 0.5s ease;
+  opacity: 0;
 }
 
 .company-reviews.mobile .company-reviews-item-right {
@@ -5968,6 +6013,7 @@ body.company .company-ceo.mobile {
 
 .career-qualities.mobile {
   padding: 0 20px 74px;
+  background: #4f4f4f;
 }
 
 .career-qualities-title {
@@ -6045,6 +6091,9 @@ body.company .company-ceo.mobile {
 
 .career-blocks {
   background: none;
+}
+
+.career-blocks:not(.mobile) {
   margin-top: -25.46875vw;
 }
 
@@ -6058,6 +6107,10 @@ body.company .company-ceo.mobile {
 
 .career-blocks-item {
   background: none;
+}
+
+.career-blocks:not(.mobile) .career-blocks-item {
+  background: #fff;
 }
 
 .career-blocks:not(.mobile) .career-blocks-item:not(:last-child) {
@@ -6078,10 +6131,6 @@ body.company .company-ceo.mobile {
   flex-direction: column;
 }
 
-.career-blocks-item-scroller {
-  height: 100vh;
-}
-
 .career-blocks-left {
   display: flex;
   flex-direction: column;
@@ -6090,7 +6139,6 @@ body.company .company-ceo.mobile {
 .career-blocks:not(.mobile) .career-blocks-left {
   width: calc(100% - 42.55208vw);
   padding: 7.8125vw 4.01042vw 2.60417vw 2.60417vw;
-  transform: translateY(100%);
 }
 
 .career-blocks.mobile .career-blocks-left {
@@ -6184,7 +6232,7 @@ body.company .company-ceo.mobile {
 }
 
 .career-blog.mobile {
-  padding: 0 20px;
+  padding: 0 20px 130px 20px;
   position: relative;
   z-index: 7;
 }
@@ -6464,7 +6512,7 @@ body.company .company-ceo.mobile {
   margin-bottom: 1.30208vw;
 }
 
-.vacancies-tabs.mobile .vacancies-tabs-item:first-child .vacancies-tabs-item-title .text {
+.vacancies-tabs.mobile .vacancies-tabs-item:first-child.is-active .vacancies-tabs-item-title .text {
   color: #fff;
 }
 
@@ -6508,6 +6556,11 @@ body.company .company-ceo.mobile {
 .vacancies-tabs.mobile .vacancies-tabs-item.is-active .vacancies-tabs-item-title .text {
   font-size: 30px;
   line-height: 40px;
+}
+
+.vacancies-tabs.mobile + .main-resume {
+  background: #4f4f4f;
+  padding-bottom: 0 !important;
 }
 
 .blog-items {
@@ -7085,12 +7138,26 @@ body.company .company-ceo.mobile {
   padding: 0 2.60417vw 7.8125vw;
 }
 
+.job-info.mobile {
+  flex-direction: column;
+}
+
 .job-info-left {
   width: 45.83333vw;
 }
 
+.job-info.mobile .job-info-left {
+  width: 100%;
+}
+
 .job-info-titles {
   padding-bottom: 0.52083vw;
+}
+
+.job-info.mobile .job-info-titles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .job-info-title {
@@ -7114,11 +7181,38 @@ body.company .company-ceo.mobile {
   width: 17.76042vw;
 }
 
+.job-info.mobile .job-info-button {
+  margin-top: 20px;
+}
+
 .job-info-right {
   margin-left: 5.20833vw;
   padding-top: 3.33333vw;
   width: calc(100% - 51.04167vw);
+  height: 26.25vw;
   pointer-events: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.job-info.mobile .job-info-right {
+  width: 100%;
+  margin-left: 0;
+}
+
+.job-info-item {
+  position: absolute;
+  top: 3.33333vw;
+  left: 0;
+  right: 0;
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.job-info-item.isActive {
+  transform: translateY(0);
+  opacity: 1;
+  transition: all .3s ease;
 }
 
 .job-info-logos {
@@ -7405,18 +7499,22 @@ html:root body.posts .post_info__code--in {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 13.54167vw;
-  height: 13.54167vw;
+  text-decoration: none;
+  width: 11.45833vw;
+  height: 11.45833vw;
   border-radius: 50%;
   border: 0.10417vw solid #4f4f4f;
   margin: -0.26042vw;
-  text-decoration: none;
   position: relative;
   overflow: hidden;
 }
 
 .job-stages-trigger .button-circle {
   border-radius: 50%;
+}
+
+.job-stages-trigger:hover {
+  text-decoration: none !important;
 }
 
 .job-stages-trigger .button-circle {
@@ -7437,16 +7535,16 @@ html:root body.posts .post_info__code--in {
 
 .job-stages-trigger .number {
   font-weight: bold;
-  font-size: 5.20833vw;
-  line-height: 5.20833vw;
+  font-size: 4.16667vw;
+  line-height: 4.16667vw;
   margin-bottom: 1.5625vw;
   color: #fff;
 }
 
 .job-stages-trigger .text {
   font-weight: 500;
-  font-size: 1.04167vw;
-  line-height: 1.04167vw;
+  font-size: 0.9375vw;
+  line-height: 0.9375vw;
   color: #fff;
 }
 
@@ -7544,15 +7642,16 @@ html:root body.posts .post_info__code--in {
 .job-stages-title-trigger {
   cursor: pointer;
   font-weight: 300;
-  font-size: 30px;
-  line-height: 30px;
+  font-size: 1.5625vw;
+  line-height: 1.5625vw;
+  text-decoration: none !important;
   color: #4f4f4f;
 }
 
 .job-stages-title-trigger.isActive {
   font-weight: 600;
-  font-size: 3.64583vw;
-  line-height: 3.64583vw;
+  font-size: 2.60417vw;
+  line-height: 2.60417vw;
 }
 
 .job-stages-title-trigger:not(:last-child) {
@@ -8171,6 +8270,17 @@ body.company .company-ceo:not(.mobile) {
     border-radius: 10px;
   }
 
+  .animated-title {
+    transform: translateX(0) !important;
+    overflow: auto;
+    width: 100% !important;
+    white-space: nowrap !important;
+  }
+
+  .animated-title::-webkit-scrollbar {
+    height: 0;
+  }
+
   html body.posts .career-first-date {
     margin-top: 0;
     padding-top: 0;
@@ -8338,6 +8448,21 @@ body.company .company-ceo:not(.mobile) {
 @media print {
   .video-js > *:not(.vjs-tech):not(.vjs-poster) {
     visibility: hidden;
+  }
+}
+
+@media (orientation: landscape) {
+  .main-words .main-words-wrap {
+    flex-direction: row;
+  }
+
+  .main-words .main-words-item {
+    margin: 0 !important;
+    font-size: 9.375vw !important;
+  }
+
+  .main-words .main-words-item:not(:last-child) {
+    margin-right: 5.20833vw !important;
   }
 }
 /*# sourceMappingURL=maps/main.css.map */

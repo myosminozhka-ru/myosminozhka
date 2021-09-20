@@ -90,10 +90,12 @@
             margin-bottom: vw(25);
         }
     }
-    &.mobile &-item:first-child &-item-title {
+    &.mobile &-item:first-child.is-active &-item-title {
         .text {
             color: #fff;
         }
+    }
+    &.mobile &-item:first-child &-item-title {
         .icon {
             filter: brightness(10);
         }
@@ -131,5 +133,9 @@
             font-size: 30px;
             line-height: 40px;
         }
+    }
+    &.mobile + .main-resume {
+        background: $bgColor;
+        padding-bottom: 0 !important;
     }
 }

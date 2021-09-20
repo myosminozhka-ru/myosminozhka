@@ -6,6 +6,9 @@
   }
   &:not(.mobile) {
     padding: vw(120) vw(50) vw(514);
+    &.dropped {
+      margin-bottom: vw(-130);
+    }
   }
   &.mobile {
     padding: 110px 20px 173px !important;

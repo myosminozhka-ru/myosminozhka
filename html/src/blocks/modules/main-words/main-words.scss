@@ -58,4 +58,16 @@
   &-wrap > &-item__loaded {
     transform: translateX(0);
   }
+  @media (orientation: landscape) {
+    .main-words-wrap {
+      flex-direction: row;
+    }
+    .main-words-item {
+      margin: 0 !important;
+      font-size: vw(180) !important;
+      &:not(:last-child) {
+        margin-right: vw(100) !important;
+      }
+    }
+  }
 }

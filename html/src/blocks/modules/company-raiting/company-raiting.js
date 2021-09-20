@@ -39,6 +39,12 @@ const companyRaiting = class companyRaiting {
     }
     onSliderInit() {
         document.querySelector(`.company-raiting-item[data-item-id="${this.slider.index}"]`).classList.add('isActive');
+        this.slider.on('run.before', (item) => {
+            document.querySelectorAll('.company-raiting-item').forEach(trigger => {
+                trigger.classList.remove('isActive')
+            })
+            document.querySelector(`.company-raiting-item[data-item-id="${this.slider.index}"]`).classList.add('isActive');
+        })
     }
     init() {
         if (this.slider) {

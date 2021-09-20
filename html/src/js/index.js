@@ -26,6 +26,8 @@ import postBlog from "%modules%/posts-blog/posts-blog";
 import footer from "%modules%/footer/footer";
 
 import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 
 window.app = new Vue({
@@ -123,9 +125,13 @@ window.app = new Vue({
                     y: event.pageY,
                 })
             });
+            window.addEventListener("orientationchange", function(event) {
+                location.reload();
+            });
             document.querySelector('.footer-bank .copy').addEventListener('click', () => this.footer.copyText({
                 text: 'ИНН/КПП: 6317139806/631701001 Банк: АО "Тинькофф Банк" БИК: 044525974 Р/С: 40702810010000559615 Р/С: 40702810010000559615'
             }))
+            this.animateTitles();
         }, 250);
     },
     computed: {
@@ -173,6 +179,35 @@ window.app = new Vue({
                     event.target.removeChild(event.target.children[1])
                 }
             })
+        },
+        animateTitles() {
+            gsap.utils.toArray(".animated-title").forEach((item, i) => {
+                gsap.to(item, {
+                    scrollTrigger: {
+                        trigger: item,
+                        start: 'bottom bottom-=100',
+                        end: 'bottom bottom',
+                        pin: true,
+                        pinSpacing: false,
+                        markers: true
+                    },
+                    x: 0,
+                    onComplete: (element) => {
+                        console.log(item.offsetWidth - window.innerWidth - (100 * window.innerWidth / 1920))
+                        if (item.offsetWidth > window.innerWidth - (100 * window.innerWidth / 1920)) {
+                            document.addEventListener('mousemove', (event) => {
+                                gsap.to(item, 0, {
+                                    translateX: () => {
+                                        if (-event.pageX + window.innerWidth / 4 > 0) return;
+                                        return -event.pageX + window.innerWidth / 4;
+                                    },
+                                });
+                            });
+                        }
+                    }
+                });
+                
+            });
         }
     }
 });

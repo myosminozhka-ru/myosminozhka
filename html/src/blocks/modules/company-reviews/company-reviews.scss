@@ -40,6 +40,9 @@
         }
         &.glide__slide--active {
             width: calc(100vw - #{vw(100)} - 200px - #{vw(247)} * 2 ) !important;
+            .company-reviews-item-right {
+                opacity: 1 !important;
+            }
         }
     }
     &.mobile  &-item {
@@ -69,7 +72,8 @@
         width: calc(100% - #{vw(187)});
         padding-left: vw(40);
         border-left: vw(3) solid rgba(79, 79, 79, 0.6);
-        transition: width .2s ease;
+        transition: width .2s ease, 0.5s opacity 0.5s ease;
+        opacity: 0;
     }
     &.mobile &-item-right {
         width: 100%;

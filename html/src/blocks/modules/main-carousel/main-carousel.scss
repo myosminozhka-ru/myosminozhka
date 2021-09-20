@@ -155,10 +155,12 @@
             font-weight: bold;
             text-transform: uppercase;
             color: #ff4978;
+            white-space: initial;
         }
         .text {
             font-family: "Montserrat";
             color: #4f4f4f;
+            white-space: initial;
         }
     }
     &:not(.mobile) &__text {

@@ -25,34 +25,25 @@ const mainCases = class MainCases {
     init() {
         if (!document.querySelector('.main-cases')) return;
         this.initMobileSlider();
-         gsap.to('.main-cases-bg', {
-             scrollTrigger: {
-                 trigger: '.news-and-trends-trigger',
-                 start: 'top+=500 top+=500',
-                 end: 'bottom+=500 top+=500',
-                 scrub: 3,
-                 // markers: true
-             },
-             top: -100,
-         });
+         
          if (window.innerWidth > 1280) {
+            gsap.to('.main-cases-bg', {
+                scrollTrigger: {
+                    trigger: '.news-and-trends-trigger',
+                    start: 'top+=500 top+=500',
+                    end: 'bottom+=500 top+=500',
+                    scrub: 3,
+                    // markers: true
+                },
+                top: -100,
+            });
             gsap.to('.main-cases-items-in', {
                 scrollTrigger: {
                     trigger: '.main-cases',
-                    start: 'top top-=200',
+                    start: 'top top',
                     end: 'bottom bottom-=200',
                     scrub: 1,
-                    // markers: true
-                },
-                x: '-100%',
-            });
-            gsap.to('.main-cases', {
-                scrollTrigger: {
-                    trigger: '.main-cases',
-                    start: 'top top-=200',
-                    end: 'bottom bottom-=200',
-                    pin: true,
-                    pinSpacing: false,
+                    // markers: true,
                     onUpdate: (item) => {
                         if (item.progress > 0.05 && item.progress < 0.45) {
                             document.querySelector('.main-cases-items-in').classList.add('isInViewport');
@@ -60,6 +51,16 @@ const mainCases = class MainCases {
                             document.querySelector('.main-cases-items-in').classList.remove('isInViewport');
                         }
                     }
+                },
+                x: '-100%',
+            });
+            gsap.to('.main-cases', {
+                scrollTrigger: {
+                    trigger: '.main-cases',
+                    start: 'top top-=200',
+                    end: 'bottom bottom+=800',
+                    pin: true,
+                    pinSpacing: false,
                     // markers: true
                 },
                 x: 0,
