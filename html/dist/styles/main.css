@@ -5162,10 +5162,6 @@ a:hover {
   text-transform: uppercase;
 }
 
-.company-team:not(.mobile) .company-team-title {
-  padding-bottom: 15vw;
-}
-
 .company-team.mobile .company-team-title {
   padding: 0 20px 50px;
   font-size: 45px;
@@ -5178,7 +5174,7 @@ a:hover {
 }
 
 .company-team:not(.mobile) .company-team-items {
-  padding: 0 2.60417vw 9.16667vw 2.55208vw;
+  padding: 15vw 2.60417vw 9.16667vw 2.55208vw;
   grid-template-columns: 3.75vw 4.89583vw 10.67708vw 3.125vw 1.66667vw 3.125vw 8.95833vw 3.125vw 7.08333vw 3.125vw 7.1875vw 5.52083vw 10vw 3.125vw 11.40625vw 7.55208vw;
   grid-template-rows: 4.0625vw 4.6875vw 7.5vw 4.16667vw 3.125vw 3.80208vw 3.125vw 1.97917vw 5.05208vw 3.125vw 8.59375vw 1.82292vw 3.125vw 1.66667vw 3.125vw 1.45833vw 3.125vw 14.16667vw 5.52083vw 3.64583vw;
   background: url("data:image/svg+xml,%3Csvg width='1920' height='1268' viewBox='0 0 1920 1268' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-5 0H1925.5V781H1405H1085.49C669.305 781 272.779 958.084 -5 1268V781L-5 0Z' fill='%234F4F4F'/%3E%3C/svg%3E%0A") 0% 100%/117% no-repeat;

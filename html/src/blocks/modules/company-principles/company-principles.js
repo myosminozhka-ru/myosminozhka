@@ -13,7 +13,7 @@ const companyPrinciples = class CompanyPrinciples {
         var radius, theta;
 
         function rotateCarousel() {
-            
+            console.log(selectedIndex);
             var angle = theta * selectedIndex * -1;
             carousel.style.transform = 'translateZ(' + -radius + 'px) ' + 
             rotateFn + '(' + angle + 'deg)';
@@ -94,6 +94,14 @@ const companyPrinciples = class CompanyPrinciples {
 
         // set initials
         onOrientationChange();
+
+
+        setInterval(() => {
+            if (!document.querySelector(`.company-principles-text[data-text-index="${selectedIndex+2}"]`)) {
+                selectedIndex = -1;
+            }
+            chooseElem(++selectedIndex)        
+        }, 5000);
     }
 }
 

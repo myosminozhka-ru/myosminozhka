@@ -395,6 +395,7 @@ var companyPrinciples = /*#__PURE__*/function () {
       var radius, theta;
 
       function rotateCarousel() {
+        console.log(selectedIndex);
         var angle = theta * selectedIndex * -1;
         carousel.style.transform = 'translateZ(' + -radius + 'px) ' + rotateFn + '(' + angle + 'deg)';
 
@@ -476,6 +477,13 @@ var companyPrinciples = /*#__PURE__*/function () {
       }); // set initials
 
       onOrientationChange();
+      setInterval(function () {
+        if (!document.querySelector(".company-principles-text[data-text-index=\"".concat(selectedIndex + 2, "\"]"))) {
+          selectedIndex = -1;
+        }
+
+        chooseElem(++selectedIndex);
+      }, 5000);
     }
   }]);
 
