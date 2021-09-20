@@ -1,5 +1,16 @@
 .company-about {
-    background: #4f4f4f;
+    // background: #4f4f4f;
+    &__wrap {
+        position: relative;
+    }
+    &__title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        pointer-events: none;
+    }
     &:not(.mobile) {
         padding: vw(191) vw(50) vw(50);
         clip-path: circle(1920px at #{vw(300)} #{vw(300)});
@@ -133,4 +144,8 @@
     &.mobile &-image {
         display: none;
     }
+}
+
+.company {
+    background: $bgColor;
 }

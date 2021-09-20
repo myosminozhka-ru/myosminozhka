@@ -13,12 +13,14 @@ const jobStages = class jobStages {
                 gap: 0,
                 type: 'slider'
             })
-            this.supportImagesSlider = new Glide('.job-stages-support-right', {
-                startAt: 0,
-                perView: 1,
-                type: 'carousel',
-                transitionType: 'fade'
-            })
+            if (document.querySelector('.job-stages-support-right')) {
+                this.supportImagesSlider = new Glide('.job-stages-support-right', {
+                    startAt: 0,
+                    perView: 1,
+                    type: 'carousel',
+                    transitionType: 'fade'
+                })
+            }
         }
     }
     init() {
@@ -96,11 +98,13 @@ const jobStages = class jobStages {
         
         if (document.querySelector('.job-stages-support')) {
             this.supportSlider.mount();
-            this.supportImagesSlider.mount();
-
-            this.supportSlider.on(['move.after'], () => {
-                this.supportImagesSlider.go(`=${this.supportSlider.index}`)
-            })
+            console.log(this.supportImagesSlider);
+            if (document.querySelector('.job-stages-support-right')) {
+                this.supportImagesSlider.mount();
+                this.supportSlider.on(['move.after'], () => {
+                    this.supportImagesSlider.go(`=${this.supportSlider.index}`)
+                })
+            }
         };
         if (document.querySelector('.job-stages-title-triggers')) {
             document.querySelectorAll('.job-stages-title-triggers').forEach(wrap => {

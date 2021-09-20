@@ -102,67 +102,131 @@
 </section>
             </template>
             <template v-else>
-                <div class="company-about" :class="{'mobile': window.width <=1023}">
-    <div class="company-about-in">
-        <div class="company-about-title">
-            О нас
+                <div class="company-about__wrap">
+    <div class="company-about" :class="{'mobile': window.width <=1023}">
+        <div class="company-about-in">
+            <div class="company-about-title" v-if="window.width > 1023"></div>
+            <div class="company-about-title" v-if="window.width <= 1023">О нас</div>
+            <div class="company-about-tentacle" v-if="window.width <= 1023">
+                <img src="img/svg/tentacle.svg" width="100%" alt="">
+            </div>
+            
+                <div class="company-about-image">
+                    <img src="img/main_news_image.png" width="100%" height="100%" alt="">
+                </div>
+            
+                <div class="company-about-image">
+                    <img src="img/main_news_image.png" width="100%" height="100%" alt="">
+                </div>
+            
+                <div class="company-about-image">
+                    <img src="img/main_news_image.png" width="100%" height="100%" alt="">
+                </div>
+            
+                <div class="company-about-image">
+                    <img src="img/main_news_image.png" width="100%" height="100%" alt="">
+                </div>
+            
+                <div class="company-about-image">
+                    <img src="img/main_news_image.png" width="100%" height="100%" alt="">
+                </div>
+            
+                <div class="company-about-image">
+                    <img src="img/main_news_image.png" width="100%" height="100%" alt="">
+                </div>
+            
+                <div class="company-about-image">
+                    <img src="img/main_news_image.png" width="100%" height="100%" alt="">
+                </div>
+            
+                <div class="company-about-image">
+                    <img src="img/main_news_image.png" width="100%" height="100%" alt="">
+                </div>
+            
+                <div class="company-about-image">
+                    <img src="img/main_news_image.png" width="100%" height="100%" alt="">
+                </div>
+            
+                <div class="company-about-image">
+                    <img src="img/main_news_image.png" width="100%" height="100%" alt="">
+                </div>
+            
+                <div class="company-about-image">
+                    <img src="img/main_news_image.png" width="100%" height="100%" alt="">
+                </div>
+            
+                <div class="company-about-image">
+                    <img src="img/main_news_image.png" width="100%" height="100%" alt="">
+                </div>
+            
+                <div class="company-about-image">
+                    <img src="img/main_news_image.png" width="100%" height="100%" alt="">
+                </div>
+            
         </div>
-        <div class="company-about-tentacle" v-if="window.width <= 1023">
-            <img src="img/svg/tentacle.svg" width="100%" alt="">
+    </div>
+    <div class="company-about company-about__title" v-if="window.width > 1023">
+        <div class="company-about-in">
+            <div class="company-about-title">
+                О нас
+            </div>
+            <!-- <div class="company-about-tentacle" v-if="window.width <= 1023">
+                <img src="img/svg/tentacle.svg" width="100%" alt="">
+            </div>
+            
+                <div class="company-about-image">
+                    <img src="img/main_news_image.png" width="100%" height="100%" alt="">
+                </div>
+            
+                <div class="company-about-image">
+                    <img src="img/main_news_image.png" width="100%" height="100%" alt="">
+                </div>
+            
+                <div class="company-about-image">
+                    <img src="img/main_news_image.png" width="100%" height="100%" alt="">
+                </div>
+            
+                <div class="company-about-image">
+                    <img src="img/main_news_image.png" width="100%" height="100%" alt="">
+                </div>
+            
+                <div class="company-about-image">
+                    <img src="img/main_news_image.png" width="100%" height="100%" alt="">
+                </div>
+            
+                <div class="company-about-image">
+                    <img src="img/main_news_image.png" width="100%" height="100%" alt="">
+                </div>
+            
+                <div class="company-about-image">
+                    <img src="img/main_news_image.png" width="100%" height="100%" alt="">
+                </div>
+            
+                <div class="company-about-image">
+                    <img src="img/main_news_image.png" width="100%" height="100%" alt="">
+                </div>
+            
+                <div class="company-about-image">
+                    <img src="img/main_news_image.png" width="100%" height="100%" alt="">
+                </div>
+            
+                <div class="company-about-image">
+                    <img src="img/main_news_image.png" width="100%" height="100%" alt="">
+                </div>
+            
+                <div class="company-about-image">
+                    <img src="img/main_news_image.png" width="100%" height="100%" alt="">
+                </div>
+            
+                <div class="company-about-image">
+                    <img src="img/main_news_image.png" width="100%" height="100%" alt="">
+                </div>
+            
+                <div class="company-about-image">
+                    <img src="img/main_news_image.png" width="100%" height="100%" alt="">
+                </div>
+             -->
         </div>
-        
-            <div class="company-about-image">
-                <img src="img/main_news_image.png" width="100%" height="100%" alt="">
-            </div>
-        
-            <div class="company-about-image">
-                <img src="img/main_news_image.png" width="100%" height="100%" alt="">
-            </div>
-        
-            <div class="company-about-image">
-                <img src="img/main_news_image.png" width="100%" height="100%" alt="">
-            </div>
-        
-            <div class="company-about-image">
-                <img src="img/main_news_image.png" width="100%" height="100%" alt="">
-            </div>
-        
-            <div class="company-about-image">
-                <img src="img/main_news_image.png" width="100%" height="100%" alt="">
-            </div>
-        
-            <div class="company-about-image">
-                <img src="img/main_news_image.png" width="100%" height="100%" alt="">
-            </div>
-        
-            <div class="company-about-image">
-                <img src="img/main_news_image.png" width="100%" height="100%" alt="">
-            </div>
-        
-            <div class="company-about-image">
-                <img src="img/main_news_image.png" width="100%" height="100%" alt="">
-            </div>
-        
-            <div class="company-about-image">
-                <img src="img/main_news_image.png" width="100%" height="100%" alt="">
-            </div>
-        
-            <div class="company-about-image">
-                <img src="img/main_news_image.png" width="100%" height="100%" alt="">
-            </div>
-        
-            <div class="company-about-image">
-                <img src="img/main_news_image.png" width="100%" height="100%" alt="">
-            </div>
-        
-            <div class="company-about-image">
-                <img src="img/main_news_image.png" width="100%" height="100%" alt="">
-            </div>
-        
-            <div class="company-about-image">
-                <img src="img/main_news_image.png" width="100%" height="100%" alt="">
-            </div>
-        
     </div>
 </div>
             </template>

@@ -89,6 +89,13 @@
         margin-bottom: vw(60);
         display: flex;
     }
+    &:not(.mobile) &-logos {
+        transition: 0.8s transform 0.3s ease;
+        transform: translateY(-200%);
+    }
+    &-item.isActive &-logos {
+        transform: translateY(0);
+    }
     &.mobile &-logos {
         margin-bottom: 20px;
     }

@@ -86,13 +86,13 @@ window.app = new Vue({
     mounted() {
         setTimeout(() => {
             this.isMounted = true;
+            this.mainCases.init();
             this.mainWords.countPosition();
             this.mainWeb.animateElement();
             this.mainAbout.animateCircle();
             this.cursorAnimation.init();
             this.mainCarousel.init();
             this.newsAndTrends.init();
-            this.mainCases.init();
             this.header.init();
             this.companyVideo.init();
             this.companyPrinciples.init();

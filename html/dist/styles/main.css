@@ -4778,8 +4778,17 @@ a:hover {
   line-height: 40px;
 }
 
-.company-about {
-  background: #4f4f4f;
+.company-about__wrap {
+  position: relative;
+}
+
+.company-about__title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
 }
 
 .company-about:not(.mobile) {
@@ -4935,6 +4944,10 @@ a:hover {
 
 .company-about.mobile .company-about-image {
   display: none;
+}
+
+.company {
+  background: #4f4f4f;
 }
 
 .company-video video {
@@ -5684,10 +5697,6 @@ a:hover {
   font-weight: normal;
   font-size: 16px;
   line-height: 22px;
-}
-
-.company {
-  background: none;
 }
 
 body.company .company-ceo:not(.mobile) {
@@ -7412,6 +7421,15 @@ body.company .company-ceo.mobile {
   display: flex;
 }
 
+.job-info:not(.mobile) .job-info-logos {
+  transition: 0.8s transform 0.3s ease;
+  transform: translateY(-200%);
+}
+
+.job-info-item.isActive .job-info-logos {
+  transform: translateY(0);
+}
+
 .job-info.mobile .job-info-logos {
   margin-bottom: 20px;
 }
@@ -7811,7 +7829,7 @@ html:root body.posts .post_info__code--in {
 }
 
 .job-stages.mobile .job-stages-support-slides {
-  margin-top: 20px;
+  padding-bottom: 100px;
 }
 
 .job-stages-slides-double .job-stages-item {
@@ -7943,8 +7961,7 @@ html:root body.posts .post_info__code--in {
 }
 
 .job-stages-support.mobile {
-  padding: 50px 20px;
-  margin-left: -20px;
+  padding: 0 0 20px 0;
   box-sizing: border-box;
   margin: 0;
 }
@@ -7992,7 +8009,8 @@ html:root body.posts .post_info__code--in {
 }
 
 .job-stages-support-left.mobile .job-stages-support-image {
-  margin-bottom: 20px;
+  margin-bottom: 90px;
+  font-size: 0;
 }
 
 .job-stages-support-right {
@@ -8008,12 +8026,22 @@ html:root body.posts .post_info__code--in {
   margin-bottom: 2.60417vw;
 }
 
+.job-stages-support-left.mobile .job-stages-support-title {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 .job-stages-support-text {
   font-weight: normal;
   font-size: 1.5625vw;
   line-height: 2.60417vw;
   padding-right: 3.90625vw;
   white-space: initial;
+}
+
+.job-stages-support-left.mobile .job-stages-support-text {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .job-stages-support-arrows {
@@ -8024,6 +8052,11 @@ html:root body.posts .post_info__code--in {
 
 .job-stages-support-arrows button {
   position: static;
+}
+
+.job-stages-support-left.mobile .job-stages-support-arrows {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .job-stages-support-arrow {

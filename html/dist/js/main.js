@@ -299,7 +299,17 @@ var companyAbout = /*#__PURE__*/function () {
   _createClass(CompanyAbout, [{
     key: "init",
     value: function init() {
+      var _this = this;
+
       if (!document.querySelector(this.selector)) return;
+      document.querySelector(this.selector).addEventListener('mousemove', function (e) {
+        document.querySelector(_this.selector).style.clipPath = "circle(".concat(200 * 100 / window.innerWidth, "vw at ").concat(e.clientX, "px ").concat(e.clientY, "px)");
+      });
+      document.querySelector(this.selector).addEventListener('mouseleave', function (e) {
+        gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(_this.selector, 0.5, {
+          "clip-path": "circle(1920px at ".concat(e.clientX, "px ").concat(e.clientY, "px)")
+        });
+      });
     }
   }]);
 
@@ -1226,12 +1236,15 @@ var jobStages = /*#__PURE__*/function () {
         gap: 0,
         type: 'slider'
       });
-      this.supportImagesSlider = new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.job-stages-support-right', {
-        startAt: 0,
-        perView: 1,
-        type: 'carousel',
-        transitionType: 'fade'
-      });
+
+      if (document.querySelector('.job-stages-support-right')) {
+        this.supportImagesSlider = new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.job-stages-support-right', {
+          startAt: 0,
+          perView: 1,
+          type: 'carousel',
+          transitionType: 'fade'
+        });
+      }
     }
   }
 
@@ -1330,10 +1343,14 @@ var jobStages = /*#__PURE__*/function () {
 
       if (document.querySelector('.job-stages-support')) {
         this.supportSlider.mount();
-        this.supportImagesSlider.mount();
-        this.supportSlider.on(['move.after'], function () {
-          _this.supportImagesSlider.go("=".concat(_this.supportSlider.index));
-        });
+        console.log(this.supportImagesSlider);
+
+        if (document.querySelector('.job-stages-support-right')) {
+          this.supportImagesSlider.mount();
+          this.supportSlider.on(['move.after'], function () {
+            _this.supportImagesSlider.go("=".concat(_this.supportSlider.index));
+          });
+        }
       }
 
       ;
@@ -1833,44 +1850,46 @@ var mainCases = /*#__PURE__*/function () {
       }
 
       if (window.innerWidth > 1023) {
-        gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.main-cases-bg', {
-          scrollTrigger: {
-            trigger: '.news-and-trends-trigger',
-            start: 'top+=500 top+=500',
-            end: 'bottom+=500 top+=500',
-            scrub: 3 // markers: true
+        setTimeout(function () {
+          gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.main-cases-bg', {
+            scrollTrigger: {
+              trigger: '.news-and-trends-trigger',
+              start: 'top+=500 top+=500',
+              end: 'bottom+=500 top+=500',
+              scrub: 3 // markers: true
 
-          },
-          top: -100
-        });
-        gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.main-cases-items-in', {
-          scrollTrigger: {
-            trigger: '.main-cases',
-            start: 'top top',
-            end: 'bottom bottom-=200',
-            scrub: 1,
-            // markers: true,
-            onUpdate: function onUpdate(item) {
-              if (item.progress > 0.05 && item.progress < 0.45) {
-                document.querySelector('.main-cases-items-in').classList.add('isInViewport');
-              } else {
-                document.querySelector('.main-cases-items-in').classList.remove('isInViewport');
+            },
+            top: -100
+          });
+          gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.main-cases-items-in', {
+            scrollTrigger: {
+              trigger: '.main-cases',
+              start: 'top top',
+              end: 'bottom bottom-=200',
+              scrub: 1,
+              // markers: true,
+              onUpdate: function onUpdate(item) {
+                if (item.progress > 0.05 && item.progress < 0.45) {
+                  document.querySelector('.main-cases-items-in').classList.add('isInViewport');
+                } else {
+                  document.querySelector('.main-cases-items-in').classList.remove('isInViewport');
+                }
               }
-            }
-          },
-          x: '-100%'
-        });
-        gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.main-cases', {
-          scrollTrigger: {
-            trigger: '.main-cases',
-            start: 'top top-=300',
-            end: 'bottom bottom',
-            pin: true,
-            pinSpacing: false,
-            markers: true
-          },
-          x: 0
-        });
+            },
+            x: '-100%'
+          });
+          gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.main-cases', {
+            scrollTrigger: {
+              trigger: '.main-cases',
+              start: 'top top-=300',
+              end: 'bottom bottom',
+              pin: true,
+              pinSpacing: false // markers: true
+
+            },
+            x: 0
+          });
+        }, 1000);
       } else {} // ScrollTrigger.matchMedia({
       //     "(min-width: 1281px)": () => {
       //         gsap.utils.toArray(".main-cases-item").forEach((item, i) => {
@@ -2468,6 +2487,8 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     setTimeout(function () {
       _this.isMounted = true;
 
+      _this.mainCases.init();
+
       _this.mainWords.countPosition();
 
       _this.mainWeb.animateElement();
@@ -2479,8 +2500,6 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       _this.mainCarousel.init();
 
       _this.newsAndTrends.init();
-
-      _this.mainCases.init();
 
       _this.header.init();
 
