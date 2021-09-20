@@ -5183,7 +5183,7 @@ a:hover {
 }
 
 .company-team.mobile .company-team-items {
-  padding: 0 20px 151px;
+  padding: 0 20px 50px;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
 }
@@ -5191,12 +5191,11 @@ a:hover {
 .company-team.mobile .company-team-items:after {
   content: "";
   display: block;
-  background: #fff;
   grid-row-start: 1;
   grid-row-end: 2;
   grid-column-start: 1;
   grid-column-end: 3;
-  height: 78px;
+  height: 50px;
   margin: 0 -20px;
 }
 
@@ -5329,6 +5328,7 @@ a:hover {
 
 .company-team.mobile .company-team-item-info .name {
   font-size: 16px;
+  line-height: 1.2;
   margin-bottom: 10px;
 }
 
@@ -8366,7 +8366,21 @@ body.company .company-ceo:not(.mobile) {
   }
 }
 
-@media all and (max-width: 1280px) {
+@media all and (max-width: 1080px) {
+  .footer-tentacle {
+    bottom: calc(100% - 380px);
+    transform: rotateY(180deg);
+    z-index: 3;
+  }
+}
+
+@media all and (max-width: 1024px) {
+  html:root body.posts .post_info {
+    background-size: 130%;
+  }
+}
+
+@media all and (max-width: 1023px) {
   h1 {
     font-size: 80px;
     line-height: 80px;
@@ -8454,20 +8468,6 @@ body.company .company-ceo:not(.mobile) {
     bottom: calc(100% - 450px);
     transform: rotateY(180deg);
     z-index: 3;
-  }
-}
-
-@media all and (max-width: 1080px) {
-  .footer-tentacle {
-    bottom: calc(100% - 380px);
-    transform: rotateY(180deg);
-    z-index: 3;
-  }
-}
-
-@media all and (max-width: 1024px) {
-  html:root body.posts .post_info {
-    background-size: 130%;
   }
 }
 

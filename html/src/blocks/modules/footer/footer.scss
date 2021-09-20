@@ -17,7 +17,7 @@
     &:not(.mobile) &-tentacle {
         top: vw(-700);
     }
-    @media all and (max-width: 1280px) {
+    @media all and (max-width: 1023px) {
         &-tentacle {
             bottom: calc(100% - 450px);
             transform: rotateY(180deg);

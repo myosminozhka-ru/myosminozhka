@@ -1,5 +1,5 @@
 
-<section class="web company-ceo" v-if="window.width > 1280">
+<section class="web company-ceo" v-if="window.width > 1023">
     <!-- <div class="web-tentacle">
         <img src="img/svg/tentacle.svg" width="100%" alt="">
     </div> -->
@@ -66,7 +66,7 @@
     </div>
 </section>
 
-<section class="web company-ceo" :class="{'mobile': window.width <=1280}" v-if="window.width <= 1280">
+<section class="web company-ceo" :class="{'mobile': window.width <=1023}" v-if="window.width <= 1023">
     <div class="web-slider">
         <div class="web-slider-arrows" data-glide-el="controls">
             <button class="web-slider-arrow web-slider-arrow--prev" data-glide-dir="<">
@@ -92,7 +92,7 @@
                             Это прогрессивное дизайнерское агентство, обладающее техническими и творческими навыками, чтобы воплотить ваш бренд стал лучше. Наш подход к дизайну и разработке создает впечатляющие, привлекательные бренды, которые возвращают вам творческий потенциал.
                         </div>
                         <div class="web-slider-button">
-                            <button class="web-button button button--main" :class="{'mobile': window.width <=1280}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave" data-item-id="1">
+                            <button class="web-button button button--main" :class="{'mobile': window.width <=1023}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave" data-item-id="1">
                                 <div class="text">Стать клиентом</div>
                             </button>
                         </div>

@@ -32,18 +32,18 @@
     </head>
     <body class="company">
         <div class="wrapper" id="app">
-            <header class="header" :class="{'isOpened': header.isOpened, 'mobile': window.width <=1280}">
+            <header class="header" :class="{'isOpened': header.isOpened, 'mobile': window.width <=1023}">
     <div class="header-blur"></div>
     <div class="header-in">
-        <a href="/" class="header-logo" :class="{'mobile': window.width <=1280}">
+        <a href="/" class="header-logo" :class="{'mobile': window.width <=1023}">
             <img src="img/logo.png" width="100%" height="100%" alt="">
         </a>
-        <div class="header-menu-opener" :class="{'isOpened': header.isOpened}" @click="header.openMobileHeader()" v-if="window.width <= 1280">
+        <div class="header-menu-opener" :class="{'isOpened': header.isOpened}" @click="header.openMobileHeader()" v-if="window.width <= 1023">
             <div></div>
             <div></div>
             <div></div>
         </div>
-        <nav class="header-menu" v-if="window.width > 1280">
+        <nav class="header-menu" v-if="window.width > 1023">
             <ul>
                 <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="job.html">Услуги</a></li>
                 <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="cases.html">Портфолио</a></li>
@@ -62,13 +62,13 @@
                 </svg>                    
             </div>
         </nav>
-        <ul class="header-lang" v-if="window.width > 1280">
+        <ul class="header-lang" v-if="window.width > 1023">
             <li class="active"><a href="#">Ru</a></li>
             <li class="header-lang__delim">/</li>
             <li><a href="#">En</a></li>
         </ul>
     </div>
-    <nav class="header-mobile-menu" :class="{'isOpened': header.isOpened}" v-if="window.width <= 1280">
+    <nav class="header-mobile-menu" :class="{'isOpened': header.isOpened}" v-if="window.width <= 1023">
         <ul>
             <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="job.html">Услуги</a></li>
             <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="cases.html">Портфолио</a></li>
@@ -82,15 +82,15 @@
         </ul>
     </nav>
 </header>
-            <template v-if="window.width <=1280">
-                <section class="career-first" :class="{'mobile': window.width <=1280}">
+            <template v-if="window.width <=1023">
+                <section class="career-first" :class="{'mobile': window.width <=1023}">
     <h1 class="career-first-title">О нас</h1>
-    <div class="career-first-tentacle" v-if="window.width <=1280"><img src="img/svg/tentacle.svg" width="100%" alt=""></div>
-    <div class="career-first-text" v-if="window.width <=1280">
+    <div class="career-first-tentacle" v-if="window.width <=1023"><img src="img/svg/tentacle.svg" width="100%" alt=""></div>
+    <div class="career-first-text" v-if="window.width <=1023">
         Настал тот самый момент, когда нам нужно еще больше свежих мозгов для самых смелых проектов
     </div>
     
-        <div class="career-first-info" v-if="window.width > 1280">
+        <div class="career-first-info" v-if="window.width > 1023">
             <div class="career-first-tentacle">
                 <img src="img/svg/tentacle.svg" width="100%" alt="">
             </div>
@@ -102,12 +102,12 @@
 </section>
             </template>
             <template v-else>
-                <div class="company-about" :class="{'mobile': window.width <=1280}">
+                <div class="company-about" :class="{'mobile': window.width <=1023}">
     <div class="company-about-in">
         <div class="company-about-title">
             О нас
         </div>
-        <div class="company-about-tentacle" v-if="window.width <= 1280">
+        <div class="company-about-tentacle" v-if="window.width <= 1023">
             <img src="img/svg/tentacle.svg" width="100%" alt="">
         </div>
         
@@ -170,7 +170,7 @@
     <video id="player" class="video-js vjs-theme-city"></video>
 </div>
             
-<section class="web company-ceo" v-if="window.width > 1280">
+<section class="web company-ceo" v-if="window.width > 1023">
     <!-- <div class="web-tentacle">
         <img src="img/svg/tentacle.svg" width="100%" alt="">
     </div> -->
@@ -237,7 +237,7 @@
     </div>
 </section>
 
-<section class="web company-ceo" :class="{'mobile': window.width <=1280}" v-if="window.width <= 1280">
+<section class="web company-ceo" :class="{'mobile': window.width <=1023}" v-if="window.width <= 1023">
     <div class="web-slider">
         <div class="web-slider-arrows" data-glide-el="controls">
             <button class="web-slider-arrow web-slider-arrow--prev" data-glide-dir="<">
@@ -263,7 +263,7 @@
                             Это прогрессивное дизайнерское агентство, обладающее техническими и творческими навыками, чтобы воплотить ваш бренд стал лучше. Наш подход к дизайну и разработке создает впечатляющие, привлекательные бренды, которые возвращают вам творческий потенциал.
                         </div>
                         <div class="web-slider-button">
-                            <button class="web-button button button--main" :class="{'mobile': window.width <=1280}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave" data-item-id="1">
+                            <button class="web-button button button--main" :class="{'mobile': window.width <=1023}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave" data-item-id="1">
                                 <div class="text">Стать клиентом</div>
                             </button>
                         </div>
@@ -282,7 +282,7 @@
                             Это прогрессивное дизайнерское агентство, обладающее техническими и творческими навыками, чтобы воплотить ваш бренд стал лучше. Наш подход к дизайну и разработке создает впечатляющие, привлекательные бренды, которые возвращают вам творческий потенциал.
                         </div>
                         <div class="web-slider-button">
-                            <button class="web-button button button--main" :class="{'mobile': window.width <=1280}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave" data-item-id="1">
+                            <button class="web-button button button--main" :class="{'mobile': window.width <=1023}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave" data-item-id="1">
                                 <div class="text">Стать клиентом</div>
                             </button>
                         </div>
@@ -301,7 +301,7 @@
                             Это прогрессивное дизайнерское агентство, обладающее техническими и творческими навыками, чтобы воплотить ваш бренд стал лучше. Наш подход к дизайну и разработке создает впечатляющие, привлекательные бренды, которые возвращают вам творческий потенциал.
                         </div>
                         <div class="web-slider-button">
-                            <button class="web-button button button--main" :class="{'mobile': window.width <=1280}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave" data-item-id="1">
+                            <button class="web-button button button--main" :class="{'mobile': window.width <=1023}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave" data-item-id="1">
                                 <div class="text">Стать клиентом</div>
                             </button>
                         </div>
@@ -320,7 +320,7 @@
                             Это прогрессивное дизайнерское агентство, обладающее техническими и творческими навыками, чтобы воплотить ваш бренд стал лучше. Наш подход к дизайну и разработке создает впечатляющие, привлекательные бренды, которые возвращают вам творческий потенциал.
                         </div>
                         <div class="web-slider-button">
-                            <button class="web-button button button--main" :class="{'mobile': window.width <=1280}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave" data-item-id="1">
+                            <button class="web-button button button--main" :class="{'mobile': window.width <=1023}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave" data-item-id="1">
                                 <div class="text">Стать клиентом</div>
                             </button>
                         </div>
@@ -330,7 +330,7 @@
         </div>
     </div>
 </section>
-            <section class="company-principles" :class="{'mobile': window.width <=1280}">
+            <section class="company-principles" :class="{'mobile': window.width <=1023}">
     <h1 class="company-principles-title animated-title">Принципы работы</h1>
     <div class="company-principles-in">
         <div class="company-principles-left">
@@ -467,7 +467,7 @@
         </div>
     </div>
 </section>
-            <section class="company-team" :class="{'mobile': window.width <=1280}">
+            <section class="company-team" :class="{'mobile': window.width <=1023}">
     <h1 class="company-team-title animated-title">
         Команда
     </h1>
@@ -785,7 +785,7 @@
         
     </div>
 </section>
-            <div class="company-raiting" :class="{'mobile': window.width <=1280}">
+            <div class="company-raiting" :class="{'mobile': window.width <=1023}">
     <h1 class="company-raiting-title animated-title">Мы в рейтингах</h1>
     <div class="company-raiting-items">
         
@@ -998,7 +998,7 @@
         </div>
     </div>
 </div>
-            <section class="company-partners" :class="{'mobile': window.width <=1280}">
+            <section class="company-partners" :class="{'mobile': window.width <=1023}">
     <h1 class="company-partners-title animated-title">
         Наши партнеры
     </h1>
@@ -1088,7 +1088,7 @@
           </div> 
     </div>
 </section>
-            <div class="company-reviews" :class="{'mobile': window.width <=1280}">
+            <div class="company-reviews" :class="{'mobile': window.width <=1023}">
     <h1 class="company-reviews-title animated-title">Нам доверяют</h1>
     <div class="glide company-reviews-slider">
         <div class="glide__track company-reviews-track" data-glide-el="track">
@@ -1266,7 +1266,7 @@
         </div> 
     </div>
 </div>
-            <section class="career-blog" :class="{'mobile': window.width <=1280}">
+            <section class="career-blog" :class="{'mobile': window.width <=1023}">
     <h1 class="career-blog-title animated-title">Мы&nbsp;на&nbsp;конференциях</h1>
     
     <div class="glide career-blog-items">
@@ -1355,12 +1355,12 @@
                 
             </div>
         </div>
-        <div class="career-blog-button" v-if="window.width <=1280">
+        <div class="career-blog-button" v-if="window.width <=1023">
             <button class="button button--main">Показать еще</button>
         </div>
     </div>
 </section>
-            <footer class="footer" :class="{'mobile': window.width <=1280}">
+            <footer class="footer" :class="{'mobile': window.width <=1023}">
     <div class="footer-tentacle">
         <img src="img/svg/footer_tentacle.svg" width="100%" alt="">
     </div>

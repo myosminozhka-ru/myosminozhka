@@ -1,4 +1,4 @@
-<section class="career-blocks" :class="{'mobile': window.width <=1280}">
+<section class="career-blocks" :class="{'mobile': window.width <=1023}">
     <div class="career-blocks-items">
         @@for (var i = 0; i < 3; i++) {
             <article class="career-blocks-item">
@@ -16,7 +16,7 @@
                         <img src="https://picsum.photos/190`+ i +`" width="100%" height="100%" alt="">
                     </div>
                 </div>
-                <div class="career-blocks-item-scroller" v-if="window.width > 1280"></div>
+                <div class="career-blocks-item-scroller" v-if="window.width > 1023"></div>
             </article>
         }
     </div>

@@ -32,18 +32,18 @@
     </head>
     <body>
         <div class="wrapper" id="app">
-            <header class="header" :class="{'isOpened': header.isOpened, 'mobile': window.width <=1280}">
+            <header class="header" :class="{'isOpened': header.isOpened, 'mobile': window.width <=1023}">
     <div class="header-blur"></div>
     <div class="header-in">
-        <a href="/" class="header-logo" :class="{'mobile': window.width <=1280}">
+        <a href="/" class="header-logo" :class="{'mobile': window.width <=1023}">
             <img src="img/logo.png" width="100%" height="100%" alt="">
         </a>
-        <div class="header-menu-opener" :class="{'isOpened': header.isOpened}" @click="header.openMobileHeader()" v-if="window.width <= 1280">
+        <div class="header-menu-opener" :class="{'isOpened': header.isOpened}" @click="header.openMobileHeader()" v-if="window.width <= 1023">
             <div></div>
             <div></div>
             <div></div>
         </div>
-        <nav class="header-menu" v-if="window.width > 1280">
+        <nav class="header-menu" v-if="window.width > 1023">
             <ul>
                 <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="job.html">Услуги</a></li>
                 <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="cases.html">Портфолио</a></li>
@@ -62,13 +62,13 @@
                 </svg>                    
             </div>
         </nav>
-        <ul class="header-lang" v-if="window.width > 1280">
+        <ul class="header-lang" v-if="window.width > 1023">
             <li class="active"><a href="#">Ru</a></li>
             <li class="header-lang__delim">/</li>
             <li><a href="#">En</a></li>
         </ul>
     </div>
-    <nav class="header-mobile-menu" :class="{'isOpened': header.isOpened}" v-if="window.width <= 1280">
+    <nav class="header-mobile-menu" :class="{'isOpened': header.isOpened}" v-if="window.width <= 1023">
         <ul>
             <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="job.html">Услуги</a></li>
             <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="cases.html">Портфолио</a></li>
@@ -82,10 +82,10 @@
         </ul>
     </nav>
 </header>
-            <section class="career-first" :class="{'mobile': window.width <=1280}">
+            <section class="career-first" :class="{'mobile': window.width <=1023}">
     <h1 class="career-first-title">Web разработка</h1>
-    <div class="career-first-tentacle" v-if="window.width <=1280"><img src="img/svg/tentacle.svg" width="100%" alt=""></div>
-    <div class="career-first-text" v-if="window.width <=1280">
+    <div class="career-first-tentacle" v-if="window.width <=1023"><img src="img/svg/tentacle.svg" width="100%" alt=""></div>
+    <div class="career-first-text" v-if="window.width <=1023">
         Настал тот самый момент, когда нам нужно еще больше свежих мозгов для самых смелых проектов
     </div>
     
@@ -95,7 +95,7 @@
         <img src="img/svg/tentacle.svg" width="100%" alt="">
     </div>
 </section>
-            <section class="job-info" :class="{'mobile': window.width <=1280}">
+            <section class="job-info" :class="{'mobile': window.width <=1023}">
     <div class="job-info-left">
         <div class="job-info-titles">
             
@@ -112,7 +112,7 @@
                 <h5 class="job-info-title" data-item-id="5">Интернет-магазины</h5>
             
         </div>
-        <div class="job-info-button" v-if="window.width > 1280">
+        <div class="job-info-button" v-if="window.width > 1023">
             <a href="#" class="button button--main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><div class="text">Перейти к кейсу</div></a>
         </div>
     </div>
@@ -137,7 +137,7 @@
                     0
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla mi eu egestas porttitor. In aliquet, libero eget pharetra fringilla, justo nulla tristique sem, vitae viverra nibh dolor ut arcu. Duis lobortis est diam, sed tempus lorem pulvinar a. Morbi iaculis mauris purus, sit amet tincidunt arcu pellentesque et. Nunc accumsan bibendum accumsan. Nullam non bibendum mauris. Praesent tempus varius elit, nec malesuada libero mattis nec. Cras hendrerit nunc at nulla sagittis fermentu.
                 </div>
-                <div class="job-info-button" v-if="window.width <= 1280">
+                <div class="job-info-button" v-if="window.width <= 1023">
                     <a href="#" class="button button--main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><div class="text">Перейти к кейсу</div></a>
                 </div>
             </li>
@@ -161,7 +161,7 @@
                     1
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla mi eu egestas porttitor. In aliquet, libero eget pharetra fringilla, justo nulla tristique sem, vitae viverra nibh dolor ut arcu. Duis lobortis est diam, sed tempus lorem pulvinar a. Morbi iaculis mauris purus, sit amet tincidunt arcu pellentesque et. Nunc accumsan bibendum accumsan. Nullam non bibendum mauris. Praesent tempus varius elit, nec malesuada libero mattis nec. Cras hendrerit nunc at nulla sagittis fermentu.
                 </div>
-                <div class="job-info-button" v-if="window.width <= 1280">
+                <div class="job-info-button" v-if="window.width <= 1023">
                     <a href="#" class="button button--main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><div class="text">Перейти к кейсу</div></a>
                 </div>
             </li>
@@ -185,7 +185,7 @@
                     2
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla mi eu egestas porttitor. In aliquet, libero eget pharetra fringilla, justo nulla tristique sem, vitae viverra nibh dolor ut arcu. Duis lobortis est diam, sed tempus lorem pulvinar a. Morbi iaculis mauris purus, sit amet tincidunt arcu pellentesque et. Nunc accumsan bibendum accumsan. Nullam non bibendum mauris. Praesent tempus varius elit, nec malesuada libero mattis nec. Cras hendrerit nunc at nulla sagittis fermentu.
                 </div>
-                <div class="job-info-button" v-if="window.width <= 1280">
+                <div class="job-info-button" v-if="window.width <= 1023">
                     <a href="#" class="button button--main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><div class="text">Перейти к кейсу</div></a>
                 </div>
             </li>
@@ -209,7 +209,7 @@
                     3
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla mi eu egestas porttitor. In aliquet, libero eget pharetra fringilla, justo nulla tristique sem, vitae viverra nibh dolor ut arcu. Duis lobortis est diam, sed tempus lorem pulvinar a. Morbi iaculis mauris purus, sit amet tincidunt arcu pellentesque et. Nunc accumsan bibendum accumsan. Nullam non bibendum mauris. Praesent tempus varius elit, nec malesuada libero mattis nec. Cras hendrerit nunc at nulla sagittis fermentu.
                 </div>
-                <div class="job-info-button" v-if="window.width <= 1280">
+                <div class="job-info-button" v-if="window.width <= 1023">
                     <a href="#" class="button button--main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><div class="text">Перейти к кейсу</div></a>
                 </div>
             </li>
@@ -233,7 +233,7 @@
                     4
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla mi eu egestas porttitor. In aliquet, libero eget pharetra fringilla, justo nulla tristique sem, vitae viverra nibh dolor ut arcu. Duis lobortis est diam, sed tempus lorem pulvinar a. Morbi iaculis mauris purus, sit amet tincidunt arcu pellentesque et. Nunc accumsan bibendum accumsan. Nullam non bibendum mauris. Praesent tempus varius elit, nec malesuada libero mattis nec. Cras hendrerit nunc at nulla sagittis fermentu.
                 </div>
-                <div class="job-info-button" v-if="window.width <= 1280">
+                <div class="job-info-button" v-if="window.width <= 1023">
                     <a href="#" class="button button--main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><div class="text">Перейти к кейсу</div></a>
                 </div>
             </li>
@@ -257,7 +257,7 @@
                     5
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla mi eu egestas porttitor. In aliquet, libero eget pharetra fringilla, justo nulla tristique sem, vitae viverra nibh dolor ut arcu. Duis lobortis est diam, sed tempus lorem pulvinar a. Morbi iaculis mauris purus, sit amet tincidunt arcu pellentesque et. Nunc accumsan bibendum accumsan. Nullam non bibendum mauris. Praesent tempus varius elit, nec malesuada libero mattis nec. Cras hendrerit nunc at nulla sagittis fermentu.
                 </div>
-                <div class="job-info-button" v-if="window.width <= 1280">
+                <div class="job-info-button" v-if="window.width <= 1023">
                     <a href="#" class="button button--main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><div class="text">Перейти к кейсу</div></a>
                 </div>
             </li>
@@ -682,12 +682,12 @@
         </div>
     </div>
 </section>
-            <section class="main-cases" :class="{'mobile': window.width <=1280}">
+            <section class="main-cases" :class="{'mobile': window.width <=1023}">
     <div class="main-cases-bg"></div>
     <h1 class="main-cases-title">
         Кейсы
     </h1>
-    <div class="main-cases-items" v-if="window.width > 1280">
+    <div class="main-cases-items" v-if="window.width > 1023">
         <div class="main-cases-items-in" style="--count: 12;">
             
                 <article class="main-cases-item">
@@ -789,7 +789,7 @@
         </div>
         <div class="main-cases-items-scroller" style="height: 180vh;"></div>
     </div>
-    <div class="main-cases-items main-cases-slider" v-if="window.width <= 1280">
+    <div class="main-cases-items main-cases-slider" v-if="window.width <= 1023">
         <div class="glide__track  main-cases-items-in" data-glide-el="track">
             <ul class="glide__slides">
                 
@@ -901,7 +901,7 @@
         </div> 
     </div>
 </section>
-            <section class="main-resume main-question asdasd" :class="{'mobile': window.width <=1280}">
+            <section class="main-resume main-question asdasd" :class="{'mobile': window.width <=1023}">
     <h4 class="main-resume-title">Обратная связь</h4>
     <form action="#">
         <div class="main-question-form">
@@ -931,7 +931,7 @@
         </div>
     </form>
 </section>
-            <footer class="footer" :class="{'mobile': window.width <=1280}">
+            <footer class="footer" :class="{'mobile': window.width <=1023}">
     <div class="footer-tentacle">
         <img src="img/svg/footer_tentacle.svg" width="100%" alt="">
     </div>

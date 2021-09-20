@@ -17,7 +17,7 @@ h1 {
     font-size: vw(250);
     line-height: vw(250);
   }
-  @media all and (max-width: 1280px) {
+  @media all and (max-width: 1023px) {
     font-size: 80px;
     line-height: 80px;
   }
@@ -35,7 +35,7 @@ h4 {
     font-size: vw(70);
     line-height: vw(70);
   }
-  @media all and (max-width: 1280px) {
+  @media all and (max-width: 1023px) {
     font-size: 40px;
     line-height: 50px;
   }
@@ -91,7 +91,7 @@ html {
     font-size: vw(25);
     line-height: vw(25);
   }
-  @media all and (max-width: 1280px) {
+  @media all and (max-width: 1023px) {
     padding: 25px 35px;
     font-size: 25px;
     line-height: 25px;
@@ -222,7 +222,7 @@ a {
 .animated-title {
   transform: translateX(100%);
   width: max-content;
-  @media all and (max-width: 1280px) {
+  @media all and (max-width: 1023px) {
     transform: translateX(0) !important;
     overflow: auto;
     width: 100% !important;

@@ -16,7 +16,7 @@ const mainCases = class MainCases {
     }
     initMobileSlider() {
         if (!document.querySelector('.main-cases-slider')) return;
-        if (window.innerWidth < 1280) {
+        if (window.innerWidth < 1023) {
             this.slider.mount();
         } else {
             this.slider.destroy();
@@ -26,7 +26,7 @@ const mainCases = class MainCases {
         if (!document.querySelector('.main-cases')) return;
         this.initMobileSlider();
          
-         if (window.innerWidth > 1280) {
+         if (window.innerWidth > 1023) {
             gsap.to('.main-cases-bg', {
                 scrollTrigger: {
                     trigger: '.news-and-trends-trigger',

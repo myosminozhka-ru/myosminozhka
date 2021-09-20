@@ -34,18 +34,18 @@
         <div class="wrapper" id="app">
             <!-- TODO добавить анимацию наведения на пункт меню https://codepen.io/mburakerman/pen/xpZJYL -->
             <!-- TODO добавить кружок двигающийся за мышью https://kota.co.uk/contact -->
-            <header class="header" :class="{'isOpened': header.isOpened, 'mobile': window.width <=1280}">
+            <header class="header" :class="{'isOpened': header.isOpened, 'mobile': window.width <=1023}">
     <div class="header-blur"></div>
     <div class="header-in">
-        <a href="/" class="header-logo" :class="{'mobile': window.width <=1280}">
+        <a href="/" class="header-logo" :class="{'mobile': window.width <=1023}">
             <img src="img/logo.png" width="100%" height="100%" alt="">
         </a>
-        <div class="header-menu-opener" :class="{'isOpened': header.isOpened}" @click="header.openMobileHeader()" v-if="window.width <= 1280">
+        <div class="header-menu-opener" :class="{'isOpened': header.isOpened}" @click="header.openMobileHeader()" v-if="window.width <= 1023">
             <div></div>
             <div></div>
             <div></div>
         </div>
-        <nav class="header-menu" v-if="window.width > 1280">
+        <nav class="header-menu" v-if="window.width > 1023">
             <ul>
                 <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="job.html">Услуги</a></li>
                 <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="cases.html">Портфолио</a></li>
@@ -64,13 +64,13 @@
                 </svg>                    
             </div>
         </nav>
-        <ul class="header-lang" v-if="window.width > 1280">
+        <ul class="header-lang" v-if="window.width > 1023">
             <li class="active"><a href="#">Ru</a></li>
             <li class="header-lang__delim">/</li>
             <li><a href="#">En</a></li>
         </ul>
     </div>
-    <nav class="header-mobile-menu" :class="{'isOpened': header.isOpened}" v-if="window.width <= 1280">
+    <nav class="header-mobile-menu" :class="{'isOpened': header.isOpened}" v-if="window.width <= 1023">
         <ul>
             <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="job.html">Услуги</a></li>
             <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="cases.html">Портфолио</a></li>
@@ -85,22 +85,22 @@
     </nav>
 </header>
             <div class="trigger-wrapper-top">
-                <section class="first-frame" :class="{'mobile': window.width <=1280}">
+                <section class="first-frame" :class="{'mobile': window.width <=1023}">
                     <div class="cursor">
     <img class="cursor-shape" src="img/shape.png" alt="">
     <canvas id="cursor"></canvas>
 </div>
-                    <div class="main-words" :class="{'main-words__animated': mainWords.isAnimated, 'mobile': window.width <=1280}">
-    <div :class="`main-words-wrap main-words-wrap__${this.mainWords.x.position} ${window.width <=1280 ? 'mobile' : 'desktop'}`">
+                    <div class="main-words" :class="{'main-words__animated': mainWords.isAnimated, 'mobile': window.width <=1023}">
+    <div :class="`main-words-wrap main-words-wrap__${this.mainWords.x.position} ${window.width <=1023 ? 'mobile' : 'desktop'}`">
         <div class="main-words-item" :class="{'main-words-item__active' : this.mainWords.x.position == 'left', 'main-words-item__loaded': isMounted}" style="--delay: 0s;">digital</div>
         <div class="main-words-item" :class="{'main-words-item__active' : this.mainWords.x.position == 'right', 'main-words-item__loaded': isMounted}" style="--delay: 0.2s;">agency</div>
     </div>
 </div>
-                    <div class="call-to-action" :class="{'mobile': window.width <=1280}">
-    <div class="call-to-action-left" v-if="window.width > 1280"></div>
+                    <div class="call-to-action" :class="{'mobile': window.width <=1023}">
+    <div class="call-to-action-left" v-if="window.width > 1023"></div>
     <div class="call-to-action-right">
         <div class="call-to-action-text">Мы растем, пока другие усыхают и чахнут</div>
-        <div class="call-to-action-button" v-if="window.width > 1280">
+        <div class="call-to-action-button" v-if="window.width > 1023">
             <!-- TODO сделать аномацию кнопки https://videinfra.com/ -->
             <a href="#" class="button button--main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><div class="text">Стать клиентом</div></a>
         </div>
@@ -108,7 +108,7 @@
 </div>
                 </section>
             </div>
-            <section class="web" v-if="window.width > 1280">
+            <section class="web" v-if="window.width > 1023">
     <div class="web-tentacle">
         <img src="img/svg/tentacle.svg" width="100%" alt="">
     </div>
@@ -175,7 +175,7 @@
     </div>
 </section>
 
-<section class="web" :class="{'mobile': window.width <=1280}" v-if="window.width <= 1280">
+<section class="web" :class="{'mobile': window.width <=1023}" v-if="window.width <= 1023">
     <div class="web-slider">
         <div class="web-slider-arrows" data-glide-el="controls">
             <button class="web-slider-arrow web-slider-arrow--prev" data-glide-dir="<">
@@ -201,7 +201,7 @@
                             Это прогрессивное дизайнерское агентство, обладающее техническими и творческими навыками, чтобы воплотить ваш бренд стал лучше. Наш подход к дизайну и разработке создает впечатляющие, привлекательные бренды, которые возвращают вам творческий потенциал.
                         </div>
                         <div class="web-slider-button">
-                            <button class="web-button button button--main" :class="{'mobile': window.width <=1280}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave" data-item-id="1">
+                            <button class="web-button button button--main" :class="{'mobile': window.width <=1023}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave" data-item-id="1">
                                 <div class="text">Стать клиентом</div>
                             </button>
                         </div>
@@ -220,7 +220,7 @@
                             Это прогрессивное дизайнерское агентство, обладающее техническими и творческими навыками, чтобы воплотить ваш бренд стал лучше. Наш подход к дизайну и разработке создает впечатляющие, привлекательные бренды, которые возвращают вам творческий потенциал.
                         </div>
                         <div class="web-slider-button">
-                            <button class="web-button button button--main" :class="{'mobile': window.width <=1280}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave" data-item-id="1">
+                            <button class="web-button button button--main" :class="{'mobile': window.width <=1023}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave" data-item-id="1">
                                 <div class="text">Стать клиентом</div>
                             </button>
                         </div>
@@ -239,7 +239,7 @@
                             Это прогрессивное дизайнерское агентство, обладающее техническими и творческими навыками, чтобы воплотить ваш бренд стал лучше. Наш подход к дизайну и разработке создает впечатляющие, привлекательные бренды, которые возвращают вам творческий потенциал.
                         </div>
                         <div class="web-slider-button">
-                            <button class="web-button button button--main" :class="{'mobile': window.width <=1280}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave" data-item-id="1">
+                            <button class="web-button button button--main" :class="{'mobile': window.width <=1023}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave" data-item-id="1">
                                 <div class="text">Стать клиентом</div>
                             </button>
                         </div>
@@ -258,7 +258,7 @@
                             Это прогрессивное дизайнерское агентство, обладающее техническими и творческими навыками, чтобы воплотить ваш бренд стал лучше. Наш подход к дизайну и разработке создает впечатляющие, привлекательные бренды, которые возвращают вам творческий потенциал.
                         </div>
                         <div class="web-slider-button">
-                            <button class="web-button button button--main" :class="{'mobile': window.width <=1280}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave" data-item-id="1">
+                            <button class="web-button button button--main" :class="{'mobile': window.width <=1023}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave" data-item-id="1">
                                 <div class="text">Стать клиентом</div>
                             </button>
                         </div>
@@ -269,7 +269,7 @@
     </div>
 </section>
             <div class="trigger-wrapper-about">
-                <section class="main-about" :class="{'mobile': window.width <=1280}">
+                <section class="main-about" :class="{'mobile': window.width <=1023}">
     <div class="main-about-info">
         <div class="main-about-circle"></div>
         <div class="main-about-left">
@@ -308,10 +308,10 @@
         </div>
     </div>
 </section>
-                <section class="main-question" :class="{'mobile': window.width <=1280}">
+                <section class="main-question" :class="{'mobile': window.width <=1023}">
     <div class="main-question-tentacle">
-        <img v-if="window.width > 1280" src="img/svg/big_tentacle.svg" alt="">
-        <img v-if="window.width <=1280" src="img/svg/main-question-mobile.svg" alt="">
+        <img v-if="window.width > 1023" src="img/svg/big_tentacle.svg" alt="">
+        <img v-if="window.width <=1023" src="img/svg/main-question-mobile.svg" alt="">
     </div>
     <h4 class="main-question-title">Вы все еще здесь?</h4>
     <div class="main-question-subtitle">Тогда вам точно что-то нужно!</div>
@@ -330,7 +330,7 @@
         </div>
     </form>
 </section>  
-                <section class="main-carousel" :class="{'mobile': window.width <=1280}">
+                <section class="main-carousel" :class="{'mobile': window.width <=1023}">
     <div class="main-carousel__title">Награды</div>
     <div class="main-carousel__body">
         <div class="main-carousel-scene">
@@ -506,10 +506,10 @@
     </div>
 </section>
             </div>
-            <div class="news-and-trends-spacer" v-if="window.width > 1280"></div>
+            <div class="news-and-trends-spacer" v-if="window.width > 1023"></div>
             <div class="news-and-trends-trigger">
                 
-<section class="news-and-trends" :class="{'mobile': window.width <=1280}">
+<section class="news-and-trends" :class="{'mobile': window.width <=1023}">
     <h4 class="news-and-trends-title">Новости и тренды</h4>
     <div class="news-and-trends-buttons">
         <button class="news-and-trends-button news-and-trends-button__main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><span>Тренды</span></button>
@@ -586,7 +586,7 @@
                         
                     </div>
                 </div>
-                <div class="news-and-trends-arrows" v-if="window.width > 1280" data-glide-el="controls">
+                <div class="news-and-trends-arrows" v-if="window.width > 1023" data-glide-el="controls">
                     <div class="arrow prev" data-glide-dir="<">
                         <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 89 38" fill="#4F4F4F">
                             <path d="M87.7678 20.7678C88.7441 19.7914 88.7441 18.2085 87.7678 17.2322L71.8579 1.32232C70.8816 0.346014 69.2986 0.346014 68.3223 1.32232C67.346 2.29864 67.346 3.88155 68.3223 4.85786L82.4645 19L68.3223 33.1421C67.346 34.1184 67.346 35.7014 68.3223 36.6777C69.2986 37.654 70.8816 37.654 71.8579 36.6777L87.7678 20.7678ZM2.18557e-07 21.5L86 21.5L86 16.5L-2.18557e-07 16.5L2.18557e-07 21.5Z"/>
@@ -601,7 +601,7 @@
             </div>
             
             
-            <div class="news-and-trends-more" v-if="window.width <= 1280">
+            <div class="news-and-trends-more" v-if="window.width <= 1023">
                 <button type="submit" class="button button--main button--main-border" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
                     <div class="text">Показать еще</div>
                 </button>
@@ -617,16 +617,16 @@
             </form>
         </div>
     </div>
-    <!-- <div class="news-and-trends-scroller" style="height: 100vh;" v-if="window.width > 1280"></div> -->
+    <!-- <div class="news-and-trends-scroller" style="height: 100vh;" v-if="window.width > 1023"></div> -->
 </section>
                 <!-- <div class="news-and-trends-screen"></div> -->
             </div>
-            <section class="main-cases" :class="{'mobile': window.width <=1280}">
+            <section class="main-cases" :class="{'mobile': window.width <=1023}">
     <div class="main-cases-bg"></div>
     <h1 class="main-cases-title">
         Кейсы
     </h1>
-    <div class="main-cases-items" v-if="window.width > 1280">
+    <div class="main-cases-items" v-if="window.width > 1023">
         <div class="main-cases-items-in" style="--count: 12;">
             
                 <article class="main-cases-item">
@@ -728,7 +728,7 @@
         </div>
         <div class="main-cases-items-scroller" style="height: 180vh;"></div>
     </div>
-    <div class="main-cases-items main-cases-slider" v-if="window.width <= 1280">
+    <div class="main-cases-items main-cases-slider" v-if="window.width <= 1023">
         <div class="glide__track  main-cases-items-in" data-glide-el="track">
             <ul class="glide__slides">
                 
@@ -840,7 +840,7 @@
         </div> 
     </div>
 </section>
-            <section class="main-resume main-question asdasd" :class="{'mobile': window.width <=1280}">
+            <section class="main-resume main-question asdasd" :class="{'mobile': window.width <=1023}">
     <h4 class="main-resume-title">Обратная связь</h4>
     <form action="#">
         <div class="main-question-form">
@@ -870,7 +870,7 @@
         </div>
     </form>
 </section>
-            <footer class="footer" :class="{'mobile': window.width <=1280}">
+            <footer class="footer" :class="{'mobile': window.width <=1023}">
     <div class="footer-tentacle">
         <img src="img/svg/footer_tentacle.svg" width="100%" alt="">
     </div>

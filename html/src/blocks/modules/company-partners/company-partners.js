@@ -11,7 +11,7 @@ const companyPartners = class companyPartners {
             bound: 'Boolean',
             perView: 2,
             breakpoints: {
-                1280: {
+                1023: {
                     perView: 1,
                 },
             },

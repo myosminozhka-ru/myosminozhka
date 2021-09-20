@@ -41,18 +41,18 @@
         // }
     }
     &.mobile &-items {
-        padding: 0 20px 151px;
+        padding: 0 20px 50px;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 10px;
         &:after {
             content: "";
             display: block;
-            background: #fff;
+            // background: #fff;
             grid-row-start: 1;
             grid-row-end: 2;
             grid-column-start: 1;
             grid-column-end: 3;
-            height: 78px;
+            height: 50px;
             margin: 0 -20px;
         }
     }
@@ -166,6 +166,7 @@
         }
         .name {
             font-size: 16px;
+            line-height: 1.2;
             margin-bottom: 10px;
         }
         .position {

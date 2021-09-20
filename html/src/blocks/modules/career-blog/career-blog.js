@@ -6,7 +6,7 @@ const careerBlog = class careerBlog {
     }
     init() {
         if (!document.querySelector('.career-blog-items')) return;
-        if (window.innerWidth > 1280) {
+        if (window.innerWidth > 1023) {
             new Glide('.career-blog-items', {
                 startAt: 0,
                 perView: 3,

@@ -1,9 +1,9 @@
-<section class="main-cases" :class="{'mobile': window.width <=1280}">
+<section class="main-cases" :class="{'mobile': window.width <=1023}">
     <div class="main-cases-bg"></div>
     <h1 class="main-cases-title">
         Кейсы
     </h1>
-    <div class="main-cases-items" v-if="window.width > 1280">
+    <div class="main-cases-items" v-if="window.width > 1023">
         <div class="main-cases-items-in" style="--count: 12;">
             @@for (var i = 0; i < 12; i++) {
                 <article class="main-cases-item">
@@ -17,7 +17,7 @@
         </div>
         <div class="main-cases-items-scroller" style="height: 180vh;"></div>
     </div>
-    <div class="main-cases-items main-cases-slider" v-if="window.width <= 1280">
+    <div class="main-cases-items main-cases-slider" v-if="window.width <= 1023">
         <div class="glide__track  main-cases-items-in" data-glide-el="track">
             <ul class="glide__slides">
                 @@for (var i = 0; i < 12; i++) {

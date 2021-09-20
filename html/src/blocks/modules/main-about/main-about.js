@@ -7,7 +7,7 @@ const mainAbout = class MainAbout {
     constructor() {}
     animateCircle() {
         if (!document.querySelector('.main-about')) return;
-        if (window.innerWidth > 1280) {
+        if (window.innerWidth > 1023) {
             gsap.to('.main-about-circle', {
                 scrollTrigger: {
                     trigger: '.trigger-wrapper-about',

@@ -21,7 +21,7 @@ const mainWeb = class Mainweb {
     }
     mobileSlider() {
         if (!this.slider) return;
-        if (window.innerWidth < 1280) {
+        if (window.innerWidth < 1023) {
             this.slider.mount();
         } else {
             this.slider.destroy();

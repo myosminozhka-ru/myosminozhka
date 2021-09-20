@@ -1,9 +1,9 @@
-<div class="company-about" :class="{'mobile': window.width <=1280}">
+<div class="company-about" :class="{'mobile': window.width <=1023}">
     <div class="company-about-in">
         <div class="company-about-title">
             О нас
         </div>
-        <div class="company-about-tentacle" v-if="window.width <= 1280">
+        <div class="company-about-tentacle" v-if="window.width <= 1023">
             <img src="img/svg/tentacle.svg" width="100%" alt="">
         </div>
         @@for (var i = 0; i < 13; i++) {

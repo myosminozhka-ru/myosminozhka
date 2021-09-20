@@ -251,7 +251,7 @@ var careerBlog = /*#__PURE__*/function () {
     value: function init() {
       if (!document.querySelector('.career-blog-items')) return;
 
-      if (window.innerWidth > 1280) {
+      if (window.innerWidth > 1023) {
         new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.career-blog-items', {
           startAt: 0,
           perView: 3,
@@ -344,7 +344,7 @@ var companyPartners = /*#__PURE__*/function () {
         bound: 'Boolean',
         perView: 2,
         breakpoints: {
-          1280: {
+          1023: {
             perView: 1
           }
         }
@@ -628,7 +628,7 @@ var companyReviews = /*#__PURE__*/function () {
       perView: 3,
       gap: 100,
       breakpoints: {
-        1280: {
+        1023: {
           perView: 1
         }
       }
@@ -682,7 +682,7 @@ var companyReviews = /*#__PURE__*/function () {
         };
       };
 
-      if (window.innerWidth > 1280) {
+      if (window.innerWidth > 1023) {
         this.slider.mutate([FixBoundPeek]).mount();
         this.index = this.slider.index;
         this.countElementWidth();
@@ -1469,7 +1469,7 @@ var mainAbout = /*#__PURE__*/function () {
     value: function animateCircle() {
       if (!document.querySelector('.main-about')) return;
 
-      if (window.innerWidth > 1280) {
+      if (window.innerWidth > 1023) {
         gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to('.main-about-circle', {
           scrollTrigger: {
             trigger: '.trigger-wrapper-about',
@@ -1793,7 +1793,7 @@ var mainCases = /*#__PURE__*/function () {
     value: function initMobileSlider() {
       if (!document.querySelector('.main-cases-slider')) return;
 
-      if (window.innerWidth < 1280) {
+      if (window.innerWidth < 1023) {
         this.slider.mount();
       } else {
         this.slider.destroy();
@@ -1805,7 +1805,7 @@ var mainCases = /*#__PURE__*/function () {
       if (!document.querySelector('.main-cases')) return;
       this.initMobileSlider();
 
-      if (window.innerWidth > 1280) {
+      if (window.innerWidth > 1023) {
         gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.main-cases-bg', {
           scrollTrigger: {
             trigger: '.news-and-trends-trigger',
@@ -2067,7 +2067,7 @@ var mainWeb = /*#__PURE__*/function () {
     value: function mobileSlider() {
       if (!this.slider) return;
 
-      if (window.innerWidth < 1280) {
+      if (window.innerWidth < 1023) {
         this.slider.mount();
       } else {
         this.slider.destroy();

@@ -5,7 +5,7 @@ html:root body.posts .post_info {
     .posts-blog {
         max-width: 100%;
         padding-bottom: 0;
-        @media all and (max-width: 1280px) {
+        @media all and (max-width: 1023px) {
             display: block;
         }
     }

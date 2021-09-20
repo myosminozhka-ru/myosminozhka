@@ -9,7 +9,7 @@ const companyReviews = class companyReviews {
             perView: 3,
             gap: 100,
             breakpoints: {
-                1280: {
+                1023: {
                     perView: 1
                 }
             }
@@ -55,7 +55,7 @@ const companyReviews = class companyReviews {
               }
             }
           }
-        if (window.innerWidth > 1280) {
+        if (window.innerWidth > 1023) {
             this.slider.mutate([FixBoundPeek]).mount();
             this.index = this.slider.index;
             this.countElementWidth();
