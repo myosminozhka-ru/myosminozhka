@@ -2,15 +2,30 @@
     background: #fff;
     padding: 0 0 0 vw(50);
     overflow: hidden;
+    &.mobile {
+        padding: 0;
+    }
     &-title {
         text-transform: uppercase;
         margin-bottom: vw(20);
         color: #4f4f4f;
     }
+    &.mobile &-title {
+        padding: 0 20px;
+        white-space: nowrap;
+    }
     &-triggers {
         display: flex;
         justify-content: center;
         margin-bottom: vw(100);
+    }
+    &.mobile &-triggers {
+        overflow: auto;
+        justify-content: flex-start;
+        padding: 20px;
+        &::-webkit-scrollbar {
+            height: 0;
+        }
     }
     &-trigger {
         .button-circle {
@@ -58,9 +73,32 @@
             color: #fff;
         }
     }
-    &-tabs {
-        // padding-bottom: vw(56);
+    &.mobile &-trigger {
+        min-width: 146px;
+        min-height: 146px;
+        max-width: 146px;
+        max-height: 146px;
+        padding: 27px;
+        margin: 0 -5px;
+        box-sizing: border-box;
+        .number {
+            font-size: 30px;
+            line-height: 30px;
+            margin-bottom: 20px;
+        }
+        .text {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 12px;
+        }
     }
+    &.mobile &-tabs {
+        padding: 0 20px 20px;
+    }
+    &.mobile &-support-slides {
+        margin-top: 20px;
+    }
+    
     &-slides-double &-item {
         padding-bottom: vw(56);
     }
@@ -162,6 +200,12 @@
         background: $bgColor;
         display: flex;
         position: relative;
+        &.mobile {
+            padding: 50px 20px;
+            margin-left: -20px;
+            box-sizing: border-box;
+            margin: 0;
+        }
     }
     &:not(.mobile) &-support::before {
         content: "";
@@ -191,6 +235,13 @@
             margin: vw(-100) 0 vw(70);
             .number, .text {color: #fff;}
         }
+        &.mobile {
+            width: 100%;
+            box-sizing: border-box;
+        }
+    }
+    &-support-left.mobile &-support-image {
+        margin-bottom: 20px;
     }
     &-support-right {
         width: vw(977);
@@ -248,6 +299,9 @@
     }
     &-management {
         padding: vw(170) 0 0;
+    }
+    &.mobile &-management {
+        padding: 20px 20px 0;
     }
     &-management-top {
         display: flex;

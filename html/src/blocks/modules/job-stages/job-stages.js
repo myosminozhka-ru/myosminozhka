@@ -10,6 +10,7 @@ const jobStages = class jobStages {
             this.supportSlider = new Glide('.job-stages-support-slides', {
                 startAt: 0,
                 perView: 1,
+                gap: 0,
                 type: 'slider'
             })
             this.supportImagesSlider = new Glide('.job-stages-support-right', {

@@ -1,9 +1,12 @@
 <section class="job-info" :class="{'mobile': window.width <=1023}">
     <div class="job-info-left">
         <div class="job-info-titles">
-            @@for (var i = 0; i < 6; i++) {
-                <h5 class="job-info-title" data-item-id="`+ i +`">Интернет-магазины</h5>
-            }
+            <div class="job-info-titles__in">
+                <h5 class="job-info-title isActive" data-item-id="0">Интернет-магазины</h5>
+                @@for (var i = 1; i < 6; i++) {
+                    <h5 class="job-info-title" data-item-id="`+ i +`">Интернет-магазины</h5>
+                }
+            </div>
         </div>
         <div class="job-info-button" v-if="window.width > 1023">
             <a href="#" class="button button--main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><div class="text">Перейти к кейсу</div></a>

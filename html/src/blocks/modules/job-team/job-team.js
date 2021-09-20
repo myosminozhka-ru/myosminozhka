@@ -30,12 +30,32 @@ const jobTeam = class jobTeam {
         //         fillOpacity: 1
         //     })
         // })
+        gsap.to('.job-team-title', {
+            scrollTrigger: {
+                trigger: '.job-info',
+                start: 'center center',
+                end: 'bottom+=1000 center',
+                scrub: 1,
+            },
+            color: '#4f4f4f'
+        })
         gsap.to('.job-team-circle', {
             scrollTrigger: {
                 trigger: '.job-info',
                 start: 'center center',
                 end: 'bottom+=1000 center',
                 scrub: 1,
+                // onUpdate: (item) => {
+                //     if (window.innerWidth < 1023) {
+                //         if (item.progress > 0.11) {
+                //             document.querySelector('.job-team-title').classList.add('colorChanged');
+                //         } else {
+                //             document.querySelector('.job-team-title').classList.remove('colorChanged');
+                //         }
+                //     } else {
+                //         document.querySelector('.job-team-title').classList.remove('colorChanged');
+                //     }
+                // },
                 // markers: true
             },
             width: () => {

@@ -15,9 +15,15 @@
     }
     &-title {
         text-transform: uppercase;
-        mix-blend-mode: difference;
+        
         margin-bottom: vw(160);
-        @extend %white;
+        &:not(.colorChanged) {
+            mix-blend-mode: difference;
+            @extend %white;
+        }
+        &.colorChanged {
+            color: $bgColor;
+        }
     }
     &-map {
         position: relative;

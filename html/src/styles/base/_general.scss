@@ -222,13 +222,14 @@ a {
 .animated-title {
   transform: translateX(100%);
   width: max-content;
-  @media all and (max-width: 1023px) {
-    transform: translateX(0) !important;
-    overflow: auto;
-    width: 100% !important;
-    white-space: nowrap !important;
-    &::-webkit-scrollbar {
-      height: 0;
-    }
-  }
+  min-width: 100%;
+  // @media all and (max-width: 1023px) {
+  //   transform: translateX(0) !important;
+  //   overflow: auto;
+  //   width: 100% !important;
+  //   white-space: nowrap !important;
+  //   &::-webkit-scrollbar {
+  //     height: 0;
+  //   }
+  // }
 }

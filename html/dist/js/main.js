@@ -1223,6 +1223,7 @@ var jobStages = /*#__PURE__*/function () {
       this.supportSlider = new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.job-stages-support-slides', {
         startAt: 0,
         perView: 1,
+        gap: 0,
         type: 'slider'
       });
       this.supportImagesSlider = new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.job-stages-support-right', {
@@ -1413,12 +1414,32 @@ var jobTeam = /*#__PURE__*/function () {
       //     })
       // })
 
+      gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to('.job-team-title', {
+        scrollTrigger: {
+          trigger: '.job-info',
+          start: 'center center',
+          end: 'bottom+=1000 center',
+          scrub: 1
+        },
+        color: '#4f4f4f'
+      });
       gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to('.job-team-circle', {
         scrollTrigger: {
           trigger: '.job-info',
           start: 'center center',
           end: 'bottom+=1000 center',
-          scrub: 1 // markers: true
+          scrub: 1 // onUpdate: (item) => {
+          //     if (window.innerWidth < 1023) {
+          //         if (item.progress > 0.11) {
+          //             document.querySelector('.job-team-title').classList.add('colorChanged');
+          //         } else {
+          //             document.querySelector('.job-team-title').classList.remove('colorChanged');
+          //         }
+          //     } else {
+          //         document.querySelector('.job-team-title').classList.remove('colorChanged');
+          //     }
+          // },
+          // markers: true
 
         },
         width: function width() {
@@ -1618,6 +1639,14 @@ var mainCarousel = /*#__PURE__*/function () {
       var radius, theta;
 
       function rotateCarousel() {
+        console.log(self.slider.index, selectedIndex);
+
+        if (selectedIndex - 1 <= cells.length) {
+          self.slider.go("=".concat(selectedIndex));
+        } else {
+          self.slider.go("=".concat(selectedIndex - cells.length));
+        }
+
         var angle = theta * selectedIndex * -1;
         carousel.style.transform = 'translateZ(' + -radius + 'px) ' + rotateFn + '(' + angle + 'deg)';
       }
@@ -1689,7 +1718,7 @@ var mainCarousel = /*#__PURE__*/function () {
       });
       var interval = setInterval(function () {
         selectedIndex++;
-        chooseElem(selectedIndex);
+        rotateCarousel();
       }, 5000); // set initials
 
       onOrientationChange();
@@ -1784,18 +1813,24 @@ var mainCases = /*#__PURE__*/function () {
     key: "initMobileSlider",
     value: function initMobileSlider() {
       if (!document.querySelector('.main-cases-slider')) return;
-
-      if (window.innerWidth < 1023) {
-        this.slider.mount();
-      } else {
-        this.slider.destroy();
-      }
+      this.slider.mount();
+    }
+  }, {
+    key: "destroyMobileSlider",
+    value: function destroyMobileSlider() {
+      if (!document.querySelector('.main-cases-slider')) return;
+      this.slider.destroy();
     }
   }, {
     key: "init",
     value: function init() {
       if (!document.querySelector('.main-cases')) return;
-      this.initMobileSlider();
+
+      if (window.innerWidth < 1023) {
+        this.initMobileSlider();
+      } else {
+        this.destroyMobileSlider();
+      }
 
       if (window.innerWidth > 1023) {
         gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.main-cases-bg', {
@@ -1829,10 +1864,10 @@ var mainCases = /*#__PURE__*/function () {
           scrollTrigger: {
             trigger: '.main-cases',
             start: 'top top-=300',
-            end: 'bottom bottom+=800',
+            end: 'bottom bottom',
             pin: true,
-            pinSpacing: false // markers: true
-
+            pinSpacing: false,
+            markers: true
           },
           x: 0
         });
@@ -2556,28 +2591,16 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       gsap__WEBPACK_IMPORTED_MODULE_26__["default"].utils.toArray(".animated-title").forEach(function (item, i) {
         gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item, {
           scrollTrigger: {
-            trigger: item,
-            start: 'bottom bottom-=100',
-            end: 'bottom bottom',
-            pin: true,
-            pinSpacing: false // markers: true
-
-          },
-          x: 0,
-          onComplete: function onComplete(element) {
-            console.log(item.offsetWidth - window.innerWidth - 100 * window.innerWidth / 1920);
-
-            if (item.offsetWidth > window.innerWidth - 100 * window.innerWidth / 1920) {
-              document.addEventListener('mousemove', function (event) {
-                gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item, 0, {
-                  translateX: function translateX() {
-                    if (-event.pageX + window.innerWidth / 4 > 0) return;
-                    return -event.pageX + window.innerWidth / 4;
-                  }
-                });
-              });
+            trigger: item.closest('section'),
+            start: 'top center',
+            end: "top+=".concat(window.innerHeight, " top+=").concat(window.innerHeight),
+            markers: true,
+            onUpdate: function onUpdate(item) {
+              console.log(item);
+              item.trigger.querySelector('.animated-title').style.transform = "translateX(".concat(-item.progress * 200 + 100, "%)");
             }
-          }
+          },
+          opacity: '1'
         });
       });
     }

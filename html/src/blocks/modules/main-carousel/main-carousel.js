@@ -29,6 +29,12 @@ const mainCarousel = class MainCarousel {
 
 
         function rotateCarousel() {
+            console.log(self.slider.index, selectedIndex);
+            if (selectedIndex - 1 <= cells.length) {
+                self.slider.go(`=${selectedIndex}`);
+            } else {
+                self.slider.go(`=${selectedIndex - cells.length}`);
+            }
         var angle = theta * selectedIndex * -1;
         carousel.style.transform = 'translateZ(' + -radius + 'px) ' + 
             rotateFn + '(' + angle + 'deg)';
@@ -101,7 +107,7 @@ const mainCarousel = class MainCarousel {
         });
         var interval = setInterval(function () {
             selectedIndex++;
-            chooseElem(selectedIndex);
+            rotateCarousel();
         }, 5000);
 
         // set initials

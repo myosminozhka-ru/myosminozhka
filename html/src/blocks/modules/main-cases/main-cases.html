@@ -1,6 +1,6 @@
 <section class="main-cases" :class="{'mobile': window.width <=1023}">
     <div class="main-cases-bg"></div>
-    <h1 class="main-cases-title">
+    <h1 class="main-cases-title animated-title">
         Кейсы
     </h1>
     <div class="main-cases-items" v-if="window.width > 1023">
@@ -15,7 +15,7 @@
                 </article>
             }
         </div>
-        <div class="main-cases-items-scroller" style="height: 180vh;"></div>
+        <div class="main-cases-items-scroller" style="height: 50vh;"></div>
     </div>
     <div class="main-cases-items main-cases-slider" v-if="window.width <= 1023">
         <div class="glide__track  main-cases-items-in" data-glide-el="track">

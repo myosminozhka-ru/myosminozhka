@@ -7,7 +7,7 @@
   &:not(.mobile) {
     padding: vw(120) vw(50) vw(514);
     &.dropped {
-      margin-bottom: vw(-130);
+      margin-bottom: vw(-100);
     }
   }
   &.mobile {
@@ -32,6 +32,9 @@
   &.mobile &-tentacle {
     bottom: -20%;
     pointer-events: none;
+    @media (orientation: landscape) {
+      bottom: -34%;
+    }
     img {
       height: 100%;
       width: 100%;

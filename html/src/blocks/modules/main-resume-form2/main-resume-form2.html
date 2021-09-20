@@ -19,7 +19,11 @@
                         <div class="text">{{mainQuestionForm.file.name}}</div>
                     </span>
                 </label>
-                <div class="main-question-form-item">
+                <a href="#" class="hh_block" v-if="window.width <= 1023" :class="{'mobile': window.width <=1023}">
+                    <div class="hh_block__img"><img src="img/svg/hh_svg.svg" alt=""></div>
+                    <div class="hh_block__text">Посмотреть <br> вакансии на hh</div>
+                </a>
+                <div class="main-question-form-item button">
                     <button type="submit" class="button button--main"  @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
                         <div class="text">Отправить резюме</div>
                     </button>
@@ -27,7 +31,7 @@
             </div>
         </div>
     </form>
-    <a href="#" class="hh_block">
+    <a href="#" class="hh_block" v-if="window.width > 1023">
         <div class="hh_block__img"><img src="img/svg/hh_svg.svg" alt=""></div>
         <div class="hh_block__text">Посмотреть <br> вакансии на hh</div>
     </a>

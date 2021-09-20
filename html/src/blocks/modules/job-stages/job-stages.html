@@ -1,4 +1,4 @@
-<section class="job-stages">
+<section class="job-stages" :class="{'mobile': window.width <=1023}" >
     <h2 class="job-stages-title">
         Этапы разработки
     </h2>
@@ -190,8 +190,8 @@
             </div>
         </div>
     </div>
-    <div class="job-stages-support">
-        <div class="job-stages-support-left">
+    <div class="job-stages-support" id="job-analitics" :class="{'mobile': window.width <=1023}">
+        <div class="job-stages-support-left" :class="{'mobile': window.width <=1023}">
             <div class="job-stages-trigger">
                 <div class="in">
                     <div class="number">5</div>
@@ -203,6 +203,9 @@
                     <ul class="glide__slides">
                         @@for (var i = 0; i < 3; i++) {
                             <li class="job-stages-support-left-item">
+                                <div class="job-stages-support-image" v-if="window.width <= 1023">
+                                    <img src="https://picsum.photos/192`+ i +`" width="100%" height="100%" alt="">
+                                </div>
                                 <div class="job-stages-support-title">
                                     Поддержка
                                 </div>
@@ -224,7 +227,7 @@
             </div>
             
         </div>
-        <div class="job-stages-support-right" id="job-analitics">
+        <div class="job-stages-support-right" v-if="window.width > 1023">
             <div class="glide__track job-stages-support-right-track" data-glide-el="track">
                 <ul class="glide__slides">
                     @@for (var i = 0; i < 3; i++) {

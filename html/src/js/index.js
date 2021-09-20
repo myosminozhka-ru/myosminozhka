@@ -184,27 +184,16 @@ window.app = new Vue({
             gsap.utils.toArray(".animated-title").forEach((item, i) => {
                 gsap.to(item, {
                     scrollTrigger: {
-                        trigger: item,
-                        start: 'bottom bottom-=100',
-                        end: 'bottom bottom',
-                        pin: true,
-                        pinSpacing: false,
-                        // markers: true
-                    },
-                    x: 0,
-                    onComplete: (element) => {
-                        console.log(item.offsetWidth - window.innerWidth - (100 * window.innerWidth / 1920))
-                        if (item.offsetWidth > window.innerWidth - (100 * window.innerWidth / 1920)) {
-                            document.addEventListener('mousemove', (event) => {
-                                gsap.to(item, 0, {
-                                    translateX: () => {
-                                        if (-event.pageX + window.innerWidth / 4 > 0) return;
-                                        return -event.pageX + window.innerWidth / 4;
-                                    },
-                                });
-                            });
+                        trigger: item.closest('section'),
+                        start: 'top center',
+                        end: `top+=${window.innerHeight} top+=${window.innerHeight}`,
+                        markers: true,
+                        onUpdate: (item) => {
+                            console.log(item)
+                            item.trigger.querySelector('.animated-title').style.transform = `translateX(${-item.progress * 200 + 100}%)`
                         }
-                    }
+                    },
+                    opacity: '1'
                 });
                 
             });

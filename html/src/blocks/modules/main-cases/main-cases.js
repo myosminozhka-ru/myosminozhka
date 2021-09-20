@@ -16,15 +16,19 @@ const mainCases = class MainCases {
     }
     initMobileSlider() {
         if (!document.querySelector('.main-cases-slider')) return;
-        if (window.innerWidth < 1023) {
             this.slider.mount();
-        } else {
-            this.slider.destroy();
-        }
+    }
+    destroyMobileSlider() {
+        if (!document.querySelector('.main-cases-slider')) return;
+        this.slider.destroy();
     }
     init() {
         if (!document.querySelector('.main-cases')) return;
+        if (window.innerWidth < 1023) {
         this.initMobileSlider();
+        } else {
+            this.destroyMobileSlider();
+        }
          
          if (window.innerWidth > 1023) {
             gsap.to('.main-cases-bg', {
@@ -58,10 +62,10 @@ const mainCases = class MainCases {
                 scrollTrigger: {
                     trigger: '.main-cases',
                     start: 'top top-=300',
-                    end: 'bottom bottom+=800',
+                    end: 'bottom bottom',
                     pin: true,
                     pinSpacing: false,
-                    // markers: true
+                    markers: true
                 },
                 x: 0,
             });

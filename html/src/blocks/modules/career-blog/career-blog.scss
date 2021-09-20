@@ -14,7 +14,7 @@
     overflow: hidden;
     &:not(.mobile) {
         background: #fff;
-        padding: vw(100) vw(50) vw(250);
+        padding: vw(100) vw(50) vw(350);
     }
     &.mobile {
         padding: 0 20px 130px 20px;
@@ -165,4 +165,8 @@
     &.mobile .company-reviews-arrows {
         display: none;
     }
+}
+
+.company .career-blog:not(.mobile) {
+    padding: vw(100) vw(50) vw(250);
 }
