@@ -2829,6 +2829,10 @@ a:hover {
   line-height: 1.04167vw;
 }
 
+.header-menu a:hover {
+  text-decoration: none !important;
+}
+
 .header-menu li.isActive a {
   color: #FF4978;
 }
@@ -3340,12 +3344,16 @@ a:hover {
 .main-about-title {
   text-transform: uppercase;
   color: white;
+}
+
+.main-about:not(.mobile) .main-about-title {
   mix-blend-mode: difference;
 }
 
 .main-about.mobile .main-about-title {
   margin-bottom: 50px;
   transform: translate(0) !important;
+  color: #4f4f4f !important;
 }
 
 .main-about:not(.mobile) .main-about-right {
@@ -7854,6 +7862,11 @@ html:root body.posts .post_info__code--in {
   margin-right: 5.20833vw;
 }
 
+.job-stages.mobile .job-stages-item-left {
+  margin-right: 0;
+  width: 100%;
+}
+
 .job-stages-item-right {
   width: calc(100% - 56.25vw);
   min-height: 33.22917vw;
@@ -7873,6 +7886,11 @@ html:root body.posts .post_info__code--in {
 
 .job-stages-item-text p:not(:last-child) {
   margin-bottom: 1.5625vw;
+}
+
+.job-stages.mobile .job-stages-item-text {
+  font-size: 18px;
+  line-height: 1.2;
 }
 
 .job-stages-item-image {
@@ -8041,7 +8059,7 @@ html:root body.posts .post_info__code--in {
 }
 
 .job-stages.mobile .job-stages-management {
-  padding: 20px 20px 0;
+  padding: 20px;
 }
 
 .job-stages-management-top {
@@ -8231,6 +8249,10 @@ html:root body.posts .post_info__code--in {
 .footer-menu-item {
   font-weight: 500;
   color: #4F4F4F;
+}
+
+.footer-menu-item:hover a {
+  text-decoration: none !important;
 }
 
 .footer:not(.mobile) .footer-menu-item {
@@ -8615,6 +8637,10 @@ body.company .company-ceo:not(.mobile) {
 
   html:root body.posts .post_info .posts-blog {
     display: block;
+  }
+
+  .job-stages-trigger .button-circle {
+    display: none;
   }
 
   .footer-tentacle {

@@ -30,6 +30,9 @@
     &-trigger {
         .button-circle {
             border-radius: 50%;
+            @media all and (max-width: 1023px) {
+                display: none;
+            }
         }
         &:hover {
             text-decoration: none !important;
@@ -141,6 +144,10 @@
         width: vw(980);
         margin-right: vw(100);
     }
+    &.mobile &-item-left {
+        margin-right: 0;
+        width: 100%;
+    }
     &-item-right {
         width: calc(100% - #{vw(1080)});
         min-height: vw(638);
@@ -157,6 +164,10 @@
                 margin-bottom: vw(30);
             }
         }
+    }
+    &.mobile &-item-text {
+        font-size: 18px;
+        line-height: 1.2;
     }
     &-item-image {
         position: absolute;
@@ -301,7 +312,7 @@
         padding: vw(170) 0 0;
     }
     &.mobile &-management {
-        padding: 20px 20px 0;
+        padding: 20px;
     }
     &-management-top {
         display: flex;

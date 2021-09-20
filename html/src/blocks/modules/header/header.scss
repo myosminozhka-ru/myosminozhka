@@ -58,6 +58,9 @@
       line-height: vw(20);
       @extend %white;
       @extend %block;
+      &:hover {
+        text-decoration: none !important;
+      } 
     }
     li.isActive a {
       color: $mainColor;

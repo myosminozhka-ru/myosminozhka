@@ -41,11 +41,14 @@
   &-title {
     text-transform: uppercase;
     color: white;
+  }
+  &:not(.mobile) &-title {
     mix-blend-mode: difference;
   }
   &.mobile &-title {
     margin-bottom: 50px;
     transform: translate(0) !important;
+    color: $bgColor !important;
   }
   &:not(.mobile) &-right {
     padding-top: vw(34);

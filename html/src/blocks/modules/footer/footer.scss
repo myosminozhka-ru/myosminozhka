@@ -94,7 +94,10 @@
     }
     &-menu-item {
         font-weight: 500;
-        color: #4F4F4F;        
+        color: #4F4F4F;  
+        &:hover a {
+            text-decoration: none !important;
+        }      
     }
     &:not(.mobile) &-menu-item {
         font-size: vw(25);
