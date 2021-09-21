@@ -675,9 +675,12 @@
             </div>
         </div>
     </div>
+    <div class="job-stages-management-bottom-right" v-if="window.width <= 1023">
+        <img src="https://picsum.photos/1920" width="100%" height="100%" alt="">
+    </div>
     <div class="job-stages-management" id="job-management">
         <div class="job-stages-management-top">
-            <div class="job-stages-management-top-left">
+            <div class="job-stages-management-top-left" v-if="window.width > 1023">
                 <div class="job-stages-trigger">
                     <div class="in">
                         <div class="number">6</div>
@@ -695,7 +698,7 @@
                 <p>Это прогрессивное дизайнерское агентство, обладающее техническими и творческими навыками, чтобы воплотить ваш бренд стал лучше. Наш подход к дизайну и разработке создает впечатляющие, привлекательные бренды, которые возвращают вам творческий потенциал.</p>
                 <p>Это прогрессивное дизайнерское агентство, обладающее техническими и творческими навыками, чтобы воплотить ваш бренд стал лучше. Наш подход к дизайну и разработке создает впечатляющие, привлекательные бренды, которые возвращают вам творческий потенциал.</p>
             </div>
-            <div class="job-stages-management-bottom-right">
+            <div class="job-stages-management-bottom-right" v-if="window.width > 1023">
                 <img src="https://picsum.photos/1920" width="100%" height="100%" alt="">
             </div>
         </div>

@@ -8313,7 +8313,7 @@ html:root body.posts .post_info__code--in {
 .job-stages.mobile .job-stages-management-bottom-right {
   width: 100%;
   position: static;
-  margin-top: 20px;
+  margin-bottom: 60px;
 }
 
 .job-stages-trigger .in {
