@@ -156,11 +156,31 @@
             text-transform: uppercase;
             color: #ff4978;
             white-space: initial;
+            transform: translateY(-200%);
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            &.isActive {
+                transition: transform .8s ease;
+                transform: translateY(0);
+            }
         }
         .text {
             font-family: "Montserrat";
             color: #4f4f4f;
             white-space: initial;
+            transform: translateY(-100%);
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            &.isActive {
+                transition: .8s transform .3s ease;
+                transform: translateY(0);
+            }
         }
     }
     &:not(.mobile) &__text {
@@ -182,11 +202,28 @@
         .title {
             font-size: 25px;
             line-height: 25px;
-            margin-bottom: 25px;
         }
         .text {
             font-size: 16px;
             line-height: 22px;
         }
+    }
+
+    &__text-item_titles {
+        position: relative;
+        margin-bottom: 25px;
+        height: vw(138);
+        overflow: hidden;
+    }
+    &__text-item_texts {
+        position: relative;
+        height: vw(150);
+        overflow: hidden;
+    }
+    &.mobile &__text-item_titles {
+        height: 50px;
+    }
+    &.mobile &__text-item_texts {
+        height: 50px;
     }
 }

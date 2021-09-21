@@ -3926,12 +3926,34 @@ a:hover {
   text-transform: uppercase;
   color: #ff4978;
   white-space: initial;
+  transform: translateY(-200%);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.main-carousel__text .title.isActive {
+  transition: transform .8s ease;
+  transform: translateY(0);
 }
 
 .main-carousel__text .text {
   font-family: "Montserrat";
   color: #4f4f4f;
   white-space: initial;
+  transform: translateY(-100%);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.main-carousel__text .text.isActive {
+  transition: .8s transform .3s ease;
+  transform: translateY(0);
 }
 
 .main-carousel:not(.mobile) .main-carousel__text {
@@ -3955,12 +3977,32 @@ a:hover {
 .main-carousel.mobile .main-carousel__text .title {
   font-size: 25px;
   line-height: 25px;
-  margin-bottom: 25px;
 }
 
 .main-carousel.mobile .main-carousel__text .text {
   font-size: 16px;
   line-height: 22px;
+}
+
+.main-carousel__text-item_titles {
+  position: relative;
+  margin-bottom: 25px;
+  height: 7.1875vw;
+  overflow: hidden;
+}
+
+.main-carousel__text-item_texts {
+  position: relative;
+  height: 7.8125vw;
+  overflow: hidden;
+}
+
+.main-carousel.mobile .main-carousel__text-item_titles {
+  height: 50px;
+}
+
+.main-carousel.mobile .main-carousel__text-item_texts {
+  height: 50px;
 }
 
 .cursor {
@@ -4540,7 +4582,7 @@ a:hover {
   right: 0;
   bottom: 0;
   z-index: 14;
-  background: url("../img/svg/cases.svg") 50% 0/100% no-repeat;
+  background: url("../img/svg/cases.svg") 50% 1.3vw/100% no-repeat;
   pointer-events: none;
 }
 
@@ -4780,6 +4822,7 @@ a:hover {
 
 .company-about__wrap {
   position: relative;
+  background: #4f4f4f;
 }
 
 .company-about__title {
@@ -4947,7 +4990,7 @@ a:hover {
 }
 
 .company {
-  background: #4f4f4f;
+  background: #fff;
 }
 
 .company-video video {
@@ -5295,6 +5338,7 @@ a:hover {
 }
 
 .company-team-item-info .image {
+  background: rgba(229, 74, 114, 0.5);
   position: absolute;
   top: 0;
   left: 0;
@@ -5955,8 +5999,9 @@ body.company .company-ceo.mobile {
   width: calc(100% - 9.73958vw);
   padding-left: 2.08333vw;
   border-left: 0.15625vw solid rgba(79, 79, 79, 0.6);
-  transition: width .2s ease, 0.5s opacity 0.5s ease;
+  transition: .2s width .2s ease, 0.6s opacity 0.6s ease;
   opacity: 0;
+  max-height: 23.4375vw;
 }
 
 .company-reviews.mobile .company-reviews-item-right {
@@ -5968,7 +6013,6 @@ body.company .company-ceo.mobile {
 .company-reviews-item-name {
   font-weight: 500;
   color: #4f4f4f;
-  transition: .2s all .2s ease;
 }
 
 .company-reviews .button {
@@ -5995,7 +6039,6 @@ body.company .company-ceo.mobile {
   font-size: 1.30208vw;
   line-height: 1.30208vw;
   margin-bottom: 1.5625vw;
-  transition: .2s all .2s ease;
 }
 
 .company-reviews.mobile .company-reviews-item-position {
@@ -6012,7 +6055,6 @@ body.company .company-ceo.mobile {
   font-size: 1.04167vw;
   line-height: 1.5625vw;
   margin-bottom: 2.08333vw;
-  transition: .2s all .2s ease;
 }
 
 .company-reviews.mobile .company-reviews-item-text {

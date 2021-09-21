@@ -82,6 +82,7 @@
         opacity: 0;
         @extend %transition;
         .image {
+            background: rgba(229, 74, 114, 0.5);
             position: absolute;
             top: 0;
             left: 0;

@@ -15,17 +15,19 @@
             </div>
         </div>
         
-        <div class="glide main-carousel__text main-carousel__slider">
-          <div class="glide__track" data-glide-el="track">
-            <div class="glide__slides">
-              @@for (var i = 1; i < 8; i++) {
-                <div class="main-carousel__text-item">
-                  <div class="title">Высший грейд А+ RUWARD в заказной разработке</div>
-                  <div class="text">Отмечена центром сертификации наивысшим рейтингом. Отмечена центром сертификации наивысшим рейтингом</div>
+        <div class="glide main-carousel__text">
+          <div class="main-carousel__text-item">
+                <div class="main-carousel__text-item_titles">
+                  @@for (var i = 0; i < 8; i++) {
+                    <div class="title" data-title-id="`+ i +`">Высший грейд А+ RUWARD в заказной разработке</div>
+                  }
                 </div>
-              }
-            </div>
-          </div>
+                <div class="main-carousel__text-item_texts">
+                  @@for (var i = 0; i < 8; i++) {
+                    <div class="text" data-text-id="`+ i +`">Отмечена центром сертификации наивысшим рейтингом. Отмечена центром сертификации наивысшим рейтингом</div>
+                  }
+                </div>
+              </div>
         </div>
         <div class="carousel-options">
           <p>

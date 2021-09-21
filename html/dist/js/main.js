@@ -1625,23 +1625,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 var mainCarousel = /*#__PURE__*/function () {
   function MainCarousel() {
     _classCallCheck(this, MainCarousel);
-
-    if (!document.querySelector('.main-carousel__slider')) return;
-    this.slider = new _glidejs_glide__WEBPACK_IMPORTED_MODULE_1__["default"]('.main-carousel__slider', {
-      type: 'carousel',
-      startAt: 1,
-      perView: 1,
-      gap: 0
-    });
   }
 
   _createClass(MainCarousel, [{
     key: "init",
     value: function init() {
-      if (this.slider) {
-        this.slider.mount();
-      }
-
       var self = this;
       var carousel = document.querySelector('.main-carousel-carousel');
       if (!carousel) return;
@@ -1656,16 +1644,18 @@ var mainCarousel = /*#__PURE__*/function () {
       var radius, theta;
 
       function rotateCarousel() {
-        console.log(self.slider.index, selectedIndex);
-
-        if (selectedIndex - 1 <= cells.length) {
-          self.slider.go("=".concat(selectedIndex));
-        } else {
-          self.slider.go("=".concat(selectedIndex - cells.length));
-        }
-
+        console.log((selectedIndex + 1) % +cellCount, selectedIndex + 1, +cellCount);
         var angle = theta * selectedIndex * -1;
         carousel.style.transform = 'translateZ(' + -radius + 'px) ' + rotateFn + '(' + angle + 'deg)';
+        var cells = carousel.querySelectorAll('.main-carousel-cell');
+        document.querySelectorAll(".main-carousel__text-item_titles .title").forEach(function (item) {
+          item.classList.remove('isActive');
+        });
+        document.querySelector(".main-carousel__text-item_titles .title[data-title-id=\"".concat((selectedIndex + 1) % +cellCount, "\"]")).classList.add('isActive');
+        document.querySelectorAll(".main-carousel__text-item_texts .text").forEach(function (item) {
+          item.classList.remove('isActive');
+        });
+        document.querySelector(".main-carousel__text-item_texts .text[data-text-id=\"".concat((selectedIndex + 1) % +cellCount, "\"]")).classList.add('isActive'); // document.querySelector(`.main-carousel__text-item_titles .title[data-title-id="${selectedIndex}"]`).classList.add('isActive');
       }
 
       var prevButton = document.querySelector('.previous-button');
@@ -1724,7 +1714,6 @@ var mainCarousel = /*#__PURE__*/function () {
 
       function chooseElem(index) {
         selectedIndex = index;
-        self.slider.go("=".concat(index));
         rotateCarousel();
       }
 
@@ -2616,7 +2605,9 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
             markers: true,
             onUpdate: function onUpdate(item) {
               console.log(item);
-              item.trigger.querySelector('.animated-title').style.transform = "translateX(".concat(-item.progress * 200 + 100, "%)");
+              gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item.trigger.querySelector('.animated-title'), 1, {
+                transform: "translateX(".concat(-item.progress * 200 + 100, "%)")
+              });
             }
           },
           opacity: '1'

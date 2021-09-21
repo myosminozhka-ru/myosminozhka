@@ -2,6 +2,7 @@
     // background: #4f4f4f;
     &__wrap {
         position: relative;
+        background: $bgColor;
     }
     &__title {
         position: absolute;
@@ -147,5 +148,5 @@
 }
 
 .company {
-    background: $bgColor;
+    background: #fff;
 }

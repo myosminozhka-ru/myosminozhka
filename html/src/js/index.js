@@ -190,7 +190,9 @@ window.app = new Vue({
                         markers: true,
                         onUpdate: (item) => {
                             console.log(item)
-                            item.trigger.querySelector('.animated-title').style.transform = `translateX(${-item.progress * 200 + 100}%)`
+                            gsap.to(item.trigger.querySelector('.animated-title'), 1, {
+                                transform: `translateX(${-item.progress * 200 + 100}%)`
+                            })
                         }
                     },
                     opacity: '1'

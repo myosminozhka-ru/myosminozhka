@@ -2,19 +2,8 @@ import interact from 'interactjs'
 import Glide from '@glidejs/glide'
 
 const mainCarousel = class MainCarousel {
-    constructor() {
-        if (!document.querySelector('.main-carousel__slider')) return ;
-        this.slider = new Glide('.main-carousel__slider', {
-            type: 'carousel',
-            startAt: 1,
-            perView: 1,
-            gap: 0,
-        });
-    }
+    constructor() {}
     init() {
-        if (this.slider) {
-            this.slider.mount();
-        }
         var self = this;
         var carousel = document.querySelector('.main-carousel-carousel');
         if (!carousel) return;
@@ -29,15 +18,20 @@ const mainCarousel = class MainCarousel {
 
 
         function rotateCarousel() {
-            console.log(self.slider.index, selectedIndex);
-            if (selectedIndex - 1 <= cells.length) {
-                self.slider.go(`=${selectedIndex}`);
-            } else {
-                self.slider.go(`=${selectedIndex - cells.length}`);
-            }
+            console.log((selectedIndex+1) % +cellCount, selectedIndex+1, +cellCount);
         var angle = theta * selectedIndex * -1;
         carousel.style.transform = 'translateZ(' + -radius + 'px) ' + 
             rotateFn + '(' + angle + 'deg)';
+        var cells = carousel.querySelectorAll('.main-carousel-cell');
+        document.querySelectorAll(`.main-carousel__text-item_titles .title`).forEach(item => {
+            item.classList.remove('isActive');
+        })
+        document.querySelector(`.main-carousel__text-item_titles .title[data-title-id="${(selectedIndex+1) % +cellCount}"]`).classList.add('isActive');
+        document.querySelectorAll(`.main-carousel__text-item_texts .text`).forEach(item => {
+            item.classList.remove('isActive');
+        })
+        document.querySelector(`.main-carousel__text-item_texts .text[data-text-id="${(selectedIndex+1) % +cellCount}"]`).classList.add('isActive');
+            // document.querySelector(`.main-carousel__text-item_titles .title[data-title-id="${selectedIndex}"]`).classList.add('isActive');
         }
 
         var prevButton = document.querySelector('.previous-button');
@@ -96,7 +90,6 @@ const mainCarousel = class MainCarousel {
         }
         function chooseElem(index) {
             selectedIndex = index;
-            self.slider.go(`=${index}`);
             rotateCarousel();
         }
 

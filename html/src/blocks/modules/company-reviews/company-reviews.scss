@@ -72,8 +72,9 @@
         width: calc(100% - #{vw(187)});
         padding-left: vw(40);
         border-left: vw(3) solid rgba(79, 79, 79, 0.6);
-        transition: width .2s ease, 0.5s opacity 0.5s ease;
+        transition: .2s width .2s ease, 0.6s opacity 0.6s ease;
         opacity: 0;
+        max-height: vw(450);
     }
     &.mobile &-item-right {
         width: 100%;
@@ -84,7 +85,7 @@
     &-item-name {
         font-weight: 500;
         color: $bgColor;
-        transition: .2s all .2s ease; 
+        // transition: .2s all .2s ease;
     }
     .button {
         overflow: hidden;
@@ -106,7 +107,7 @@
         font-size: vw(25);
         line-height: vw(25);
         margin-bottom: vw(30);
-        transition: .2s all .2s ease;
+        // transition: .2s all .2s ease;
     }
     &.mobile &-item-position {
         font-size: 20px;
@@ -120,7 +121,7 @@
         font-size: vw(20);
         line-height: vw(30);
         margin-bottom: vw(40);
-        transition: .2s all .2s ease; 
+        // transition: .2s all .2s ease; 
     }
     &.mobile &-item-text {
         font-size: 16px;
