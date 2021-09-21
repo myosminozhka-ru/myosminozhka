@@ -96,7 +96,7 @@
         }
     }
     &.mobile &-tabs {
-        padding: 0 20px 20px;
+        padding: 0 20px 40px;
     }
     &.mobile &-support-slides {
         padding-bottom: 100px;
@@ -188,6 +188,12 @@
         margin-bottom: vw(60);
         min-height: vw(70);
     }
+    &.mobile &-title-triggers {
+        overflow: auto;
+        &::-webkit-scrollbar {
+            height: 0;
+        }
+    }
     &-title-trigger {
         cursor: pointer;
         font-weight: 300;
@@ -203,6 +209,15 @@
         }
         &:not(:last-child) {
             margin-right: vw(50);
+        }
+    }
+    &.mobile &-title-trigger {
+        font-size: 13px;
+        line-height: 1.2;
+        white-space: nowrap;
+        &.isActive {
+            font-size: 18px;
+            line-height: 1.2;
         }
     }
     &-support {
@@ -278,6 +293,10 @@
         white-space: initial;
         @extend %white;
     }
+    &.mobile &-support-text {
+        font-size: 18px;
+        line-height: 1.2;
+    }
     &-support-left.mobile &-support-text {
         padding-left: 20px;
         padding-right: 20px;
@@ -334,6 +353,13 @@
             margin: 0;
         }
     }
+    &.mobile &-management-top {
+        flex-direction: column;
+        align-items: flex-start;
+        .job-stages-trigger {
+            margin-bottom: 20px;
+        }
+    }
     &-management-top-right {
         position: relative;
         width: calc( 100% - #{vw(169) - #{vw(260)}} );
@@ -364,10 +390,29 @@
             color: $bgColor;
         }
     }
+    &.mobile &-management-top-right {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        .title,
+        .text {
+            text-align: left;
+        }
+        .text {
+            font-size: 18px;
+            line-height: 1.2;
+        }
+        &:after {
+            left: 0;
+        }
+    }
     &-management-bottom {
         display: flex;
         align-items: flex-start;
         position: relative;
+    }
+    &.mobile &-management-bottom {
+        flex-wrap: wrap;
     }
     &-management-bottom-left {
         width: calc(100% - #{vw(977)});
@@ -380,6 +425,13 @@
             &:not(:last-child) {
                 margin-bottom: vw(70);
             }
+        }
+    }
+    &.mobile &-management-bottom-left {
+        width: 100%;
+        p {
+            font-size: 18px;
+            line-height: 1.2;
         }
     }
     &-management-bottom-right {
@@ -395,6 +447,11 @@
             object-fit: cover;
             object-position: 50% 50%;
         }
+    }
+    &.mobile &-management-bottom-right {
+        width: 100%;
+        position: static;
+        margin-top: 20px;
     }
 }
 .job-stages-trigger .in {

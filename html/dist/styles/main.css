@@ -7892,7 +7892,7 @@ html:root body.posts .post_info__code--in {
 }
 
 .job-stages.mobile .job-stages-tabs {
-  padding: 0 20px 20px;
+  padding: 0 20px 40px;
 }
 
 .job-stages.mobile .job-stages-support-slides {
@@ -8000,6 +8000,14 @@ html:root body.posts .post_info__code--in {
   min-height: 3.64583vw;
 }
 
+.job-stages.mobile .job-stages-title-triggers {
+  overflow: auto;
+}
+
+.job-stages.mobile .job-stages-title-triggers::-webkit-scrollbar {
+  height: 0;
+}
+
 .job-stages-title-trigger {
   cursor: pointer;
   font-weight: 300;
@@ -8017,6 +8025,17 @@ html:root body.posts .post_info__code--in {
 
 .job-stages-title-trigger:not(:last-child) {
   margin-right: 2.60417vw;
+}
+
+.job-stages.mobile .job-stages-title-trigger {
+  font-size: 13px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.job-stages.mobile .job-stages-title-trigger.isActive {
+  font-size: 18px;
+  line-height: 1.2;
 }
 
 .job-stages-support {
@@ -8106,6 +8125,11 @@ html:root body.posts .post_info__code--in {
   white-space: initial;
 }
 
+.job-stages.mobile .job-stages-support-text {
+  font-size: 18px;
+  line-height: 1.2;
+}
+
 .job-stages-support-left.mobile .job-stages-support-text {
   padding-left: 20px;
   padding-right: 20px;
@@ -8172,6 +8196,15 @@ html:root body.posts .post_info__code--in {
   margin: 0;
 }
 
+.job-stages.mobile .job-stages-management-top {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.job-stages.mobile .job-stages-management-top .job-stages-trigger {
+  margin-bottom: 20px;
+}
+
 .job-stages-management-top-right {
   position: relative;
   width: calc( 100% - 8.80208vw - 13.54167vw);
@@ -8206,10 +8239,34 @@ html:root body.posts .post_info__code--in {
   color: #4f4f4f;
 }
 
+.job-stages.mobile .job-stages-management-top-right {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.job-stages.mobile .job-stages-management-top-right .title,
+.job-stages.mobile .job-stages-management-top-right .text {
+  text-align: left;
+}
+
+.job-stages.mobile .job-stages-management-top-right .text {
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.job-stages.mobile .job-stages-management-top-right:after {
+  left: 0;
+}
+
 .job-stages-management-bottom {
   display: flex;
   align-items: flex-start;
   position: relative;
+}
+
+.job-stages.mobile .job-stages-management-bottom {
+  flex-wrap: wrap;
 }
 
 .job-stages-management-bottom-left {
@@ -8228,6 +8285,15 @@ html:root body.posts .post_info__code--in {
   margin-bottom: 3.64583vw;
 }
 
+.job-stages.mobile .job-stages-management-bottom-left {
+  width: 100%;
+}
+
+.job-stages.mobile .job-stages-management-bottom-left p {
+  font-size: 18px;
+  line-height: 1.2;
+}
+
 .job-stages-management-bottom-right {
   position: absolute;
   z-index: 9;
@@ -8242,6 +8308,12 @@ html:root body.posts .post_info__code--in {
   height: 100%;
   object-fit: cover;
   object-position: 50% 50%;
+}
+
+.job-stages.mobile .job-stages-management-bottom-right {
+  width: 100%;
+  position: static;
+  margin-top: 20px;
 }
 
 .job-stages-trigger .in {
