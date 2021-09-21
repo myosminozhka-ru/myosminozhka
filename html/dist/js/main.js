@@ -1851,16 +1851,16 @@ var mainCases = /*#__PURE__*/function () {
 
       if (window.innerWidth > 1023) {
         setTimeout(function () {
-          gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.main-cases-bg', {
-            scrollTrigger: {
-              trigger: '.news-and-trends-trigger',
-              start: 'top+=500 top+=500',
-              end: 'bottom+=500 top+=500',
-              scrub: 3 // markers: true
-
-            },
-            top: -100
-          });
+          // gsap.to('.main-cases-bg', {
+          //     scrollTrigger: {
+          //         trigger: '.news-and-trends-trigger',
+          //         start: 'top+=500 top+=500',
+          //         end: 'bottom+=500 top+=500',
+          //         scrub: 3,
+          //         // markers: true
+          //     },
+          //     top: -100,
+          // });
           gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.main-cases-items-in', {
             scrollTrigger: {
               trigger: '.main-cases',

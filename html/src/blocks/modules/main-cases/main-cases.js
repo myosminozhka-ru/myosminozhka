@@ -32,16 +32,16 @@ const mainCases = class MainCases {
          
          if (window.innerWidth > 1023) {
             setTimeout(() => {
-                gsap.to('.main-cases-bg', {
-                    scrollTrigger: {
-                        trigger: '.news-and-trends-trigger',
-                        start: 'top+=500 top+=500',
-                        end: 'bottom+=500 top+=500',
-                        scrub: 3,
-                        // markers: true
-                    },
-                    top: -100,
-                });
+                // gsap.to('.main-cases-bg', {
+                //     scrollTrigger: {
+                //         trigger: '.news-and-trends-trigger',
+                //         start: 'top+=500 top+=500',
+                //         end: 'bottom+=500 top+=500',
+                //         scrub: 3,
+                //         // markers: true
+                //     },
+                //     top: -100,
+                // });
                 gsap.to('.main-cases-items-in', {
                     scrollTrigger: {
                         trigger: '.main-cases',

@@ -4510,7 +4510,7 @@ a:hover {
 }
 
 .main-cases:not(.mobile) {
-  padding-top: 16.97917vw;
+  padding-top: 19.0625vw;
   padding-bottom: 10.83333vw;
 }
 
@@ -7402,31 +7402,38 @@ body.company .company-ceo.mobile {
 }
 
 .job-info-item {
+  overflow: hidden;
   position: absolute;
   top: 3.33333vw;
   left: 0;
   right: 0;
-  transform: translateY(-100%);
-  opacity: 0;
 }
 
-.job-info-item.isActive {
-  transform: translateY(0);
-  opacity: 1;
-  transition: all .8s ease;
+.job-info-item:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -0.52083vw;
+  left: -0.52083vw;
+  right: -0.52083vw;
+  height: 4.53125vw;
+  background: #4f4f4f;
+  z-index: 5;
 }
 
 .job-info-logos {
   margin-bottom: 3.125vw;
   display: flex;
+  position: relative;
+  z-index: 6;
 }
 
 .job-info:not(.mobile) .job-info-logos {
-  transition: 0.8s transform 0.3s ease;
   transform: translateY(-200%);
 }
 
 .job-info-item.isActive .job-info-logos {
+  transition: 0.8s transform 0.3s ease;
   transform: translateY(0);
 }
 
@@ -7438,6 +7445,24 @@ body.company .company-ceo.mobile {
   font-weight: 300;
   font-size: 1.30208vw;
   line-height: 2.08333vw;
+}
+
+.job-info.mobile .job-info-item {
+  opacity: 0;
+  transition: 0.8s transform 0.3s ease;
+}
+
+.job-info.mobile .job-info-item.isActive {
+  opacity: 1;
+}
+
+.job-info:not(.mobile) .job-info-item-text {
+  transform: translateY(-200%);
+}
+
+.job-info-item.isActive .job-info-item-text {
+  transition: 0.8s transform ease;
+  transform: translateY(0);
 }
 
 .job-info.mobile .job-info-item-text {
