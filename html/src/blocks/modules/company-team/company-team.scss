@@ -129,6 +129,7 @@
                 width: vw(38);
                 height: vw(38);
                 text-align: center;
+                pointer-events: none;
                 &:not(:last-child) {
                     margin-right: vw(12);
                 }
@@ -146,10 +147,34 @@
     }
     &-item:hover &-item-info {
         opacity: 1;
+        .right a {
+            pointer-events: all;
+        }
     }
-    &.mobile &-item &-item-info {
-        opacity: 1;
+    &-item-more {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        font-size: 13px;
+        color: #fff;
+        .text {
+            width: 100%;
+            text-align: right;
+            padding: 20px;
+            background: rgba(229, 74, 114, 0.5);
+        }
     }
+    &-item:hover &-item-more {
+        opacity: 0;
+    }
+    // &.mobile &-item &-item-info {
+    //     opacity: 1;
+    // }
     &.mobile &-item-info {
         padding: 20px;
         .info {

@@ -39,7 +39,8 @@ const companyRaiting = class companyRaiting {
     }
     onSliderInit() {
         document.querySelector(`.company-raiting-item[data-item-id="${this.slider.index}"]`).classList.add('isActive');
-        this.slider.on('run.before', (item) => {
+        this.slider.on('run.after', (item) => {
+            console.log(this.slider.index);
             document.querySelectorAll('.company-raiting-item').forEach(trigger => {
                 trigger.classList.remove('isActive')
             })

@@ -27,6 +27,12 @@
             height: 0;
         }
     }
+    &:not(.mobile) &-triggers &-trigger {
+        transition: .3s background .1s ease;
+        &:hover {
+            background: $bgColor;
+        }
+    }
     &-trigger {
         .button-circle {
             border-radius: 50%;
@@ -248,7 +254,7 @@
         position: absolute;
         left: 0;
         right: 0;
-        bottom: 0;
+        bottom: -1px;
         height: vw(241);
         transform: rotateX(180deg);
         background: #fff url('../img/svg/support_top.svg') 0 0 / calc(100% - #{vw(1010)}) no-repeat;

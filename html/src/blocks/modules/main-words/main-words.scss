@@ -58,7 +58,7 @@
   &-wrap > &-item__loaded {
     transform: translateX(0);
   }
-  @media (orientation: landscape) {
+  @media (orientation: landscape) and (max-width: 1023px) {
     .main-words-wrap {
       flex-direction: row;
     }

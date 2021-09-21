@@ -77,6 +77,16 @@
     &.mobile &-items-slides {
         display: block;
     }
+    &-item {
+        text-decoration: none;
+        display: block;
+        &:hover {
+            text-decoration: none !important;
+            .career-blog-item-title {
+                text-decoration: underline;
+            }
+        }
+    }
     &.mobile &-item {
         border-radius: 10px;
         &:not(:last-child) {
@@ -132,11 +142,11 @@
         line-height: 25px;
         margin-bottom: 15px;
     }
-    &-item[data-ctegory="team"] &-item-title {
-        color: $mainColor;
+    &-item[data-ctegory="team"], &-item[data-ctegory="team"] &-item-title {
+        color: $mainColor !important;
     }
-    &-item[data-ctegory="development"] &-item-title {
-        color: #00B4A9;
+    &-item[data-ctegory="development"], &-item[data-ctegory="development"] &-item-title {
+        color: #00B4A9 !important;
     }
     &-item-description {
         font-weight: 300;

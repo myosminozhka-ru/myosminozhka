@@ -47,10 +47,10 @@ const mainCases = class MainCases {
                         trigger: '.main-cases',
                         start: 'top top',
                         end: 'bottom bottom-=200',
-                        scrub: 1,
+                        scrub: 3,
                         // markers: true,
                         onUpdate: (item) => {
-                            if (item.progress > 0.05 && item.progress < 0.45) {
+                            if (item.progress > 0.05 && item.progress < 0.65) {
                                 document.querySelector('.main-cases-items-in').classList.add('isInViewport');
                             } else {
                                 document.querySelector('.main-cases-items-in').classList.remove('isInViewport');

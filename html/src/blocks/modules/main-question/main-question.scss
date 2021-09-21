@@ -152,6 +152,13 @@
   }
   &-form-item {
     border-bottom: none !important;
+    &.file {
+      transition: color .3s ease;
+      &:hover {
+        color: $mainColor;
+        text-decoration: underline;
+      }
+    }
     input[type="file"] {
       display: none;
     }

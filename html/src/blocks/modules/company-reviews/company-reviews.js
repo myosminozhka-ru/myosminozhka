@@ -3,10 +3,10 @@ import Glide from '@glidejs/glide'
 const companyReviews = class companyReviews {
     constructor(sliderClass) {
         this.slider = new Glide('.company-reviews-slider', {
-            type: 'slider',
+            type: 'carousel',
             focusAt: 'center',
             startAt: 1,
-            perView: 3,
+            perView: 2,
             gap: 100,
             breakpoints: {
                 1023: {
@@ -56,7 +56,8 @@ const companyReviews = class companyReviews {
             }
           }
         if (window.innerWidth > 1023) {
-            this.slider.mutate([FixBoundPeek]).mount();
+            // this.slider.mutate([FixBoundPeek]).mount();
+            this.slider.mount();
             this.index = this.slider.index;
             this.countElementWidth();
         } else {

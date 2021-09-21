@@ -572,7 +572,8 @@ var companyRaiting = /*#__PURE__*/function () {
       var _this = this;
 
       document.querySelector(".company-raiting-item[data-item-id=\"".concat(this.slider.index, "\"]")).classList.add('isActive');
-      this.slider.on('run.before', function (item) {
+      this.slider.on('run.after', function (item) {
+        console.log(_this.slider.index);
         document.querySelectorAll('.company-raiting-item').forEach(function (trigger) {
           trigger.classList.remove('isActive');
         });
@@ -632,10 +633,10 @@ var companyReviews = /*#__PURE__*/function () {
     _classCallCheck(this, companyReviews);
 
     this.slider = new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.company-reviews-slider', {
-      type: 'slider',
+      type: 'carousel',
       focusAt: 'center',
       startAt: 1,
-      perView: 3,
+      perView: 2,
       gap: 100,
       breakpoints: {
         1023: {
@@ -693,7 +694,8 @@ var companyReviews = /*#__PURE__*/function () {
       };
 
       if (window.innerWidth > 1023) {
-        this.slider.mutate([FixBoundPeek]).mount();
+        // this.slider.mutate([FixBoundPeek]).mount();
+        this.slider.mount();
         this.index = this.slider.index;
         this.countElementWidth();
       } else {
@@ -1610,15 +1612,12 @@ var mainAbout = /*#__PURE__*/function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var interactjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! interactjs */ "./node_modules/interactjs/dist/interact.min.js");
-/* harmony import */ var interactjs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(interactjs__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _glidejs_glide__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @glidejs/glide */ "./node_modules/@glidejs/glide/dist/glide.esm.js");
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
 
 
 
@@ -1652,10 +1651,16 @@ var mainCarousel = /*#__PURE__*/function () {
           item.classList.remove('isActive');
         });
         document.querySelector(".main-carousel__text-item_titles .title[data-title-id=\"".concat((selectedIndex + 1) % +cellCount, "\"]")).classList.add('isActive');
+        gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(document.querySelectorAll(".main-carousel__text-item_titles"), {
+          height: document.querySelector(".main-carousel__text-item_titles .title[data-title-id=\"".concat((selectedIndex + 1) % +cellCount, "\"]")).clientHeight
+        });
         document.querySelectorAll(".main-carousel__text-item_texts .text").forEach(function (item) {
           item.classList.remove('isActive');
         });
-        document.querySelector(".main-carousel__text-item_texts .text[data-text-id=\"".concat((selectedIndex + 1) % +cellCount, "\"]")).classList.add('isActive'); // document.querySelector(`.main-carousel__text-item_titles .title[data-title-id="${selectedIndex}"]`).classList.add('isActive');
+        document.querySelector(".main-carousel__text-item_texts .text[data-text-id=\"".concat((selectedIndex + 1) % +cellCount, "\"]")).classList.add('isActive');
+        gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(document.querySelectorAll(".main-carousel__text-item_texts"), {
+          height: document.querySelector(".main-carousel__text-item_texts .text[data-text-id=\"".concat((selectedIndex + 1) % +cellCount, "\"]")).clientHeight
+        }); // document.querySelector(`.main-carousel__text-item_titles .title[data-title-id="${selectedIndex}"]`).classList.add('isActive');
       }
 
       var prevButton = document.querySelector('.previous-button');
@@ -1855,10 +1860,10 @@ var mainCases = /*#__PURE__*/function () {
               trigger: '.main-cases',
               start: 'top top',
               end: 'bottom bottom-=200',
-              scrub: 1,
+              scrub: 3,
               // markers: true,
               onUpdate: function onUpdate(item) {
-                if (item.progress > 0.05 && item.progress < 0.45) {
+                if (item.progress > 0.05 && item.progress < 0.65) {
                   document.querySelector('.main-cases-items-in').classList.add('isInViewport');
                 } else {
                   document.querySelector('.main-cases-items-in').classList.remove('isInViewport');
@@ -2250,7 +2255,6 @@ var mainWords = /*#__PURE__*/function () {
   }, {
     key: "animateElem",
     value: function animateElem() {
-      console.log(document.querySelector(this.element));
       if (!document.querySelector(this.element)) return;
       gsap__WEBPACK_IMPORTED_MODULE_0__["TweenMax"].to(this.element, 1, {
         translateX: -this.x.coordinate + window.innerWidth / 2,

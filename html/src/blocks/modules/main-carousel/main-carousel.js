@@ -1,5 +1,4 @@
-import interact from 'interactjs'
-import Glide from '@glidejs/glide'
+import gsap from 'gsap';
 
 const mainCarousel = class MainCarousel {
     constructor() {}
@@ -19,18 +18,24 @@ const mainCarousel = class MainCarousel {
 
         function rotateCarousel() {
             console.log((selectedIndex+1) % +cellCount, selectedIndex+1, +cellCount);
-        var angle = theta * selectedIndex * -1;
-        carousel.style.transform = 'translateZ(' + -radius + 'px) ' + 
-            rotateFn + '(' + angle + 'deg)';
-        var cells = carousel.querySelectorAll('.main-carousel-cell');
-        document.querySelectorAll(`.main-carousel__text-item_titles .title`).forEach(item => {
-            item.classList.remove('isActive');
-        })
-        document.querySelector(`.main-carousel__text-item_titles .title[data-title-id="${(selectedIndex+1) % +cellCount}"]`).classList.add('isActive');
-        document.querySelectorAll(`.main-carousel__text-item_texts .text`).forEach(item => {
-            item.classList.remove('isActive');
-        })
-        document.querySelector(`.main-carousel__text-item_texts .text[data-text-id="${(selectedIndex+1) % +cellCount}"]`).classList.add('isActive');
+            var angle = theta * selectedIndex * -1;
+            carousel.style.transform = 'translateZ(' + -radius + 'px) ' + 
+                rotateFn + '(' + angle + 'deg)';
+            var cells = carousel.querySelectorAll('.main-carousel-cell');
+            document.querySelectorAll(`.main-carousel__text-item_titles .title`).forEach(item => {
+                item.classList.remove('isActive');
+            })
+            document.querySelector(`.main-carousel__text-item_titles .title[data-title-id="${(selectedIndex+1) % +cellCount}"]`).classList.add('isActive');
+            gsap.to(document.querySelectorAll(`.main-carousel__text-item_titles`), {
+                height: document.querySelector(`.main-carousel__text-item_titles .title[data-title-id="${(selectedIndex+1) % +cellCount}"]`).clientHeight
+            }) 
+            document.querySelectorAll(`.main-carousel__text-item_texts .text`).forEach(item => {
+                item.classList.remove('isActive');
+            })
+            document.querySelector(`.main-carousel__text-item_texts .text[data-text-id="${(selectedIndex+1) % +cellCount}"]`).classList.add('isActive');
+            gsap.to(document.querySelectorAll(`.main-carousel__text-item_texts`), {
+                height: document.querySelector(`.main-carousel__text-item_texts .text[data-text-id="${(selectedIndex+1) % +cellCount}"]`).clientHeight
+            }) 
             // document.querySelector(`.main-carousel__text-item_titles .title[data-title-id="${selectedIndex}"]`).classList.add('isActive');
         }
 
