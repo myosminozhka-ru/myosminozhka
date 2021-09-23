@@ -41,6 +41,7 @@
         margin-bottom: vw(70);
         display: flex;
         align-items: center;
+        overflow: auto;
     }
     &:not(.mobile) &-buttons {
         margin-bottom: vw(70);

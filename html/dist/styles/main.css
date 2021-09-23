@@ -4078,6 +4078,7 @@ a:hover {
   margin-bottom: 3.64583vw;
   display: flex;
   align-items: center;
+  overflow: auto;
 }
 
 .news-and-trends:not(.mobile) .news-and-trends-buttons {
@@ -8734,7 +8735,7 @@ body.company .company-ceo:not(.mobile) {
   }
 }
 
-@media all and (min-width: 1281px) {
+@media all and (min-width: 1024px) {
   h1 {
     font-size: 13.02083vw;
     line-height: 13.02083vw;

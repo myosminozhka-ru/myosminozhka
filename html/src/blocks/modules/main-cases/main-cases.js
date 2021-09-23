@@ -72,22 +72,6 @@ const mainCases = class MainCases {
                 });
             }, 1000);
         } else {}
-        // ScrollTrigger.matchMedia({
-        //     "(min-width: 1281px)": () => {
-        //         gsap.utils.toArray(".main-cases-item").forEach((item, i) => {
-        //             gsap.to(item, {
-        //                 scrollTrigger: {
-        //                     trigger: item,
-        //                     start: 'top+=400 top+=400',
-        //                     end: 'bottom+=400 top+=400',
-        //                     scrub: 3,
-        //                     // markers: true
-        //                 },
-        //                 x: '-110vw',
-        //             })
-        //         })
-        //     }
-        // });
     }
 }
 

@@ -16,7 +16,7 @@ const companyRaiting = class companyRaiting {
     }
     scrollTriggers() {
         ScrollTrigger.matchMedia({
-            "(min-width: 1281px)": () => {
+            "(min-width: 1024px)": () => {
                 if (!document.querySelector('.company-raiting-items')) return;
                 let triggersWrap = document.querySelector('.company-raiting-items');
                 document.querySelector('.company-raiting').addEventListener('mousemove', event => {

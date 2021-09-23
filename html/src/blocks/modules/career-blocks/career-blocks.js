@@ -9,21 +9,13 @@ const careerBlocks = class careerBlocks {
     animateItems() {
         if (!document.querySelector('.career-blocks-item')) return;
         ScrollTrigger.matchMedia({
-            "(min-width: 1281px)": () => {
+            "(min-width: 1024px)": () => {
                 gsap.utils.toArray(".career-blocks-item").forEach((item, i) => {
                     ScrollTrigger.create({
                         trigger: item,
                         start: "top top",
                         pin: true,
                         pinSpacing: false,
-                        // onUpdate: (item) => {
-                        //     // item.progress * 200
-                        //     gsap.to(item.trigger.querySelector('.career-blocks-left'), 0, {
-                        //         y: () => {
-                        //             return 100 - item.progress * 200 + '%';
-                        //         }
-                        //     })
-                        // }
                     });
                 });
             }

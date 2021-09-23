@@ -13,7 +13,7 @@ ul {
   font-weight: bold;
 }
 h1 {
-  @media all and (min-width: 1281px) {
+  @media all and (min-width: 1024px) {
     font-size: vw(250);
     line-height: vw(250);
   }
@@ -31,7 +31,7 @@ h3 {
   line-height: vw(100);
 }
 h4 {
-  @media all and (min-width: 1281px) {
+  @media all and (min-width: 1024px) {
     font-size: vw(70);
     line-height: vw(70);
   }
@@ -85,7 +85,7 @@ html {
   overflow: hidden;
   cursor: pointer;
   @extend %block;
-  @media all and (min-width: 1281px) {
+  @media all and (min-width: 1024px) {
     border-radius: vw(10);
     padding: vw(30) vw(60);
     font-size: vw(25);

@@ -186,21 +186,13 @@ var careerBlocks = /*#__PURE__*/function () {
     value: function animateItems() {
       if (!document.querySelector('.career-blocks-item')) return;
       gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__["ScrollTrigger"].matchMedia({
-        "(min-width: 1281px)": function minWidth1281px() {
+        "(min-width: 1024px)": function minWidth1024px() {
           gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].utils.toArray(".career-blocks-item").forEach(function (item, i) {
             gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__["ScrollTrigger"].create({
               trigger: item,
               start: "top top",
               pin: true,
-              pinSpacing: false // onUpdate: (item) => {
-              //     // item.progress * 200
-              //     gsap.to(item.trigger.querySelector('.career-blocks-left'), 0, {
-              //         y: () => {
-              //             return 100 - item.progress * 200 + '%';
-              //         }
-              //     })
-              // }
-
+              pinSpacing: false
             });
           });
         }
@@ -544,7 +536,7 @@ var companyRaiting = /*#__PURE__*/function () {
     key: "scrollTriggers",
     value: function scrollTriggers() {
       gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__["ScrollTrigger"].matchMedia({
-        "(min-width: 1281px)": function minWidth1281px() {
+        "(min-width: 1024px)": function minWidth1024px() {
           if (!document.querySelector('.company-raiting-items')) return;
           var triggersWrap = document.querySelector('.company-raiting-items');
           document.querySelector('.company-raiting').addEventListener('mousemove', function (event) {
@@ -1884,23 +1876,7 @@ var mainCases = /*#__PURE__*/function () {
             x: 0
           });
         }, 1000);
-      } else {} // ScrollTrigger.matchMedia({
-      //     "(min-width: 1281px)": () => {
-      //         gsap.utils.toArray(".main-cases-item").forEach((item, i) => {
-      //             gsap.to(item, {
-      //                 scrollTrigger: {
-      //                     trigger: item,
-      //                     start: 'top+=400 top+=400',
-      //                     end: 'bottom+=400 top+=400',
-      //                     scrub: 3,
-      //                     // markers: true
-      //                 },
-      //                 x: '-110vw',
-      //             })
-      //         })
-      //     }
-      // });
-
+      } else {}
     }
   }]);
 
@@ -1960,23 +1936,7 @@ var newsAndTrends = /*#__PURE__*/function () {
             perView: 1
           }
         }
-      }).mount(); // gsap.to('.news-and-trends-trigger', {
-      //     scrollTrigger: {
-      //         trigger: '.news-and-trends-trigger',
-      //         start: 'top top',
-      //         end: 'bottom bottom',
-      //         scrub: 1,
-      //         // markers: true,
-      //         pin: true,
-      //         pinSpacing: false,
-      //         onUpdate: (item) => {
-      //             if (this.slider.index === Math.round(+item.progress * 100 / +this.sliderItems.length)) return;
-      //             this.slider.go(`=${Math.round(+item.progress * 100 / +this.sliderItems.length)}`)
-      //             console.log(Math.round(+item.progress * 100 / +this.sliderItems.length));
-      //         }
-      //     },
-      //     x: '0',
-      // });
+      }).mount();
     }
   }, {
     key: "init",
