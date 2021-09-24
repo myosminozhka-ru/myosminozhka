@@ -462,10 +462,12 @@
                 
 <section class="news-and-trends" :class="{'mobile': window.width <=1023}">
     <h4 class="news-and-trends-title">Новости и тренды</h4>
-    <div class="news-and-trends-buttons">
-        <button class="news-and-trends-button news-and-trends-button__main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><span>Тренды</span></button>
-        <button class="news-and-trends-button news-and-trends-button__mint" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><span>Новости</span></button>
-        <button class="news-and-trends-button news-and-trends-button__green" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><span>Тренды</span></button>
+    <div class="news-and-trends-buttons__wrap">
+        <div class="news-and-trends-buttons">
+            <button class="news-and-trends-button news-and-trends-button__main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><span>Тренды</span></button>
+            <button class="news-and-trends-button news-and-trends-button__mint" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><span>Новости</span></button>
+            <button class="news-and-trends-button news-and-trends-button__green" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><span>Тренды</span></button>
+        </div>
     </div>
     <div class="news-and-trends-items">
         <div class="news-and-trends-right">

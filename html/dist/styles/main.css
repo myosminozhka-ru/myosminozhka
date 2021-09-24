@@ -4074,11 +4074,20 @@ a:hover {
   padding: 0 20px;
 }
 
+.news-and-trends-buttons__wrap {
+  width: 100%;
+  overflow: auto;
+}
+
+.news-and-trends-buttons__wrap::-webkit-scrollbar {
+  height: 0;
+}
+
 .news-and-trends-buttons {
   margin-bottom: 3.64583vw;
   display: flex;
   align-items: center;
-  overflow: auto;
+  width: max-content;
 }
 
 .news-and-trends:not(.mobile) .news-and-trends-buttons {
@@ -6829,13 +6838,22 @@ body.company .company-ceo.mobile {
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
-  overflow: auto;
+  width: max-content;
   margin: 0 -20px 50px;
   padding-left: 20px;
   padding-right: 20px;
 }
 
 .blog-items.mobile .blog-items-buttons::-webkit-scrollbar {
+  height: 0;
+}
+
+.blog-items-buttons__wrap {
+  width: 100%;
+  overflow: auto;
+}
+
+.blog-items-buttons__wrap::-webkit-scrollbar {
   height: 0;
 }
 
@@ -8754,14 +8772,6 @@ body.company .company-ceo:not(.mobile) {
   }
 }
 
-@media all and (max-width: 1080px) {
-  .footer-tentacle {
-    bottom: calc(100% - 380px);
-    transform: rotateY(180deg);
-    z-index: 3;
-  }
-}
-
 @media all and (max-width: 1024px) {
   html:root body.posts .post_info {
     background-size: 130%;
@@ -8847,6 +8857,12 @@ body.company .company-ceo:not(.mobile) {
 
   .footer-tentacle {
     bottom: calc(100% - 450px);
+    transform: rotateY(180deg);
+    z-index: 3;
+  }
+
+  .footer-tentacle {
+    bottom: calc(100% - 380px);
     transform: rotateY(180deg);
     z-index: 3;
   }

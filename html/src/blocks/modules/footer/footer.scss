@@ -24,7 +24,7 @@
             z-index: 3;
         }
     }
-    @media all and (max-width: 1080px) {
+    @media all and (max-width: 1023px) {
         &-tentacle {
             bottom: calc(100% - 380px);
             transform: rotateY(180deg);

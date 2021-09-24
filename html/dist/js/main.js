@@ -1835,18 +1835,8 @@ var mainCases = /*#__PURE__*/function () {
         this.destroyMobileSlider();
       }
 
-      if (window.innerWidth > 1023) {
+      if (window.innerWidth > 1024) {
         setTimeout(function () {
-          // gsap.to('.main-cases-bg', {
-          //     scrollTrigger: {
-          //         trigger: '.news-and-trends-trigger',
-          //         start: 'top+=500 top+=500',
-          //         end: 'bottom+=500 top+=500',
-          //         scrub: 3,
-          //         // markers: true
-          //     },
-          //     top: -100,
-          // });
           gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.main-cases-items-in', {
             scrollTrigger: {
               trigger: '.main-cases',
@@ -1876,7 +1866,38 @@ var mainCases = /*#__PURE__*/function () {
             x: 0
           });
         }, 1000);
-      } else {}
+      } else {
+        setTimeout(function () {
+          gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.main-cases-items-in', {
+            scrollTrigger: {
+              trigger: '.main-cases',
+              start: 'top top',
+              end: 'bottom bottom',
+              scrub: 3,
+              // markers: true,
+              onUpdate: function onUpdate(item) {
+                if (item.progress > 0.05 && item.progress < 0.65) {
+                  document.querySelector('.main-cases-items-in').classList.add('isInViewport');
+                } else {
+                  document.querySelector('.main-cases-items-in').classList.remove('isInViewport');
+                }
+              }
+            },
+            x: '-100%'
+          });
+          gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.main-cases', {
+            scrollTrigger: {
+              trigger: '.main-cases',
+              start: 'top top',
+              end: 'bottom bottom',
+              pin: true,
+              pinSpacing: false // markers: true
+
+            },
+            x: 0
+          });
+        }, 1000);
+      }
     }
   }]);
 

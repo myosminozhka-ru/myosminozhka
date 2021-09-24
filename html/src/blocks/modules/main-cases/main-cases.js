@@ -30,18 +30,8 @@ const mainCases = class MainCases {
             this.destroyMobileSlider();
         }
          
-         if (window.innerWidth > 1023) {
+         if (window.innerWidth > 1024) {
             setTimeout(() => {
-                // gsap.to('.main-cases-bg', {
-                //     scrollTrigger: {
-                //         trigger: '.news-and-trends-trigger',
-                //         start: 'top+=500 top+=500',
-                //         end: 'bottom+=500 top+=500',
-                //         scrub: 3,
-                //         // markers: true
-                //     },
-                //     top: -100,
-                // });
                 gsap.to('.main-cases-items-in', {
                     scrollTrigger: {
                         trigger: '.main-cases',
@@ -71,7 +61,38 @@ const mainCases = class MainCases {
                     x: 0,
                 });
             }, 1000);
-        } else {}
+        } else {
+            setTimeout(() => {
+                gsap.to('.main-cases-items-in', {
+                    scrollTrigger: {
+                        trigger: '.main-cases',
+                        start: 'top top',
+                        end: 'bottom bottom',
+                        scrub: 3,
+                        // markers: true,
+                        onUpdate: (item) => {
+                            if (item.progress > 0.05 && item.progress < 0.65) {
+                                document.querySelector('.main-cases-items-in').classList.add('isInViewport');
+                            } else {
+                                document.querySelector('.main-cases-items-in').classList.remove('isInViewport');
+                            }
+                        }
+                    },
+                    x: '-100%',
+                });
+                gsap.to('.main-cases', {
+                    scrollTrigger: {
+                        trigger: '.main-cases',
+                        start: 'top top',
+                        end: 'bottom bottom',
+                        pin: true,
+                        pinSpacing: false,
+                        // markers: true
+                    },
+                    x: 0,
+                });
+            }, 1000);
+        }
     }
 }
 
