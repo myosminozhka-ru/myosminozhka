@@ -187,7 +187,7 @@ window.app = new Vue({
                         trigger: item.closest('section'),
                         start: 'top center',
                         end: `top+=${window.innerHeight} top+=${window.innerHeight}`,
-                        markers: true,
+                        // markers: true,
                         onUpdate: (item) => {
                             console.log(item)
                             gsap.to(item.trigger.querySelector('.animated-title'), 1, {

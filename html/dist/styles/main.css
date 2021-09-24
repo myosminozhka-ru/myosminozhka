@@ -3523,7 +3523,7 @@ a:hover {
 }
 
 .main-question:not(.mobile).dropped {
-  margin-bottom: -5.20833vw;
+  margin-bottom: -7.29167vw;
 }
 
 .main-question.mobile {
@@ -4749,6 +4749,10 @@ a:hover {
   text-transform: uppercase;
   margin-bottom: 2.08333vw;
   margin-left: -0.20833vw;
+}
+
+.main-resume.mobile .main-resume-title {
+  word-wrap: break-word;
 }
 
 .career .footer:not(.mobile) .footer-tentacle {
@@ -6868,10 +6872,14 @@ body.company .company-ceo.mobile {
 }
 
 .blog-items:not(.mobile) .blog-items-post {
-  text-decoration: none;
+  text-decoration: none !important;
   display: flex;
   flex-direction: column;
   max-height: 100%;
+}
+
+.blog-items:not(.mobile) .blog-items-post:hover {
+  text-decoration: none !important;
 }
 
 .blog-items:not(.mobile) .blog-items-post:nth-child(6n+1),
@@ -6962,6 +6970,7 @@ body.company .company-ceo.mobile {
 
 .blog-items.mobile .blog-items-post {
   text-decoration: none;
+  display: block;
 }
 
 .blog-items.mobile .blog-items-post:not(:last-child) {
@@ -7148,8 +7157,8 @@ body.company .company-ceo.mobile {
 }
 
 .contacts-info.mobile .contacts-info-phones a {
-  font-size: 30px;
-  line-height: 30px;
+  font-size: 29px;
+  line-height: 29px;
 }
 
 .contacts-info.mobile .contacts-info-phones a:not(:last-child) {
@@ -7344,6 +7353,7 @@ body.company .company-ceo.mobile {
   display: flex;
   align-items: center;
   padding-left: 0;
+  width: max-content;
 }
 
 .cases-items.mobile .cases-items-buttons::-webkit-scrollbar {
@@ -8794,6 +8804,14 @@ body.company .company-ceo:not(.mobile) {
     font-size: 25px;
     line-height: 25px;
     border-radius: 10px;
+  }
+
+  .hh_block {
+    margin-bottom: 20px;
+  }
+
+  .hh_block__img {
+    flex: 0 0 60px;
   }
 
   html body.posts .career-first-date {

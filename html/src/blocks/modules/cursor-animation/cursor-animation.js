@@ -84,7 +84,7 @@ const cursorAnimation = class CursorAnimation {
         this.createCanvas().then(() => {
             this.onInit()
         }).catch(error => {
-            console.warn(error)
+            // console.warn(error)
         });
     }
     onInit() {

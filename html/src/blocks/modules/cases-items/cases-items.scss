@@ -111,6 +111,7 @@
             display: flex;
             align-items: center;
             padding-left: 0;
+            width: max-content;
             &::-webkit-scrollbar {
                 display: none;
             }

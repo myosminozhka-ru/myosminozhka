@@ -930,8 +930,7 @@ var cursorAnimation = /*#__PURE__*/function () {
 
       this.createCanvas().then(function () {
         _this3.onInit();
-      })["catch"](function (error) {
-        console.warn(error);
+      })["catch"](function (error) {// console.warn(error)
       });
     }
   }, {
@@ -1888,7 +1887,7 @@ var mainCases = /*#__PURE__*/function () {
           gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.main-cases', {
             scrollTrigger: {
               trigger: '.main-cases',
-              start: 'top top',
+              start: 'top top-=100',
               end: 'bottom bottom',
               pin: true,
               pinSpacing: false // markers: true
@@ -2587,7 +2586,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
             trigger: item.closest('section'),
             start: 'top center',
             end: "top+=".concat(window.innerHeight, " top+=").concat(window.innerHeight),
-            markers: true,
+            // markers: true,
             onUpdate: function onUpdate(item) {
               console.log(item);
               gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item.trigger.querySelector('.animated-title'), 1, {

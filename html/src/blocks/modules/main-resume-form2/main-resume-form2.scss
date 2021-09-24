@@ -38,4 +38,10 @@
         font-size: vw(30);
         line-height: 40px;
     }
+    @media all and (max-width: 1023px) {
+        margin-bottom: 20px;
+        &__img {
+            flex: 0 0 60px;
+        }
+    }
 }

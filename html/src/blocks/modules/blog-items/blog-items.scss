@@ -40,10 +40,13 @@
         }
     }
     &:not(.mobile) &-post {
-        text-decoration: none;
+        text-decoration: none !important;
         display: flex;
         flex-direction: column;
         max-height: 100%;
+        &:hover {
+            text-decoration: none !important;
+        }
         &:nth-child(6n+1),
         &:nth-child(6n+4) {
             grid-column-start: 1;
@@ -118,6 +121,7 @@
     }
     &.mobile &-post {
         text-decoration: none;
+        display: block;
         &:not(:last-child) {
             margin-bottom: 60px;
         }

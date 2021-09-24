@@ -4,8 +4,12 @@
     <div class="glide career-blog-items">
         <div class="career-blog-buttons">
             <div class="career-blog-buttons-left">
-                <button class="news-and-trends-button news-and-trends-button__main">Команда</button>
-                <button class="news-and-trends-button news-and-trends-button__mint">Разработка</button>
+                <button class="news-and-trends-button news-and-trends-button__main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
+                    <span>Команда</span>
+                </button>
+                <button class="news-and-trends-button news-and-trends-button__mint" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
+                    <span>Разработка</span>
+                </button>
             </div>
             <div data-glide-el="controls" class="glide__arrows company-reviews-arrows">
                 <button data-glide-dir="<" class="company-reviews-arrow company-reviews-arrow--prev">
