@@ -6169,6 +6169,7 @@ body.company .company-ceo.mobile {
 .career-first:not(.mobile) {
   padding-top: 5.26042vw;
   padding-bottom: 5.67708vw;
+  margin-bottom: -1px;
 }
 
 .career-first.mobile {
