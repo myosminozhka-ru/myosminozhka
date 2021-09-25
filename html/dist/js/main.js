@@ -2452,7 +2452,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
         width: window.innerWidth,
         height: window.innerHeight
       }
-    }), _ref;
+    }), _defineProperty(_ref, "isSafary", false), _ref;
   },
   mounted: function mounted() {
     var _this = this;
@@ -2533,6 +2533,8 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       });
 
       _this.animateTitles();
+
+      _this.isSafary = navigator.userAgent.toLowerCase().indexOf('safari/') > -1;
     }, 250);
   },
   computed: {

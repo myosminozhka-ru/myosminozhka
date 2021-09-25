@@ -81,7 +81,8 @@ window.app = new Vue({
                 width: window.innerWidth,
                 height: window.innerHeight
             }
-        }
+        },
+        isSafary: false
     }),
     mounted() {
         setTimeout(() => {
@@ -132,6 +133,7 @@ window.app = new Vue({
                 text: 'ИНН/КПП: 6317139806/631701001 Банк: АО "Тинькофф Банк" БИК: 044525974 Р/С: 40702810010000559615 Р/С: 40702810010000559615'
             }))
             this.animateTitles();
+            this.isSafary = navigator.userAgent.toLowerCase().indexOf('safari/') > -1;
         }, 250);
     },
     computed: {
