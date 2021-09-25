@@ -84,7 +84,7 @@ html {
   text-align: center;
   overflow: hidden;
   -webkit-overflow: hidden;
-  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-transform: rotate(0.000001deg);
   cursor: pointer;
   @extend %block;
   @media all and (min-width: 1024px) {
