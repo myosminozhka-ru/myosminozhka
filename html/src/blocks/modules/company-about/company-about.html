@@ -4,7 +4,8 @@
             <div class="company-about-title" v-if="window.width > 1023"></div>
             <div class="company-about-title" v-if="window.width <= 1023">О нас</div>
             <div class="company-about-tentacle" v-if="window.width <= 1023">
-                <img src="img/svg/tentacle.svg" width="100%" alt="">
+                <img src="img/svg/tentacle_static.svg" width="100%" alt="" v-if="isSafary">
+        <img src="img/svg/tentacle.svg" width="100%" alt="" v-else>
             </div>
             @@for (var i = 0; i < 13; i++) {
                 <div class="company-about-image">
@@ -19,7 +20,8 @@
                 О нас
             </div>
             <!-- <div class="company-about-tentacle" v-if="window.width <= 1023">
-                <img src="img/svg/tentacle.svg" width="100%" alt="">
+                <img src="img/svg/tentacle_static.svg" width="100%" alt="" v-if="isSafary">
+        <img src="img/svg/tentacle.svg" width="100%" alt="" v-else>
             </div>
             @@for (var i = 0; i < 13; i++) {
                 <div class="company-about-image">
