@@ -5280,7 +5280,6 @@ a:hover {
 
 .company-raiting:not(.mobile) {
   margin-top: -25.26042vw;
-  mix-blend-mode: difference;
 }
 
 .company-raiting:not(.mobile)-title {
@@ -5596,7 +5595,7 @@ a:hover {
 .company-raiting-title {
   text-transform: uppercase;
   mix-blend-mode: exclusion;
-  color: #c7c7c7;
+  color: #7c7c7c;
 }
 
 .company-raiting:not(.mobile) .company-raiting-title {
