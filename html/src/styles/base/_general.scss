@@ -218,9 +218,11 @@ a {
     text-decoration: underline !important;
   }
 }
-
+.wrapper {
+  overflow: hidden;
+}
 .animated-title {
-  transform: translateX(100%);
+  transform: translateX(120%);
   width: max-content;
   min-width: 100%;
   // @media all and (max-width: 1023px) {

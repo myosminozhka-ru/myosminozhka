@@ -2755,8 +2755,12 @@ a:hover {
   text-decoration: underline !important;
 }
 
+.wrapper {
+  overflow: hidden;
+}
+
 .animated-title {
-  transform: translateX(100%);
+  transform: translateX(120%);
   width: max-content;
   min-width: 100%;
 }
@@ -6166,10 +6170,13 @@ body.company .company-ceo.mobile {
   text-decoration: none !important;
 }
 
+.career-first {
+  margin-bottom: -1px;
+}
+
 .career-first:not(.mobile) {
   padding-top: 5.26042vw;
   padding-bottom: 5.67708vw;
-  margin-bottom: -1px;
 }
 
 .career-first.mobile {

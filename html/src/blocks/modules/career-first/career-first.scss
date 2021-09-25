@@ -1,8 +1,9 @@
-.career-first {    
+.career-first {  
+    margin-bottom: -1px;  
     &:not(.mobile) {
         padding-top: vw(101);
         padding-bottom: vw(109);
-        margin-bottom: -1px;
+        
     }
     &.mobile {
         padding-top: 110px;
