@@ -2604,6 +2604,7 @@ html {
   background: #fff;
   border-radius: 1000%;
   transform-origin: 50% 50%;
+  will-change: width, height;
 }
 
 /* width */
@@ -8003,6 +8004,15 @@ html:root body.posts .post_info__code--in {
 
 .job-stages-arrow--prev {
   transform: rotate(180deg);
+}
+
+.job-stages.mobile .job-stages-arrows {
+  border: none;
+}
+
+.job-stages.mobile .job-stages-arrow {
+  width: 89px;
+  height: 38px;
 }
 
 .job-stages-item {

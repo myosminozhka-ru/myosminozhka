@@ -143,6 +143,14 @@
             transform: rotate(180deg);
         }
     }
+    &.mobile &-arrows {
+        border: none;
+    }
+    &.mobile &-arrow {
+        width: 89px;
+        height: 38px;
+
+    }
     &-item {
         display: flex;
     }
