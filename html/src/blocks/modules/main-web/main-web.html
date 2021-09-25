@@ -1,6 +1,7 @@
 <section class="web" v-if="window.width > 1023">
     <div class="web-tentacle">
-        <img src="img/svg/tentacle.svg" width="100%" alt="">
+        <img src="img/svg/tentacle_static.svg" width="100%" alt="" v-if="isSafary">
+        <img src="img/svg/tentacle.svg" width="100%" alt="" v-else>
     </div>
     <div class="web-data">
         <div class="web-data-in">

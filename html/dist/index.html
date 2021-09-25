@@ -32,7 +32,6 @@
     </head>
     <body class="main">
         <div class="wrapper" id="app">
-            {{ this.isSafary }}
             <!-- TODO добавить анимацию наведения на пункт меню https://codepen.io/mburakerman/pen/xpZJYL -->
             <!-- TODO добавить кружок двигающийся за мышью https://kota.co.uk/contact -->
             <header class="header" :class="{'isOpened': header.isOpened, 'mobile': window.width <=1023}">
@@ -111,7 +110,8 @@
             </div>
             <section class="web" v-if="window.width > 1023">
     <div class="web-tentacle">
-        <img src="img/svg/tentacle.svg" width="100%" alt="">
+        <img src="img/svg/tentacle_static.svg" width="100%" alt="" v-if="isSafary">
+        <img src="img/svg/tentacle.svg" width="100%" alt="" v-else>
     </div>
     <div class="web-data">
         <div class="web-data-in">
