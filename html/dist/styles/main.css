@@ -7439,7 +7439,6 @@ body.company .company-ceo.mobile {
 }
 
 .job-info-title {
-  margin-bottom: 1.5625vw;
   font-weight: normal;
   font-size: 1.5625vw;
   line-height: 1.5625vw;
@@ -7453,6 +7452,10 @@ body.company .company-ceo.mobile {
   text-transform: uppercase;
   margin-top: 2.08333vw;
   margin-bottom: 2.08333vw;
+}
+
+.job-info:not(.mobile) .job-info-title {
+  margin-bottom: 1.5625vw;
 }
 
 .job-info.mobile .job-info-title {

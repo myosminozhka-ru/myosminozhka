@@ -27,7 +27,6 @@
         align-items: center;
     }
     &-title {
-        margin-bottom: vw(30);
         font-weight: normal;
         font-size: vw(30);
         line-height: vw(30);
@@ -43,6 +42,9 @@
             margin-bottom: vw(40);
         }
     }
+    &:not(.mobile) &-title {
+        margin-bottom: vw(30);
+    } 
     &.mobile &-title {
         white-space: nowrap;
         font-size: 13px;
