@@ -83,6 +83,8 @@ html {
   text-decoration: none;
   text-align: center;
   overflow: hidden;
+  -webkit-overflow: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
   cursor: pointer;
   @extend %block;
   @media all and (min-width: 1024px) {
@@ -120,7 +122,9 @@ html {
     width: 0;
     height: 0;
     background: #fff;
-    border-radius: 1000%;
+    border-radius:50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
     transform-origin: 50% 50%;
     will-change: width, height;
     // transform: translateX(-200px) translateY(-200px);
