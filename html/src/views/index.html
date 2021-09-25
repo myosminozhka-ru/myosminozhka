@@ -31,8 +31,8 @@
         <link rel="stylesheet" href="styles/main.css">
     </head>
     <body class="main">
-        <template v-if="navigator.userAgent.toLowerCase().indexOf('safari/') > -1">safary</template>
         <div class="wrapper" id="app">
+            <template v-if="navigator.userAgent.toLowerCase().indexOf('safari/') > -1">safary</template>
             <!-- TODO добавить анимацию наведения на пункт меню https://codepen.io/mburakerman/pen/xpZJYL -->
             <!-- TODO добавить кружок двигающийся за мышью https://kota.co.uk/contact -->
             @@include("../blocks/modules/header/header.html")
