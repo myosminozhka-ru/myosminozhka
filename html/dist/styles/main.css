@@ -7908,6 +7908,7 @@ html:root body.posts .post_info__code--in {
 
 .job-stages-trigger .button-circle {
   background: #4f4f4f;
+  border-radius: 50%;
   z-index: 1;
 }
 

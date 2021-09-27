@@ -58,6 +58,7 @@
         overflow: hidden;
         .button-circle {
             background: $bgColor;
+            border-radius: 50%;
             z-index: 1;
         }
         &.isActive {
