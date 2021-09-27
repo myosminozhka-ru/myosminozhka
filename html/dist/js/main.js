@@ -779,19 +779,24 @@ var companyVideo = /*#__PURE__*/function () {
   _createClass(companyVideo, [{
     key: "init",
     value: function init() {
+      var _this = this;
+
       if (!document.getElementById('player')) return;
-      this.player = document.getElementById('player');
-      var video = Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player', {
-        fluid: true,
-        controls: false,
-        autoplay: true,
-        aspectRatio: '16:9',
-        poster: 'img/video_preview.png',
-        sources: [{
-          src: 'videos/pv.mp4',
-          type: 'video/mp4'
-        }]
-      });
+      setTimeout(function () {
+        _this.player = document.getElementById('player');
+        Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player', {
+          fluid: true,
+          controls: false,
+          autoplay: true,
+          aspectRatio: '16:9',
+          muted: true,
+          poster: 'img/video_preview.png',
+          sources: [{
+            src: 'videos/pv.mp4',
+            type: 'video/mp4'
+          }]
+        });
+      }, 300);
     }
   }]);
 
@@ -2535,7 +2540,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 
       _this.animateTitles();
 
-      _this.isSafary = navigator.userAgent.toLowerCase().indexOf('safari/') > -1;
+      _this.isSafary = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
     }, 250);
   },
   computed: {
@@ -2592,9 +2597,16 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
             // markers: true,
             onUpdate: function onUpdate(item) {
               console.log(-item.progress * 200 + 100);
-              gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item.trigger.querySelector('.animated-title'), 1, {
-                transform: "translate(".concat(-item.progress * 200 + 100, "%)")
-              });
+
+              if (item.progress > 0.1) {
+                gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item.trigger.querySelector('.animated-title'), 1, {
+                  transform: "translateX(".concat(-item.progress * 200 + 100, "%)")
+                });
+              } else {
+                gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item.trigger.querySelector('.animated-title'), 1, {
+                  transform: "translateX(200%)"
+                });
+              }
             }
           },
           opacity: '1'

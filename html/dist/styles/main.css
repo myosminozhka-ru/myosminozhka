@@ -3090,7 +3090,7 @@ a:hover {
 .web-data-in {
   width: 100%;
   padding-left: 2.60417vw;
-  padding-right: 10.41667vw;
+  padding-right: 7.8125vw;
   box-sizing: border-box;
   height: 300px;
 }
@@ -8136,7 +8136,7 @@ html:root body.posts .post_info__code--in {
   right: 0;
   top: 0;
   height: 12.55208vw;
-  background: #fff url("../img/svg/support_top.svg") 0 0/calc(100% - 52.60417vw) no-repeat;
+  background: #fff url("../img/svg/support_top.svg") 0 0/calc(100% - 50vw) no-repeat;
 }
 
 .job-stages:not(.mobile) .job-stages-support::after {
@@ -8148,7 +8148,7 @@ html:root body.posts .post_info__code--in {
   bottom: -1px;
   height: 12.55208vw;
   transform: rotateX(180deg);
-  background: #fff url("../img/svg/support_top.svg") 0 0/calc(100% - 52.60417vw) no-repeat;
+  background: #fff url("../img/svg/support_top.svg") 0 0/calc(100% - 50vw) no-repeat;
 }
 
 .job-stages-support-left {
@@ -8554,6 +8554,11 @@ html:root body.posts .post_info__code--in {
 
 .footer:not(.mobile) .footer-info .text {
   width: calc(100% - 3.07292vw);
+}
+
+.footer:not(.mobile) .footer-info .text a,
+.footer:not(.mobile) .footer-info .text div,
+.footer:not(.mobile) .footer-info .text span {
   font-weight: 500;
   font-size: 1.5625vw;
   line-height: 2.34375vw;

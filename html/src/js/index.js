@@ -133,7 +133,7 @@ window.app = new Vue({
                 text: 'ИНН/КПП: 6317139806/631701001 Банк: АО "Тинькофф Банк" БИК: 044525974 Р/С: 40702810010000559615 Р/С: 40702810010000559615'
             }))
             this.animateTitles();
-            this.isSafary = navigator.userAgent.toLowerCase().indexOf('safari/') > -1;
+            this.isSafary = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
         }, 250);
     },
     computed: {
@@ -192,9 +192,15 @@ window.app = new Vue({
                         // markers: true,
                         onUpdate: (item) => {
                             console.log(-item.progress * 200 + 100)
-                            gsap.to(item.trigger.querySelector('.animated-title'), 1, {
-                                transform: `translate(${-item.progress * 200 + 100}%)`
-                            })
+                            if (item.progress > 0.1) {
+                                gsap.to(item.trigger.querySelector('.animated-title'), 1, {
+                                    transform: `translateX(${-item.progress * 200 + 100}%)`
+                                })
+                            } else {
+                                gsap.to(item.trigger.querySelector('.animated-title'), 1, {
+                                    transform: `translateX(200%)`
+                                })
+                            }
                         }
                     },
                     opacity: '1'

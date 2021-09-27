@@ -141,9 +141,11 @@
         }
         .text {
             width: calc(100% - #{vw(59)});
-            font-weight: 500;
-            font-size: vw(30);
-            line-height: vw(45);
+            a, div, span {
+                font-weight: 500;
+                font-size: vw(30);
+                line-height: vw(45);
+            }
         }
     }
     &.mobile &-info {
