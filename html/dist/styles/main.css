@@ -3791,7 +3791,7 @@ a:hover {
 .main-carousel:not(.mobile) .main-carousel__title {
   font-size: 10.41667vw;
   line-height: 10.41667vw;
-  margin-bottom: 27.08333vw;
+  margin-bottom: 21.875vw;
 }
 
 .main-carousel.mobile .main-carousel__title {
@@ -3815,7 +3815,7 @@ a:hover {
   position: absolute;
   bottom: 0;
   width: 27.60417vw;
-  height: 43.02083vw;
+  height: 32.60417vw;
 }
 
 .main-carousel.mobile .main-carousel-scene {

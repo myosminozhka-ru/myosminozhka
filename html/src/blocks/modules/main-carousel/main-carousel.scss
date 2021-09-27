@@ -18,7 +18,7 @@
     &:not(.mobile) &__title {
         font-size: vw(200);
         line-height: vw(200);
-        margin-bottom: vw(520);
+        margin-bottom: vw(420);
     }
     &.mobile &__title {
         position: relative;
@@ -46,7 +46,7 @@
         position: absolute;
         bottom: 0;
         width: vw(530);
-        height: vw(826);
+        height: vw(626);
     }
     &.mobile &-scene {
         width: 70%;
