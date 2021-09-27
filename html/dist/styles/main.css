@@ -8556,6 +8556,7 @@ html:root body.posts .post_info__code--in {
   width: calc(100% - 3.07292vw);
 }
 
+.footer:not(.mobile) .footer-info .text,
 .footer:not(.mobile) .footer-info .text a,
 .footer:not(.mobile) .footer-info .text div,
 .footer:not(.mobile) .footer-info .text span {
@@ -8711,11 +8712,6 @@ html:root body.posts .post_info__code--in {
 .footer-bank:hover .copy {
   opacity: 1;
   visibility: visible;
-}
-
-.footer-bank .text div {
-  font-size: inherit;
-  font-family: inherit;
 }
 
 .footer:not(.mobile) .footer-bank {

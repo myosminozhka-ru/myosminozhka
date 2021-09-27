@@ -141,7 +141,7 @@
         }
         .text {
             width: calc(100% - #{vw(59)});
-            a, div, span {
+            &, a, div, span {
                 font-weight: 500;
                 font-size: vw(30);
                 line-height: vw(45);
@@ -282,10 +282,6 @@
         &:hover .copy {
             opacity: 1;
             visibility: visible;
-        }
-        .text div {
-            font-size: inherit;
-            font-family: inherit;
         }
     }
     &:not(.mobile) &-bank {
