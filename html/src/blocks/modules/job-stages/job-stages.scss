@@ -43,6 +43,7 @@
         &:hover {
             text-decoration: none !important;
         }
+        transform: translateZ(0);
         display: flex;
         flex-direction: column;
         justify-content: center;

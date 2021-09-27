@@ -2537,11 +2537,9 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
           text: 'ИНН/КПП: 6317139806/631701001 Банк: АО "Тинькофф Банк" БИК: 044525974 Р/С: 40702810010000559615 Р/С: 40702810010000559615'
         });
       });
-
-      _this.animateTitles();
-
       _this.isSafary = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
     }, 250);
+    setTimeout(this.animateTitles(), 500);
   },
   computed: {
     window: {
@@ -2593,17 +2591,17 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
           scrollTrigger: {
             trigger: item.closest('section'),
             start: 'top center',
-            end: "top+=".concat(window.innerHeight, " top+=").concat(window.innerHeight),
-            // markers: true,
+            end: "top-=".concat(window.innerHeight, " top-=").concat(window.innerHeight),
+            markers: true,
             onUpdate: function onUpdate(item) {
               console.log(-item.progress * 200 + 100);
 
               if (item.progress > 0.1) {
-                gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item.trigger.querySelector('.animated-title'), 1, {
+                gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item.trigger.querySelector('.animated-title'), 1.5, {
                   transform: "translateX(".concat(-item.progress * 200 + 100, "%)")
                 });
               } else {
-                gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item.trigger.querySelector('.animated-title'), 1, {
+                gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item.trigger.querySelector('.animated-title'), 1.5, {
                   transform: "translateX(200%)"
                 });
               }

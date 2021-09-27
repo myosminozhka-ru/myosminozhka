@@ -7883,6 +7883,7 @@ html:root body.posts .post_info__code--in {
 }
 
 .job-stages-trigger {
+  transform: translateZ(0);
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -132,9 +132,10 @@ window.app = new Vue({
             document.querySelector('.footer-bank .copy').addEventListener('click', () => this.footer.copyText({
                 text: 'ИНН/КПП: 6317139806/631701001 Банк: АО "Тинькофф Банк" БИК: 044525974 Р/С: 40702810010000559615 Р/С: 40702810010000559615'
             }))
-            this.animateTitles();
+            
             this.isSafary = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
         }, 250);
+        setTimeout(this.animateTitles(), 500)
     },
     computed: {
         window: {
@@ -188,16 +189,16 @@ window.app = new Vue({
                     scrollTrigger: {
                         trigger: item.closest('section'),
                         start: 'top center',
-                        end: `top+=${window.innerHeight} top+=${window.innerHeight}`,
-                        // markers: true,
+                        end: `top-=${window.innerHeight} top-=${window.innerHeight}`,
+                        markers: true,
                         onUpdate: (item) => {
                             console.log(-item.progress * 200 + 100)
                             if (item.progress > 0.1) {
-                                gsap.to(item.trigger.querySelector('.animated-title'), 1, {
+                                gsap.to(item.trigger.querySelector('.animated-title'), 1.5, {
                                     transform: `translateX(${-item.progress * 200 + 100}%)`
                                 })
                             } else {
-                                gsap.to(item.trigger.querySelector('.animated-title'), 1, {
+                                gsap.to(item.trigger.querySelector('.animated-title'), 1.5, {
                                     transform: `translateX(200%)`
                                 })
                             }
