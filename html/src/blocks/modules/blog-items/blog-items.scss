@@ -120,7 +120,7 @@
         }
     }
     &.mobile &-post {
-        text-decoration: none;
+        text-decoration: none !important;
         display: block;
         &:not(:last-child) {
             margin-bottom: 60px;

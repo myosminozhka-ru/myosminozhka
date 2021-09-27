@@ -30,11 +30,11 @@
     }
   }
   &.mobile &-tentacle {
-    bottom: -20%;
+    // bottom: -350px;
     pointer-events: none;
-    @media (orientation: landscape) {
-      bottom: -34%;
-    }
+    // @media (orientation: landscape) {
+    //   bottom: -34%;
+    // }
     img {
       height: 100%;
       width: 100%;

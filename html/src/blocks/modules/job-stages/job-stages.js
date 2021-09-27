@@ -17,6 +17,7 @@ const jobStages = class jobStages {
                 this.supportImagesSlider = new Glide('.job-stages-support-right', {
                     startAt: 0,
                     perView: 1,
+                    gap: 0,
                     type: 'carousel',
                     transitionType: 'fade'
                 })

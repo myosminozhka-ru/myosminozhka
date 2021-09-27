@@ -1234,6 +1234,7 @@ var jobStages = /*#__PURE__*/function () {
         this.supportImagesSlider = new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.job-stages-support-right', {
           startAt: 0,
           perView: 1,
+          gap: 0,
           type: 'carousel',
           transitionType: 'fade'
         });
@@ -1807,7 +1808,7 @@ var mainCases = /*#__PURE__*/function () {
       type: 'carousel',
       startAt: 1,
       perView: 1,
-      gap: 20
+      gap: 0
     });
   }
 
@@ -2590,9 +2591,9 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
             end: "top+=".concat(window.innerHeight, " top+=").concat(window.innerHeight),
             // markers: true,
             onUpdate: function onUpdate(item) {
-              console.log(item);
+              console.log(-item.progress * 200 + 100);
               gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item.trigger.querySelector('.animated-title'), 1, {
-                transform: "translateX(".concat(-item.progress * 200 + 100, "%)")
+                transform: "translate(".concat(-item.progress * 200 + 100, "%)")
               });
             }
           },

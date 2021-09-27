@@ -191,15 +191,14 @@ window.app = new Vue({
                         end: `top+=${window.innerHeight} top+=${window.innerHeight}`,
                         // markers: true,
                         onUpdate: (item) => {
-                            console.log(item)
+                            console.log(-item.progress * 200 + 100)
                             gsap.to(item.trigger.querySelector('.animated-title'), 1, {
-                                transform: `translateX(${-item.progress * 200 + 100}%)`
+                                transform: `translate(${-item.progress * 200 + 100}%)`
                             })
                         }
                     },
                     opacity: '1'
                 });
-                
             });
         }
     }

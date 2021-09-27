@@ -11,7 +11,7 @@ const mainCases = class MainCases {
             type: 'carousel',
             startAt: 1,
             perView: 1,
-            gap: 20,
+            gap: 0,
         });
     }
     initMobileSlider() {

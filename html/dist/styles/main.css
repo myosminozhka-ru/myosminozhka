@@ -2735,7 +2735,6 @@ a,
 .company-partners-item,
 .vacancies-tabs-item-title .text,
 .cases-items-post-text,
-.job-info-title,
 .job-stages-title-trigger,
 .footer-social,
 .footer-social svg,
@@ -3482,6 +3481,7 @@ a:hover {
 .main-about-advantage .text {
   color: #4f4f4f;
   text-transform: lowercase;
+  text-align: center;
 }
 
 .main-about:not(.mobile) .main-about-advantage:not(:last-child) {
@@ -3559,7 +3559,6 @@ a:hover {
 }
 
 .main-question.mobile .main-question-tentacle {
-  bottom: -20%;
   pointer-events: none;
 }
 
@@ -3780,6 +3779,7 @@ a:hover {
 
 .main-carousel.mobile {
   padding: 50px 20px;
+  z-index: 8;
 }
 
 .main-carousel__title {
@@ -4040,24 +4040,16 @@ a:hover {
 }
 
 .news-and-trends:not(.mobile) {
-  padding: 5.20833vw 0 0 0;
+  padding: 15.625vw 0 0 0;
   position: relative;
   z-index: 17;
+  margin-top: -1px;
 }
 
 .news-and-trends.mobile {
   padding: 30px 0 100px;
   position: relative;
   z-index: 9;
-}
-
-.news-and-trends-spacer {
-  padding-top: 10.41667vw;
-  background: #fff;
-}
-
-.news-and-trends-spacer + .pin-spacer {
-  background: #fff;
 }
 
 .news-and-trends-trigger {
@@ -6481,7 +6473,7 @@ body.company .company-ceo.mobile {
 }
 
 .career-blog.mobile {
-  padding: 0 20px 130px 20px;
+  padding: 0 20px 200px 20px;
   position: relative;
   z-index: 7;
 }
@@ -6980,7 +6972,7 @@ body.company .company-ceo.mobile {
 }
 
 .blog-items.mobile .blog-items-post {
-  text-decoration: none;
+  text-decoration: none !important;
   display: block;
 }
 
@@ -7456,6 +7448,7 @@ body.company .company-ceo.mobile {
   font-size: 1.5625vw;
   line-height: 1.5625vw;
   cursor: pointer;
+  transition: font-size .3s ease;
 }
 
 .job-info-title.isActive {
@@ -7465,6 +7458,7 @@ body.company .company-ceo.mobile {
   text-transform: uppercase;
   margin-top: 2.08333vw;
   margin-bottom: 2.08333vw;
+  height: 3.64583vw;
 }
 
 .job-info:not(.mobile) .job-info-title {
@@ -7478,6 +7472,7 @@ body.company .company-ceo.mobile {
 
 .job-info.mobile .job-info-title.isActive {
   font-size: 18px;
+  height: 20px;
 }
 
 .job-info.mobile .job-info-title:not(:last-child) {
@@ -9015,12 +9010,6 @@ body.company .company-ceo:not(.mobile) {
 @media print {
   .video-js > *:not(.vjs-tech):not(.vjs-poster) {
     visibility: hidden;
-  }
-}
-
-@media (orientation: landscape) {
-  .main-question.mobile .main-question-tentacle {
-    bottom: -34%;
   }
 }
 /*# sourceMappingURL=maps/main.css.map */
