@@ -52,7 +52,7 @@ const mainCases = class MainCases {
                 gsap.to('.main-cases', {
                     scrollTrigger: {
                         trigger: '.main-cases',
-                        start: 'top top-=300',
+                        start: 'top top-=350',
                         end: 'bottom bottom',
                         pin: true,
                         pinSpacing: false,
