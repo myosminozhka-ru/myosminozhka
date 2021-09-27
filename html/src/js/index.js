@@ -190,7 +190,7 @@ window.app = new Vue({
                         trigger: item.closest('section'),
                         start: 'top center',
                         end: `top-=${window.innerHeight} top-=${window.innerHeight}`,
-                        markers: true,
+                        // markers: true,
                         onUpdate: (item) => {
                             console.log(-item.progress * 200 + 100)
                             if (item.progress > 0.1) {

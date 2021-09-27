@@ -2592,7 +2592,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
             trigger: item.closest('section'),
             start: 'top center',
             end: "top-=".concat(window.innerHeight, " top-=").concat(window.innerHeight),
-            markers: true,
+            // markers: true,
             onUpdate: function onUpdate(item) {
               console.log(-item.progress * 200 + 100);
 
