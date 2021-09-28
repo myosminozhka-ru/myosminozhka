@@ -8796,6 +8796,63 @@ html:root body.posts .post_info__code--in {
   line-height: 26px;
 }
 
+.not-found {
+  position: relative;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+}
+
+.not-found:not(.mobile) {
+  padding: 8.85417vw 5.20833vw 5.20833vw;
+}
+
+.not-found.mobile {
+  padding: 110px 20px 100px;
+  flex-direction: column;
+}
+
+.not-found__left {
+  width: 100%;
+  max-width: 33.59375vw;
+}
+
+.not-found.mobile .not-found__left {
+  margin-bottom: 40px;
+}
+
+.not-found__right .error {
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+}
+
+.not-found__right .text {
+  color: #fff;
+  text-align: center;
+}
+
+.not-found:not(.mobile) .not-found__right {
+  width: calc(100% - 33.59375vw);
+}
+
+.not-found:not(.mobile) .not-found__right .error {
+  font-size: 2.76042vw;
+}
+
+.not-found:not(.mobile) .not-found__right .text {
+  font-size: 0.9375vw;
+}
+
+.not-found.mobile .not-found__right .error {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.not-found.mobile .not-found__right .text {
+  font-size: 20px;
+}
+
 .footer {
   background: #fff;
   position: relative;
