@@ -85,8 +85,10 @@
             <template v-if="window.width <=1023">
                 <section class="career-first" :class="{'mobile': window.width <=1023}">
     <h1 class="career-first-title">О нас</h1>
-    <div class="career-first-tentacle" v-if="window.width <=1023"><img src="img/svg/tentacle_static.svg" width="100%" alt="" v-if="isSafary">
-        <img src="img/svg/tentacle.svg" width="100%" alt="" v-else></div>
+    <div class="career-first-tentacle" v-if="window.width <=1023">
+        <img src="img/svg/tentacle_static.svg" width="100%" alt="" v-if="isSafary">
+        <img src="img/svg/tentacle.svg" width="100%" alt="" v-else>
+    </div>
     <div class="career-first-text" v-if="window.width <=1023">
         Настал тот самый момент, когда нам нужно еще больше свежих мозгов для самых смелых проектов
     </div>
