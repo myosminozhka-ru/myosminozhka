@@ -4117,6 +4117,7 @@ a:hover {
   overflow: hidden;
   box-sizing: border-box;
   border: 1px solid transparent;
+  transform: translateZ(0);
   font-weight: 500;
   font-size: 1.04167vw;
   line-height: 1.04167vw;

@@ -74,6 +74,7 @@
         overflow: hidden;
         box-sizing: border-box;
         border: 1px solid transparent;
+        transform: translateZ(0);
         @extend %white;
         > span {
             position: relative;
