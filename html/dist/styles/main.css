@@ -8603,7 +8603,7 @@ html:root body.posts .post_info__code--in {
 }
 
 .blog-item-author.mobile:not(.hasLink) {
-  padding: 0 20px 20px;
+  padding: 0 20px 45px;
 }
 
 .blog-item-author__left {
@@ -8735,35 +8735,65 @@ html:root body.posts .post_info__code--in {
 }
 
 .blog-item-text {
-  background: url("../img/svg/blog_item_bg.svg") 0 0/100% no-repeat;
-  padding: 4.16667vw 17.60417vw 10.15625vw;
   position: relative;
   z-index: 9;
 }
 
-.blog-item-text p {
+.blog-item-text p.dark {
+  color: #4f4f4f !important;
+}
+
+.blog-item-text .code {
+  background: #4f4f4f;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+.blog-item-text code {
+  white-space: pre;
+  color: #FFFFFF;
+}
+
+.blog-item-text:not(.mobile) {
+  background: url("../img/svg/blog_item_bg.svg") 0 0/100% no-repeat;
+  padding: 4.16667vw 17.60417vw 10.15625vw;
+}
+
+.blog-item-text:not(.mobile) p {
   font-size: 1.5625vw;
   line-height: 2.34375vw;
   margin: 3.125vw 0;
   color: #FFFFFF;
 }
 
-.blog-item-text p.dark {
-  color: #4f4f4f;
-}
-
-.blog-item-text .code {
-  background: #4f4f4f;
-  overflow: auto;
+.blog-item-text:not(.mobile) .code {
   padding: 0 1.5625vw;
-  box-sizing: border-box;
 }
 
-.blog-item-text code {
+.blog-item-text:not(.mobile) code {
   font-size: 1.04167vw;
   line-height: 1.5625vw;
-  white-space: pre;
+}
+
+.blog-item-text.mobile {
+  background: url("../img/svg/blog_item_bg.svg") 50% 0/100% no-repeat;
+  padding: 20px;
+}
+
+.blog-item-text.mobile p {
+  font-size: 16px;
+  line-height: 22px;
+  margin: 30px 0;
   color: #FFFFFF;
+}
+
+.blog-item-text.mobile .code {
+  padding: 0 30px;
+}
+
+.blog-item-text.mobile code {
+  font-size: 16px;
+  line-height: 26px;
 }
 
 .footer {
@@ -9329,6 +9359,12 @@ body.company .company-ceo:not(.mobile) {
   }
 }
 
+@media all and (max-width: 680px) {
+  .blog-item-text {
+    background: url("../img/svg/blog_item_bg.svg") 50% 0/130% no-repeat !important;
+  }
+}
+
 @media all and (max-width: 640px) {
   .footer-tentacle {
     bottom: calc(100% - 240px);
@@ -9340,6 +9376,12 @@ body.company .company-ceo:not(.mobile) {
 @media all and (max-width: 600px) {
   html:root body.posts .post_info {
     background-size: 290%;
+  }
+}
+
+@media all and (max-width: 540px) {
+  .blog-item-text {
+    background: url("../img/svg/blog_item_bg.svg") 50% 0/400% no-repeat !important;
   }
 }
 
