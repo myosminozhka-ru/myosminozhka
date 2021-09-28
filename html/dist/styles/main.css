@@ -3769,10 +3769,10 @@ a:hover {
 .main-carousel {
   box-sizing: border-box;
   position: relative;
-  background: #fff;
 }
 
 .main-carousel:not(.mobile) {
+  background: #fff;
   z-index: 0;
   padding: 2.60417vw;
 }
@@ -8080,7 +8080,8 @@ html:root body.posts .post_info__code--in {
 }
 
 .job-stages.mobile .job-stages-title-triggers {
-  overflow: auto;
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 
 .job-stages.mobile .job-stages-title-triggers::-webkit-scrollbar {
@@ -8789,7 +8790,7 @@ html:root body.posts .post_info__code--in {
 }
 
 .blog-item-text.mobile .code {
-  padding: 0 30px;
+  padding: 30px;
 }
 
 .blog-item-text.mobile code {

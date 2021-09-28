@@ -205,7 +205,8 @@
         min-height: vw(70);
     }
     &.mobile &-title-triggers {
-        overflow: auto;
+        overflow-x: scroll;
+        overflow-y: hidden;
         &::-webkit-scrollbar {
             height: 0;
         }
