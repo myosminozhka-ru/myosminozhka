@@ -36,7 +36,9 @@
             @@include("../blocks/modules/block-item-top/block-item-top.html")
             @@include("../blocks/modules/block-item-author/block-item-author.html")
             @@include("../blocks/modules/block-item-text/block-item-text.html")
-            @@include("../blocks/modules/block-item-author/block-item-author-link.html")
+            <template v-if="window.width > 1023">
+                @@include("../blocks/modules/block-item-author/block-item-author-link.html")
+            </template>
             @@include("../blocks/modules/footer/footer.html")
         </div>
         <script src="js/main.js"></script>

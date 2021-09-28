@@ -7,9 +7,17 @@
         <div class="blog-item-author__name">
             <div class="name">Иван Иванов</div>
             <div class="position">разработчик</div>
+            <div class="blog-item-author__right" v-if="window.width <= 1023">
+                <a href="#" class="blog-item-author__social">
+                    <img src="img/svg/instagram_white.svg" alt="">
+                </a>
+                <a href="#" class="blog-item-author__social">
+                    <img src="img/svg/facebook_white.svg" alt="">
+                </a>
+            </div>
         </div>
     </div>
-    <div class="blog-item-author__right">
+    <div class="blog-item-author__right" v-if="window.width > 1023">
         <a href="#" class="blog-item-author__social">
             <img src="img/svg/instagram_white.svg" alt="">
         </a>
