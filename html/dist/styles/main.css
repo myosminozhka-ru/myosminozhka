@@ -2586,6 +2586,10 @@ html {
   z-index: 1;
 }
 
+.button:hover {
+  text-decoration: none !important;
+}
+
 .button:hover .text {
   color: #FF4978;
 }
@@ -4753,10 +4757,6 @@ a:hover {
   margin-left: -0.20833vw;
 }
 
-.main-resume.mobile .main-resume-title {
-  word-wrap: break-word;
-}
-
 .career .footer:not(.mobile) .footer-tentacle {
   top: -44.27083vw;
 }
@@ -6880,6 +6880,7 @@ body.company .company-ceo.mobile {
   display: flex;
   flex-direction: column;
   max-height: 100%;
+  color: #FF4978;
 }
 
 .blog-items:not(.mobile) .blog-items-post:hover {
@@ -7016,6 +7017,10 @@ body.company .company-ceo.mobile {
   font-weight: 600;
 }
 
+.blog-items:not(.mobile) .blog-items-post:hover .blog-items-post-title {
+  text-decoration: underline !important;
+}
+
 .blog-items:not(.mobile) .blog-items-post-title {
   font-size: 2.08333vw;
   line-height: 2.08333vw;
@@ -7031,6 +7036,10 @@ body.company .company-ceo.mobile {
 .blog-items-post-description {
   margin: 0;
   font-weight: 300;
+}
+
+.blog-items:not(.mobile) .blog-items-post:hover .blog-items-post-description {
+  text-decoration: underline !important;
 }
 
 .blog-items:not(.mobile) .blog-items-post-description {
@@ -8119,7 +8128,7 @@ html:root body.posts .post_info__code--in {
 }
 
 .job-stages-support {
-  padding: 12.55208vw 2.60417vw;
+  padding: 12.5vw 2.60417vw;
   margin: 0 -2.60417vw;
   background: #4f4f4f;
   display: flex;
@@ -9257,6 +9266,10 @@ body.company .company-ceo:not(.mobile) {
     border-radius: 10px;
   }
 
+  .main-question-tentacle {
+    bottom: -628px;
+  }
+
   .hh_block {
     margin-bottom: 20px;
   }
@@ -9352,6 +9365,12 @@ body.company .company-ceo:not(.mobile) {
   }
 }
 
+@media all and (max-width: 990px) {
+  .main-question-tentacle {
+    bottom: -587px;
+  }
+}
+
 @media all and (max-width: 960px) {
   html:root body.posts .post_info .posts-blog_l__info--title {
     font-size: 20px;
@@ -9410,11 +9429,29 @@ body.company .company-ceo:not(.mobile) {
   }
 }
 
+@media all and (max-width: 930px) {
+  .main-question-tentacle {
+    bottom: -541px;
+  }
+}
+
+@media all and (max-width: 845px) {
+  .main-question-tentacle {
+    bottom: -478px;
+  }
+}
+
 @media all and (max-width: 840px) {
   .footer-tentacle {
     bottom: calc(100% - 310px);
     transform: rotateY(180deg);
     z-index: 3;
+  }
+}
+
+@media all and (max-width: 740px) {
+  .main-question-tentacle {
+    bottom: -400px;
   }
 }
 
@@ -9425,6 +9462,10 @@ body.company .company-ceo:not(.mobile) {
 }
 
 @media all and (max-width: 640px) {
+  .main-question-tentacle {
+    bottom: -333px;
+  }
+
   .footer-tentacle {
     bottom: calc(100% - 240px);
     transform: rotateY(180deg);
@@ -9438,9 +9479,21 @@ body.company .company-ceo:not(.mobile) {
   }
 }
 
+@media all and (max-width: 570px) {
+  .main-question-tentacle {
+    bottom: -270px;
+  }
+}
+
 @media all and (max-width: 540px) {
   .blog-item-text {
     background: url("../img/svg/blog_item_bg.svg") 50% 0/400% no-repeat !important;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .main-question-tentacle {
+    bottom: -200px;
   }
 }
 
@@ -9449,6 +9502,18 @@ body.company .company-ceo:not(.mobile) {
     bottom: calc(100% - 190px);
     transform: rotateY(180deg);
     z-index: 3;
+  }
+}
+
+@media all and (max-width: 400px) {
+  .main-resume-title {
+    font-size: 35px;
+  }
+}
+
+@media all and (max-width: 360px) {
+  .main-question-tentacle {
+    bottom: -140px;
   }
 }
 

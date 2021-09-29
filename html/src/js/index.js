@@ -184,29 +184,38 @@ window.app = new Vue({
             })
         },
         animateTitles() {
-            gsap.utils.toArray(".animated-title").forEach((item, i) => {
+            document.querySelectorAll(".animated-title").forEach((item, i) => {
                 gsap.to(item, {
                     scrollTrigger: {
-                        trigger: item.closest('section'),
-                        start: 'top center',
-                        end: `top-=${window.innerHeight} top-=${window.innerHeight}`,
+                        trigger: item,
+                        start: 'top bottom',
+                        end: `bottom+=${window.innerHeight} bottom`,
+                        // end: `top-=${window.innerHeight} top-=${window.innerHeight}`,
                         // markers: true,
                         onUpdate: (item) => {
-                            console.log(-item.progress * 200 + 100)
+                            console.log(item)
+                            console.log(item.progress)
                             if (item.progress > 0.1) {
-                                gsap.to(item.trigger.querySelector('.animated-title'), 1.5, {
+                                gsap.to(item.trigger, 1.5, {
                                     transform: `translateX(${-item.progress * 200 + 100}%)`
                                 })
                             } else {
-                                gsap.to(item.trigger.querySelector('.animated-title'), 1.5, {
-                                    transform: `translateX(200%)`
+                                gsap.to(item.trigger, 1.5, {
+                                    transform: `translateX(120%)`
                                 })
                             }
                         }
                     },
                     opacity: '1'
+                    // x: '-100%'
                 });
             });
+            window.addEventListener('resize', () => {
+                console.log('resized');
+            })
+            setTimeout(() => {
+                window.dispatchEvent(new Event('resize'));
+            }, 500)
         }
     }
 });

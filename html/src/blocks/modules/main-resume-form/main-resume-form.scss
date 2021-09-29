@@ -17,9 +17,11 @@
         @extend %white;
         margin-left: vw(-4);
     }
-    &.mobile &-title {
-        word-wrap: break-word;
-    } 
+    &-title {
+        @media all and (max-width: 400px) {
+            font-size: 35px;       
+        }
+    }
 }
 .career .footer:not(.mobile) .footer-tentacle {
     top: vw(-850);

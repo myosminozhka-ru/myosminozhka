@@ -19,6 +19,33 @@
     left: 0;
     right: 0;
     top: 0;
+    @media all and (max-width: 1023px) {
+      bottom: -628px;
+    }
+    @media all and (max-width: 990px) {
+      bottom: -587px;
+    }
+    @media all and (max-width: 930px) {
+      bottom: -541px;
+    }
+    @media all and (max-width: 845px) {
+      bottom: -478px;
+    }
+    @media all and (max-width: 740px) {
+      bottom: -400px;
+    }
+    @media all and (max-width: 640px) {
+      bottom: -333px;
+    }
+    @media all and (max-width: 570px) {
+      bottom: -270px;
+    }
+    @media all and (max-width: 480px) {
+      bottom: -200px;
+    }
+    @media all and (max-width: 360px) {
+      bottom: -140px;
+    }
   }
   &:not(.mobile) &-tentacle {
     height: vw(1498);
@@ -32,6 +59,7 @@
   &.mobile &-tentacle {
     // bottom: -350px;
     pointer-events: none;
+    
     // @media (orientation: landscape) {
     //   bottom: -34%;
     // }

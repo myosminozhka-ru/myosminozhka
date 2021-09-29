@@ -2335,7 +2335,7 @@ var vacanciesTabs = /*#__PURE__*/function () {
         elementClass: 'vacancies-tabs-item',
         triggerClass: 'vacancies-tabs-item-title',
         panelClass: 'vacancies-tabs-item-body',
-        openOnInit: [0],
+        // openOnInit: [0],
         beforeOpen: function beforeOpen(currentElement) {
           gsap__WEBPACK_IMPORTED_MODULE_1__["default"].to(currentElement.querySelector('.vacancies-tabs-item-body'), 1, {
             heigth: currentElement.querySelector('.vacancies-tabs-item-body').offsetHeight
@@ -2586,30 +2586,39 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       });
     },
     animateTitles: function animateTitles() {
-      gsap__WEBPACK_IMPORTED_MODULE_26__["default"].utils.toArray(".animated-title").forEach(function (item, i) {
+      document.querySelectorAll(".animated-title").forEach(function (item, i) {
         gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item, {
           scrollTrigger: {
-            trigger: item.closest('section'),
-            start: 'top center',
-            end: "top-=".concat(window.innerHeight, " top-=").concat(window.innerHeight),
+            trigger: item,
+            start: 'top bottom',
+            end: "bottom+=".concat(window.innerHeight, " bottom"),
+            // end: `top-=${window.innerHeight} top-=${window.innerHeight}`,
             // markers: true,
             onUpdate: function onUpdate(item) {
-              console.log(-item.progress * 200 + 100);
+              console.log(item);
+              console.log(item.progress);
 
               if (item.progress > 0.1) {
-                gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item.trigger.querySelector('.animated-title'), 1.5, {
+                gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item.trigger, 1.5, {
                   transform: "translateX(".concat(-item.progress * 200 + 100, "%)")
                 });
               } else {
-                gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item.trigger.querySelector('.animated-title'), 1.5, {
-                  transform: "translateX(200%)"
+                gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item.trigger, 1.5, {
+                  transform: "translateX(120%)"
                 });
               }
             }
           },
-          opacity: '1'
+          opacity: '1' // x: '-100%'
+
         });
       });
+      window.addEventListener('resize', function () {
+        console.log('resized');
+      });
+      setTimeout(function () {
+        window.dispatchEvent(new Event('resize'));
+      }, 500);
     }
   }
 });
