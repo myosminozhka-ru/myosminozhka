@@ -293,14 +293,12 @@ var companyAbout = /*#__PURE__*/function () {
     value: function init() {
       var _this = this;
 
-      if (!document.querySelector(this.selector)) return;
-      document.querySelector(this.selector).addEventListener('mousemove', function (e) {
-        document.querySelector(_this.selector).style.clipPath = "circle(".concat(200 * 100 / window.innerWidth, "vw at ").concat(e.clientX, "px ").concat(e.clientY, "px)");
+      if (!document.querySelector('.company-about__wrap')) return;
+      document.querySelector('.company-about__wrap').addEventListener('mousemove', function (e) {
+        document.querySelector(_this.selector).style.clipPath = "circle(".concat(200 * 100 / window.innerWidth, "vw at ").concat(e.pageX, "px ").concat(e.pageY, "px)");
       });
       document.querySelector(this.selector).addEventListener('mouseleave', function (e) {
-        gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(_this.selector, 0.5, {
-          "clip-path": "circle(1920px at ".concat(e.clientX, "px ").concat(e.clientY, "px)")
-        });
+        document.querySelector(_this.selector).style.clipPath = "circle(0px at ".concat(e.pageX, "px ").concat(e.pageY, "px)");
       });
     }
   }]);
@@ -1847,7 +1845,7 @@ var mainCases = /*#__PURE__*/function () {
               trigger: '.main-cases',
               start: 'top top',
               end: 'bottom bottom-=200',
-              scrub: 3,
+              scrub: 2,
               // markers: true,
               onUpdate: function onUpdate(item) {
                 if (item.progress > 0.05 && item.progress < 0.65) {
@@ -1865,6 +1863,7 @@ var mainCases = /*#__PURE__*/function () {
               start: 'top top-=350',
               end: 'bottom bottom',
               pin: true,
+              scrub: 2,
               pinSpacing: false // markers: true
 
             },
@@ -2452,7 +2451,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       inputSelector: '.main-question-form-item [type="file"]',
       textSelector: '.main-question-form-item span'
     })), _defineProperty(_ref, "companyPrinciples", new _modules_company_principles_company_principles__WEBPACK_IMPORTED_MODULE_9__["default"]()), _defineProperty(_ref, "companyVideo", new _modules_company_video_company_video__WEBPACK_IMPORTED_MODULE_8__["default"]()), _defineProperty(_ref, "companyPartners", new _modules_company_partners_company_partners__WEBPACK_IMPORTED_MODULE_10__["default"]()), _defineProperty(_ref, "companyTeam", new _modules_company_team_company_team__WEBPACK_IMPORTED_MODULE_12__["default"]()), _defineProperty(_ref, "careerBlog", new _modules_career_blog_career_blog__WEBPACK_IMPORTED_MODULE_18__["default"]()), _defineProperty(_ref, "companyReviews", new _modules_company_reviews_company_reviews__WEBPACK_IMPORTED_MODULE_11__["default"]()), _defineProperty(_ref, "header", new _modules_header_header__WEBPACK_IMPORTED_MODULE_13__["default"]()), _defineProperty(_ref, "companyAbout", new _modules_company_about_company_about__WEBPACK_IMPORTED_MODULE_15__["default"]({
-      selector: '.company-about'
+      selector: '.company-about:not(.company-about__title)'
     })), _defineProperty(_ref, "companyRaiting", new _modules_company_raiting_company_raiting__WEBPACK_IMPORTED_MODULE_16__["default"]()), _defineProperty(_ref, "vacanciesTabs", new _modules_vacancies_tabs_vacancies_tabs__WEBPACK_IMPORTED_MODULE_19__["default"]()), _defineProperty(_ref, "careerBlocks", new _modules_career_blocks_career_blocks__WEBPACK_IMPORTED_MODULE_17__["default"]()), _defineProperty(_ref, "jobInfo", new _modules_job_info_job_info__WEBPACK_IMPORTED_MODULE_20__["default"]()), _defineProperty(_ref, "jobTeam", new _modules_job_team_job_team__WEBPACK_IMPORTED_MODULE_21__["default"]()), _defineProperty(_ref, "jobStages", new _modules_job_stages_job_stages__WEBPACK_IMPORTED_MODULE_22__["default"]()), _defineProperty(_ref, "footer", new _modules_footer_footer__WEBPACK_IMPORTED_MODULE_25__["default"]()), _defineProperty(_ref, "isMounted", false), _defineProperty(_ref, "sizes", {
       window: {
         width: window.innerWidth,
@@ -2599,11 +2598,11 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
               console.log(item.progress);
 
               if (item.progress > 0.1) {
-                gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item.trigger, 1.5, {
+                gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item.trigger, 2, {
                   transform: "translateX(".concat(-item.progress * 200 + 100, "%)")
                 });
               } else {
-                gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item.trigger, 1.5, {
+                gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item.trigger, 2, {
                   transform: "translateX(120%)"
                 });
               }

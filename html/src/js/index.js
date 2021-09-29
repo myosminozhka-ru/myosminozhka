@@ -66,7 +66,7 @@ window.app = new Vue({
         companyReviews: new companyReviews(),
         header: new header(),
         companyAbout: new companyAbout({
-            selector: '.company-about'
+            selector: '.company-about:not(.company-about__title)'
         }),
         companyRaiting: new companyRaiting(),
         vacanciesTabs: new vacanciesTabs(),
@@ -196,11 +196,11 @@ window.app = new Vue({
                             console.log(item)
                             console.log(item.progress)
                             if (item.progress > 0.1) {
-                                gsap.to(item.trigger, 1.5, {
+                                gsap.to(item.trigger, 2, {
                                     transform: `translateX(${-item.progress * 200 + 100}%)`
                                 })
                             } else {
-                                gsap.to(item.trigger, 1.5, {
+                                gsap.to(item.trigger, 2, {
                                     transform: `translateX(120%)`
                                 })
                             }

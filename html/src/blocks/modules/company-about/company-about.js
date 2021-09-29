@@ -5,14 +5,12 @@ const companyAbout = class CompanyAbout {
         this.selector = selector
     }
     init() {
-        if (!document.querySelector(this.selector)) return;
-        document.querySelector(this.selector).addEventListener('mousemove', (e) => {
-            document.querySelector(this.selector).style.clipPath = `circle(${200 * 100 / window.innerWidth}vw at ${e.clientX}px ${e.clientY}px)`;
+        if (!document.querySelector('.company-about__wrap')) return;
+        document.querySelector('.company-about__wrap').addEventListener('mousemove', (e) => {
+            document.querySelector(this.selector).style.clipPath = `circle(${200 * 100 / window.innerWidth}vw at ${e.pageX}px ${e.pageY}px)`;
         })
         document.querySelector(this.selector).addEventListener('mouseleave', (e) => {
-            gsap.to(this.selector, 0.5, {
-                "clip-path" : `circle(1920px at ${e.clientX}px ${e.clientY}px)`
-            })
+            document.querySelector(this.selector).style.clipPath = `circle(0px at ${e.pageX}px ${e.pageY}px)`;
         })
     }
 }

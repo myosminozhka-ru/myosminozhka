@@ -14,7 +14,11 @@
     }
     &:not(.mobile) {
         padding: vw(191) vw(50) vw(50);
-        clip-path: circle(1920px at #{vw(300)} #{vw(300)});
+    }
+    &:not(.mobile) {
+        &:not(.company-about__title) {
+            clip-path: circle(0 at #{vw(300)} #{vw(300)});
+        }
     }
     &.mobile {
         padding: 110px 20px 184px;

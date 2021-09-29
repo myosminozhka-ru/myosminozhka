@@ -37,7 +37,7 @@ const mainCases = class MainCases {
                         trigger: '.main-cases',
                         start: 'top top',
                         end: 'bottom bottom-=200',
-                        scrub: 3,
+                        scrub: 2,
                         // markers: true,
                         onUpdate: (item) => {
                             if (item.progress > 0.05 && item.progress < 0.65) {
@@ -55,6 +55,7 @@ const mainCases = class MainCases {
                         start: 'top top-=350',
                         end: 'bottom bottom',
                         pin: true,
+                        scrub: 2,
                         pinSpacing: false,
                         // markers: true
                     },
