@@ -1,0 +1,28 @@
+.cookie-form {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: $bgColor;
+    z-index: 250;
+    &__in {
+        padding: vw(20) vw(127);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__message {
+        font-size: vw(22);
+        line-height: vw(50);
+        color: #FFFFFF;
+    }
+    &__button {
+        padding: vw(19) vw(53);
+        border-radius: vw(10);
+        font-size: vw(22);
+        line-height: vw(25);
+        background: $mainColor;
+        cursor: pointer;
+        color: #FFFFFF;
+    }
+}

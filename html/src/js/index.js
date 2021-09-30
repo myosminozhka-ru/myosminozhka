@@ -21,9 +21,10 @@ import vacanciesTabs from "%modules%/vacancies-tabs/vacancies-tabs";
 import jobInfo from "%modules%/job-info/job-info";
 import jobTeam from "%modules%/job-team/job-team";
 import jobStages from "%modules%/job-stages/job-stages";
-import postInfo from "%modules%/posts-info/posts-info";
-import postBlog from "%modules%/posts-blog/posts-blog";
+// import postInfo from "%modules%/posts-info/posts-info";
+// import postBlog from "%modules%/posts-blog/posts-blog";
 import footer from "%modules%/footer/footer";
+import cookiesForm from "%modules%/cookie-form/cookie-form";
 
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -75,6 +76,7 @@ window.app = new Vue({
         jobTeam: new jobTeam(),
         jobStages: new jobStages(),
         footer: new footer(),
+        cookiesForm: new cookiesForm(),
         isMounted: false,
         sizes: {
             window: {
@@ -114,6 +116,7 @@ window.app = new Vue({
             this.jobInfo.init();
             this.jobTeam.init();
             this.jobStages.init();
+            this.cookiesForm.init();
             window.addEventListener('resize', () => {
                 this.window = {
                     width: window.innerWidth,

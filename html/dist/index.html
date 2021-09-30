@@ -32,6 +32,13 @@
     </head>
     <body class="main">
         <div class="wrapper" id="app">
+            <div class="preloader" :class="{'isHidden': isMounted}">
+    <div class="preloader__in">
+        <div class="preloader__image">
+            <img src="img/svg/preloader.svg" alt="">
+        </div>
+    </div>
+</div>
             <!-- TODO добавить анимацию наведения на пункт меню https://codepen.io/mburakerman/pen/xpZJYL -->
             <!-- TODO добавить кружок двигающийся за мышью https://kota.co.uk/contact -->
             <header class="header" :class="{'isOpened': header.isOpened, 'mobile': window.width <=1023}">
@@ -891,6 +898,13 @@
         </div>
     </div>
 </div>
+            <div class="cookie-form" v-if="!cookiesForm.isClosedOnce">
+    <div class="cookie-form__in">
+        <div class="cookie-form__message">Мы используем куки на всех своих сайтах, включая этот, потому что без кук вообще весь интернет работал бы через жопу</div>
+        <div class="cookie-form__button">Понятно</div>
+    </div>
+</div>
+
         </div>
         <script src="js/main.js"></script>
         <script src="js/vendor.js"></script>
