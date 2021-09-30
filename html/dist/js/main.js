@@ -1903,7 +1903,7 @@ var mainCases = /*#__PURE__*/function () {
           gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.main-cases', {
             scrollTrigger: {
               trigger: '.main-cases',
-              start: 'top top-=350',
+              start: 'top top-=400',
               end: 'bottom bottom',
               pin: true,
               scrub: 2,
