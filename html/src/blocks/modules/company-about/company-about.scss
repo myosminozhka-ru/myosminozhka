@@ -17,7 +17,7 @@
     }
     &:not(.mobile) {
         &:not(.company-about__title) {
-            clip-path: circle(0 at #{vw(300)} #{vw(300)});
+            clip-path: circle(#{vw(1920)} at #{vw(300)} #{vw(300)});
         }
     }
     &.mobile {

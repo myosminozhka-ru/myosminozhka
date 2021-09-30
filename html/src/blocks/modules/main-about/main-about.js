@@ -1,10 +1,38 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import videojs from 'video.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const mainAbout = class MainAbout {
-    constructor() {}
+    constructor() {
+        this.player;
+    }
+    openVideoModal() {
+        document.querySelector('.video-modal').classList.add('isOpened');
+        this.player.play();
+    }
+    closeVideoModal() {
+        document.querySelector('.video-modal').classList.remove('isOpened');
+        this.player.pause();
+    }
+    initVideoOpening() {
+        document.querySelector('.main-about-play').addEventListener('click', () => {this.openVideoModal()});
+        document.querySelector('.video-modal').addEventListener('click', () => {this.closeVideoModal()});
+        this.player = document.getElementById('player_modal');
+        videojs('player_modal', {
+            fluid: true,
+            controls: false,
+            // autoplay: true,
+            aspectRatio: '16:7',
+            // muted: true,
+            poster: 'img/video_preview.png',
+            sources: [{
+                src: 'videos/pv.mp4',
+                type: 'video/mp4'
+            }]
+        });
+    }
     animateCircle() {
         if (!document.querySelector('.main-about')) return;
         if (window.innerWidth > 1023) {

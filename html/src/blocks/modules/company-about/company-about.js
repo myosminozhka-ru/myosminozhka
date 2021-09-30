@@ -10,7 +10,9 @@ const companyAbout = class CompanyAbout {
             document.querySelector(this.selector).style.clipPath = `circle(${200 * 100 / window.innerWidth}vw at ${e.pageX}px ${e.pageY}px)`;
         })
         document.querySelector(this.selector).addEventListener('mouseleave', (e) => {
-            document.querySelector(this.selector).style.clipPath = `circle(0px at ${e.pageX}px ${e.pageY}px)`;
+            gsap.to(this.selector, 1, {
+                clipPath: `circle(${window.innerWidth}px at ${e.pageX}px ${e.pageY}px)`
+            })
         })
     }
 }

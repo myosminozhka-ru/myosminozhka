@@ -264,6 +264,9 @@
         grid-row-end: 8;
         grid-column-start: 1;
         grid-column-end: 2;
+        &:hover .text {
+            color: $bgColor !important;
+        }
     }
     &-bank {
         position: relative;

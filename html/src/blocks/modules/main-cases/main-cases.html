@@ -6,30 +6,30 @@
     <div class="main-cases-items" v-if="window.width > 1023">
         <div class="main-cases-items-in" style="--count: 7;">
             @@for (var i = 0; i < 7; i++) {
-                <article class="main-cases-item">
+                <a href="#" class="main-cases-item">
                     <div class="image" style="--image: url('https://picsum.photos/30`+ i +`')">
                         <img src="https://picsum.photos/30`+ i +`" width="100%" alt="">
                     </div>
                     <div class="title">Название проекта</div>
                     <div class="text">Краткое описание</div>
-                </article>
+                </a>
             }
         </div>
         <div class="main-cases-items-scroller" style="height: 250vh;"></div>
     </div>
     <div class="main-cases-items main-cases-slider" v-if="window.width <= 1023">
         <div class="glide__track  main-cases-items-in" data-glide-el="track">
-            <ul class="glide__slides">
+            <div class="glide__slides">
                 @@for (var i = 0; i < 7; i++) {
-                    <article class="main-cases-item">
+                    <a href="#" class="main-cases-item">
                         <div class="image" style="--image: url('https://picsum.photos/30`+ i +`')">
                             <img src="https://picsum.photos/30`+ i +`" width="100%" alt="">
                         </div>
                         <div class="title">Название проекта</div>
                         <div class="text">Краткое описание</div>
-                    </article>
+                    </a>
                 }
-            </ul>
+            </div>
         </div>
         <div class="web-slider-arrows" data-glide-el="controls">
             <button class="web-slider-arrow web-slider-arrow--prev" data-glide-dir="<">

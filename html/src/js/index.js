@@ -91,6 +91,7 @@ window.app = new Vue({
             this.mainWords.countPosition();
             this.mainWeb.animateElement();
             this.mainAbout.animateCircle();
+            this.mainAbout.initVideoOpening();
             this.cursorAnimation.init();
             this.mainCarousel.init();
             this.newsAndTrends.init();

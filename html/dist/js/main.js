@@ -298,7 +298,9 @@ var companyAbout = /*#__PURE__*/function () {
         document.querySelector(_this.selector).style.clipPath = "circle(".concat(200 * 100 / window.innerWidth, "vw at ").concat(e.pageX, "px ").concat(e.pageY, "px)");
       });
       document.querySelector(this.selector).addEventListener('mouseleave', function (e) {
-        document.querySelector(_this.selector).style.clipPath = "circle(0px at ".concat(e.pageX, "px ").concat(e.pageY, "px)");
+        gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(_this.selector, 1, {
+          clipPath: "circle(".concat(window.innerWidth, "px at ").concat(e.pageX, "px ").concat(e.pageY, "px)")
+        });
       });
     }
   }]);
@@ -1484,6 +1486,7 @@ var jobTeam = /*#__PURE__*/function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 /* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
+/* harmony import */ var video_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! video.js */ "./node_modules/video.js/dist/video.es.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -1492,14 +1495,54 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
 
+
 gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__["ScrollTrigger"]);
 
 var mainAbout = /*#__PURE__*/function () {
   function MainAbout() {
     _classCallCheck(this, MainAbout);
+
+    this.player;
   }
 
   _createClass(MainAbout, [{
+    key: "openVideoModal",
+    value: function openVideoModal() {
+      document.querySelector('.video-modal').classList.add('isOpened');
+      this.player.play();
+    }
+  }, {
+    key: "closeVideoModal",
+    value: function closeVideoModal() {
+      document.querySelector('.video-modal').classList.remove('isOpened');
+      this.player.pause();
+    }
+  }, {
+    key: "initVideoOpening",
+    value: function initVideoOpening() {
+      var _this = this;
+
+      document.querySelector('.main-about-play').addEventListener('click', function () {
+        _this.openVideoModal();
+      });
+      document.querySelector('.video-modal').addEventListener('click', function () {
+        _this.closeVideoModal();
+      });
+      this.player = document.getElementById('player_modal');
+      Object(video_js__WEBPACK_IMPORTED_MODULE_2__["default"])('player_modal', {
+        fluid: true,
+        controls: false,
+        // autoplay: true,
+        aspectRatio: '16:7',
+        // muted: true,
+        poster: 'img/video_preview.png',
+        sources: [{
+          src: 'videos/pv.mp4',
+          type: 'video/mp4'
+        }]
+      });
+    }
+  }, {
     key: "animateCircle",
     value: function animateCircle() {
       if (!document.querySelector('.main-about')) return;
@@ -2472,6 +2515,8 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       _this.mainWeb.animateElement();
 
       _this.mainAbout.animateCircle();
+
+      _this.mainAbout.initVideoOpening();
 
       _this.cursorAnimation.init();
 

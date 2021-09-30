@@ -1,0 +1,46 @@
+.video-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .9);
+    z-index: 200;
+    transition: all .3s ease;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    &.isOpened {
+        opacity: 1;
+        visibility: visible;
+    }
+    &__in {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        padding: vw(50) vw(100);
+        box-sizing: border-box;
+        video {
+            object-fit: cover;
+            object-position: 50% 50%;
+        }
+    }
+    &__accessuar {
+        position: absolute;
+        z-index: 2;
+        &.first {
+            width: vw(246);
+            height: vw(144);
+            left: vw(-40);
+            top: 0;
+            transform: rotate(35deg);
+        }
+        &.second {
+            width: vw(260);
+            height: vw(281);
+            right: vw(-20);
+            bottom: 0;
+        }
+    }
+}

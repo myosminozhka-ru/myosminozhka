@@ -3135,7 +3135,6 @@ a:hover {
 .web-title {
   font-weight: bold;
   font-size: 6.25vw;
-  text-shadow: 8px -1px 0px #4f4f4f;
   line-height: 5.20833vw;
   text-transform: uppercase;
   position: absolute;
@@ -4671,6 +4670,8 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  text-decoration: none;
+  color: #FF4978;
 }
 
 .main-cases-item .title {
@@ -4866,7 +4867,7 @@ a:hover {
 }
 
 .company-about:not(.mobile):not(.company-about__title) {
-  clip-path: circle(0 at 15.625vw 15.625vw);
+  clip-path: circle(100vw at 15.625vw 15.625vw);
 }
 
 .company-about.mobile {
@@ -5685,6 +5686,8 @@ a:hover {
 .company-raiting:not(.mobile) .company-raiting-item.isActive,
 .company-raiting:not(.mobile) .company-raiting-item:hover {
   z-index: 4;
+  background: #4F4F4F;
+  transition: .3s background .3s ease;
 }
 
 .company-raiting:not(.mobile) .company-raiting-item.isActive .image,
@@ -7235,6 +7238,11 @@ body.company .company-ceo.mobile {
 .contacts-info:not(.mobile) .contacts-info-link {
   font-size: 1.5625vw;
   line-height: 2.08333vw;
+  transition: all .3s ease;
+}
+
+.contacts-info:not(.mobile) .contacts-info-link:hover {
+  color: #fff !important;
 }
 
 .contacts-info.mobile .contacts-info-link {
@@ -8667,6 +8675,12 @@ html:root body.posts .post_info__code--in {
   font-weight: 500;
   text-decoration-line: underline;
   color: #FF4978;
+  transition: all .3s ease;
+}
+
+.blog-item-author__name .link:hover {
+  text-decoration: none !important;
+  color: #fff !important;
 }
 
 .blog-item-author:not(.mobile) .blog-item-author__name {
@@ -8727,8 +8741,19 @@ html:root body.posts .post_info__code--in {
   justify-content: center;
 }
 
+.blog-item-author__social svg {
+  width: 100%;
+  height: 100%;
+  fill: #fff;
+  transition: all .3s ease;
+}
+
 .blog-item-author__social img {
   height: 100%;
+}
+
+.blog-item-author__social:hover svg {
+  fill: #FF4978;
 }
 
 .blog-item-author:not(.mobile) .blog-item-author__social {
@@ -8866,6 +8891,59 @@ html:root body.posts .post_info__code--in {
 
 .not-found.mobile .not-found__right .text {
   font-size: 20px;
+}
+
+.video-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 200;
+  transition: all .3s ease;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.video-modal.isOpened {
+  opacity: 1;
+  visibility: visible;
+}
+
+.video-modal__in {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 2.60417vw 5.20833vw;
+  box-sizing: border-box;
+}
+
+.video-modal__in video {
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.video-modal__accessuar {
+  position: absolute;
+  z-index: 2;
+}
+
+.video-modal__accessuar.first {
+  width: 12.8125vw;
+  height: 7.5vw;
+  left: -2.08333vw;
+  top: 0;
+  transform: rotate(35deg);
+}
+
+.video-modal__accessuar.second {
+  width: 13.54167vw;
+  height: 14.63542vw;
+  right: -1.04167vw;
+  bottom: 0;
 }
 
 .footer {
@@ -9136,6 +9214,10 @@ html:root body.posts .post_info__code--in {
   grid-row-end: 8;
   grid-column-start: 1;
   grid-column-end: 2;
+}
+
+.footer:not(.mobile) .footer-presentation:hover .text {
+  color: #4f4f4f !important;
 }
 
 .footer-bank {

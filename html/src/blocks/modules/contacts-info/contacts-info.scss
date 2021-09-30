@@ -131,10 +131,15 @@
         font-weight: 500;
         text-decoration-line: underline;
         color: $mainColor;
+        
     }
     &:not(.mobile) &-link {
         font-size: vw(30);
         line-height: vw(40);
+        transition: all .3s ease;
+        &:hover {
+            color: #fff !important;
+        }
     }
     &.mobile &-link {
         font-size: 18px;

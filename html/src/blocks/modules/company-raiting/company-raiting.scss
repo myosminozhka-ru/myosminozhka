@@ -85,6 +85,8 @@
         &.isActive,
         &:hover {
             z-index: 4;
+            background: #4F4F4F;
+            transition: .3s background .3s ease;
             .image {
                 filter: brightness(100);
             }

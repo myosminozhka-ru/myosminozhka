@@ -4,10 +4,10 @@
         <div class="main-question-form">
             <div class="main-question-inputs">
                 <input type="text" placeholder="Ваше имя">
-                <input type="text" placeholder="Специальность">
+                <!-- <input type="text" placeholder="Специальность"> -->
                 <input type="email" placeholder="Email">
-                <textarea placeholder="Расскажите о себе"></textarea>
-                <label class="main-question-form-item file">
+                <!-- <textarea placeholder="Расскажите о себе"></textarea> -->
+                <!-- <label class="main-question-form-item file">
                     <input type="file">
                     <span v-if="!mainQuestionForm.hasFile">+ Прикрепить резюме</span>
                     <span v-if="mainQuestionForm.hasFile && mainQuestionForm.file.name">
@@ -18,10 +18,10 @@
                         </div>
                         <div class="text">{{mainQuestionForm.file.name}}</div>
                     </span>
-                </label>
-                <div class="main-question-form-item">
+                </label> -->
+                <div class="main-question-form-item file">
                     <button type="submit" class="button button--main"  @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
-                        <div class="text">Отправить резюме</div>
+                        <div class="text">Отправить заявку</div>
                     </button>
                 </div>
             </div>
