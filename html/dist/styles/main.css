@@ -2767,7 +2767,8 @@ a:hover {
   overflow: hidden;
 }
 
-.animated-title {
+.animated-title,
+.animated-title-top {
   transform: translateX(120%);
   width: max-content;
   min-width: 100%;
@@ -3138,6 +3139,7 @@ a:hover {
   line-height: 5.20833vw;
   text-transform: uppercase;
   position: absolute;
+  text-shadow: 8px -1px 0px #4f4f4f;
   top: 0;
   left: 0;
   right: 0;
@@ -8978,6 +8980,28 @@ html:root body.posts .post_info__code--in {
   color: #FFFFFF;
 }
 
+.cookie-form.mobile .cookie-form__in {
+  padding: 20px;
+  flex-direction: column;
+}
+
+.cookie-form.mobile .cookie-form__message {
+  font-size: 16px;
+  text-align: center;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.cookie-form.mobile .cookie-form__button {
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 16px;
+  line-height: 1.2;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
 .preloader {
   position: fixed;
   top: 0;
@@ -9007,6 +9031,16 @@ html:root body.posts .post_info__code--in {
 .preloader__image {
   width: 12.13542vw;
   height: 13.02083vw;
+}
+
+.preloader.mobile .preloader__image {
+  width: 233px;
+  height: 250px;
+}
+
+.privacy {
+  padding-top: 10.26042vw;
+  padding-bottom: 52.08333vw;
 }
 
 .footer {

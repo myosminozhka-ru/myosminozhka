@@ -188,38 +188,68 @@ window.app = new Vue({
             })
         },
         animateTitles() {
-            document.querySelectorAll(".animated-title").forEach((item, i) => {
-                gsap.to(item, {
-                    scrollTrigger: {
-                        trigger: item,
-                        start: 'top bottom',
-                        end: `bottom+=${window.innerHeight} bottom`,
-                        // end: `top-=${window.innerHeight} top-=${window.innerHeight}`,
-                        // markers: true,
-                        onUpdate: (item) => {
-                            console.log(item)
-                            console.log(item.progress)
-                            if (item.progress > 0.1) {
-                                gsap.to(item.trigger, 2, {
-                                    transform: `translateX(${-item.progress * 200 + 100}%)`
-                                })
-                            } else {
-                                gsap.to(item.trigger, 2, {
-                                    transform: `translateX(120%)`
-                                })
+            if (document.querySelectorAll(".animated-title")) {
+                document.querySelectorAll(".animated-title").forEach((item, i) => {
+                    gsap.to(item, {
+                        scrollTrigger: {
+                            trigger: item,
+                            start: 'top bottom',
+                            end: `bottom+=${window.innerHeight} bottom`,
+                            // end: `top-=${window.innerHeight} top-=${window.innerHeight}`,
+                            // markers: true,
+                            onUpdate: (item) => {
+                                console.log(item)
+                                console.log(item.progress)
+                                if (item.progress > 0.1) {
+                                    gsap.to(item.trigger, 2.5, {
+                                        transform: `translateX(${-item.progress * 200 + 100}%)`
+                                    })
+                                } else {
+                                    gsap.to(item.trigger, 2.5, {
+                                        transform: `translateX(120%)`
+                                    })
+                                }
                             }
-                        }
-                    },
-                    opacity: '1'
-                    // x: '-100%'
+                        },
+                        opacity: '1'
+                        // x: '-100%'
+                    });
                 });
-            });
-            window.addEventListener('resize', () => {
-                console.log('resized');
-            })
-            setTimeout(() => {
-                window.dispatchEvent(new Event('resize'));
-            }, 500)
+            }
+            if (document.querySelectorAll(".animated-title-top")) {
+                document.querySelectorAll(".animated-title-top").forEach((item, i) => {
+                    gsap.to(item, {
+                        scrollTrigger: {
+                            trigger: item,
+                            start: 'top bottom',
+                            end: `bottom+=${window.innerHeight} bottom`,
+                            // end: `top-=${window.innerHeight} top-=${window.innerHeight}`,
+                            // markers: true,
+                            onUpdate: (item) => {
+                                console.log(item)
+                                console.log(item.progress)
+                                if (item.progress > 0.1) {
+                                    gsap.to(item.trigger, 2.5, {
+                                        transform: `translateX(${-item.progress * 200 + 100}%)`
+                                    })
+                                } else {
+                                    gsap.to(item.trigger, 2.5, {
+                                        transform: `translateX(120%)`
+                                    })
+                                }
+                            }
+                        },
+                        opacity: '1'
+                        // x: '-100%'
+                    });
+                });
+            }
+            // window.addEventListener('resize', () => {
+            //     console.log('resized');
+            // })
+            // setTimeout(() => {
+            //     window.dispatchEvent(new Event('resize'));
+            // }, 500)
         }
     }
 });

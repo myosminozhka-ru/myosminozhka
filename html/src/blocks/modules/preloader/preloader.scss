@@ -24,4 +24,8 @@
         width: vw(233);
         height: vw(250);
     }
+    &.mobile &__image {
+        width: 233px;
+        height: 250px;
+    }
 }

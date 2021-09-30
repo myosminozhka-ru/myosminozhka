@@ -1579,6 +1579,7 @@ var mainAbout = /*#__PURE__*/function () {
     value: function initVideoOpening() {
       var _this = this;
 
+      if (!document.querySelector('.main-about-play')) return;
       document.querySelector('.main-about-play').addEventListener('click', function () {
         _this.openVideoModal();
       });
@@ -2651,39 +2652,71 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       });
     },
     animateTitles: function animateTitles() {
-      document.querySelectorAll(".animated-title").forEach(function (item, i) {
-        gsap__WEBPACK_IMPORTED_MODULE_25__["default"].to(item, {
-          scrollTrigger: {
-            trigger: item,
-            start: 'top bottom',
-            end: "bottom+=".concat(window.innerHeight, " bottom"),
-            // end: `top-=${window.innerHeight} top-=${window.innerHeight}`,
-            // markers: true,
-            onUpdate: function onUpdate(item) {
-              console.log(item);
-              console.log(item.progress);
+      if (document.querySelectorAll(".animated-title")) {
+        document.querySelectorAll(".animated-title").forEach(function (item, i) {
+          gsap__WEBPACK_IMPORTED_MODULE_25__["default"].to(item, {
+            scrollTrigger: {
+              trigger: item,
+              start: 'top bottom',
+              end: "bottom+=".concat(window.innerHeight, " bottom"),
+              // end: `top-=${window.innerHeight} top-=${window.innerHeight}`,
+              // markers: true,
+              onUpdate: function onUpdate(item) {
+                console.log(item);
+                console.log(item.progress);
 
-              if (item.progress > 0.1) {
-                gsap__WEBPACK_IMPORTED_MODULE_25__["default"].to(item.trigger, 2, {
-                  transform: "translateX(".concat(-item.progress * 200 + 100, "%)")
-                });
-              } else {
-                gsap__WEBPACK_IMPORTED_MODULE_25__["default"].to(item.trigger, 2, {
-                  transform: "translateX(120%)"
-                });
+                if (item.progress > 0.1) {
+                  gsap__WEBPACK_IMPORTED_MODULE_25__["default"].to(item.trigger, 2.5, {
+                    transform: "translateX(".concat(-item.progress * 200 + 100, "%)")
+                  });
+                } else {
+                  gsap__WEBPACK_IMPORTED_MODULE_25__["default"].to(item.trigger, 2.5, {
+                    transform: "translateX(120%)"
+                  });
+                }
               }
-            }
-          },
-          opacity: '1' // x: '-100%'
+            },
+            opacity: '1' // x: '-100%'
 
+          });
         });
-      });
-      window.addEventListener('resize', function () {
-        console.log('resized');
-      });
-      setTimeout(function () {
-        window.dispatchEvent(new Event('resize'));
-      }, 500);
+      }
+
+      if (document.querySelectorAll(".animated-title-top")) {
+        document.querySelectorAll(".animated-title-top").forEach(function (item, i) {
+          gsap__WEBPACK_IMPORTED_MODULE_25__["default"].to(item, {
+            scrollTrigger: {
+              trigger: item,
+              start: 'top bottom',
+              end: "bottom+=".concat(window.innerHeight, " bottom"),
+              // end: `top-=${window.innerHeight} top-=${window.innerHeight}`,
+              // markers: true,
+              onUpdate: function onUpdate(item) {
+                console.log(item);
+                console.log(item.progress);
+
+                if (item.progress > 0.1) {
+                  gsap__WEBPACK_IMPORTED_MODULE_25__["default"].to(item.trigger, 2.5, {
+                    transform: "translateX(".concat(-item.progress * 200 + 100, "%)")
+                  });
+                } else {
+                  gsap__WEBPACK_IMPORTED_MODULE_25__["default"].to(item.trigger, 2.5, {
+                    transform: "translateX(120%)"
+                  });
+                }
+              }
+            },
+            opacity: '1' // x: '-100%'
+
+          });
+        });
+      } // window.addEventListener('resize', () => {
+      //     console.log('resized');
+      // })
+      // setTimeout(() => {
+      //     window.dispatchEvent(new Event('resize'));
+      // }, 500)
+
     }
   }
 });

@@ -227,7 +227,7 @@ a {
 .wrapper {
   overflow: hidden;
 }
-.animated-title {
+.animated-title, .animated-title-top {
   transform: translateX(120%);
   width: max-content;
   min-width: 100%;

@@ -82,13 +82,9 @@
         </ul>
     </nav>
 </header>
-            <div class="not-found" :class="{'mobile': window.width <= 1023}">
-    <div class="not-found__left">
-        <img src="img/404.png" width="100%" alt="">
-    </div>
-    <div class="not-found__right">
-        <div class="error">Ошибка 404</div>
-        <div class="text">К сожалению Осьминожка не нашел то, что вы искали…</div>
+            <div class="privacy">
+    <div class="privacy__in">
+        <h1 class="privacy__title animated-title-top">Политика конфиденциальности</h1>
     </div>
 </div>            
             <footer class="footer" :class="{'mobile': window.width <=1023}">
@@ -226,7 +222,7 @@
         <div class="cookie-form__button">Понятно</div>
     </div>
 </div>
-<div class="preloader" :class="{'isHidden': isMounted, 'mobile': window.width <= 1023}">
+            <div class="preloader" :class="{'isHidden': isMounted, 'mobile': window.width <= 1023}">
     <div class="preloader__in">
         <div class="preloader__image">
             <img src="img/svg/preloader.svg" alt="">

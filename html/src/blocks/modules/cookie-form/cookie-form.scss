@@ -25,4 +25,23 @@
         cursor: pointer;
         color: #FFFFFF;
     }
+    &.mobile &__in {
+        padding: 20px;
+        flex-direction: column;
+    }
+    &.mobile &__message {
+        font-size: 16px;
+        text-align: center;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+    &.mobile &__button {
+        padding: 15px;
+        border-radius: 10px;
+        font-size: 16px;
+        line-height: 1.2;
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
 }

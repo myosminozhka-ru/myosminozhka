@@ -17,6 +17,7 @@ const mainAbout = class MainAbout {
         this.player.pause();
     }
     initVideoOpening() {
+        if (!document.querySelector('.main-about-play')) return;
         document.querySelector('.main-about-play').addEventListener('click', () => {this.openVideoModal()});
         document.querySelector('.video-modal').addEventListener('click', () => {this.closeVideoModal()});
         this.player = document.getElementById('player_modal');
