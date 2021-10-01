@@ -7,8 +7,8 @@ const cursorAnimation = class CursorAnimation {
             '#430A66',
         ], 
         radius: 40, 
-        speed: 5,
-        lifetime: 100,
+        speed: 1,
+        lifetime: 150,
         element: 'cursor',
     }) {
         this.params = params;
