@@ -129,7 +129,7 @@
     }
     &:not(.mobile) &-post-image {
         flex: 1 1 auto;
-        margin-bottom: vw(60);
+        margin-bottom: vw(30);
         background: var(--image) 50% 50%/cover no-repeat;
         img {
             display: none;

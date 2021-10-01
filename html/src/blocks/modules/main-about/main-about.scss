@@ -115,6 +115,13 @@
     height: vw(93);
     cursor: pointer;
   }
+  &.mobile &-play {
+    width: 115px;
+    height: 93px;
+    img {
+      height: 100%;
+    }
+  }
   &-video-shadow {
     position: absolute;
     right: vw(-60);

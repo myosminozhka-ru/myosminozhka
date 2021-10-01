@@ -3473,6 +3473,15 @@ a:hover {
   cursor: pointer;
 }
 
+.main-about.mobile .main-about-play {
+  width: 115px;
+  height: 93px;
+}
+
+.main-about.mobile .main-about-play img {
+  height: 100%;
+}
+
 .main-about-video-shadow {
   position: absolute;
   right: -3.125vw;
@@ -7099,7 +7108,7 @@ body.company .company-ceo.mobile {
 
 .blog-items:not(.mobile) .blog-items-post-image {
   flex: 1 1 auto;
-  margin-bottom: 3.125vw;
+  margin-bottom: 1.5625vw;
   background: var(--image) 50% 50%/cover no-repeat;
 }
 
@@ -8308,7 +8317,7 @@ html:root body.posts .post_info__code--in {
 }
 
 .job-stages-support-left.mobile .job-stages-support-image {
-  margin-bottom: 90px;
+  margin-bottom: -2.60417vw;
   font-size: 0;
 }
 
@@ -8323,6 +8332,7 @@ html:root body.posts .post_info__code--in {
   line-height: 6.25vw;
   text-transform: uppercase;
   margin-bottom: 2.60417vw;
+  white-space: initial !important;
 }
 
 .job-stages-support-left.mobile .job-stages-support-title {
@@ -8336,6 +8346,15 @@ html:root body.posts .post_info__code--in {
   line-height: 2.60417vw;
   padding-right: 3.90625vw;
   white-space: initial;
+}
+
+.job-stages:not(.mobile) .job-stages-support-right-track,
+.job-stages:not(.mobile) .job-stages-support-right-track .glide__slides {
+  height: 100%;
+}
+
+.job-stages:not(.mobile) .job-stages-support-right-item {
+  height: 100%;
 }
 
 .job-stages.mobile .job-stages-support-text {
@@ -9022,6 +9041,23 @@ html:root body.posts .post_info__code--in {
 .video-modal.isOpened {
   opacity: 1;
   visibility: visible;
+}
+
+.video-modal__closer {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 2.60417vw;
+  height: 2.60417vw;
+  padding: 0.52083vw;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.video-modal.mobile .video-modal__closer {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
 }
 
 .video-modal__in {

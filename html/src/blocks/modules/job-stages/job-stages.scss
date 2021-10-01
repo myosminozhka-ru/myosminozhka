@@ -283,7 +283,7 @@
         }
     }
     &-support-left.mobile &-support-image {
-        margin-bottom: 90px;
+        margin-bottom: vw(-50);
         font-size: 0;
     }
     &-support-right {
@@ -296,6 +296,7 @@
         line-height: vw(120);
         text-transform: uppercase;
         margin-bottom: vw(50);
+        white-space: initial !important;
         @extend %white;
     }
     &-support-left.mobile &-support-title {
@@ -309,6 +310,14 @@
         padding-right: vw(75);
         white-space: initial;
         @extend %white;
+    }
+    &:not(.mobile) &-support-right-track {
+        &, .glide__slides {
+            height: 100%;
+        }
+    }
+    &:not(.mobile) &-support-right-item {
+        height: 100%;
     }
     &.mobile &-support-text {
         font-size: 18px;
