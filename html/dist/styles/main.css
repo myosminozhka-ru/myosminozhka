@@ -9062,6 +9062,26 @@ html:root body.posts .post_info__code--in {
   background: #FF4978;
   cursor: pointer;
   color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+  transform: rotateZ(0);
+}
+
+.cookie-form__button span {
+  position: relative;
+  z-index: 2;
+}
+
+.cookie-form__button:hover {
+  color: #FF4978;
+}
+
+.cookie-form.mobile .cookie-form__button {
+  color: #FFFFFF !important;
+}
+
+.cookie-form.mobile .cookie-form__button .button-circle {
+  display: none !important;
 }
 
 .cookie-form.mobile .cookie-form__in {

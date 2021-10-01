@@ -24,6 +24,22 @@
         background: $mainColor;
         cursor: pointer;
         color: #FFFFFF;
+        position: relative;
+        overflow: hidden;
+        transform: rotateZ(0);
+        span {
+            position: relative;
+            z-index: 2;
+        }
+        &:hover {
+            color: $mainColor;
+        }
+    }
+    &.mobile &__button {
+        color: #FFFFFF !important;
+        .button-circle {
+            display: none !important;
+        }
     }
     &.mobile &__in {
         padding: 20px;
