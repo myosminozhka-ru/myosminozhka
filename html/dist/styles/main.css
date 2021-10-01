@@ -2707,7 +2707,6 @@ html {
 .main-cases-item .text,
 .main-resume-title,
 .company-principles-cell-text,
-.company-principles-text,
 .company-raiting-title,
 .company-partners-title,
 .company-partners-item-title,
@@ -5152,6 +5151,7 @@ input[type="checkbox"]:checked + .main-question-form-checkbox:after {
 .company-ceo.mobile {
   padding-left: 0;
   padding-right: 0;
+  background: #4f4f4f;
 }
 
 .company-ceo.mobile .web-slider-image-in {
@@ -5191,6 +5191,7 @@ input[type="checkbox"]:checked + .main-question-form-checkbox:after {
 .company-principles {
   overflow: hidden;
   background: #fff;
+  position: relative;
 }
 
 .company-principles:not(.mobile) {
@@ -5201,14 +5202,23 @@ input[type="checkbox"]:checked + .main-question-form-checkbox:after {
   padding: 60px 20px 102px;
 }
 
+.company-principles-circle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  transform: translateX(50%) translateY(50%);
+  background: #fff;
+  border-radius: 50%;
+}
+
 .company-principles-title {
   text-transform: uppercase;
   mix-blend-mode: exclusion;
   color: #c7c7c7;
-}
-
-.company-principles-text {
-  color: #b5b5b5;
+  position: relative;
+  z-index: 1;
 }
 
 .company-principles:not(.mobile) .company-principles-title {
@@ -5226,6 +5236,8 @@ input[type="checkbox"]:checked + .main-question-form-checkbox:after {
   display: flex;
   align-items: flex-start;
   padding-left: 2.60417vw;
+  position: relative;
+  z-index: 1;
 }
 
 .company-principles:not(.mobile) .company-principles-left {
@@ -5343,10 +5355,10 @@ input[type="checkbox"]:checked + .main-question-form-checkbox:after {
 .company-principles-text {
   display: flex;
   align-items: center;
-  mix-blend-mode: difference;
   font-style: normal;
   font-weight: normal;
   cursor: pointer;
+  color: #4f4f4f;
 }
 
 .company-principles-text .counter {
@@ -5917,16 +5929,13 @@ input[type="checkbox"]:checked + .main-question-form-checkbox:after {
 }
 
 body.company .company-ceo:not(.mobile) {
-  background: url("data:image/svg+xml,%3Csvg width='1920' height='1268' viewBox='0 0 1920 1268' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-5 0H1925.5V781H1405H1085.49C669.305 781 272.779 958.084 -5 1268V781L-5 0Z' fill='%234F4F4F'/%3E%3C/svg%3E%0A") 0 0/117% no-repeat;
-  padding-bottom: 31.25vw;
-}
-
-body.company .company-ceo.mobile {
   background: #4f4f4f;
+  padding-bottom: 0;
 }
 
 .company-principles:not(.mobile) {
-  margin-top: -25.26042vw;
+  padding-top: 6.51042vw;
+  background: #4f4f4f;
 }
 
 .company .company-ceo .web-data {

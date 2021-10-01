@@ -201,8 +201,6 @@ window.app = new Vue({
                             // end: `top-=${window.innerHeight} top-=${window.innerHeight}`,
                             // markers: true,
                             onUpdate: (item) => {
-                                console.log(item)
-                                console.log(item.progress)
                                 if (item.progress > 0.1) {
                                     gsap.to(item.trigger, 2.5, {
                                         transform: `translateX(${-item.progress * 200 + 100}%)`

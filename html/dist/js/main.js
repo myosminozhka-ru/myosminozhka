@@ -441,11 +441,17 @@ var companyPartners = /*#__PURE__*/function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__["ScrollTrigger"]);
 
 var companyPrinciples = /*#__PURE__*/function () {
   function CompanyPrinciples() {
@@ -455,6 +461,25 @@ var companyPrinciples = /*#__PURE__*/function () {
   _createClass(CompanyPrinciples, [{
     key: "init",
     value: function init() {
+      if (document.querySelector('.company-principles')) {
+        console.log('principles circle');
+        gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to('.company-principles-circle', {
+          scrollTrigger: {
+            trigger: '.company-principles',
+            start: 'top center',
+            end: 'bottom bottom',
+            scrub: 1 // markers: true
+
+          },
+          width: function width() {
+            return 7200 * 100 / window.innerWidth + 'vw';
+          },
+          height: function height() {
+            return 4900 * 100 / window.innerWidth + 'vw';
+          }
+        });
+      }
+
       var carousel = document.querySelector('.company-principles-carousel');
       if (!carousel) return;
       var cells = carousel.querySelectorAll('.company-principles-cell');
@@ -2728,9 +2753,6 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
               // end: `top-=${window.innerHeight} top-=${window.innerHeight}`,
               // markers: true,
               onUpdate: function onUpdate(item) {
-                console.log(item);
-                console.log(item.progress);
-
                 if (item.progress > 0.1) {
                   gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item.trigger, 2.5, {
                     transform: "translateX(".concat(-item.progress * 200 + 100, "%)")

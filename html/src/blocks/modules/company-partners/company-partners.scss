@@ -2,14 +2,15 @@
 //     background: none;
 // }
 body.company .company-ceo:not(.mobile) {
-    background: url("data:image/svg+xml,%3Csvg width='1920' height='1268' viewBox='0 0 1920 1268' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-5 0H1925.5V781H1405H1085.49C669.305 781 272.779 958.084 -5 1268V781L-5 0Z' fill='%234F4F4F'/%3E%3C/svg%3E%0A") 0 0 / 117% no-repeat;
-    padding-bottom: vw(600);
+    background: $bgColor;
+    padding-bottom: 0;
 }
-body.company .company-ceo.mobile {
-    background: #4f4f4f;
-}
+// body.company .company-ceo.mobile {
+//     background: #4f4f4f;
+// }
 .company-principles:not(.mobile) {
-    margin-top: vw(-485);
+    padding-top: vw(125);
+    background: $bgColor;
 }
 .company .company-ceo .web-data {
     position: absolute !important;

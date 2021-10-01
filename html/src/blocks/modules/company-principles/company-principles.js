@@ -1,6 +1,28 @@
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 const companyPrinciples = class CompanyPrinciples {
     constructor() {}
     init() {
+        if (document.querySelector('.company-principles')) {
+            console.log('principles circle')
+            gsap.to('.company-principles-circle', {
+                scrollTrigger: {
+                    trigger: '.company-principles',
+                    start: 'top center',
+                    end: 'bottom bottom',
+                    scrub: 1,
+                    // markers: true
+                },
+                width: () => {
+                    return 7200 * 100 / window.innerWidth + 'vw'
+                },
+                height: () => {
+                    return 4900 * 100 / window.innerWidth + 'vw'
+                },
+            })
+        }
         var carousel = document.querySelector('.company-principles-carousel');
         if (!carousel) return;
         var cells = carousel.querySelectorAll('.company-principles-cell');

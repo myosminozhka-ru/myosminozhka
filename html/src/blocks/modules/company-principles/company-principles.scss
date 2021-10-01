@@ -1,6 +1,7 @@
 .company-principles {
   overflow: hidden;
   background: #fff;
+  position: relative;
   &:not(.mobile) {
     // padding: vw(118) 0 vw(192);
     padding: 0 0 vw(192);
@@ -8,14 +9,26 @@
   &.mobile {
     padding: 60px 20px 102px;
   }
+  &-circle {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 0;
+      height: 0;
+      transform: translateX(50%) translateY(50%);
+      background: #fff;
+      border-radius: 50%;
+  }
   &-title {
       text-transform: uppercase;
       mix-blend-mode: exclusion;
       color: #c7c7c7;
+      position: relative;
+      z-index: 1;
   }
-  &-text {
-    color: #b5b5b5;
-  }
+  // &-text {
+  //   color: #b5b5b5;
+  // }
   &:not(.mobile) &-title {
     white-space: nowrap;
     margin-bottom: vw(96);
@@ -29,6 +42,8 @@
     display: flex;
     align-items: flex-start;
     padding-left: vw(50);
+    position: relative;
+      z-index: 1;
   }
   &:not(.mobile) &-left {
       width: vw(1173);
@@ -112,11 +127,12 @@
   &-text {
     display: flex;
     align-items: center;
-    mix-blend-mode: difference;
+    // mix-blend-mode: difference;
     font-style: normal;
     font-weight: normal;
     cursor: pointer;
-    @extend %white;
+    // mix-blend-mode: exclusion;
+    color: $bgColor;
     
     .counter {
       pointer-events: none;
