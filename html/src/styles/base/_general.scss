@@ -1,6 +1,11 @@
 html {
   font-size: 0;
 }
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
 h1,
 h2,
 h3,
