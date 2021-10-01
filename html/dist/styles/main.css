@@ -7165,6 +7165,10 @@ body.company .company-ceo.mobile {
   margin-right: 20px;
 }
 
+.blog-items.mobile .blog-items-posts {
+  margin-bottom: 40px;
+}
+
 .blog-items.mobile .blog-items-posts + .news-and-trends-button {
   margin: 50px auto 0;
   width: 210px;
