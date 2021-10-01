@@ -9036,6 +9036,16 @@ html:root body.posts .post_info__code--in {
   overflow: hidden;
   visibility: hidden;
   opacity: 0;
+  text-align: center;
+  font-size: 0;
+}
+
+.video-modal:after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 100%;
+  vertical-align: middle;
 }
 
 .video-modal.isOpened {
@@ -9045,8 +9055,8 @@ html:root body.posts .post_info__code--in {
 
 .video-modal__closer {
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 5.20833vw;
+  top: -2.60417vw;
   width: 2.60417vw;
   height: 2.60417vw;
   padding: 0.52083vw;
@@ -9055,18 +9065,19 @@ html:root body.posts .post_info__code--in {
 }
 
 .video-modal.mobile .video-modal__closer {
+  top: -40px;
   width: 40px;
   height: 40px;
   padding: 10px;
 }
 
 .video-modal__in {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  padding: 2.60417vw 5.20833vw;
+  width: calc(100% - 1px);
+  padding: 0 5.20833vw;
   box-sizing: border-box;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
 }
 
 .video-modal__in video {
