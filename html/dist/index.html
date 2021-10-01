@@ -730,13 +730,13 @@
         <div class="main-question-form">
             <div class="main-question-inputs">
                 <input type="text" placeholder="Ваше имя">
-                <!-- <input type="text" placeholder="Специальность"> -->
+                <input type="text" placeholder="Телефон">
                 <input type="email" placeholder="Email">
-                <input type="text" placeholder="Ваше сообщение">
-                <!-- <textarea placeholder="Ваше сообщение"></textarea> -->
+                <textarea placeholder="Ваше сообщение"></textarea>
+                <!-- <input type="text" placeholder="Ваше сообщение"> -->
                 <label class="main-question-form-item file">
                     <input type="file">
-                    <span v-if="!mainQuestionForm.hasFile">+ прикрепить файл</span>
+                    <span v-if="!mainQuestionForm.hasFile">+ Прикрепить резюме</span>
                     <span v-if="mainQuestionForm.hasFile && mainQuestionForm.file.name">
                         <div class="icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 20 26" fill="none">
@@ -748,7 +748,7 @@
                 </label>
                 <div class="main-question-form-item button">
                     <button type="submit" class="button button--main"  @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
-                        <div class="text">Отправить заявку</div>
+                        <div class="text">Отправить резюме</div>
                     </button>
                 </div>
             </div>

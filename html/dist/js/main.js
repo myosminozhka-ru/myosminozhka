@@ -1767,11 +1767,14 @@ var mainAbout = /*#__PURE__*/function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var interactjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! interactjs */ "./node_modules/interactjs/dist/interact.min.js");
+/* harmony import */ var interactjs__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(interactjs__WEBPACK_IMPORTED_MODULE_1__);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 
 
 
@@ -1887,45 +1890,33 @@ var mainCarousel = /*#__PURE__*/function () {
       }, 5000); // set initials
 
       onOrientationChange();
-      var degs = 0;
-      var starCoord = 0; // interact('.main-carousel').draggable({                     // make the element fire drag events
-      //     origin: 'self',                   // (0, 0) will be the element's top-left
-      //     inertia: true,                    // start inertial movement if thrown
-      //     // modifiers: [
-      //     // interact.modifiers.restrict({
-      //     //     restriction: 'self'           // keep the drag coords within the element
-      //     // })
-      //     // ],
-      //     // Step 3
-      //     listeners: {
-      //     move (event) {
-      //             // chooseElem(event.target.dataset.cellIndex - 1)
-      //             console.log(starCoord);
-      //             clearInterval(interval);
-      //             let style = window.getComputedStyle(document.querySelector('.main-carousel-carousel'))
-      //             let matrix = style.transform || style.webkitTransform || style.mozTransform
-      //             let matrixType = matrix.includes('3d') ? '3d' : '2d'
-      //             let matrixValues = matrix.match(/matrix.*\((.+)\)/)[1].split(', ')
-      //             var z = 0
-      //                 if (matrixType === '3d') {
-      //                     z = +matrixValues[14]
-      //                 }
-      //             var y = 0
-      //                 if (matrixType === '3d') {
-      //                     y = +matrixValues[14]
-      //                 }
-      //             degs = y - (starCoord - event.clientX / 5);
-      //             document.querySelector('.main-carousel-carousel').style.transform = `translateZ(${z}px) rotateY(${degs}deg)`;
-      //     }
-      //     }
-      // }).on('dragstart', (event) => {
-      //    starCoord = event.clientX;
-      // }).on('dragmove', () => {
-      //     document.querySelector('.main-carousel-carousel').classList.add('isDragable');
-      // }).on('dragend', () => {
-      //     // chooseElem(Math.abs(Math.round(degs / cells.length / 10)));
-      //     document.querySelector('.main-carousel-carousel').classList.remove('isDragable');
-      // })
+      var starCoord = 0;
+
+      if (window.innerWidth <= 1023) {
+        interactjs__WEBPACK_IMPORTED_MODULE_1___default()('.main-carousel').draggable({
+          origin: 'self',
+          inertia: true,
+          listeners: {
+            move: function move(event) {
+              // chooseElem(event)
+              console.log(starCoord);
+            }
+          }
+        }).on('dragstart', function (event) {
+          starCoord = event.clientX;
+          console.log(starCoord);
+        }).on('dragend', function (event) {
+          console.log(starCoord, event.clientX);
+
+          if (starCoord > event.clientX) {
+            selectedIndex++;
+            rotateCarousel();
+          } else {
+            selectedIndex--;
+            rotateCarousel();
+          }
+        });
+      }
     }
   }]);
 
