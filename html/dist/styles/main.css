@@ -2873,11 +2873,25 @@ a:hover {
   width: 100%;
   height: 3px;
   background: #fff;
+  transition: all .3s ease;
+  transform-origin: 100% 50%;
 }
 
 .header-menu-opener div:nth-child(3n+2) {
   width: 70%;
   margin-left: auto;
+}
+
+.header-menu-opener.isOpened div:nth-child(3n+2) {
+  width: 0;
+}
+
+.header-menu-opener.isOpened div:nth-child(3n+1) {
+  transform: rotate(-27deg);
+}
+
+.header-menu-opener.isOpened div:nth-child(3n+3) {
+  transform: rotate(27deg);
 }
 
 .header-menu-wave {
