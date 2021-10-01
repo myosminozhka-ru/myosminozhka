@@ -192,12 +192,25 @@ var applicationForm = /*#__PURE__*/function () {
     value: function init() {
       var _this = this;
 
-      if (!document.querySelector('.application-form') || !document.querySelector('.call-to-action-button a.button')) return;
-      document.querySelector('.call-to-action-button a.button').addEventListener('click', function (event) {
-        event.preventDefault();
+      if (!document.querySelector('.application-form') || !document.querySelector('.call-to-action-button a.button') && !document.querySelector('.web-slider-button button.button')) return;
 
-        _this.openForm();
-      });
+      if (window.innerWidth > 1023) {
+        document.querySelector('.call-to-action-button a.button').addEventListener('click', function (event) {
+          event.preventDefault();
+
+          _this.openForm();
+        });
+      } else {
+        document.querySelectorAll('.web-slider-button button.button').forEach(function (item) {
+          console.log(item);
+          item.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            _this.openForm();
+          });
+        });
+      }
+
       document.querySelector('.application-form__form-closer').addEventListener('click', function (event) {
         event.preventDefault();
 
