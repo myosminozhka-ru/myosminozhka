@@ -53,7 +53,15 @@
         line-height: 20px;
     }
 }
-
+.main-resume:not(.dropped) .main-question-form-item.button {
+    margin-right: 0 !important;
+}
+.main-resume:not(.dropped) .main-question-inputs {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
 .main-resume.dropped .main-question-form-item.button {
     padding-top: 0 !important;
     button {

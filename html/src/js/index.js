@@ -21,6 +21,7 @@ import vacanciesTabs from "%modules%/vacancies-tabs/vacancies-tabs";
 import jobInfo from "%modules%/job-info/job-info";
 import jobTeam from "%modules%/job-team/job-team";
 import jobStages from "%modules%/job-stages/job-stages";
+import applicationForm from "%modules%/application-form/application-form";
 // import postInfo from "%modules%/posts-info/posts-info";
 // import postBlog from "%modules%/posts-blog/posts-blog";
 import footer from "%modules%/footer/footer";
@@ -77,6 +78,7 @@ window.app = new Vue({
         jobStages: new jobStages(),
         footer: new footer(),
         cookiesForm: new cookiesForm(),
+        applicationForm: new applicationForm(),
         isMounted: false,
         sizes: {
             window: {
@@ -117,6 +119,7 @@ window.app = new Vue({
             this.jobTeam.init();
             this.jobStages.init();
             this.cookiesForm.init();
+            this.applicationForm.init();
             window.addEventListener('resize', () => {
                 this.window = {
                     width: window.innerWidth,
@@ -218,38 +221,65 @@ window.app = new Vue({
             }
             if (document.querySelectorAll(".animated-title-top")) {
                 document.querySelectorAll(".animated-title-top").forEach((item, i) => {
-                    gsap.to(item, {
-                        scrollTrigger: {
-                            trigger: item,
-                            start: 'top bottom',
-                            end: `bottom+=${window.innerHeight} bottom`,
-                            // end: `top-=${window.innerHeight} top-=${window.innerHeight}`,
-                            // markers: true,
-                            onUpdate: (item) => {
-                                console.log(item)
-                                console.log(item.progress)
-                                if (item.progress > 0.1) {
-                                    gsap.to(item.trigger, 2.5, {
-                                        transform: `translateX(${-item.progress * 200 + 100}%)`
-                                    })
-                                } else {
-                                    gsap.to(item.trigger, 2.5, {
-                                        transform: `translateX(120%)`
-                                    })
+                    if (window.innerWidth > 1023) {
+                        gsap.to(item, {
+                            scrollTrigger: {
+                                trigger: item,
+                                start: 'top center+=100',
+                                end: `bottom+=${window.innerHeight} bottom`,
+                                // end: `top-=${window.innerHeight} top-=${window.innerHeight}`,
+                                // markers: true,
+                                onUpdate: (item) => {
+                                    console.log(item)
+                                    console.log(item.progress)
+                                    if (item.progress > 0.1) {
+                                        gsap.to(item.trigger, 2.5, {
+                                            transform: `translateX(${-item.progress * 200 + 100}%)`
+                                        })
+                                    } else {
+                                        gsap.to(item.trigger, 2.5, {
+                                            transform: `translateX(120%)`
+                                        })
+                                    }
                                 }
-                            }
-                        },
-                        opacity: '1'
-                        // x: '-100%'
-                    });
+                            },
+                            opacity: '1'
+                            // x: '-100%'
+                        });
+                    } else {
+                        gsap.to(item, {
+                            scrollTrigger: {
+                                trigger: item,
+                                start: 'top top+=325',
+                                end: `bottom+=400 top+=325`,
+                                // end: `top-=${window.innerHeight} top-=${window.innerHeight}`,
+                                // markers: true,
+                                onUpdate: (item) => {
+                                    console.log(item)
+                                    console.log(item.progress)
+                                    if (item.progress > 0.1) {
+                                        gsap.to(item.trigger, 2.5, {
+                                            transform: `translateX(${-item.progress * 200 + 100}%)`
+                                        })
+                                    } else {
+                                        gsap.to(item.trigger, 2.5, {
+                                            transform: `translateX(120%)`
+                                        })
+                                    }
+                                }
+                            },
+                            opacity: '1'
+                            // x: '-100%'
+                        });
+                    }
                 });
             }
-            // window.addEventListener('resize', () => {
-            //     console.log('resized');
-            // })
-            // setTimeout(() => {
-            //     window.dispatchEvent(new Event('resize'));
-            // }, 500)
+            window.addEventListener('resize', () => {
+                console.log('resized');
+            })
+            setTimeout(() => {
+                window.dispatchEvent(new Event('resize'));
+            }, 500)
         }
     }
 });

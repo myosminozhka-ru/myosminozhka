@@ -132,6 +132,9 @@
     }
   }
   &:not(.mobile) &-inputs {
+    textarea {
+      max-height: vw(101);
+    }
     input,
     textarea,
     #{$root}-form-item {
@@ -148,6 +151,7 @@
     input[type="email"] {
       width: calc(100% / 3 - #{vw(136)} * 2 / 3);
       max-width: calc(100% / 3 - #{vw(136)} * 2 / 3);
+      min-width: calc(100% / 3 - #{vw(136)} * 2 / 3);
       border-bottom: vw(1) solid white;
       &,
       &::placeholder {
@@ -190,6 +194,9 @@
     input[type="file"] {
       display: none;
     }
+    input[type="checkbox"] {
+      display: none;
+    }
     & > span {
       display: flex;
       align-items: center;
@@ -197,6 +204,12 @@
     
     & > span > .text {
       color: $mainColor;
+    }
+    &.checkbox {
+      display: flex;
+      align-items: flex-start;
+      padding: 0 !important;
+      margin-bottom: 0 !important;
     }
   }
   &:not(.mobile) &-form-item {
@@ -208,6 +221,54 @@
     button {
       margin-left: auto;
     }
+  }
+  &-form-checkbox {
+    border: 1px solid #fff;
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      bottom: 50%;
+      right: 50%;
+      background: url('../img/svg/check.svg') 50% 50% / 100% no-repeat;
+      transition: all .3s ease;
+    }
+  }
+  input[type="checkbox"]:checked + &-form-checkbox:after {
+    top: 20%;
+    left: 20%;
+    bottom: 20%;
+    right: 20%;
+  }
+  &:not(.mobile) &-form-checkbox {
+    width: vw(20);
+    height: vw(20);
+    border-radius: vw(2);
+    margin-right: vw(10);
+  } 
+  &.mobile &-form-checkbox {
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    margin-right: 10px;
+  }
+  &-form-text {
+    font-weight: 500;
+    a {
+      color: #AAAAAA;
+    }
+  }
+  &:not(.mobile) &-form-text {
+    width: calc(100% - #{vw(30)});
+    font-size: vw(18);
+    line-height: vw(25);
+  }
+  &.mobile &-form-text {
+    font-size: 13px;
+    line-height: 18px;
+    width: calc(100% - 30px);
   }
   &.mobile &-form-item {
     .icon {
