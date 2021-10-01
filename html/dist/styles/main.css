@@ -3260,7 +3260,7 @@ a:hover {
 }
 
 .web-slider-image {
-  margin-bottom: 90px;
+  margin-bottom: -15px;
 }
 
 .web-slider-image-in {
@@ -3284,6 +3284,8 @@ a:hover {
   margin-bottom: 20px;
   text-transform: uppercase;
   color: #FFFFFF;
+  position: relative;
+  z-index: 2;
 }
 
 .web.mobile .web-slider-title,
@@ -9620,12 +9622,20 @@ html:root body.posts .post_info__code--in {
 .footer.mobile .footer-phones,
 .footer.mobile .footer-address,
 .footer.mobile .footer-presentation,
-.footer.mobile .footer-bank,
 .footer.mobile .footer-bookkeeping,
 .footer.mobile .footer-email,
 .footer.mobile .footer-socials {
   grid-column-start: 1;
   grid-column-end: 3;
+}
+
+.footer.mobile .footer-bank .copy {
+  right: -20px;
+  width: 20px;
+  height: 20px;
+  padding-top: 6px;
+  opacity: 1 !important;
+  visibility: visible;
 }
 
 body.company .company-ceo:not(.mobile) {
@@ -9785,6 +9795,11 @@ body.company .company-ceo:not(.mobile) {
     transform: rotateY(180deg);
     z-index: 3;
   }
+
+  .footer-bank {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
 }
 
 @media (orientation: landscape) and (max-width: 1023px) {
@@ -9889,6 +9904,15 @@ body.company .company-ceo:not(.mobile) {
 @media all and (max-width: 740px) {
   .main-question-tentacle {
     bottom: -400px;
+  }
+
+  .footer-bank {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .footer-bank .copy {
+    right: 0 !important;
   }
 }
 

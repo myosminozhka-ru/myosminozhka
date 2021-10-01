@@ -315,12 +315,35 @@
     &.mobile &-phones,
     &.mobile &-address,
     &.mobile &-presentation,
-    &.mobile &-bank,
+    
     &.mobile &-bookkeeping,
     &.mobile &-email,
     &.mobile &-socials {
         grid-column-start: 1;
         grid-column-end: 3;
+    }
+    &.mobile &-bank {
+        & .copy {
+            right: -20px;
+            width: 20px;
+            height: 20px;
+            padding-top: 6px;
+            opacity: 1 !important;
+            visibility: visible;
+        }
+    }
+    &-bank {
+        @media all and (max-width: 1023px) {
+            grid-column-start: 1;
+            grid-column-end: 2;
+        } 
+        @media all and (max-width: 740px) {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            & .copy {
+                right: 0 !important; 
+            }
+        } 
     }
 }
 

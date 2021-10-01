@@ -173,7 +173,7 @@
     }
   }
   &-slider-image {
-    margin-bottom: 90px;
+    margin-bottom: -15px;
     &-in {
       position: relative;
       padding-top: 56.6%;
@@ -194,6 +194,8 @@
     margin-bottom: 20px;
     text-transform: uppercase;
     color: #FFFFFF;
+    position: relative;
+    z-index: 2;
   }
   &.mobile &-slider-title,
   &.mobile &-slider-text {
