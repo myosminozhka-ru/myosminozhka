@@ -2026,7 +2026,7 @@ var mainCases = /*#__PURE__*/function () {
         this.destroyMobileSlider();
       }
 
-      if (window.innerWidth <= 1280 && window.innerWidth > 1023 || window.innerWidth > 1440) {
+      if (window.innerWidth <= 1366 && window.innerWidth > 1023 || window.innerWidth > 1440) {
         console.log('это старое');
         setTimeout(function () {
           gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.main-cases-items-in', {
@@ -2059,7 +2059,7 @@ var mainCases = /*#__PURE__*/function () {
             x: 0
           });
         }, 1000);
-      } else if (window.innerWidth <= 1440 && window.innerWidth > 1280) {
+      } else if (window.innerWidth <= 1440 && window.innerWidth > 1366) {
         setTimeout(function () {
           gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.main-cases-items-in', {
             scrollTrigger: {

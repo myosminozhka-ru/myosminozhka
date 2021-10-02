@@ -30,7 +30,7 @@ const mainCases = class MainCases {
             this.destroyMobileSlider();
         }
          
-         if ((window.innerWidth <= 1280 && window.innerWidth > 1023) || (window.innerWidth > 1440)) {
+         if ((window.innerWidth <= 1366 && window.innerWidth > 1023) || (window.innerWidth > 1440)) {
              console.log('это старое')
             setTimeout(() => {
                 gsap.to('.main-cases-items-in', {
@@ -63,7 +63,7 @@ const mainCases = class MainCases {
                     x: 0,
                 });
             }, 1000);
-        } else if (window.innerWidth <= 1440 && window.innerWidth > 1280) {
+        } else if (window.innerWidth <= 1440 && window.innerWidth > 1366) {
             setTimeout(() => {
                 gsap.to('.main-cases-items-in', {
                     scrollTrigger: {
