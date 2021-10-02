@@ -354,7 +354,7 @@
         </div>
     </div>
 </div>
-<div class="preloader" :class="{'isHidden': isMounted, 'mobile': window.width <= 1023}">
+<div class="preloader" :class="{'isHidden': isPreloaderHidden, 'mobile': window.width <= 1023}">
     <div class="preloader__in">
         <div class="preloader__image">
             <img src="img/svg/preloader.svg" alt="">

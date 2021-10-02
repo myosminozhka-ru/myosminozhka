@@ -80,6 +80,7 @@ window.app = new Vue({
         cookiesForm: new cookiesForm(),
         applicationForm: new applicationForm(),
         isMounted: false,
+        isPreloaderHidden: false,
         sizes: {
             window: {
                 width: window.innerWidth,
@@ -89,6 +90,9 @@ window.app = new Vue({
         isSafary: false
     }),
     mounted() {
+        setTimeout(() => {
+            this.isPreloaderHidden = true;
+        }, 1500);
         setTimeout(() => {
             this.isMounted = true;
             this.mainCases.init();
