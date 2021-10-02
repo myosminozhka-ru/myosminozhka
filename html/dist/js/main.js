@@ -2026,7 +2026,8 @@ var mainCases = /*#__PURE__*/function () {
         this.destroyMobileSlider();
       }
 
-      if (window.innerWidth > 1024) {
+      if (window.innerWidth <= 1280 && window.innerWidth > 1023 || window.innerWidth > 1440) {
+        console.log('это старое');
         setTimeout(function () {
           gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.main-cases-items-in', {
             scrollTrigger: {
@@ -2058,7 +2059,40 @@ var mainCases = /*#__PURE__*/function () {
             x: 0
           });
         }, 1000);
-      } else {
+      } else if (window.innerWidth <= 1440 && window.innerWidth > 1280) {
+        setTimeout(function () {
+          gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.main-cases-items-in', {
+            scrollTrigger: {
+              trigger: '.main-cases',
+              start: 'top top',
+              end: 'bottom bottom-=200',
+              scrub: 2,
+              // markers: true,
+              onUpdate: function onUpdate(item) {
+                if (item.progress > 0.05 && item.progress < 0.65) {
+                  document.querySelector('.main-cases-items-in').classList.add('isInViewport');
+                } else {
+                  document.querySelector('.main-cases-items-in').classList.remove('isInViewport');
+                }
+              }
+            },
+            x: '-100%'
+          });
+          gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.main-cases', {
+            scrollTrigger: {
+              trigger: '.main-cases',
+              start: 'top top-=200',
+              end: 'bottom bottom',
+              pin: true,
+              scrub: 2,
+              pinSpacing: false // markers: true
+
+            },
+            x: 0
+          });
+        }, 1000);
+      } else if (window.innerWidth <= 1023) {
+        console.log('это мобилка');
         setTimeout(function () {
           gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.main-cases-items-in', {
             scrollTrigger: {
