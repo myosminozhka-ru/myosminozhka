@@ -2561,7 +2561,6 @@ html {
 .first-frame {
   position: relative;
   z-index: 1;
-  min-height: 100vh;
 }
 
 .first-frame:not(.mobile):after {
@@ -2573,6 +2572,10 @@ html {
   height: 26.04167vw;
   z-index: 0;
   background: linear-gradient(to top, #4f4f4f 30%, transparent 100%);
+}
+
+.first-frame:not(.mobile) {
+  min-height: 100vh;
 }
 
 .button {

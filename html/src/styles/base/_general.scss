@@ -68,7 +68,6 @@ html {
 .first-frame {
   position: relative;
   z-index: 1;
-  min-height: 100vh;
   &:not(.mobile):after {
     content: "";
     position: absolute;
@@ -78,6 +77,9 @@ html {
     height: vw(500);
     z-index: 0;
     background: linear-gradient(to top, #{$bgColor} 30%, transparent 100%);
+  }
+  &:not(.mobile) {
+    min-height: 100vh;
   }
 }
 
