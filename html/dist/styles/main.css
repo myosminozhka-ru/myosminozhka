@@ -5211,6 +5211,8 @@ input[type="checkbox"]:checked + .main-question-form-checkbox:after {
   transform: translateX(50%) translateY(50%);
   background: #fff;
   border-radius: 50%;
+  max-height: 161.253vw;
+  max-width: 235.944vw;
 }
 
 .company-principles-title {
