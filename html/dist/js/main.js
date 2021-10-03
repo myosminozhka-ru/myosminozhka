@@ -1222,15 +1222,18 @@ var header = /*#__PURE__*/function () {
     }
   }, {
     key: "onInit",
-    value: function onInit() {//console.log('Анимация шапки инициирована');
+    value: function onInit() {
+      console.log('Анимация шапки инициирована');
     }
   }, {
     key: "logoAnimationComplete",
-    value: function logoAnimationComplete() {//console.log('Анимация логотипа окончена');
+    value: function logoAnimationComplete() {
+      console.log('Анимация логотипа окончена');
     }
   }, {
     key: "headerInAnimationComplete",
-    value: function headerInAnimationComplete() {//console.log('Анимация шапки окончена');
+    value: function headerInAnimationComplete() {
+      console.log('Анимация шапки окончена');
     }
   }, {
     key: "setHeaderWavePositionOnLoad",

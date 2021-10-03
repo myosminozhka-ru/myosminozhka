@@ -1,0 +1,68 @@
+<div class="pages-info">
+    <div class="pages-info__in">
+        <h3 class="pages-info__title">Информация о страницах</h3>
+        <h4 class="pages-info__subtitle">Главная страница</h3>
+        <h5 class="pages-info__blockname">Шапка</h3>
+        <div class="pages-info__block">
+            <p>
+                Функции:
+            </p>
+            <code>
+                app.header.onInit = () => {/*тут код*/} // стреляет при загрузке шапки<br />
+                app.header.headerInAnimationComplete = () => {/*тут код*/} // стреляет когда шапка закончила уменьшаться при скролле
+            </code>
+        </div>
+        <div class="pages-info__block">
+            <p>
+                Переменные:
+            </p>
+            <code>
+                НЕТ
+            </code>
+        </div>
+        <h5 class="pages-info__blockname">Анимация точки</h3>
+        <div class="pages-info__block">
+            <p>
+                Функции:
+            </p>
+            <code>
+                app.cursorAnimation.onInit = () => {/*тут код*/} // стреляет при загрузке анимации<br />
+                app.cursorAnimation.onAnimate = () => {/*тут код*/} // стреляет при движении мышью
+            </code>
+        </div>
+        <div class="pages-info__block">
+            <p>
+                Переменные:
+            </p>
+            <code>
+                app.cursorAnimation.count = 100; // (number) количество возможных кругов на экране <br />
+                app.cursorAnimation.colors = [
+                    '#FF4978',
+                    '#430A66',
+                ]; // (array) массив цветов для градиента <br />
+                app.cursorAnimation.radius = 40; // (number) радиус кругов <br />
+                app.cursorAnimation.speed = 1; // (number) скорость исчезновение кругов <br />
+                app.cursorAnimation.lifetime = 150; // (number) указано в ms, отсюда отнимается app.cursorAnimation.speed, при 0 круг исчезает <br />
+                app.cursorAnimation.element = 'cursor'; (string) id элемента canvas <br />
+            </code>
+        </div>
+        <h5 class="pages-info__blockname">Два слова</h3>
+        <div class="pages-info__block">
+            <p>
+                Функции:
+            </p>
+            <code>
+                app.mainWords.onInit = () => {/*тут код*/} // стреляет при загрузке шапки<br />
+            </code>
+        </div>
+        <div class="pages-info__block">
+            <p>
+                Переменные:
+            </p>
+            <code>
+                app.mainWords.x.position = 'left'; // (string) или 'right', добавляет активный класс соответствующему слову <br />
+                app.mainWords.delay = 1; // (number) указано в s, задержка пока слова начнут ваыезжать <br />
+            </code>
+        </div>
+    </div>
+</div>

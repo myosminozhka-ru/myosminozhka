@@ -9412,6 +9412,45 @@ html:root body.posts .post_info__code--in {
   padding: 40px 20px !important;
 }
 
+.pages-info {
+  background: #fff;
+}
+
+.pages-info__in {
+  padding: 2.60417vw;
+}
+
+.pages-info__in p {
+  font-size: 1.04167vw;
+  color: #4f4f4f;
+}
+
+.pages-info__in code {
+  font-size: 1.04167vw;
+  color: #4f4f4f;
+  font-family: monospace !important;
+}
+
+.pages-info__title {
+  color: #4f4f4f;
+  margin-bottom: 7.8125vw;
+}
+
+.pages-info__subtitle {
+  color: #4f4f4f;
+  margin-bottom: 4.16667vw;
+}
+
+.pages-info__blockname {
+  margin-bottom: 1.04167vw;
+  font-size: 2.08333vw;
+  color: #4f4f4f;
+}
+
+.pages-info__block {
+  margin-bottom: 2.08333vw;
+}
+
 .footer {
   background: #fff;
   position: relative;

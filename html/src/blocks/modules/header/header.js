@@ -50,13 +50,13 @@ const header = class Header {
         this.onInit();
     }
     onInit() {
-        //console.log('Анимация шапки инициирована');
+        console.log('Анимация шапки инициирована');
     }
     logoAnimationComplete() {
-        //console.log('Анимация логотипа окончена');
+        console.log('Анимация логотипа окончена');
     }
     headerInAnimationComplete() {
-        //console.log('Анимация шапки окончена');
+        console.log('Анимация шапки окончена');
     }
     setHeaderWavePositionOnLoad() {
         if (document.querySelector('.header-menu')) {
