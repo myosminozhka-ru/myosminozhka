@@ -95,39 +95,40 @@ const mainCases = class MainCases {
                     x: 0,
                 });
             }, 1000);
-        } else if (window.innerWidth <= 1023) {
-            console.log('это мобилка')
-            setTimeout(() => {
-                gsap.to('.main-cases-items-in', {
-                    scrollTrigger: {
-                        trigger: '.main-cases',
-                        start: 'top top',
-                        end: 'bottom bottom',
-                        scrub: 3,
-                        // markers: true,
-                        onUpdate: (item) => {
-                            if (item.progress > 0.05 && item.progress < 0.65) {
-                                document.querySelector('.main-cases-items-in').classList.add('isInViewport');
-                            } else {
-                                document.querySelector('.main-cases-items-in').classList.remove('isInViewport');
-                            }
-                        }
-                    },
-                    x: '-100%',
-                });
-                gsap.to('.main-cases', {
-                    scrollTrigger: {
-                        trigger: '.main-cases',
-                        start: 'top top-=100',
-                        end: 'bottom bottom',
-                        pin: true,
-                        pinSpacing: false,
-                        // markers: true
-                    },
-                    x: 0,
-                });
-            }, 1000);
         }
+        // else if (window.innerWidth <= 1023) {
+        //     console.log('это мобилка')
+        //     setTimeout(() => {
+        //         gsap.to('.main-cases-items-in', {
+        //             scrollTrigger: {
+        //                 trigger: '.main-cases',
+        //                 start: 'top top',
+        //                 end: 'bottom bottom',
+        //                 scrub: 3,
+        //                 // markers: true,
+        //                 onUpdate: (item) => {
+        //                     if (item.progress > 0.05 && item.progress < 0.65) {
+        //                         document.querySelector('.main-cases-items-in').classList.add('isInViewport');
+        //                     } else {
+        //                         document.querySelector('.main-cases-items-in').classList.remove('isInViewport');
+        //                     }
+        //                 }
+        //             },
+        //             x: '-100%',
+        //         });
+        //         gsap.to('.main-cases', {
+        //             scrollTrigger: {
+        //                 trigger: '.main-cases',
+        //                 start: 'top top-=100',
+        //                 end: 'bottom bottom',
+        //                 pin: true,
+        //                 pinSpacing: false,
+        //                 // markers: true
+        //             },
+        //             x: 0,
+        //         });
+        //     }, 1000);
+        // }
     }
 }
 

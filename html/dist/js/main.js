@@ -2091,39 +2091,40 @@ var mainCases = /*#__PURE__*/function () {
             x: 0
           });
         }, 1000);
-      } else if (window.innerWidth <= 1023) {
-        console.log('это мобилка');
-        setTimeout(function () {
-          gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.main-cases-items-in', {
-            scrollTrigger: {
-              trigger: '.main-cases',
-              start: 'top top',
-              end: 'bottom bottom',
-              scrub: 3,
-              // markers: true,
-              onUpdate: function onUpdate(item) {
-                if (item.progress > 0.05 && item.progress < 0.65) {
-                  document.querySelector('.main-cases-items-in').classList.add('isInViewport');
-                } else {
-                  document.querySelector('.main-cases-items-in').classList.remove('isInViewport');
-                }
-              }
-            },
-            x: '-100%'
-          });
-          gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.main-cases', {
-            scrollTrigger: {
-              trigger: '.main-cases',
-              start: 'top top-=100',
-              end: 'bottom bottom',
-              pin: true,
-              pinSpacing: false // markers: true
+      } // else if (window.innerWidth <= 1023) {
+      //     console.log('это мобилка')
+      //     setTimeout(() => {
+      //         gsap.to('.main-cases-items-in', {
+      //             scrollTrigger: {
+      //                 trigger: '.main-cases',
+      //                 start: 'top top',
+      //                 end: 'bottom bottom',
+      //                 scrub: 3,
+      //                 // markers: true,
+      //                 onUpdate: (item) => {
+      //                     if (item.progress > 0.05 && item.progress < 0.65) {
+      //                         document.querySelector('.main-cases-items-in').classList.add('isInViewport');
+      //                     } else {
+      //                         document.querySelector('.main-cases-items-in').classList.remove('isInViewport');
+      //                     }
+      //                 }
+      //             },
+      //             x: '-100%',
+      //         });
+      //         gsap.to('.main-cases', {
+      //             scrollTrigger: {
+      //                 trigger: '.main-cases',
+      //                 start: 'top top-=100',
+      //                 end: 'bottom bottom',
+      //                 pin: true,
+      //                 pinSpacing: false,
+      //                 // markers: true
+      //             },
+      //             x: 0,
+      //         });
+      //     }, 1000);
+      // }
 
-            },
-            x: 0
-          });
-        }, 1000);
-      }
     }
   }]);
 
