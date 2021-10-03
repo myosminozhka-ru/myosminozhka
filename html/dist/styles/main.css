@@ -6834,7 +6834,25 @@ body.company .company-ceo:not(.mobile) {
 
 .vacan .career-first:not(.mobile) {
   background: url("data:image/svg+xml,%3Csvg width='1920' height='1292' viewBox='0 0 1920 1292' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 -5.5H1930.5V1050H1410H935.596C608.252 1050 286.289 1133.28 0 1292V1050V-5.5Z' fill='%234F4F4F'/%3E%3C/svg%3E%0A") 0 100%/100% no-repeat;
-  padding-bottom: 15.625vw;
+  padding-bottom: 40vh;
+  position: relative;
+}
+
+.vacan .career-first:not(.mobile):before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 50%;
+  right: 0;
+  background: #4f4f4f;
+}
+
+.vacan .career-first:not(.mobile) .career-first-title,
+.vacan .career-first:not(.mobile) .career-first-info {
+  position: relative;
+  z-index: 3;
 }
 
 .vacancies-tabs:not(.mobile) {
@@ -9263,6 +9281,7 @@ html:root body.posts .post_info__code--in {
 .privacy__title {
   color: #929292;
   margin-bottom: 13.02083vw;
+  font-weight: 600;
 }
 
 .privacy.mobile .privacy__title {
