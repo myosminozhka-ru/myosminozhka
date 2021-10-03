@@ -90,10 +90,16 @@ window.app = new Vue({
         isSafary: false
     }),
     mounted() {
+        // setTimeout(() => {
+        //     this.isPreloaderHidden = true;
+        // }, 1500);
+        
+
         setTimeout(() => {
-            this.isPreloaderHidden = true;
-        }, 1500);
-        setTimeout(() => {
+            let preloader = document.querySelector('.preloader svg animateTransform');
+            preloader.addEventListener('endEvent', () => {
+                this.isPreloaderHidden = true;
+            })
             this.isMounted = true;
             this.mainCases.init();
             this.mainWords.countPosition();

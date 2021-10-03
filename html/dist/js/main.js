@@ -2649,10 +2649,14 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   mounted: function mounted() {
     var _this = this;
 
+    // setTimeout(() => {
+    //     this.isPreloaderHidden = true;
+    // }, 1500);
     setTimeout(function () {
-      _this.isPreloaderHidden = true;
-    }, 1500);
-    setTimeout(function () {
+      var preloader = document.querySelector('.preloader svg animateTransform');
+      preloader.addEventListener('endEvent', function () {
+        _this.isPreloaderHidden = true;
+      });
       _this.isMounted = true;
 
       _this.mainCases.init();

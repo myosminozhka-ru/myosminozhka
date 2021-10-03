@@ -3352,6 +3352,7 @@ a:hover {
 
 .main-about:not(.mobile) {
   padding: 5.20833vw 2.60417vw 0;
+  min-height: 100vh;
 }
 
 .main-about.mobile {
