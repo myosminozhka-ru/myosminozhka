@@ -2625,6 +2625,10 @@ html {
   will-change: width, height;
 }
 
+.first__fullscreen_frame:not(.mobile) {
+  min-height: 100vh;
+}
+
 /* width */
 
 ::-webkit-scrollbar {
@@ -3353,6 +3357,7 @@ a:hover {
 .main-about:not(.mobile) {
   padding: 5.20833vw 2.60417vw 0;
   min-height: 100vh;
+  box-sizing: border-box;
 }
 
 .main-about.mobile {
@@ -4985,6 +4990,8 @@ input[type="checkbox"]:checked + .main-question-form-checkbox:after {
 
 .company-about:not(.mobile) {
   padding: 9.94792vw 2.60417vw 2.60417vw;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
 .company-about:not(.mobile):not(.company-about__title) {

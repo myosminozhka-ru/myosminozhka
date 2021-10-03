@@ -32,7 +32,8 @@
     </head>
     <body>
         <div class="wrapper" id="app">
-            <header class="header" :class="{'isOpened': header.isOpened, 'mobile': window.width <=1023}">
+            <div class="first__fullscreen_frame" :class="{ 'mobile': window.width <= 1023 }">
+                <header class="header" :class="{'isOpened': header.isOpened, 'mobile': window.width <=1023}">
     <div class="header-blur"></div>
     <div class="header-in">
         <a href="/" class="header-logo" :class="{'mobile': window.width <=1023}">
@@ -82,7 +83,7 @@
         </ul>
     </nav>
 </header>
-            <section class="career-first" :class="{'mobile': window.width <=1023}">
+                <section class="career-first" :class="{'mobile': window.width <=1023}">
     <h1 class="career-first-title">Web разработка</h1>
     <div class="career-first-tentacle" v-if="window.width <=1023">
         <img src="img/svg/tentacle_static.svg" width="100%" alt="" v-if="isSafary">
@@ -93,6 +94,7 @@
     </div>
     
 </section>
+            </div>
             <section class="job-first">
     <div class="job-first-tentacle">
         <img src="img/svg/tentacle_static.svg" width="100%" alt="" v-if="isSafary">
@@ -1026,7 +1028,7 @@
         </div>
     </div>
 </div>
-<div class="preloader" :class="{'isHidden': isPreloaderHidden, 'mobile': window.width <= 1023}">
+            <div class="preloader" :class="{'isHidden': isPreloaderHidden, 'mobile': window.width <= 1023}">
     <div class="preloader__in">
         <div class="preloader__image">
             <svg width="100%" height="100%" viewBox="0 0 94 109" fill="none" xmlns="http://www.w3.org/2000/svg">

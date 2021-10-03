@@ -2655,7 +2655,9 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     setTimeout(function () {
       var preloader = document.querySelector('.preloader svg animateTransform');
       preloader.addEventListener('endEvent', function () {
+        console.log('page is loaded');
         _this.isPreloaderHidden = true;
+        console.log(_this.isPreloaderHidden);
       });
       _this.isMounted = true;
 

@@ -141,6 +141,12 @@ html {
   }
 }
 
+.first__fullscreen_frame {
+  &:not(.mobile) {
+    min-height: 100vh;
+  }
+}
+
 
 
 // @keyframes circleIn {

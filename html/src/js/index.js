@@ -98,7 +98,9 @@ window.app = new Vue({
         setTimeout(() => {
             let preloader = document.querySelector('.preloader svg animateTransform');
             preloader.addEventListener('endEvent', () => {
+                console.log('page is loaded')
                 this.isPreloaderHidden = true;
+                console.log(this.isPreloaderHidden);
             })
             this.isMounted = true;
             this.mainCases.init();

@@ -32,11 +32,13 @@
     </head>
     <body>
         <div class="wrapper" id="app">
-            @@include("../blocks/modules/header/header.html")
-            @@include("../blocks/modules/career-first/career-first.html", {
-                "text": "Web разработка",
-                "isInfoHidden": true
-            })
+            <div class="first__fullscreen_frame" :class="{ 'mobile': window.width <= 1023 }">
+                @@include("../blocks/modules/header/header.html")
+                @@include("../blocks/modules/career-first/career-first.html", {
+                    "text": "Web разработка",
+                    "isInfoHidden": true
+                })
+            </div>
             @@include("../blocks/modules/job-first/job-first.html")
             @@include("../blocks/modules/job-info/job-info.html")
             @@include("../blocks/modules/job-team/job-team.html")
@@ -45,7 +47,7 @@
             @@include("../blocks/modules/main-resume-form/main-resume-form.html")
             @@include("../blocks/modules/footer/footer.html")
             @@include("../blocks/modules/cookie-form/cookie-form.html")
-@@include("../blocks/modules/preloader/preloader.html")
+            @@include("../blocks/modules/preloader/preloader.html")
         </div>
         <script src="js/main.js"></script>
         <script src="js/vendor.js"></script>

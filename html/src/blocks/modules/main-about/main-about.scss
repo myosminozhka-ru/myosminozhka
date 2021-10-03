@@ -11,6 +11,7 @@
   &:not(.mobile) {
     padding: vw(100) vw(50) 0;
     min-height: 100vh;
+    box-sizing: border-box;
   }
   &.mobile {
     padding: 0 20px 60px;

@@ -14,6 +14,8 @@
     }
     &:not(.mobile) {
         padding: vw(191) vw(50) vw(50);
+        min-height: 100vh;
+        box-sizing: border-box;
     }
     &:not(.mobile) {
         &:not(.company-about__title) {

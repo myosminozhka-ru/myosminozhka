@@ -32,16 +32,18 @@
     </head>
     <body class="vacan">
         <div class="wrapper" id="app">
-            @@include("../blocks/modules/header/header.html")
-            @@include("../blocks/modules/career-first/career-first.html", {
-                "text": "Вакансии",
-                "isInfoHidden": false
-            })
+            <div class="first__fullscreen_frame" :class="{ 'mobile': window.width <= 1023 }">
+                @@include("../blocks/modules/header/header.html")
+                @@include("../blocks/modules/career-first/career-first.html", {
+                    "text": "Вакансии",
+                    "isInfoHidden": false
+                })
+            </div>
             @@include("../blocks/modules/vacancies-tabs/vacancies-tabs.html")
             @@include("../blocks/modules/main-resume-form2/main-resume-form2.html")
             @@include("../blocks/modules/footer/footer.html")
             @@include("../blocks/modules/cookie-form/cookie-form.html")
-@@include("../blocks/modules/preloader/preloader.html")
+            @@include("../blocks/modules/preloader/preloader.html")
         </div>
         <script src="js/main.js"></script>
         <script src="js/vendor.js"></script>
