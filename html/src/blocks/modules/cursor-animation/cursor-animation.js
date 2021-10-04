@@ -20,7 +20,6 @@ const cursorAnimation = class CursorAnimation {
     createCanvas() {        
         return new Promise((resolve, reject) => {
             if (document.getElementById(this.params.element)) {
-                console.log(123)
                 resolve({
                     canvas: this.canvas = document.getElementById(this.params.element),
                     ctx: this.canvas ? this.ctx = this.canvas.getContext('2d') : null,
@@ -87,12 +86,8 @@ const cursorAnimation = class CursorAnimation {
             // console.warn(error)
         });
     }
-    onInit() {
-        console.log('Анимация движения курсора инициирована')
-    }
-    onAnimate() {
-        console.log('Анимируем червячка )')
-    }
+    onInit() {}
+    onAnimate() {}
 }
 
 export default cursorAnimation;

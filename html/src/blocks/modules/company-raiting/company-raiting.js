@@ -29,7 +29,6 @@ const companyRaiting = class companyRaiting {
         });
     }
     changeSlide(item) {
-        console.log(item);
 
         this.slider.go(`=${item.dataset.itemId}`);
         document.querySelectorAll('.company-raiting-item').forEach(trigger => {
@@ -40,7 +39,6 @@ const companyRaiting = class companyRaiting {
     onSliderInit() {
         document.querySelector(`.company-raiting-item[data-item-id="${this.slider.index}"]`).classList.add('isActive');
         this.slider.on('run.after', (item) => {
-            console.log(this.slider.index);
             document.querySelectorAll('.company-raiting-item').forEach(trigger => {
                 trigger.classList.remove('isActive')
             })

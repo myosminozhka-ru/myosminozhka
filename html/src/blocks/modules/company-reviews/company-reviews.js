@@ -26,7 +26,6 @@ const companyReviews = class companyReviews {
         if (!document.querySelector('.company-reviews-slider')) return;
         let self = this;
         var FixBoundPeek = function (Glide, Components, Events) {
-            console.log(self.slider);
             return {
               modify (translate) {
                 
@@ -41,13 +40,11 @@ const companyReviews = class companyReviews {
                     self.allElementsWidth = 0;
                     self.translate = 0;
                     document.querySelectorAll('.company-reviews-item').forEach(item => {
-                        console.log(self.allElementsWidth);
                         if (!item.className.includes('glide__slide--active')) {
                             self.allElementsWidth += (item.offsetWidth + 100);
                         }
                     })
                     self.translate += self.allElementsWidth - self.elementWidth * 2;
-                    console.log(self.translate)
                 } 
                 self.index = self.slider.index;
                 

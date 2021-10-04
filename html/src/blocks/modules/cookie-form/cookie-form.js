@@ -3,7 +3,6 @@ const cookiesForm = class cookiesForm {
         this.isClosedOnce = false;
     }
     checkIfFormClosedOnce() {
-        console.log(localStorage.getItem('cookiesFormOnceClosed'))
         if (localStorage.getItem('cookiesFormOnceClosed') == 'true') {
             this.isClosedOnce = true;
         }

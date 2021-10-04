@@ -49,15 +49,9 @@ const header = class Header {
         this.setHeaderWavePositionOnLoad();
         this.onInit();
     }
-    onInit() {
-        console.log('Анимация шапки инициирована');
-    }
-    logoAnimationComplete() {
-        console.log('Анимация логотипа окончена');
-    }
-    headerInAnimationComplete() {
-        console.log('Анимация шапки окончена');
-    }
+    onInit() {}
+    logoAnimationComplete() {}
+    headerInAnimationComplete() {}
     setHeaderWavePositionOnLoad() {
         if (document.querySelector('.header-menu')) {
             let active_menu = document.querySelector('.header-menu li.isActive');
@@ -72,7 +66,6 @@ const header = class Header {
         }
     }
     setHeaderWavePosition() {
-        console.log('counting completed');
         // gsap.to('.header-menu-wave', {
         //     left: event.target.offsetLeft + event.target.offsetWidth / 2
         // })

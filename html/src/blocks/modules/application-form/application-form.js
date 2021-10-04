@@ -1,11 +1,9 @@
 const applicationForm = class ApplicationForm {
     constructor() {}
     openForm() {
-        console.log('form is opened');
         document.querySelector('.application-form').classList.add('isOpened');
     }
     closeForm() {
-        console.log('form is closed');
         document.querySelector('.application-form').classList.remove('isOpened');
     }
     init() {
@@ -17,7 +15,6 @@ const applicationForm = class ApplicationForm {
             })
         } else {
             document.querySelectorAll('.web-slider-button button.button').forEach( item => {
-                console.log(item);
                 item.addEventListener('click', event => {
                     event.preventDefault();
                     this.openForm();

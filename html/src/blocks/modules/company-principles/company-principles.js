@@ -6,7 +6,6 @@ const companyPrinciples = class CompanyPrinciples {
     constructor() {}
     init() {
         if (document.querySelector('.company-principles')) {
-            console.log('principles circle')
             gsap.to('.company-principles-circle', {
                 scrollTrigger: {
                     trigger: '.company-principles',
@@ -35,7 +34,6 @@ const companyPrinciples = class CompanyPrinciples {
         var radius, theta;
 
         function rotateCarousel() {
-            console.log(selectedIndex);
             var angle = theta * selectedIndex * -1;
             carousel.style.transform = 'translateZ(' + -radius + 'px) ' + 
             rotateFn + '(' + angle + 'deg)';
@@ -43,7 +41,6 @@ const companyPrinciples = class CompanyPrinciples {
                 document.querySelector(`.company-principles-text.isActive`).classList.remove('isActive');
             }
             document.querySelector(`[data-text-index="${selectedIndex+1}"]`).classList.add('isActive');
-            console.log(selectedIndex);
         }
 
         var prevButton = document.querySelector('.previous-button');

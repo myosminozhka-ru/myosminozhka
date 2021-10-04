@@ -19,7 +19,6 @@ const mainCarousel = class MainCarousel {
 
         function rotateCarousel() {
             self.onCarouselChange();
-            console.log((selectedIndex+1) % +cellCount, selectedIndex+1, +cellCount);
             var angle = theta * selectedIndex * -1;
             carousel.style.transform = 'translateZ(' + -radius + 'px) ' + 
                 rotateFn + '(' + angle + 'deg)';
@@ -119,16 +118,11 @@ const mainCarousel = class MainCarousel {
                 origin: 'self',
                 inertia: true,
                 listeners: {
-                    move (event) {
-                            // chooseElem(event)
-                            console.log(starCoord);
-                    }
+                    move (event) {}
                 }
             }).on('dragstart', (event) => {
                 starCoord = event.clientX;
-                console.log(starCoord)
             }).on('dragend', (event) => {
-                console.log(starCoord, event.clientX)
                 if (starCoord > event.clientX) {
                     selectedIndex++;
                     rotateCarousel();

@@ -77,9 +77,7 @@ window.app = new Vue({
     mounted() {
         let preloader = document.querySelector('.preloader svg animateTransform');
         preloader.addEventListener('endEvent', () => {
-            console.log('page is loaded')
             this.isPreloaderHidden = true;
-            console.log(this.isPreloaderHidden);
         })
         setTimeout(() => {
             
@@ -221,8 +219,6 @@ window.app = new Vue({
                                 // end: `top-=${window.innerHeight} top-=${window.innerHeight}`,
                                 // markers: true,
                                 onUpdate: (item) => {
-                                    console.log(item)
-                                    console.log(item.progress)
                                     if (item.progress > 0.1) {
                                         gsap.to(item.trigger, 2.5, {
                                             transform: `translateX(${-item.progress * 200 + 100}%)`
@@ -246,8 +242,6 @@ window.app = new Vue({
                                 // end: `top-=${window.innerHeight} top-=${window.innerHeight}`,
                                 // markers: true,
                                 onUpdate: (item) => {
-                                    console.log(item)
-                                    console.log(item.progress)
                                     if (item.progress > 0.1) {
                                         gsap.to(item.trigger, 2.5, {
                                             transform: `translateX(${-item.progress * 200 + 100}%)`
@@ -265,9 +259,6 @@ window.app = new Vue({
                     }
                 });
             }
-            window.addEventListener('resize', () => {
-                console.log('resized');
-            })
             setTimeout(() => {
                 window.dispatchEvent(new Event('resize'));
             }, 500)

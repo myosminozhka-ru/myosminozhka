@@ -23,12 +23,8 @@ const mainCases = class MainCases {
         this.slider.destroy();
     }
     onInit() {}
-    onAnimationStart() {
-        console.log('start')
-    }
-    onAnimationEnd() {
-        console.log('end')
-    }
+    onAnimationStart() {}
+    onAnimationEnd() {}
     init() {
         if (!document.querySelector('.main-cases')) return;
         let self = this;
@@ -40,7 +36,6 @@ const mainCases = class MainCases {
         }
          
          if ((window.innerWidth <= 1366 && window.innerWidth > 1023) || (window.innerWidth > 1440)) {
-             console.log('это старое')
             setTimeout(() => {
                 gsap.to('.main-cases-items-in', {
                     scrollTrigger: {

@@ -34,7 +34,6 @@ const jobStages = class jobStages {
                 panelClass: 'job-stages-slide',
                 openOnInit: [0],
                 beforeOpen: currentElement => {
-                    console.log(currentElement);
                 //   gsap.to(currentElement.querySelector('.vacancies-tabs-item-body'), 1, {
                 //     heigth: currentElement.querySelector('.vacancies-tabs-item-body').offsetHeight
                 //   })
@@ -99,7 +98,6 @@ const jobStages = class jobStages {
         
         if (document.querySelector('.job-stages-support')) {
             this.supportSlider.mount();
-            console.log(this.supportImagesSlider);
             if (document.querySelector('.job-stages-support-right')) {
                 this.supportImagesSlider.mount();
                 this.supportSlider.on(['move.after'], () => {
@@ -115,7 +113,6 @@ const jobStages = class jobStages {
                             trigger.classList.remove('isActive')
                         })
                         item.classList.add('isActive');
-                        console.log(item.dataset.targetType)
                     })
                 });
             });

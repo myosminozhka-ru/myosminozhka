@@ -45,9 +45,7 @@ const mainWords = class MainWords {
             ease: Power1.Circ,
         });
     }
-    onInit() {
-        console.log('Анимация слов инициирована');
-    }
+    onInit() {}
 }
 
 export default mainWords;

@@ -12,7 +12,6 @@ const mainQuestionForm = class mainQuestionForm {
         };
         this.hasFile = true;
         this.file = {...event.target.files}[0];
-        console.log(this.file, this.hasFile);
     }
     init() {
         if (!document.querySelector(this.inputSelector)) return;

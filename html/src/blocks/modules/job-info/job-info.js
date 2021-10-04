@@ -11,14 +11,12 @@ const jobInfo = class jobInfo {
         document.querySelectorAll('.job-info-item').forEach(item => {
             item.classList.remove('isActive');
         })
-        console.log(document.querySelector(`.job-info-item[data-target-id="${index}"]`).clientHeight);
         document.querySelector('.job-info-right').style.height = document.querySelector(`.job-info-item[data-target-id="${index}"]`).offsetHeight + 'px';
         document.querySelector(`.job-info-title[data-item-id="${index}"]`).classList.add('isActive')
         document.querySelector(`.job-info-item[data-target-id="${index}"]`).classList.add('isActive')
     }
     changeIndex(event) {
         if (event.target.className != 'job-info-title') return;
-        console.log(event.target.dataset.itemId);
         this.changeSlide(event.target.dataset.itemId)
     }
     sliderInterval() {
