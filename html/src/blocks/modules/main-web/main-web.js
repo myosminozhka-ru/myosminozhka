@@ -42,7 +42,7 @@ const mainWeb = class Mainweb {
                 // snap: 1,
                 onUpdate: (item) => {
                     if (item.progress > 0) {
-                        console.log(item.trigger.dataset.itemId)
+                        // console.log(item.trigger.dataset.itemId)
                         if (document.querySelector(`.web-subtitles`)) {
                             document.querySelectorAll(`.web-subtitle`).forEach(item => {
                                 item.classList.remove('isActive');

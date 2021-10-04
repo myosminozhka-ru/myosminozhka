@@ -2,6 +2,7 @@ import gsap from 'gsap';
 import interact from 'interactjs'
 const mainCarousel = class MainCarousel {
     constructor() {}
+    onCarouselChange() {}
     init() {
         var self = this;
         var carousel = document.querySelector('.main-carousel-carousel');
@@ -17,6 +18,7 @@ const mainCarousel = class MainCarousel {
 
 
         function rotateCarousel() {
+            self.onCarouselChange();
             console.log((selectedIndex+1) % +cellCount, selectedIndex+1, +cellCount);
             var angle = theta * selectedIndex * -1;
             carousel.style.transform = 'translateZ(' + -radius + 'px) ' + 

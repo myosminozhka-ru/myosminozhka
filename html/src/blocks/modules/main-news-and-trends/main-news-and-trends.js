@@ -25,9 +25,11 @@ const newsAndTrends = class NewsAndTrends {
             }
         }).mount();
     }
+    onInit() {}
     init() {
         if (!document.querySelector('.news-and-trends')) return;
         this.initSlider();
+        this.onInit();
     }
 }
 

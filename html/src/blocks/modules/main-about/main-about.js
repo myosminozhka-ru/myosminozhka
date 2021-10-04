@@ -34,8 +34,10 @@ const mainAbout = class MainAbout {
             }]
         });
     }
+    onCircleAnimationEnd() {}
     animateCircle() {
         if (!document.querySelector('.main-about')) return;
+        let self = this;
         if (window.innerWidth > 1023) {
             gsap.to('.main-about-circle', {
                 scrollTrigger: {
@@ -51,6 +53,9 @@ const mainAbout = class MainAbout {
                 height: () => {
                     return 4900 * 100 / window.innerWidth + 'vw'
                 },
+                onComplete() {
+                    self.onCircleAnimationEnd();
+                }
             })
             gsap.to('.main-about-title', {
                 scrollTrigger: {
@@ -119,8 +124,6 @@ const mainAbout = class MainAbout {
                 },
                 right: '100%'
             })
-        } else {
-
         }
     }
 }

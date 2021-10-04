@@ -22,8 +22,17 @@ const mainCases = class MainCases {
         if (!document.querySelector('.main-cases-slider')) return;
         this.slider.destroy();
     }
+    onInit() {}
+    onAnimationStart() {
+        console.log('start')
+    }
+    onAnimationEnd() {
+        console.log('end')
+    }
     init() {
         if (!document.querySelector('.main-cases')) return;
+        let self = this;
+        this.onInit()
         if (window.innerWidth < 1023) {
         this.initMobileSlider();
         } else {
@@ -61,6 +70,12 @@ const mainCases = class MainCases {
                         // markers: true
                     },
                     x: 0,
+                    onStart() {
+                        self.onAnimationStart();
+                    },
+                    onComplete() {
+                        self.onAnimationEnd();
+                    }
                 });
             }, 1000);
         } else if (window.innerWidth <= 1440 && window.innerWidth > 1366) {
@@ -93,6 +108,12 @@ const mainCases = class MainCases {
                         // markers: true
                     },
                     x: 0,
+                    onStart() {
+                        self.onAnimationStart();
+                    },
+                    onComplete() {
+                        self.onAnimationEnd();
+                    }
                 });
             }, 1000);
         }
