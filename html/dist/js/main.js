@@ -2612,20 +2612,10 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
   data: function data() {
     return {
-      // mainWords: new mainWords({
-      //     delay: 1,
-      //     element: '.main-words-wrap'
-      // }),
       mainWeb: new _modules_main_web_main_web__WEBPACK_IMPORTED_MODULE_2__["default"]({
         element: '.web-tentacle',
         trigger: '.first-frame'
       }),
-      // mainCarousel: new mainCarousel(),
-      // cursorAnimation: new cursorAnimation(),
-      // mainAbout: new mainAbout(),
-      // newsAndTrends: new newsAndTrends({
-      //     itemsSelector: '.news-and-trends-item'
-      // }),
       mainCases: new _modules_main_cases_main_cases__WEBPACK_IMPORTED_MODULE_6__["default"]({
         itemsClass: '.main-cases-item'
       }),
@@ -2651,7 +2641,6 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       jobStages: new _modules_job_stages_job_stages__WEBPACK_IMPORTED_MODULE_22__["default"](),
       footer: new _modules_footer_footer__WEBPACK_IMPORTED_MODULE_24__["default"](),
       cookiesForm: new _modules_cookie_form_cookie_form__WEBPACK_IMPORTED_MODULE_25__["default"](),
-      // applicationForm: new applicationForm(),
       isMounted: false,
       isPreloaderHidden: false,
       sizes: {
@@ -2666,16 +2655,13 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   mounted: function mounted() {
     var _this = this;
 
-    // setTimeout(() => {
-    //     this.isPreloaderHidden = true;
-    // }, 1500);
+    var preloader = document.querySelector('.preloader svg animateTransform');
+    preloader.addEventListener('endEvent', function () {
+      console.log('page is loaded');
+      _this.isPreloaderHidden = true;
+      console.log(_this.isPreloaderHidden);
+    });
     setTimeout(function () {
-      var preloader = document.querySelector('.preloader svg animateTransform');
-      preloader.addEventListener('endEvent', function () {
-        console.log('page is loaded');
-        _this.isPreloaderHidden = true;
-        console.log(_this.isPreloaderHidden);
-      });
       _this.isMounted = true;
 
       _this.mainCases.init(); // this.mainWords.countPosition();

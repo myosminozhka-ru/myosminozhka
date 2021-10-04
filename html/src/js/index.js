@@ -35,20 +35,10 @@ gsap.registerPlugin(ScrollTrigger);
 window.app = new Vue({
     el: '#app',
     data: () => ({
-        // mainWords: new mainWords({
-        //     delay: 1,
-        //     element: '.main-words-wrap'
-        // }),
         mainWeb: new mainWeb({
             element: '.web-tentacle',
             trigger: '.first-frame'
         }),
-        // mainCarousel: new mainCarousel(),
-        // cursorAnimation: new cursorAnimation(),
-        // mainAbout: new mainAbout(),
-        // newsAndTrends: new newsAndTrends({
-        //     itemsSelector: '.news-and-trends-item'
-        // }),
         mainCases: new mainCases({
             itemsClass: '.main-cases-item'
         }),
@@ -74,7 +64,6 @@ window.app = new Vue({
         jobStages: new jobStages(),
         footer: new footer(),
         cookiesForm: new cookiesForm(),
-        // applicationForm: new applicationForm(),
         isMounted: false,
         isPreloaderHidden: false,
         sizes: {
@@ -86,18 +75,14 @@ window.app = new Vue({
         isSafary: false
     }),
     mounted() {
-        // setTimeout(() => {
-        //     this.isPreloaderHidden = true;
-        // }, 1500);
-        
-
+        let preloader = document.querySelector('.preloader svg animateTransform');
+        preloader.addEventListener('endEvent', () => {
+            console.log('page is loaded')
+            this.isPreloaderHidden = true;
+            console.log(this.isPreloaderHidden);
+        })
         setTimeout(() => {
-            let preloader = document.querySelector('.preloader svg animateTransform');
-            preloader.addEventListener('endEvent', () => {
-                console.log('page is loaded')
-                this.isPreloaderHidden = true;
-                console.log(this.isPreloaderHidden);
-            })
+            
             this.isMounted = true;
             this.mainCases.init();
             // this.mainWords.countPosition();
