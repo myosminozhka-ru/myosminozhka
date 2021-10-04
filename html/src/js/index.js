@@ -35,26 +35,22 @@ gsap.registerPlugin(ScrollTrigger);
 window.app = new Vue({
     el: '#app',
     data: () => ({
-        mainWords: new mainWords({
-            delay: 1,
-            element: '.main-words-wrap'
-        }),
+        // mainWords: new mainWords({
+        //     delay: 1,
+        //     element: '.main-words-wrap'
+        // }),
         mainWeb: new mainWeb({
             element: '.web-tentacle',
             trigger: '.first-frame'
         }),
-        mainCarousel: new mainCarousel(),
-        cursorAnimation: new cursorAnimation(),
-        mainAbout: new mainAbout(),
-        newsAndTrends: new newsAndTrends({
-            itemsSelector: '.news-and-trends-item'
-        }),
+        // mainCarousel: new mainCarousel(),
+        // cursorAnimation: new cursorAnimation(),
+        // mainAbout: new mainAbout(),
+        // newsAndTrends: new newsAndTrends({
+        //     itemsSelector: '.news-and-trends-item'
+        // }),
         mainCases: new mainCases({
             itemsClass: '.main-cases-item'
-        }),
-        mainQuestionForm: new mainQuestionForm({
-            inputSelector: '.main-question-form-item [type="file"]',
-            textSelector: '.main-question-form-item span'
         }),
         mainQuestionForm: new mainQuestionForm({
             inputSelector: '.main-question-form-item [type="file"]',
@@ -78,7 +74,7 @@ window.app = new Vue({
         jobStages: new jobStages(),
         footer: new footer(),
         cookiesForm: new cookiesForm(),
-        applicationForm: new applicationForm(),
+        // applicationForm: new applicationForm(),
         isMounted: false,
         isPreloaderHidden: false,
         sizes: {
@@ -104,13 +100,13 @@ window.app = new Vue({
             })
             this.isMounted = true;
             this.mainCases.init();
-            this.mainWords.countPosition();
+            // this.mainWords.countPosition();
             this.mainWeb.animateElement();
-            this.mainAbout.animateCircle();
-            this.mainAbout.initVideoOpening();
-            this.cursorAnimation.init();
-            this.mainCarousel.init();
-            this.newsAndTrends.init();
+            // this.mainAbout.animateCircle();
+            // this.mainAbout.initVideoOpening();
+            // this.cursorAnimation.init();
+            // this.mainCarousel.init();
+            // this.newsAndTrends.init();
             this.header.init();
             this.companyVideo.init();
             this.companyPrinciples.init();
@@ -131,20 +127,20 @@ window.app = new Vue({
             this.jobTeam.init();
             this.jobStages.init();
             this.cookiesForm.init();
-            this.applicationForm.init();
+            // this.applicationForm.init();
             window.addEventListener('resize', () => {
                 this.window = {
                     width: window.innerWidth,
                     height: window.innerHeight,
                 }
             });
-            window.addEventListener('resize', () => this.cursorAnimation.updateCanvasSize());
-            document.addEventListener('mousemove', (event) => {
-                this.cursorAnimation.animate({
-                    x: event.pageX,
-                    y: event.pageY,
-                })
-            });
+            // window.addEventListener('resize', () => this.cursorAnimation.updateCanvasSize());
+            // document.addEventListener('mousemove', (event) => {
+            //     this.cursorAnimation.animate({
+            //         x: event.pageX,
+            //         y: event.pageY,
+            //     })
+            // });
             window.addEventListener("orientationchange", function(event) {
                 location.reload();
             });

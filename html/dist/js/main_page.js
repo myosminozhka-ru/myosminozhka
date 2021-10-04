@@ -57,7 +57,7 @@
 /******/ 	// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 	// Promise = chunk loading, 0 = chunk loaded
 /******/ 	var installedChunks = {
-/******/ 		"main": 0
+/******/ 		"main_page": 0
 /******/ 	};
 /******/
 /******/ 	var deferredModules = [];
@@ -148,7 +148,7 @@
 /******/
 /******/
 /******/ 	// add entry module to deferred list
-/******/ 	deferredModules.push(["./src/js/index.js","vendor"]);
+/******/ 	deferredModules.push(["./src/js/main_page.js","vendor"]);
 /******/ 	// run deferred modules when ready
 /******/ 	return checkDeferredModules();
 /******/ })
@@ -223,683 +223,6 @@ var applicationForm = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (applicationForm);
-
-/***/ }),
-
-/***/ "./src/blocks/modules/career-blocks/career-blocks.js":
-/*!***********************************************************!*\
-  !*** ./src/blocks/modules/career-blocks/career-blocks.js ***!
-  \***********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
-/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-
-
-gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__["ScrollTrigger"]);
-
-var careerBlocks = /*#__PURE__*/function () {
-  function careerBlocks() {
-    _classCallCheck(this, careerBlocks);
-  }
-
-  _createClass(careerBlocks, [{
-    key: "animateItems",
-    value: function animateItems() {
-      if (!document.querySelector('.career-blocks-item')) return;
-      gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__["ScrollTrigger"].matchMedia({
-        "(min-width: 1024px)": function minWidth1024px() {
-          gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].utils.toArray(".career-blocks-item").forEach(function (item, i) {
-            gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__["ScrollTrigger"].create({
-              trigger: item,
-              start: "top top",
-              pin: true,
-              pinSpacing: false
-            });
-          });
-        }
-      });
-    }
-  }, {
-    key: "init",
-    value: function init() {
-      this.animateItems();
-      console.log('career blocks inited');
-    }
-  }]);
-
-  return careerBlocks;
-}();
-
-/* harmony default export */ __webpack_exports__["default"] = (careerBlocks);
-
-/***/ }),
-
-/***/ "./src/blocks/modules/career-blog/career-blog.js":
-/*!*******************************************************!*\
-  !*** ./src/blocks/modules/career-blog/career-blog.js ***!
-  \*******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @glidejs/glide */ "./node_modules/@glidejs/glide/dist/glide.esm.js");
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-
-
-var careerBlog = /*#__PURE__*/function () {
-  function careerBlog(sliderClass) {
-    _classCallCheck(this, careerBlog);
-
-    this.sliderClass = sliderClass;
-  }
-
-  _createClass(careerBlog, [{
-    key: "init",
-    value: function init() {
-      if (!document.querySelector('.career-blog-items')) return;
-
-      if (window.innerWidth > 1023) {
-        new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.career-blog-items', {
-          startAt: 0,
-          perView: 3,
-          gap: 130,
-          type: 'carousel'
-        }).mount();
-      }
-    }
-  }]);
-
-  return careerBlog;
-}();
-
-/* harmony default export */ __webpack_exports__["default"] = (careerBlog);
-
-/***/ }),
-
-/***/ "./src/blocks/modules/company-about/company-about.js":
-/*!***********************************************************!*\
-  !*** ./src/blocks/modules/company-about/company-about.js ***!
-  \***********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-
-
-var companyAbout = /*#__PURE__*/function () {
-  function CompanyAbout(_ref) {
-    var selector = _ref.selector;
-
-    _classCallCheck(this, CompanyAbout);
-
-    this.selector = selector;
-  }
-
-  _createClass(CompanyAbout, [{
-    key: "init",
-    value: function init() {
-      var _this = this;
-
-      if (!document.querySelector('.company-about__wrap')) return;
-      document.querySelector('.company-about__wrap').addEventListener('mousemove', function (e) {
-        document.querySelector(_this.selector).style.clipPath = "circle(".concat(200 * 100 / window.innerWidth, "vw at ").concat(e.pageX, "px ").concat(e.pageY, "px)");
-      });
-      document.querySelector(this.selector).addEventListener('mouseleave', function (e) {
-        gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(_this.selector, 1, {
-          clipPath: "circle(".concat(window.innerWidth, "px at ").concat(e.pageX, "px ").concat(e.pageY, "px)")
-        });
-      });
-    }
-  }]);
-
-  return CompanyAbout;
-}();
-
-/* harmony default export */ __webpack_exports__["default"] = (companyAbout);
-
-/***/ }),
-
-/***/ "./src/blocks/modules/company-partners/company-partners.js":
-/*!*****************************************************************!*\
-  !*** ./src/blocks/modules/company-partners/company-partners.js ***!
-  \*****************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @glidejs/glide */ "./node_modules/@glidejs/glide/dist/glide.esm.js");
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-
-
-var companyPartners = /*#__PURE__*/function () {
-  function companyPartners(sliderClass) {
-    _classCallCheck(this, companyPartners);
-
-    this.sliderClass = sliderClass;
-  }
-
-  _createClass(companyPartners, [{
-    key: "init",
-    value: function init() {
-      if (!document.querySelector('.company-partners-slider')) return;
-      new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.company-partners-slider', {
-        startAt: 0,
-        bound: 'Boolean',
-        perView: 2,
-        breakpoints: {
-          1023: {
-            perView: 1
-          }
-        }
-      }).mount();
-    }
-  }]);
-
-  return companyPartners;
-}();
-
-/* harmony default export */ __webpack_exports__["default"] = (companyPartners);
-
-/***/ }),
-
-/***/ "./src/blocks/modules/company-principles/company-principles.js":
-/*!*********************************************************************!*\
-  !*** ./src/blocks/modules/company-principles/company-principles.js ***!
-  \*********************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
-/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-
-
-gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__["ScrollTrigger"]);
-
-var companyPrinciples = /*#__PURE__*/function () {
-  function CompanyPrinciples() {
-    _classCallCheck(this, CompanyPrinciples);
-  }
-
-  _createClass(CompanyPrinciples, [{
-    key: "init",
-    value: function init() {
-      if (document.querySelector('.company-principles')) {
-        console.log('principles circle');
-        gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to('.company-principles-circle', {
-          scrollTrigger: {
-            trigger: '.company-principles',
-            start: 'top center',
-            end: 'bottom bottom',
-            scrub: 1 // markers: true
-
-          },
-          width: function width() {
-            return 7200 * 100 / window.innerWidth + 'vw';
-          },
-          height: function height() {
-            return 4900 * 100 / window.innerWidth + 'vw';
-          }
-        });
-      }
-
-      var carousel = document.querySelector('.company-principles-carousel');
-      if (!carousel) return;
-      var cells = carousel.querySelectorAll('.company-principles-cell');
-      var cellCount; // cellCount set from cells-range input value
-
-      var selectedIndex = 0;
-      var cellWidth = carousel.offsetWidth;
-      var cellHeight = carousel.offsetHeight;
-      var isHorizontal = true;
-      var rotateFn = isHorizontal ? 'rotateY' : 'rotateX';
-      var radius, theta;
-
-      function rotateCarousel() {
-        console.log(selectedIndex);
-        var angle = theta * selectedIndex * -1;
-        carousel.style.transform = 'translateZ(' + -radius + 'px) ' + rotateFn + '(' + angle + 'deg)';
-
-        if (document.querySelector(".company-principles-text.isActive")) {
-          document.querySelector(".company-principles-text.isActive").classList.remove('isActive');
-        }
-
-        document.querySelector("[data-text-index=\"".concat(selectedIndex + 1, "\"]")).classList.add('isActive');
-        console.log(selectedIndex);
-      }
-
-      var prevButton = document.querySelector('.previous-button');
-      prevButton.addEventListener('click', function () {
-        selectedIndex--;
-        rotateCarousel();
-      });
-      var nextButton = document.querySelector('.next-button');
-      nextButton.addEventListener('click', function () {
-        selectedIndex++;
-        rotateCarousel();
-      });
-      var cellsRange = document.querySelector('.cells-range');
-      cellsRange.addEventListener('change', changeCarousel);
-      cellsRange.addEventListener('input', changeCarousel);
-
-      function changeCarousel() {
-        cellCount = cellsRange.value;
-        theta = 360 / cellCount;
-        var cellSize = isHorizontal ? cellWidth : cellHeight;
-        radius = Math.round(cellSize / 2 / Math.tan(Math.PI / cellCount));
-
-        for (var i = 0; i < cells.length; i++) {
-          var cell = cells[i];
-
-          if (i < cellCount) {
-            // visible cell
-            cell.style.opacity = 1;
-            var cellAngle = theta * i;
-            cell.style.transform = rotateFn + '(' + cellAngle + 'deg) translateZ(' + radius + 'px)';
-          } else {
-            // hidden cell
-            cell.style.opacity = 0;
-            cell.style.transform = 'none';
-          }
-        }
-
-        rotateCarousel();
-      }
-
-      var orientationRadios = document.querySelectorAll('input[name="orientation"]');
-
-      (function () {
-        for (var i = 0; i < orientationRadios.length; i++) {
-          var radio = orientationRadios[i];
-          radio.addEventListener('change', onOrientationChange);
-        }
-      })();
-
-      function onOrientationChange() {
-        var checkedRadio = document.querySelector('input[name="orientation"]:checked');
-        isHorizontal = checkedRadio.value == 'horizontal';
-        rotateFn = isHorizontal ? 'rotateY' : 'rotateX';
-        changeCarousel();
-      }
-
-      function chooseElem(index) {
-        selectedIndex = index;
-        rotateCarousel();
-      }
-
-      document.addEventListener('click', function (event) {
-        if (event.target.dataset.cellIndex) {
-          chooseElem(event.target.dataset.cellIndex - 1);
-        }
-
-        if (event.target.dataset.textIndex) {
-          chooseElem(event.target.dataset.textIndex - 1);
-        }
-      }); // set initials
-
-      onOrientationChange();
-      setInterval(function () {
-        if (!document.querySelector(".company-principles-text[data-text-index=\"".concat(selectedIndex + 2, "\"]"))) {
-          selectedIndex = -1;
-        }
-
-        chooseElem(++selectedIndex);
-      }, 5000);
-    }
-  }]);
-
-  return CompanyPrinciples;
-}();
-
-/* harmony default export */ __webpack_exports__["default"] = (companyPrinciples);
-
-/***/ }),
-
-/***/ "./src/blocks/modules/company-raiting/company-raiting.js":
-/*!***************************************************************!*\
-  !*** ./src/blocks/modules/company-raiting/company-raiting.js ***!
-  \***************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
-/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
-/* harmony import */ var _glidejs_glide__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @glidejs/glide */ "./node_modules/@glidejs/glide/dist/glide.esm.js");
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-
-
-
-gsap__WEBPACK_IMPORTED_MODULE_0__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__["ScrollTrigger"]);
-
-var companyRaiting = /*#__PURE__*/function () {
-  function companyRaiting(sliderClass) {
-    _classCallCheck(this, companyRaiting);
-
-    if (document.querySelector('.company-raiting-slider')) {
-      this.slider = new _glidejs_glide__WEBPACK_IMPORTED_MODULE_2__["default"]('.company-raiting-slider', {
-        startAt: 0,
-        perView: 1,
-        gap: 0
-      });
-    }
-  }
-
-  _createClass(companyRaiting, [{
-    key: "scrollTriggers",
-    value: function scrollTriggers() {
-      gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__["ScrollTrigger"].matchMedia({
-        "(min-width: 1024px)": function minWidth1024px() {
-          if (!document.querySelector('.company-raiting-items')) return;
-          var triggersWrap = document.querySelector('.company-raiting-items');
-          document.querySelector('.company-raiting').addEventListener('mousemove', function (event) {
-            triggersWrap.scroll({
-              top: 0,
-              left: event.clientX
-            });
-          });
-        }
-      });
-    }
-  }, {
-    key: "changeSlide",
-    value: function changeSlide(item) {
-      console.log(item);
-      this.slider.go("=".concat(item.dataset.itemId));
-      document.querySelectorAll('.company-raiting-item').forEach(function (trigger) {
-        trigger.classList.remove('isActive');
-      });
-      item.classList.add('isActive');
-    }
-  }, {
-    key: "onSliderInit",
-    value: function onSliderInit() {
-      var _this = this;
-
-      document.querySelector(".company-raiting-item[data-item-id=\"".concat(this.slider.index, "\"]")).classList.add('isActive');
-      this.slider.on('run.after', function (item) {
-        console.log(_this.slider.index);
-        document.querySelectorAll('.company-raiting-item').forEach(function (trigger) {
-          trigger.classList.remove('isActive');
-        });
-        document.querySelector(".company-raiting-item[data-item-id=\"".concat(_this.slider.index, "\"]")).classList.add('isActive');
-      });
-    }
-  }, {
-    key: "init",
-    value: function init() {
-      var _this2 = this;
-
-      if (this.slider) {
-        this.slider.mount();
-      }
-
-      ;
-
-      if (document.querySelector('.company-raiting-item') && this.slider) {
-        this.onSliderInit();
-        this.scrollTriggers();
-        document.querySelectorAll('.company-raiting-item').forEach(function (item) {
-          item.addEventListener('click', function () {
-            return _this2.changeSlide(item);
-          });
-        });
-      }
-    }
-  }]);
-
-  return companyRaiting;
-}();
-
-/* harmony default export */ __webpack_exports__["default"] = (companyRaiting);
-
-/***/ }),
-
-/***/ "./src/blocks/modules/company-reviews/company-reviews.js":
-/*!***************************************************************!*\
-  !*** ./src/blocks/modules/company-reviews/company-reviews.js ***!
-  \***************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @glidejs/glide */ "./node_modules/@glidejs/glide/dist/glide.esm.js");
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-
-
-var companyReviews = /*#__PURE__*/function () {
-  function companyReviews(sliderClass) {
-    _classCallCheck(this, companyReviews);
-
-    this.slider = new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.company-reviews-slider', {
-      type: 'carousel',
-      focusAt: 'center',
-      startAt: 1,
-      perView: 2,
-      gap: 100,
-      breakpoints: {
-        1023: {
-          perView: 1
-        }
-      }
-    });
-    this.translate = 0;
-    this.index = 0;
-    this.elementWidth = 0;
-    this.allElementsWidth = 0;
-  }
-
-  _createClass(companyReviews, [{
-    key: "countElementWidth",
-    value: function countElementWidth() {
-      this.elementWidth = document.querySelector('.company-reviews-item:not(glide__slide--active)').offsetWidth + 100;
-    }
-  }, {
-    key: "init",
-    value: function init() {
-      if (!document.querySelector('.company-reviews-slider')) return;
-      var self = this;
-
-      var FixBoundPeek = function FixBoundPeek(Glide, Components, Events) {
-        console.log(self.slider);
-        return {
-          modify: function modify(translate) {
-            if (self.index < self.slider.index && self.slider.index != 0 && self.slider.index != 1) {
-              self.translate += self.elementWidth;
-            } else if (self.index > self.slider.index && self.slider.index != 0 && self.slider.index != 1) {
-              self.translate -= self.elementWidth;
-            } else if (self.slider.index == 0 || self.slider.index == 1) {
-              self.translate = 0;
-            }
-
-            if (self.slider.index - self.index > 1) {
-              self.allElementsWidth = 0;
-              self.translate = 0;
-              document.querySelectorAll('.company-reviews-item').forEach(function (item) {
-                console.log(self.allElementsWidth);
-
-                if (!item.className.includes('glide__slide--active')) {
-                  self.allElementsWidth += item.offsetWidth + 100;
-                }
-              });
-              self.translate += self.allElementsWidth - self.elementWidth * 2;
-              console.log(self.translate);
-            }
-
-            self.index = self.slider.index;
-            return self.translate;
-          }
-        };
-      };
-
-      if (window.innerWidth > 1023) {
-        // this.slider.mutate([FixBoundPeek]).mount();
-        this.slider.mount();
-        this.index = this.slider.index;
-        this.countElementWidth();
-      } else {
-        this.slider.mount();
-      }
-    }
-  }]);
-
-  return companyReviews;
-}();
-
-/* harmony default export */ __webpack_exports__["default"] = (companyReviews);
-
-/***/ }),
-
-/***/ "./src/blocks/modules/company-team/company-team.js":
-/*!*********************************************************!*\
-  !*** ./src/blocks/modules/company-team/company-team.js ***!
-  \*********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-
-
-var companytTeam = /*#__PURE__*/function () {
-  function companytTeam() {
-    _classCallCheck(this, companytTeam);
-  }
-
-  _createClass(companytTeam, [{
-    key: "init",
-    value: function init() {
-      if (document.querySelector('.company-team-item')) gsap__WEBPACK_IMPORTED_MODULE_0__["default"].utils.toArray(".company-team-item").forEach(function (item, i) {
-        gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(item, {
-          scrollTrigger: {
-            trigger: item,
-            start: 'top-=800 top',
-            end: 'bottom-=400 top',
-            scrub: 1 //markers: true
-
-          },
-          scale: 1
-        });
-      });
-    }
-  }]);
-
-  return companytTeam;
-}();
-
-/* harmony default export */ __webpack_exports__["default"] = (companytTeam);
-
-/***/ }),
-
-/***/ "./src/blocks/modules/company-video/company-video.js":
-/*!***********************************************************!*\
-  !*** ./src/blocks/modules/company-video/company-video.js ***!
-  \***********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var video_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! video.js */ "./node_modules/video.js/dist/video.es.js");
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-
-
-var companyVideo = /*#__PURE__*/function () {
-  function companyVideo() {
-    _classCallCheck(this, companyVideo);
-
-    this.player;
-  }
-
-  _createClass(companyVideo, [{
-    key: "init",
-    value: function init() {
-      var _this = this;
-
-      if (!document.getElementById('player')) return;
-      setTimeout(function () {
-        _this.player = document.getElementById('player');
-        Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player', {
-          fluid: true,
-          controls: false,
-          autoplay: true,
-          aspectRatio: '16:9',
-          muted: true,
-          poster: 'img/video_preview.png',
-          sources: [{
-            src: 'videos/pv.mp4',
-            type: 'video/mp4'
-          }]
-        });
-      }, 300);
-    }
-  }]);
-
-  return companyVideo;
-}();
-
-/* harmony default export */ __webpack_exports__["default"] = (companyVideo);
 
 /***/ }),
 
@@ -1269,365 +592,6 @@ var header = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (header);
-
-/***/ }),
-
-/***/ "./src/blocks/modules/job-info/job-info.js":
-/*!*************************************************!*\
-  !*** ./src/blocks/modules/job-info/job-info.js ***!
-  \*************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @glidejs/glide */ "./node_modules/@glidejs/glide/dist/glide.esm.js");
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-
-
-var jobInfo = /*#__PURE__*/function () {
-  function jobInfo() {
-    _classCallCheck(this, jobInfo);
-
-    this.index = 0;
-  }
-
-  _createClass(jobInfo, [{
-    key: "changeSlide",
-    value: function changeSlide(index) {
-      document.querySelectorAll('.job-info-title').forEach(function (item) {
-        item.classList.remove('isActive');
-      });
-      document.querySelectorAll('.job-info-item').forEach(function (item) {
-        item.classList.remove('isActive');
-      });
-      console.log(document.querySelector(".job-info-item[data-target-id=\"".concat(index, "\"]")).clientHeight);
-      document.querySelector('.job-info-right').style.height = document.querySelector(".job-info-item[data-target-id=\"".concat(index, "\"]")).offsetHeight + 'px';
-      document.querySelector(".job-info-title[data-item-id=\"".concat(index, "\"]")).classList.add('isActive');
-      document.querySelector(".job-info-item[data-target-id=\"".concat(index, "\"]")).classList.add('isActive');
-    }
-  }, {
-    key: "changeIndex",
-    value: function changeIndex(event) {
-      if (event.target.className != 'job-info-title') return;
-      console.log(event.target.dataset.itemId);
-      this.changeSlide(event.target.dataset.itemId);
-    }
-  }, {
-    key: "sliderInterval",
-    value: function sliderInterval() {
-      var _this = this;
-
-      setInterval(function () {
-        var index = _this.index++;
-
-        if (!document.querySelector(".job-info-title[data-item-id=\"".concat(++index, "\"]")) && !document.querySelector(".job-info-item[data-target-id=\"".concat(++index, "\"]"))) {
-          _this.index = 0;
-        }
-
-        _this.changeSlide(_this.index);
-      }, 5000);
-    }
-  }, {
-    key: "init",
-    value: function init() {
-      var _this2 = this;
-
-      if (!document.querySelector('.job-info')) return;
-      this.changeSlide(this.index);
-      this.sliderInterval();
-      document.addEventListener('click', function (event) {
-        return _this2.changeIndex(event);
-      });
-    }
-  }]);
-
-  return jobInfo;
-}();
-
-/* harmony default export */ __webpack_exports__["default"] = (jobInfo);
-
-/***/ }),
-
-/***/ "./src/blocks/modules/job-stages/job-stages.js":
-/*!*****************************************************!*\
-  !*** ./src/blocks/modules/job-stages/job-stages.js ***!
-  \*****************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @glidejs/glide */ "./node_modules/@glidejs/glide/dist/glide.esm.js");
-/* harmony import */ var accordion_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! accordion-js */ "./node_modules/accordion-js/dist/accordion.min.js");
-/* harmony import */ var accordion_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(accordion_js__WEBPACK_IMPORTED_MODULE_1__);
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-
-
-
-var jobStages = /*#__PURE__*/function () {
-  function jobStages(sliderClass) {
-    _classCallCheck(this, jobStages);
-
-    this.sliderClass = sliderClass;
-    this.accorderon;
-    this.currentTab = 0;
-
-    if (document.querySelector('.job-stages-support')) {
-      this.supportSlider = new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.job-stages-support-slides', {
-        startAt: 0,
-        perView: 1,
-        gap: 0,
-        type: 'slider'
-      });
-
-      if (document.querySelector('.job-stages-support-right')) {
-        this.supportImagesSlider = new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.job-stages-support-right', {
-          startAt: 0,
-          perView: 1,
-          gap: 0,
-          type: 'carousel',
-          transitionType: 'fade'
-        });
-      }
-    }
-  }
-
-  _createClass(jobStages, [{
-    key: "init",
-    value: function init() {
-      var _this = this;
-
-      if (document.querySelector('.job-stages-tabs')) {
-        this.accorderon = new accordion_js__WEBPACK_IMPORTED_MODULE_1___default.a('.job-stages-tabs', {
-          duration: 400,
-          showMultiple: true,
-          elementClass: 'job-stages-slides',
-          triggerClass: 'job-stages-trig',
-          panelClass: 'job-stages-slide',
-          openOnInit: [0],
-          beforeOpen: function beforeOpen(currentElement) {
-            console.log(currentElement); //   gsap.to(currentElement.querySelector('.vacancies-tabs-item-body'), 1, {
-            //     heigth: currentElement.querySelector('.vacancies-tabs-item-body').offsetHeight
-            //   })
-          }
-        });
-        document.querySelectorAll('.job-stages-trigger[data-tab-id]').forEach(function (item) {
-          item.addEventListener('click', function (e) {
-            e.preventDefault();
-            if (_this.currentTab == +item.dataset.tabId) return;
-            document.querySelectorAll('.job-stages-trigger[data-tab-id]').forEach(function (item) {
-              item.classList.remove('isActive');
-            });
-            item.classList.add('isActive');
-
-            _this.accorderon.close(_this.currentTab);
-
-            _this.accorderon.open(+item.dataset.tabId);
-
-            _this.currentTab = +item.dataset.tabId;
-          });
-        });
-      }
-
-      ;
-
-      if (document.querySelector('.job-stages-slides--analitics')) {
-        new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.job-stages-slides--analitics', {
-          startAt: 0,
-          perView: 2,
-          gap: 120,
-          type: 'carousel',
-          breakpoints: {
-            800: {
-              perView: 1
-            }
-          }
-        }).mount();
-      }
-
-      ;
-
-      if (document.querySelector('.job-stages-slides--projecting')) {
-        new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.job-stages-slides--projecting', {
-          startAt: 0,
-          perView: 2,
-          gap: 120,
-          type: 'carousel',
-          breakpoints: {
-            800: {
-              perView: 1
-            }
-          }
-        }).mount();
-      }
-
-      ;
-
-      if (document.querySelector('.job-stages-slides--design')) {
-        new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.job-stages-slides--design', {
-          startAt: 0,
-          perView: 1,
-          gap: 0,
-          type: 'carousel'
-        }).mount();
-      }
-
-      ;
-
-      if (document.querySelector('.job-stages-slides--development')) {
-        new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.job-stages-slides--development', {
-          startAt: 0,
-          perView: 1,
-          gap: 0,
-          type: 'carousel'
-        }).mount();
-      }
-
-      ;
-
-      if (document.querySelector('.job-stages-support')) {
-        this.supportSlider.mount();
-        console.log(this.supportImagesSlider);
-
-        if (document.querySelector('.job-stages-support-right')) {
-          this.supportImagesSlider.mount();
-          this.supportSlider.on(['move.after'], function () {
-            _this.supportImagesSlider.go("=".concat(_this.supportSlider.index));
-          });
-        }
-      }
-
-      ;
-
-      if (document.querySelector('.job-stages-title-triggers')) {
-        document.querySelectorAll('.job-stages-title-triggers').forEach(function (wrap) {
-          wrap.querySelectorAll('.job-stages-title-trigger').forEach(function (item) {
-            item.addEventListener('click', function () {
-              wrap.querySelectorAll('.job-stages-title-trigger').forEach(function (trigger) {
-                trigger.classList.remove('isActive');
-              });
-              item.classList.add('isActive');
-              console.log(item.dataset.targetType);
-            });
-          });
-        });
-      }
-    }
-  }]);
-
-  return jobStages;
-}();
-
-/* harmony default export */ __webpack_exports__["default"] = (jobStages);
-
-/***/ }),
-
-/***/ "./src/blocks/modules/job-team/job-team.js":
-/*!*************************************************!*\
-  !*** ./src/blocks/modules/job-team/job-team.js ***!
-  \*************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
-/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-
-
-gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__["ScrollTrigger"]);
-
-var jobTeam = /*#__PURE__*/function () {
-  function jobTeam() {
-    _classCallCheck(this, jobTeam);
-  }
-
-  _createClass(jobTeam, [{
-    key: "init",
-    value: function init() {
-      if (!document.querySelector(".job_tree_item")) return;
-      gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].utils.toArray(".job_tree_item").forEach(function (item, i) {
-        gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to(item, {
-          scrollTrigger: {
-            trigger: item,
-            start: "bottom-=50 bottom-=50",
-            end: 'bottom-=50 bottom-=50' // markers: true,
-
-          },
-          fillOpacity: 1,
-          strokeOpacity: 1
-        });
-      }); // Array.from(document.querySelectorAll('.job_tree_item')).map(item => {
-      //     gsap.to(item, {
-      //         scrollTrigger: {
-      //             trigger: item,
-      //             start: "center center", 
-      //             end: 'center center',
-      //             markers: true,
-      //         },
-      //         fillOpacity: 1
-      //     })
-      // })
-
-      gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to('.job-team-title', {
-        scrollTrigger: {
-          trigger: '.job-info',
-          start: 'center center',
-          end: 'bottom+=1000 center',
-          scrub: 1
-        },
-        color: '#4f4f4f'
-      });
-      gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to('.job-team-circle', {
-        scrollTrigger: {
-          trigger: '.job-info',
-          start: 'center center',
-          end: 'bottom+=1000 center',
-          scrub: 1 // onUpdate: (item) => {
-          //     if (window.innerWidth < 1023) {
-          //         if (item.progress > 0.11) {
-          //             document.querySelector('.job-team-title').classList.add('colorChanged');
-          //         } else {
-          //             document.querySelector('.job-team-title').classList.remove('colorChanged');
-          //         }
-          //     } else {
-          //         document.querySelector('.job-team-title').classList.remove('colorChanged');
-          //     }
-          // },
-          // markers: true
-
-        },
-        width: function width() {
-          return 6200 * 100 / window.innerWidth + 'vw';
-        },
-        height: function height() {
-          return 4900 * 100 / window.innerWidth + 'vw';
-        }
-      });
-    }
-  }]);
-
-  return jobTeam;
-}();
-
-/* harmony default export */ __webpack_exports__["default"] = (jobTeam);
 
 /***/ }),
 
@@ -2486,63 +1450,10 @@ var mainWords = /*#__PURE__*/function () {
 
 /***/ }),
 
-/***/ "./src/blocks/modules/vacancies-tabs/vacancies-tabs.js":
-/*!*************************************************************!*\
-  !*** ./src/blocks/modules/vacancies-tabs/vacancies-tabs.js ***!
-  \*************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var accordion_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! accordion-js */ "./node_modules/accordion-js/dist/accordion.min.js");
-/* harmony import */ var accordion_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(accordion_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-
-
-
-var vacanciesTabs = /*#__PURE__*/function () {
-  function vacanciesTabs() {
-    _classCallCheck(this, vacanciesTabs);
-  }
-
-  _createClass(vacanciesTabs, [{
-    key: "init",
-    value: function init() {
-      if (!document.querySelector('.vacancies-tabs-items')) return;
-      new accordion_js__WEBPACK_IMPORTED_MODULE_0___default.a('.vacancies-tabs-items', {
-        duration: 400,
-        showMultiple: true,
-        elementClass: 'vacancies-tabs-item',
-        triggerClass: 'vacancies-tabs-item-title',
-        panelClass: 'vacancies-tabs-item-body',
-        // openOnInit: [0],
-        beforeOpen: function beforeOpen(currentElement) {
-          gsap__WEBPACK_IMPORTED_MODULE_1__["default"].to(currentElement.querySelector('.vacancies-tabs-item-body'), 1, {
-            heigth: currentElement.querySelector('.vacancies-tabs-item-body').offsetHeight
-          });
-        }
-      });
-    }
-  }]);
-
-  return vacanciesTabs;
-}();
-
-/* harmony default export */ __webpack_exports__["default"] = (vacanciesTabs);
-
-/***/ }),
-
-/***/ "./src/js/index.js":
-/*!*************************!*\
-  !*** ./src/js/index.js ***!
-  \*************************/
+/***/ "./src/js/main_page.js":
+/*!*****************************!*\
+  !*** ./src/js/main_page.js ***!
+  \*****************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2557,26 +1468,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_main_news_and_trends_main_news_and_trends__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! %modules%/main-news-and-trends/main-news-and-trends */ "./src/blocks/modules/main-news-and-trends/main-news-and-trends.js");
 /* harmony import */ var _modules_main_cases_main_cases__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! %modules%/main-cases/main-cases */ "./src/blocks/modules/main-cases/main-cases.js");
 /* harmony import */ var _modules_cursor_animation_cursor_animation__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! %modules%/cursor-animation/cursor-animation */ "./src/blocks/modules/cursor-animation/cursor-animation.js");
-/* harmony import */ var _modules_company_video_company_video__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! %modules%/company-video/company-video */ "./src/blocks/modules/company-video/company-video.js");
-/* harmony import */ var _modules_company_principles_company_principles__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! %modules%/company-principles/company-principles */ "./src/blocks/modules/company-principles/company-principles.js");
-/* harmony import */ var _modules_company_partners_company_partners__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! %modules%/company-partners/company-partners */ "./src/blocks/modules/company-partners/company-partners.js");
-/* harmony import */ var _modules_company_reviews_company_reviews__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! %modules%/company-reviews/company-reviews */ "./src/blocks/modules/company-reviews/company-reviews.js");
-/* harmony import */ var _modules_company_team_company_team__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! %modules%/company-team/company-team */ "./src/blocks/modules/company-team/company-team.js");
-/* harmony import */ var _modules_header_header__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! %modules%/header/header */ "./src/blocks/modules/header/header.js");
-/* harmony import */ var _modules_main_question_main_question__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! %modules%/main-question/main-question */ "./src/blocks/modules/main-question/main-question.js");
-/* harmony import */ var _modules_company_about_company_about__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! %modules%/company-about/company-about */ "./src/blocks/modules/company-about/company-about.js");
-/* harmony import */ var _modules_company_raiting_company_raiting__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! %modules%/company-raiting/company-raiting */ "./src/blocks/modules/company-raiting/company-raiting.js");
-/* harmony import */ var _modules_career_blocks_career_blocks__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! %modules%/career-blocks/career-blocks */ "./src/blocks/modules/career-blocks/career-blocks.js");
-/* harmony import */ var _modules_career_blog_career_blog__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! %modules%/career-blog/career-blog */ "./src/blocks/modules/career-blog/career-blog.js");
-/* harmony import */ var _modules_vacancies_tabs_vacancies_tabs__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! %modules%/vacancies-tabs/vacancies-tabs */ "./src/blocks/modules/vacancies-tabs/vacancies-tabs.js");
-/* harmony import */ var _modules_job_info_job_info__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! %modules%/job-info/job-info */ "./src/blocks/modules/job-info/job-info.js");
-/* harmony import */ var _modules_job_team_job_team__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! %modules%/job-team/job-team */ "./src/blocks/modules/job-team/job-team.js");
-/* harmony import */ var _modules_job_stages_job_stages__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! %modules%/job-stages/job-stages */ "./src/blocks/modules/job-stages/job-stages.js");
-/* harmony import */ var _modules_application_form_application_form__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! %modules%/application-form/application-form */ "./src/blocks/modules/application-form/application-form.js");
-/* harmony import */ var _modules_footer_footer__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! %modules%/footer/footer */ "./src/blocks/modules/footer/footer.js");
-/* harmony import */ var _modules_cookie_form_cookie_form__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! %modules%/cookie-form/cookie-form */ "./src/blocks/modules/cookie-form/cookie-form.js");
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
-/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
+/* harmony import */ var _modules_footer_footer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! %modules%/footer/footer */ "./src/blocks/modules/footer/footer.js");
+/* harmony import */ var _modules_cookie_form_cookie_form__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! %modules%/cookie-form/cookie-form */ "./src/blocks/modules/cookie-form/cookie-form.js");
+/* harmony import */ var _modules_application_form_application_form__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! %modules%/application-form/application-form */ "./src/blocks/modules/application-form/application-form.js");
+/* harmony import */ var _modules_main_question_main_question__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! %modules%/main-question/main-question */ "./src/blocks/modules/main-question/main-question.js");
+/* harmony import */ var _modules_header_header__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! %modules%/header/header */ "./src/blocks/modules/header/header.js");
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
@@ -2593,75 +1492,43 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-
-
-
-
-
- // import postInfo from "%modules%/posts-info/posts-info";
-// import postBlog from "%modules%/posts-blog/posts-blog";
-
-
-
-
-
-gsap__WEBPACK_IMPORTED_MODULE_26__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_27__["ScrollTrigger"]);
+gsap__WEBPACK_IMPORTED_MODULE_13__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_14__["ScrollTrigger"]);
 window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
   data: function data() {
-    return {
-      // mainWords: new mainWords({
-      //     delay: 1,
-      //     element: '.main-words-wrap'
-      // }),
+    var _ref;
+
+    return _ref = {
+      mainWords: new _modules_main_words_main_words__WEBPACK_IMPORTED_MODULE_1__["default"]({
+        delay: 1,
+        element: '.main-words-wrap'
+      }),
       mainWeb: new _modules_main_web_main_web__WEBPACK_IMPORTED_MODULE_2__["default"]({
         element: '.web-tentacle',
         trigger: '.first-frame'
       }),
-      // mainCarousel: new mainCarousel(),
-      // cursorAnimation: new cursorAnimation(),
-      // mainAbout: new mainAbout(),
-      // newsAndTrends: new newsAndTrends({
-      //     itemsSelector: '.news-and-trends-item'
-      // }),
+      mainCarousel: new _modules_main_carousel_main_carousel__WEBPACK_IMPORTED_MODULE_4__["default"](),
+      cursorAnimation: new _modules_cursor_animation_cursor_animation__WEBPACK_IMPORTED_MODULE_7__["default"](),
+      mainAbout: new _modules_main_about_main_about__WEBPACK_IMPORTED_MODULE_3__["default"](),
+      newsAndTrends: new _modules_main_news_and_trends_main_news_and_trends__WEBPACK_IMPORTED_MODULE_5__["default"]({
+        itemsSelector: '.news-and-trends-item'
+      }),
       mainCases: new _modules_main_cases_main_cases__WEBPACK_IMPORTED_MODULE_6__["default"]({
         itemsClass: '.main-cases-item'
       }),
-      mainQuestionForm: new _modules_main_question_main_question__WEBPACK_IMPORTED_MODULE_14__["default"]({
+      mainQuestionForm: new _modules_main_question_main_question__WEBPACK_IMPORTED_MODULE_11__["default"]({
         inputSelector: '.main-question-form-item [type="file"]',
         textSelector: '.main-question-form-item span'
-      }),
-      companyPrinciples: new _modules_company_principles_company_principles__WEBPACK_IMPORTED_MODULE_9__["default"](),
-      companyVideo: new _modules_company_video_company_video__WEBPACK_IMPORTED_MODULE_8__["default"](),
-      companyPartners: new _modules_company_partners_company_partners__WEBPACK_IMPORTED_MODULE_10__["default"](),
-      companyTeam: new _modules_company_team_company_team__WEBPACK_IMPORTED_MODULE_12__["default"](),
-      careerBlog: new _modules_career_blog_career_blog__WEBPACK_IMPORTED_MODULE_18__["default"](),
-      companyReviews: new _modules_company_reviews_company_reviews__WEBPACK_IMPORTED_MODULE_11__["default"](),
-      header: new _modules_header_header__WEBPACK_IMPORTED_MODULE_13__["default"](),
-      companyAbout: new _modules_company_about_company_about__WEBPACK_IMPORTED_MODULE_15__["default"]({
-        selector: '.company-about:not(.company-about__title)'
-      }),
-      companyRaiting: new _modules_company_raiting_company_raiting__WEBPACK_IMPORTED_MODULE_16__["default"](),
-      vacanciesTabs: new _modules_vacancies_tabs_vacancies_tabs__WEBPACK_IMPORTED_MODULE_19__["default"](),
-      careerBlocks: new _modules_career_blocks_career_blocks__WEBPACK_IMPORTED_MODULE_17__["default"](),
-      jobInfo: new _modules_job_info_job_info__WEBPACK_IMPORTED_MODULE_20__["default"](),
-      jobTeam: new _modules_job_team_job_team__WEBPACK_IMPORTED_MODULE_21__["default"](),
-      jobStages: new _modules_job_stages_job_stages__WEBPACK_IMPORTED_MODULE_22__["default"](),
-      footer: new _modules_footer_footer__WEBPACK_IMPORTED_MODULE_24__["default"](),
-      cookiesForm: new _modules_cookie_form_cookie_form__WEBPACK_IMPORTED_MODULE_25__["default"](),
-      // applicationForm: new applicationForm(),
-      isMounted: false,
-      isPreloaderHidden: false,
-      sizes: {
-        window: {
-          width: window.innerWidth,
-          height: window.innerHeight
-        }
-      },
-      isSafary: false
-    };
+      })
+    }, _defineProperty(_ref, "mainQuestionForm", new _modules_main_question_main_question__WEBPACK_IMPORTED_MODULE_11__["default"]({
+      inputSelector: '.main-question-form-item [type="file"]',
+      textSelector: '.main-question-form-item span'
+    })), _defineProperty(_ref, "footer", new _modules_footer_footer__WEBPACK_IMPORTED_MODULE_8__["default"]()), _defineProperty(_ref, "cookiesForm", new _modules_cookie_form_cookie_form__WEBPACK_IMPORTED_MODULE_9__["default"]()), _defineProperty(_ref, "applicationForm", new _modules_application_form_application_form__WEBPACK_IMPORTED_MODULE_10__["default"]()), _defineProperty(_ref, "isMounted", false), _defineProperty(_ref, "isPreloaderHidden", false), _defineProperty(_ref, "header", new _modules_header_header__WEBPACK_IMPORTED_MODULE_12__["default"]()), _defineProperty(_ref, "sizes", {
+      window: {
+        width: window.innerWidth,
+        height: window.innerHeight
+      }
+    }), _defineProperty(_ref, "isSafary", false), _ref;
   },
   mounted: function mounted() {
     var _this = this;
@@ -2678,66 +1545,43 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       });
       _this.isMounted = true;
 
-      _this.mainCases.init(); // this.mainWords.countPosition();
+      _this.mainCases.init();
 
+      _this.mainWords.countPosition();
 
-      _this.mainWeb.animateElement(); // this.mainAbout.animateCircle();
-      // this.mainAbout.initVideoOpening();
-      // this.cursorAnimation.init();
-      // this.mainCarousel.init();
-      // this.newsAndTrends.init();
+      _this.mainWeb.animateElement();
 
+      _this.mainAbout.animateCircle();
+
+      _this.mainAbout.initVideoOpening();
+
+      _this.cursorAnimation.init();
+
+      _this.mainCarousel.init();
+
+      _this.newsAndTrends.init();
 
       _this.header.init();
 
-      _this.companyVideo.init();
+      _this.cookiesForm.init();
 
-      _this.companyPrinciples.init();
-
-      _this.companyPartners.init({
-        sliderClass: '.glide'
-      });
-
-      _this.companyReviews.init({
-        sliderClass: '.glide'
-      });
-
-      _this.companyRaiting.init();
-
-      _this.companyTeam.init();
-
-      _this.mainQuestionForm.init();
-
-      _this.companyAbout.init();
-
-      _this.careerBlocks.init();
-
-      _this.careerBlog.init();
-
-      _this.vacanciesTabs.init();
-
-      _this.jobInfo.init();
-
-      _this.jobTeam.init();
-
-      _this.jobStages.init();
-
-      _this.cookiesForm.init(); // this.applicationForm.init();
-
+      _this.applicationForm.init();
 
       window.addEventListener('resize', function () {
         _this.window = {
           width: window.innerWidth,
           height: window.innerHeight
         };
-      }); // window.addEventListener('resize', () => this.cursorAnimation.updateCanvasSize());
-      // document.addEventListener('mousemove', (event) => {
-      //     this.cursorAnimation.animate({
-      //         x: event.pageX,
-      //         y: event.pageY,
-      //     })
-      // });
-
+      });
+      window.addEventListener('resize', function () {
+        return _this.cursorAnimation.updateCanvasSize();
+      });
+      document.addEventListener('mousemove', function (event) {
+        _this.cursorAnimation.animate({
+          x: event.pageX,
+          y: event.pageY
+        });
+      });
       window.addEventListener("orientationchange", function (event) {
         location.reload();
       });
@@ -2772,7 +1616,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       event.target.appendChild(circle);
       event.target.children[1].style.left = x + 'px';
       event.target.children[1].style.top = y + 'px';
-      gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(event.target.children[1], 0.5, {
+      gsap__WEBPACK_IMPORTED_MODULE_13__["default"].to(event.target.children[1], 0.5, {
         width: 800,
         height: 800,
         x: -400,
@@ -2784,7 +1628,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       var y = event.offsetY;
       event.target.children[1].style.left = x + 'px';
       event.target.children[1].style.top = y + 'px';
-      gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(event.target.children[1], 0.3, {
+      gsap__WEBPACK_IMPORTED_MODULE_13__["default"].to(event.target.children[1], 0.3, {
         width: 0,
         height: 0,
         x: 0,
@@ -2797,7 +1641,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     animateTitles: function animateTitles() {
       if (document.querySelectorAll(".animated-title")) {
         document.querySelectorAll(".animated-title").forEach(function (item, i) {
-          gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item, {
+          gsap__WEBPACK_IMPORTED_MODULE_13__["default"].to(item, {
             scrollTrigger: {
               trigger: item,
               start: 'top bottom',
@@ -2806,11 +1650,11 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
               // markers: true,
               onUpdate: function onUpdate(item) {
                 if (item.progress > 0.1) {
-                  gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item.trigger, 2.5, {
+                  gsap__WEBPACK_IMPORTED_MODULE_13__["default"].to(item.trigger, 2.5, {
                     transform: "translateX(".concat(-item.progress * 200 + 100, "%)")
                   });
                 } else {
-                  gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item.trigger, 2.5, {
+                  gsap__WEBPACK_IMPORTED_MODULE_13__["default"].to(item.trigger, 2.5, {
                     transform: "translateX(120%)"
                   });
                 }
@@ -2825,7 +1669,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       if (document.querySelectorAll(".animated-title-top")) {
         document.querySelectorAll(".animated-title-top").forEach(function (item, i) {
           if (window.innerWidth > 1023) {
-            gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item, {
+            gsap__WEBPACK_IMPORTED_MODULE_13__["default"].to(item, {
               scrollTrigger: {
                 trigger: item,
                 start: 'top center+=100',
@@ -2837,11 +1681,11 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
                   console.log(item.progress);
 
                   if (item.progress > 0.1) {
-                    gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item.trigger, 2.5, {
+                    gsap__WEBPACK_IMPORTED_MODULE_13__["default"].to(item.trigger, 2.5, {
                       transform: "translateX(".concat(-item.progress * 200 + 100, "%)")
                     });
                   } else {
-                    gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item.trigger, 2.5, {
+                    gsap__WEBPACK_IMPORTED_MODULE_13__["default"].to(item.trigger, 2.5, {
                       transform: "translateX(120%)"
                     });
                   }
@@ -2851,7 +1695,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 
             });
           } else {
-            gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item, {
+            gsap__WEBPACK_IMPORTED_MODULE_13__["default"].to(item, {
               scrollTrigger: {
                 trigger: item,
                 start: 'top top+=325',
@@ -2863,11 +1707,11 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
                   console.log(item.progress);
 
                   if (item.progress > 0.1) {
-                    gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item.trigger, 2.5, {
+                    gsap__WEBPACK_IMPORTED_MODULE_13__["default"].to(item.trigger, 2.5, {
                       transform: "translateX(".concat(-item.progress * 200 + 100, "%)")
                     });
                   } else {
-                    gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item.trigger, 2.5, {
+                    gsap__WEBPACK_IMPORTED_MODULE_13__["default"].to(item.trigger, 2.5, {
                       transform: "translateX(120%)"
                     });
                   }
@@ -2904,4 +1748,4 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 /***/ })
 
 /******/ });
-//# sourceMappingURL=main.js.map
+//# sourceMappingURL=main_page.js.map
