@@ -3017,6 +3017,9 @@ a:hover {
 .header.mobile .header-phone_opener {
   width: 30px;
   margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header.mobile .header-phone_opener > svg {
