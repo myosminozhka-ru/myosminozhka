@@ -30,7 +30,7 @@
     z-index: 2;
   }
   &.mobile &-in {
-    padding: 20px;
+    padding: 0 20px;
   }
   &-logo {
     transition: all 0.1s ease-out 0s;
@@ -43,6 +43,7 @@
     }
     &.mobile {
       width: 161px;
+      padding: 20px 0;
     }
   }
   &-menu {
@@ -192,7 +193,9 @@
     height: 100%;
     margin-right: vw(20);
     cursor: pointer;
-    position: relative;
+    @media all and (min-width: 481px) {
+      position: relative;
+    }
     > svg {
       stroke: #fff;
       @extend %transition;
@@ -201,6 +204,13 @@
       > svg {
         stroke: $mainColor;
       }
+    }
+  }
+  &.mobile &-phone_opener {
+    width: 30px;
+    margin-right: 20px;
+    > svg {
+      stroke: #fff !important;
     }
   }
   &-phone_modal {
@@ -212,6 +222,9 @@
     opacity: 0;
     visibility: hidden;
     transition: all .3s ease;
+    @media all and (max-width: 480px) {
+      left: 0;
+    }
     &.isOpened {
       opacity: 1;
       visibility: visible;
@@ -233,6 +246,14 @@
     background: rgba(79, 79, 79, 0.75);
     backdrop-filter: blur(16px);
     position: relative;
+    @media all and (max-width: 480px) {
+      width: 100% !important;
+      box-sizing: border-box;
+    }
+  }
+  &.mobile &-phone_modal_in {
+    padding: 40px;
+    width: 300px;
   }
   &-phone_modal_closer {
     width: vw(20);
@@ -244,18 +265,37 @@
     box-sizing: content-box;
     cursor: pointer;
   }
+  &.mobile &-phone_modal_closer {
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+  }
   &-phone_modal_phones {
     a {
       color: #fff;
       font-size: vw(20);
       text-decoration: none;
       font-weight: 600;
+      white-space: nowrap;
     }
     .delim {
       height: 1px;
-      background: #fff;
+      // background: #fff;
       margin: vw(20) 0;
     }
+  }
+  &.mobile &-phone_modal_phones {
+    a {
+      font-size: 20px;
+    }
+    .delim {
+      margin: 20px 0;
+    }
+  }
+  &__phones_mobile {
+    display: flex;
+    align-items: center;
+    align-self: stretch;
   }
 }
 .call-to-action-button a.button--main {

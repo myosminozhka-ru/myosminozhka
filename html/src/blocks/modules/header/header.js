@@ -63,6 +63,12 @@ const header = class Header {
                 event.stopPropagation();
                 this.closePhonesModal();
             })
+            document.addEventListener('click', (event) => {
+                console.log(event.target.closest('.header-phone_opener'))
+                if (!event.target.closest('.header-phone_opener')) {
+                    this.closePhonesModal();
+                }
+            })
         }
     }
     onInit() {}

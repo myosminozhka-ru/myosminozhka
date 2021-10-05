@@ -1221,6 +1221,13 @@ var header = /*#__PURE__*/function () {
 
           _this.closePhonesModal();
         });
+        document.addEventListener('click', function (event) {
+          console.log(event.target.closest('.header-phone_opener'));
+
+          if (!event.target.closest('.header-phone_opener')) {
+            _this.closePhonesModal();
+          }
+        });
       }
     }
   }, {
