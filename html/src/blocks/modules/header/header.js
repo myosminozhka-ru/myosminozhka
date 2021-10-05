@@ -12,7 +12,7 @@ const header = class Header {
         this.isOpened = !this.isOpened;
     }
     openPhonesModal() {
-        this.isPhonesOpened = true;
+        this.isPhonesOpened = !this.isPhonesOpened;
     }
     closePhonesModal() {
         this.isPhonesOpened = false;
@@ -55,13 +55,15 @@ const header = class Header {
         })
         this.setHeaderWavePositionOnLoad();
         this.onInit();
-
-        document.querySelector('.header-phone_opener').addEventListener('click', () => {
-            this.openPhonesModal();
-        })
-        document.querySelector('.header-phone_modal_closer').addEventListener('click', () => {
-            this.closePhonesModal();
-        })
+        if (document.querySelector('.header-phone_opener')) {
+            document.querySelector('.header-phone_opener').addEventListener('click', () => {
+                this.openPhonesModal();
+            })
+            document.querySelector('.header-phone_modal_closer').addEventListener('click', (event) => {
+                event.stopPropagation();
+                this.closePhonesModal();
+            })
+        }
     }
     onInit() {}
     logoAnimationComplete() {}

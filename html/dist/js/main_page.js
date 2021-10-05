@@ -494,7 +494,7 @@ var header = /*#__PURE__*/function () {
   }, {
     key: "openPhonesModal",
     value: function openPhonesModal() {
-      this.isPhonesOpened = true;
+      this.isPhonesOpened = !this.isPhonesOpened;
     }
   }, {
     key: "closePhonesModal",
@@ -543,12 +543,17 @@ var header = /*#__PURE__*/function () {
       });
       this.setHeaderWavePositionOnLoad();
       this.onInit();
-      document.querySelector('.header-phone_opener').addEventListener('click', function () {
-        _this.openPhonesModal();
-      });
-      document.querySelector('.header-phone_modal_closer').addEventListener('click', function () {
-        _this.closePhonesModal();
-      });
+
+      if (document.querySelector('.header-phone_opener')) {
+        document.querySelector('.header-phone_opener').addEventListener('click', function () {
+          _this.openPhonesModal();
+        });
+        document.querySelector('.header-phone_modal_closer').addEventListener('click', function (event) {
+          event.stopPropagation();
+
+          _this.closePhonesModal();
+        });
+      }
     }
   }, {
     key: "onInit",

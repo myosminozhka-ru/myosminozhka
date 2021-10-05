@@ -9,21 +9,7 @@
     display: flex;
     flex-direction: column;
   }
-  &-phone_opener {
-    width: vw(30);
-    height: vw(30);
-    margin-right: vw(20);
-    cursor: pointer;
-    svg {
-      stroke: #fff;
-      @extend %transition;
-    }
-    &:hover {
-      svg {
-        stroke: $mainColor;
-      }
-    }
-  }
+  
   &-blur {
     background: rgba(79, 79, 79, 0.75);
     backdrop-filter: blur(16px);
@@ -38,10 +24,13 @@
     background: rgba(0, 0, 0, 0.9);
   }
   &-in {
-    padding: vw(30) vw(50);
+    padding: 0 vw(50);
     @extend %flex-center-between;
     position: relative;
     z-index: 2;
+  }
+  &.mobile &-in {
+    padding: 20px;
   }
   &-logo {
     transition: all 0.1s ease-out 0s;
@@ -50,6 +39,7 @@
     
     &:not(.mobile) {
       width: vw(300);
+      padding: vw(10) 0;
     }
     &.mobile {
       width: 161px;
@@ -137,6 +127,7 @@
     @extend %zero-font-size;
     display: flex;
     align-items: center;
+    align-self: stretch;
     li {
       font-weight: 500;
       font-size: vw(20);
@@ -196,15 +187,27 @@
   &-lang__delim {
     margin: 0 vw(10);
   }
+  &-phone_opener {
+    width: vw(30);
+    height: 100%;
+    margin-right: vw(20);
+    cursor: pointer;
+    position: relative;
+    > svg {
+      stroke: #fff;
+      @extend %transition;
+    }
+    &:hover {
+      > svg {
+        stroke: $mainColor;
+      }
+    }
+  }
   &-phone_modal {
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: absolute;
+    top: 100%;
     right: 0;
-    bottom: 0;
     z-index: 300;
-    background: rgba(79, 79, 79, 0.75);
-    backdrop-filter: blur(16px);
     text-align: center;
     opacity: 0;
     visibility: hidden;
@@ -227,7 +230,8 @@
     width: vw(300);
     padding: vw(40);
     box-sizing: border-box;
-    background: #fff;
+    background: rgba(79, 79, 79, 0.75);
+    backdrop-filter: blur(16px);
     position: relative;
   }
   &-phone_modal_closer {
@@ -242,14 +246,14 @@
   }
   &-phone_modal_phones {
     a {
-      color: $bgColor;
+      color: #fff;
       font-size: vw(20);
       text-decoration: none;
       font-weight: 600;
     }
     .delim {
       height: 1px;
-      background: $bgColor;
+      background: #fff;
       margin: vw(20) 0;
     }
   }
