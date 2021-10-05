@@ -5,10 +5,17 @@ const header = class Header {
         this.countedWidth = 0;
         this.self = this;
         this.isOpened = false;
+        this.isPhonesOpened = false;
         // this.setHeaderWavePositionOnLoad();
     }
     openMobileHeader() {
         this.isOpened = !this.isOpened;
+    }
+    openPhonesModal() {
+        this.isPhonesOpened = true;
+    }
+    closePhonesModal() {
+        this.isPhonesOpened = false;
     }
     init() {
         gsap.to('.header-logo', {
@@ -48,6 +55,13 @@ const header = class Header {
         })
         this.setHeaderWavePositionOnLoad();
         this.onInit();
+
+        document.querySelector('.header-phone_opener').addEventListener('click', () => {
+            this.openPhonesModal();
+        })
+        document.querySelector('.header-phone_modal_closer').addEventListener('click', () => {
+            this.closePhonesModal();
+        })
     }
     onInit() {}
     logoAnimationComplete() {}

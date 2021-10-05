@@ -2742,6 +2742,7 @@ html {
 
 .button .text,
 a,
+.header-phone_opener svg,
 .header-lang a,
 .header-mobile-menu,
 .news-and-trends:not(.mobile) .news-and-trends-big .gradient,
@@ -2803,6 +2804,21 @@ a:hover {
   bottom: 0;
   display: flex;
   flex-direction: column;
+}
+
+.header-phone_opener {
+  width: 1.5625vw;
+  height: 1.5625vw;
+  margin-right: 1.04167vw;
+  cursor: pointer;
+}
+
+.header-phone_opener svg {
+  stroke: #fff;
+}
+
+.header-phone_opener:hover svg {
+  stroke: #FF4978;
 }
 
 .header-blur {
@@ -2922,6 +2938,11 @@ a:hover {
   pointer-events: none;
 }
 
+.header-lang {
+  display: flex;
+  align-items: center;
+}
+
 .header-lang li {
   font-weight: 500;
   font-size: 1.04167vw;
@@ -2984,6 +3005,68 @@ a:hover {
 
 .header-lang__delim {
   margin: 0 0.52083vw;
+}
+
+.header-phone_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 300;
+  background: rgba(79, 79, 79, 0.75);
+  backdrop-filter: blur(16px);
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s ease;
+}
+
+.header-phone_modal.isOpened {
+  opacity: 1;
+  visibility: visible;
+}
+
+.header-phone_modal:after {
+  content: "";
+  width: 0;
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.header-phone_modal_in {
+  display: inline-block;
+  vertical-align: middle;
+  width: 15.625vw;
+  padding: 2.08333vw;
+  box-sizing: border-box;
+  background: #fff;
+  position: relative;
+}
+
+.header-phone_modal_closer {
+  width: 1.04167vw;
+  height: 1.04167vw;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.52083vw;
+  box-sizing: content-box;
+  cursor: pointer;
+}
+
+.header-phone_modal_phones a {
+  color: #4f4f4f;
+  font-size: 1.04167vw;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.header-phone_modal_phones .delim {
+  height: 1px;
+  background: #4f4f4f;
+  margin: 1.04167vw 0;
 }
 
 .call-to-action-button a.button--main {

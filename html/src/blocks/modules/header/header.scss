@@ -9,6 +9,21 @@
     display: flex;
     flex-direction: column;
   }
+  &-phone_opener {
+    width: vw(30);
+    height: vw(30);
+    margin-right: vw(20);
+    cursor: pointer;
+    svg {
+      stroke: #fff;
+      @extend %transition;
+    }
+    &:hover {
+      svg {
+        stroke: $mainColor;
+      }
+    }
+  }
   &-blur {
     background: rgba(79, 79, 79, 0.75);
     backdrop-filter: blur(16px);
@@ -120,6 +135,8 @@
   }
   &-lang {
     @extend %zero-font-size;
+    display: flex;
+    align-items: center;
     li {
       font-weight: 500;
       font-size: vw(20);
@@ -178,6 +195,63 @@
   }
   &-lang__delim {
     margin: 0 vw(10);
+  }
+  &-phone_modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 300;
+    background: rgba(79, 79, 79, 0.75);
+    backdrop-filter: blur(16px);
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease;
+    &.isOpened {
+      opacity: 1;
+      visibility: visible;
+    }
+    &:after {
+      content: "";
+      width: 0;
+      height: 100%;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+  &-phone_modal_in {
+    display: inline-block;
+    vertical-align: middle;
+    width: vw(300);
+    padding: vw(40);
+    box-sizing: border-box;
+    background: #fff;
+    position: relative;
+  }
+  &-phone_modal_closer {
+    width: vw(20);
+    height: vw(20);
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: vw(10);
+    box-sizing: content-box;
+    cursor: pointer;
+  }
+  &-phone_modal_phones {
+    a {
+      color: $bgColor;
+      font-size: vw(20);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .delim {
+      height: 1px;
+      background: $bgColor;
+      margin: vw(20) 0;
+    }
   }
 }
 .call-to-action-button a.button--main {

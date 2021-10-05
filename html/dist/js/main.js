@@ -1150,13 +1150,24 @@ var header = /*#__PURE__*/function () {
 
     this.countedWidth = 0;
     this.self = this;
-    this.isOpened = false; // this.setHeaderWavePositionOnLoad();
+    this.isOpened = false;
+    this.isPhonesOpened = false; // this.setHeaderWavePositionOnLoad();
   }
 
   _createClass(Header, [{
     key: "openMobileHeader",
     value: function openMobileHeader() {
       this.isOpened = !this.isOpened;
+    }
+  }, {
+    key: "openPhonesModal",
+    value: function openPhonesModal() {
+      this.isPhonesOpened = true;
+    }
+  }, {
+    key: "closePhonesModal",
+    value: function closePhonesModal() {
+      this.isPhonesOpened = false;
     }
   }, {
     key: "init",
@@ -1200,6 +1211,12 @@ var header = /*#__PURE__*/function () {
       });
       this.setHeaderWavePositionOnLoad();
       this.onInit();
+      document.querySelector('.header-phone_opener').addEventListener('click', function () {
+        _this.openPhonesModal();
+      });
+      document.querySelector('.header-phone_modal_closer').addEventListener('click', function () {
+        _this.closePhonesModal();
+      });
     }
   }, {
     key: "onInit",
