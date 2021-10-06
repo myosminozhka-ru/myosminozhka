@@ -1242,7 +1242,7 @@ var header = /*#__PURE__*/function () {
   }, {
     key: "setHeaderWavePositionOnLoad",
     value: function setHeaderWavePositionOnLoad() {
-      if (document.querySelector('.header-menu')) {
+      if (document.querySelector('.header-menu li.isActive')) {
         var active_menu = document.querySelector('.header-menu li.isActive');
         gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.header-menu-border', {
           left: active_menu.offsetLeft,

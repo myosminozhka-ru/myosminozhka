@@ -75,7 +75,7 @@ const header = class Header {
     logoAnimationComplete() {}
     headerInAnimationComplete() {}
     setHeaderWavePositionOnLoad() {
-        if (document.querySelector('.header-menu')) {
+        if (document.querySelector('.header-menu li.isActive')) {
             let active_menu = document.querySelector('.header-menu li.isActive');
             gsap.to('.header-menu-border', {
                 left: active_menu.offsetLeft,
