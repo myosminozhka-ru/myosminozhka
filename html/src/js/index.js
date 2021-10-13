@@ -64,6 +64,10 @@ window.app = new Vue({
             inputSelector: '.main-question.fileLoaderFirst .main-question-form-item [type="file"]',
             textSelector: 'main-question.fileLoaderFirst .main-question-form-item span'
         }),
+        mainQuestionFormSecond: new mainQuestionForm({
+            inputSelector: '.main-question.fileLoaderSecond .main-question-form-item [type="file"]',
+            textSelector: 'main-question.fileLoaderSecond .main-question-form-item span'
+        }),
         companyRaiting: new companyRaiting(),
         vacanciesTabs: new vacanciesTabs(),
         careerBlocks: new careerBlocks(),
@@ -100,6 +104,7 @@ window.app = new Vue({
             // this.newsAndTrends.init();
             this.mainQuestionFormModal.init();
             this.mainQuestionFormFirst.init();
+            this.mainQuestionFormSecond.init();
             this.header.init();
             this.companyVideo.init();
             this.companyPrinciples.init();

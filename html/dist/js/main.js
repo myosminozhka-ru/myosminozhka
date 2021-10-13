@@ -2597,6 +2597,10 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
         inputSelector: '.main-question.fileLoaderFirst .main-question-form-item [type="file"]',
         textSelector: 'main-question.fileLoaderFirst .main-question-form-item span'
       }),
+      mainQuestionFormSecond: new _modules_main_question_main_question__WEBPACK_IMPORTED_MODULE_14__["default"]({
+        inputSelector: '.main-question.fileLoaderSecond .main-question-form-item [type="file"]',
+        textSelector: 'main-question.fileLoaderSecond .main-question-form-item span'
+      }),
       companyRaiting: new _modules_company_raiting_company_raiting__WEBPACK_IMPORTED_MODULE_16__["default"](),
       vacanciesTabs: new _modules_vacancies_tabs_vacancies_tabs__WEBPACK_IMPORTED_MODULE_19__["default"](),
       careerBlocks: new _modules_career_blocks_career_blocks__WEBPACK_IMPORTED_MODULE_17__["default"](),
@@ -2639,6 +2643,8 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       _this.mainQuestionFormModal.init();
 
       _this.mainQuestionFormFirst.init();
+
+      _this.mainQuestionFormSecond.init();
 
       _this.header.init();
 
