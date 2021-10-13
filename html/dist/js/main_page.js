@@ -1552,8 +1552,8 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
         itemsClass: '.main-cases-item'
       }),
       mainQuestionFormModal: new _modules_main_question_main_question__WEBPACK_IMPORTED_MODULE_11__["default"]({
-        inputSelector: '.main-question.fileLoaderFirst .main-question-form-item [type="file"]',
-        textSelector: 'main-question.fileLoaderFirst .main-question-form-item span'
+        inputSelector: '.main-question.fileLoaderModal .main-question-form-item [type="file"]',
+        textSelector: 'main-question.fileLoaderModal .main-question-form-item span'
       }),
       mainQuestionFormFirst: new _modules_main_question_main_question__WEBPACK_IMPORTED_MODULE_11__["default"]({
         inputSelector: '.main-question.fileLoaderFirst .main-question-form-item [type="file"]',

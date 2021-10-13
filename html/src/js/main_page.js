@@ -36,8 +36,8 @@ window.app = new Vue({
             itemsClass: '.main-cases-item'
         }),
         mainQuestionFormModal: new mainQuestionForm({
-            inputSelector: '.main-question.fileLoaderFirst .main-question-form-item [type="file"]',
-            textSelector: 'main-question.fileLoaderFirst .main-question-form-item span'
+            inputSelector: '.main-question.fileLoaderModal .main-question-form-item [type="file"]',
+            textSelector: 'main-question.fileLoaderModal .main-question-form-item span'
         }),
         mainQuestionFormFirst: new mainQuestionForm({
             inputSelector: '.main-question.fileLoaderFirst .main-question-form-item [type="file"]',
