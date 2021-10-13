@@ -21,7 +21,7 @@ import vacanciesTabs from "%modules%/vacancies-tabs/vacancies-tabs";
 import jobInfo from "%modules%/job-info/job-info";
 import jobTeam from "%modules%/job-team/job-team";
 import jobStages from "%modules%/job-stages/job-stages";
-import applicationForm from "%modules%/application-form/application-form";
+// import applicationForm from "%modules%/application-form/application-form";
 // import postInfo from "%modules%/posts-info/posts-info";
 // import postBlog from "%modules%/posts-blog/posts-blog";
 import footer from "%modules%/footer/footer";
@@ -55,6 +55,14 @@ window.app = new Vue({
         header: new header(),
         companyAbout: new companyAbout({
             selector: '.company-about:not(.company-about__title)'
+        }),
+        mainQuestionFormModal: new mainQuestionForm({
+            inputSelector: '.main-question.fileLoaderModal .main-question-form-item [type="file"]',
+            textSelector: 'main-question.fileLoaderModal .main-question-form-item span'
+        }),
+        mainQuestionFormFirst: new mainQuestionForm({
+            inputSelector: '.main-question.fileLoaderFirst .main-question-form-item [type="file"]',
+            textSelector: 'main-question.fileLoaderFirst .main-question-form-item span'
         }),
         companyRaiting: new companyRaiting(),
         vacanciesTabs: new vacanciesTabs(),
@@ -90,6 +98,8 @@ window.app = new Vue({
             // this.cursorAnimation.init();
             // this.mainCarousel.init();
             // this.newsAndTrends.init();
+            this.mainQuestionFormModal.init();
+            this.mainQuestionFormFirst.init();
             this.header.init();
             this.companyVideo.init();
             this.companyPrinciples.init();

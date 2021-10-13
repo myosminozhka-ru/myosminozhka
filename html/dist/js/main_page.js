@@ -1239,7 +1239,7 @@ var mainQuestionForm = /*#__PURE__*/function () {
 
     this.inputSelector = inputSelector;
     this.file = '';
-    this.hasFile = false;
+    this.hasFile = false; // console.log(this.inputSelector);
   }
 
   _createClass(mainQuestionForm, [{
@@ -1260,6 +1260,7 @@ var mainQuestionForm = /*#__PURE__*/function () {
     value: function init() {
       var _this = this;
 
+      console.log(document.querySelector(this.inputSelector));
       if (!document.querySelector(this.inputSelector)) return;
       var fileInput = document.querySelector(this.inputSelector);
       fileInput.addEventListener('change', function () {
@@ -1513,8 +1514,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_header_header__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! %modules%/header/header */ "./src/blocks/modules/header/header.js");
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 /* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 
@@ -1534,9 +1533,7 @@ gsap__WEBPACK_IMPORTED_MODULE_13__["default"].registerPlugin(gsap_ScrollTrigger_
 window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
   data: function data() {
-    var _ref;
-
-    return _ref = {
+    return {
       mainWords: new _modules_main_words_main_words__WEBPACK_IMPORTED_MODULE_1__["default"]({
         delay: 1,
         element: '.main-words-wrap'
@@ -1554,19 +1551,36 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       mainCases: new _modules_main_cases_main_cases__WEBPACK_IMPORTED_MODULE_6__["default"]({
         itemsClass: '.main-cases-item'
       }),
-      mainQuestionForm: new _modules_main_question_main_question__WEBPACK_IMPORTED_MODULE_11__["default"]({
-        inputSelector: '.main-question-form-item [type="file"]',
-        textSelector: '.main-question-form-item span'
-      })
-    }, _defineProperty(_ref, "mainQuestionForm", new _modules_main_question_main_question__WEBPACK_IMPORTED_MODULE_11__["default"]({
-      inputSelector: '.main-question-form-item [type="file"]',
-      textSelector: '.main-question-form-item span'
-    })), _defineProperty(_ref, "footer", new _modules_footer_footer__WEBPACK_IMPORTED_MODULE_8__["default"]()), _defineProperty(_ref, "cookiesForm", new _modules_cookie_form_cookie_form__WEBPACK_IMPORTED_MODULE_9__["default"]()), _defineProperty(_ref, "applicationForm", new _modules_application_form_application_form__WEBPACK_IMPORTED_MODULE_10__["default"]()), _defineProperty(_ref, "isMounted", false), _defineProperty(_ref, "isPreloaderHidden", false), _defineProperty(_ref, "header", new _modules_header_header__WEBPACK_IMPORTED_MODULE_12__["default"]()), _defineProperty(_ref, "sizes", {
-      window: {
-        width: window.innerWidth,
-        height: window.innerHeight
-      }
-    }), _defineProperty(_ref, "isSafary", false), _ref;
+      mainQuestionFormModal: new _modules_main_question_main_question__WEBPACK_IMPORTED_MODULE_11__["default"]({
+        inputSelector: '.main-question.fileLoaderFirst .main-question-form-item [type="file"]',
+        textSelector: 'main-question.fileLoaderFirst .main-question-form-item span'
+      }),
+      mainQuestionFormFirst: new _modules_main_question_main_question__WEBPACK_IMPORTED_MODULE_11__["default"]({
+        inputSelector: '.main-question.fileLoaderFirst .main-question-form-item [type="file"]',
+        textSelector: 'main-question.fileLoaderFirst .main-question-form-item span'
+      }),
+      mainQuestionFormSecond: new _modules_main_question_main_question__WEBPACK_IMPORTED_MODULE_11__["default"]({
+        inputSelector: '.main-question.fileLoaderSecond .main-question-form-item [type="file"]',
+        textSelector: 'main-question.fileLoaderSecond .main-question-form-item span'
+      }),
+      mainQuestionFormMain: new _modules_main_question_main_question__WEBPACK_IMPORTED_MODULE_11__["default"]({
+        inputSelector: '.main-question.fileLoaderMain .main-question-form-item [type="file"]',
+        textSelector: 'main-question.fileLoaderMain .main-question-form-item span'
+      }),
+      footer: new _modules_footer_footer__WEBPACK_IMPORTED_MODULE_8__["default"](),
+      cookiesForm: new _modules_cookie_form_cookie_form__WEBPACK_IMPORTED_MODULE_9__["default"](),
+      applicationForm: new _modules_application_form_application_form__WEBPACK_IMPORTED_MODULE_10__["default"](),
+      isMounted: false,
+      isPreloaderHidden: false,
+      header: new _modules_header_header__WEBPACK_IMPORTED_MODULE_12__["default"](),
+      sizes: {
+        window: {
+          width: window.innerWidth,
+          height: window.innerHeight
+        }
+      },
+      isSafary: false
+    };
   },
   mounted: function mounted() {
     var _this = this;
@@ -1602,6 +1616,14 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       _this.cookiesForm.init();
 
       _this.applicationForm.init();
+
+      _this.mainQuestionFormModal.init();
+
+      _this.mainQuestionFormFirst.init();
+
+      _this.mainQuestionFormSecond.init();
+
+      _this.mainQuestionFormMain.init();
 
       window.addEventListener('resize', function () {
         _this.window = {

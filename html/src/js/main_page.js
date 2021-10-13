@@ -35,13 +35,21 @@ window.app = new Vue({
         mainCases: new mainCases({
             itemsClass: '.main-cases-item'
         }),
-        mainQuestionForm: new mainQuestionForm({
-            inputSelector: '.main-question-form-item [type="file"]',
-            textSelector: '.main-question-form-item span'
+        mainQuestionFormModal: new mainQuestionForm({
+            inputSelector: '.main-question.fileLoaderFirst .main-question-form-item [type="file"]',
+            textSelector: 'main-question.fileLoaderFirst .main-question-form-item span'
         }),
-        mainQuestionForm: new mainQuestionForm({
-            inputSelector: '.main-question-form-item [type="file"]',
-            textSelector: '.main-question-form-item span'
+        mainQuestionFormFirst: new mainQuestionForm({
+            inputSelector: '.main-question.fileLoaderFirst .main-question-form-item [type="file"]',
+            textSelector: 'main-question.fileLoaderFirst .main-question-form-item span'
+        }),
+        mainQuestionFormSecond: new mainQuestionForm({
+            inputSelector: '.main-question.fileLoaderSecond .main-question-form-item [type="file"]',
+            textSelector: 'main-question.fileLoaderSecond .main-question-form-item span'
+        }),
+        mainQuestionFormMain: new mainQuestionForm({
+            inputSelector: '.main-question.fileLoaderMain .main-question-form-item [type="file"]',
+            textSelector: 'main-question.fileLoaderMain .main-question-form-item span'
         }),
         footer: new footer(),
         cookiesForm: new cookiesForm(),
@@ -80,6 +88,10 @@ window.app = new Vue({
             this.header.init();
             this.cookiesForm.init();
             this.applicationForm.init();
+            this.mainQuestionFormModal.init();
+            this.mainQuestionFormFirst.init();
+            this.mainQuestionFormSecond.init();
+            this.mainQuestionFormMain.init();
             window.addEventListener('resize', () => {
                 this.window = {
                     width: window.innerWidth,
