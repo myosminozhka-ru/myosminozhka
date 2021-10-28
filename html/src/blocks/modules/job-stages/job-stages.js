@@ -24,6 +24,56 @@ const jobStages = class jobStages {
             }
         }
     }
+    initAnaliticsSlider() {
+        if (document.querySelector('.job-stages-slides--analitics')) {
+            new Glide('.job-stages-slides--analitics', {
+                startAt: 0,
+                perView: 2,
+                gap: 120,
+                type: 'carousel',
+                breakpoints: {
+                    800: {
+                        perView: 1,
+                    }
+                }
+            }).mount();
+        };
+    }
+    initDesignSlider() {
+        if (document.querySelector('.job-stages-slides--design')) {
+            new Glide('.job-stages-slides--design', {
+                startAt: 0,
+                perView: 1,
+                gap: 0,
+                type: 'carousel'
+            }).mount();
+        };
+    }
+    initProjectingSlider() {
+        if (document.querySelector('.job-stages-slides--projecting')) {
+            new Glide('.job-stages-slides--projecting', {
+                startAt: 0,
+                perView: 2,
+                gap: 120,
+                type: 'carousel',
+                breakpoints: {
+                    800: {
+                        perView: 1,
+                    }
+                }
+            }).mount();
+        };
+    }
+    initDevelopmentSlider() {
+        if (document.querySelector('.job-stages-slides--development')) {
+            new Glide('.job-stages-slides--development', {
+                startAt: 0,
+                perView: 1,
+                gap: 0,
+                type: 'carousel'
+            }).mount();
+        };
+    }
     init() {
         if (document.querySelector('.job-stages-tabs')) {
             this.accorderon = new Accordion('.job-stages-tabs', {
@@ -53,48 +103,11 @@ const jobStages = class jobStages {
                 })
             })
         };
-        if (document.querySelector('.job-stages-slides--analitics')) {
-            new Glide('.job-stages-slides--analitics', {
-                startAt: 0,
-                perView: 2,
-                gap: 120,
-                type: 'carousel',
-                breakpoints: {
-                    800: {
-                        perView: 1,
-                    }
-                }
-            }).mount();
-        };
-        if (document.querySelector('.job-stages-slides--projecting')) {
-            new Glide('.job-stages-slides--projecting', {
-                startAt: 0,
-                perView: 2,
-                gap: 120,
-                type: 'carousel',
-                breakpoints: {
-                    800: {
-                        perView: 1,
-                    }
-                }
-            }).mount();
-        };
-        if (document.querySelector('.job-stages-slides--design')) {
-            new Glide('.job-stages-slides--design', {
-                startAt: 0,
-                perView: 1,
-                gap: 0,
-                type: 'carousel'
-            }).mount();
-        };
-        if (document.querySelector('.job-stages-slides--development')) {
-            new Glide('.job-stages-slides--development', {
-                startAt: 0,
-                perView: 1,
-                gap: 0,
-                type: 'carousel'
-            }).mount();
-        };
+        this.initAnaliticsSlider();
+        this.initDesignSlider();
+        this.initProjectingSlider();
+        this.initDevelopmentSlider();
+        
         
         if (document.querySelector('.job-stages-support')) {
             this.supportSlider.mount();

@@ -1337,6 +1337,72 @@ var jobStages = /*#__PURE__*/function () {
   }
 
   _createClass(jobStages, [{
+    key: "initAnaliticsSlider",
+    value: function initAnaliticsSlider() {
+      if (document.querySelector('.job-stages-slides--analitics')) {
+        new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.job-stages-slides--analitics', {
+          startAt: 0,
+          perView: 2,
+          gap: 120,
+          type: 'carousel',
+          breakpoints: {
+            800: {
+              perView: 1
+            }
+          }
+        }).mount();
+      }
+
+      ;
+    }
+  }, {
+    key: "initDesignSlider",
+    value: function initDesignSlider() {
+      if (document.querySelector('.job-stages-slides--design')) {
+        new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.job-stages-slides--design', {
+          startAt: 0,
+          perView: 1,
+          gap: 0,
+          type: 'carousel'
+        }).mount();
+      }
+
+      ;
+    }
+  }, {
+    key: "initProjectingSlider",
+    value: function initProjectingSlider() {
+      if (document.querySelector('.job-stages-slides--projecting')) {
+        new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.job-stages-slides--projecting', {
+          startAt: 0,
+          perView: 2,
+          gap: 120,
+          type: 'carousel',
+          breakpoints: {
+            800: {
+              perView: 1
+            }
+          }
+        }).mount();
+      }
+
+      ;
+    }
+  }, {
+    key: "initDevelopmentSlider",
+    value: function initDevelopmentSlider() {
+      if (document.querySelector('.job-stages-slides--development')) {
+        new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.job-stages-slides--development', {
+          startAt: 0,
+          perView: 1,
+          gap: 0,
+          type: 'carousel'
+        }).mount();
+      }
+
+      ;
+    }
+  }, {
     key: "init",
     value: function init() {
       var _this = this;
@@ -1373,60 +1439,10 @@ var jobStages = /*#__PURE__*/function () {
       }
 
       ;
-
-      if (document.querySelector('.job-stages-slides--analitics')) {
-        new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.job-stages-slides--analitics', {
-          startAt: 0,
-          perView: 2,
-          gap: 120,
-          type: 'carousel',
-          breakpoints: {
-            800: {
-              perView: 1
-            }
-          }
-        }).mount();
-      }
-
-      ;
-
-      if (document.querySelector('.job-stages-slides--projecting')) {
-        new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.job-stages-slides--projecting', {
-          startAt: 0,
-          perView: 2,
-          gap: 120,
-          type: 'carousel',
-          breakpoints: {
-            800: {
-              perView: 1
-            }
-          }
-        }).mount();
-      }
-
-      ;
-
-      if (document.querySelector('.job-stages-slides--design')) {
-        new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.job-stages-slides--design', {
-          startAt: 0,
-          perView: 1,
-          gap: 0,
-          type: 'carousel'
-        }).mount();
-      }
-
-      ;
-
-      if (document.querySelector('.job-stages-slides--development')) {
-        new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.job-stages-slides--development', {
-          startAt: 0,
-          perView: 1,
-          gap: 0,
-          type: 'carousel'
-        }).mount();
-      }
-
-      ;
+      this.initAnaliticsSlider();
+      this.initDesignSlider();
+      this.initProjectingSlider();
+      this.initDevelopmentSlider();
 
       if (document.querySelector('.job-stages-support')) {
         this.supportSlider.mount();
