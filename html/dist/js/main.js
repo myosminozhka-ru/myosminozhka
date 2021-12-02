@@ -261,6 +261,17 @@ var careerBlog = /*#__PURE__*/function () {
 
 /***/ }),
 
+/***/ "./src/blocks/modules/case_page/case_page.js":
+/*!***************************************************!*\
+  !*** ./src/blocks/modules/case_page/case_page.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
 /***/ "./src/blocks/modules/company-about/company-about.js":
 /*!***********************************************************!*\
   !*** ./src/blocks/modules/company-about/company-about.js ***!
@@ -2545,10 +2556,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_job_info_job_info__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! %modules%/job-info/job-info */ "./src/blocks/modules/job-info/job-info.js");
 /* harmony import */ var _modules_job_team_job_team__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! %modules%/job-team/job-team */ "./src/blocks/modules/job-team/job-team.js");
 /* harmony import */ var _modules_job_stages_job_stages__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! %modules%/job-stages/job-stages */ "./src/blocks/modules/job-stages/job-stages.js");
-/* harmony import */ var _modules_footer_footer__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! %modules%/footer/footer */ "./src/blocks/modules/footer/footer.js");
-/* harmony import */ var _modules_cookie_form_cookie_form__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! %modules%/cookie-form/cookie-form */ "./src/blocks/modules/cookie-form/cookie-form.js");
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
-/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
+/* harmony import */ var _modules_case_page_case_page__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! %modules%/case_page/case_page */ "./src/blocks/modules/case_page/case_page.js");
+/* harmony import */ var _modules_case_page_case_page__WEBPACK_IMPORTED_MODULE_23___default = /*#__PURE__*/__webpack_require__.n(_modules_case_page_case_page__WEBPACK_IMPORTED_MODULE_23__);
+/* harmony import */ var _modules_footer_footer__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! %modules%/footer/footer */ "./src/blocks/modules/footer/footer.js");
+/* harmony import */ var _modules_cookie_form_cookie_form__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! %modules%/cookie-form/cookie-form */ "./src/blocks/modules/cookie-form/cookie-form.js");
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
+
 
 
 
@@ -2579,7 +2593,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-gsap__WEBPACK_IMPORTED_MODULE_25__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_26__["ScrollTrigger"]);
+gsap__WEBPACK_IMPORTED_MODULE_26__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_27__["ScrollTrigger"]);
 window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
   data: function data() {
@@ -2623,8 +2637,8 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       jobInfo: new _modules_job_info_job_info__WEBPACK_IMPORTED_MODULE_20__["default"](),
       jobTeam: new _modules_job_team_job_team__WEBPACK_IMPORTED_MODULE_21__["default"](),
       jobStages: new _modules_job_stages_job_stages__WEBPACK_IMPORTED_MODULE_22__["default"](),
-      footer: new _modules_footer_footer__WEBPACK_IMPORTED_MODULE_23__["default"](),
-      cookiesForm: new _modules_cookie_form_cookie_form__WEBPACK_IMPORTED_MODULE_24__["default"](),
+      footer: new _modules_footer_footer__WEBPACK_IMPORTED_MODULE_24__["default"](),
+      cookiesForm: new _modules_cookie_form_cookie_form__WEBPACK_IMPORTED_MODULE_25__["default"](),
       isMounted: false,
       isPreloaderHidden: false,
       sizes: {
@@ -2746,7 +2760,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       event.target.appendChild(circle);
       event.target.children[1].style.left = x + 'px';
       event.target.children[1].style.top = y + 'px';
-      gsap__WEBPACK_IMPORTED_MODULE_25__["default"].to(event.target.children[1], 0.5, {
+      gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(event.target.children[1], 0.5, {
         width: 800,
         height: 800,
         x: -400,
@@ -2758,7 +2772,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       var y = event.offsetY;
       event.target.children[1].style.left = x + 'px';
       event.target.children[1].style.top = y + 'px';
-      gsap__WEBPACK_IMPORTED_MODULE_25__["default"].to(event.target.children[1], 0.3, {
+      gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(event.target.children[1], 0.3, {
         width: 0,
         height: 0,
         x: 0,
@@ -2771,7 +2785,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     animateTitles: function animateTitles() {
       if (document.querySelectorAll(".animated-title")) {
         document.querySelectorAll(".animated-title").forEach(function (item, i) {
-          gsap__WEBPACK_IMPORTED_MODULE_25__["default"].to(item, {
+          gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item, {
             scrollTrigger: {
               trigger: item,
               start: 'top bottom',
@@ -2780,11 +2794,11 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
               // markers: true,
               onUpdate: function onUpdate(item) {
                 if (item.progress > 0.1) {
-                  gsap__WEBPACK_IMPORTED_MODULE_25__["default"].to(item.trigger, 2.5, {
+                  gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item.trigger, 2.5, {
                     transform: "translateX(".concat(-item.progress * 200 + 100, "%)")
                   });
                 } else {
-                  gsap__WEBPACK_IMPORTED_MODULE_25__["default"].to(item.trigger, 2.5, {
+                  gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item.trigger, 2.5, {
                     transform: "translateX(120%)"
                   });
                 }
@@ -2799,7 +2813,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       if (document.querySelectorAll(".animated-title-top")) {
         document.querySelectorAll(".animated-title-top").forEach(function (item, i) {
           if (window.innerWidth > 1023) {
-            gsap__WEBPACK_IMPORTED_MODULE_25__["default"].to(item, {
+            gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item, {
               scrollTrigger: {
                 trigger: item,
                 start: 'top center+=100',
@@ -2808,11 +2822,11 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
                 // markers: true,
                 onUpdate: function onUpdate(item) {
                   if (item.progress > 0.1) {
-                    gsap__WEBPACK_IMPORTED_MODULE_25__["default"].to(item.trigger, 2.5, {
+                    gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item.trigger, 2.5, {
                       transform: "translateX(".concat(-item.progress * 200 + 100, "%)")
                     });
                   } else {
-                    gsap__WEBPACK_IMPORTED_MODULE_25__["default"].to(item.trigger, 2.5, {
+                    gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item.trigger, 2.5, {
                       transform: "translateX(120%)"
                     });
                   }
@@ -2822,7 +2836,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 
             });
           } else {
-            gsap__WEBPACK_IMPORTED_MODULE_25__["default"].to(item, {
+            gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item, {
               scrollTrigger: {
                 trigger: item,
                 start: 'top top+=325',
@@ -2831,11 +2845,11 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
                 // markers: true,
                 onUpdate: function onUpdate(item) {
                   if (item.progress > 0.1) {
-                    gsap__WEBPACK_IMPORTED_MODULE_25__["default"].to(item.trigger, 2.5, {
+                    gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item.trigger, 2.5, {
                       transform: "translateX(".concat(-item.progress * 200 + 100, "%)")
                     });
                   } else {
-                    gsap__WEBPACK_IMPORTED_MODULE_25__["default"].to(item.trigger, 2.5, {
+                    gsap__WEBPACK_IMPORTED_MODULE_26__["default"].to(item.trigger, 2.5, {
                       transform: "translateX(120%)"
                     });
                   }
