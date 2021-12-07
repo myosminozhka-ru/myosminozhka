@@ -1,0 +1,320 @@
+.case_page {
+    background: none;
+    box-sizing: border-box;
+    * {
+        box-sizing: border-box;
+    }
+    &__in {
+        position: relative;
+        z-index: 11;
+        &.mobile {
+            .case_page__about {
+                padding-top: 60px;
+            }
+            .case_page__about--rezult {
+                padding-left: 15px;
+                padding-right: 15px;
+                margin-bottom: 20px;
+            }
+            .case_page__about--rtitle {
+                font-size: 40px;
+                margin-bottom: 30px;
+            }
+            .case_page__about--rsubtitle {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+            .case_page__about--rlist li {
+                padding-left: 28px;
+                font-size: 16px;
+                line-height: 26px;
+                margin-bottom: 10px;
+            }
+            .case_page__about--rlist li:before {
+                width: 18px;
+                height: 2px;
+                top: 12px;
+            }
+            .case_page__about--block {
+                flex-direction: column-reverse;
+            }
+            .case_page__about--bimg {
+                width: 100%;
+                margin-bottom: 60px;
+                padding: 20px;
+                img {
+                    max-width: 203px;
+                    width: 100%;
+                }
+            }
+            .case_page__about--btext {
+                padding: 0;
+                margin-bottom: 20px;
+                font-size: 16px;
+                padding-left: 15px;
+                padding-right: 15px;
+                line-height: 26px;
+                width: 100%;
+            }
+            .case_page__about--work {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            .case_page__about--wtitle {
+                margin-bottom: 30px;
+                font-size: 40px;
+                line-height: 50px;
+            }
+            .case_page__about--wsubtitle {
+                margin-bottom: 20px;
+                font-size: 24px;
+                line-height: normal;
+            }
+            .case_page__about--witem {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+            .case_page__about--wname {
+                font-size: 16px;
+                margin-bottom: 6px;
+            }
+            .case_page__about--wls {
+                font-size: 14px;
+            }
+            .case_page__about--wblock {
+                margin-bottom: 30px;
+            }
+        }
+    }
+    &__about {
+        padding-top: vw(200);
+        &--rezult {
+            max-width: 900px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: vw(80);
+        }
+        &--rtitle {
+            font-family: 'Montserrat', serif;
+            font-style: normal;
+            font-weight: bold;
+            font-size: vw(90);
+            text-transform: uppercase;
+            color: #4F4F4F;
+            margin-bottom: vw(50);
+        }
+        &--rsubtitle {
+            font-family: 'Montserrat', serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: vw(34);
+            color: #4F4F4F;
+            margin-bottom: vw(40);
+        }
+        &--rlist {
+            padding-left: 0;
+            margin: 0;
+            list-style: none;
+            li {
+                margin-bottom: vw(30);
+                font-family: 'Montserrat', serif;
+                font-style: normal;
+                font-weight: normal;
+                font-size: vw(26);
+                line-height: vw(45);
+                color: #4F4F4F;
+                padding-left: 40px;
+                position: relative;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: vw(21);
+                    background: #FF4978;
+                    width: 26px;
+                    height: 4px;
+                    left: 0;
+                }
+            }
+        }
+        &--block {
+            display: flex;
+            align-items: center;
+            margin-bottom: vw(200);
+        }
+        &--bimg {
+            background: #F6F6F8;
+            border-radius: 10px;
+            width: 40%;
+            flex: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: vw(95);
+            img {
+                max-width: vw(423);
+            }
+        }
+        &--btext {
+            padding-left: vw(144);
+            font-family: 'Montserrat', serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: vw(30);
+            line-height: vw(50);
+            width: 60%;
+            color: #4F4F4F;
+        }
+        &--work {
+            max-width: 950px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        &--wblock {
+            margin-bottom: vw(225);
+        }
+        &--wtitle {
+            font-family: 'Montserrat', serif;
+            font-style: normal;
+            font-weight: bold;
+            font-size: vw(90);
+            line-height: vw(110);
+            text-transform: uppercase;
+            color: #4F4F4F;
+            margin-bottom: vw(100);
+        }
+        &--wsubtitle {
+            font-family: 'Montserrat', serif;
+            font-style: normal;
+            font-weight: bold;
+            font-size: vw(70);
+            line-height: vw(70);
+            text-transform: uppercase;
+            color: #4F4F4F;
+            margin-bottom: vw(70);
+        }
+        &--wlist {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        &--witem {
+            margin-bottom: vw(110);
+            width: 50%;
+        }
+        &--wname {
+            font-family: 'Montserrat', serif;
+            font-style: normal;
+            font-weight: 500;
+            font-size: vw(50);
+            color: #4F4F4F;
+            margin-bottom: vw(15);
+        }
+        &--wls {
+            font-family: 'Montserrat', serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: vw(25);
+            color: #4F4F4F;
+        }
+    }
+    &__case {
+        margin-bottom: vw(210);
+        background: #4f4f4f;
+        padding-top: vw(150);
+        @media all and (max-width: 520px) {
+            padding-top: 61px;
+            background: url('../img/case.png') 0 0 no-repeat, linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 35%, rgba(79,79,79,1) 35%);
+            background-size: cover;
+        }
+        @media all and (max-width: 480px) {
+            margin-bottom: 0;
+        }
+        &--title {
+            margin-bottom: vw(80);
+            padding-left: vw(50);
+            padding-right: vw(50);
+            font-family: 'Montserrat', serif;
+            font-style: normal;
+            font-weight: bold;
+            font-size: vw(144);
+            text-transform: uppercase;
+            color: #FFFFFF;
+            @media all and (max-width: 520px) {
+                margin-bottom: 30px;
+                font-size: 40px;
+            }
+        }
+        &--blocks {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        &--block {
+            width: 50%;
+            font-size: 0;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            @media all and (max-width: 960px) {
+                width: 100%;
+                max-height: 450px;
+                &:before {
+                    position: absolute;
+                    content: '';
+                    border-radius: 10px;
+                    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.56) 100%);
+                    width: 100%;
+                    height: 100%;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    top: 0;
+                }
+                &:nth-child(n+5) {
+                    display: none;
+                }
+            }
+            @media all and (max-width: 768px) {
+                max-height: 280px;
+            }
+            @media all and (max-width: 480px) {
+                max-height: 150px;
+            }
+        }
+        &--text {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 12;
+            padding: 15px;
+            font-family: 'Montserrat', serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 20px;
+            color: #FFFFFF;
+            display: none;
+            @media all and (max-width: 960px) {
+                display: block;
+            }
+        }
+        .button--main {
+            display: none;
+            @media all and (max-width: 960px) {
+                display: block;
+                margin-top: 30px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            @media all and (max-width: 520px) {
+                font-size: 18px;
+            }
+            .text {
+                pointer-events: none;
+            }
+        }
+    }
+}

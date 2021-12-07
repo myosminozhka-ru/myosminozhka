@@ -30,13 +30,16 @@
             rel="stylesheet">
         <link rel="stylesheet" href="styles/main.css">
     </head>
-    <body>
+    <body class="case_page">
         <div class="wrapper" id="app">
-            @@include("../blocks/modules/header/header.html")
-            @@include("../blocks/modules/career-first/career-first.html", {
-                "text": "Кейсы",
-                "isInfoHidden": true
-            })
+            
+            <div class="first__fullscreen_frame" :class="{ 'mobile': window.width <= 1023 }">
+                @@include("../blocks/modules/header/header.html")
+                @@include("../blocks/modules/career-first/career-first.html", {
+                    "text": "Разработка сайта для мукомольного комбината",
+                    "isInfoHidden": false
+                })
+            </div>
             @@include("../blocks/modules/case_page/case_page.html")
             @@include("../blocks/modules/footer/footer.html")
             @@include("../blocks/modules/cookie-form/cookie-form.html")

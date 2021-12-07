@@ -30,9 +30,11 @@
             rel="stylesheet">
         <link rel="stylesheet" href="styles/main.css">
     </head>
-    <body>
+    <body class="case_page">
         <div class="wrapper" id="app">
-            <header class="header" :class="{'isOpened': header.isOpened, 'mobile': window.width <=1023}">
+            
+            <div class="first__fullscreen_frame" :class="{ 'mobile': window.width <= 1023 }">
+                <header class="header" :class="{'isOpened': header.isOpened, 'mobile': window.width <=1023}">
     <div class="header-blur"></div>
     <div class="header-in">
         <a href="/" class="header-logo" :class="{'mobile': window.width <=1023}">
@@ -120,8 +122,8 @@
     </nav>
     
 </header>
-            <section class="career-first" :class="{'mobile': window.width <=1023}">
-    <h1 class="career-first-title">Кейсы</h1>
+                <section class="career-first" :class="{'mobile': window.width <=1023}">
+    <h1 class="career-first-title">Разработка сайта для мукомольного комбината</h1>
     <div class="career-first-tentacle" v-if="window.width <=1023">
         <img src="img/svg/tentacle_static.svg" width="100%" alt="" v-if="isSafary">
         <img src="img/svg/tentacle.svg" width="100%" alt="" v-else>
@@ -130,8 +132,114 @@
         Настал тот самый момент, когда нам нужно еще больше свежих мозгов для самых смелых проектов
     </div>
     
+        <div class="career-first-info" v-if="window.width > 1023">
+            <div class="career-first-tentacle">
+                <img src="img/svg/tentacle_static.svg" width="100%" alt="" v-if="isSafary">
+        <img src="img/svg/tentacle.svg" width="100%" alt="" v-else>
+            </div>
+            <div class="career-first-text">
+                Настал тот самый момент, когда нам нужно еще больше свежих мозгов для самых смелых проектов
+            </div>
+        </div>
+    
 </section>
-            
+            </div>
+            <div class="case_page__in" :class="{'mobile': window.width <=1023}">
+    <div class="case_page__about">
+        <div class="case_page__about--rezult">
+            <div class="case_page__about--rtitle">Результат</div>
+            <div class="case_page__about--rsubtitle">В результате работы нам удалось:</div>
+            <ul class="case_page__about--rlist">
+                <li>провести комплексные исследования поведения целевой аудитории в заявленном сегменте; </li>
+                <li>создать удобную платформу для взаимодействия с В2В сегментом и оптовиками, где клиент может оставить заявку с возможностью выписки счета;</li>
+                <li>внедрить и настроить 1С;</li>
+                <li>создать оригинальную и запоминающуюся стилистику бренда, которая сделает его узнаваемым в выбранной нише.</li>
+            </ul>
+        </div>
+        <div class="case_page__about--block">
+            <div class="case_page__about--bimg"><img src="./img/phone_c.png" alt=""></div>
+            <div class="case_page__about--btext">
+                <p>Разработка проектов для крупных «игроков» промышленного рынка — это многоэтапная и сложная работа. В процессе создания сайта нам было важно как можно проще рассказать о деятельности комбината. Мы «упаковали» масштабное производство в понятный и одновременно функциональный сайт, сделав при этом запоминающийся, яркий дизайн.</p> 
+                <p>Обновлённая инфраструктура проекта упрощает взаимодействие с В2В сегментом, становясь ближе к клиенту. Композиционные элементы, продуманная до мелочей навигация, система шрифтов, motion design вместе с комплексной проработкой интерфейса и функционала — ключевые составляющие разработанного решения.</p>
+            </div>
+        </div>
+        <div class="case_page__about--work">
+            <div class="case_page__about--wtitle">Над проектом работали</div>
+            <div class="case_page__about--wblock">
+                <div class="case_page__about--wsubtitle">Команда</div>
+                <div class="case_page__about--wlist">
+                    <div class="case_page__about--witem">
+                        <div class="case_page__about--wname">Иванов Иван</div>
+                        <div class="case_page__about--wls">Руководитель</div>
+                    </div>
+                    <div class="case_page__about--witem">
+                        <div class="case_page__about--wname">Иванов Иван</div>
+                        <div class="case_page__about--wls">Руководитель</div>
+                    </div>
+                    <div class="case_page__about--witem">
+                        <div class="case_page__about--wname">Иванов Иван</div>
+                        <div class="case_page__about--wls">Руководитель</div>
+                    </div>
+                    <div class="case_page__about--witem">
+                        <div class="case_page__about--wname">Иванов Иван</div>
+                        <div class="case_page__about--wls">Руководитель</div>
+                    </div>
+                    <div class="case_page__about--witem">
+                        <div class="case_page__about--wname">Иванов Иван</div>
+                        <div class="case_page__about--wls">Руководитель</div>
+                    </div>
+                    <div class="case_page__about--witem">
+                        <div class="case_page__about--wname">Иванов Иван</div>
+                        <div class="case_page__about--wls">Руководитель</div>
+                    </div>
+                </div>
+            </div>
+            <div class="case_page__about--wblock">
+                <div class="case_page__about--wsubtitle">Клиент</div>
+                <div class="case_page__about--wlist">
+                    <div class="case_page__about--witem">
+                        <div class="case_page__about--wname">Иванов Иван</div>
+                        <div class="case_page__about--wls">Руководитель</div>
+                    </div>
+                    <div class="case_page__about--witem">
+                        <div class="case_page__about--wname">Иванов Иван</div>
+                        <div class="case_page__about--wls">Руководитель</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="case_page__case">
+        <div class="case_page__case--title">кейсы</div>
+        <div class="case_page__case--blocks">
+            <a href="#" class="case_page__case--block">
+                <img src="./img/s1.png" alt="">
+                <div class="case_page__case--text">Приложение НаПоправку - запись к врачу</div>
+            </a>
+            <a href="#" class="case_page__case--block">
+                <img src="./img/s2.png" alt="">
+                <div class="case_page__case--text">Интернет-маркетинг Care/of</div>
+            </a>
+            <a href="#" class="case_page__case--block">
+                <img src="./img/s3.png" alt="">
+                <div class="case_page__case--text">Международный сайт уличноймебели Mmcité</div>
+            </a>
+            <a href="#" class="case_page__case--block">
+                <img src="./img/s4.png" alt="">
+                <div class="case_page__case--text">Товары для детей Happy Baby</div>
+            </a>
+            <a href="#" class="case_page__case--block">
+                <img src="./img/s5.png" alt="">
+                <div class="case_page__case--text"></div>
+            </a>
+            <a href="#" class="case_page__case--block">
+                <img src="./img/s6.png" alt="">
+                <div class="case_page__case--text"></div>
+            </a>
+        </div>
+        <button class="button button--main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><div class="text">Другие работы</div></button>
+    </div>
+</div>
             <footer class="footer" :class="{'mobile': window.width <=1023}">
     <div class="footer-tentacle">
         <img src="img/svg/footer_tentacle.svg" width="100%" alt="">
