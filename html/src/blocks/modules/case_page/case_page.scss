@@ -1141,6 +1141,9 @@
         font-size: vw(40);
         color: #FFFFFF !important;
         line-height: normal;
+        &.isActive {
+            text-decoration: underline;
+        }
     }
     .job-stages-trigger .text {
         color: #FFFFFF !important;

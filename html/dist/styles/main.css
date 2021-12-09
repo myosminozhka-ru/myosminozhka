@@ -11064,6 +11064,10 @@ body.company .company-ceo:not(.mobile) {
   line-height: normal;
 }
 
+.case_tabs_new .job-stages-trigger.isActive {
+  text-decoration: underline;
+}
+
 .case_tabs_new .job-stages-trigger .text {
   color: #FFFFFF !important;
   font-size: 2.08333vw;
