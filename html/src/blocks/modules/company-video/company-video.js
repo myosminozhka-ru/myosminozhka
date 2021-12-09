@@ -20,6 +20,22 @@ const companyVideo = class companyVideo {
                 }]
             });
         }, 300)
+        if (!document.getElementById('player2')) return;
+        setTimeout(() => {
+            this.player = document.getElementById('player2');
+            videojs('player2', {
+                fluid: true,
+                controls: false,
+                autoplay: true,
+                aspectRatio: '16:9',
+                muted: true,
+                poster: 'img/video_preview.png',
+                sources: [{
+                    src: 'videos/pv.mp4',
+                    type: 'video/mp4'
+                }]
+            });
+        }, 300)
     }
 }
 

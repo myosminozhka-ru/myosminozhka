@@ -824,6 +824,22 @@ var companyVideo = /*#__PURE__*/function () {
           }]
         });
       }, 300);
+      if (!document.getElementById('player2')) return;
+      setTimeout(function () {
+        _this.player = document.getElementById('player2');
+        Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player2', {
+          fluid: true,
+          controls: false,
+          autoplay: true,
+          aspectRatio: '16:9',
+          muted: true,
+          poster: 'img/video_preview.png',
+          sources: [{
+            src: 'videos/pv.mp4',
+            type: 'video/mp4'
+          }]
+        });
+      }, 300);
     }
   }]);
 
