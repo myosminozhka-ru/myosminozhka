@@ -11130,6 +11130,11 @@ body.company .company-ceo:not(.mobile) {
     font-size: 1.30208vw;
     line-height: 1.30208vw;
   }
+
+  .block_caseg .career-first-title {
+    white-space: nowrap;
+    width: max-content;
+  }
 }
 
 @media all and (max-width: 1400px) {

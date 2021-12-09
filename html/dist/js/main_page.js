@@ -1010,6 +1010,30 @@ var mainCases = /*#__PURE__*/function () {
   }, {
     key: "init",
     value: function init() {
+      if (document.querySelector('.block_caseg .career-first-title')) {
+        if (window.innerWidth <= 1366 && window.innerWidth > 1023 || window.innerWidth > 1440) {
+          setTimeout(function () {
+            gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.block_caseg .career-first-title', {
+              scrollTrigger: {
+                trigger: '.block_caseg',
+                start: 'top top',
+                end: 'bottom bottom-=500',
+                scrub: 11,
+                // markers: true,
+                onUpdate: function onUpdate(item) {
+                  if (item.progress > 0.05 && item.progress < 0.65) {
+                    document.querySelector('.block_caseg .career-first-title').classList.add('isInViewport');
+                  } else {
+                    document.querySelector('.block_caseg .career-first-title').classList.remove('isInViewport');
+                  }
+                }
+              },
+              x: '-100%'
+            });
+          }, 1000);
+        }
+      }
+
       if (!document.querySelector('.main-cases')) return;
       var self = this;
       this.onInit();

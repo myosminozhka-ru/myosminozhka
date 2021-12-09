@@ -1187,3 +1187,9 @@
         }
     }
 }
+@media all and (min-width: 1024px) {
+    .block_caseg .career-first-title {
+        white-space: nowrap;
+        width: max-content;
+    }
+}

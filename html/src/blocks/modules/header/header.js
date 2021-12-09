@@ -98,5 +98,4 @@ const header = class Header {
         })
     }
 }
-
 export default header;
