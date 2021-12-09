@@ -120,29 +120,71 @@
     </nav>
     
 </header>
-                <section class="career-first" :class="{'mobile': window.width <=1023}">
-    <h1 class="career-first-title">Разработка сайта для мукомольного комбината</h1>
-    <div class="career-first-tentacle" v-if="window.width <=1023">
-        <img src="img/svg/tentacle_static.svg" width="100%" alt="" v-if="isSafary">
-        <img src="img/svg/tentacle.svg" width="100%" alt="" v-else>
-    </div>
-    <div class="career-first-text" v-if="window.width <=1023">
-        Настал тот самый момент, когда нам нужно еще больше свежих мозгов для самых смелых проектов
+                <section class="career-first block_caseg" :class="{'mobile': window.width <=1023}">
+    <h1 class="career-first-title animated-title">Разработка сайта</h1>
+    <div class="car_button" v-if="window.width <=1023">
+        <button class="button button--main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><div class="text">Подробнее</div></button>
     </div>
     
         <div class="career-first-info" v-if="window.width > 1023">
-            <div class="career-first-tentacle">
-                <img src="img/svg/tentacle_static.svg" width="100%" alt="" v-if="isSafary">
-        <img src="img/svg/tentacle.svg" width="100%" alt="" v-else>
-            </div>
-            <div class="career-first-text">
-                Настал тот самый момент, когда нам нужно еще больше свежих мозгов для самых смелых проектов
-            </div>
+            <button class="button button--main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><div class="text">Подробнее</div></button>
+            <div><img src="./img/log_a.png" alt=""></div>
         </div>
     
 </section>
             </div>
-            <div class="case_page__in" :class="{'mobile': window.width <=1023}">
+            <div class="case_tabs_new">
+    <div class="job-stages-triggers_new">
+        <a href="#" data-tab-id="0" class="job-stages-trigger isActive">
+            <div class="in">
+                <div class="text">Аналитика</div>
+            </div>
+        </a>
+        <a href="#" data-tab-id="1" class="job-stages-trigger">
+            <div class="in">
+                <div class="text">Проектирование</div>
+            </div>
+        </a>
+        <a href="#" data-tab-id="2" class="job-stages-trigger">
+            <div class="in">
+                <div class="text">Отзывы</div>
+            </div>
+        </a>
+    </div>
+    <div class="job-stages-tabs">
+        <div class="job-stages-slides job-stages-slides-double">
+            <div class="job-stages-trig"></div>
+            <div class="job-stages-slide">
+                <li class="glide__slide job-stages-item">
+                    <div class="job-stages-item-text">
+                        В нем они описывают функциональную логику работы всех разделов и блоков будущего проекта, а также нефункциональные требования к нему. На основании этого тимлид разрабатывает программную архитектуру, структуру хранения данных и спецификации на интеграции. На этой же стадии наши специалисты по информационной безопасности фиксируют требования по безопасности к системам. Задание обсуждаем с клиентом и утверждаем его.
+                    </div>
+                </li>
+            </div>
+        </div>
+        <div class="job-stages-slides job-stages-slides-double">
+            <div class="job-stages-trig"></div>
+            <div class="job-stages-slide">
+                <li class="glide__slide job-stages-item">
+                    <div class="job-stages-item-text">
+                        2В нем они описывают функциональную логику работы всех разделов и блоков будущего проекта, а также нефункциональные требования к нему. На основании этого тимлид разрабатывает программную архитектуру, структуру хранения данных и спецификации на интеграции. На этой же стадии наши специалисты по информационной безопасности фиксируют требования по безопасности к системам. Задание обсуждаем с клиентом и утверждаем его.
+                    </div>
+                </li>
+            </div>
+        </div>
+        <div class="job-stages-slides job-stages-slides-double">
+            <div class="job-stages-trig"></div>
+            <div class="job-stages-slide">
+                <li class="glide__slide job-stages-item">
+                    <div class="job-stages-item-text">
+                        3В нем они описывают функциональную логику работы всех разделов и блоков будущего проекта, а также нефункциональные требования к нему. На основании этого тимлид разрабатывает программную архитектуру, структуру хранения данных и спецификации на интеграции. На этой же стадии наши специалисты по информационной безопасности фиксируют требования по безопасности к системам. Задание обсуждаем с клиентом и утверждаем его.
+                    </div>
+                </li>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="case_page__in" :class="{'mobile': window.width <=1023}">
     <div class="case_page__vid">
         <div class="company-video">
             <video id="player" playsinline class="video-js vjs-theme-city"></video>
@@ -330,8 +372,8 @@
             </div>
             <div class="case_page__gl--block">
                 <img src="./img/aa14.png" alt="">
-                <div class="case_page__gl--block_r">
-                    <div class="case_page__gl--blc"><img src="./img/aa15.png" alt=""><img src="./img/aa16.png" alt=""><img src="./img/aa14.png" alt=""><img src="./img/aa20.png" alt=""></div>
+                <div class="case_page__gl--block_r img_mob">
+                    <div class="case_page__gl--blc"><img src="./img/aa15.png" alt=""><img src="./img/aa16.png" alt=""><img src="./img/aa16.png" alt=""><img src="./img/aa20.png" alt=""></div>
                     <div class="case_page__gl--blc"><img src="./img/aa17.png" alt=""><img src="./img/aa15.png" alt=""><img src="./img/aa11.png" alt=""></div>
                 </div>
             </div>
