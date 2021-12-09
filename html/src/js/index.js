@@ -27,7 +27,23 @@ import case_page from "%modules%/case_page/case_page";
 // import postBlog from "%modules%/posts-blog/posts-blog";
 import footer from "%modules%/footer/footer";
 import cookiesForm from "%modules%/cookie-form/cookie-form";
-
+import $ from "jquery";
+$(function() {
+    setTimeout(function(){
+      window.addEventListener("scroll", function(event){
+    
+        var top = this.pageYOffset;
+    
+        var layers = $(".parallax__layer");
+        var speed, yPos;
+        layers.each(function() {
+          speed = $(this).attr('data-speed');
+          var yPos = -(top * speed / 100);
+          $(this).attr('style','transform: translate3d(0px, ' + yPos + 'px, 0px)');
+        });
+      });
+    }, 1000);
+})
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
