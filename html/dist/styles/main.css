@@ -11087,6 +11087,10 @@ body.company .company-ceo:not(.mobile) {
   padding-top: 8.85417vw;
 }
 
+.block_pal {
+  position: relative !important;
+}
+
 @media screen and (min-width: 36rem) {
   .container {
     max-width: 31.875rem;
