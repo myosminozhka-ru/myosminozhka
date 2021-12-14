@@ -31,7 +31,9 @@
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
         <script>
             document.addEventListener("DOMContentLoaded", () => {
-                AOS.init();
+                AOS.init({
+                    once: true
+                });
             });
         </script>
     </head>

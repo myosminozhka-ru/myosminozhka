@@ -10585,7 +10585,7 @@ body.company .company-ceo:not(.mobile) {
 
 .case_page__reds {
   padding-top: 23.4375vw;
-  padding-bottom: 7.8125vw;
+  padding-bottom: 2.60417vw;
   background: url(../img/bg_red.png) 0 0/cover no-repeat, linear-gradient(0deg, #4f4f4f 84%, rgba(255, 255, 255, 0) 84%, rgba(255, 255, 255, 0) 100%);
 }
 
@@ -10755,7 +10755,7 @@ body.company .company-ceo:not(.mobile) {
   padding-right: 50px;
   background: url("../img/bg_vid.png") 0 0/cover no-repeat, linear-gradient(0deg, #4f4f4f 78%, white 78%, white 100%);
   padding-top: 23.4375vw;
-  padding-bottom: 7.8125vw;
+  padding-bottom: 0.52083vw;
 }
 
 .case_page__video--title {
@@ -11041,13 +11041,20 @@ body.company .company-ceo:not(.mobile) {
   padding-right: 50px;
 }
 
-.case_tabs_new .job-stages-triggers_new {
+.case_tabs_new .jb_lnks {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.case_tabs_new .job-stages-trigger {
+.case_tabs_new .jb_lnk .text {
+  color: #FFFFFF !important;
+  font-size: 2.08333vw;
+  line-height: normal;
+  transition: all .3s ease-out;
+}
+
+.case_tabs_new .jb_lnk {
   width: auto;
   height: auto;
   margin: 0;
@@ -11062,16 +11069,11 @@ body.company .company-ceo:not(.mobile) {
   font-size: 2.08333vw;
   color: #FFFFFF !important;
   line-height: normal;
+  text-decoration: none !important;
 }
 
-.case_tabs_new .job-stages-trigger.isActive {
-  text-decoration: underline;
-}
-
-.case_tabs_new .job-stages-trigger .text {
-  color: #FFFFFF !important;
-  font-size: 2.08333vw;
-  line-height: normal;
+.case_tabs_new .jb_lnk:hover .text {
+  color: #FF4978 !important;
 }
 
 .case_tabs_new .job-stages-item-text {
@@ -11089,6 +11091,10 @@ body.company .company-ceo:not(.mobile) {
 
 .block_pal {
   position: relative !important;
+}
+
+.parallax__layer {
+  transition: all .3s ease-out;
 }
 
 @media screen and (min-width: 36rem) {
@@ -11294,19 +11300,19 @@ body.company .company-ceo:not(.mobile) {
     background: url("../img/bg_mob.png") 0 0 no-repeat;
   }
 
-  .case_tabs_new .job-stages-triggers_new {
+  .case_tabs_new .jb_lnks {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     min-height: 200px;
   }
 
-  .case_tabs_new .job-stages-trigger {
+  .case_tabs_new .jb_lnk {
     margin: 0;
     margin-bottom: 10px;
   }
 
-  .case_tabs_new .job-stages-trigger .text {
+  .case_tabs_new .jb_lnk .text {
     font-size: 16px;
     line-height: 36px;
   }
@@ -11318,6 +11324,10 @@ body.company .company-ceo:not(.mobile) {
     font-size: 16px;
     line-height: 26px;
     margin-bottom: 30px;
+  }
+
+  .parallax__layer {
+    transform: unset !important;
   }
 }
 

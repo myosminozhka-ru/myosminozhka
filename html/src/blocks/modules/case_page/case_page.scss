@@ -649,7 +649,7 @@
     }
     &__reds {
         padding-top: vw(450);
-        padding-bottom: vw(150);
+        padding-bottom: vw(50);
         background: url(../img/bg_red.png) 0 0 / cover no-repeat, linear-gradient(0deg, rgba(79,79,79,1) 84%, rgba(255,255,255,0) 84%, rgba(255,255,255,0) 100%);
         &--title {
             font-family: 'Montserrat', serif;
@@ -802,7 +802,7 @@
         padding-right: 50px;
         background: url('../img/bg_vid.png') 0 0 / cover no-repeat, linear-gradient(0deg, rgba(79,79,79,1) 78%, rgba(255,255,255,1) 78%, rgba(255,255,255,1) 100%);
         padding-top: vw(450);
-        padding-bottom: vw(150);
+        padding-bottom: vw(10);
         &--title {
             margin-bottom: vw(100);
             font-family: 'Montserrat', serif;
@@ -1121,12 +1121,18 @@
     padding-top: vw(23);
     padding-left: 50px;
     padding-right: 50px;
-    .job-stages-triggers_new {
+    .jb_lnks {
         display: flex;
         align-items: center;
         justify-content: center;
     }
-    .job-stages-trigger {
+    .jb_lnk .text {
+        color: #FFFFFF !important;
+        font-size: vw(40);
+        line-height: normal;
+        transition: all .3s ease-out;
+    }
+    .jb_lnk {
         width: auto;
         height: auto;
         margin: 0;
@@ -1141,14 +1147,12 @@
         font-size: vw(40);
         color: #FFFFFF !important;
         line-height: normal;
-        &.isActive {
-            text-decoration: underline;
+        text-decoration: none !important;
+        &:hover {
+            .text {
+                color: #FF4978 !important;
+            }
         }
-    }
-    .job-stages-trigger .text {
-        color: #FFFFFF !important;
-        font-size: vw(40);
-        line-height: normal;
     }
     .job-stages-item-text {
         margin-left: auto;
@@ -1163,17 +1167,17 @@
         padding-top: vw(170);
     }
     @media all and (max-width: 1023px) {
-        .job-stages-triggers_new {
+        .jb_lnks {
             flex-direction: column;
             align-items: flex-start;
             justify-content: flex-start;
             min-height: 200px;
         }
-        .job-stages-trigger {
+        .jb_lnk {
             margin: 0;
             margin-bottom: 10px;
         }
-        .job-stages-trigger .text {
+        .jb_lnk .text {
             font-size: 16px;
             line-height: 36px;
         }
@@ -1198,4 +1202,10 @@
 }
 .block_pal {
     position: relative !important;
+}
+.parallax__layer {
+    transition: all .3s ease-out;
+    @media all and (max-width: 1023px) {
+        transform: unset !important;
+    }
 }

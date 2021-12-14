@@ -38,7 +38,7 @@ $(function() {
         var speed, yPos;
         layers.each(function() {
           speed = $(this).attr('data-speed');
-          var yPos = -(top * speed / 100);
+          var yPos = -(top * speed / (window.innerWidth /20));
           $(this).attr('style','transform: translate3d(0px, ' + yPos + 'px, 0px)');
         });
       });
