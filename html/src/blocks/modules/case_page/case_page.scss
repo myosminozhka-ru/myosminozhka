@@ -389,6 +389,12 @@
                     min-width: 730px;
                 }
             }
+            .case_page__bls--block:nth-child(even) .case_page__bls--title {
+                padding-top: 0;
+            }
+            .case_page__reds, .case_page__video {
+                margin-top: 0;
+            }
         }
     }
     &__gl {
@@ -658,7 +664,7 @@
     }
     &__reds {
         padding-top: vw(450);
-        margin-top: -196px;
+        margin-top: vw(-196);
         padding-bottom: 0;
         background: url(../img/bg_red.png) 0 0 / cover no-repeat, linear-gradient(0deg, rgba(79,79,79,1) 84%, rgba(255,255,255,0) 84%, rgba(255,255,255,0) 100%);
         &--title {
@@ -816,7 +822,7 @@
         background: url('../img/bg_vid.png') 0 0 / cover no-repeat, linear-gradient(0deg, rgba(79,79,79,1) 78%, rgba(255,255,255,0) 78%, rgba(255,255,255,0) 100%);
         padding-top: vw(450);
         padding-bottom: 0;
-        margin-top: -157px;
+        margin-top: vw(-157);
         &--title {
             margin-bottom: vw(100);
             font-family: 'Montserrat', serif;

@@ -10292,6 +10292,15 @@ body.company .company-ceo:not(.mobile) {
   right: -1.25vw;
 }
 
+.case_page__in.mobile .case_page__bls--block:nth-child(even) .case_page__bls--title {
+  padding-top: 0;
+}
+
+.case_page__in.mobile .case_page__reds,
+.case_page__in.mobile .case_page__video {
+  margin-top: 0;
+}
+
 .case_page__gl {
   padding-top: 29.0625vw;
   background: url(../img/bg_red.png) 0 0/contain no-repeat, linear-gradient(0deg, #4f4f4f 84%, rgba(255, 255, 255, 0) 84%, rgba(255, 255, 255, 0) 100%);
@@ -10594,7 +10603,7 @@ body.company .company-ceo:not(.mobile) {
 
 .case_page__reds {
   padding-top: 23.4375vw;
-  margin-top: -196px;
+  margin-top: -10.20833vw;
   padding-bottom: 0;
   background: url(../img/bg_red.png) 0 0/cover no-repeat, linear-gradient(0deg, #4f4f4f 84%, rgba(255, 255, 255, 0) 84%, rgba(255, 255, 255, 0) 100%);
 }
@@ -10769,7 +10778,7 @@ body.company .company-ceo:not(.mobile) {
   background: url("../img/bg_vid.png") 0 0/cover no-repeat, linear-gradient(0deg, #4f4f4f 78%, rgba(255, 255, 255, 0) 78%, rgba(255, 255, 255, 0) 100%);
   padding-top: 23.4375vw;
   padding-bottom: 0;
-  margin-top: -157px;
+  margin-top: -8.17708vw;
 }
 
 .case_page__video--title {
