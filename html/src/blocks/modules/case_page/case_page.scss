@@ -392,7 +392,7 @@
         }
     }
     &__gl {
-        padding-top: vw(450);
+        padding-top: vw(558);
         background: url(../img/bg_red.png) 0 0 / contain no-repeat, linear-gradient(0deg, rgba(79,79,79,1) 84%, rgba(255,255,255,0) 84%, rgba(255,255,255,0) 100%);
         overflow: hidden;
         &--title {
@@ -414,8 +414,8 @@
             transform: rotate(30deg);
             height: vw(3535);
             position: relative;
-            top: vw(574);
-            left: vw(-672);
+            top: vw(585);
+            left: vw(-632);
         }
         &--block {
             width: vw(725);
@@ -468,7 +468,7 @@
         }
     }
     &__prot {
-        margin-top: vw(200);
+        margin-top: vw(70);
         &--title {
             font-family: 'Montserrat', serif;
             font-style: normal;
@@ -477,7 +477,7 @@
             text-align: center;
             text-transform: uppercase;
             color: #4F4F4F;
-            margin-bottom: vw(100);
+            margin-bottom: vw(43);
             max-width: 1380px;
             width: 100%;
             margin-left: auto;
@@ -541,11 +541,11 @@
     }
     &__ref {
         &--title {
-            max-width: 910px;
+            max-width: 1206px;
             width: 100%;
             margin-left: auto;
             margin-right: auto;
-            margin-bottom: vw(100);
+            margin-bottom: vw(53);
             font-family: 'Montserrat', serif;
             font-style: normal;
             font-weight: bold;
@@ -556,13 +556,13 @@
         &--img {
             padding-left: 50px;
             padding-right: 50px;
-            margin-bottom: vw(100);
+            margin-bottom: vw(62);
             img {
                 width: 100%;
             }
         }
         &--text {
-            max-width: 910px;
+            max-width: 1206px;
             width: 100%;
             margin-left: auto;
             margin-right: auto;
@@ -573,11 +573,12 @@
             font-weight: 600;
             font-size: 34px;
             color: #4F4F4F;
+            line-height: 150%;
             margin-bottom: 40px;
         }
     }
     &__bls {
-        margin-bottom: 200px;
+        margin-bottom: 60px;
         &--l {
             width: 100%;
             display: flex;
@@ -586,14 +587,14 @@
             background: #F6F6F8;
             border-radius: 10px;
             padding: vw(340) 40px;
-            width: 42%;
+            width: 52%;
             img {
                 max-width: 735px;
                 width: 100%;
             }
         }
         &--r {
-            width: 58%;
+            width: 52%;
             flex: none;
             padding-right: 50px;
             margin-left: 95px;
@@ -618,7 +619,7 @@
         }
         &--block {
             display: flex;
-            margin-bottom: 150px;
+            margin-bottom: 73px;
             align-items: flex-start;
             &.muk {
                 .case_page__bls--l {
@@ -633,11 +634,19 @@
             }
             &:nth-child(even) {
                 flex-direction: row-reverse;
+                .case_page__bls--title {
+                    padding-top: 187px;
+                }
                 .case_page__bls--r {
                     margin-left: 0;
-                    margin-right: 95px;
+                    margin-right: 59px;
                     padding: 0 !important;
                     padding-left: 50px !important;
+                }
+            }
+            &:nth-child(odd) {
+                .case_page__bls--r {
+                    padding-left: 44px;
                 }
             }
         }
@@ -649,7 +658,8 @@
     }
     &__reds {
         padding-top: vw(450);
-        padding-bottom: vw(50);
+        margin-top: -196px;
+        padding-bottom: 0;
         background: url(../img/bg_red.png) 0 0 / cover no-repeat, linear-gradient(0deg, rgba(79,79,79,1) 84%, rgba(255,255,255,0) 84%, rgba(255,255,255,0) 100%);
         &--title {
             font-family: 'Montserrat', serif;
@@ -704,7 +714,7 @@
             font-size: vw(90);
             text-transform: uppercase;
             color: #4F4F4F;
-            margin-bottom: 100px;
+            margin-bottom: 42px;
         }
         &--color {
             max-width: 1130px;
@@ -714,7 +724,7 @@
             display: flex;
             align-items: flex-start ;
             justify-content: space-between;
-            margin-bottom: 100px;
+            margin-bottom: 9px;
             &:last-child {
                 margin-bottom: 0;
             }
@@ -729,6 +739,9 @@
             width: 50%;
             text-align: center;
             padding-top: 60px;
+            flex: none;
+            max-width: 520px;
+            width: 100%;
         }
         &--cr {
             display: flex;
@@ -736,7 +749,7 @@
         }
         &--ccolor {
             width: 50%;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
             text-align: center;
         }
         &--citem {
@@ -775,7 +788,7 @@
         }
         &--font {
             margin-bottom: 50px;
-            padding-left: 150px;
+            padding-left: 50px;
             &:last-child {
                 margin-bottom: 0;
             }
@@ -786,7 +799,7 @@
             font-size: 100px;
             letter-spacing: 0.05em;
             color: #FEA933;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
         &--ftext {
             font-style: normal;
@@ -800,9 +813,10 @@
     &__video {
         padding-left: 50px;
         padding-right: 50px;
-        background: url('../img/bg_vid.png') 0 0 / cover no-repeat, linear-gradient(0deg, rgba(79,79,79,1) 78%, rgba(255,255,255,1) 78%, rgba(255,255,255,1) 100%);
+        background: url('../img/bg_vid.png') 0 0 / cover no-repeat, linear-gradient(0deg, rgba(79,79,79,1) 78%, rgba(255,255,255,0) 78%, rgba(255,255,255,0) 100%);
         padding-top: vw(450);
-        padding-bottom: vw(10);
+        padding-bottom: 0;
+        margin-top: -157px;
         &--title {
             margin-bottom: vw(100);
             font-family: 'Montserrat', serif;
@@ -817,13 +831,14 @@
         }
     }
     &__img {
-        max-width: 1256px;
+        max-width: 1375px;
         width: 100%;
         margin-left: auto;
         margin-right: auto;
         padding-left: 20px;
         padding-right: 20px;
-        margin-top: vw(200);
+        margin-top: vw(101);
+        margin-bottom: vw(-203);
         &--title {
             max-width: 1076px;
             width: 100%;
@@ -835,7 +850,7 @@
             line-height: 122%;
             text-transform: uppercase;
             color: #4F4F4F;
-            margin-bottom: vw(100);
+            margin-bottom: vw(50);
             @media all and (max-width: 1400px) {
                 max-width: 910px;
                 margin-right: auto;
@@ -852,10 +867,14 @@
             font-size: vw(30);
             line-height: 167%;
             color: #4F4F4F;
-            margin-bottom: vw(60);
+            p:last-child() {
+                margin-bottom: 0;
+            }
         }
         &--img {
             filter: drop-shadow(0px 15px 15px rgba(0, 0, 0, 0.03)) drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
+            max-width: 1370px;
+            width: 100%;
             img {
                 border-radius: 10px;
                 overflow: hidden;
@@ -863,9 +882,9 @@
         }
     }
     &__about {
-        padding-top: vw(200);
+        padding-top: vw(105);
         &--rezult {
-            max-width: 900px;
+            max-width: 930px;
             width: 100%;
             margin-left: auto;
             margin-right: auto;
@@ -878,7 +897,7 @@
             font-size: vw(90);
             text-transform: uppercase;
             color: #4F4F4F;
-            margin-bottom: vw(50);
+            margin-bottom: vw(60);
         }
         &--rsubtitle {
             font-family: 'Montserrat', serif;
@@ -892,6 +911,7 @@
             padding-left: 0;
             margin: 0;
             list-style: none;
+            padding-top: 10px;
             li {
                 margin-bottom: vw(30);
                 font-family: 'Montserrat', serif;
@@ -916,12 +936,12 @@
         &--block {
             display: flex;
             align-items: center;
-            margin-bottom: vw(200);
+            margin-bottom: vw(87);
         }
         &--bimg {
             background: #F6F6F8;
             border-radius: 10px;
-            width: 40%;
+            width: 43%;
             flex: none;
             display: flex;
             align-items: center;
@@ -940,15 +960,19 @@
             line-height: vw(50);
             width: 60%;
             color: #4F4F4F;
+            margin-bottom: vw(165);
         }
         &--work {
-            max-width: 950px;
+            max-width: 1205px;
             width: 100%;
             margin-left: auto;
             margin-right: auto;
         }
         &--wblock {
-            margin-bottom: vw(225);
+            margin-bottom: vw(111);
+            &:last-child {
+                margin-bottom: 0;
+            }
         }
         &--wtitle {
             font-family: 'Montserrat', serif;
@@ -998,7 +1022,7 @@
     &__case {
         margin-bottom: vw(210);
         background: #4f4f4f;
-        padding-top: vw(150);
+        padding-top: vw(105);
         @media all and (max-width: 520px) {
             padding-top: 61px;
             background: url('../img/case.png') 0 0 no-repeat, linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 35%, rgba(79,79,79,1) 35%);
@@ -1162,9 +1186,9 @@
         font-size: vw(30);
         line-height: 167%;
         color: #4F4F4F;
-        max-width: vw(1513);
+        max-width: vw(1497);
         width: 100%;
-        padding-top: vw(170);
+        padding-top: vw(160);
     }
     @media all and (max-width: 1023px) {
         .jb_lnks {
@@ -1208,4 +1232,15 @@
     @media all and (max-width: 1023px) {
         transform: unset !important;
     }
+}
+// adapt
+.career-first:not(.mobile) .career-first-title {
+    font-size: vw(274);
+    padding: vw(95) vw(54);
+}
+.career-first:not(.mobile) {
+    padding-bottom: vw(84);
+}
+.case_page .player-dimensions.vjs-fluid {
+    padding-top: 49.25%;
 }

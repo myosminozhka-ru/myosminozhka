@@ -10293,7 +10293,7 @@ body.company .company-ceo:not(.mobile) {
 }
 
 .case_page__gl {
-  padding-top: 23.4375vw;
+  padding-top: 29.0625vw;
   background: url(../img/bg_red.png) 0 0/contain no-repeat, linear-gradient(0deg, #4f4f4f 84%, rgba(255, 255, 255, 0) 84%, rgba(255, 255, 255, 0) 100%);
   overflow: hidden;
 }
@@ -10318,8 +10318,8 @@ body.company .company-ceo:not(.mobile) {
   transform: rotate(30deg);
   height: 184.11458vw;
   position: relative;
-  top: 29.89583vw;
-  left: -35vw;
+  top: 30.46875vw;
+  left: -32.91667vw;
 }
 
 .case_page__gl--block {
@@ -10381,7 +10381,7 @@ body.company .company-ceo:not(.mobile) {
 }
 
 .case_page__prot {
-  margin-top: 10.41667vw;
+  margin-top: 3.64583vw;
 }
 
 .case_page__prot--title {
@@ -10392,7 +10392,7 @@ body.company .company-ceo:not(.mobile) {
   text-align: center;
   text-transform: uppercase;
   color: #4F4F4F;
-  margin-bottom: 5.20833vw;
+  margin-bottom: 2.23958vw;
   max-width: 1380px;
   width: 100%;
   margin-left: auto;
@@ -10463,11 +10463,11 @@ body.company .company-ceo:not(.mobile) {
 }
 
 .case_page__ref--title {
-  max-width: 910px;
+  max-width: 1206px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 5.20833vw;
+  margin-bottom: 2.76042vw;
   font-family: 'Montserrat', serif;
   font-style: normal;
   font-weight: bold;
@@ -10479,7 +10479,7 @@ body.company .company-ceo:not(.mobile) {
 .case_page__ref--img {
   padding-left: 50px;
   padding-right: 50px;
-  margin-bottom: 5.20833vw;
+  margin-bottom: 3.22917vw;
 }
 
 .case_page__ref--img img {
@@ -10487,7 +10487,7 @@ body.company .company-ceo:not(.mobile) {
 }
 
 .case_page__ref--text {
-  max-width: 910px;
+  max-width: 1206px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -10499,11 +10499,12 @@ body.company .company-ceo:not(.mobile) {
   font-weight: 600;
   font-size: 34px;
   color: #4F4F4F;
+  line-height: 150%;
   margin-bottom: 40px;
 }
 
 .case_page__bls {
-  margin-bottom: 200px;
+  margin-bottom: 60px;
 }
 
 .case_page__bls--l {
@@ -10514,7 +10515,7 @@ body.company .company-ceo:not(.mobile) {
   background: #F6F6F8;
   border-radius: 10px;
   padding: 17.70833vw 40px;
-  width: 42%;
+  width: 52%;
 }
 
 .case_page__bls--l img {
@@ -10523,7 +10524,7 @@ body.company .company-ceo:not(.mobile) {
 }
 
 .case_page__bls--r {
-  width: 58%;
+  width: 52%;
   flex: none;
   padding-right: 50px;
   margin-left: 95px;
@@ -10551,7 +10552,7 @@ body.company .company-ceo:not(.mobile) {
 
 .case_page__bls--block {
   display: flex;
-  margin-bottom: 150px;
+  margin-bottom: 73px;
   align-items: flex-start;
 }
 
@@ -10570,11 +10571,19 @@ body.company .company-ceo:not(.mobile) {
   flex-direction: row-reverse;
 }
 
+.case_page__bls--block:nth-child(even) .case_page__bls--title {
+  padding-top: 187px;
+}
+
 .case_page__bls--block:nth-child(even) .case_page__bls--r {
   margin-left: 0;
-  margin-right: 95px;
+  margin-right: 59px;
   padding: 0 !important;
   padding-left: 50px !important;
+}
+
+.case_page__bls--block:nth-child(odd) .case_page__bls--r {
+  padding-left: 44px;
 }
 
 .case_page__vid {
@@ -10585,7 +10594,8 @@ body.company .company-ceo:not(.mobile) {
 
 .case_page__reds {
   padding-top: 23.4375vw;
-  padding-bottom: 2.60417vw;
+  margin-top: -196px;
+  padding-bottom: 0;
   background: url(../img/bg_red.png) 0 0/cover no-repeat, linear-gradient(0deg, #4f4f4f 84%, rgba(255, 255, 255, 0) 84%, rgba(255, 255, 255, 0) 100%);
 }
 
@@ -10645,7 +10655,7 @@ body.company .company-ceo:not(.mobile) {
   font-size: 4.6875vw;
   text-transform: uppercase;
   color: #4F4F4F;
-  margin-bottom: 100px;
+  margin-bottom: 42px;
 }
 
 .case_page__style--color {
@@ -10656,7 +10666,7 @@ body.company .company-ceo:not(.mobile) {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 100px;
+  margin-bottom: 9px;
 }
 
 .case_page__style--color:last-child {
@@ -10673,6 +10683,9 @@ body.company .company-ceo:not(.mobile) {
   width: 50%;
   text-align: center;
   padding-top: 60px;
+  flex: none;
+  max-width: 520px;
+  width: 100%;
 }
 
 .case_page__style--cr {
@@ -10682,7 +10695,7 @@ body.company .company-ceo:not(.mobile) {
 
 .case_page__style--ccolor {
   width: 50%;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
   text-align: center;
 }
 
@@ -10725,7 +10738,7 @@ body.company .company-ceo:not(.mobile) {
 
 .case_page__style--font {
   margin-bottom: 50px;
-  padding-left: 150px;
+  padding-left: 50px;
 }
 
 .case_page__style--font:last-child {
@@ -10738,7 +10751,7 @@ body.company .company-ceo:not(.mobile) {
   font-size: 100px;
   letter-spacing: 0.05em;
   color: #FEA933;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .case_page__style--ftext {
@@ -10753,9 +10766,10 @@ body.company .company-ceo:not(.mobile) {
 .case_page__video {
   padding-left: 50px;
   padding-right: 50px;
-  background: url("../img/bg_vid.png") 0 0/cover no-repeat, linear-gradient(0deg, #4f4f4f 78%, white 78%, white 100%);
+  background: url("../img/bg_vid.png") 0 0/cover no-repeat, linear-gradient(0deg, #4f4f4f 78%, rgba(255, 255, 255, 0) 78%, rgba(255, 255, 255, 0) 100%);
   padding-top: 23.4375vw;
-  padding-bottom: 0.52083vw;
+  padding-bottom: 0;
+  margin-top: -157px;
 }
 
 .case_page__video--title {
@@ -10772,13 +10786,14 @@ body.company .company-ceo:not(.mobile) {
 }
 
 .case_page__img {
-  max-width: 1256px;
+  max-width: 1375px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
   padding-right: 20px;
-  margin-top: 10.41667vw;
+  margin-top: 5.26042vw;
+  margin-bottom: -10.57292vw;
 }
 
 .case_page__img--title {
@@ -10792,7 +10807,7 @@ body.company .company-ceo:not(.mobile) {
   line-height: 122%;
   text-transform: uppercase;
   color: #4F4F4F;
-  margin-bottom: 5.20833vw;
+  margin-bottom: 2.60417vw;
 }
 
 .case_page__img--text {
@@ -10806,11 +10821,16 @@ body.company .company-ceo:not(.mobile) {
   font-size: 1.5625vw;
   line-height: 167%;
   color: #4F4F4F;
-  margin-bottom: 3.125vw;
+}
+
+.case_page__img--text p:last-child {
+  margin-bottom: 0;
 }
 
 .case_page__img--img {
   filter: drop-shadow(0px 15px 15px rgba(0, 0, 0, 0.03)) drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
+  max-width: 1370px;
+  width: 100%;
 }
 
 .case_page__img--img img {
@@ -10819,11 +10839,11 @@ body.company .company-ceo:not(.mobile) {
 }
 
 .case_page__about {
-  padding-top: 10.41667vw;
+  padding-top: 5.46875vw;
 }
 
 .case_page__about--rezult {
-  max-width: 900px;
+  max-width: 930px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -10837,7 +10857,7 @@ body.company .company-ceo:not(.mobile) {
   font-size: 4.6875vw;
   text-transform: uppercase;
   color: #4F4F4F;
-  margin-bottom: 2.60417vw;
+  margin-bottom: 3.125vw;
 }
 
 .case_page__about--rsubtitle {
@@ -10853,6 +10873,7 @@ body.company .company-ceo:not(.mobile) {
   padding-left: 0;
   margin: 0;
   list-style: none;
+  padding-top: 10px;
 }
 
 .case_page__about--rlist li {
@@ -10880,13 +10901,13 @@ body.company .company-ceo:not(.mobile) {
 .case_page__about--block {
   display: flex;
   align-items: center;
-  margin-bottom: 10.41667vw;
+  margin-bottom: 4.53125vw;
 }
 
 .case_page__about--bimg {
   background: #F6F6F8;
   border-radius: 10px;
-  width: 40%;
+  width: 43%;
   flex: none;
   display: flex;
   align-items: center;
@@ -10907,17 +10928,22 @@ body.company .company-ceo:not(.mobile) {
   line-height: 2.60417vw;
   width: 60%;
   color: #4F4F4F;
+  margin-bottom: 8.59375vw;
 }
 
 .case_page__about--work {
-  max-width: 950px;
+  max-width: 1205px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
 
 .case_page__about--wblock {
-  margin-bottom: 11.71875vw;
+  margin-bottom: 5.78125vw;
+}
+
+.case_page__about--wblock:last-child {
+  margin-bottom: 0;
 }
 
 .case_page__about--wtitle {
@@ -10973,7 +10999,7 @@ body.company .company-ceo:not(.mobile) {
 .case_page__case {
   margin-bottom: 10.9375vw;
   background: #4f4f4f;
-  padding-top: 7.8125vw;
+  padding-top: 5.46875vw;
 }
 
 .case_page__case--title {
@@ -11084,9 +11110,9 @@ body.company .company-ceo:not(.mobile) {
   font-size: 1.5625vw;
   line-height: 167%;
   color: #4F4F4F;
-  max-width: 78.80208vw;
+  max-width: 77.96875vw;
   width: 100%;
-  padding-top: 8.85417vw;
+  padding-top: 8.33333vw;
 }
 
 .block_pal {
@@ -11095,6 +11121,19 @@ body.company .company-ceo:not(.mobile) {
 
 .parallax__layer {
   transition: all .3s ease-out;
+}
+
+.career-first:not(.mobile) .career-first-title {
+  font-size: 14.27083vw;
+  padding: 4.94792vw 2.8125vw;
+}
+
+.career-first:not(.mobile) {
+  padding-bottom: 4.375vw;
+}
+
+.case_page .player-dimensions.vjs-fluid {
+  padding-top: 49.25%;
 }
 
 @media screen and (min-width: 36rem) {
