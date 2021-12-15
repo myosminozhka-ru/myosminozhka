@@ -11394,6 +11394,14 @@ body.company .company-ceo:not(.mobile) {
   }
 }
 
+@media (max-width: 1023px) {
+  .case_tabs_new {
+    padding-left: 20px;
+    padding-right: 20px;
+    background: url("../img/bg_mob.png") 0 0 no-repeat, linear-gradient(180deg, #4f4f4f 22.39583vw, white 22.39583vw, white 22.39583vw);
+  }
+}
+
 @media all and (max-width: 990px) {
   .main-question-tentacle {
     bottom: -587px;
