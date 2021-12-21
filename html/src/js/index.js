@@ -28,6 +28,7 @@ import case_page from "%modules%/case_page/case_page";
 import footer from "%modules%/footer/footer";
 import cookiesForm from "%modules%/cookie-form/cookie-form";
 import $ from "jquery";
+import 'slick-carousel';
 $(function() {
     setTimeout(function(){
       window.addEventListener("scroll", function(event){
@@ -43,6 +44,13 @@ $(function() {
         });
       });
     }, 1000);
+    $('.case_ss__sl').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true, 
+        fade: true
+    });
 })
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
