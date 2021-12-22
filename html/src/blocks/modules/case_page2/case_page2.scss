@@ -1,4 +1,8 @@
 .case_page__blue {
+    .case_page__bls--l img {
+        max-width: 735px;
+        max-height: 752px;
+    }
     .header-blur, .career-first {
         background: #87A8B7;
     }
@@ -372,7 +376,91 @@
                 width: 100%;
             }
             &--title {
-                
+                font-family: 'Montserrat', serif;
+                font-style: normal;
+                font-weight: 600;
+                font-size: vw(24);
+                color: #000000;
+                margin-bottom: vw(30);
+            }
+        }
+        &__color {
+            &--blocks {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            &--block {
+                width: calc(50% - 15px);
+                margin-bottom: vw(30);
+            }
+            &--bl {
+                width: 100%;
+                height: vw(38);
+                margin-bottom: vw(20);
+            }
+            &--txt {
+                font-family: 'gb', serif;
+                font-style: normal;
+                font-weight: normal;
+                font-size: vw(16);
+                text-align: center;
+                color: #000000;
+            }
+        }
+        &__gif {
+            &--gifs {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        &__font {
+            &--blocks {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            &--block {
+                width: calc(50% - 55px);
+                margin-bottom: vw(30);
+                &.lora {    
+                    font-family: 'Lora', serif !important;
+                    & * {
+                        font-family: 'Lora', serif !important;
+                    }
+                }
+                &.gb {
+                    font-family: 'gb', serif !important;
+                    & * {
+                        font-family: 'gb', serif !important;
+                    }
+                }
+            }
+            &--tit {
+                font-style: normal;
+                font-weight: normal;
+                font-size: vw(24);
+                color: #000000;
+                margin-bottom: vw(20);
+            }
+            &--bl {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            &--l {
+                width: calc(50% - 10px);
+                font-style: normal;
+                font-weight: normal;
+                font-size: vw(16);
+                color: #000000;
+            }
+            &--r {
+                width: calc(50% - 10px);
+                font-style: normal;
+                font-weight: bold;
+                font-size: vw(16);
+                color: #000000;
             }
         }
     }

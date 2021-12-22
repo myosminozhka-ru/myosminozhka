@@ -598,8 +598,8 @@
             padding: vw(340) 40px;
             width: 52%;
             img {
-                max-width: 735px;
-                max-height: 752px;
+                // max-width: 735px;
+                // max-height: 752px;
             }
         }
         &--r {
@@ -849,9 +849,10 @@
         margin-top: vw(101);
         margin-bottom: vw(-30);
         &--title {
-            max-width: 1076px;
+            max-width: 1206px;
             width: 100%;
             margin-left: auto;
+            margin-right: auto;
             font-family: 'Montserrat', serif;
             font-style: normal;
             font-weight: bold;
@@ -866,7 +867,7 @@
             }
         }
         &--text {
-            max-width: 910px;
+            max-width: 1206px;
             width: 100%;
             margin-left: auto;
             margin-right: auto;
@@ -1370,5 +1371,33 @@
     }
     .case_page__about--wname {
         font-size: 18px;
+    }
+}
+.header-lang li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media all and (max-width: 360px) {
+    .block_caseg .career-first-title {
+        font-size: 30px !important;
+    }
+    .case_page__in.mobile .case_page__reds--title {
+        font-size: 30px;
+    }
+    .case_page__in.mobile .case_page__prot--title {
+        font-size: 35px;
+    }
+    .case_page__in.mobile .case_page__prot--title span {
+        font-size: 23px;
+    }
+    .case_page__in.mobile .case_page__style--title {
+        font-size: 33px;
+    }
+    .case_page__in.mobile .case_page__style--ftext {
+        font-size: 20px;
+    }
+    .case_page__in.mobile .case_page__style--color:last-child .case_page__style--font:last-child .case_page__style--ftext {
+        font-size: 12px !important;
     }
 }

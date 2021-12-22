@@ -2782,6 +2782,11 @@ video::-webkit-media-text-track-display {
   cursor: -webkit-grabbing;
 }
 
+@font-face {
+  font-family: 'gb';
+  src: url("../fonts/gb.ttf");
+}
+
 html {
   font-size: 0;
 }
@@ -10805,11 +10810,6 @@ body.company .company-ceo:not(.mobile) {
   width: 52%;
 }
 
-.case_page__bls--l img {
-  max-width: 735px;
-  max-height: 752px;
-}
-
 .case_page__bls--r {
   width: 52%;
   flex: none;
@@ -11084,9 +11084,10 @@ body.company .company-ceo:not(.mobile) {
 }
 
 .case_page__img--title {
-  max-width: 1076px;
+  max-width: 1206px;
   width: 100%;
   margin-left: auto;
+  margin-right: auto;
   font-family: 'Montserrat', serif;
   font-style: normal;
   font-weight: bold;
@@ -11098,7 +11099,7 @@ body.company .company-ceo:not(.mobile) {
 }
 
 .case_page__img--text {
-  max-width: 910px;
+  max-width: 1206px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -11437,6 +11438,17 @@ body.company .company-ceo:not(.mobile) {
 
 .case_page .player-dimensions.vjs-fluid {
   padding-top: 49.25%;
+}
+
+.header-lang li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.case_page__blue .case_page__bls--l img {
+  max-width: 735px;
+  max-height: 752px;
 }
 
 .case_page__blue .header-blur,
@@ -11871,6 +11883,103 @@ body.company .company-ceo:not(.mobile) {
 .case_page__blue .case_ff__blocks > div {
   max-width: 380px;
   width: 100%;
+}
+
+.case_page__blue .case_ff__blocks--title {
+  font-family: 'Montserrat', serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.25vw;
+  color: #000000;
+  margin-bottom: 1.5625vw;
+}
+
+.case_page__blue .case_ff__color--blocks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.case_page__blue .case_ff__color--block {
+  width: calc(50% - 15px);
+  margin-bottom: 1.5625vw;
+}
+
+.case_page__blue .case_ff__color--bl {
+  width: 100%;
+  height: 1.97917vw;
+  margin-bottom: 1.04167vw;
+}
+
+.case_page__blue .case_ff__color--txt {
+  font-family: 'gb', serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.83333vw;
+  text-align: center;
+  color: #000000;
+}
+
+.case_page__blue .case_ff__gif--gifs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.case_page__blue .case_ff__font--blocks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.case_page__blue .case_ff__font--block {
+  width: calc(50% - 55px);
+  margin-bottom: 1.5625vw;
+}
+
+.case_page__blue .case_ff__font--block.lora {
+  font-family: 'Lora', serif !important;
+}
+
+.case_page__blue .case_ff__font--block.lora * {
+  font-family: 'Lora', serif !important;
+}
+
+.case_page__blue .case_ff__font--block.gb {
+  font-family: 'gb', serif !important;
+}
+
+.case_page__blue .case_ff__font--block.gb * {
+  font-family: 'gb', serif !important;
+}
+
+.case_page__blue .case_ff__font--tit {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.25vw;
+  color: #000000;
+  margin-bottom: 1.04167vw;
+}
+
+.case_page__blue .case_ff__font--bl {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.case_page__blue .case_ff__font--l {
+  width: calc(50% - 10px);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.83333vw;
+  color: #000000;
+}
+
+.case_page__blue .case_ff__font--r {
+  width: calc(50% - 10px);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 0.83333vw;
+  color: #000000;
 }
 
 @media screen and (min-width: 36rem) {
@@ -12573,6 +12682,34 @@ body.company .company-ceo:not(.mobile) {
 
   .case_page__in.mobile .case_page__video--title {
     font-size: 35px;
+  }
+
+  .block_caseg .career-first-title {
+    font-size: 30px !important;
+  }
+
+  .case_page__in.mobile .case_page__reds--title {
+    font-size: 30px;
+  }
+
+  .case_page__in.mobile .case_page__prot--title {
+    font-size: 35px;
+  }
+
+  .case_page__in.mobile .case_page__prot--title span {
+    font-size: 23px;
+  }
+
+  .case_page__in.mobile .case_page__style--title {
+    font-size: 33px;
+  }
+
+  .case_page__in.mobile .case_page__style--ftext {
+    font-size: 20px;
+  }
+
+  .case_page__in.mobile .case_page__style--color:last-child .case_page__style--font:last-child .case_page__style--ftext {
+    font-size: 12px !important;
   }
 }
 
