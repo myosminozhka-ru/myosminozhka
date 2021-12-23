@@ -10217,6 +10217,32 @@ body.company .company-ceo:not(.mobile) {
   box-sizing: border-box;
 }
 
+.case_page__tx {
+  margin-bottom: 4.16667vw;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.case_page__tx--title {
+  font-family: 'Montserrat', serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 8.33333vw;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #4F4F4F;
+  margin-bottom: 1.5625vw;
+}
+
+.case_page__tx--text {
+  font-family: 'Montserrat', serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.30208vw;
+  line-height: 160%;
+  color: #4F4F4F;
+}
+
 .case_page__in {
   position: relative;
   z-index: 11;
@@ -10462,8 +10488,8 @@ body.company .company-ceo:not(.mobile) {
 }
 
 .case_page__in.mobile .case_page__bls--block {
-  margin-bottom: 60px;
-  flex-direction: column-reverse !important;
+  margin-bottom: 80px;
+  flex-direction: column !important;
 }
 
 .case_page__in.mobile .case_page__bls--r {
@@ -10667,22 +10693,22 @@ body.company .company-ceo:not(.mobile) {
 }
 
 .case_page__prot {
-  margin-top: 3.64583vw;
+  margin-top: 10.41667vw;
 }
 
 .case_page__prot--title {
   font-family: 'Montserrat', serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 3.64583vw;
-  text-align: center;
+  font-size: 8.33333vw;
+  line-height: 100%;
   text-transform: uppercase;
   color: #4F4F4F;
-  margin-bottom: 2.23958vw;
-  max-width: 1380px;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-bottom: 4.16667vw;
+  white-space: nowrap;
+  width: max-content;
 }
 
 .case_page__prot--blocks {
@@ -10690,8 +10716,8 @@ body.company .company-ceo:not(.mobile) {
   border-radius: 10px;
   margin-left: 50px;
   margin-right: 50px;
-  min-height: 81.25vw;
-  max-height: 81.25vw;
+  min-height: 83.64583vw;
+  max-height: 83.64583vw;
   width: calc(100% - 100px);
   overflow: hidden;
   position: relative;
@@ -10751,27 +10777,26 @@ body.company .company-ceo:not(.mobile) {
 .case_page__ref {
   position: relative;
   background: #fff;
-  padding-top: 100px;
+  padding-top: 8.125vw;
 }
 
 .case_page__ref--title {
-  max-width: 1206px;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 2.76042vw;
+  padding-left: 50px;
+  padding-right: 50px;
   font-family: 'Montserrat', serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 4.6875vw;
+  font-size: 8.33333vw;
+  line-height: 100%;
   text-transform: uppercase;
   color: #4F4F4F;
+  margin-bottom: 4.16667vw;
 }
 
 .case_page__ref--img {
   padding-left: 50px;
   padding-right: 50px;
-  margin-bottom: 3.22917vw;
+  margin-bottom: 4.53125vw;
 }
 
 .case_page__ref--img img {
@@ -10779,20 +10804,33 @@ body.company .company-ceo:not(.mobile) {
 }
 
 .case_page__ref--text {
-  max-width: 1206px;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .case_page__ref--subtitle {
   font-family: 'Montserrat', serif;
   font-style: normal;
-  font-weight: 600;
-  font-size: 34px;
+  font-weight: bold;
+  font-size: 1.5625vw;
+  line-height: 140%;
+  text-transform: uppercase;
   color: #4F4F4F;
-  line-height: 150%;
-  margin-bottom: 40px;
+  margin-bottom: 0.88542vw;
+}
+
+.case_page .case_page__about--rlist li {
+  font-size: 1.30208vw;
+  margin-bottom: 1.30208vw;
+}
+
+.case_page .case_page__about--rlist li:before {
+  width: 3px;
+  height: 3px;
+  background: #4f4f4f;
+  border-radius: 50%;
+  margin-top: 1.5px;
+  left: 0.88542vw;
 }
 
 .case_page__bls {
@@ -10805,27 +10843,28 @@ body.company .company-ceo:not(.mobile) {
   align-items: center;
   justify-content: center;
   background: #F6F6F8;
-  border-radius: 10px;
-  padding: 17.70833vw 40px;
+  border-radius: 0px;
+  padding: 16.09375vw 0px;
   width: 52%;
+  font-size: 0;
 }
 
 .case_page__bls--r {
-  width: 52%;
+  width: 51%;
   flex: none;
-  padding-right: 50px;
-  margin-left: 95px;
+  padding-right: 4.94792vw;
+  padding-left: 50px;
 }
 
 .case_page__bls--title {
   font-family: 'Montserrat', serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 4.6875vw;
-  line-height: 5.72917vw;
+  font-size: 8.33333vw;
+  line-height: 100%;
   text-transform: uppercase;
   color: #4F4F4F;
-  margin-bottom: 45px;
+  margin-bottom: 2.60417vw;
 }
 
 .case_page__bls--text {
@@ -10837,51 +10876,68 @@ body.company .company-ceo:not(.mobile) {
   color: #4F4F4F;
 }
 
+.case_page__bls--tit {
+  margin-bottom: 30px;
+  font-family: 'Montserrat', serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.5625vw;
+  text-transform: uppercase;
+  color: #4F4F4F;
+}
+
+.case_page__bls--txt {
+  font-family: 'Montserrat', serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.30208vw !important;
+  line-height: 160% !important;
+  color: #4F4F4F;
+}
+
+.case_page__bls--txt:not(:last-child) {
+  margin-bottom: 4.16667vw;
+}
+
+.case_page__bls .case_page__about--rlist li {
+  margin-bottom: 1.5625vw;
+  font-size: 1.30208vw;
+  line-height: 160%;
+}
+
+.case_page__bls .case_page__about--rlist li:before {
+  width: 3px;
+  height: 3px;
+  background: #4f4f4f;
+  border-radius: 50%;
+  margin-top: -2.5px;
+  left: 0.88542vw;
+}
+
 .case_page__bls--block {
   display: flex;
-  margin-bottom: 73px;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .case_page__bls--block.muk .case_page__bls--l {
   padding: 0 !important;
   background: none !important;
-  padding-top: 40px !important;
-  padding-bottom: 40px !important;
 }
 
 .case_page__bls--block.muk .case_page__bls--l img {
   max-width: 100%;
 }
 
-.case_page__bls--block:nth-child(even) {
-  flex-direction: row-reverse;
-}
-
-.case_page__bls--block:nth-child(even) .case_page__bls--title {
-  padding-top: 187px;
-}
-
-.case_page__bls--block:nth-child(even) .case_page__bls--r {
-  margin-left: 0;
-  margin-right: 59px;
-  padding: 0 !important;
-  padding-left: 50px !important;
-}
-
-.case_page__bls--block:nth-child(odd) .case_page__bls--r {
-  padding-left: 44px;
-}
-
 .case_page__vid {
   padding-left: 50px;
   padding-right: 50px;
-  margin-bottom: 7.29167vw;
+  margin-bottom: 8.75vw;
+  margin-top: 1.51042vw;
 }
 
 .case_page__reds {
-  padding-top: 18.4375vw;
-  margin-top: -7.8125vw;
+  padding-top: 7.13542vw;
+  margin-top: 3.125vw;
   padding-bottom: 0;
   background: url(../img/bg_red.png) 0 0/cover no-repeat, linear-gradient(0deg, #4f4f4f 84%, rgba(255, 255, 255, 0) 84%, rgba(255, 255, 255, 0) 100%);
 }
@@ -10890,27 +10946,31 @@ body.company .company-ceo:not(.mobile) {
   font-family: 'Montserrat', serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 4.6875vw;
-  line-height: 122%;
+  font-size: 8.33333vw;
+  line-height: 100%;
   text-transform: uppercase;
   color: #FFFFFF;
-  margin-bottom: 2.60417vw;
-  padding-left: 2.60417vw;
-  padding-right: 2.60417vw;
+  margin-bottom: 80px;
+  white-space: nowrap;
+  width: max-content;
+  padding-left: 50px;
+  padding-right: 50px;
+  mix-blend-mode: difference;
 }
 
 .case_page__reds--item {
   padding-left: 50px;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-center;
+  padding-bottom: 200px;
 }
 
 .case_page__reds--l {
   font-family: 'Montserrat', serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 1.5625vw;
-  line-height: 167%;
+  font-size: 1.30208vw;
+  line-height: 160%;
   color: #FFFFFF;
   width: 100%;
 }
@@ -10920,11 +10980,9 @@ body.company .company-ceo:not(.mobile) {
 }
 
 .case_page__reds--r {
-  max-width: 817px;
+  max-width: 940px;
   width: 100%;
   flex: none;
-  border-radius: 10px;
-  overflow: hidden;
   margin-left: 7.5vw;
   font-size: 0;
 }
@@ -11358,7 +11416,7 @@ body.company .company-ceo:not(.mobile) {
 
 .block_caseg .career-first-info {
   padding-left: 50px;
-  padding-right: 50px;
+  padding-right: 15px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -11411,12 +11469,12 @@ body.company .company-ceo:not(.mobile) {
   font-family: 'Montserrat', serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 1.5625vw;
-  line-height: 167%;
+  font-size: 1.30208vw;
+  line-height: 160%;
   color: #4F4F4F;
   max-width: 77.96875vw;
   width: 100%;
-  padding-top: 8.33333vw;
+  padding-top: 14.84375vw;
 }
 
 .block_pal {
@@ -11427,13 +11485,40 @@ body.company .company-ceo:not(.mobile) {
   transition: all .3s ease-out;
 }
 
+.case_frst__title {
+  padding: 0 50px;
+  font-family: 'Montserrat', serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 8.33333vw;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #929292;
+  margin-top: 3.64583vw;
+  margin-bottom: 2.70833vw;
+}
+
+.case_frst__subtitle {
+  padding: 0 50px;
+  font-family: 'Montserrat', serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 3.125vw;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #929292;
+  margin-bottom: 1.875vw;
+  max-width: 1140px;
+  width: 100%;
+}
+
 .career-first:not(.mobile) .career-first-title {
   font-size: 14.27083vw;
   padding: 4.94792vw 2.8125vw;
 }
 
 .career-first:not(.mobile) {
-  padding-bottom: 4.375vw;
+  padding-bottom: 4.6875vw;
 }
 
 .case_page .player-dimensions.vjs-fluid {
@@ -12060,7 +12145,6 @@ body.company .company-ceo:not(.mobile) {
 
   .case_page__bls--block {
     background: #fff;
-    padding-top: 100px;
   }
 
   .career-blocks .pin-spacer:nth-child(even) .career-blocks-item-in {
@@ -12307,6 +12391,21 @@ body.company .company-ceo:not(.mobile) {
 }
 
 @media (max-width: 1023px) {
+  .case_frst__title {
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 30px;
+    font-size: 60px;
+  }
+
+  .case_frst__subtitle {
+    font-size: 25px;
+    line-height: 140%;
+    margin-bottom: 20px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .case_page__ref {
     padding-top: 0;
   }
@@ -12328,7 +12427,7 @@ body.company .company-ceo:not(.mobile) {
   .case_tabs_new {
     padding-left: 20px;
     padding-right: 20px;
-    background: url("../img/bg_mob.png") 0 0 no-repeat, linear-gradient(180deg, #4f4f4f 22.39583vw, white 22.39583vw, white 22.39583vw);
+    background: url("../img/bg_mob.png") 0 0 no-repeat, linear-gradient(180deg, #4f4f4f 155px, white 155px, white 155px);
   }
 
   .case_page__about--l {
@@ -12345,6 +12444,119 @@ body.company .company-ceo:not(.mobile) {
 
   .case_page__about--wname {
     font-size: 18px;
+  }
+
+  .case_page__tx {
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 30px;
+  }
+
+  .case_page__tx--title {
+    font-size: 40px;
+    line-height: 50px;
+    margin-bottom: 30px;
+  }
+
+  .case_page__tx--text {
+    font-size: 14px;
+    line-height: 160%;
+  }
+
+  .case_page__in.mobile .case_page__bls--tit {
+    margin-bottom: 20px !important;
+    font-size: 24px !important;
+  }
+
+  .case_page__in.mobile .case_page__bls--txt {
+    margin-bottom: 30px !important;
+    font-size: 14px !important;
+    line-height: 160% !important;
+    padding-right: 0;
+  }
+
+  .case_page__in.mobile .case_page__bls--l {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background: #F6F6F8;
+    margin-top: 0;
+  }
+
+  .case_page__in.mobile .case_page__about--rlist li:before {
+    width: 3px;
+    height: 3px;
+    left: 10px;
+    margin-top: -1.5px;
+  }
+
+  .case_page__in.mobile .case_page__about--rlist li {
+    font-size: 14px;
+    line-height: 160%;
+  }
+
+  .case_page__in.mobile .case_page__bls--block.muk .case_page__bls--l {
+    margin-top: 20px;
+  }
+
+  .case_page__in.mobile .case_page__ref--title {
+    font-size: 26px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 30px;
+  }
+
+  .case_page__in.mobile .case_page__ref--img {
+    order: unset;
+    margin-bottom: 20px;
+  }
+
+  .case_page__ref--text {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .case_page__in.mobile .case_page__ref--subtitle {
+    font-size: 18px;
+    line-height: 140%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .case_page__in.mobile .case_page__ref .case_page__about--rlist {
+    padding: 0;
+  }
+
+  .case_page__in.mobile .case_page__reds {
+    margin-top: -21px;
+    padding-bottom: 0;
+    padding-top: 153px;
+  }
+
+  .case_page__in.mobile .case_page__reds--title {
+    white-space: unset;
+    margin-bottom: 30px;
+    font-size: 26px;
+    line-height: 160%;
+    width: auto;
+    mix-blend-mode: unset;
+  }
+
+  .case_page__in.mobile .case_page__reds--l {
+    font-size: 14px;
+    line-height: 160%;
+    margin-bottom: 30px;
+  }
+
+  .case_page__reds--item {
+    padding-bottom: 0;
+  }
+
+  .case_page__in.mobile .case_page__reds--r {
+    height: 270px;
+    min-height: 270px;
+    overflow: hidden;
   }
 }
 
