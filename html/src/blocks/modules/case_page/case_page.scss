@@ -115,7 +115,7 @@
                 margin-bottom: 30px;
             }
             .case_page__img {
-                margin-top: 60px;
+                margin-top: 80px;
             }
             .case_page__img--title {
                 font-size: 40px;
@@ -144,14 +144,15 @@
                 }
             }
             .case_page__style {
-                padding-top: 50px;
+                padding-top: 80px;
             }
             .case_page__style--title {
                 padding-left: 20px;
                 padding-right: 20px;
                 margin-bottom: 30px;
-                font-size: 40px;
+                font-size: 26px;
                 line-height: normal;
+                white-space: usnet;
             }
             .case_page__style--color {
                 flex-direction: column;
@@ -210,7 +211,6 @@
             .case_page__reds {
                 padding-top: 150px;
                 padding-bottom: 60px;
-                background-size: contain;
             }
             .case_page__reds--title {
                 font-size: 36px;
@@ -317,7 +317,7 @@
                 z-index: 10;
             }
             .case_page__prot {
-                margin-top: 60px;
+                margin-top: 80px;
             }
             .case_page__prot--title {
                 padding-left: 20px;
@@ -721,7 +721,7 @@
         padding-top: vw(137);
         margin-top: vw(60);
         padding-bottom: 0;
-        background: url(../img/bg_red.png) 0 0 / cover no-repeat, linear-gradient(0deg, rgba(79,79,79,1) 84%, rgba(255,255,255,0) 84%, rgba(255,255,255,0) 100%);
+        background: url(../img/bg_red.png) 0 0 / 100% no-repeat, linear-gradient(0deg, rgba(79,79,79,1) 84%, rgba(255,255,255,0) 84%, rgba(255,255,255,0) 100%);
         &--title {
             font-family: 'Montserrat', serif;
             font-style: normal;
@@ -767,17 +767,19 @@
         }
     }
     &__style {
-        padding-top: vw(150);
+        padding-top: vw(188);
         &--title {
-            padding-left: 50px;
-            padding-right: 50px;
             font-family: 'Montserrat', serif;
             font-style: normal;
             font-weight: bold;
-            font-size: vw(90);
+            font-size: vw(160);
             text-transform: uppercase;
             color: #4F4F4F;
-            margin-bottom: 42px;
+            padding-left: 50px;
+            padding-right: 50px;
+            margin-bottom: vw(70);
+            white-space: nowrap;
+            width: max-content;
         }
         &--color {
             max-width: 1130px;
@@ -796,10 +798,11 @@
             font-family: 'Montserrat', serif;
             font-style: normal;
             font-weight: bold;
-            font-size: vw(64);
+            font-size: vw(60);
             letter-spacing: 0.05em;
             color: #4F4F4F;
             width: 50%;
+            text-transform: uppercase;
             text-align: center;
             padding-top: 60px;
             flex: none;
@@ -877,65 +880,58 @@
         padding-left: 50px;
         padding-right: 50px;
         background: url('../img/bg_vid.png') 0 0 / cover no-repeat, linear-gradient(0deg, rgba(79,79,79,1) 78%, rgba(255,255,255,0) 78%, rgba(255,255,255,0) 100%);
-        padding-top: vw(345);
-        padding-bottom: 0;
-        margin-top: vw(-117);
+        padding-top: vw(165);
+        padding-bottom: vw(200);
+        margin-top: vw(-60);
         &--title {
-            margin-bottom: vw(100);
             font-family: 'Montserrat', serif;
             font-style: normal;
             font-weight: bold;
-            font-size: vw(90);
-            line-height: 122%;
+            font-size: vw(160);
+            line-height: 100%;
             text-transform: uppercase;
-            color: #FFFFFF;
-            max-width: 1550px;
-            width: 100%;
+            color: #fff;
+            white-space: nowrap;
+            width: max-content;
+            mix-blend-mode: difference;
+            margin-bottom: vw(60);
         }
     }
     &__img {
-        max-width: 1375px;
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: 20px;
-        padding-right: 20px;
-        margin-top: vw(101);
-        margin-bottom: vw(-30);
+        margin-top: vw(200);
         &--title {
-            max-width: 1206px;
-            width: 100%;
-            margin-left: auto;
-            margin-right: auto;
             font-family: 'Montserrat', serif;
             font-style: normal;
             font-weight: bold;
-            font-size: vw(90);
-            line-height: 122%;
+            font-size: vw(160);
+            line-height: 100%;
             text-transform: uppercase;
             color: #4F4F4F;
-            margin-bottom: vw(50);
-            @media all and (max-width: 1400px) {
-                max-width: 910px;
-                margin-right: auto;
-            }
+            margin-bottom: vw(80);
+            padding-left: 50px;
+            padding-right: 50px;
+            white-space: nowrap;
+            width: max-content
         }
         &--text {
-            max-width: 1206px;
+            max-width: 1246px;
             width: 100%;
             margin-left: auto;
             margin-right: auto;
             font-family: 'Montserrat', serif;
             font-style: normal;
             font-weight: normal;
-            font-size: vw(30);
-            line-height: 167%;
+            font-size: vw(25);
+            line-height: 160%;
             color: #4F4F4F;
+            margin-bottom: vw(80);
             p:last-child() {
                 margin-bottom: 0;
             }
         }
         &--img {
+            margin-left: auto;
+            margin-right: auto;
             filter: drop-shadow(0px 15px 15px rgba(0, 0, 0, 0.03)) drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
             max-width: 1370px;
             width: 100%;
@@ -946,30 +942,30 @@
         }
     }
     &__about {
-        padding-top: vw(105);
+        padding-top: vw(188);
         &--rezult {
-            max-width: 930px;
-            width: 100%;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: vw(80);
+            padding-left: 50px;
+            padding-right: 50px;
         }
         &--rtitle {
             font-family: 'Montserrat', serif;
             font-style: normal;
             font-weight: bold;
-            font-size: vw(90);
+            font-size: vw(160);
             text-transform: uppercase;
             color: #4F4F4F;
-            margin-bottom: vw(60);
+            margin-bottom: vw(74);
+            white-space: nowrap;
+            width: max-content;
         }
         &--rsubtitle {
             font-family: 'Montserrat', serif;
             font-style: normal;
-            font-weight: 600;
-            font-size: vw(34);
+            font-weight: bold;
+            font-size: vw(30);
+            text-transform: uppercase;
             color: #4F4F4F;
-            margin-bottom: vw(40);
+            margin-bottom: vw(30);
         }
         &--rlist {
             padding-left: 0;
@@ -998,14 +994,14 @@
             }
         }
         &--block {
+            margin-top: vw(70);
             display: flex;
             align-items: center;
             margin-bottom: vw(87);
         }
         &--bimg {
             background: #F6F6F8;
-            border-radius: 10px;
-            width: 43%;
+            width: 49.3%;
             flex: none;
             display: flex;
             align-items: center;
@@ -1016,13 +1012,14 @@
             }
         }
         &--btext {
-            padding-left: vw(144);
+            padding-left: 50px;
             font-family: 'Montserrat', serif;
             font-style: normal;
             font-weight: normal;
-            font-size: vw(30);
-            line-height: vw(50);
+            font-size: vw(25);
+            line-height: 160%;
             width: 60%;
+            padding-right: vw(110);
             color: #4F4F4F;
             margin-bottom: vw(165);
         }
@@ -1559,27 +1556,75 @@
         min-height: 270px;
         overflow: hidden;
     }
+    .case_page__in.mobile .case_page__prot--title {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+    .case_page__prot--img:last-child {
+        margin-bottom: 30px;
+    }
+    .case_page__style--citem span {
+        font-size: 26px;
+    }
+    .case_page__in.mobile .case_page__style--cl {
+        margin-bottom: 20px;
+        font-size: 18px;
+        padding-top: 0 !important;
+    }
+    .case_page__in.mobile .case_page__style--ftitle {
+        margin-bottom: 5px;
+    }
+    .case_page__in.mobile .case_page__video {
+        margin-top: -21px;
+        padding-top: 153px;
+        padding-bottom: 80px;
+    }
+    .case_page__in.mobile .case_page__video--title {
+        white-space: unset;
+        margin-bottom: 30px;
+        font-size: 26px !important;
+        color: #fff;
+        mix-blend-mode: unset;
+    }
+    .case_page__in.mobile .case_page__img--title {
+        margin-bottom: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 26px;
+        line-height: 160%;
+        white-space: unset;
+        width: auto;
+    }
+    .case_page__in.mobile .case_page__img--text {
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 14px;
+        line-height: 160%;
+        margin-bottom: 20px;
+    }
+    .case_page__img--img {
+        padding: 0 7px;
+    }
 }
 .header-lang li {
     display: flex;
     align-items: center;
     justify-content: center;
 }
+@media all and (max-width: 580px) {
+    .case_page__in.mobile .case_page__reds, .case_page__in.mobile .case_page__video {
+        background: url(../img/bg_red2.png) 0 0/100% no-repeat, linear-gradient(0deg, #4f4f4f 80%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0) 100%);
+    }
+}
 @media all and (max-width: 360px) {
+    .case_page__in.mobile .case_page__prot--title {
+        font-size: 22px;
+    }
     .block_caseg .career-first-title {
         font-size: 30px !important;
     }
     .case_page__in.mobile .case_page__reds--title {
         font-size: 30px;
-    }
-    .case_page__in.mobile .case_page__prot--title {
-        font-size: 35px;
-    }
-    .case_page__in.mobile .case_page__prot--title span {
-        font-size: 23px;
-    }
-    .case_page__in.mobile .case_page__style--title {
-        font-size: 33px;
     }
     .case_page__in.mobile .case_page__style--ftext {
         font-size: 20px;
