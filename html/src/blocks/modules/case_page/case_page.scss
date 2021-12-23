@@ -39,7 +39,7 @@
         z-index: 11;
         &.mobile {
             .case_page__about {
-                padding-top: 60px;
+                padding-top: 80px;
             }
             .case_page__about--rezult {
                 padding-left: 15px;
@@ -47,17 +47,18 @@
                 margin-bottom: 20px;
             }
             .case_page__about--rtitle {
-                font-size: 40px;
+                font-size: 26px;
                 margin-bottom: 30px;
             }
             .case_page__about--rsubtitle {
-                font-size: 24px;
-                margin-bottom: 20px;
+                font-size: 18px;
+                line-height: 140%;
+                margin-bottom: 15px;
             }
             .case_page__about--rlist li {
                 padding-left: 28px;
-                font-size: 16px;
-                line-height: 26px;
+                font-size: 14px;
+                line-height: 160%;
                 margin-bottom: 10px;
             }
             .case_page__about--rlist li:before {
@@ -66,7 +67,8 @@
                 top: 12px;
             }
             .case_page__about--block {
-                flex-direction: column-reverse;
+                flex-direction: column;
+                margin-bottom: 20px;
             }
             .case_page__about--bimg {
                 width: 100%;
@@ -80,11 +82,15 @@
             .case_page__about--btext {
                 padding: 0;
                 margin-bottom: 20px;
-                font-size: 16px;
                 padding-left: 15px;
                 padding-right: 15px;
-                line-height: 26px;
+                font-size: 14px;
+                line-height: 160%;
+                margin-top: 0px;
                 width: 100%;
+                p:first-child {
+                    margin-top: 0;
+                }
             }
             .case_page__about--work {
                 padding-left: 15px;
@@ -370,7 +376,7 @@
                     left: -825px;
                 }
                 .case_page__gl {
-                    background: url(../img/bg_red.png) 0 0/contain no-repeat, linear-gradient(0deg, #4f4f4f 94%, rgba(255, 255, 255, 0) 94%, rgba(255, 255, 255, 0) 100%);
+                    background: url(../img/bg_red.png) 0 0/contain no-repeat, linear-gradient(0deg, #4f4f4f 94%, rgba(255, 255, 255, 1) 94%, rgba(255, 255, 255, 1) 100%);
                 }
                 .case_page__gl--block:nth-child(2) {
                     top: -350px;
@@ -422,21 +428,23 @@
         }
     }
     &__gl {
-        padding-top: vw(354);
-        background: url(../img/bg_red.png) 0 0 / contain no-repeat, linear-gradient(0deg, rgba(79,79,79,1) 84%, rgba(255,255,255,0) 84%, rgba(255,255,255,0) 100%);
+        padding-top: vw(137);
+        background: url(../img/bg_red.png) 0 0 / contain no-repeat, linear-gradient(0deg, rgba(79,79,79,1) 84%, rgba(255,255,255,1) 84%, rgba(255,255,255,1) 100%);
         overflow: hidden;
         &--title {
             font-family: 'Montserrat', serif;
             font-style: normal;
             font-weight: bold;
-            font-size: vw(90);
-            line-height: 122%;
+            font-size: vw(160);
+            line-height: 100%;
             text-transform: uppercase;
             color: #FFFFFF;
             padding-left: 50px;
             padding-right: 50px;
-            max-width: vw(1450);
-            width: 100%;
+            margin-bottom: vw(80);
+            width: max-content;
+            white-space: nowrap;
+            mix-blend-mode: difference;
         } 
         &--blocks {
             display: flex;
@@ -444,14 +452,41 @@
             transform: rotate(30deg);
             height: vw(3535);
             position: relative;
-            top: vw(585);
-            left: vw(-632);
+            top: vw(504);
+            left: vw(-817);
+        
         }
         &--block {
             width: vw(725);
+            &:nth-child(1) {
+                width: vw(415);
+                .case_page__gl--blc {
+                    min-width: vw(355) !important;
+                    img {
+                        min-width: vw(355) !important;
+                        max-width: vw(356);
+                    }
+                }
+                .case_page__gl--block_i {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    justify-content: flex-end;
+                    margin-right: vw(67);
+                    img {
+                        min-width: vw(171) !important;
+                        max-width: vw(171) !important;
+                        margin-left: auto;
+                    }
+                }
+            }
             &:nth-child(2) {
                 position: relative;
-                top: vw(-925);
+                top: vw(-247);
+            }
+            &:nth-child(3) {
+                position: relative;
+                top: vw(-615);
             }
             &:last-child {
                 top: vw(721);
@@ -721,7 +756,7 @@
         padding-top: vw(137);
         margin-top: vw(60);
         padding-bottom: 0;
-        background: url(../img/bg_red.png) 0 0 / 100% no-repeat, linear-gradient(0deg, rgba(79,79,79,1) 84%, rgba(255,255,255,0) 84%, rgba(255,255,255,0) 100%);
+        background: url(../img/bg_red.png) 0 0 / 100% no-repeat, linear-gradient(0deg, rgba(79,79,79,1) 84%, rgba(255,255,255,1) 84%, rgba(255,255,255,1) 100%);
         &--title {
             font-family: 'Montserrat', serif;
             font-style: normal;
@@ -879,7 +914,7 @@
     &__video {
         padding-left: 50px;
         padding-right: 50px;
-        background: url('../img/bg_vid.png') 0 0 / cover no-repeat, linear-gradient(0deg, rgba(79,79,79,1) 78%, rgba(255,255,255,0) 78%, rgba(255,255,255,0) 100%);
+        background: url('../img/bg_vid.png') 0 0 / cover no-repeat, linear-gradient(0deg, rgba(79,79,79,1) 78%, rgba(255,255,255,1) 78%, rgba(255,255,255,1) 100%);
         padding-top: vw(165);
         padding-bottom: vw(200);
         margin-top: vw(-60);
@@ -1024,10 +1059,7 @@
             margin-bottom: vw(165);
         }
         &--work {
-            max-width: 1353px;
-            width: 100%;
-            margin-left: auto;
-            margin-right: auto;
+            margin-top: vw(186);
         }
         &--wblock {
             margin-bottom: vw(111);
@@ -1039,28 +1071,39 @@
             font-family: 'Montserrat', serif;
             font-style: normal;
             font-weight: bold;
-            font-size: vw(90);
-            line-height: vw(110);
+            font-size: vw(160);
+            padding-left: 50px;
+            padding-right: 50px;
             text-transform: uppercase;
             color: #4F4F4F;
-            margin-bottom: vw(100);
+            margin-bottom: vw(145);
+            width: max-content;
+            white-space: nowrap;
         }
         &--wsubtitle {
+            max-width: 1197px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
             font-family: 'Montserrat', serif;
+            text-transform: uppercase;
             font-style: normal;
-            font-weight: normal;
-            font-size: vw(70);
-            line-height: vw(70);
+            font-weight: bold;
+            font-size: vw(60);
             color: #4F4F4F;
-            margin-bottom: vw(50);
+            margin-bottom: vw(60);
         }
         &--wlist {
+            max-width: 1197px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
         }
         &--witem {
-            margin-bottom: vw(110);
+            margin-bottom: vw(50    );
             width: 50%;
         }
         &--wname {
@@ -1095,8 +1138,11 @@
     &__case {
         margin-bottom: vw(210);
         background: #4f4f4f;
-        padding-top: vw(105);
+        padding-top: vw(197);
         position: relative;
+        margin-top: vw(-49);
+        z-index: 2; 
+        background: url(../img/bg_red.png) 0 0/contain no-repeat, linear-gradient(0deg, #4f4f4f 84%, rgba(255, 255, 255, 1) 84%, rgba(255, 255, 255, 1) 100%);
         @media all and (max-width: 520px) {
             padding-top: 61px;
             background: url('../img/case.png') 0 0 no-repeat, linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 35%, rgba(79,79,79,1) 35%);
@@ -1112,9 +1158,10 @@
             font-family: 'Montserrat', serif;
             font-style: normal;
             font-weight: bold;
-            font-size: vw(144);
+            font-size: vw(160);
             text-transform: uppercase;
             color: #FFFFFF;
+            mix-blend-mode:difference;
             @media all and (max-width: 520px) {
                 margin-bottom: 30px;
                 font-size: 40px;
@@ -1605,6 +1652,32 @@
     .case_page__img--img {
         padding: 0 7px;
     }
+    .case_page__in.mobile .case_page__about--wtitle {
+        white-space: unset;
+        width: auto;
+        font-size: 26px;
+        line-height: 160%;
+        margin-bottom: 30px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .case_page__in.mobile .case_page__about--wsubtitle {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 140%;
+        margin-bottom: 20px;
+        text-transform: unset;
+    }
+    .case_page__case {
+        padding-top: 112px !important;
+    }
+    .case_page__case--title {
+        font-size: 26px !important;
+        line-height: 160% !important;
+        margin-bottom: 30px !important;
+        mix-blend-mode: unset
+    }
 }
 .header-lang li {
     display: flex;
@@ -1612,8 +1685,8 @@
     justify-content: center;
 }
 @media all and (max-width: 580px) {
-    .case_page__in.mobile .case_page__reds, .case_page__in.mobile .case_page__video {
-        background: url(../img/bg_red2.png) 0 0/100% no-repeat, linear-gradient(0deg, #4f4f4f 80%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0) 100%);
+    .case_page__in.mobile .case_page__reds, .case_page__in.mobile .case_page__video, .case_page__case {
+        background: url(../img/bg_red2.png) 0 0/100% no-repeat, linear-gradient(0deg, #4f4f4f 80%, rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 1) 100%) !important;
     }
 }
 @media all and (max-width: 360px) {

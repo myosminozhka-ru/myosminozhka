@@ -10249,7 +10249,7 @@ body.company .company-ceo:not(.mobile) {
 }
 
 .case_page__in.mobile .case_page__about {
-  padding-top: 60px;
+  padding-top: 80px;
 }
 
 .case_page__in.mobile .case_page__about--rezult {
@@ -10259,19 +10259,20 @@ body.company .company-ceo:not(.mobile) {
 }
 
 .case_page__in.mobile .case_page__about--rtitle {
-  font-size: 40px;
+  font-size: 26px;
   margin-bottom: 30px;
 }
 
 .case_page__in.mobile .case_page__about--rsubtitle {
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 18px;
+  line-height: 140%;
+  margin-bottom: 15px;
 }
 
 .case_page__in.mobile .case_page__about--rlist li {
   padding-left: 28px;
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 14px;
+  line-height: 160%;
   margin-bottom: 10px;
 }
 
@@ -10282,7 +10283,8 @@ body.company .company-ceo:not(.mobile) {
 }
 
 .case_page__in.mobile .case_page__about--block {
-  flex-direction: column-reverse;
+  flex-direction: column;
+  margin-bottom: 20px;
 }
 
 .case_page__in.mobile .case_page__about--bimg {
@@ -10299,11 +10301,16 @@ body.company .company-ceo:not(.mobile) {
 .case_page__in.mobile .case_page__about--btext {
   padding: 0;
   margin-bottom: 20px;
-  font-size: 16px;
   padding-left: 15px;
   padding-right: 15px;
-  line-height: 26px;
+  font-size: 14px;
+  line-height: 160%;
+  margin-top: 0px;
   width: 100%;
+}
+
+.case_page__in.mobile .case_page__about--btext p:first-child {
+  margin-top: 0;
 }
 
 .case_page__in.mobile .case_page__about--work {
@@ -10605,8 +10612,8 @@ body.company .company-ceo:not(.mobile) {
 }
 
 .case_page__gl {
-  padding-top: 18.4375vw;
-  background: url(../img/bg_red.png) 0 0/contain no-repeat, linear-gradient(0deg, #4f4f4f 84%, rgba(255, 255, 255, 0) 84%, rgba(255, 255, 255, 0) 100%);
+  padding-top: 7.13542vw;
+  background: url(../img/bg_red.png) 0 0/contain no-repeat, linear-gradient(0deg, #4f4f4f 84%, white 84%, white 100%);
   overflow: hidden;
 }
 
@@ -10614,14 +10621,16 @@ body.company .company-ceo:not(.mobile) {
   font-family: 'Montserrat', serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 4.6875vw;
-  line-height: 122%;
+  font-size: 8.33333vw;
+  line-height: 100%;
   text-transform: uppercase;
   color: #FFFFFF;
   padding-left: 50px;
   padding-right: 50px;
-  max-width: 75.52083vw;
-  width: 100%;
+  margin-bottom: 4.16667vw;
+  width: max-content;
+  white-space: nowrap;
+  mix-blend-mode: difference;
 }
 
 .case_page__gl--blocks {
@@ -10630,17 +10639,49 @@ body.company .company-ceo:not(.mobile) {
   transform: rotate(30deg);
   height: 184.11458vw;
   position: relative;
-  top: 30.46875vw;
-  left: -32.91667vw;
+  top: 26.25vw;
+  left: -42.55208vw;
 }
 
 .case_page__gl--block {
   width: 37.76042vw;
 }
 
+.case_page__gl--block:nth-child(1) {
+  width: 21.61458vw;
+}
+
+.case_page__gl--block:nth-child(1) .case_page__gl--blc {
+  min-width: 18.48958vw !important;
+}
+
+.case_page__gl--block:nth-child(1) .case_page__gl--blc img {
+  min-width: 18.48958vw !important;
+  max-width: 18.54167vw;
+}
+
+.case_page__gl--block:nth-child(1) .case_page__gl--block_i {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-right: 3.48958vw;
+}
+
+.case_page__gl--block:nth-child(1) .case_page__gl--block_i img {
+  min-width: 8.90625vw !important;
+  max-width: 8.90625vw !important;
+  margin-left: auto;
+}
+
 .case_page__gl--block:nth-child(2) {
   position: relative;
-  top: -48.17708vw;
+  top: -12.86458vw;
+}
+
+.case_page__gl--block:nth-child(3) {
+  position: relative;
+  top: -32.03125vw;
 }
 
 .case_page__gl--block:last-child {
@@ -10939,7 +10980,7 @@ body.company .company-ceo:not(.mobile) {
   padding-top: 7.13542vw;
   margin-top: 3.125vw;
   padding-bottom: 0;
-  background: url(../img/bg_red.png) 0 0/100% no-repeat, linear-gradient(0deg, #4f4f4f 84%, rgba(255, 255, 255, 0) 84%, rgba(255, 255, 255, 0) 100%);
+  background: url(../img/bg_red.png) 0 0/100% no-repeat, linear-gradient(0deg, #4f4f4f 84%, white 84%, white 100%);
 }
 
 .case_page__reds--title {
@@ -11114,7 +11155,7 @@ body.company .company-ceo:not(.mobile) {
 .case_page__video {
   padding-left: 50px;
   padding-right: 50px;
-  background: url("../img/bg_vid.png") 0 0/cover no-repeat, linear-gradient(0deg, #4f4f4f 78%, rgba(255, 255, 255, 0) 78%, rgba(255, 255, 255, 0) 100%);
+  background: url("../img/bg_vid.png") 0 0/cover no-repeat, linear-gradient(0deg, #4f4f4f 78%, white 78%, white 100%);
   padding-top: 8.59375vw;
   padding-bottom: 10.41667vw;
   margin-top: -3.125vw;
@@ -11279,10 +11320,7 @@ body.company .company-ceo:not(.mobile) {
 }
 
 .case_page__about--work {
-  max-width: 1353px;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 9.6875vw;
 }
 
 .case_page__about--wblock {
@@ -11297,31 +11335,42 @@ body.company .company-ceo:not(.mobile) {
   font-family: 'Montserrat', serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 4.6875vw;
-  line-height: 5.72917vw;
+  font-size: 8.33333vw;
+  padding-left: 50px;
+  padding-right: 50px;
   text-transform: uppercase;
   color: #4F4F4F;
-  margin-bottom: 5.20833vw;
+  margin-bottom: 7.55208vw;
+  width: max-content;
+  white-space: nowrap;
 }
 
 .case_page__about--wsubtitle {
+  max-width: 1197px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   font-family: 'Montserrat', serif;
+  text-transform: uppercase;
   font-style: normal;
-  font-weight: normal;
-  font-size: 3.64583vw;
-  line-height: 3.64583vw;
+  font-weight: bold;
+  font-size: 3.125vw;
   color: #4F4F4F;
-  margin-bottom: 2.60417vw;
+  margin-bottom: 3.125vw;
 }
 
 .case_page__about--wlist {
+  max-width: 1197px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .case_page__about--witem {
-  margin-bottom: 5.72917vw;
+  margin-bottom: 2.60417vw;
   width: 50%;
 }
 
@@ -11361,8 +11410,11 @@ body.company .company-ceo:not(.mobile) {
 .case_page__case {
   margin-bottom: 10.9375vw;
   background: #4f4f4f;
-  padding-top: 5.46875vw;
+  padding-top: 10.26042vw;
   position: relative;
+  margin-top: -2.55208vw;
+  z-index: 2;
+  background: url(../img/bg_red.png) 0 0/contain no-repeat, linear-gradient(0deg, #4f4f4f 84%, white 84%, white 100%);
 }
 
 .case_page__case--title {
@@ -11372,9 +11424,10 @@ body.company .company-ceo:not(.mobile) {
   font-family: 'Montserrat', serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 7.5vw;
+  font-size: 8.33333vw;
   text-transform: uppercase;
   color: #FFFFFF;
+  mix-blend-mode: difference;
 }
 
 .case_page__case--blocks {
@@ -12613,6 +12666,36 @@ body.company .company-ceo:not(.mobile) {
   .case_page__img--img {
     padding: 0 7px;
   }
+
+  .case_page__in.mobile .case_page__about--wtitle {
+    white-space: unset;
+    width: auto;
+    font-size: 26px;
+    line-height: 160%;
+    margin-bottom: 30px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .case_page__in.mobile .case_page__about--wsubtitle {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 140%;
+    margin-bottom: 20px;
+    text-transform: unset;
+  }
+
+  .case_page__case {
+    padding-top: 112px !important;
+  }
+
+  .case_page__case--title {
+    font-size: 26px !important;
+    line-height: 160% !important;
+    margin-bottom: 30px !important;
+    mix-blend-mode: unset;
+  }
 }
 
 @media all and (max-width: 990px) {
@@ -12788,8 +12871,9 @@ body.company .company-ceo:not(.mobile) {
   }
 
   .case_page__in.mobile .case_page__reds,
-  .case_page__in.mobile .case_page__video {
-    background: url(../img/bg_red2.png) 0 0/100% no-repeat, linear-gradient(0deg, #4f4f4f 80%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0) 100%);
+  .case_page__in.mobile .case_page__video,
+  .case_page__case {
+    background: url(../img/bg_red2.png) 0 0/100% no-repeat, linear-gradient(0deg, #4f4f4f 80%, white 80%, white 100%) !important;
   }
 }
 
@@ -12877,7 +12961,7 @@ body.company .company-ceo:not(.mobile) {
   }
 
   .case_page__in.mobile .case_page__gl {
-    background: url(../img/bg_red.png) 0 0/contain no-repeat, linear-gradient(0deg, #4f4f4f 94%, rgba(255, 255, 255, 0) 94%, rgba(255, 255, 255, 0) 100%);
+    background: url(../img/bg_red.png) 0 0/contain no-repeat, linear-gradient(0deg, #4f4f4f 94%, white 94%, white 100%);
   }
 
   .case_page__in.mobile .case_page__gl--block:nth-child(2) {
