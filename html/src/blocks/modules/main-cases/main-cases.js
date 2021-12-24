@@ -25,29 +25,68 @@ const mainCases = class MainCases {
     onInit() {}
     onAnimationStart() {}
     onAnimationEnd() {}
+    
     init() {
          
-        if (document.querySelector('.block_caseg .career-first-title')) {
+        if (document.querySelector('.case_page__prot')) {
             if ((window.innerWidth <= 1366 && window.innerWidth > 1023) || (window.innerWidth > 1440)) {
                setTimeout(() => {
-                    gsap.to('.block_caseg .career-first-title', {
+                    gsap.to('.case_page__prot--title', {
                         scrollTrigger: {
-                            trigger: '.block_caseg',
+                            trigger: '.case_page__prot',
                             start: 'top top',
-                            end: 'bottom bottom-=500',
+                            end: 'bottom bottom-=1000',
                             scrub: 11,
                             // markers: true,
                             onUpdate: (item) => {
                                 if (item.progress > 0.05 && item.progress < 0.65) {
-                                    document.querySelector('.block_caseg .career-first-title').classList.add('isInViewport');
+                                    document.querySelector('.case_page__prot--title').classList.add('isInViewport');
                                 } else {
-                                    document.querySelector('.block_caseg .career-first-title').classList.remove('isInViewport');
+                                    document.querySelector('.case_page__prot--title').classList.remove('isInViewport');
                                 }
                             }
                         },
                         x: '-100%',
                     });
                 }, 1000);
+                setTimeout(() => {
+                     gsap.to('.case_page__gl--title', {
+                         scrollTrigger: {
+                             trigger: '.gl_blocks',
+                             start: 'top top',
+                             end: 'bottom bottom-=300',
+                             scrub: 11,
+                             // markers: true,
+                             onUpdate: (item) => {
+                                 if (item.progress > 0.05 && item.progress < 0.65) {
+                                     document.querySelector('.case_page__gl--title').classList.add('isInViewport');
+                                 } else {
+                                     document.querySelector('.case_page__gl--title').classList.remove('isInViewport');
+                                 }
+                             }
+                         },
+                         x: '-100%',
+                     });
+                 }, 1000);
+                 setTimeout(() => {
+                      gsap.to('.case_page__about--wtitle', {
+                          scrollTrigger: {
+                              trigger: '.case_page__about--work',
+                              start: 'top top',
+                              end: 'bottom bottom-=300',
+                              scrub: 11,
+                              // markers: true,
+                              onUpdate: (item) => {
+                                  if (item.progress > 0.05 && item.progress < 0.65) {
+                                      document.querySelector('.case_page__about--wtitle').classList.add('isInViewport');
+                                  } else {
+                                      document.querySelector('.case_page__about--wtitle').classList.remove('isInViewport');
+                                  }
+                              }
+                          },
+                          x: '-100%',
+                      });
+                  }, 1000);
             }
         }
         if (!document.querySelector('.main-cases')) return;
@@ -135,7 +174,7 @@ const mainCases = class MainCases {
                     }
                 });
             }, 1000);
-        }
+        } 
         // else if (window.innerWidth <= 1023) {
         //     console.log('это мобилка')
         //     setTimeout(() => {

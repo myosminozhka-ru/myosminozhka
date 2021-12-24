@@ -10734,7 +10734,8 @@ body.company .company-ceo:not(.mobile) {
 }
 
 .case_page__prot {
-  margin-top: 10.41667vw;
+  padding-top: 10.41667vw;
+  position: relative;
 }
 
 .case_page__prot--title {
@@ -11176,7 +11177,7 @@ body.company .company-ceo:not(.mobile) {
 }
 
 .case_page__img {
-  margin-top: 10.41667vw;
+  padding-top: 10.41667vw;
 }
 
 .case_page__img--title {
@@ -11320,7 +11321,7 @@ body.company .company-ceo:not(.mobile) {
 }
 
 .case_page__about--work {
-  margin-top: 9.6875vw;
+  padding-top: 9.6875vw;
 }
 
 .case_page__about--wblock {
@@ -12365,6 +12366,18 @@ body.company .company-ceo:not(.mobile) {
     grid-column-end: 2;
   }
 
+  .case_page__prot {
+    padding-top: 0 !important;
+  }
+
+  .case_page__img {
+    padding-top: 0 !important;
+  }
+
+  .case_page__about--work {
+    padding-top: 0 !important;
+  }
+
   .block_caseg {
     padding-bottom: 20px !important;
   }
@@ -12983,21 +12996,6 @@ body.company .company-ceo:not(.mobile) {
 
   .case_page__in.mobile .case_page__gl--block_r .case_page__gl--blc:not(:first-child) img {
     max-width: 70px;
-  }
-
-  .case_page__in.mobile .img_mob {
-    position: relative;
-  }
-
-  .case_page__in.mobile .img_mob:before {
-    background: url("../img/as_png.png") 0 0 no-repeat;
-    content: '';
-    width: 131px;
-    height: 231px;
-    top: 840px;
-    right: 60px;
-    transform: rotate(-30deg);
-    position: absolute;
   }
 
   .case_page__in.mobile .case_page__gl--blocks {

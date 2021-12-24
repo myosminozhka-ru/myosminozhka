@@ -2007,21 +2007,59 @@ var mainCases = /*#__PURE__*/function () {
   }, {
     key: "init",
     value: function init() {
-      if (document.querySelector('.block_caseg .career-first-title')) {
+      if (document.querySelector('.case_page__prot')) {
         if (window.innerWidth <= 1366 && window.innerWidth > 1023 || window.innerWidth > 1440) {
           setTimeout(function () {
-            gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.block_caseg .career-first-title', {
+            gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.case_page__prot--title', {
               scrollTrigger: {
-                trigger: '.block_caseg',
+                trigger: '.case_page__prot',
                 start: 'top top',
-                end: 'bottom bottom-=500',
+                end: 'bottom bottom-=1000',
                 scrub: 11,
                 // markers: true,
                 onUpdate: function onUpdate(item) {
                   if (item.progress > 0.05 && item.progress < 0.65) {
-                    document.querySelector('.block_caseg .career-first-title').classList.add('isInViewport');
+                    document.querySelector('.case_page__prot--title').classList.add('isInViewport');
                   } else {
-                    document.querySelector('.block_caseg .career-first-title').classList.remove('isInViewport');
+                    document.querySelector('.case_page__prot--title').classList.remove('isInViewport');
+                  }
+                }
+              },
+              x: '-100%'
+            });
+          }, 1000);
+          setTimeout(function () {
+            gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.case_page__gl--title', {
+              scrollTrigger: {
+                trigger: '.gl_blocks',
+                start: 'top top',
+                end: 'bottom bottom-=300',
+                scrub: 11,
+                // markers: true,
+                onUpdate: function onUpdate(item) {
+                  if (item.progress > 0.05 && item.progress < 0.65) {
+                    document.querySelector('.case_page__gl--title').classList.add('isInViewport');
+                  } else {
+                    document.querySelector('.case_page__gl--title').classList.remove('isInViewport');
+                  }
+                }
+              },
+              x: '-100%'
+            });
+          }, 1000);
+          setTimeout(function () {
+            gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.case_page__about--wtitle', {
+              scrollTrigger: {
+                trigger: '.case_page__about--work',
+                start: 'top top',
+                end: 'bottom bottom-=300',
+                scrub: 11,
+                // markers: true,
+                onUpdate: function onUpdate(item) {
+                  if (item.progress > 0.05 && item.progress < 0.65) {
+                    document.querySelector('.case_page__about--wtitle').classList.add('isInViewport');
+                  } else {
+                    document.querySelector('.case_page__about--wtitle').classList.remove('isInViewport');
                   }
                 }
               },

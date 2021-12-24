@@ -400,19 +400,6 @@
                         }
                     }
                 }
-                .img_mob {
-                    position: relative;
-                    &:before {
-                        background: url('../img/as_png.png') 0 0 no-repeat;
-                        content: '';
-                        width: 131px;
-                        height: 231px;
-                        top: 840px;
-                        right: 60px;
-                        transform: rotate(-30deg);
-                        position: absolute;
-                    }
-                }
             }
             @media all and (max-width: 480px) {
                 .case_page__gl--blocks {
@@ -533,7 +520,11 @@
         }
     }
     &__prot {
-        margin-top: vw(200);
+        padding-top: vw(200);
+        position: relative;
+        @media all and (max-width: 1023px) {
+            padding-top: 0 !important;
+        }
         &--title {
             font-family: 'Montserrat', serif;
             font-style: normal;
@@ -933,7 +924,10 @@
         }
     }
     &__img {
-        margin-top: vw(200);
+        padding-top: vw(200);
+        @media all and (max-width: 1023px) {
+            padding-top: 0 !important;
+        }
         &--title {
             font-family: 'Montserrat', serif;
             font-style: normal;
@@ -1059,7 +1053,10 @@
             margin-bottom: vw(165);
         }
         &--work {
-            margin-top: vw(186);
+            padding-top: vw(186);
+            @media all and (max-width: 1023px) {
+                padding-top: 0 !important;
+            }
         }
         &--wblock {
             margin-bottom: vw(111);
