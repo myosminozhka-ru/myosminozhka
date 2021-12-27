@@ -1209,6 +1209,7 @@
             }
             @media all and (max-width: 768px) {
                 max-height: 280px;
+                overflow: hidden;
             }
             @media all and (max-width: 480px) {
                 max-height: 220px;

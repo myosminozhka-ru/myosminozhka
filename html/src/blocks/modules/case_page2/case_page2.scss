@@ -3,32 +3,8 @@
         max-width: 735px;
         max-height: 752px;
     }
-    .header-blur, .career-first {
-        background: #87A8B7;
-    }
-    .career-first-title {
-        color: #fff;
-    }
-    .button--main {
-        background: #4F4F4F;
-    }
-    .button:hover .text {
-        color: #4F4F4F;
-    }
-    .case_tabs_new {
-        background: url(../img/bg_tab_blue.png) 0 0/100% no-repeat;
-    }
-    .case_tabs_new .jb_lnk:hover .text {
-        color: #4F4F4F !important;
-    }
-    .header-menu li.isActive a {
-        color: #4F4F4F;
-    }
-    .header-menu-border {
-        background: #4F4F4F;
-    }
-    .header-menu a:hover {
-        color: #4F4F4F !important;
+    .case_frst__subtitle {
+        max-width: 1310px;
     }
     .case_task {
         margin-top: vw(175);

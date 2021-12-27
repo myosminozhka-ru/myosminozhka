@@ -11599,41 +11599,8 @@ body.company .company-ceo:not(.mobile) {
   max-height: 752px;
 }
 
-.case_page__blue .header-blur,
-.case_page__blue .career-first {
-  background: #87A8B7;
-}
-
-.case_page__blue .career-first-title {
-  color: #fff;
-}
-
-.case_page__blue .button--main {
-  background: #4F4F4F;
-}
-
-.case_page__blue .button:hover .text {
-  color: #4F4F4F;
-}
-
-.case_page__blue .case_tabs_new {
-  background: url(../img/bg_tab_blue.png) 0 0/100% no-repeat;
-}
-
-.case_page__blue .case_tabs_new .jb_lnk:hover .text {
-  color: #4F4F4F !important;
-}
-
-.case_page__blue .header-menu li.isActive a {
-  color: #4F4F4F;
-}
-
-.case_page__blue .header-menu-border {
-  background: #4F4F4F;
-}
-
-.case_page__blue .header-menu a:hover {
-  color: #4F4F4F !important;
+.case_page__blue .case_frst__subtitle {
+  max-width: 1310px;
 }
 
 .case_page__blue .case_task {
@@ -12870,6 +12837,7 @@ body.company .company-ceo:not(.mobile) {
 @media all and (max-width: 768px) {
   .case_page__case--block {
     max-height: 280px;
+    overflow: hidden;
   }
 }
 
