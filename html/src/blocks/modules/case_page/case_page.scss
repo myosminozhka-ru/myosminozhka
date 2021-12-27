@@ -106,10 +106,6 @@
                 font-size: 24px;
                 line-height: normal;
             }
-            .case_page__about--witem {
-                width: 100%;
-                margin-bottom: 30px;
-            }
             .case_page__about--wname {
                 font-size: 16px;
                 margin-bottom: 6px;
@@ -403,6 +399,9 @@
                         }
                     }
                 }
+                .case_page__gl--title {
+                    margin-bottom: 30px !important;
+                }
             }
             @media all and (max-width: 480px) {
                 .case_page__gl--blocks {
@@ -438,12 +437,12 @@
         } 
         &--blocks {
             display: flex;
-            min-width: vw(3000);
+            min-width: vw(3910);
             transform: rotate(30deg);
             height: vw(3535);
             position: relative;
-            top: vw(504);
-            left: vw(-817);
+            top: vw(704);
+            left: vw(-877);
         
         }
         &--block {
@@ -498,7 +497,7 @@
                 width: vw(611);
                 margin-bottom: vw(70);
             }
-            &:nth-child(n+5) {
+            &:nth-child(n+7) {
                 display: none;
                 @media all and (max-width :480px) {
                     display: block;
@@ -1076,6 +1075,8 @@
         }
         &--wblock {
             margin-bottom: vw(111);
+            padding-left: 20px;
+            padding-right: 20px;
             &:last-child {
                 margin-bottom: 0;
             }
@@ -1153,7 +1154,6 @@
         background: #4f4f4f;
         padding-top: vw(197);
         position: relative;
-        margin-top: vw(-49);
         z-index: 2; 
         background: url(../img/bg_red.png) 0 0/contain no-repeat, linear-gradient(0deg, #4f4f4f 84%, rgba(255, 255, 255, 1) 84%, rgba(255, 255, 255, 1) 100%);
         @media all and (max-width: 520px) {
@@ -1187,8 +1187,6 @@
         &--block {
             width: 50%;
             font-size: 0;
-            border-radius: 10px;
-            overflow: hidden;
             position: relative;
             @media all and (max-width: 960px) {
                 width: 100%;
@@ -1476,6 +1474,10 @@
         padding-left: 20px;
         padding-right: 20px;
     }
+    .case_page__about--wblock {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 @media (max-width: 1023px) {
     .case_frst__title {
@@ -1709,6 +1711,9 @@
         position: relative;
         z-index: 1;
     }
+    .case_page__gl--title {
+        margin-bottom: 130px;
+    }
 }
 .header-lang li {
     display: flex;
@@ -1716,6 +1721,10 @@
     justify-content: center;
 }
 @media all and (max-width: 580px) {
+    .case_page__about--witem {
+        width: 100%;
+        margin-bottom: 30px;
+    }
     .case_page__in.mobile .case_page__reds, .case_page__in.mobile .case_page__video, .case_page__case {
         background: url(../img/bg_red2.png) 0 0/100% no-repeat, linear-gradient(0deg, #4f4f4f 80%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0) 100%) !important;
     }

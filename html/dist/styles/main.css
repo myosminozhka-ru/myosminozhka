@@ -10330,11 +10330,6 @@ body.company .company-ceo:not(.mobile) {
   line-height: normal;
 }
 
-.case_page__in.mobile .case_page__about--witem {
-  width: 100%;
-  margin-bottom: 30px;
-}
-
 .case_page__in.mobile .case_page__about--wname {
   font-size: 16px;
   margin-bottom: 6px;
@@ -10635,12 +10630,12 @@ body.company .company-ceo:not(.mobile) {
 
 .case_page__gl--blocks {
   display: flex;
-  min-width: 156.25vw;
+  min-width: 203.64583vw;
   transform: rotate(30deg);
   height: 184.11458vw;
   position: relative;
-  top: 26.25vw;
-  left: -42.55208vw;
+  top: 36.66667vw;
+  left: -45.67708vw;
 }
 
 .case_page__gl--block {
@@ -10707,7 +10702,7 @@ body.company .company-ceo:not(.mobile) {
   margin-bottom: 3.64583vw;
 }
 
-.case_page__gl--block:nth-child(n+5) {
+.case_page__gl--block:nth-child(n+7) {
   display: none;
 }
 
@@ -11340,6 +11335,8 @@ body.company .company-ceo:not(.mobile) {
 
 .case_page__about--wblock {
   margin-bottom: 5.78125vw;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .case_page__about--wblock:last-child {
@@ -11427,7 +11424,6 @@ body.company .company-ceo:not(.mobile) {
   background: #4f4f4f;
   padding-top: 10.26042vw;
   position: relative;
-  margin-top: -2.55208vw;
   z-index: 2;
   background: url(../img/bg_red.png) 0 0/contain no-repeat, linear-gradient(0deg, #4f4f4f 84%, white 84%, white 100%);
 }
@@ -11453,8 +11449,6 @@ body.company .company-ceo:not(.mobile) {
 .case_page__case--block {
   width: 50%;
   font-size: 0;
-  border-radius: 10px;
-  overflow: hidden;
   position: relative;
 }
 
@@ -12262,6 +12256,11 @@ body.company .company-ceo:not(.mobile) {
     padding-left: 20px;
     padding-right: 20px;
   }
+
+  .case_page__about--wblock {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 @media all and (max-width: 1024px) {
@@ -12745,6 +12744,10 @@ body.company .company-ceo:not(.mobile) {
     position: relative;
     z-index: 1;
   }
+
+  .case_page__gl--title {
+    margin-bottom: 130px;
+  }
 }
 
 @media all and (max-width: 990px) {
@@ -12919,6 +12922,11 @@ body.company .company-ceo:not(.mobile) {
     min-height: 270px;
   }
 
+  .case_page__about--witem {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
   .case_page__in.mobile .case_page__reds,
   .case_page__in.mobile .case_page__video,
   .case_page__case {
@@ -13042,11 +13050,15 @@ body.company .company-ceo:not(.mobile) {
     max-width: 70px;
   }
 
+  .case_page__in.mobile .case_page__gl--title {
+    margin-bottom: 30px !important;
+  }
+
   .case_page__in.mobile .case_page__gl--blocks {
     min-width: 730px;
   }
 
-  .case_page__gl--block:nth-child(n+5) {
+  .case_page__gl--block:nth-child(n+7) {
     display: block;
   }
 
