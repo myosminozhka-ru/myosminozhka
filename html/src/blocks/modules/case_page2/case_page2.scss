@@ -1,4 +1,25 @@
 .case_page__blue {
+    .case_tabs_new .job-stages-item-text {
+        padding-top: vw(192);
+    }
+    .company-video {
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .career-blocks .case_page__bls--l {
+        border-radius: 10px 0 0 10px;
+    }
+    .case_page__vid {
+        margin-bottom: vw(200);
+    }
+    .case_page__bls--r {
+        position: relative;
+        padding-right: 0;
+    }
+    .career-blocks:not(.mobile) .career-blocks-text {
+        font-size: vw(25);
+        line-height: 160%;
+    }
     .case_page__bls--l img {
         max-width: 735px;
         max-height: 752px;
@@ -6,66 +27,83 @@
     .case_frst__subtitle {
         max-width: 1310px;
     }
+    .case_page__bls--l {
+        padding: vw(154) 0;
+    }
+    .case_page__ref {
+        padding-top: vw(124);
+    }
+    .case_page__about--rlist li {
+        margin-bottom: vw(14);
+    }
     .case_task {
-        margin-top: vw(175);
+        margin-top: vw(200);
         margin-bottom: vw(82);
         &__item {
             display: flex;
-            margin-bottom: vw(100);
+            flex-direction: column;
+            margin-bottom: vw(62);
             padding-left: 50px;
             padding-right: 50px;
             &--l {
-                width: 42.5%;
-                margin-bottom: 0;
+                width: 100%;
             }
             &--r {
-                width: 57.5%;
-                margin-bottom: 0;
-                margin-top: 43px;
+                width: 100%;
+                margin-top: vw(18);
                 li {
-                    max-width: 1020px;
-                    width: 100%;
+                    line-height: 160%;
+                    margin-bottom: vw(20);
                 }
             }
         }
     }
     .case_page__ref--img {
-        margin-top: 87px;
+        margin-top: vw(77);
+        border-radius: 10px;
     }
     .case_page__reds {
-        margin-top: vw(-240);
+        margin-top: vw(-44);
+    }
+    .case_page__reds--title {
+        margin-bottom: vw(110);
+    }
+    .case_page__reds--r {
+        margin-left: vw(190);
+    }
+    .case_page__about--rlist li:before {
+        background: #fff;
     }
     .block_pal ul li {
         color: #fff !important;
     }
     .case_crea {
-        max-width: 1550px;
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 200px;
+        padding-left: 50px;
+        padding-right: 50px;
+        margin-top: vw(188);
         &__title {
             font-family: 'Montserrat', serif;
             font-style: normal;
             font-weight: bold;
-            font-size: vw(90);
-            line-height: 144%;
+            font-size: vw(160);
             text-transform: uppercase;
             color: #4F4F4F;
-            margin-bottom: vw(50);
+            margin-bottom: vw(71);
+            white-space: nowrap;
+            width: max-content;
         }
         &__text {
-            margin-bottom: vw(60);
+            margin-bottom: vw(80);
             font-family: 'Montserrat', serif;
             font-style: normal;
             font-weight: normal;
-            font-size: vw(24);
+            font-size: vw(25);
             line-height: 160%;
             color: #4F4F4F;
         }
         &__imgs {
             display: flex;
-            align-items: flex-end;
+            align-items: center;
             justify-content: space-between;
             &--img:first-child() {
                 padding-bottom: 137px;
@@ -77,19 +115,21 @@
                     height: 140px;
                     background: #000;
                     left: 50%;
-                    margin-left: -1.5px;
+                    margin-left: -0.5px;
                     bottom: 0
                 }
             }
+            &--img:last-child() {
+                margin-left: auto;
+                margin-right: auto;
+            }
         }
         &__txt {
-            margin-top: vw(24);
-            max-width: 1016px;
-            width: 100%;
+            margin-top: vw(31);
             font-family: 'Montserrat', serif;
             font-style: normal;
             font-weight: normal;
-            font-size: vw(24);
+            font-size: vw(25);
             line-height: 160%;
             color: #4F4F4F;
             margin-bottom: vw(100);
@@ -438,13 +478,6 @@
                 font-size: vw(16);
                 color: #000000;
             }
-        }
-    }
-    @media all and (max-width: 1023px) {
-        .case_tabs_new {
-            padding-left: 20px;
-            padding-right: 20px;
-            background: url("../img/bg_mob_blue.png") 0 0 no-repeat, linear-gradient(180deg, #87a8b7 vw(430), rgba(255,255,255,1) vw(430), rgba(255,255,255,1) vw(430));
         }
     }
 }

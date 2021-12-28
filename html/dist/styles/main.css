@@ -11594,6 +11594,33 @@ body.company .company-ceo:not(.mobile) {
   justify-content: center;
 }
 
+.case_page__blue .case_tabs_new .job-stages-item-text {
+  padding-top: 10vw;
+}
+
+.case_page__blue .company-video {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.case_page__blue .career-blocks .case_page__bls--l {
+  border-radius: 10px 0 0 10px;
+}
+
+.case_page__blue .case_page__vid {
+  margin-bottom: 10.41667vw;
+}
+
+.case_page__blue .case_page__bls--r {
+  position: relative;
+  padding-right: 0;
+}
+
+.case_page__blue .career-blocks:not(.mobile) .career-blocks-text {
+  font-size: 1.30208vw;
+  line-height: 160%;
+}
+
 .case_page__blue .case_page__bls--l img {
   max-width: 735px;
   max-height: 752px;
@@ -11603,40 +11630,64 @@ body.company .company-ceo:not(.mobile) {
   max-width: 1310px;
 }
 
+.case_page__blue .case_page__bls--l {
+  padding: 8.02083vw 0;
+}
+
+.case_page__blue .case_page__ref {
+  padding-top: 6.45833vw;
+}
+
+.case_page__blue .case_page__about--rlist li {
+  margin-bottom: 0.72917vw;
+}
+
 .case_page__blue .case_task {
-  margin-top: 9.11458vw;
+  margin-top: 10.41667vw;
   margin-bottom: 4.27083vw;
 }
 
 .case_page__blue .case_task__item {
   display: flex;
-  margin-bottom: 5.20833vw;
+  flex-direction: column;
+  margin-bottom: 3.22917vw;
   padding-left: 50px;
   padding-right: 50px;
 }
 
 .case_page__blue .case_task__item--l {
-  width: 42.5%;
-  margin-bottom: 0;
-}
-
-.case_page__blue .case_task__item--r {
-  width: 57.5%;
-  margin-bottom: 0;
-  margin-top: 43px;
-}
-
-.case_page__blue .case_task__item--r li {
-  max-width: 1020px;
   width: 100%;
 }
 
+.case_page__blue .case_task__item--r {
+  width: 100%;
+  margin-top: 0.9375vw;
+}
+
+.case_page__blue .case_task__item--r li {
+  line-height: 160%;
+  margin-bottom: 1.04167vw;
+}
+
 .case_page__blue .case_page__ref--img {
-  margin-top: 87px;
+  margin-top: 4.01042vw;
+  border-radius: 10px;
 }
 
 .case_page__blue .case_page__reds {
-  margin-top: -12.5vw;
+  margin-top: -2.29167vw;
+}
+
+.case_page__blue .case_page__reds--title {
+  margin-bottom: 5.72917vw;
+}
+
+.case_page__blue .case_page__reds--r {
+  margin-left: 9.89583vw;
+}
+
+.case_page__blue .case_page__about--rlist li:before {
+  background: #fff;
 }
 
 .case_page__blue .block_pal ul li {
@@ -11644,37 +11695,36 @@ body.company .company-ceo:not(.mobile) {
 }
 
 .case_page__blue .case_crea {
-  max-width: 1550px;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 200px;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-top: 9.79167vw;
 }
 
 .case_page__blue .case_crea__title {
   font-family: 'Montserrat', serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 4.6875vw;
-  line-height: 144%;
+  font-size: 8.33333vw;
   text-transform: uppercase;
   color: #4F4F4F;
-  margin-bottom: 2.60417vw;
+  margin-bottom: 3.69792vw;
+  white-space: nowrap;
+  width: max-content;
 }
 
 .case_page__blue .case_crea__text {
-  margin-bottom: 3.125vw;
+  margin-bottom: 4.16667vw;
   font-family: 'Montserrat', serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 1.25vw;
+  font-size: 1.30208vw;
   line-height: 160%;
   color: #4F4F4F;
 }
 
 .case_page__blue .case_crea__imgs {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -11690,18 +11740,21 @@ body.company .company-ceo:not(.mobile) {
   height: 140px;
   background: #000;
   left: 50%;
-  margin-left: -1.5px;
+  margin-left: -0.5px;
   bottom: 0;
 }
 
+.case_page__blue .case_crea__imgs--img:last-child {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .case_page__blue .case_crea__txt {
-  margin-top: 1.25vw;
-  max-width: 1016px;
-  width: 100%;
+  margin-top: 1.61458vw;
   font-family: 'Montserrat', serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 1.25vw;
+  font-size: 1.30208vw;
   line-height: 160%;
   color: #4F4F4F;
   margin-bottom: 5.20833vw;
@@ -12408,12 +12461,6 @@ body.company .company-ceo:not(.mobile) {
 
   .parallax__layer {
     transform: unset !important;
-  }
-
-  .case_page__blue .case_tabs_new {
-    padding-left: 20px;
-    padding-right: 20px;
-    background: url("../img/bg_mob_blue.png") 0 0 no-repeat, linear-gradient(180deg, #87a8b7 22.39583vw, white 22.39583vw, white 22.39583vw);
   }
 }
 
