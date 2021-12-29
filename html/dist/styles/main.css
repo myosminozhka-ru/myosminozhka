@@ -12835,7 +12835,6 @@ body.company .company-ceo:not(.mobile) {
   .case_page__case--block:before {
     position: absolute;
     content: '';
-    border-radius: 10px;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.56) 100%);
     width: 100%;
     height: 100%;
