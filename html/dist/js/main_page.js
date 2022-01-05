@@ -1069,6 +1069,163 @@ var mainCases = /*#__PURE__*/function () {
               x: '-100%'
             });
           }, 1000);
+          setTimeout(function () {
+            gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.case_page__reds--title', {
+              scrollTrigger: {
+                trigger: '.case_page__reds',
+                start: 'top top',
+                end: 'bottom bottom-=300',
+                scrub: 11,
+                // markers: true,
+                onUpdate: function onUpdate(item) {
+                  if (item.progress > 0.05 && item.progress < 0.65) {
+                    document.querySelector('.case_page__reds--title').classList.add('isInViewport');
+                  } else {
+                    document.querySelector('.case_page__reds--title').classList.remove('isInViewport');
+                  }
+                }
+              },
+              x: '-100%'
+            });
+          }, 1000);
+        }
+      }
+
+      if (document.querySelector('.case_page__reds')) {
+        if (window.innerWidth <= 1366 && window.innerWidth > 1023 || window.innerWidth > 1440) {
+          setTimeout(function () {
+            gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.block_one .case_page__reds--title', {
+              scrollTrigger: {
+                trigger: '.block_one .case_page__reds',
+                start: 'top top',
+                end: 'bottom bottom-=300',
+                scrub: 11,
+                // markers: true,
+                onUpdate: function onUpdate(item) {
+                  if (item.progress > 0.05 && item.progress < 0.65) {
+                    document.querySelector('.block_one .case_page__reds--title').classList.add('isInViewport');
+                  } else {
+                    document.querySelector('.block_one .case_page__reds--title').classList.remove('isInViewport');
+                  }
+                }
+              },
+              x: '-100%'
+            });
+          }, 1000);
+          setTimeout(function () {
+            gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.blocks_bot .case_page__reds--title', {
+              scrollTrigger: {
+                trigger: '.blocks_bot .case_page__reds',
+                start: 'top top',
+                end: 'bottom bottom-=300',
+                scrub: 11,
+                // markers: true,
+                onUpdate: function onUpdate(item) {
+                  if (item.progress > 0.05 && item.progress < 0.65) {
+                    document.querySelector('.blocks_bot .case_page__reds--title').classList.add('isInViewport');
+                  } else {
+                    document.querySelector('.blocks_bot .case_page__reds--title').classList.remove('isInViewport');
+                  }
+                }
+              },
+              x: '-100%'
+            });
+          }, 1000);
+          setTimeout(function () {
+            gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.case_ff__title', {
+              scrollTrigger: {
+                trigger: '.case_ff',
+                start: 'top top',
+                end: 'bottom bottom-=300',
+                scrub: 11,
+                // markers: true,
+                onUpdate: function onUpdate(item) {
+                  if (item.progress > 0.05 && item.progress < 0.65) {
+                    document.querySelector('.case_ff__title').classList.add('isInViewport');
+                  } else {
+                    document.querySelector('.case_ff__title').classList.remove('isInViewport');
+                  }
+                }
+              },
+              x: '-100%'
+            });
+          }, 1000);
+          setTimeout(function () {
+            gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.case_page__about--wtitle', {
+              scrollTrigger: {
+                trigger: '.case_page__about',
+                start: 'top top',
+                end: 'bottom bottom-=300',
+                scrub: 11,
+                // markers: true,
+                onUpdate: function onUpdate(item) {
+                  if (item.progress > 0.05 && item.progress < 0.65) {
+                    document.querySelector('.case_page__about--wtitle').classList.add('isInViewport');
+                  } else {
+                    document.querySelector('.case_page__about--wtitle').classList.remove('isInViewport');
+                  }
+                }
+              },
+              x: '-100%'
+            });
+          }, 1000);
+          setTimeout(function () {
+            gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.case_crea__title', {
+              scrollTrigger: {
+                trigger: '.case_crea',
+                start: 'top top',
+                end: 'bottom bottom-=300',
+                scrub: 11,
+                // markers: true,
+                onUpdate: function onUpdate(item) {
+                  if (item.progress > 0.05 && item.progress < 0.65) {
+                    document.querySelector('.case_crea__title').classList.add('isInViewport');
+                  } else {
+                    document.querySelector('.case_crea__title').classList.remove('isInViewport');
+                  }
+                }
+              },
+              x: '-100%'
+            });
+          }, 1000);
+          setTimeout(function () {
+            gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.case_sls__title', {
+              scrollTrigger: {
+                trigger: '.case_sls',
+                start: 'top top',
+                end: 'bottom bottom-=300',
+                scrub: 11,
+                // markers: true,
+                onUpdate: function onUpdate(item) {
+                  if (item.progress > 0.05 && item.progress < 0.65) {
+                    document.querySelector('.case_sls__title').classList.add('isInViewport');
+                  } else {
+                    document.querySelector('.case_sls__title').classList.remove('isInViewport');
+                  }
+                }
+              },
+              x: '-100%'
+            });
+          }, 1000);
+          setTimeout(function () {
+            gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.case_desc__title', {
+              scrollTrigger: {
+                trigger: '.case_desc',
+                start: 'top top',
+                end: 'bottom bottom-=300',
+                scrub: 11,
+                // markers: true,
+                onUpdate: function onUpdate(item) {
+                  if (item.progress > 0.05 && item.progress < 0.65) {
+                    document.querySelector('.case_desc__title').classList.add('isInViewport');
+                  } else {
+                    document.querySelector('.case_desc__title').classList.remove('isInViewport');
+                  }
+                }
+              },
+              x: '-100%'
+            });
+          }, 1000);
         }
       }
 
