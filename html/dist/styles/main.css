@@ -12194,6 +12194,102 @@ body.company .company-ceo:not(.mobile) {
   align-items: center;
 }
 
+.lonmandi .case_frst__subtitle {
+  max-width: 100%;
+}
+
+.lonmandi .full_img {
+  margin-bottom: 30px;
+}
+
+.lonmandi .case_page__bls--title {
+  position: relative;
+}
+
+.lonmandi .case_page__bls--l {
+  border-radius: 20px 0px 0px 20px;
+}
+
+.lonmandi .no-padding .case_page__bls--l {
+  padding: 0;
+}
+
+.lonmandi .case_task {
+  margin-top: 10.41667vw;
+  margin-bottom: 4.27083vw;
+}
+
+.lonmandi .case_task__item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3.22917vw;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.lonmandi .case_task__item--l {
+  width: 100%;
+}
+
+.lonmandi .case_task__item--r {
+  width: 100%;
+  margin-top: 0.9375vw;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.5625vw;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #4F4F4F;
+}
+
+.lonmandi .block_yel {
+  background: #FFC008 url("../img/s27.png") 0 0/100% no-repeat;
+  text-align: center;
+  padding-top: 261px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 340px;
+}
+
+.lonmandi .block_yel__img {
+  border: 10px solid #FFFFFF;
+  filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
+  border-radius: 35px;
+  margin-bottom: 70px;
+}
+
+.lonmandi .block_yel__title {
+  font-family: 'Montserrat', serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #121115;
+  margin-bottom: 70px;
+  max-width: 1206px;
+  width: 100%;
+}
+
+.lonmandi .block_yel__imgs {
+  max-width: 705px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: -249px;
+}
+
+.lonmandi .block_yel__imgs--img {
+  border: 10px solid #FFFFFF;
+  filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
+  border-radius: 35px;
+}
+
+.lonmandi .block_yel__imgs--img:nth-child(1) {
+  margin-bottom: -64px;
+}
+
 @media screen and (min-width: 36rem) {
   .container {
     max-width: 31.875rem;
