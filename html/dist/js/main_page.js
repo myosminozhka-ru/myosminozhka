@@ -1010,8 +1010,8 @@ var mainCases = /*#__PURE__*/function () {
   }, {
     key: "init",
     value: function init() {
-      if (document.querySelector('.case_page__prot')) {
-        if (window.innerWidth <= 1366 && window.innerWidth > 1023 || window.innerWidth > 1440) {
+      if (window.innerWidth <= 1366 && window.innerWidth > 1023 || window.innerWidth > 1440) {
+        if (document.querySelector('.case_page__prot')) {
           setTimeout(function () {
             gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.case_page__prot--title', {
               scrollTrigger: {
@@ -1031,6 +1031,9 @@ var mainCases = /*#__PURE__*/function () {
               x: '-100%'
             });
           }, 1000);
+        }
+
+        if (document.querySelector('.gl_blocks')) {
           setTimeout(function () {
             gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.case_page__gl--title', {
               scrollTrigger: {
@@ -1050,6 +1053,9 @@ var mainCases = /*#__PURE__*/function () {
               x: '-100%'
             });
           }, 1000);
+        }
+
+        if (document.querySelector('.case_page__about--work')) {
           setTimeout(function () {
             gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.case_page__about--wtitle', {
               scrollTrigger: {
@@ -1069,30 +1075,32 @@ var mainCases = /*#__PURE__*/function () {
               x: '-100%'
             });
           }, 1000);
-          setTimeout(function () {
-            gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.case_page__reds--title', {
-              scrollTrigger: {
-                trigger: '.case_page__reds',
-                start: 'top top',
-                end: 'bottom bottom-=300',
-                scrub: 11,
-                // markers: true,
-                onUpdate: function onUpdate(item) {
-                  if (item.progress > 0.05 && item.progress < 0.65) {
-                    document.querySelector('.case_page__reds--title').classList.add('isInViewport');
-                  } else {
-                    document.querySelector('.case_page__reds--title').classList.remove('isInViewport');
-                  }
-                }
-              },
-              x: '-100%'
-            });
-          }, 1000);
-        }
+        } // if (document.querySelector('.case_page__reds')) {
+        //       setTimeout(() => {
+        //            gsap.to('.case_page__reds--title', {
+        //                scrollTrigger: {
+        //                    trigger: '.case_page__reds',
+        //                    start: 'top top',
+        //                    end: 'bottom bottom-=300',
+        //                    scrub: 11,
+        //                    // markers: true,
+        //                    onUpdate: (item) => {
+        //                        if (item.progress > 0.05 && item.progress < 0.65) {
+        //                            document.querySelector('.case_page__reds--title').classList.add('isInViewport');
+        //                        } else {
+        //                            document.querySelector('.case_page__reds--title').classList.remove('isInViewport');
+        //                        }
+        //                    }
+        //                },
+        //                x: '-100%',
+        //            });
+        //        }, 1000);
+        // }
+
       }
 
-      if (document.querySelector('.case_page__reds')) {
-        if (window.innerWidth <= 1366 && window.innerWidth > 1023 || window.innerWidth > 1440) {
+      if (window.innerWidth <= 1366 && window.innerWidth > 1023 || window.innerWidth > 1440) {
+        if (document.querySelector('.block_one .case_page__reds')) {
           setTimeout(function () {
             gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.block_one .case_page__reds--title', {
               scrollTrigger: {
@@ -1112,6 +1120,9 @@ var mainCases = /*#__PURE__*/function () {
               x: '-100%'
             });
           }, 1000);
+        }
+
+        if (document.querySelector('.blocks_bot .case_page__reds')) {
           setTimeout(function () {
             gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.blocks_bot .case_page__reds--title', {
               scrollTrigger: {
@@ -1131,6 +1142,9 @@ var mainCases = /*#__PURE__*/function () {
               x: '-100%'
             });
           }, 1000);
+        }
+
+        if (document.querySelector('.case_ff')) {
           setTimeout(function () {
             gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.case_ff__title', {
               scrollTrigger: {
@@ -1150,6 +1164,9 @@ var mainCases = /*#__PURE__*/function () {
               x: '-100%'
             });
           }, 1000);
+        }
+
+        if (document.querySelector('.case_page__about')) {
           setTimeout(function () {
             gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.case_page__about--wtitle', {
               scrollTrigger: {
@@ -1169,6 +1186,9 @@ var mainCases = /*#__PURE__*/function () {
               x: '-100%'
             });
           }, 1000);
+        }
+
+        if (document.querySelector('.case_crea')) {
           setTimeout(function () {
             gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.case_crea__title', {
               scrollTrigger: {
@@ -1188,6 +1208,9 @@ var mainCases = /*#__PURE__*/function () {
               x: '-100%'
             });
           }, 1000);
+        }
+
+        if (document.querySelector('.case_sls')) {
           setTimeout(function () {
             gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.case_sls__title', {
               scrollTrigger: {
@@ -1207,6 +1230,9 @@ var mainCases = /*#__PURE__*/function () {
               x: '-100%'
             });
           }, 1000);
+        }
+
+        if (document.querySelector('.case_desc')) {
           setTimeout(function () {
             gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.case_desc__title', {
               scrollTrigger: {

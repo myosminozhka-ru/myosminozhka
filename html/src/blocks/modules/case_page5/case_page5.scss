@@ -1,4 +1,4 @@
-.lonmandi {
+.frost {
     .case_frst__subtitle {
         max-width: 100%;
     }
@@ -39,7 +39,7 @@
         }
     }
     .block_yel {
-        background: #FFC008 url('../img/s27.png') 0 0 / 100% no-repeat;
+        background: #F4511F url('../img/s44.png') 0 0 / 100% no-repeat;
         text-align: center;
         padding-top: vw(248);
         display: flex;
@@ -139,7 +139,8 @@
             margin-bottom: 20px !important;
         }
         .case_page__in.mobile .no-padding .case_page__bls--l {
-            padding: 0
+            padding: 0;
+            background: #EEF5FB;
         }
         .case_page__in.mobile .case_page__bls--r {
             margin-bottom: 20px !important;

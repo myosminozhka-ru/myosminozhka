@@ -28,8 +28,8 @@ const mainCases = class MainCases {
     
     init() {
          
-        if (document.querySelector('.case_page__prot')) {
-            if ((window.innerWidth <= 1366 && window.innerWidth > 1023) || (window.innerWidth > 1440)) {
+        if ((window.innerWidth <= 1366 && window.innerWidth > 1023) || (window.innerWidth > 1440)) {
+            if (document.querySelector('.case_page__prot')) {
                setTimeout(() => {
                     gsap.to('.case_page__prot--title', {
                         scrollTrigger: {
@@ -49,6 +49,8 @@ const mainCases = class MainCases {
                         x: '-100%',
                     });
                 }, 1000);
+            }
+            if (document.querySelector('.gl_blocks')) {
                 setTimeout(() => {
                      gsap.to('.case_page__gl--title', {
                          scrollTrigger: {
@@ -68,6 +70,8 @@ const mainCases = class MainCases {
                          x: '-100%',
                      });
                  }, 1000);
+            }
+            if (document.querySelector('.case_page__about--work')) {
                  setTimeout(() => {
                       gsap.to('.case_page__about--wtitle', {
                           scrollTrigger: {
@@ -87,164 +91,176 @@ const mainCases = class MainCases {
                           x: '-100%',
                       });
                   }, 1000);
-                  setTimeout(() => {
-                       gsap.to('.case_page__reds--title', {
-                           scrollTrigger: {
-                               trigger: '.case_page__reds',
-                               start: 'top top',
-                               end: 'bottom bottom-=300',
-                               scrub: 11,
-                               // markers: true,
-                               onUpdate: (item) => {
-                                   if (item.progress > 0.05 && item.progress < 0.65) {
-                                       document.querySelector('.case_page__reds--title').classList.add('isInViewport');
-                                   } else {
-                                       document.querySelector('.case_page__reds--title').classList.remove('isInViewport');
-                                   }
-                               }
-                           },
-                           x: '-100%',
-                       });
-                   }, 1000);
             }
+            // if (document.querySelector('.case_page__reds')) {
+            //       setTimeout(() => {
+            //            gsap.to('.case_page__reds--title', {
+            //                scrollTrigger: {
+            //                    trigger: '.case_page__reds',
+            //                    start: 'top top',
+            //                    end: 'bottom bottom-=300',
+            //                    scrub: 11,
+            //                    // markers: true,
+            //                    onUpdate: (item) => {
+            //                        if (item.progress > 0.05 && item.progress < 0.65) {
+            //                            document.querySelector('.case_page__reds--title').classList.add('isInViewport');
+            //                        } else {
+            //                            document.querySelector('.case_page__reds--title').classList.remove('isInViewport');
+            //                        }
+            //                    }
+            //                },
+            //                x: '-100%',
+            //            });
+            //        }, 1000);
+            // }
         }
-        
-         
-        if (document.querySelector('.case_page__reds')) {
-            if ((window.innerWidth <= 1366 && window.innerWidth > 1023) || (window.innerWidth > 1440)) {
-                  setTimeout(() => {
-                       gsap.to('.block_one .case_page__reds--title', {
-                           scrollTrigger: {
-                               trigger: '.block_one .case_page__reds',
-                               start: 'top top',
-                               end: 'bottom bottom-=300',
-                               scrub: 11,
-                               // markers: true,
-                               onUpdate: (item) => {
-                                   if (item.progress > 0.05 && item.progress < 0.65) {
-                                       document.querySelector('.block_one .case_page__reds--title').classList.add('isInViewport');
-                                   } else {
-                                       document.querySelector('.block_one .case_page__reds--title').classList.remove('isInViewport');
-                                   }
-                               }
-                           },
-                           x: '-100%',
-                       });
-                   }, 1000);
-                   setTimeout(() => {
-                        gsap.to('.blocks_bot .case_page__reds--title', {
+        if ((window.innerWidth <= 1366 && window.innerWidth > 1023) || (window.innerWidth > 1440)) {
+            if (document.querySelector('.block_one .case_page__reds')) {
+                setTimeout(() => {
+                    gsap.to('.block_one .case_page__reds--title', {
+                        scrollTrigger: {
+                            trigger: '.block_one .case_page__reds',
+                            start: 'top top',
+                            end: 'bottom bottom-=300',
+                            scrub: 11,
+                            // markers: true,
+                            onUpdate: (item) => {
+                                if (item.progress > 0.05 && item.progress < 0.65) {
+                                    document.querySelector('.block_one .case_page__reds--title').classList.add('isInViewport');
+                                } else {
+                                    document.querySelector('.block_one .case_page__reds--title').classList.remove('isInViewport');
+                                }
+                            }
+                        },
+                        x: '-100%',
+                    });
+                }, 1000);
+            }
+            if (document.querySelector('.blocks_bot .case_page__reds')) {
+                setTimeout(() => {
+                    gsap.to('.blocks_bot .case_page__reds--title', {
+                        scrollTrigger: {
+                            trigger: '.blocks_bot .case_page__reds',
+                            start: 'top top',
+                            end: 'bottom bottom-=300',
+                            scrub: 11,
+                            // markers: true,
+                            onUpdate: (item) => {
+                                if (item.progress > 0.05 && item.progress < 0.65) {
+                                    document.querySelector('.blocks_bot .case_page__reds--title').classList.add('isInViewport');
+                                } else {
+                                    document.querySelector('.blocks_bot .case_page__reds--title').classList.remove('isInViewport');
+                                }
+                            }
+                        },
+                        x: '-100%',
+                    });
+                }, 1000);
+            }
+            if (document.querySelector('.case_ff')) {
+                setTimeout(() => {
+                        gsap.to('.case_ff__title', {
                             scrollTrigger: {
-                                trigger: '.blocks_bot .case_page__reds',
+                                trigger: '.case_ff',
                                 start: 'top top',
                                 end: 'bottom bottom-=300',
                                 scrub: 11,
                                 // markers: true,
                                 onUpdate: (item) => {
                                     if (item.progress > 0.05 && item.progress < 0.65) {
-                                        document.querySelector('.blocks_bot .case_page__reds--title').classList.add('isInViewport');
+                                        document.querySelector('.case_ff__title').classList.add('isInViewport');
                                     } else {
-                                        document.querySelector('.blocks_bot .case_page__reds--title').classList.remove('isInViewport');
+                                        document.querySelector('.case_ff__title').classList.remove('isInViewport');
                                     }
                                 }
                             },
                             x: '-100%',
                         });
                     }, 1000);
+            }
+            if (document.querySelector('.case_page__about')) {
                     setTimeout(() => {
-                         gsap.to('.case_ff__title', {
-                             scrollTrigger: {
-                                 trigger: '.case_ff',
-                                 start: 'top top',
-                                 end: 'bottom bottom-=300',
-                                 scrub: 11,
-                                 // markers: true,
-                                 onUpdate: (item) => {
-                                     if (item.progress > 0.05 && item.progress < 0.65) {
-                                         document.querySelector('.case_ff__title').classList.add('isInViewport');
-                                     } else {
-                                         document.querySelector('.case_ff__title').classList.remove('isInViewport');
-                                     }
-                                 }
-                             },
-                             x: '-100%',
-                         });
-                     }, 1000);
-                     setTimeout(() => {
-                          gsap.to('.case_page__about--wtitle', {
-                              scrollTrigger: {
-                                  trigger: '.case_page__about',
-                                  start: 'top top',
-                                  end: 'bottom bottom-=300',
-                                  scrub: 11,
-                                  // markers: true,
-                                  onUpdate: (item) => {
-                                      if (item.progress > 0.05 && item.progress < 0.65) {
-                                          document.querySelector('.case_page__about--wtitle').classList.add('isInViewport');
-                                      } else {
-                                          document.querySelector('.case_page__about--wtitle').classList.remove('isInViewport');
-                                      }
-                                  }
-                              },
-                              x: '-100%',
-                          });
-                      }, 1000);
-                   setTimeout(() => {
-                        gsap.to('.case_crea__title', {
+                        gsap.to('.case_page__about--wtitle', {
                             scrollTrigger: {
-                                trigger: '.case_crea',
+                                trigger: '.case_page__about',
                                 start: 'top top',
                                 end: 'bottom bottom-=300',
                                 scrub: 11,
                                 // markers: true,
                                 onUpdate: (item) => {
                                     if (item.progress > 0.05 && item.progress < 0.65) {
-                                        document.querySelector('.case_crea__title').classList.add('isInViewport');
+                                        document.querySelector('.case_page__about--wtitle').classList.add('isInViewport');
                                     } else {
-                                        document.querySelector('.case_crea__title').classList.remove('isInViewport');
+                                        document.querySelector('.case_page__about--wtitle').classList.remove('isInViewport');
                                     }
                                 }
                             },
                             x: '-100%',
                         });
                     }, 1000);
+            }
+            if (document.querySelector('.case_crea')) {
+                setTimeout(() => {
+                    gsap.to('.case_crea__title', {
+                        scrollTrigger: {
+                            trigger: '.case_crea',
+                            start: 'top top',
+                            end: 'bottom bottom-=300',
+                            scrub: 11,
+                            // markers: true,
+                            onUpdate: (item) => {
+                                if (item.progress > 0.05 && item.progress < 0.65) {
+                                    document.querySelector('.case_crea__title').classList.add('isInViewport');
+                                } else {
+                                    document.querySelector('.case_crea__title').classList.remove('isInViewport');
+                                }
+                            }
+                        },
+                        x: '-100%',
+                    });
+                }, 1000);
+            }
+            if (document.querySelector('.case_sls')) {
+                setTimeout(() => {
+                        gsap.to('.case_sls__title', {
+                            scrollTrigger: {
+                                trigger: '.case_sls',
+                                start: 'top top',
+                                end: 'bottom bottom-=300',
+                                scrub: 11,
+                                // markers: true,
+                                onUpdate: (item) => {
+                                    if (item.progress > 0.05 && item.progress < 0.65) {
+                                        document.querySelector('.case_sls__title').classList.add('isInViewport');
+                                    } else {
+                                        document.querySelector('.case_sls__title').classList.remove('isInViewport');
+                                    }
+                                }
+                            },
+                            x: '-100%',
+                        });
+                    }, 1000);
+            }
+            if (document.querySelector('.case_desc')) {
                     setTimeout(() => {
-                         gsap.to('.case_sls__title', {
-                             scrollTrigger: {
-                                 trigger: '.case_sls',
-                                 start: 'top top',
-                                 end: 'bottom bottom-=300',
-                                 scrub: 11,
-                                 // markers: true,
-                                 onUpdate: (item) => {
-                                     if (item.progress > 0.05 && item.progress < 0.65) {
-                                         document.querySelector('.case_sls__title').classList.add('isInViewport');
-                                     } else {
-                                         document.querySelector('.case_sls__title').classList.remove('isInViewport');
-                                     }
-                                 }
-                             },
-                             x: '-100%',
-                         });
-                     }, 1000);
-                     setTimeout(() => {
-                          gsap.to('.case_desc__title', {
-                              scrollTrigger: {
-                                  trigger: '.case_desc',
-                                  start: 'top top',
-                                  end: 'bottom bottom-=300',
-                                  scrub: 11,
-                                  // markers: true,
-                                  onUpdate: (item) => {
-                                      if (item.progress > 0.05 && item.progress < 0.65) {
-                                          document.querySelector('.case_desc__title').classList.add('isInViewport');
-                                      } else {
-                                          document.querySelector('.case_desc__title').classList.remove('isInViewport');
-                                      }
-                                  }
-                              },
-                              x: '-100%',
-                          });
-                      }, 1000);
+                        gsap.to('.case_desc__title', {
+                            scrollTrigger: {
+                                trigger: '.case_desc',
+                                start: 'top top',
+                                end: 'bottom bottom-=300',
+                                scrub: 11,
+                                // markers: true,
+                                onUpdate: (item) => {
+                                    if (item.progress > 0.05 && item.progress < 0.65) {
+                                        document.querySelector('.case_desc__title').classList.add('isInViewport');
+                                    } else {
+                                        document.querySelector('.case_desc__title').classList.remove('isInViewport');
+                                    }
+                                }
+                            },
+                            x: '-100%',
+                        });
+                    }, 1000);
             }
         }
         if (!document.querySelector('.main-cases')) return;
