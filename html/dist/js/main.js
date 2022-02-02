@@ -2072,6 +2072,28 @@ var mainCases = /*#__PURE__*/function () {
               x: '-100%'
             });
           }, 1000);
+        }
+
+        if (document.querySelector('.frost .case_task')) {
+          setTimeout(function () {
+            gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.frost .case_page__bls--title', {
+              scrollTrigger: {
+                trigger: '.frost .case_task',
+                start: 'top top',
+                end: 'bottom bottom-=300',
+                scrub: 11,
+                // markers: true,
+                onUpdate: function onUpdate(item) {
+                  if (item.progress > 0.05 && item.progress < 0.65) {
+                    document.querySelector('.case_page__about--wtitle').classList.add('isInViewport');
+                  } else {
+                    document.querySelector('.case_page__about--wtitle').classList.remove('isInViewport');
+                  }
+                }
+              },
+              x: '-100%'
+            });
+          }, 1000);
         } // if (document.querySelector('.case_page__reds')) {
         //       setTimeout(() => {
         //            gsap.to('.case_page__reds--title', {
