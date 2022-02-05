@@ -15,7 +15,8 @@ function _assertThisInitialized(self) {
   return self;
 }
 
-module.exports = _assertThisInitialized, module.exports.__esModule = true, module.exports["default"] = module.exports;
+module.exports = _assertThisInitialized;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
 
 /***/ }),
 
@@ -32,7 +33,8 @@ var isNativeReflectConstruct = __webpack_require__(/*! ./isNativeReflectConstruc
 
 function _construct(Parent, args, Class) {
   if (isNativeReflectConstruct()) {
-    module.exports = _construct = Reflect.construct, module.exports.__esModule = true, module.exports["default"] = module.exports;
+    module.exports = _construct = Reflect.construct;
+    module.exports["default"] = module.exports, module.exports.__esModule = true;
   } else {
     module.exports = _construct = function _construct(Parent, args, Class) {
       var a = [null];
@@ -41,13 +43,16 @@ function _construct(Parent, args, Class) {
       var instance = new Constructor();
       if (Class) setPrototypeOf(instance, Class.prototype);
       return instance;
-    }, module.exports.__esModule = true, module.exports["default"] = module.exports;
+    };
+
+    module.exports["default"] = module.exports, module.exports.__esModule = true;
   }
 
   return _construct.apply(null, arguments);
 }
 
-module.exports = _construct, module.exports.__esModule = true, module.exports["default"] = module.exports;
+module.exports = _construct;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
 
 /***/ }),
 
@@ -71,11 +76,14 @@ function _extends() {
     }
 
     return target;
-  }, module.exports.__esModule = true, module.exports["default"] = module.exports;
+  };
+
+  module.exports["default"] = module.exports, module.exports.__esModule = true;
   return _extends.apply(this, arguments);
 }
 
-module.exports = _extends, module.exports.__esModule = true, module.exports["default"] = module.exports;
+module.exports = _extends;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
 
 /***/ }),
 
@@ -100,13 +108,11 @@ function _inherits(subClass, superClass) {
       configurable: true
     }
   });
-  Object.defineProperty(subClass, "prototype", {
-    writable: false
-  });
   if (superClass) setPrototypeOf(subClass, superClass);
 }
 
-module.exports = _inherits, module.exports.__esModule = true, module.exports["default"] = module.exports;
+module.exports = _inherits;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
 
 /***/ }),
 
@@ -125,7 +131,8 @@ function _inheritsLoose(subClass, superClass) {
   setPrototypeOf(subClass, superClass);
 }
 
-module.exports = _inheritsLoose, module.exports.__esModule = true, module.exports["default"] = module.exports;
+module.exports = _inheritsLoose;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
 
 /***/ }),
 
@@ -149,7 +156,8 @@ function _isNativeReflectConstruct() {
   }
 }
 
-module.exports = _isNativeReflectConstruct, module.exports.__esModule = true, module.exports["default"] = module.exports;
+module.exports = _isNativeReflectConstruct;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
 
 /***/ }),
 
@@ -164,11 +172,14 @@ function _setPrototypeOf(o, p) {
   module.exports = _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
     o.__proto__ = p;
     return o;
-  }, module.exports.__esModule = true, module.exports["default"] = module.exports;
+  };
+
+  module.exports["default"] = module.exports, module.exports.__esModule = true;
   return _setPrototypeOf(o, p);
 }
 
-module.exports = _setPrototypeOf, module.exports.__esModule = true, module.exports["default"] = module.exports;
+module.exports = _setPrototypeOf;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
 
 /***/ }),
 
@@ -181,161 +192,11 @@ module.exports = _setPrototypeOf, module.exports.__esModule = true, module.expor
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Glide; });
 /*!
- * Glide.js v3.5.2
- * (c) 2013-2021 Jędrzej Chałubek (https://github.com/jedrzejchalubek/)
+ * Glide.js v3.4.1
+ * (c) 2013-2019 Jędrzej Chałubek <jedrzej.chalubek@gmail.com> (http://jedrzejchalubek.com/)
  * Released under the MIT License.
  */
-
-function _typeof(obj) {
-  "@babel/helpers - typeof";
-
-  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-    _typeof = function (obj) {
-      return typeof obj;
-    };
-  } else {
-    _typeof = function (obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-    };
-  }
-
-  return _typeof(obj);
-}
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-
-function _defineProperties(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, descriptor.key, descriptor);
-  }
-}
-
-function _createClass(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties(Constructor, staticProps);
-  return Constructor;
-}
-
-function _inherits(subClass, superClass) {
-  if (typeof superClass !== "function" && superClass !== null) {
-    throw new TypeError("Super expression must either be null or a function");
-  }
-
-  subClass.prototype = Object.create(superClass && superClass.prototype, {
-    constructor: {
-      value: subClass,
-      writable: true,
-      configurable: true
-    }
-  });
-  if (superClass) _setPrototypeOf(subClass, superClass);
-}
-
-function _getPrototypeOf(o) {
-  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
-    return o.__proto__ || Object.getPrototypeOf(o);
-  };
-  return _getPrototypeOf(o);
-}
-
-function _setPrototypeOf(o, p) {
-  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
-    o.__proto__ = p;
-    return o;
-  };
-
-  return _setPrototypeOf(o, p);
-}
-
-function _isNativeReflectConstruct() {
-  if (typeof Reflect === "undefined" || !Reflect.construct) return false;
-  if (Reflect.construct.sham) return false;
-  if (typeof Proxy === "function") return true;
-
-  try {
-    Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
-    return true;
-  } catch (e) {
-    return false;
-  }
-}
-
-function _assertThisInitialized(self) {
-  if (self === void 0) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }
-
-  return self;
-}
-
-function _possibleConstructorReturn(self, call) {
-  if (call && (typeof call === "object" || typeof call === "function")) {
-    return call;
-  } else if (call !== void 0) {
-    throw new TypeError("Derived constructors may only return object or undefined");
-  }
-
-  return _assertThisInitialized(self);
-}
-
-function _createSuper(Derived) {
-  var hasNativeReflectConstruct = _isNativeReflectConstruct();
-
-  return function _createSuperInternal() {
-    var Super = _getPrototypeOf(Derived),
-        result;
-
-    if (hasNativeReflectConstruct) {
-      var NewTarget = _getPrototypeOf(this).constructor;
-
-      result = Reflect.construct(Super, arguments, NewTarget);
-    } else {
-      result = Super.apply(this, arguments);
-    }
-
-    return _possibleConstructorReturn(this, result);
-  };
-}
-
-function _superPropBase(object, property) {
-  while (!Object.prototype.hasOwnProperty.call(object, property)) {
-    object = _getPrototypeOf(object);
-    if (object === null) break;
-  }
-
-  return object;
-}
-
-function _get() {
-  if (typeof Reflect !== "undefined" && Reflect.get) {
-    _get = Reflect.get;
-  } else {
-    _get = function _get(target, property, receiver) {
-      var base = _superPropBase(target, property);
-
-      if (!base) return;
-      var desc = Object.getOwnPropertyDescriptor(base, property);
-
-      if (desc.get) {
-        return desc.get.call(arguments.length < 3 ? target : receiver);
-      }
-
-      return desc.value;
-    };
-  }
-
-  return _get.apply(this, arguments);
-}
 
 var defaults = {
   /**
@@ -427,15 +288,11 @@ var defaults = {
   dragThreshold: 120,
 
   /**
-   * A number of slides moved on single swipe.
+   * A maximum number of slides to which movement will be made on swiping or dragging. Use `false` for unlimited.
    *
-   * Available types:
-   * `` - Moves slider by one slide per swipe
-   * `|` - Moves slider between views per swipe (number of slides defined in `perView` options)
-   *
-   * @type {String}
+   * @type {Number|Boolean}
    */
-  perSwipe: '',
+  perTouch: false,
 
   /**
    * Moving distance ratio of the slides on a swiping and dragging.
@@ -480,13 +337,6 @@ var defaults = {
   animationTimingFunc: 'cubic-bezier(.165, .840, .440, 1)',
 
   /**
-   * Wait for the animation to finish until the next user input can be processed
-   *
-   * @type {boolean}
-   */
-  waitForTransition: true,
-
-  /**
    * Throttle costly events at most once per every wait milliseconds.
    *
    * @type {Number}
@@ -519,13 +369,6 @@ var defaults = {
   peek: 0,
 
   /**
-   * Defines how many clones of current viewport will be generated.
-   *
-   * @type {Number}
-   */
-  cloningRatio: 1,
-
-  /**
    * Collection of options applied at specified media breakpoints.
    * For example: display two slides per view under 800px.
    * `{
@@ -543,26 +386,18 @@ var defaults = {
    * @type {Object}
    */
   classes: {
-    swipeable: 'glide--swipeable',
-    dragging: 'glide--dragging',
     direction: {
       ltr: 'glide--ltr',
       rtl: 'glide--rtl'
     },
-    type: {
-      slider: 'glide--slider',
-      carousel: 'glide--carousel'
-    },
-    slide: {
-      clone: 'glide__slide--clone',
-      active: 'glide__slide--active'
-    },
-    arrow: {
-      disabled: 'glide__arrow--disabled'
-    },
-    nav: {
-      active: 'glide__bullet--active'
-    }
+    slider: 'glide--slider',
+    carousel: 'glide--carousel',
+    swipeable: 'glide--swipeable',
+    dragging: 'glide--dragging',
+    cloneSlide: 'glide__slide--clone',
+    activeNav: 'glide__bullet--active',
+    activeSlide: 'glide__slide--active',
+    disabledArrow: 'glide__arrow--disabled'
   }
 };
 
@@ -573,8 +408,101 @@ var defaults = {
  * @return {Void}
  */
 function warn(msg) {
-  console.error("[Glide warn]: ".concat(msg));
+  console.error("[Glide warn]: " + msg);
 }
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
+  return typeof obj;
+} : function (obj) {
+  return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+};
+
+var classCallCheck = function (instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+};
+
+var createClass = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) defineProperties(Constructor, staticProps);
+    return Constructor;
+  };
+}();
+
+var _extends = Object.assign || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];
+
+    for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }
+
+  return target;
+};
+
+var get = function get(object, property, receiver) {
+  if (object === null) object = Function.prototype;
+  var desc = Object.getOwnPropertyDescriptor(object, property);
+
+  if (desc === undefined) {
+    var parent = Object.getPrototypeOf(object);
+
+    if (parent === null) {
+      return undefined;
+    } else {
+      return get(parent, property, receiver);
+    }
+  } else if ("value" in desc) {
+    return desc.value;
+  } else {
+    var getter = desc.get;
+
+    if (getter === undefined) {
+      return undefined;
+    }
+
+    return getter.call(receiver);
+  }
+};
+
+var inherits = function (subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      enumerable: false,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+};
+
+var possibleConstructorReturn = function (self, call) {
+  if (!self) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return call && (typeof call === "object" || typeof call === "function") ? call : self;
+};
 
 /**
  * Converts value entered as number
@@ -586,6 +514,7 @@ function warn(msg) {
 function toInt(value) {
   return parseInt(value);
 }
+
 /**
  * Converts value entered as number
  * or string to flat value.
@@ -593,20 +522,20 @@ function toInt(value) {
  * @param {String} value
  * @returns {Number}
  */
-
 function toFloat(value) {
   return parseFloat(value);
 }
+
 /**
  * Indicates whether the specified value is a string.
  *
  * @param  {*}   value
  * @return {Boolean}
  */
-
 function isString(value) {
   return typeof value === 'string';
 }
+
 /**
  * Indicates whether the specified value is an object.
  *
@@ -615,39 +544,48 @@ function isString(value) {
  *
  * @see https://github.com/jashkenas/underscore
  */
-
 function isObject(value) {
-  var type = _typeof(value);
+  var type = typeof value === 'undefined' ? 'undefined' : _typeof(value);
 
   return type === 'function' || type === 'object' && !!value; // eslint-disable-line no-mixed-operators
 }
+
+/**
+ * Indicates whether the specified value is a number.
+ *
+ * @param  {*} value
+ * @return {Boolean}
+ */
+function isNumber(value) {
+  return typeof value === 'number';
+}
+
 /**
  * Indicates whether the specified value is a function.
  *
  * @param  {*} value
  * @return {Boolean}
  */
-
 function isFunction(value) {
   return typeof value === 'function';
 }
+
 /**
  * Indicates whether the specified value is undefined.
  *
  * @param  {*} value
  * @return {Boolean}
  */
-
 function isUndefined(value) {
   return typeof value === 'undefined';
 }
+
 /**
  * Indicates whether the specified value is an array.
  *
  * @param  {*} value
  * @return {Boolean}
  */
-
 function isArray(value) {
   return value.constructor === Array;
 }
@@ -661,7 +599,6 @@ function isArray(value) {
  *
  * @returns {Object}
  */
-
 function mount(glide, extensions, events) {
   var components = {};
 
@@ -693,19 +630,21 @@ function mount(glide, extensions, events) {
 function define(obj, prop, definition) {
   Object.defineProperty(obj, prop, definition);
 }
+
 /**
  * Sorts aphabetically object keys.
  *
  * @param  {Object} obj
  * @return {Object}
  */
-
 function sortKeys(obj) {
   return Object.keys(obj).sort().reduce(function (r, k) {
     r[k] = obj[k];
+
     return r[k], r;
   }, {});
 }
+
 /**
  * Merges passed settings object with default options.
  *
@@ -713,46 +652,30 @@ function sortKeys(obj) {
  * @param  {Object} settings
  * @return {Object}
  */
-
 function mergeOptions(defaults, settings) {
-  var options = Object.assign({}, defaults, settings); // `Object.assign` do not deeply merge objects, so we
+  var options = _extends({}, defaults, settings);
+
+  // `Object.assign` do not deeply merge objects, so we
   // have to do it manually for every nested object
   // in options. Although it does not look smart,
   // it's smaller and faster than some fancy
   // merging deep-merge algorithm script.
-
   if (settings.hasOwnProperty('classes')) {
-    options.classes = Object.assign({}, defaults.classes, settings.classes);
+    options.classes = _extends({}, defaults.classes, settings.classes);
 
     if (settings.classes.hasOwnProperty('direction')) {
-      options.classes.direction = Object.assign({}, defaults.classes.direction, settings.classes.direction);
-    }
-
-    if (settings.classes.hasOwnProperty('type')) {
-      options.classes.type = Object.assign({}, defaults.classes.type, settings.classes.type);
-    }
-
-    if (settings.classes.hasOwnProperty('slide')) {
-      options.classes.slide = Object.assign({}, defaults.classes.slide, settings.classes.slide);
-    }
-
-    if (settings.classes.hasOwnProperty('arrow')) {
-      options.classes.arrow = Object.assign({}, defaults.classes.arrow, settings.classes.arrow);
-    }
-
-    if (settings.classes.hasOwnProperty('nav')) {
-      options.classes.nav = Object.assign({}, defaults.classes.nav, settings.classes.nav);
+      options.classes.direction = _extends({}, defaults.classes.direction, settings.classes.direction);
     }
   }
 
   if (settings.hasOwnProperty('breakpoints')) {
-    options.breakpoints = Object.assign({}, defaults.breakpoints, settings.breakpoints);
+    options.breakpoints = _extends({}, defaults.breakpoints, settings.breakpoints);
   }
 
   return options;
 }
 
-var EventsBus = /*#__PURE__*/function () {
+var EventsBus = function () {
   /**
    * Construct a EventBus instance.
    *
@@ -760,12 +683,12 @@ var EventsBus = /*#__PURE__*/function () {
    */
   function EventsBus() {
     var events = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-
-    _classCallCheck(this, EventsBus);
+    classCallCheck(this, EventsBus);
 
     this.events = events;
     this.hop = events.hasOwnProperty;
   }
+
   /**
    * Adds listener to the specifed event.
    *
@@ -774,31 +697,31 @@ var EventsBus = /*#__PURE__*/function () {
    */
 
 
-  _createClass(EventsBus, [{
-    key: "on",
+  createClass(EventsBus, [{
+    key: 'on',
     value: function on(event, handler) {
       if (isArray(event)) {
         for (var i = 0; i < event.length; i++) {
           this.on(event[i], handler);
         }
+      }
 
-        return;
-      } // Create the event's object if not yet created
-
-
+      // Create the event's object if not yet created
       if (!this.hop.call(this.events, event)) {
         this.events[event] = [];
-      } // Add the handler to queue
+      }
 
+      // Add the handler to queue
+      var index = this.events[event].push(handler) - 1;
 
-      var index = this.events[event].push(handler) - 1; // Provide handle back for removal of event
-
+      // Provide handle back for removal of event
       return {
         remove: function remove() {
           delete this.events[event][index];
         }
       };
     }
+
     /**
      * Runs registered handlers for specified event.
      *
@@ -807,32 +730,29 @@ var EventsBus = /*#__PURE__*/function () {
      */
 
   }, {
-    key: "emit",
+    key: 'emit',
     value: function emit(event, context) {
       if (isArray(event)) {
         for (var i = 0; i < event.length; i++) {
           this.emit(event[i], context);
         }
+      }
 
-        return;
-      } // If the event doesn't exist, or there's no handlers in queue, just leave
-
-
+      // If the event doesn't exist, or there's no handlers in queue, just leave
       if (!this.hop.call(this.events, event)) {
         return;
-      } // Cycle through events queue, fire!
+      }
 
-
+      // Cycle through events queue, fire!
       this.events[event].forEach(function (item) {
         item(context || {});
       });
     }
   }]);
-
   return EventsBus;
 }();
 
-var Glide$1 = /*#__PURE__*/function () {
+var Glide = function () {
   /**
    * Construct glide.
    *
@@ -841,17 +761,18 @@ var Glide$1 = /*#__PURE__*/function () {
    */
   function Glide(selector) {
     var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-
-    _classCallCheck(this, Glide);
+    classCallCheck(this, Glide);
 
     this._c = {};
     this._t = [];
     this._e = new EventsBus();
+
     this.disabled = false;
     this.selector = selector;
     this.settings = mergeOptions(defaults, options);
     this.index = this.settings.startAt;
   }
+
   /**
    * Initializes glide.
    *
@@ -860,9 +781,9 @@ var Glide$1 = /*#__PURE__*/function () {
    */
 
 
-  _createClass(Glide, [{
-    key: "mount",
-    value: function mount$1() {
+  createClass(Glide, [{
+    key: 'mount',
+    value: function mount$$1() {
       var extensions = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
       this._e.emit('mount.before');
@@ -877,6 +798,7 @@ var Glide$1 = /*#__PURE__*/function () {
 
       return this;
     }
+
     /**
      * Collects an instance `translate` transformers.
      *
@@ -885,7 +807,7 @@ var Glide$1 = /*#__PURE__*/function () {
      */
 
   }, {
-    key: "mutate",
+    key: 'mutate',
     value: function mutate() {
       var transformers = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
 
@@ -897,6 +819,7 @@ var Glide$1 = /*#__PURE__*/function () {
 
       return this;
     }
+
     /**
      * Updates glide with specified settings.
      *
@@ -905,9 +828,10 @@ var Glide$1 = /*#__PURE__*/function () {
      */
 
   }, {
-    key: "update",
+    key: 'update',
     value: function update() {
       var settings = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
       this.settings = mergeOptions(this.settings, settings);
 
       if (settings.hasOwnProperty('startAt')) {
@@ -918,6 +842,7 @@ var Glide$1 = /*#__PURE__*/function () {
 
       return this;
     }
+
     /**
      * Change slide with specified pattern. A pattern must be in the special format:
      * `>` - Move one forward
@@ -925,20 +850,19 @@ var Glide$1 = /*#__PURE__*/function () {
      * `={i}` - Go to {i} zero-based slide (eq. '=1', will go to second slide)
      * `>>` - Rewinds to end (last slide)
      * `<<` - Rewinds to start (first slide)
-     * `|>` - Move one viewport forward
-     * `|<` - Move one viewport backward
      *
      * @param {String} pattern
      * @return {Glide}
      */
 
   }, {
-    key: "go",
+    key: 'go',
     value: function go(pattern) {
       this._c.Run.make(pattern);
 
       return this;
     }
+
     /**
      * Move track by specified distance.
      *
@@ -947,14 +871,14 @@ var Glide$1 = /*#__PURE__*/function () {
      */
 
   }, {
-    key: "move",
+    key: 'move',
     value: function move(distance) {
       this._c.Transition.disable();
-
       this._c.Move.make(distance);
 
       return this;
     }
+
     /**
      * Destroy instance and revert all changes done by this._c.
      *
@@ -962,12 +886,13 @@ var Glide$1 = /*#__PURE__*/function () {
      */
 
   }, {
-    key: "destroy",
+    key: 'destroy',
     value: function destroy() {
       this._e.emit('destroy');
 
       return this;
     }
+
     /**
      * Start instance autoplaying.
      *
@@ -976,7 +901,7 @@ var Glide$1 = /*#__PURE__*/function () {
      */
 
   }, {
-    key: "play",
+    key: 'play',
     value: function play() {
       var interval = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
 
@@ -988,6 +913,7 @@ var Glide$1 = /*#__PURE__*/function () {
 
       return this;
     }
+
     /**
      * Stop instance autoplaying.
      *
@@ -995,12 +921,13 @@ var Glide$1 = /*#__PURE__*/function () {
      */
 
   }, {
-    key: "pause",
+    key: 'pause',
     value: function pause() {
       this._e.emit('pause');
 
       return this;
     }
+
     /**
      * Sets glide into a idle status.
      *
@@ -1008,11 +935,13 @@ var Glide$1 = /*#__PURE__*/function () {
      */
 
   }, {
-    key: "disable",
+    key: 'disable',
     value: function disable() {
       this.disabled = true;
+
       return this;
     }
+
     /**
      * Sets glide into a active status.
      *
@@ -1020,11 +949,13 @@ var Glide$1 = /*#__PURE__*/function () {
      */
 
   }, {
-    key: "enable",
+    key: 'enable',
     value: function enable() {
       this.disabled = false;
+
       return this;
     }
+
     /**
      * Adds cuutom event listener with handler.
      *
@@ -1034,12 +965,13 @@ var Glide$1 = /*#__PURE__*/function () {
      */
 
   }, {
-    key: "on",
+    key: 'on',
     value: function on(event, handler) {
       this._e.on(event, handler);
 
       return this;
     }
+
     /**
      * Checks if glide is a precised type.
      *
@@ -1048,10 +980,11 @@ var Glide$1 = /*#__PURE__*/function () {
      */
 
   }, {
-    key: "isType",
+    key: 'isType',
     value: function isType(name) {
       return this.settings.type === name;
     }
+
     /**
      * Gets value of the core options.
      *
@@ -1059,10 +992,11 @@ var Glide$1 = /*#__PURE__*/function () {
      */
 
   }, {
-    key: "settings",
-    get: function get() {
+    key: 'settings',
+    get: function get$$1() {
       return this._o;
     }
+
     /**
      * Sets value of the core options.
      *
@@ -1070,13 +1004,14 @@ var Glide$1 = /*#__PURE__*/function () {
      * @return {Void}
      */
     ,
-    set: function set(o) {
+    set: function set$$1(o) {
       if (isObject(o)) {
         this._o = o;
       } else {
         warn('Options must be an `object` instance.');
       }
     }
+
     /**
      * Gets current index of the slider.
      *
@@ -1084,19 +1019,21 @@ var Glide$1 = /*#__PURE__*/function () {
      */
 
   }, {
-    key: "index",
-    get: function get() {
+    key: 'index',
+    get: function get$$1() {
       return this._i;
     }
+
     /**
      * Sets current index a slider.
      *
      * @return {Object}
      */
     ,
-    set: function set(i) {
+    set: function set$$1(i) {
       this._i = toInt(i);
     }
+
     /**
      * Gets type name of the slider.
      *
@@ -1104,10 +1041,11 @@ var Glide$1 = /*#__PURE__*/function () {
      */
 
   }, {
-    key: "type",
-    get: function get() {
+    key: 'type',
+    get: function get$$1() {
       return this.settings.type;
     }
+
     /**
      * Gets value of the idle status.
      *
@@ -1115,21 +1053,21 @@ var Glide$1 = /*#__PURE__*/function () {
      */
 
   }, {
-    key: "disabled",
-    get: function get() {
+    key: 'disabled',
+    get: function get$$1() {
       return this._d;
     }
+
     /**
      * Sets value of the idle status.
      *
      * @return {Boolean}
      */
     ,
-    set: function set(status) {
+    set: function set$$1(status) {
       this._d = !!status;
     }
   }]);
-
   return Glide;
 }();
 
@@ -1144,6 +1082,7 @@ function Run (Glide, Components, Events) {
       this._o = false;
     },
 
+
     /**
      * Makes glides running based on the passed moving schema.
      *
@@ -1153,11 +1092,16 @@ function Run (Glide, Components, Events) {
       var _this = this;
 
       if (!Glide.disabled) {
-        !Glide.settings.waitForTransition || Glide.disable();
+        Glide.disable();
+
         this.move = move;
+
         Events.emit('run.before', this.move);
+
         this.calculate();
+
         Events.emit('run', this.move);
+
         Components.Transition.after(function () {
           if (_this.isStart()) {
             Events.emit('run.start', _this.move);
@@ -1167,88 +1111,77 @@ function Run (Glide, Components, Events) {
             Events.emit('run.end', _this.move);
           }
 
-          if (_this.isOffset()) {
+          if (_this.isOffset('<') || _this.isOffset('>')) {
             _this._o = false;
+
             Events.emit('run.offset', _this.move);
           }
 
           Events.emit('run.after', _this.move);
+
           Glide.enable();
         });
       }
     },
 
+
     /**
      * Calculates current index based on defined move.
      *
-     * @return {Number|Undefined}
+     * @return {Void}
      */
     calculate: function calculate() {
       var move = this.move,
           length = this.length;
       var steps = move.steps,
-          direction = move.direction; // By default assume that size of view is equal to one slide
-
-      var viewSize = 1; // While direction is `=` we want jump to
-      // a specified index described in steps.
-
-      if (direction === '=') {
-        // Check if bound is true, 
-        // as we want to avoid whitespaces.
-        if (Glide.settings.bound && toInt(steps) > length) {
-          Glide.index = length;
-          return;
-        }
-
-        Glide.index = steps;
-        return;
-      } // When pattern is equal to `>>` we want
-      // fast forward to the last slide.
+          direction = move.direction;
 
 
-      if (direction === '>' && steps === '>') {
-        Glide.index = length;
-        return;
-      } // When pattern is equal to `<<` we want
-      // fast forward to the first slide.
+      var countableSteps = isNumber(toInt(steps)) && toInt(steps) !== 0;
 
+      switch (direction) {
+        case '>':
+          if (steps === '>') {
+            Glide.index = length;
+          } else if (this.isEnd()) {
+            if (!(Glide.isType('slider') && !Glide.settings.rewind)) {
+              this._o = true;
 
-      if (direction === '<' && steps === '<') {
-        Glide.index = 0;
-        return;
-      } // pagination movement
+              Glide.index = 0;
+            }
+          } else if (countableSteps) {
+            Glide.index += Math.min(length - Glide.index, -toInt(steps));
+          } else {
+            Glide.index++;
+          }
+          break;
 
+        case '<':
+          if (steps === '<') {
+            Glide.index = 0;
+          } else if (this.isStart()) {
+            if (!(Glide.isType('slider') && !Glide.settings.rewind)) {
+              this._o = true;
 
-      if (direction === '|') {
-        viewSize = Glide.settings.perView || 1;
-      } // we are moving forward
+              Glide.index = length;
+            }
+          } else if (countableSteps) {
+            Glide.index -= Math.min(Glide.index, toInt(steps));
+          } else {
+            Glide.index--;
+          }
+          break;
 
+        case '=':
+          Glide.index = steps;
+          break;
 
-      if (direction === '>' || direction === '|' && steps === '>') {
-        var index = calculateForwardIndex(viewSize);
-
-        if (index > length) {
-          this._o = true;
-        }
-
-        Glide.index = normalizeForwardIndex(index, viewSize);
-        return;
-      } // we are moving backward
-
-
-      if (direction === '<' || direction === '|' && steps === '<') {
-        var _index = calculateBackwardIndex(viewSize);
-
-        if (_index < 0) {
-          this._o = true;
-        }
-
-        Glide.index = normalizeBackwardIndex(_index, viewSize);
-        return;
+        default:
+          warn('Invalid direction pattern [' + direction + steps + '] has been used');
+          break;
       }
-
-      warn("Invalid direction pattern [".concat(direction).concat(steps, "] has been used"));
     },
+
 
     /**
      * Checks if we are on the first slide.
@@ -1256,8 +1189,9 @@ function Run (Glide, Components, Events) {
      * @return {Boolean}
      */
     isStart: function isStart() {
-      return Glide.index <= 0;
+      return Glide.index === 0;
     },
+
 
     /**
      * Checks if we are on the last slide.
@@ -1265,8 +1199,9 @@ function Run (Glide, Components, Events) {
      * @return {Boolean}
      */
     isEnd: function isEnd() {
-      return Glide.index >= this.length;
+      return Glide.index === this.length;
     },
+
 
     /**
      * Checks if we are making a offset run.
@@ -1274,145 +1209,10 @@ function Run (Glide, Components, Events) {
      * @param {String} direction
      * @return {Boolean}
      */
-    isOffset: function isOffset() {
-      var direction = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : undefined;
-
-      if (!direction) {
-        return this._o;
-      }
-
-      if (!this._o) {
-        return false;
-      } // did we view to the right?
-
-
-      if (direction === '|>') {
-        return this.move.direction === '|' && this.move.steps === '>';
-      } // did we view to the left?
-
-
-      if (direction === '|<') {
-        return this.move.direction === '|' && this.move.steps === '<';
-      }
-
-      return this.move.direction === direction;
-    },
-
-    /**
-     * Checks if bound mode is active
-     *
-     * @return {Boolean}
-     */
-    isBound: function isBound() {
-      return Glide.isType('slider') && Glide.settings.focusAt !== 'center' && Glide.settings.bound;
+    isOffset: function isOffset(direction) {
+      return this._o && this.move.direction === direction;
     }
   };
-  /**
-   * Returns index value to move forward/to the right
-   *
-   * @param viewSize
-   * @returns {Number}
-   */
-
-  function calculateForwardIndex(viewSize) {
-    var index = Glide.index;
-
-    if (Glide.isType('carousel')) {
-      return index + viewSize;
-    }
-
-    return index + (viewSize - index % viewSize);
-  }
-  /**
-   * Normalizes the given forward index based on glide settings, preventing it to exceed certain boundaries
-   *
-   * @param index
-   * @param length
-   * @param viewSize
-   * @returns {Number}
-   */
-
-
-  function normalizeForwardIndex(index, viewSize) {
-    var length = Run.length;
-
-    if (index <= length) {
-      return index;
-    }
-
-    if (Glide.isType('carousel')) {
-      return index - (length + 1);
-    }
-
-    if (Glide.settings.rewind) {
-      // bound does funny things with the length, therefor we have to be certain
-      // that we are on the last possible index value given by bound
-      if (Run.isBound() && !Run.isEnd()) {
-        return length;
-      }
-
-      return 0;
-    }
-
-    if (Run.isBound()) {
-      return length;
-    }
-
-    return Math.floor(length / viewSize) * viewSize;
-  }
-  /**
-   * Calculates index value to move backward/to the left
-   *
-   * @param viewSize
-   * @returns {Number}
-   */
-
-
-  function calculateBackwardIndex(viewSize) {
-    var index = Glide.index;
-
-    if (Glide.isType('carousel')) {
-      return index - viewSize;
-    } // ensure our back navigation results in the same index as a forward navigation
-    // to experience a homogeneous paging
-
-
-    var view = Math.ceil(index / viewSize);
-    return (view - 1) * viewSize;
-  }
-  /**
-   * Normalizes the given backward index based on glide settings, preventing it to exceed certain boundaries
-   *
-   * @param index
-   * @param length
-   * @param viewSize
-   * @returns {*}
-   */
-
-
-  function normalizeBackwardIndex(index, viewSize) {
-    var length = Run.length;
-
-    if (index >= 0) {
-      return index;
-    }
-
-    if (Glide.isType('carousel')) {
-      return index + (length + 1);
-    }
-
-    if (Glide.settings.rewind) {
-      // bound does funny things with the length, therefor we have to be certain
-      // that we are on first possible index value before we to rewind to the length given by bound
-      if (Run.isBound() && Run.isStart()) {
-        return length;
-      }
-
-      return Math.floor(length / viewSize) * viewSize;
-    }
-
-    return 0;
-  }
 
   define(Run, 'move', {
     /**
@@ -1424,6 +1224,7 @@ function Run (Glide, Components, Events) {
       return this._m;
     },
 
+
     /**
      * Sets value of the move schema.
      *
@@ -1431,12 +1232,14 @@ function Run (Glide, Components, Events) {
      */
     set: function set(value) {
       var step = value.substr(1);
+
       this._m = {
         direction: value.substr(0, 1),
         steps: step ? toInt(step) ? toInt(step) : step : 0
       };
     }
   });
+
   define(Run, 'length', {
     /**
      * Gets value of the running distance based
@@ -1446,17 +1249,20 @@ function Run (Glide, Components, Events) {
      */
     get: function get() {
       var settings = Glide.settings;
-      var length = Components.Html.slides.length; // If the `bound` option is active, a maximum running distance should be
+      var length = Components.Html.slides.length;
+
+      // If the `bound` option is acitve, a maximum running distance should be
       // reduced by `perView` and `focusAt` settings. Running distance
       // should end before creating an empty space after instance.
 
-      if (this.isBound()) {
+      if (Glide.isType('slider') && settings.focusAt !== 'center' && settings.bound) {
         return length - 1 - (toInt(settings.perView) - 1) + toInt(settings.focusAt);
       }
 
       return length - 1;
     }
   });
+
   define(Run, 'offset', {
     /**
      * Gets status of the offsetting flag.
@@ -1467,6 +1273,7 @@ function Run (Glide, Components, Events) {
       return this._o;
     }
   });
+
   return Run;
 }
 
@@ -1490,9 +1297,11 @@ function now() {
  *
  * @see https://github.com/jashkenas/underscore
  */
-
 function throttle(func, wait, options) {
-  var timeout, context, args, result;
+  var timeout = void 0,
+      context = void 0,
+      args = void 0,
+      result = void 0;
   var previous = 0;
   if (!options) options = {};
 
@@ -1509,20 +1318,17 @@ function throttle(func, wait, options) {
     var remaining = wait - (at - previous);
     context = this;
     args = arguments;
-
     if (remaining <= 0 || remaining > wait) {
       if (timeout) {
         clearTimeout(timeout);
         timeout = null;
       }
-
       previous = at;
       result = func.apply(context, args);
       if (!timeout) context = args = null;
     } else if (!timeout && options.trailing !== false) {
       timeout = setTimeout(later, remaining);
     }
-
     return result;
   };
 
@@ -1539,6 +1345,7 @@ var MARGIN_TYPE = {
   ltr: ['marginLeft', 'marginRight'],
   rtl: ['marginRight', 'marginLeft']
 };
+
 function Gaps (Glide, Components, Events) {
   var Gaps = {
     /**
@@ -1554,18 +1361,19 @@ function Gaps (Glide, Components, Events) {
         var direction = Components.Direction.value;
 
         if (i !== 0) {
-          style[MARGIN_TYPE[direction][0]] = "".concat(this.value / 2, "px");
+          style[MARGIN_TYPE[direction][0]] = this.value / 2 + 'px';
         } else {
           style[MARGIN_TYPE[direction][0]] = '';
         }
 
         if (i !== slides.length - 1) {
-          style[MARGIN_TYPE[direction][1]] = "".concat(this.value / 2, "px");
+          style[MARGIN_TYPE[direction][1]] = this.value / 2 + 'px';
         } else {
           style[MARGIN_TYPE[direction][1]] = '';
         }
       }
     },
+
 
     /**
      * Removes gaps from the slides.
@@ -1576,11 +1384,13 @@ function Gaps (Glide, Components, Events) {
     remove: function remove(slides) {
       for (var i = 0, len = slides.length; i < len; i++) {
         var style = slides[i].style;
+
         style.marginLeft = '';
         style.marginRight = '';
       }
     }
   };
+
   define(Gaps, 'value', {
     /**
      * Gets value of the gap.
@@ -1591,17 +1401,19 @@ function Gaps (Glide, Components, Events) {
       return toInt(Glide.settings.gap);
     }
   });
+
   define(Gaps, 'grow', {
     /**
-     * Gets additional dimensions value caused by gaps.
+     * Gets additional dimentions value caused by gaps.
      * Used to increase width of the slides wrapper.
      *
      * @returns {Number}
      */
     get: function get() {
-      return Gaps.value * Components.Sizes.length;
+      return Gaps.value * (Components.Sizes.length - 1);
     }
   });
+
   define(Gaps, 'reductor', {
     /**
      * Gets reduction value caused by gaps.
@@ -1611,26 +1423,28 @@ function Gaps (Glide, Components, Events) {
      */
     get: function get() {
       var perView = Glide.settings.perView;
+
       return Gaps.value * (perView - 1) / perView;
     }
   });
+
   /**
    * Apply calculated gaps:
    * - after building, so slides (including clones) will receive proper margins
    * - on updating via API, to recalculate gaps with new options
    */
-
   Events.on(['build.after', 'update'], throttle(function () {
     Gaps.apply(Components.Html.wrapper.children);
   }, 30));
+
   /**
    * Remove gaps:
    * - on destroying to bring markup to its inital state
    */
-
   Events.on('destroy', function () {
     Gaps.remove(Components.Html.wrapper.children);
   });
+
   return Gaps;
 }
 
@@ -1656,13 +1470,13 @@ function siblings(node) {
 
   return [];
 }
+
 /**
  * Checks if passed node exist and is a valid element.
  *
  * @param  {Element} node
  * @return {Boolean}
  */
-
 function exist(node) {
   if (node && node instanceof window.HTMLElement) {
     return true;
@@ -1672,7 +1486,8 @@ function exist(node) {
 }
 
 var TRACK_SELECTOR = '[data-glide-el="track"]';
-function Html (Glide, Components, Events) {
+
+function Html (Glide, Components) {
   var Html = {
     /**
      * Setup slider HTML nodes.
@@ -1682,18 +1497,12 @@ function Html (Glide, Components, Events) {
     mount: function mount() {
       this.root = Glide.selector;
       this.track = this.root.querySelector(TRACK_SELECTOR);
-      this.collectSlides();
-    },
-
-    /**
-     * Collect slides
-     */
-    collectSlides: function collectSlides() {
       this.slides = Array.prototype.slice.call(this.wrapper.children).filter(function (slide) {
-        return !slide.classList.contains(Glide.settings.classes.slide.clone);
+        return !slide.classList.contains(Glide.settings.classes.cloneSlide);
       });
     }
   };
+
   define(Html, 'root', {
     /**
      * Gets node of the glide main element.
@@ -1703,6 +1512,7 @@ function Html (Glide, Components, Events) {
     get: function get() {
       return Html._r;
     },
+
 
     /**
      * Sets node of the glide main element.
@@ -1721,6 +1531,7 @@ function Html (Glide, Components, Events) {
       }
     }
   });
+
   define(Html, 'track', {
     /**
      * Gets node of the glide track with slides.
@@ -1731,6 +1542,7 @@ function Html (Glide, Components, Events) {
       return Html._t;
     },
 
+
     /**
      * Sets node of the glide track with slides.
      *
@@ -1740,10 +1552,11 @@ function Html (Glide, Components, Events) {
       if (exist(t)) {
         Html._t = t;
       } else {
-        warn("Could not find track element. Please use ".concat(TRACK_SELECTOR, " attribute."));
+        warn('Could not find track element. Please use ' + TRACK_SELECTOR + ' attribute.');
       }
     }
   });
+
   define(Html, 'wrapper', {
     /**
      * Gets node of the slides wrapper.
@@ -1754,13 +1567,7 @@ function Html (Glide, Components, Events) {
       return Html.track.children[0];
     }
   });
-  /**
-   * Add/remove/reorder dynamic slides
-   */
 
-  Events.on('update', function () {
-    Html.collectSlides();
-  });
   return Html;
 }
 
@@ -1775,6 +1582,7 @@ function Peek (Glide, Components, Events) {
       this.value = Glide.settings.peek;
     }
   };
+
   define(Peek, 'value', {
     /**
      * Gets value of the peek.
@@ -1784,6 +1592,7 @@ function Peek (Glide, Components, Events) {
     get: function get() {
       return Peek._v;
     },
+
 
     /**
      * Sets value of the peek.
@@ -1802,6 +1611,7 @@ function Peek (Glide, Components, Events) {
       Peek._v = value;
     }
   });
+
   define(Peek, 'reductor', {
     /**
      * Gets reduction value caused by peek.
@@ -1819,14 +1629,15 @@ function Peek (Glide, Components, Events) {
       return value * 2 / perView;
     }
   });
+
   /**
    * Recalculate peeking sizes on:
    * - when resizing window to update to proper percents
    */
-
   Events.on(['resize', 'update'], function () {
     Peek.mount();
   });
+
   return Peek;
 }
 
@@ -1841,6 +1652,7 @@ function Move (Glide, Components, Events) {
       this._o = 0;
     },
 
+
     /**
      * Calculates a movement value based on passed offset and currently active index.
      *
@@ -1851,10 +1663,13 @@ function Move (Glide, Components, Events) {
       var _this = this;
 
       var offset = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+
       this.offset = offset;
+
       Events.emit('move', {
         movement: this.value
       });
+
       Components.Transition.after(function () {
         Events.emit('move.after', {
           movement: _this.value
@@ -1862,6 +1677,7 @@ function Move (Glide, Components, Events) {
       });
     }
   };
+
   define(Move, 'offset', {
     /**
      * Gets an offset value used to modify current translate.
@@ -1872,6 +1688,7 @@ function Move (Glide, Components, Events) {
       return Move._o;
     },
 
+
     /**
      * Sets an offset value used to modify current translate.
      *
@@ -1881,6 +1698,7 @@ function Move (Glide, Components, Events) {
       Move._o = !isUndefined(value) ? toInt(value) : 0;
     }
   });
+
   define(Move, 'translate', {
     /**
      * Gets a raw movement value.
@@ -1891,6 +1709,7 @@ function Move (Glide, Components, Events) {
       return Components.Sizes.slideWidth * Glide.index;
     }
   });
+
   define(Move, 'value', {
     /**
      * Gets an actual movement value corrected by offset.
@@ -1908,27 +1727,28 @@ function Move (Glide, Components, Events) {
       return translate - offset;
     }
   });
+
   /**
    * Make movement to proper slide on:
    * - before build, so glide will start at `startAt` index
    * - on each standard run to move to newly calculated index
    */
-
   Events.on(['build.before', 'run'], function () {
     Move.make();
   });
+
   return Move;
 }
 
 function Sizes (Glide, Components, Events) {
   var Sizes = {
     /**
-     * Setups dimensions of slides.
+     * Setups dimentions of slides.
      *
      * @return {Void}
      */
     setupSlides: function setupSlides() {
-      var width = "".concat(this.slideWidth, "px");
+      var width = this.slideWidth + 'px';
       var slides = Components.Html.slides;
 
       for (var i = 0; i < slides.length; i++) {
@@ -1936,14 +1756,16 @@ function Sizes (Glide, Components, Events) {
       }
     },
 
+
     /**
-     * Setups dimensions of slides wrapper.
+     * Setups dimentions of slides wrapper.
      *
      * @return {Void}
      */
-    setupWrapper: function setupWrapper() {
-      Components.Html.wrapper.style.width = "".concat(this.wrapperSize, "px");
+    setupWrapper: function setupWrapper(dimention) {
+      Components.Html.wrapper.style.width = this.wrapperSize + 'px';
     },
+
 
     /**
      * Removes applied styles from HTML elements.
@@ -1960,6 +1782,7 @@ function Sizes (Glide, Components, Events) {
       Components.Html.wrapper.style.width = '';
     }
   };
+
   define(Sizes, 'length', {
     /**
      * Gets count number of the slides.
@@ -1970,16 +1793,18 @@ function Sizes (Glide, Components, Events) {
       return Components.Html.slides.length;
     }
   });
+
   define(Sizes, 'width', {
     /**
-     * Gets width value of the slider (visible area).
+     * Gets width value of the glide.
      *
      * @return {Number}
      */
     get: function get() {
-      return Components.Html.track.offsetWidth;
+      return Components.Html.root.offsetWidth;
     }
   });
+
   define(Sizes, 'wrapperSize', {
     /**
      * Gets size of the slides wrapper.
@@ -1990,9 +1815,10 @@ function Sizes (Glide, Components, Events) {
       return Sizes.slideWidth * Sizes.length + Components.Gaps.grow + Components.Clones.grow;
     }
   });
+
   define(Sizes, 'slideWidth', {
     /**
-     * Gets width value of a single slide.
+     * Gets width value of the single slide.
      *
      * @return {Number}
      */
@@ -2000,25 +1826,26 @@ function Sizes (Glide, Components, Events) {
       return Sizes.width / Glide.settings.perView - Components.Peek.reductor - Components.Gaps.reductor;
     }
   });
+
   /**
    * Apply calculated glide's dimensions:
-   * - before building, so other dimensions (e.g. translate) will be calculated propertly
+   * - before building, so other dimentions (e.g. translate) will be calculated propertly
    * - when resizing window to recalculate sildes dimensions
    * - on updating via API, to calculate dimensions based on new options
    */
-
   Events.on(['build.before', 'resize', 'update'], function () {
     Sizes.setupSlides();
     Sizes.setupWrapper();
   });
+
   /**
    * Remove calculated glide's dimensions:
    * - on destoting to bring markup to its inital state
    */
-
   Events.on('destroy', function () {
     Sizes.remove();
   });
+
   return Sizes;
 }
 
@@ -2032,10 +1859,13 @@ function Build (Glide, Components, Events) {
      */
     mount: function mount() {
       Events.emit('build.before');
+
       this.typeClass();
       this.activeClass();
+
       Events.emit('build.after');
     },
+
 
     /**
      * Adds `type` class to the glide element.
@@ -2043,8 +1873,9 @@ function Build (Glide, Components, Events) {
      * @return {Void}
      */
     typeClass: function typeClass() {
-      Components.Html.root.classList.add(Glide.settings.classes.type[Glide.settings.type]);
+      Components.Html.root.classList.add(Glide.settings.classes[Glide.settings.type]);
     },
+
 
     /**
      * Sets active class to current slide.
@@ -2056,12 +1887,14 @@ function Build (Glide, Components, Events) {
       var slide = Components.Html.slides[Glide.index];
 
       if (slide) {
-        slide.classList.add(classes.slide.active);
+        slide.classList.add(classes.activeSlide);
+
         siblings(slide).forEach(function (sibling) {
-          sibling.classList.remove(classes.slide.active);
+          sibling.classList.remove(classes.activeSlide);
         });
       }
     },
+
 
     /**
      * Removes HTML classes applied at building.
@@ -2069,41 +1902,42 @@ function Build (Glide, Components, Events) {
      * @return {Void}
      */
     removeClasses: function removeClasses() {
-      var _Glide$settings$class = Glide.settings.classes,
-          type = _Glide$settings$class.type,
-          slide = _Glide$settings$class.slide;
-      Components.Html.root.classList.remove(type[Glide.settings.type]);
+      var classes = Glide.settings.classes;
+
+      Components.Html.root.classList.remove(classes[Glide.settings.type]);
+
       Components.Html.slides.forEach(function (sibling) {
-        sibling.classList.remove(slide.active);
+        sibling.classList.remove(classes.activeSlide);
       });
     }
   };
+
   /**
    * Clear building classes:
    * - on destroying to bring HTML to its initial state
    * - on updating to remove classes before remounting component
    */
-
   Events.on(['destroy', 'update'], function () {
     Build.removeClasses();
   });
+
   /**
    * Remount component:
-   * - on resizing of the window to calculate new dimensions
+   * - on resizing of the window to calculate new dimentions
    * - on updating settings via API
    */
-
   Events.on(['resize', 'update'], function () {
     Build.mount();
   });
+
   /**
    * Swap active class of current slide:
    * - after each move to the new index
    */
-
   Events.on('move.after', function () {
     Build.activeClass();
   });
+
   return Build;
 }
 
@@ -2120,44 +1954,46 @@ function Clones (Glide, Components, Events) {
       }
     },
 
+
     /**
      * Collect clones with pattern.
      *
-     * @return {[]}
+     * @return {Void}
      */
     collect: function collect() {
       var items = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
       var slides = Components.Html.slides;
       var _Glide$settings = Glide.settings,
           perView = _Glide$settings.perView,
-          classes = _Glide$settings.classes,
-          cloningRatio = _Glide$settings.cloningRatio;
+          classes = _Glide$settings.classes;
 
-      if (slides.length !== 0) {
-        var peekIncrementer = +!!Glide.settings.peek;
-        var cloneCount = perView + peekIncrementer + Math.round(perView / 2);
-        var append = slides.slice(0, cloneCount).reverse();
-        var prepend = slides.slice(cloneCount * -1);
 
-        for (var r = 0; r < Math.max(cloningRatio, Math.floor(perView / slides.length)); r++) {
-          for (var i = 0; i < append.length; i++) {
-            var clone = append[i].cloneNode(true);
-            clone.classList.add(classes.slide.clone);
-            items.push(clone);
-          }
+      var peekIncrementer = +!!Glide.settings.peek;
+      var part = perView + peekIncrementer;
+      var start = slides.slice(0, part);
+      var end = slides.slice(-part);
 
-          for (var _i = 0; _i < prepend.length; _i++) {
-            var _clone = prepend[_i].cloneNode(true);
+      for (var r = 0; r < Math.max(1, Math.floor(perView / slides.length)); r++) {
+        for (var i = 0; i < start.length; i++) {
+          var clone = start[i].cloneNode(true);
 
-            _clone.classList.add(classes.slide.clone);
+          clone.classList.add(classes.cloneSlide);
 
-            items.unshift(_clone);
-          }
+          items.push(clone);
+        }
+
+        for (var _i = 0; _i < end.length; _i++) {
+          var _clone = end[_i].cloneNode(true);
+
+          _clone.classList.add(classes.cloneSlide);
+
+          items.unshift(_clone);
         }
       }
 
       return items;
     },
+
 
     /**
      * Append cloned slides with generated pattern.
@@ -2169,10 +2005,12 @@ function Clones (Glide, Components, Events) {
       var _Components$Html = Components.Html,
           wrapper = _Components$Html.wrapper,
           slides = _Components$Html.slides;
+
+
       var half = Math.floor(items.length / 2);
       var prepend = items.slice(0, half).reverse();
-      var append = items.slice(half * -1).reverse();
-      var width = "".concat(Components.Sizes.slideWidth, "px");
+      var append = items.slice(half, items.length);
+      var width = Components.Sizes.slideWidth + 'px';
 
       for (var i = 0; i < append.length; i++) {
         wrapper.appendChild(append[i]);
@@ -2187,6 +2025,7 @@ function Clones (Glide, Components, Events) {
       }
     },
 
+
     /**
      * Remove all cloned slides.
      *
@@ -2195,14 +2034,16 @@ function Clones (Glide, Components, Events) {
     remove: function remove() {
       var items = this.items;
 
+
       for (var i = 0; i < items.length; i++) {
         Components.Html.wrapper.removeChild(items[i]);
       }
     }
   };
+
   define(Clones, 'grow', {
     /**
-     * Gets additional dimensions value caused by clones.
+     * Gets additional dimentions value caused by clones.
      *
      * @return {Number}
      */
@@ -2210,48 +2051,49 @@ function Clones (Glide, Components, Events) {
       return (Components.Sizes.slideWidth + Components.Gaps.value) * Clones.items.length;
     }
   });
+
   /**
    * Append additional slide's clones:
    * - while glide's type is `carousel`
    */
-
   Events.on('update', function () {
     Clones.remove();
     Clones.mount();
     Clones.append();
   });
+
   /**
    * Append additional slide's clones:
    * - while glide's type is `carousel`
    */
-
   Events.on('build.before', function () {
     if (Glide.isType('carousel')) {
       Clones.append();
     }
   });
+
   /**
    * Remove clones HTMLElements:
    * - on destroying, to bring HTML to its initial state
    */
-
   Events.on('destroy', function () {
     Clones.remove();
   });
+
   return Clones;
 }
 
-var EventsBinder = /*#__PURE__*/function () {
+var EventsBinder = function () {
   /**
    * Construct a EventsBinder instance.
    */
   function EventsBinder() {
     var listeners = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-
-    _classCallCheck(this, EventsBinder);
+    classCallCheck(this, EventsBinder);
 
     this.listeners = listeners;
   }
+
   /**
    * Adds events listeners to arrows HTML elements.
    *
@@ -2263,8 +2105,8 @@ var EventsBinder = /*#__PURE__*/function () {
    */
 
 
-  _createClass(EventsBinder, [{
-    key: "on",
+  createClass(EventsBinder, [{
+    key: 'on',
     value: function on(events, el, closure) {
       var capture = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
 
@@ -2274,9 +2116,11 @@ var EventsBinder = /*#__PURE__*/function () {
 
       for (var i = 0; i < events.length; i++) {
         this.listeners[events[i]] = closure;
+
         el.addEventListener(events[i], this.listeners[events[i]], capture);
       }
     }
+
     /**
      * Removes event listeners from arrows HTML elements.
      *
@@ -2287,7 +2131,7 @@ var EventsBinder = /*#__PURE__*/function () {
      */
 
   }, {
-    key: "off",
+    key: 'off',
     value: function off(events, el) {
       var capture = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
 
@@ -2299,6 +2143,7 @@ var EventsBinder = /*#__PURE__*/function () {
         el.removeEventListener(events[i], this.listeners[events[i]], capture);
       }
     }
+
     /**
      * Destroy collected listeners.
      *
@@ -2306,12 +2151,11 @@ var EventsBinder = /*#__PURE__*/function () {
      */
 
   }, {
-    key: "destroy",
+    key: 'destroy',
     value: function destroy() {
       delete this.listeners;
     }
   }]);
-
   return EventsBinder;
 }();
 
@@ -2322,6 +2166,7 @@ function Resize (Glide, Components, Events) {
    * @type {EventsBinder}
    */
   var Binder = new EventsBinder();
+
   var Resize = {
     /**
      * Initializes window bindings.
@@ -2329,6 +2174,7 @@ function Resize (Glide, Components, Events) {
     mount: function mount() {
       this.bind();
     },
+
 
     /**
      * Binds `rezsize` listener to the window.
@@ -2342,6 +2188,7 @@ function Resize (Glide, Components, Events) {
       }, Glide.settings.throttle));
     },
 
+
     /**
      * Unbinds listeners from the window.
      *
@@ -2351,15 +2198,16 @@ function Resize (Glide, Components, Events) {
       Binder.off('resize', window);
     }
   };
+
   /**
    * Remove bindings from window:
    * - on destroying, to remove added EventListener
    */
-
   Events.on('destroy', function () {
     Resize.unbind();
     Binder.destroy();
   });
+
   return Resize;
 }
 
@@ -2369,6 +2217,7 @@ var FLIPED_MOVEMENTS = {
   '<': '>',
   '=': '='
 };
+
 function Direction (Glide, Components, Events) {
   var Direction = {
     /**
@@ -2379,6 +2228,7 @@ function Direction (Glide, Components, Events) {
     mount: function mount() {
       this.value = Glide.settings.direction;
     },
+
 
     /**
      * Resolves pattern based on direction value
@@ -2396,6 +2246,7 @@ function Direction (Glide, Components, Events) {
       return pattern;
     },
 
+
     /**
      * Checks value of direction mode.
      *
@@ -2406,6 +2257,7 @@ function Direction (Glide, Components, Events) {
       return this.value === direction;
     },
 
+
     /**
      * Applies direction class to the root HTML element.
      *
@@ -2414,6 +2266,7 @@ function Direction (Glide, Components, Events) {
     addClass: function addClass() {
       Components.Html.root.classList.add(Glide.settings.classes.direction[this.value]);
     },
+
 
     /**
      * Removes direction class from the root HTML element.
@@ -2424,6 +2277,7 @@ function Direction (Glide, Components, Events) {
       Components.Html.root.classList.remove(Glide.settings.classes.direction[this.value]);
     }
   };
+
   define(Direction, 'value', {
     /**
      * Gets value of the direction.
@@ -2433,6 +2287,7 @@ function Direction (Glide, Components, Events) {
     get: function get() {
       return Direction._v;
     },
+
 
     /**
      * Sets value of the direction.
@@ -2448,32 +2303,33 @@ function Direction (Glide, Components, Events) {
       }
     }
   });
+
   /**
    * Clear direction class:
    * - on destroy to bring HTML to its initial state
    * - on update to remove class before reappling bellow
    */
-
   Events.on(['destroy', 'update'], function () {
     Direction.removeClass();
   });
+
   /**
    * Remount component:
    * - on update to reflect changes in direction value
    */
-
   Events.on('update', function () {
     Direction.mount();
   });
+
   /**
    * Apply direction class:
    * - before building to apply class for the first time
    * - on updating to reapply direction class that may changed
    */
-
   Events.on(['build.before', 'update'], function () {
     Direction.addClass();
   });
+
   return Direction;
 }
 
@@ -2518,8 +2374,7 @@ function Gap (Glide, Components) {
      * @return {Number}
      */
     modify: function modify(translate) {
-      var multiplier = Math.floor(translate / Components.Sizes.slideWidth);
-      return translate + Components.Gaps.value * multiplier;
+      return translate + Components.Gaps.value * Glide.index;
     }
   };
 }
@@ -2552,7 +2407,6 @@ function Grow (Glide, Components) {
  * @param  {Object} Components
  * @return {Object}
  */
-
 function Peeking (Glide, Components) {
   return {
     /**
@@ -2614,7 +2468,6 @@ function Focusing (Glide, Components) {
  * @param  {Object} Components
  * @return {Object}
  */
-
 function mutator (Glide, Components, Events) {
   /**
    * Merge instance transformers with collection of default transformers.
@@ -2624,6 +2477,7 @@ function mutator (Glide, Components, Events) {
    * @type {Array}
    */
   var TRANSFORMERS = [Gap, Grow, Peeking, Focusing].concat(Glide._t, [Rtl]);
+
   return {
     /**
      * Piplines translate value with registered transformers.
@@ -2657,13 +2511,10 @@ function Translate (Glide, Components, Events) {
      */
     set: function set(value) {
       var transform = mutator(Glide, Components).mutate(value);
-      var translate3d = "translate3d(".concat(-1 * transform, "px, 0px, 0px)");
-      Components.Html.wrapper.style.mozTransform = translate3d; // needed for supported Firefox 10-15
 
-      Components.Html.wrapper.style.webkitTransform = translate3d; // needed for supported Chrome 10-35, Safari 5.1-8, and Opera 15-22
-
-      Components.Html.wrapper.style.transform = translate3d;
+      Components.Html.wrapper.style.transform = 'translate3d(' + -1 * transform + 'px, 0px, 0px)';
     },
+
 
     /**
      * Removes value of translate from HTML element.
@@ -2672,64 +2523,50 @@ function Translate (Glide, Components, Events) {
      */
     remove: function remove() {
       Components.Html.wrapper.style.transform = '';
-    },
-
-    /**
-     * @return {number}
-     */
-    getStartIndex: function getStartIndex() {
-      var length = Components.Sizes.length;
-      var index = Glide.index;
-      var perView = Glide.settings.perView;
-
-      if (Components.Run.isOffset('>') || Components.Run.isOffset('|>')) {
-        return length + (index - perView);
-      } // "modulo length" converts an index that equals length to zero
-
-
-      return (index + perView) % length;
-    },
-
-    /**
-     * @return {number}
-     */
-    getTravelDistance: function getTravelDistance() {
-      var travelDistance = Components.Sizes.slideWidth * Glide.settings.perView;
-
-      if (Components.Run.isOffset('>') || Components.Run.isOffset('|>')) {
-        // reverse travel distance so that we don't have to change subtract operations
-        return travelDistance * -1;
-      }
-
-      return travelDistance;
     }
   };
+
   /**
    * Set new translate value:
    * - on move to reflect index change
    * - on updating via API to reflect possible changes in options
    */
-
   Events.on('move', function (context) {
-    if (!Glide.isType('carousel') || !Components.Run.isOffset()) {
-      return Translate.set(context.movement);
+    var gap = Components.Gaps.value;
+    var length = Components.Sizes.length;
+    var width = Components.Sizes.slideWidth;
+
+    if (Glide.isType('carousel') && Components.Run.isOffset('<')) {
+      Components.Transition.after(function () {
+        Events.emit('translate.jump');
+
+        Translate.set(width * (length - 1));
+      });
+
+      return Translate.set(-width - gap * length);
     }
 
-    Components.Transition.after(function () {
-      Events.emit('translate.jump');
-      Translate.set(Components.Sizes.slideWidth * Glide.index);
-    });
-    var startWidth = Components.Sizes.slideWidth * Components.Translate.getStartIndex();
-    return Translate.set(startWidth - Components.Translate.getTravelDistance());
+    if (Glide.isType('carousel') && Components.Run.isOffset('>')) {
+      Components.Transition.after(function () {
+        Events.emit('translate.jump');
+
+        Translate.set(0);
+      });
+
+      return Translate.set(width * length + gap * length);
+    }
+
+    return Translate.set(context.movement);
   });
+
   /**
    * Remove translate:
    * - on destroying to bring markup to its inital state
    */
-
   Events.on('destroy', function () {
     Translate.remove();
   });
+
   return Translate;
 }
 
@@ -2741,6 +2578,7 @@ function Transition (Glide, Components, Events) {
    * @type {Boolean}
    */
   var disabled = false;
+
   var Transition = {
     /**
      * Composes string of the CSS transition.
@@ -2752,11 +2590,12 @@ function Transition (Glide, Components, Events) {
       var settings = Glide.settings;
 
       if (!disabled) {
-        return "".concat(property, " ").concat(this.duration, "ms ").concat(settings.animationTimingFunc);
+        return property + ' ' + this.duration + 'ms ' + settings.animationTimingFunc;
       }
 
-      return "".concat(property, " 0ms ").concat(settings.animationTimingFunc);
+      return property + ' 0ms ' + settings.animationTimingFunc;
     },
+
 
     /**
      * Sets value of transition on HTML element.
@@ -2766,8 +2605,10 @@ function Transition (Glide, Components, Events) {
      */
     set: function set() {
       var property = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'transform';
+
       Components.Html.wrapper.style.transition = this.compose(property);
     },
+
 
     /**
      * Removes value of transition from HTML element.
@@ -2777,6 +2618,7 @@ function Transition (Glide, Components, Events) {
     remove: function remove() {
       Components.Html.wrapper.style.transition = '';
     },
+
 
     /**
      * Runs callback after animation.
@@ -2790,6 +2632,7 @@ function Transition (Glide, Components, Events) {
       }, this.duration);
     },
 
+
     /**
      * Enable transition.
      *
@@ -2797,8 +2640,10 @@ function Transition (Glide, Components, Events) {
      */
     enable: function enable() {
       disabled = false;
+
       this.set();
     },
+
 
     /**
      * Disable transition.
@@ -2807,9 +2652,11 @@ function Transition (Glide, Components, Events) {
      */
     disable: function disable() {
       disabled = true;
+
       this.set();
     }
   };
+
   define(Transition, 'duration', {
     /**
      * Gets duration of the transition based
@@ -2827,40 +2674,41 @@ function Transition (Glide, Components, Events) {
       return settings.animationDuration;
     }
   });
+
   /**
    * Set transition `style` value:
    * - on each moving, because it may be cleared by offset move
    */
-
   Events.on('move', function () {
     Transition.set();
   });
+
   /**
    * Disable transition:
    * - before initial build to avoid transitioning from `0` to `startAt` index
-   * - while resizing window and recalculating dimensions
+   * - while resizing window and recalculating dimentions
    * - on jumping from offset transition at start and end edges in `carousel` type
    */
-
   Events.on(['build.before', 'resize', 'translate.jump'], function () {
     Transition.disable();
   });
+
   /**
    * Enable transition:
    * - on each running, because it may be disabled by offset move
    */
-
   Events.on('run', function () {
     Transition.enable();
   });
+
   /**
    * Remove transition:
    * - on destroying to bring markup to its inital state
    */
-
   Events.on('destroy', function () {
     Transition.remove();
   });
+
   return Transition;
 }
 
@@ -2870,6 +2718,7 @@ function Transition (Glide, Components, Events) {
  *
  * @see https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md#feature-detection
  */
+
 var supportsPassive = false;
 
 try {
@@ -2878,6 +2727,7 @@ try {
       supportsPassive = true;
     }
   });
+
   window.addEventListener('testPassive', null, opts);
   window.removeEventListener('testPassive', null, opts);
 } catch (e) {}
@@ -2888,6 +2738,7 @@ var START_EVENTS = ['touchstart', 'mousedown'];
 var MOVE_EVENTS = ['touchmove', 'mousemove'];
 var END_EVENTS = ['touchend', 'touchcancel', 'mouseup', 'mouseleave'];
 var MOUSE_EVENTS = ['mousedown', 'mousemove', 'mouseup', 'mouseleave'];
+
 function Swipe (Glide, Components, Events) {
   /**
    * Instance of the binder for DOM Events.
@@ -2895,13 +2746,13 @@ function Swipe (Glide, Components, Events) {
    * @type {EventsBinder}
    */
   var Binder = new EventsBinder();
+
   var swipeSin = 0;
   var swipeStartX = 0;
   var swipeStartY = 0;
   var disabled = false;
-  var capture = supportsPassive$1 ? {
-    passive: true
-  } : false;
+  var capture = supportsPassive$1 ? { passive: true } : false;
+
   var Swipe = {
     /**
      * Initializes swipe bindings.
@@ -2912,6 +2763,7 @@ function Swipe (Glide, Components, Events) {
       this.bindSwipeStart();
     },
 
+
     /**
      * Handler for `swipestart` event. Calculates entry points of the user's tap.
      *
@@ -2921,15 +2773,20 @@ function Swipe (Glide, Components, Events) {
     start: function start(event) {
       if (!disabled && !Glide.disabled) {
         this.disable();
+
         var swipe = this.touches(event);
+
         swipeSin = null;
         swipeStartX = toInt(swipe.pageX);
         swipeStartY = toInt(swipe.pageY);
+
         this.bindSwipeMove();
         this.bindSwipeEnd();
+
         Events.emit('swipe.start');
       }
     },
+
 
     /**
      * Handler for `swipemove` event. Calculates user's tap angle and distance.
@@ -2942,25 +2799,33 @@ function Swipe (Glide, Components, Events) {
             touchAngle = _Glide$settings.touchAngle,
             touchRatio = _Glide$settings.touchRatio,
             classes = _Glide$settings.classes;
+
+
         var swipe = this.touches(event);
+
         var subExSx = toInt(swipe.pageX) - swipeStartX;
         var subEySy = toInt(swipe.pageY) - swipeStartY;
         var powEX = Math.abs(subExSx << 2);
         var powEY = Math.abs(subEySy << 2);
         var swipeHypotenuse = Math.sqrt(powEX + powEY);
         var swipeCathetus = Math.sqrt(powEY);
+
         swipeSin = Math.asin(swipeCathetus / swipeHypotenuse);
 
         if (swipeSin * 180 / Math.PI < touchAngle) {
           event.stopPropagation();
+
           Components.Move.make(subExSx * toFloat(touchRatio));
+
           Components.Html.root.classList.add(classes.dragging);
+
           Events.emit('swipe.move');
         } else {
           return false;
         }
       }
     },
+
 
     /**
      * Handler for `swipeend` event. Finitializes user's tap and decides about glide move.
@@ -2970,31 +2835,53 @@ function Swipe (Glide, Components, Events) {
      */
     end: function end(event) {
       if (!Glide.disabled) {
-        var _Glide$settings2 = Glide.settings,
-            perSwipe = _Glide$settings2.perSwipe,
-            touchAngle = _Glide$settings2.touchAngle,
-            classes = _Glide$settings2.classes;
+        var settings = Glide.settings;
+
         var swipe = this.touches(event);
         var threshold = this.threshold(event);
+
         var swipeDistance = swipe.pageX - swipeStartX;
         var swipeDeg = swipeSin * 180 / Math.PI;
+        var steps = Math.round(swipeDistance / Components.Sizes.slideWidth);
+
         this.enable();
 
-        if (swipeDistance > threshold && swipeDeg < touchAngle) {
-          Components.Run.make(Components.Direction.resolve("".concat(perSwipe, "<")));
-        } else if (swipeDistance < -threshold && swipeDeg < touchAngle) {
-          Components.Run.make(Components.Direction.resolve("".concat(perSwipe, ">")));
+        if (swipeDistance > threshold && swipeDeg < settings.touchAngle) {
+          // While swipe is positive and greater than threshold move backward.
+          if (settings.perTouch) {
+            steps = Math.min(steps, toInt(settings.perTouch));
+          }
+
+          if (Components.Direction.is('rtl')) {
+            steps = -steps;
+          }
+
+          Components.Run.make(Components.Direction.resolve('<' + steps));
+        } else if (swipeDistance < -threshold && swipeDeg < settings.touchAngle) {
+          // While swipe is negative and lower than negative threshold move forward.
+          if (settings.perTouch) {
+            steps = Math.max(steps, -toInt(settings.perTouch));
+          }
+
+          if (Components.Direction.is('rtl')) {
+            steps = -steps;
+          }
+
+          Components.Run.make(Components.Direction.resolve('>' + steps));
         } else {
           // While swipe don't reach distance apply previous transform.
           Components.Move.make();
         }
 
-        Components.Html.root.classList.remove(classes.dragging);
+        Components.Html.root.classList.remove(settings.classes.dragging);
+
         this.unbindSwipeMove();
         this.unbindSwipeEnd();
+
         Events.emit('swipe.end');
       }
     },
+
 
     /**
      * Binds swipe's starting event.
@@ -3004,22 +2891,21 @@ function Swipe (Glide, Components, Events) {
     bindSwipeStart: function bindSwipeStart() {
       var _this = this;
 
-      var _Glide$settings3 = Glide.settings,
-          swipeThreshold = _Glide$settings3.swipeThreshold,
-          dragThreshold = _Glide$settings3.dragThreshold;
+      var settings = Glide.settings;
 
-      if (swipeThreshold) {
+      if (settings.swipeThreshold) {
         Binder.on(START_EVENTS[0], Components.Html.wrapper, function (event) {
           _this.start(event);
         }, capture);
       }
 
-      if (dragThreshold) {
+      if (settings.dragThreshold) {
         Binder.on(START_EVENTS[1], Components.Html.wrapper, function (event) {
           _this.start(event);
         }, capture);
       }
     },
+
 
     /**
      * Unbinds swipe's starting event.
@@ -3030,6 +2916,7 @@ function Swipe (Glide, Components, Events) {
       Binder.off(START_EVENTS[0], Components.Html.wrapper, capture);
       Binder.off(START_EVENTS[1], Components.Html.wrapper, capture);
     },
+
 
     /**
      * Binds swipe's moving event.
@@ -3044,6 +2931,7 @@ function Swipe (Glide, Components, Events) {
       }, Glide.settings.throttle), capture);
     },
 
+
     /**
      * Unbinds swipe's moving event.
      *
@@ -3052,6 +2940,7 @@ function Swipe (Glide, Components, Events) {
     unbindSwipeMove: function unbindSwipeMove() {
       Binder.off(MOVE_EVENTS, Components.Html.wrapper, capture);
     },
+
 
     /**
      * Binds swipe's ending event.
@@ -3066,6 +2955,7 @@ function Swipe (Glide, Components, Events) {
       });
     },
 
+
     /**
      * Unbinds swipe's ending event.
      *
@@ -3074,6 +2964,7 @@ function Swipe (Glide, Components, Events) {
     unbindSwipeEnd: function unbindSwipeEnd() {
       Binder.off(END_EVENTS, Components.Html.wrapper);
     },
+
 
     /**
      * Normalizes event touches points accorting to different types.
@@ -3087,6 +2978,7 @@ function Swipe (Glide, Components, Events) {
 
       return event.touches[0] || event.changedTouches[0];
     },
+
 
     /**
      * Gets value of minimum swipe distance settings based on event type.
@@ -3103,6 +2995,7 @@ function Swipe (Glide, Components, Events) {
       return settings.swipeThreshold;
     },
 
+
     /**
      * Enables swipe event.
      *
@@ -3110,9 +3003,12 @@ function Swipe (Glide, Components, Events) {
      */
     enable: function enable() {
       disabled = false;
+
       Components.Transition.enable();
+
       return this;
     },
+
 
     /**
      * Disables swipe event.
@@ -3121,29 +3017,32 @@ function Swipe (Glide, Components, Events) {
      */
     disable: function disable() {
       disabled = true;
+
       Components.Transition.disable();
+
       return this;
     }
   };
+
   /**
    * Add component class:
    * - after initial building
    */
-
   Events.on('build.after', function () {
     Components.Html.root.classList.add(Glide.settings.classes.swipeable);
   });
+
   /**
    * Remove swiping bindings:
    * - on destroying, to remove added EventListeners
    */
-
   Events.on('destroy', function () {
     Swipe.unbindSwipeStart();
     Swipe.unbindSwipeMove();
     Swipe.unbindSwipeEnd();
     Binder.destroy();
   });
+
   return Swipe;
 }
 
@@ -3154,6 +3053,7 @@ function Images (Glide, Components, Events) {
    * @type {EventsBinder}
    */
   var Binder = new EventsBinder();
+
   var Images = {
     /**
      * Binds listener to glide wrapper.
@@ -3164,6 +3064,7 @@ function Images (Glide, Components, Events) {
       this.bind();
     },
 
+
     /**
      * Binds `dragstart` event on wrapper to prevent dragging images.
      *
@@ -3172,6 +3073,7 @@ function Images (Glide, Components, Events) {
     bind: function bind() {
       Binder.on('dragstart', Components.Html.wrapper, this.dragstart);
     },
+
 
     /**
      * Unbinds `dragstart` event on wrapper.
@@ -3182,6 +3084,7 @@ function Images (Glide, Components, Events) {
       Binder.off('dragstart', Components.Html.wrapper);
     },
 
+
     /**
      * Event handler. Prevents dragging.
      *
@@ -3191,15 +3094,16 @@ function Images (Glide, Components, Events) {
       event.preventDefault();
     }
   };
+
   /**
    * Remove bindings from images:
    * - on destroying, to remove added EventListeners
    */
-
   Events.on('destroy', function () {
     Images.unbind();
     Binder.destroy();
   });
+
   return Images;
 }
 
@@ -3210,6 +3114,7 @@ function Anchors (Glide, Components, Events) {
    * @type {EventsBinder}
    */
   var Binder = new EventsBinder();
+
   /**
    * Holds detaching status of anchors.
    * Prevents detaching of already detached anchors.
@@ -3217,8 +3122,8 @@ function Anchors (Glide, Components, Events) {
    * @private
    * @type {Boolean}
    */
-
   var detached = false;
+
   /**
    * Holds preventing status of anchors.
    * If `true` redirection after click will be disabled.
@@ -3226,8 +3131,8 @@ function Anchors (Glide, Components, Events) {
    * @private
    * @type {Boolean}
    */
-
   var prevented = false;
+
   var Anchors = {
     /**
      * Setups a initial state of anchors component.
@@ -3242,8 +3147,10 @@ function Anchors (Glide, Components, Events) {
        * @type {HTMLCollection}
        */
       this._a = Components.Html.wrapper.querySelectorAll('a');
+
       this.bind();
     },
+
 
     /**
      * Binds events to anchors inside a track.
@@ -3254,6 +3161,7 @@ function Anchors (Glide, Components, Events) {
       Binder.on('click', Components.Html.wrapper, this.click);
     },
 
+
     /**
      * Unbinds events attached to anchors inside a track.
      *
@@ -3262,6 +3170,7 @@ function Anchors (Glide, Components, Events) {
     unbind: function unbind() {
       Binder.off('click', Components.Html.wrapper);
     },
+
 
     /**
      * Handler for click event. Prevents clicks when glide is in `prevent` status.
@@ -3276,6 +3185,7 @@ function Anchors (Glide, Components, Events) {
       }
     },
 
+
     /**
      * Detaches anchors click event inside glide.
      *
@@ -3287,6 +3197,10 @@ function Anchors (Glide, Components, Events) {
       if (!detached) {
         for (var i = 0; i < this.items.length; i++) {
           this.items[i].draggable = false;
+
+          this.items[i].setAttribute('data-href', this.items[i].getAttribute('href'));
+
+          this.items[i].removeAttribute('href');
         }
 
         detached = true;
@@ -3294,6 +3208,7 @@ function Anchors (Glide, Components, Events) {
 
       return this;
     },
+
 
     /**
      * Attaches anchors click events inside glide.
@@ -3306,6 +3221,8 @@ function Anchors (Glide, Components, Events) {
       if (detached) {
         for (var i = 0; i < this.items.length; i++) {
           this.items[i].draggable = true;
+
+          this.items[i].setAttribute('href', this.items[i].getAttribute('data-href'));
         }
 
         detached = false;
@@ -3314,6 +3231,7 @@ function Anchors (Glide, Components, Events) {
       return this;
     }
   };
+
   define(Anchors, 'items', {
     /**
      * Gets collection of the arrows HTML elements.
@@ -3324,41 +3242,41 @@ function Anchors (Glide, Components, Events) {
       return Anchors._a;
     }
   });
+
   /**
    * Detach anchors inside slides:
    * - on swiping, so they won't redirect to its `href` attributes
    */
-
   Events.on('swipe.move', function () {
     Anchors.detach();
   });
+
   /**
    * Attach anchors inside slides:
    * - after swiping and transitions ends, so they can redirect after click again
    */
-
   Events.on('swipe.end', function () {
     Components.Transition.after(function () {
       Anchors.attach();
     });
   });
+
   /**
    * Unbind anchors inside slides:
    * - on destroying, to bring anchors to its initial state
    */
-
   Events.on('destroy', function () {
     Anchors.attach();
     Anchors.unbind();
     Binder.destroy();
   });
+
   return Anchors;
 }
 
 var NAV_SELECTOR = '[data-glide-el="controls[nav]"]';
 var CONTROLS_SELECTOR = '[data-glide-el^="controls"]';
-var PREVIOUS_CONTROLS_SELECTOR = "".concat(CONTROLS_SELECTOR, " [data-glide-dir*=\"<\"]");
-var NEXT_CONTROLS_SELECTOR = "".concat(CONTROLS_SELECTOR, " [data-glide-dir*=\">\"]");
+
 function Controls (Glide, Components, Events) {
   /**
    * Instance of the binder for DOM Events.
@@ -3366,9 +3284,9 @@ function Controls (Glide, Components, Events) {
    * @type {EventsBinder}
    */
   var Binder = new EventsBinder();
-  var capture = supportsPassive$1 ? {
-    passive: true
-  } : false;
+
+  var capture = supportsPassive$1 ? { passive: true } : false;
+
   var Controls = {
     /**
      * Inits arrows. Binds events listeners
@@ -3384,27 +3302,18 @@ function Controls (Glide, Components, Events) {
        * @type {HTMLCollection}
        */
       this._n = Components.Html.root.querySelectorAll(NAV_SELECTOR);
+
       /**
        * Collection of controls HTML elements.
        *
        * @private
        * @type {HTMLCollection}
        */
-
       this._c = Components.Html.root.querySelectorAll(CONTROLS_SELECTOR);
-      /**
-       * Collection of arrow control HTML elements.
-       *
-       * @private
-       * @type {Object}
-       */
 
-      this._arrowControls = {
-        previous: Components.Html.root.querySelectorAll(PREVIOUS_CONTROLS_SELECTOR),
-        next: Components.Html.root.querySelectorAll(NEXT_CONTROLS_SELECTOR)
-      };
       this.addBindings();
     },
+
 
     /**
      * Sets active class to current slide.
@@ -3417,6 +3326,7 @@ function Controls (Glide, Components, Events) {
       }
     },
 
+
     /**
      * Removes active class to current slide.
      *
@@ -3428,6 +3338,7 @@ function Controls (Glide, Components, Events) {
       }
     },
 
+
     /**
      * Toggles active class on items inside navigation.
      *
@@ -3438,17 +3349,15 @@ function Controls (Glide, Components, Events) {
       var settings = Glide.settings;
       var item = controls[Glide.index];
 
-      if (!item) {
-        return;
-      }
-
       if (item) {
-        item.classList.add(settings.classes.nav.active);
+        item.classList.add(settings.classes.activeNav);
+
         siblings(item).forEach(function (sibling) {
-          sibling.classList.remove(settings.classes.nav.active);
+          sibling.classList.remove(settings.classes.activeNav);
         });
       }
     },
+
 
     /**
      * Removes active class from active control.
@@ -3460,68 +3369,10 @@ function Controls (Glide, Components, Events) {
       var item = controls[Glide.index];
 
       if (item) {
-        item.classList.remove(Glide.settings.classes.nav.active);
+        item.classList.remove(Glide.settings.classes.activeNav);
       }
     },
 
-    /**
-     * Calculates, removes or adds `Glide.settings.classes.disabledArrow` class on the control arrows
-     */
-    setArrowState: function setArrowState() {
-      if (Glide.settings.rewind) {
-        return;
-      }
-
-      var next = Controls._arrowControls.next;
-      var previous = Controls._arrowControls.previous;
-      this.resetArrowState(next, previous);
-
-      if (Glide.index === 0) {
-        this.disableArrow(previous);
-      }
-
-      if (Glide.index === Components.Run.length) {
-        this.disableArrow(next);
-      }
-    },
-
-    /**
-     * Removes `Glide.settings.classes.disabledArrow` from given NodeList elements
-     *
-     * @param {NodeList[]} lists
-     */
-    resetArrowState: function resetArrowState() {
-      var settings = Glide.settings;
-
-      for (var _len = arguments.length, lists = new Array(_len), _key = 0; _key < _len; _key++) {
-        lists[_key] = arguments[_key];
-      }
-
-      lists.forEach(function (list) {
-        list.forEach(function (element) {
-          element.classList.remove(settings.classes.arrow.disabled);
-        });
-      });
-    },
-
-    /**
-     * Adds `Glide.settings.classes.disabledArrow` to given NodeList elements
-     *
-     * @param {NodeList[]} lists
-     */
-    disableArrow: function disableArrow() {
-      var settings = Glide.settings;
-
-      for (var _len2 = arguments.length, lists = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-        lists[_key2] = arguments[_key2];
-      }
-
-      lists.forEach(function (list) {
-        list.forEach(function (element) {
-          element.classList.add(settings.classes.arrow.disabled);
-        });
-      });
-    },
 
     /**
      * Adds handles to the each group of controls.
@@ -3534,6 +3385,7 @@ function Controls (Glide, Components, Events) {
       }
     },
 
+
     /**
      * Removes handles from the each group of controls.
      *
@@ -3544,6 +3396,7 @@ function Controls (Glide, Components, Events) {
         this.unbind(this._c[i].children);
       }
     },
+
 
     /**
      * Binds events to arrows HTML elements.
@@ -3558,6 +3411,7 @@ function Controls (Glide, Components, Events) {
       }
     },
 
+
     /**
      * Unbinds events binded to the arrows HTML elements.
      *
@@ -3570,23 +3424,22 @@ function Controls (Glide, Components, Events) {
       }
     },
 
+
     /**
      * Handles `click` event on the arrows HTML elements.
-     * Moves slider in direction given via the
+     * Moves slider in driection precised in
      * `data-glide-dir` attribute.
      *
      * @param {Object} event
-     * @return {void}
+     * @return {Void}
      */
     click: function click(event) {
-      if (!supportsPassive$1 && event.type === 'touchstart') {
-        event.preventDefault();
-      }
+      event.preventDefault();
 
-      var direction = event.currentTarget.getAttribute('data-glide-dir');
-      Components.Run.make(Components.Direction.resolve(direction));
+      Components.Run.make(Components.Direction.resolve(event.currentTarget.getAttribute('data-glide-dir')));
     }
   };
+
   define(Controls, 'items', {
     /**
      * Gets collection of the controls HTML elements.
@@ -3597,32 +3450,26 @@ function Controls (Glide, Components, Events) {
       return Controls._c;
     }
   });
+
   /**
    * Swap active class of current navigation item:
    * - after mounting to set it to initial index
    * - after each move to the new index
    */
-
   Events.on(['mount.after', 'move.after'], function () {
     Controls.setActive();
   });
-  /**
-   * Add or remove disabled class of arrow elements
-   */
 
-  Events.on(['mount.after', 'run'], function () {
-    Controls.setArrowState();
-  });
   /**
    * Remove bindings and HTML Classes:
    * - on destroying, to bring markup to its initial state
    */
-
   Events.on('destroy', function () {
     Controls.removeBindings();
     Controls.removeActive();
     Binder.destroy();
   });
+
   return Controls;
 }
 
@@ -3633,6 +3480,7 @@ function Keyboard (Glide, Components, Events) {
    * @type {EventsBinder}
    */
   var Binder = new EventsBinder();
+
   var Keyboard = {
     /**
      * Binds keyboard events on component mount.
@@ -3645,6 +3493,7 @@ function Keyboard (Glide, Components, Events) {
       }
     },
 
+
     /**
      * Adds keyboard press events.
      *
@@ -3653,6 +3502,7 @@ function Keyboard (Glide, Components, Events) {
     bind: function bind() {
       Binder.on('keyup', document, this.press);
     },
+
 
     /**
      * Removes keyboard press events.
@@ -3663,6 +3513,7 @@ function Keyboard (Glide, Components, Events) {
       Binder.off('keyup', document);
     },
 
+
     /**
      * Handles keyboard's arrows press and moving glide foward and backward.
      *
@@ -3670,42 +3521,41 @@ function Keyboard (Glide, Components, Events) {
      * @return {Void}
      */
     press: function press(event) {
-      var perSwipe = Glide.settings.perSwipe;
-
       if (event.keyCode === 39) {
-        Components.Run.make(Components.Direction.resolve("".concat(perSwipe, ">")));
+        Components.Run.make(Components.Direction.resolve('>'));
       }
 
       if (event.keyCode === 37) {
-        Components.Run.make(Components.Direction.resolve("".concat(perSwipe, "<")));
+        Components.Run.make(Components.Direction.resolve('<'));
       }
     }
   };
+
   /**
    * Remove bindings from keyboard:
    * - on destroying to remove added events
    * - on updating to remove events before remounting
    */
-
   Events.on(['destroy', 'update'], function () {
     Keyboard.unbind();
   });
+
   /**
    * Remount component
    * - on updating to reflect potential changes in settings
    */
-
   Events.on('update', function () {
     Keyboard.mount();
   });
+
   /**
    * Destroy binder:
    * - on destroying to remove listeners
    */
-
   Events.on('destroy', function () {
     Binder.destroy();
   });
+
   return Keyboard;
 }
 
@@ -3716,6 +3566,7 @@ function Autoplay (Glide, Components, Events) {
    * @type {EventsBinder}
    */
   var Binder = new EventsBinder();
+
   var Autoplay = {
     /**
      * Initializes autoplaying and events.
@@ -3723,7 +3574,6 @@ function Autoplay (Glide, Components, Events) {
      * @return {Void}
      */
     mount: function mount() {
-      this.enable();
       this.start();
 
       if (Glide.settings.hoverpause) {
@@ -3731,23 +3581,6 @@ function Autoplay (Glide, Components, Events) {
       }
     },
 
-    /**
-     * Enables autoplaying
-     *
-     * @returns {Void}
-     */
-    enable: function enable() {
-      this._e = true;
-    },
-
-    /**
-     * Disables autoplaying.
-     *
-     * @returns {Void}
-     */
-    disable: function disable() {
-      this._e = false;
-    },
 
     /**
      * Starts autoplaying in configured interval.
@@ -3758,12 +3591,6 @@ function Autoplay (Glide, Components, Events) {
     start: function start() {
       var _this = this;
 
-      if (!this._e) {
-        return;
-      }
-
-      this.enable();
-
       if (Glide.settings.autoplay) {
         if (isUndefined(this._i)) {
           this._i = setInterval(function () {
@@ -3772,12 +3599,11 @@ function Autoplay (Glide, Components, Events) {
             Components.Run.make('>');
 
             _this.start();
-
-            Events.emit('autoplay');
           }, this.time);
         }
       }
     },
+
 
     /**
      * Stops autorunning of the glide.
@@ -3788,6 +3614,7 @@ function Autoplay (Glide, Components, Events) {
       this._i = clearInterval(this._i);
     },
 
+
     /**
      * Stops autoplaying while mouse is over glide's area.
      *
@@ -3797,16 +3624,14 @@ function Autoplay (Glide, Components, Events) {
       var _this2 = this;
 
       Binder.on('mouseover', Components.Html.root, function () {
-        if (_this2._e) {
-          _this2.stop();
-        }
+        _this2.stop();
       });
+
       Binder.on('mouseout', Components.Html.root, function () {
-        if (_this2._e) {
-          _this2.start();
-        }
+        _this2.start();
       });
     },
+
 
     /**
      * Unbind mouseover events.
@@ -3817,6 +3642,7 @@ function Autoplay (Glide, Components, Events) {
       Binder.off(['mouseover', 'mouseout'], Components.Html.root);
     }
   };
+
   define(Autoplay, 'time', {
     /**
      * Gets time period value for the autoplay interval. Prioritizes
@@ -3834,15 +3660,16 @@ function Autoplay (Glide, Components, Events) {
       return toInt(Glide.settings.autoplay);
     }
   });
+
   /**
    * Stop autoplaying and unbind events:
    * - on destroying, to clear defined interval
    * - on updating via API to reset interval that may changed
    */
-
   Events.on(['destroy', 'update'], function () {
     Autoplay.unbind();
   });
+
   /**
    * Stop autoplaying:
    * - before each run, to restart autoplaying
@@ -3851,51 +3678,36 @@ function Autoplay (Glide, Components, Events) {
    * - while starting a swipe
    * - on updating via API to reset interval that may changed
    */
+  Events.on(['run.before', 'pause', 'destroy', 'swipe.start', 'update'], function () {
+    Autoplay.stop();
+  });
 
-  Events.on(['run.before', 'swipe.start', 'update'], function () {
-    Autoplay.stop();
-  });
-  Events.on(['pause', 'destroy'], function () {
-    Autoplay.disable();
-    Autoplay.stop();
-  });
   /**
    * Start autoplaying:
    * - after each run, to restart autoplaying
    * - on playing via API
    * - while ending a swipe
    */
-
-  Events.on(['run.after', 'swipe.end'], function () {
+  Events.on(['run.after', 'play', 'swipe.end'], function () {
     Autoplay.start();
   });
-  /**
-   * Start autoplaying:
-   * - after each run, to restart autoplaying
-   * - on playing via API
-   * - while ending a swipe
-   */
 
-  Events.on(['play'], function () {
-    Autoplay.enable();
-    Autoplay.start();
-  });
   /**
    * Remount autoplaying:
    * - on updating via API to reset interval that may changed
    */
-
   Events.on('update', function () {
     Autoplay.mount();
   });
+
   /**
    * Destroy a binder:
    * - on destroying glide instance to clearup listeners
    */
-
   Events.on('destroy', function () {
     Binder.destroy();
   });
+
   return Autoplay;
 }
 
@@ -3905,12 +3717,11 @@ function Autoplay (Glide, Components, Events) {
  * @param {Object} points
  * @returns {Object}
  */
-
 function sortBreakpoints(points) {
   if (isObject(points)) {
     return sortKeys(points);
   } else {
-    warn("Breakpoints option must be an object");
+    warn('Breakpoints option must be an object');
   }
 
   return {};
@@ -3923,13 +3734,14 @@ function Breakpoints (Glide, Components, Events) {
    * @type {EventsBinder}
    */
   var Binder = new EventsBinder();
+
   /**
    * Holds reference to settings.
    *
    * @type {Object}
    */
-
   var settings = Glide.settings;
+
   /**
    * Holds reference to breakpoints object in settings. Sorts breakpoints
    * from smaller to larger. It is required in order to proper
@@ -3937,15 +3749,15 @@ function Breakpoints (Glide, Components, Events) {
    *
    * @type {Object}
    */
-
   var points = sortBreakpoints(settings.breakpoints);
+
   /**
    * Cache initial settings before overwritting.
    *
    * @type {Object}
    */
+  var defaults = _extends({}, settings);
 
-  var defaults = Object.assign({}, settings);
   var Breakpoints = {
     /**
      * Matches settings for currectly matching media breakpoint.
@@ -3957,7 +3769,7 @@ function Breakpoints (Glide, Components, Events) {
       if (typeof window.matchMedia !== 'undefined') {
         for (var point in points) {
           if (points.hasOwnProperty(point)) {
-            if (window.matchMedia("(max-width: ".concat(point, "px)")).matches) {
+            if (window.matchMedia('(max-width: ' + point + 'px)').matches) {
               return points[point];
             }
           }
@@ -3967,37 +3779,39 @@ function Breakpoints (Glide, Components, Events) {
       return defaults;
     }
   };
+
   /**
    * Overwrite instance settings with currently matching breakpoint settings.
    * This happens right after component initialization.
    */
+  _extends(settings, Breakpoints.match(points));
 
-  Object.assign(settings, Breakpoints.match(points));
   /**
    * Update glide with settings of matched brekpoint:
    * - window resize to update slider
    */
-
   Binder.on('resize', window, throttle(function () {
     Glide.settings = mergeOptions(settings, Breakpoints.match(points));
   }, Glide.settings.throttle));
+
   /**
    * Resort and update default settings:
    * - on reinit via API, so breakpoint matching will be performed with options
    */
-
   Events.on('update', function () {
     points = sortBreakpoints(points);
-    defaults = Object.assign({}, settings);
+
+    defaults = _extends({}, settings);
   });
+
   /**
    * Unbind resize listener:
    * - on destroying, to bring markup to its initial state
    */
-
   Events.on('destroy', function () {
     Binder.off('resize', window);
   });
+
   return Breakpoints;
 }
 
@@ -4015,6 +3829,7 @@ var COMPONENTS = {
   Resize: Resize,
   Build: Build,
   Run: Run,
+
   // Optional
   Swipe: Swipe,
   Images: Images,
@@ -4025,29 +3840,26 @@ var COMPONENTS = {
   Breakpoints: Breakpoints
 };
 
-var Glide = /*#__PURE__*/function (_Core) {
-  _inherits(Glide, _Core);
+var Glide$1 = function (_Core) {
+  inherits(Glide$$1, _Core);
 
-  var _super = _createSuper(Glide);
-
-  function Glide() {
-    _classCallCheck(this, Glide);
-
-    return _super.apply(this, arguments);
+  function Glide$$1() {
+    classCallCheck(this, Glide$$1);
+    return possibleConstructorReturn(this, (Glide$$1.__proto__ || Object.getPrototypeOf(Glide$$1)).apply(this, arguments));
   }
 
-  _createClass(Glide, [{
-    key: "mount",
+  createClass(Glide$$1, [{
+    key: 'mount',
     value: function mount() {
       var extensions = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-      return _get(_getPrototypeOf(Glide.prototype), "mount", this).call(this, Object.assign({}, COMPONENTS, extensions));
+
+      return get(Glide$$1.prototype.__proto__ || Object.getPrototypeOf(Glide$$1.prototype), 'mount', this).call(this, _extends({}, COMPONENTS, extensions));
     }
   }]);
+  return Glide$$1;
+}(Glide);
 
-  return Glide;
-}(Glide$1);
-
-
+/* harmony default export */ __webpack_exports__["default"] = (Glide$1);
 
 
 /***/ }),
@@ -10095,7 +9907,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "checkPrefix", function() { return _checkPropPrefix; });
 /* harmony import */ var _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./gsap-core.js */ "./node_modules/gsap/gsap-core.js");
 /*!
- * CSSPlugin 3.9.1
+ * CSSPlugin 3.8.0
  * https://greensock.com
  *
  * Copyright 2008-2021, GreenSock. All rights reserved.
@@ -11354,9 +11166,9 @@ var CSSPlugin = {
         if (startAt && p in startAt) {
           // in case someone hard-codes a complex value as the start, like top: "calc(2vh / 2)". Without this, it'd use the computed value (always in px)
           startValue = typeof startAt[p] === "function" ? startAt[p].call(tween, index, target, targets) : startAt[p];
-          Object(_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["_isString"])(startValue) && ~startValue.indexOf("random(") && (startValue = Object(_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["_replaceRandom"])(startValue));
-          Object(_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["getUnit"])(startValue + "") || (startValue += _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["_config"].units[p] || Object(_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["getUnit"])(_get(target, p)) || ""); // for cases when someone passes in a unitless value like {x: 100}; if we try setting translate(100, 0px) it won't work.
+          p in _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["_config"].units && !Object(_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["getUnit"])(startValue) && (startValue += _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["_config"].units[p]); // for cases when someone passes in a unitless value like {x: 100}; if we try setting translate(100, 0px) it won't work.
 
+          Object(_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["_isString"])(startValue) && ~startValue.indexOf("random(") && (startValue = Object(_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["_replaceRandom"])(startValue));
           (startValue + "").charAt(1) === "=" && (startValue = _get(target, p)); // can't work with relative values
         } else {
           startValue = _get(target, p);
@@ -11526,7 +11338,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScrollTrigger", function() { return ScrollTrigger; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ScrollTrigger; });
 /*!
- * ScrollTrigger 3.9.1
+ * ScrollTrigger 3.8.0
  * https://greensock.com
  *
  * @license Copyright 2008-2021, GreenSock. All rights reserved.
@@ -11544,6 +11356,8 @@ var gsap,
     _body,
     _root,
     _resizeDelay,
+    _raf,
+    _request,
     _toArray,
     _clamp,
     _time2,
@@ -11571,7 +11385,7 @@ _startup = 1,
   return v;
 },
     _getTarget = function _getTarget(t) {
-  return _toArray(t)[0] || (_isString(t) && gsap.config().nullTargetWarn !== false ? console.warn("Element not found:", t) : null);
+  return _toArray(t)[0] || (_isString(t) ? console.warn("Element not found:", t) : null);
 },
     _round = function _round(value) {
   return Math.round(value * 100000) / 100000 || 0;
@@ -11668,10 +11482,8 @@ _startup = 1,
   return animation && animation.progress(reversed ? 0 : 1) && pause && animation.pause();
 },
     _callback = function _callback(self, func) {
-  if (self.enabled) {
-    var result = func(self);
-    result && result.totalTime && (self.callbackAnimation = result);
-  }
+  var result = func(self);
+  result && result.totalTime && (self.callbackAnimation = result);
 },
     _abs = Math.abs,
     _scrollLeft = "scrollLeft",
@@ -11777,11 +11589,7 @@ _startup = 1,
       a = Array.isArray(snapIncrementOrArray) && snapIncrementOrArray.slice(0).sort(function (a, b) {
     return a - b;
   });
-  return a ? function (value, direction, threshold) {
-    if (threshold === void 0) {
-      threshold = 1e-3;
-    }
-
+  return a ? function (value, direction) {
     var i;
 
     if (!direction) {
@@ -11789,7 +11597,7 @@ _startup = 1,
     }
 
     if (direction > 0) {
-      value -= threshold; // to avoid rounding errors. If we're too strict, it might snap forward, then immediately again, and again.
+      value -= 1e-4; // to avoid rounding errors. If we're too strict, it might snap forward, then immediately again, and again.
 
       for (i = 0; i < a.length; i++) {
         if (a[i] >= value) {
@@ -11800,7 +11608,7 @@ _startup = 1,
       return a[i - 1];
     } else {
       i = a.length;
-      value += threshold;
+      value += 1e-4;
 
       while (i--) {
         if (a[i] <= value) {
@@ -11810,13 +11618,9 @@ _startup = 1,
     }
 
     return a[0];
-  } : function (value, direction, threshold) {
-    if (threshold === void 0) {
-      threshold = 1e-3;
-    }
-
+  } : function (value, direction) {
     var snapped = snap(value);
-    return !direction || Math.abs(snapped - value) < threshold || snapped - value < 0 === direction < 0 ? snapped : snap(direction < 0 ? value - snapIncrementOrArray : value + snapIncrementOrArray);
+    return !direction || Math.abs(snapped - value) < 0.001 || snapped - value < 0 === direction < 0 ? snapped : snap(direction < 0 ? value - snapIncrementOrArray : value + snapIncrementOrArray);
   };
 },
     _getLabelAtDirection = function _getLabelAtDirection(timeline) {
@@ -11916,14 +11720,19 @@ _startup = 1,
     _triggers = [],
     _ids = {},
     _sync = function _sync() {
-  return _getTime() - _lastScrollTime > 34 && _updateAll();
+  return _getTime() - _lastScrollTime > 20 && _updateAll();
 },
     _onScroll = function _onScroll() {
-  // previously, we tried to optimize performance by batching/deferring to the next requestAnimationFrame(), but discovered that Safari has a few bugs that make this unworkable (especially on iOS). See https://codepen.io/GreenSock/pen/16c435b12ef09c38125204818e7b45fc?editors=0010
-  _updateAll();
+  var time = _getTime();
 
-  _lastScrollTime || _dispatch("scrollStart");
-  _lastScrollTime = _getTime();
+  if (_lastScrollTime !== time) {
+    _updateAll();
+
+    _lastScrollTime || _dispatch("scrollStart");
+    _lastScrollTime = time;
+  } else if (!_request) {
+    _request = _raf(_updateAll);
+  }
 },
     _onResize = function _onResize() {
   return !_refreshing && !_ignoreResize && !_doc.fullscreenElement && _resizeDelay.restart(true);
@@ -12033,11 +11842,6 @@ _refreshingAll,
   }); // don't loop with _i because during a refresh() someone could call ScrollTrigger.update() which would iterate through _i resulting in a skip.
 
 
-  _triggers.forEach(function (t) {
-    return t.vars.end === "max" && t.setPositions(t.start, _maxScroll(t.scroller, t._dir));
-  }); // the scroller's max scroll position may change after all the ScrollTriggers refreshed (like pinning could push it down), so we need to loop back and correct any with end: "max".
-
-
   refreshInits.forEach(function (result) {
     return result && result.render && result.render(-1);
   }); // if the onRefreshInit() returns an animation (typically a gsap.set()), revert it. This makes it easy to put things in a certain spot before refreshing for measurement purposes, and then put things back.
@@ -12086,9 +11890,11 @@ _refreshingAll,
         _triggers[_i] && _triggers[_i].update(0, recordVelocity);
       }
     }
+
+    _request = 0;
   }
 },
-    _propNamesToCopy = [_left, _top, _bottom, _right, _margin + _Bottom, _margin + _Right, _margin + _Top, _margin + _Left, "display", "flexShrink", "float", "zIndex", "gridColumnStart", "gridColumnEnd", "gridRowStart", "gridRowEnd", "gridArea", "justifySelf", "alignSelf", "placeSelf", "order"],
+    _propNamesToCopy = [_left, _top, _bottom, _right, _margin + _Bottom, _margin + _Right, _margin + _Top, _margin + _Left, "display", "flexShrink", "float", "zIndex", "grid-column-start", "grid-column-end", "grid-row-start", "grid-row-end", "grid-area", "justify-self", "align-self", "place-self"],
     _stateProps = _propNamesToCopy.concat([_width, _height, "boxSizing", "max" + _Width, "max" + _Height, "position", _margin, _padding, _padding + _Top, _padding + _Right, _padding + _Bottom, _padding + _Left]),
     _swapPinOut = function _swapPinOut(pin, spacer, state) {
   _setState(state);
@@ -12120,7 +11926,7 @@ _refreshingAll,
 
     spacerStyle.position = cs.position === "absolute" ? "absolute" : "relative";
     cs.display === "inline" && (spacerStyle.display = "inline-block");
-    pinStyle[_bottom] = pinStyle[_right] = spacerStyle.flexBasis = "auto";
+    pinStyle[_bottom] = pinStyle[_right] = "auto";
     spacerStyle.overflow = "visible";
     spacerStyle.boxSizing = "border-box";
     spacerStyle[_width] = _getSize(pin, _horizontal) + _px;
@@ -12317,7 +12123,7 @@ _getTweenCreator = function _getTweenCreator(scroller, direction) {
     modifiers[prop] = function (value) {
       value = _round(getScroll()); // round because in some [very uncommon] Windows environments, it can get reported with decimals even though it was set without.
 
-      if (value !== lastScroll1 && value !== lastScroll2 && Math.abs(value - lastScroll1) > 2 && Math.abs(value - lastScroll2) > 2) {
+      if (value !== lastScroll1 && value !== lastScroll2 && Math.abs(value - lastScroll1) > 2) {
         // if the user scrolls, kill the tween. iOS Safari intermittently misreports the scroll position, it may be the most recently-set one or the one before that! When Safari is zoomed (CMD-+), it often misreports as 1 pixel off too! So if we set the scroll position to 125, for example, it'll actually report it as 124.
         tween.kill();
         getTween.tween = 0;
@@ -12339,11 +12145,11 @@ _getTweenCreator = function _getTweenCreator(scroller, direction) {
   };
 
   scroller[prop] = getScroll;
-
-  _addListener(scroller, "wheel", function () {
+  scroller.addEventListener("wheel", function () {
     return getTween.tween && getTween.tween.kill() && (getTween.tween = 0);
+  }, {
+    passive: true
   }); // Windows machines handle mousewheel scrolling in chunks (like "3 lines per scroll") meaning the typical strategy for cancelling the scroll isn't as sensitive. It's much more likely to match one of the previous 2 scroll event positions. So we kill any snapping as soon as there's a wheel event.
-
 
   return getTween;
 };
@@ -12448,7 +12254,6 @@ var ScrollTrigger = /*#__PURE__*/function () {
         caMarkerSetter;
 
     self.media = _creatingMedia;
-    self._dir = direction;
     anticipatePin *= 45;
     self.scroller = scroller;
     self.scroll = containerAnimation ? containerAnimation.time.bind(containerAnimation) : scrollFunc;
@@ -12534,7 +12339,6 @@ var ScrollTrigger = /*#__PURE__*/function () {
                 return snapDelayedCall.restart(true) && _onInterrupt && _onInterrupt(self);
               },
               onComplete: function onComplete() {
-                self.update();
                 lastSnap = scrollFunc();
                 snap1 = snap2 = animation && !isToggle ? animation.totalProgress() : self.progress;
                 onSnapComplete && onSnapComplete(self);
@@ -12670,7 +12474,7 @@ var ScrollTrigger = /*#__PURE__*/function () {
 
       _refreshing = 1;
       scrubTween && scrubTween.pause();
-      invalidateOnRefresh && animation && animation.time(-0.01, true).invalidate();
+      invalidateOnRefresh && animation && animation.progress(0).invalidate();
       self.isReverted || self.revert();
 
       var size = getScrollerSize(),
@@ -12736,11 +12540,7 @@ var ScrollTrigger = /*#__PURE__*/function () {
 
         if (curPin && curTrigger.start - curTrigger._pinPush < start && !containerAnimation) {
           cs = curTrigger.end - curTrigger.start;
-
-          if ((curPin === trigger || curPin === pinnedContainer) && !_isNumber(parsedStart)) {
-            // numeric start values shouldn't be offset at all - treat them as absolute
-            offset += cs * (1 - curTrigger.progress);
-          }
+          (curPin === trigger || curPin === pinnedContainer) && !_isNumber(parsedStart) && (offset += cs); // numeric start values shouldn't be offset at all - treat them as absolute
 
           curPin === pin && (otherPinOffset += cs);
         }
@@ -12849,7 +12649,7 @@ var ScrollTrigger = /*#__PURE__*/function () {
       _refreshing = 0;
       animation && isToggle && animation._initted && animation.progress() !== prevAnimProgress && animation.progress(prevAnimProgress, true).render(animation.time(), true, true); // must force a re-render because if saveStyles() was used on the target(s), the styles could have been wiped out during the refresh().
 
-      if (prevProgress !== self.progress || containerAnimation) {
+      if (prevProgress !== self.progress) {
         // ensures that the direction is set properly (when refreshing, progress is set back to 0 initially, then back again to wherever it needs to be) and that callbacks are triggered.
         animation && !isToggle && animation.totalProgress(prevProgress, true); // to avoid issues where animation callbacks like onStart aren't triggered.
 
@@ -12871,10 +12671,6 @@ var ScrollTrigger = /*#__PURE__*/function () {
       if (animation) {
         scrubTween ? scrubTween.progress(1) : !animation.paused() ? _endAnimation(animation, animation.reversed()) : isToggle || _endAnimation(animation, self.direction < 0, 1);
       }
-    };
-
-    self.labelToScroll = function (label) {
-      return animation && animation.labels && (start || self.refresh() || start) + animation.labels[label] / animation.duration() * change || 0;
     };
 
     self.getTrailing = function (name) {
@@ -13054,19 +12850,6 @@ var ScrollTrigger = /*#__PURE__*/function () {
       return snap && tweenTo ? tweenTo.tween : scrubTween;
     };
 
-    self.setPositions = function (newStart, newEnd) {
-      // doesn't persist after refresh()! Intended to be a way to override values that were set during refresh(), like you could set it in onRefresh()
-      if (pin) {
-        pinStart += newStart - start;
-        pinChange += newEnd - newStart - change;
-      }
-
-      self.start = start = newStart;
-      self.end = end = newEnd;
-      change = newEnd - newStart;
-      self.update();
-    };
-
     self.disable = function (reset, allowAnimation) {
       if (self.enabled) {
         reset !== false && self.revert();
@@ -13104,7 +12887,8 @@ var ScrollTrigger = /*#__PURE__*/function () {
 
       var i = _triggers.indexOf(self);
 
-      i >= 0 && _triggers.splice(i, 1);
+      _triggers.splice(i, 1);
+
       i === _i && _direction > 0 && _i--; // if we're in the middle of a refresh() or update(), splicing would cause skips in the index, so adjust...
       // if no other ScrollTrigger instances of the same scroller are found, wipe out any recorded scroll position. Otherwise, in a single page application, for example, it could maintain scroll position when it really shouldn't.
 
@@ -13162,6 +12946,10 @@ var ScrollTrigger = /*#__PURE__*/function () {
         gsap.core.globals("ScrollTrigger", ScrollTrigger); // must register the global manually because in Internet Explorer, functions (classes) don't have a "name" property.
 
         if (_body) {
+          _raf = _win.requestAnimationFrame || function (f) {
+            return setTimeout(f, 16);
+          };
+
           _addListener(_win, "wheel", _onScroll);
 
           _root = [_win, _doc, _docEl, _body];
@@ -13227,13 +13015,9 @@ var ScrollTrigger = /*#__PURE__*/function () {
   };
 
   ScrollTrigger.defaults = function defaults(config) {
-    if (config) {
-      for (var p in config) {
-        _defaults[p] = config[p];
-      }
+    for (var p in config) {
+      _defaults[p] = config[p];
     }
-
-    return _defaults;
   };
 
   ScrollTrigger.kill = function kill() {
@@ -13264,9 +13048,7 @@ var ScrollTrigger = /*#__PURE__*/function () {
       _scrollers.splice(i, isViewport ? 6 : 2);
     }
 
-    if (vars) {
-      isViewport ? _proxies.unshift(_win, vars, _body, vars, _docEl, vars) : _proxies.unshift(t, vars);
-    }
+    isViewport ? _proxies.unshift(_win, vars, _body, vars, _docEl, vars) : _proxies.unshift(t, vars);
   };
 
   ScrollTrigger.matchMedia = function matchMedia(vars) {
@@ -13329,7 +13111,7 @@ var ScrollTrigger = /*#__PURE__*/function () {
 
   return ScrollTrigger;
 }();
-ScrollTrigger.version = "3.9.1";
+ScrollTrigger.version = "3.8.0";
 
 ScrollTrigger.saveStyles = function (targets) {
   return targets ? _toArray(targets).forEach(function (target) {
@@ -13533,7 +13315,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 /*!
- * GSAP 3.9.1
+ * GSAP 3.8.0
  * https://greensock.com
  *
  * @license Copyright 2008-2021, GreenSock. All rights reserved.
@@ -13716,12 +13498,10 @@ _arrayContainsAny = function _arrayContainsAny(toSearch, toFind) {
 
   return obj;
 },
-    _setKeyframeDefaults = function _setKeyframeDefaults(excludeDuration) {
-  return function (obj, defaults) {
-    for (var p in defaults) {
-      p in obj || p === "duration" && excludeDuration || p === "ease" || (obj[p] = defaults[p]);
-    }
-  };
+    _setKeyframeDefaults = function _setKeyframeDefaults(obj, defaults) {
+  for (var p in defaults) {
+    p in obj || p === "duration" || p === "ease" || (obj[p] = defaults[p]);
+  }
 },
     _merge = function _merge(base, toMerge) {
   for (var p in toMerge) {
@@ -13749,7 +13529,7 @@ _arrayContainsAny = function _arrayContainsAny(toSearch, toFind) {
 },
     _inheritDefaults = function _inheritDefaults(vars) {
   var parent = vars.parent || _globalTimeline,
-      func = vars.keyframes ? _setKeyframeDefaults(_isArray(vars.keyframes)) : _setDefaults;
+      func = vars.keyframes ? _setKeyframeDefaults : _setDefaults;
 
   if (_isNotFalse(vars.inherit)) {
     while (parent) {
@@ -13982,10 +13762,10 @@ _isFromOrFromStart = function _isFromOrFromStart(_ref2) {
     // in case there's a zero-duration tween that has a repeat with a repeatDelay
     tTime = _clamp(0, tween._tDur, totalTime);
     iteration = _animationCycle(tTime, repeatDelay);
+    prevIteration = _animationCycle(tween._tTime, repeatDelay);
     tween._yoyo && iteration & 1 && (ratio = 1 - ratio);
 
-    if (iteration !== _animationCycle(tween._tTime, repeatDelay)) {
-      // if iteration changed
+    if (iteration !== prevIteration) {
       prevRatio = 1 - ratio;
       tween.vars.repeatRefresh && tween._initted && tween.invalidate();
     }
@@ -14037,7 +13817,7 @@ _isFromOrFromStart = function _isFromOrFromStart(_ref2) {
     child = animation._first;
 
     while (child && child._start <= time) {
-      if (child.data === "isPause" && child._start > prevTime) {
+      if (!child._dur && child.data === "isPause" && child._start > prevTime) {
         return child;
       }
 
@@ -14047,7 +13827,7 @@ _isFromOrFromStart = function _isFromOrFromStart(_ref2) {
     child = animation._last;
 
     while (child && child._start >= time) {
-      if (child.data === "isPause" && child._start < prevTime) {
+      if (!child._dur && child.data === "isPause" && child._start < prevTime) {
         return child;
       }
 
@@ -14062,7 +13842,7 @@ _isFromOrFromStart = function _isFromOrFromStart(_ref2) {
   totalProgress && !leavePlayhead && (animation._time *= dur / animation._dur);
   animation._dur = dur;
   animation._tDur = !repeat ? dur : repeat < 0 ? 1e10 : _roundPrecise(dur * (repeat + 1) + animation._rDelay * repeat);
-  totalProgress > 0 && !leavePlayhead ? _alignPlayhead(animation, animation._tTime = animation._tDur * totalProgress) : animation.parent && _setEnd(animation);
+  totalProgress && !leavePlayhead ? _alignPlayhead(animation, animation._tTime = animation._tDur * totalProgress) : animation.parent && _setEnd(animation);
   skipUncache || _uncache(animation.parent, animation);
   return animation;
 },
@@ -14142,8 +13922,14 @@ _isFromOrFromStart = function _isFromOrFromStart(_ref2) {
     _clamp = function _clamp(min, max, value) {
   return value < min ? min : value > max ? max : value;
 },
-    getUnit = function getUnit(value, v) {
-  return !_isString(value) || !(v = _unitExp.exec(value)) ? "" : value.substr(v.index + v[0].length);
+    getUnit = function getUnit(value) {
+  if (typeof value !== "string") {
+    return "";
+  }
+
+  var v = _unitExp.exec(value);
+
+  return v ? value.substr(v.index + v[0].length) : "";
 },
     // note: protect against padded numbers as strings, like "100.100". That shouldn't return "00" as the unit. If it's numeric, return no unit.
 clamp = function clamp(min, max, value) {
@@ -14240,7 +14026,7 @@ distribute = function distribute(v) {
 
       distances = cache[l] = [];
       originX = ratios ? Math.min(wrapAt, l) * ratioX - .5 : from % wrapAt;
-      originY = wrapAt === _bigNum ? 0 : ratios ? l * ratioY / wrapAt - .5 : from / wrapAt | 0;
+      originY = ratios ? l * ratioY / wrapAt - .5 : from / wrapAt | 0;
       max = 0;
       min = _bigNum;
 
@@ -14577,11 +14363,8 @@ _255 = 255,
   cyan: [0, _255, _255],
   transparent: [_255, _255, _255, 0]
 },
-    // possible future idea to replace the hard-coded color name values - put this in the ticker.wake() where we set the _doc:
-// let ctx = _doc.createElement("canvas").getContext("2d");
-// _forEachName("aqua,lime,silver,black,maroon,teal,blue,navy,white,olive,yellow,orange,gray,purple,green,red,pink,cyan", color => {ctx.fillStyle = color; _colorLookup[color] = splitColor(ctx.fillStyle)});
-_hue = function _hue(h, m1, m2) {
-  h += h < 0 ? 1 : h > 1 ? -1 : 0;
+    _hue = function _hue(h, m1, m2) {
+  h = h < 0 ? h + 1 : h > 1 ? h - 1 : h;
   return (h * 6 < 1 ? m1 + (m2 - m1) * h * 6 : h < .5 ? m2 : h * 3 < 2 ? m1 + (m2 - m1) * (2 / 3 - h) * 6 : m1) * _255 + .5 | 0;
 },
     splitColor = function splitColor(v, toHSL, forceAlpha) {
@@ -14860,7 +14643,8 @@ _tickerActive,
 
       _wake();
     },
-    remove: function remove(callback, i) {
+    remove: function remove(callback) {
+      var i;
       ~(i = _listeners.indexOf(callback)) && _listeners.splice(i, 1) && _i >= i && _i--;
     },
     _listeners: _listeners
@@ -16360,13 +16144,13 @@ _initTween = function _initTween(tween, time) {
 
   tween._from = !tl && !!vars.runBackwards; //nested timelines should never run backwards - the backwards-ness is in the child tweens.
 
-  if (!tl || keyframes && !vars.stagger) {
+  if (!tl) {
     //if there's an internal timeline, skip all the parsing because we passed that task down the chain.
     harness = targets[0] ? _getCache(targets[0]).harness : 0;
     harnessVars = harness && vars[harness.prop]; //someone may need to specify CSS-specific values AND non-CSS values, like if the element has an "x" property plus it's a standard DOM element. We allow people to distinguish by wrapping plugin-specific stuff in a css:{} object for example.
 
     cleanVars = _copyExcluding(vars, _reservedProps);
-    prevStartAt && _removeFromParent(prevStartAt.render(-1, true));
+    prevStartAt && prevStartAt.render(-1, true).kill();
 
     if (startAt) {
       _removeFromParent(tween._startAt = Tween.set(targets, _setDefaults({
@@ -16425,8 +16209,6 @@ _initTween = function _initTween(tween, time) {
         _removeFromParent(tween._startAt = Tween.set(targets, p));
 
         time < 0 && tween._startAt.render(-1, true); // rare edge case, like if a render is forced in the negative direction of a non-initted from() tween.
-
-        tween._zTime = time;
 
         if (!immediateRender) {
           _initTween(tween._startAt, _tinyNum); //ensures that the initial values are recorded
@@ -16489,8 +16271,6 @@ _initTween = function _initTween(tween, time) {
 
   tween._onUpdate = onUpdate;
   tween._initted = (!tween._op || tween._pt) && !overwritten; // if overwrittenProps resulted in the entire tween being killed, do NOT flag it as initted or else it may render for one tick.
-
-  keyframes && time <= 0 && tl.render(_bigNum, true, true); // if there's a 0% keyframe, it'll render in the "before" state for any staggered/delayed animations thus when the following tween initializes, it'll use the "before" state instead of the "after" state as the initial values.
 },
     _addAliasesToVars = function _addAliasesToVars(targets, vars) {
   var harness = targets[0] ? _getCache(targets[0]).harness : 0,
@@ -16519,42 +16299,11 @@ _initTween = function _initTween(tween, time) {
 
   return copy;
 },
-    // parses multiple formats, like {"0%": {x: 100}, {"50%": {x: -20}} and { x: {"0%": 100, "50%": -20} }, and an "ease" can be set on any object. We populate an "allProps" object with an Array for each property, like {x: [{}, {}], y:[{}, {}]} with data for each property tween. The objects have a "t" (time), "v", (value), and "e" (ease) property. This allows us to piece together a timeline later.
-_parseKeyframe = function _parseKeyframe(prop, obj, allProps, easeEach) {
-  var ease = obj.ease || easeEach || "power1.inOut",
-      p,
-      a;
-
-  if (_isArray(obj)) {
-    a = allProps[prop] || (allProps[prop] = []); // t = time (out of 100), v = value, e = ease
-
-    obj.forEach(function (value, i) {
-      return a.push({
-        t: i / (obj.length - 1) * 100,
-        v: value,
-        e: ease
-      });
-    });
-  } else {
-    for (p in obj) {
-      a = allProps[p] || (allProps[p] = []);
-      p === "ease" || a.push({
-        t: parseFloat(prop),
-        v: obj[p],
-        e: ease
-      });
-    }
-  }
-},
     _parseFuncOrString = function _parseFuncOrString(value, tween, i, target, targets) {
   return _isFunction(value) ? value.call(tween, i, target, targets) : _isString(value) && ~value.indexOf("random(") ? _replaceRandom(value) : value;
 },
     _staggerTweenProps = _callbackNames + "repeat,repeatDelay,yoyo,repeatRefresh,yoyoEase",
-    _staggerPropsToSkip = {};
-
-_forEachName(_staggerTweenProps + ",id,stagger,delay,duration,paused,scrollTrigger", function (name) {
-  return _staggerPropsToSkip[name] = 1;
-});
+    _staggerPropsToSkip = (_staggerTweenProps + ",id,stagger,delay,duration,paused,scrollTrigger").split(",");
 /*
  * --------------------------------------------------------------------------------------
  * TWEEN
@@ -16610,9 +16359,21 @@ var Tween = /*#__PURE__*/function (_Animation2) {
       tl.parent = tl._dp = _assertThisInitialized(_this3);
       tl._start = 0;
 
-      if (stagger || _isFuncOrString(duration) || _isFuncOrString(delay)) {
+      if (keyframes) {
+        _inheritDefaults(_setDefaults(tl.vars.defaults, {
+          ease: "none"
+        }));
+
+        stagger ? parsedTargets.forEach(function (t, i) {
+          return keyframes.forEach(function (frame, j) {
+            return tl.to(t, frame, j ? ">" : i * stagger);
+          });
+        }) : keyframes.forEach(function (frame) {
+          return tl.to(parsedTargets, frame, ">");
+        });
+      } else {
         l = parsedTargets.length;
-        staggerFunc = stagger && distribute(stagger);
+        staggerFunc = stagger ? distribute(stagger) : _emptyFunc;
 
         if (_isObject(stagger)) {
           //users can pass in callbacks like onStart/onComplete in the stagger object. These should fire with each individual tween.
@@ -16625,7 +16386,14 @@ var Tween = /*#__PURE__*/function (_Animation2) {
         }
 
         for (i = 0; i < l; i++) {
-          copy = _copyExcluding(vars, _staggerPropsToSkip);
+          copy = {};
+
+          for (p in vars) {
+            if (_staggerPropsToSkip.indexOf(p) < 0) {
+              copy[p] = vars[p];
+            }
+          }
+
           copy.stagger = 0;
           yoyoEase && (copy.yoyoEase = yoyoEase);
           staggerVarsToMerge && _merge(copy, staggerVarsToMerge);
@@ -16641,55 +16409,10 @@ var Tween = /*#__PURE__*/function (_Animation2) {
             copy.delay = 0;
           }
 
-          tl.to(curTarget, copy, staggerFunc ? staggerFunc(i, curTarget, parsedTargets) : 0);
-          tl._ease = _easeMap.none;
+          tl.to(curTarget, copy, staggerFunc(i, curTarget, parsedTargets));
         }
 
         tl.duration() ? duration = delay = 0 : _this3.timeline = 0; // if the timeline's duration is 0, we don't need a timeline internally!
-      } else if (keyframes) {
-        _inheritDefaults(_setDefaults(tl.vars.defaults, {
-          ease: "none"
-        }));
-
-        tl._ease = _parseEase(keyframes.ease || vars.ease || "none");
-        var time = 0,
-            a,
-            kf,
-            v;
-
-        if (_isArray(keyframes)) {
-          keyframes.forEach(function (frame) {
-            return tl.to(parsedTargets, frame, ">");
-          });
-        } else {
-          copy = {};
-
-          for (p in keyframes) {
-            p === "ease" || p === "easeEach" || _parseKeyframe(p, keyframes[p], copy, keyframes.easeEach);
-          }
-
-          for (p in copy) {
-            a = copy[p].sort(function (a, b) {
-              return a.t - b.t;
-            });
-            time = 0;
-
-            for (i = 0; i < a.length; i++) {
-              kf = a[i];
-              v = {
-                ease: kf.e,
-                duration: (kf.t - (i ? a[i - 1].t : 0)) / 100 * duration
-              };
-              v[p] = kf.v;
-              tl.to(parsedTargets, v, time);
-              time += v.duration;
-            }
-          }
-
-          tl.duration() < duration && tl.to({}, {
-            duration: duration - tl.duration()
-          }); // in case keyframes didn't go to 100%
-        }
       }
 
       duration || _this3.duration(duration = tl.duration());
@@ -16839,7 +16562,7 @@ var Tween = /*#__PURE__*/function (_Animation2) {
         pt = pt._next;
       }
 
-      timeline && timeline.render(totalTime < 0 ? totalTime : !time && isYoyo ? -_tinyNum : timeline._dur * timeline._ease(time / this._dur), suppressEvents, force) || this._startAt && (this._zTime = totalTime);
+      timeline && timeline.render(totalTime < 0 ? totalTime : !time && isYoyo ? -_tinyNum : timeline._dur * ratio, suppressEvents, force) || this._startAt && (this._zTime = totalTime);
 
       if (this._onUpdate && !suppressEvents) {
         totalTime < 0 && this._startAt && this._startAt.render(totalTime, true, force); //note: for performance reasons, we tuck this conditional logic inside less traveled areas (most tweens don't have an onUpdate). We'd just have it at the end before the onComplete, but the values should be updated before any onUpdate is called, so we ALSO put it here and then if it's not called, we do so later near the onComplete.
@@ -17479,7 +17202,7 @@ var gsap = _gsap.registerPlugin({
   }
 }, _buildModifierPlugin("roundProps", _roundModifier), _buildModifierPlugin("modifiers"), _buildModifierPlugin("snap", snap)) || _gsap; //to prevent the core plugins from being dropped via aggressive tree shaking, we must include them in the variable declaration in this way.
 
-Tween.version = Timeline.version = gsap.version = "3.9.1";
+Tween.version = Timeline.version = gsap.version = "3.8.0";
 _coreReady = 1;
 _windowExists() && _wake();
 var Power0 = _easeMap.Power0,
@@ -17708,22 +17431,6 @@ function isFunction (fn) {
       fn === window.alert ||
       fn === window.confirm ||
       fn === window.prompt))
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/isarray/index.js":
-/*!***************************************!*\
-  !*** ./node_modules/isarray/index.js ***!
-  \***************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-var toString = {}.toString;
-
-module.exports = Array.isArray || function (arr) {
-  return toString.call(arr) == '[object Array]';
 };
 
 
@@ -30385,13 +30092,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _videojs_vhs_utils_es_decode_b64_to_uint8_array__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @videojs/vhs-utils/es/decode-b64-to-uint8-array */ "./node_modules/@videojs/vhs-utils/es/decode-b64-to-uint8-array.js");
 /* harmony import */ var _xmldom_xmldom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @xmldom/xmldom */ "./node_modules/@xmldom/xmldom/lib/index.js");
 /* harmony import */ var _xmldom_xmldom__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_xmldom_xmldom__WEBPACK_IMPORTED_MODULE_3__);
-/*! @name mpd-parser @version 0.19.2 @license Apache-2.0 */
+/*! @name mpd-parser @version 0.19.0 @license Apache-2.0 */
 
 
 
 
 
-var version = "0.19.2";
+var version = "0.19.0";
 
 var isObject = function isObject(obj) {
   return !!obj && typeof obj === 'object';
@@ -32151,7 +31858,7 @@ var generateKeySystemInformation = function generateKeySystemInformation(content
 var parseCaptionServiceMetadata = function parseCaptionServiceMetadata(service) {
   // 608 captions
   if (service.schemeIdUri === 'urn:scte:dash:cc:cea-608:2015') {
-    var values = typeof service.value !== 'string' ? [] : service.value.split(';');
+    var values = service.value.split(';');
     return values.map(function (value) {
       var channel;
       var language; // default language to value
@@ -32173,7 +31880,7 @@ var parseCaptionServiceMetadata = function parseCaptionServiceMetadata(service) 
       };
     });
   } else if (service.schemeIdUri === 'urn:scte:dash:cc:cea-708:2015') {
-    var _values = typeof service.value !== 'string' ? [] : service.value.split(';');
+    var _values = service.value.split(';');
 
     return _values.map(function (value) {
       var flags = {
@@ -32729,7 +32436,7 @@ module.exports = {
 
 var base64 = __webpack_require__(/*! base64-js */ "./node_modules/base64-js/index.js")
 var ieee754 = __webpack_require__(/*! ieee754 */ "./node_modules/ieee754/index.js")
-var isArray = __webpack_require__(/*! isarray */ "./node_modules/isarray/index.js")
+var isArray = __webpack_require__(/*! isarray */ "./node_modules/node-libs-browser/node_modules/isarray/index.js")
 
 exports.Buffer = Buffer
 exports.SlowBuffer = SlowBuffer
@@ -34508,6 +34215,22 @@ function isnan (val) {
 }
 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+
+/***/ }),
+
+/***/ "./node_modules/node-libs-browser/node_modules/isarray/index.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/node-libs-browser/node_modules/isarray/index.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var toString = {}.toString;
+
+module.exports = Array.isArray || function (arr) {
+  return toString.call(arr) == '[object Array]';
+};
+
 
 /***/ }),
 
@@ -38250,7 +37973,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var mux_js_lib_utils_clock__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(mux_js_lib_utils_clock__WEBPACK_IMPORTED_MODULE_20__);
 /**
  * @license
- * Video.js 7.17.0 <http://videojs.com/>
+ * Video.js 7.15.4 <http://videojs.com/>
  * Copyright Brightcove, Inc. <https://www.brightcove.com/>
  * Available under Apache License Version 2.0
  * <https://github.com/videojs/video.js/blob/main/LICENSE>
@@ -38282,7 +38005,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var version$5 = "7.17.0";
+var version$5 = "7.15.4";
 
 /**
  * An Object that contains lifecycle hooks as keys which point to an array
@@ -43713,6 +43436,11 @@ var Component$1 = /*#__PURE__*/function () {
    *
    * @return {Component}
    *         The `Component` that got registered under the given name.
+   *
+   * @deprecated In `videojs` 6 this will not return `Component`s that were not
+   *             registered using {@link Component.registerComponent}. Currently we
+   *             check the global `videojs` object for a `Component` name and
+   *             return that if it exists.
    */
   ;
 
@@ -46496,7 +46224,7 @@ var HTMLTrackElement = /*#__PURE__*/function (_EventTarget) {
    *
    * @param {string} [options.srclang='']
    *        A valid two character language code. An alternative, but deprioritized
-   *        version of `options.language`
+   *        vesion of `options.language`
    *
    * @param {string} [options.src]
    *        A url to TextTrack cues.
@@ -49309,7 +49037,6 @@ var TextTrackDisplay = /*#__PURE__*/function (_Component) {
     return _Component.prototype.createEl.call(this, 'div', {
       className: 'vjs-text-track-display'
     }, {
-      'translate': 'yes',
       'aria-live': 'off',
       'aria-atomic': 'true'
     });
@@ -49501,10 +49228,6 @@ var TextTrackDisplay = /*#__PURE__*/function (_Component) {
         var cueEl = _track2.activeCues[_j].displayState;
         addClass(cueEl, 'vjs-text-track-cue');
         addClass(cueEl, 'vjs-text-track-cue-' + (_track2.language ? _track2.language : _i2));
-
-        if (_track2.language) {
-          setAttribute(cueEl, 'lang', _track2.language);
-        }
       }
 
       if (this.player_.textTrackSettings) {
@@ -57272,7 +56995,7 @@ var ResizeManager = /*#__PURE__*/function (_Component) {
 Component$1.registerComponent('ResizeManager', ResizeManager);
 
 var defaults = {
-  trackingThreshold: 20,
+  trackingThreshold: 30,
   liveTolerance: 15
 };
 /*
@@ -57295,7 +57018,7 @@ var LiveTracker = /*#__PURE__*/function (_Component) {
    * @param {Object} [options]
    *        The key/value store of player options.
    *
-   * @param {number} [options.trackingThreshold=20]
+   * @param {number} [options.trackingThreshold=30]
    *        Number of seconds of live window (seekableEnd - seekableStart) that
    *        media needs to have before the liveui will be shown.
    *
@@ -60189,7 +59912,7 @@ var TECH_EVENTS_RETRIGGER = [
  */
 
 /**
- * Retrigger the `loadedmetadata` event that was triggered by the {@link Tech}.
+ * Retrigger the `stalled` event that was triggered by the {@link Tech}.
  *
  * @private
  * @method Player#handleTechLoadedmetadata_
@@ -60848,7 +60571,6 @@ var Player = /*#__PURE__*/function (_Component) {
     // if it's been set to something different to the doc
 
     this.el_.setAttribute('lang', this.language_);
-    this.el_.setAttribute('translate', 'no');
     this.el_ = el;
     return el;
   }
@@ -62053,14 +61775,10 @@ var Player = /*#__PURE__*/function (_Component) {
       return;
     }
 
-    if (this.options_ === undefined || this.options_.userActions === undefined || this.options_.userActions.click === undefined || this.options_.userActions.click !== false) {
-      if (this.options_ !== undefined && this.options_.userActions !== undefined && typeof this.options_.userActions.click === 'function') {
-        this.options_.userActions.click.call(this, event);
-      } else if (this.paused()) {
-        silencePromise(this.play());
-      } else {
-        this.pause();
-      }
+    if (this.paused()) {
+      silencePromise(this.play());
+    } else {
+      this.pause();
     }
   }
   /**
@@ -66467,7 +66185,7 @@ videojs.addLanguage('en', {
   'Non-Fullscreen': 'Exit Fullscreen'
 });
 
-/*! @name @videojs/http-streaming @version 2.12.0 @license Apache-2.0 */
+/*! @name @videojs/http-streaming @version 2.10.2 @license Apache-2.0 */
 /**
  * @file resolve-url.js - Handling how URLs are resolved and manipulated
  */
@@ -66782,49 +66500,6 @@ var lastBufferedEnd = function lastBufferedEnd(a) {
   return a.end(a.length - 1);
 };
 /**
- * A utility function to add up the amount of time in a timeRange
- * after a specified startTime.
- * ie:[[0, 10], [20, 40], [50, 60]] with a startTime 0
- *     would return 40 as there are 40s seconds after 0 in the timeRange
- *
- * @param {TimeRange} range
- *        The range to check against
- * @param {number} startTime
- *        The time in the time range that you should start counting from
- *
- * @return {number}
- *          The number of seconds in the buffer passed the specified time.
- */
-
-
-var timeAheadOf = function timeAheadOf(range, startTime) {
-  var time = 0;
-
-  if (!range || !range.length) {
-    return time;
-  }
-
-  for (var i = 0; i < range.length; i++) {
-    var start = range.start(i);
-    var end = range.end(i); // startTime is after this range entirely
-
-    if (startTime > end) {
-      continue;
-    } // startTime is within this range
-
-
-    if (startTime > start && startTime <= end) {
-      time += end - startTime;
-      continue;
-    } // startTime is before this range.
-
-
-    time += end - start;
-  }
-
-  return time;
-};
-/**
  * @file playlist.js
  *
  * Playlist related utilities.
@@ -66833,41 +66508,6 @@ var timeAheadOf = function timeAheadOf(range, startTime) {
 
 var createTimeRange = videojs.createTimeRange;
 /**
- * Get the duration of a segment, with special cases for
- * llhls segments that do not have a duration yet.
- *
- * @param {Object} playlist
- *        the playlist that the segment belongs to.
- * @param {Object} segment
- *        the segment to get a duration for.
- *
- * @return {number}
- *          the segment duration
- */
-
-var segmentDurationWithParts = function segmentDurationWithParts(playlist, segment) {
-  // if this isn't a preload segment
-  // then we will have a segment duration that is accurate.
-  if (!segment.preload) {
-    return segment.duration;
-  } // otherwise we have to add up parts and preload hints
-  // to get an up to date duration.
-
-
-  var result = 0;
-  (segment.parts || []).forEach(function (p) {
-    result += p.duration;
-  }); // for preload hints we have to use partTargetDuration
-  // as they won't even have a duration yet.
-
-  (segment.preloadHints || []).forEach(function (p) {
-    if (p.type === 'PART') {
-      result += playlist.partTargetDuration;
-    }
-  });
-  return result;
-};
-/**
  * A function to get a combined list of parts and segments with durations
  * and indexes.
  *
@@ -66875,7 +66515,6 @@ var segmentDurationWithParts = function segmentDurationWithParts(playlist, segme
  *
  * @return {Array} The part/segment list.
  */
-
 
 var getPartsAndSegments = function getPartsAndSegments(playlist) {
   return (playlist.segments || []).reduce(function (acc, segment, si) {
@@ -67000,7 +66639,7 @@ var backwardDuration = function backwardDuration(playlist, endSequence) {
       };
     }
 
-    result += segmentDurationWithParts(playlist, segment);
+    result += segment.duration;
 
     if (typeof segment.start !== 'undefined') {
       return {
@@ -67040,7 +66679,7 @@ var forwardDuration = function forwardDuration(playlist, endSequence) {
       };
     }
 
-    result += segmentDurationWithParts(playlist, segment);
+    result += segment.duration;
 
     if (typeof segment.end !== 'undefined') {
       return {
@@ -67222,15 +66861,15 @@ var playlistEnd = function playlistEnd(playlist, expired, useSafeLiveEnd, liveEd
   }
 
   expired = expired || 0;
-  var lastSegmentEndTime = intervalDuration(playlist, playlist.mediaSequence + playlist.segments.length, expired);
+  var lastSegmentTime = intervalDuration(playlist, playlist.mediaSequence + playlist.segments.length, expired);
 
   if (useSafeLiveEnd) {
     liveEdgePadding = typeof liveEdgePadding === 'number' ? liveEdgePadding : liveEdgeDelay(null, playlist);
-    lastSegmentEndTime -= liveEdgePadding;
+    lastSegmentTime -= liveEdgePadding;
   } // don't return a time less than zero
 
 
-  return Math.max(0, lastSegmentEndTime);
+  return Math.max(0, lastSegmentTime);
 };
 /**
   * Calculates the interval of time that is currently seekable in a
@@ -67650,8 +67289,7 @@ var Playlist = {
   estimateSegmentRequestTime: estimateSegmentRequestTime,
   isLowestEnabledRendition: isLowestEnabledRendition,
   isAudioOnly: isAudioOnly,
-  playlistMatch: playlistMatch,
-  segmentDurationWithParts: segmentDurationWithParts
+  playlistMatch: playlistMatch
 };
 var log = videojs.log;
 
@@ -67991,13 +67629,13 @@ var mergeOptions$2 = videojs.mergeOptions,
     EventTarget$1 = videojs.EventTarget;
 
 var addLLHLSQueryDirectives = function addLLHLSQueryDirectives(uri, media) {
-  if (media.endList || !media.serverControl) {
+  if (media.endList) {
     return uri;
   }
 
-  var parameters = {};
+  var query = [];
 
-  if (media.serverControl.canBlockReload) {
+  if (media.serverControl && media.serverControl.canBlockReload) {
     var preloadSegment = media.preloadSegment; // next msn is a zero based value, length is not.
 
     var nextMSN = media.mediaSequence + media.segments.length; // If preload segment has parts then it is likely
@@ -68013,8 +67651,7 @@ var addLLHLSQueryDirectives = function addLLHLSQueryDirectives(uri, media) {
 
       if (nextPart > -1 && nextPart !== parts.length - 1) {
         // add existing parts to our preload hints
-        // eslint-disable-next-line
-        parameters._HLS_part = nextPart;
+        query.push("_HLS_part=" + nextPart);
       } // this if statement makes sure that we request the msn
       // of the preload segment if:
       // 1. the preload segment had parts (and was not yet a full segment)
@@ -68030,30 +67667,20 @@ var addLLHLSQueryDirectives = function addLLHLSQueryDirectives(uri, media) {
         nextMSN--;
       }
     } // add _HLS_msn= in front of any _HLS_part query
-    // eslint-disable-next-line
 
 
-    parameters._HLS_msn = nextMSN;
+    query.unshift("_HLS_msn=" + nextMSN);
   }
 
   if (media.serverControl && media.serverControl.canSkipUntil) {
     // add _HLS_skip= infront of all other queries.
-    // eslint-disable-next-line
-    parameters._HLS_skip = media.serverControl.canSkipDateranges ? 'v2' : 'YES';
+    query.unshift('_HLS_skip=' + (media.serverControl.canSkipDateranges ? 'v2' : 'YES'));
   }
 
-  if (Object.keys(parameters).length) {
-    var parsedUri = new global_window__WEBPACK_IMPORTED_MODULE_0___default.a.URL(uri);
-    ['_HLS_skip', '_HLS_msn', '_HLS_part'].forEach(function (name) {
-      if (!parameters.hasOwnProperty(name)) {
-        return;
-      }
-
-      parsedUri.searchParams.set(name, parameters[name]);
-    });
-    uri = parsedUri.toString();
-  }
-
+  query.forEach(function (str, i) {
+    var symbol = i === 0 ? '?' : '&';
+    uri += "" + symbol + str;
+  });
   return uri;
 };
 /**
@@ -68222,7 +67849,7 @@ var getAllSegments = function getAllSegments(media) {
 
 
 var isPlaylistUnchanged = function isPlaylistUnchanged(a, b) {
-  return a === b || a.segments && b.segments && a.segments.length === b.segments.length && a.endList === b.endList && a.mediaSequence === b.mediaSequence && a.preloadSegment === b.preloadSegment;
+  return a === b || a.segments && b.segments && a.segments.length === b.segments.length && a.endList === b.endList && a.mediaSequence === b.mediaSequence;
 };
 /**
   * Returns a new master playlist that is the result of merging an
@@ -68320,8 +67947,7 @@ var updateMaster$1 = function updateMaster(master, newMedia, unchangedCheck) {
 
 
 var refreshDelay = function refreshDelay(media, update) {
-  var segments = media.segments || [];
-  var lastSegment = segments[segments.length - 1];
+  var lastSegment = media.segments[media.segments.length - 1];
   var lastPart = lastSegment && lastSegment.parts && lastSegment.parts[lastSegment.parts.length - 1];
   var lastDuration = lastPart && lastPart.duration || lastSegment && lastSegment.duration;
 
@@ -68373,12 +67999,7 @@ var PlaylistLoader = /*#__PURE__*/function (_EventTarget) {
     var vhsOptions = vhs.options_;
     _this.customTagParsers = vhsOptions && vhsOptions.customTagParsers || [];
     _this.customTagMappers = vhsOptions && vhsOptions.customTagMappers || [];
-    _this.experimentalLLHLS = vhsOptions && vhsOptions.experimentalLLHLS || false; // force experimentalLLHLS for IE 11
-
-    if (videojs.browser.IE_VERSION) {
-      _this.experimentalLLHLS = false;
-    } // initialize the loader state
-
+    _this.experimentalLLHLS = vhsOptions && vhsOptions.experimentalLLHLS || false; // initialize the loader state
 
     _this.state = 'HAVE_NOTHING'; // live playlist staleness timeout
 
@@ -68503,7 +68124,6 @@ var PlaylistLoader = /*#__PURE__*/function (_EventTarget) {
 
     var update = updateMaster$1(this.master, playlist);
     this.targetDuration = playlist.partTargetDuration || playlist.targetDuration;
-    this.pendingMedia_ = null;
 
     if (update) {
       this.master = update;
@@ -68648,7 +68268,6 @@ var PlaylistLoader = /*#__PURE__*/function (_EventTarget) {
       this.trigger('mediachanging');
     }
 
-    this.pendingMedia_ = playlist;
     this.request = this.vhs_.xhr({
       uri: playlist.resolvedUri,
       withCredentials: this.withCredentials
@@ -70567,7 +70186,7 @@ var transform = function transform(code) {
 var getWorkerString = function getWorkerString(fn) {
   return fn.toString().replace(/^function.+?{/, '').slice(0, -1);
 };
-/* rollup-plugin-worker-factory start for worker!/Users/gkatsevman/p/http-streaming-release/src/transmuxer-worker.js */
+/* rollup-plugin-worker-factory start for worker!/Users/bcasey/Projects/videojs-http-streaming/src/transmuxer-worker.js */
 
 
 var workerCode$1 = transform(getWorkerString(function () {
@@ -72199,9 +71818,7 @@ var workerCode$1 = transform(getWorkerString(function () {
     ];
 
     if (this.parse708captions_) {
-      this.cc708Stream_ = new Cea708Stream({
-        captionServices: options.captionServices
-      }); // eslint-disable-line no-use-before-define
+      this.cc708Stream_ = new Cea708Stream(); // eslint-disable-line no-use-before-define
     }
 
     this.reset(); // forward data and done events from CCs to this CaptionStream
@@ -72558,16 +72175,11 @@ var workerCode$1 = transform(getWorkerString(function () {
     }
   };
 
-  var Cea708Service = function Cea708Service(serviceNum, encoding, stream) {
+  var Cea708Service = function Cea708Service(serviceNum) {
     this.serviceNum = serviceNum;
     this.text = '';
     this.currentWindow = new Cea708Window(-1);
     this.windows = [];
-    this.stream = stream; // Try to setup a TextDecoder if an `encoding` value was provided
-
-    if (typeof encoding === 'string') {
-      this.createTextDecoder(encoding);
-    }
   };
   /**
    * Initialize service windows
@@ -72599,45 +72211,10 @@ var workerCode$1 = transform(getWorkerString(function () {
   Cea708Service.prototype.setCurrentWindow = function (windowNum) {
     this.currentWindow = this.windows[windowNum];
   };
-  /**
-   * Try to create a TextDecoder if it is natively supported
-   */
 
-
-  Cea708Service.prototype.createTextDecoder = function (encoding) {
-    if (typeof TextDecoder === 'undefined') {
-      this.stream.trigger('log', {
-        level: 'warn',
-        message: 'The `encoding` option is unsupported without TextDecoder support'
-      });
-    } else {
-      try {
-        this.textDecoder_ = new TextDecoder(encoding);
-      } catch (error) {
-        this.stream.trigger('log', {
-          level: 'warn',
-          message: 'TextDecoder could not be created with ' + encoding + ' encoding. ' + error
-        });
-      }
-    }
-  };
-
-  var Cea708Stream = function Cea708Stream(options) {
-    options = options || {};
+  var Cea708Stream = function Cea708Stream() {
     Cea708Stream.prototype.init.call(this);
     var self = this;
-    var captionServices = options.captionServices || {};
-    var captionServiceEncodings = {};
-    var serviceProps; // Get service encodings from captionServices option block
-
-    Object.keys(captionServices).forEach(function (serviceName) {
-      serviceProps = captionServices[serviceName];
-
-      if (/^SERVICE/.test(serviceName)) {
-        captionServiceEncodings[serviceName] = serviceProps.encoding;
-      }
-    });
-    this.serviceEncodings = captionServiceEncodings;
     this.current708Packet = null;
     this.services = {};
 
@@ -72749,8 +72326,6 @@ var workerCode$1 = transform(getWorkerString(function () {
 
       if (within708TextBlock(b)) {
         i = this.handleText(i, service);
-      } else if (b === 0x18) {
-        i = this.multiByteCharacter(i, service);
       } else if (b === 0x10) {
         i = this.extendedCommands(i, service);
       } else if (0x80 <= b && b <= 0x87) {
@@ -72809,9 +72384,7 @@ var workerCode$1 = transform(getWorkerString(function () {
     var b = packetData[++i];
 
     if (within708TextBlock(b)) {
-      i = this.handleText(i, service, {
-        isExtended: true
-      });
+      i = this.handleText(i, service, true);
     }
 
     return i;
@@ -72837,16 +72410,8 @@ var workerCode$1 = transform(getWorkerString(function () {
 
 
   Cea708Stream.prototype.initService = function (serviceNum, i) {
-    var serviceName = 'SERVICE' + serviceNum;
     var self = this;
-    var serviceName;
-    var encoding;
-
-    if (serviceName in this.serviceEncodings) {
-      encoding = this.serviceEncodings[serviceName];
-    }
-
-    this.services[serviceNum] = new Cea708Service(serviceNum, encoding, self);
+    this.services[serviceNum] = new Cea708Service(serviceNum);
     this.services[serviceNum].init(this.getPts(i), function (pts) {
       self.flushDisplayed(pts, self.services[serviceNum]);
     });
@@ -72861,31 +72426,14 @@ var workerCode$1 = transform(getWorkerString(function () {
    */
 
 
-  Cea708Stream.prototype.handleText = function (i, service, options) {
-    var isExtended = options && options.isExtended;
-    var isMultiByte = options && options.isMultiByte;
+  Cea708Stream.prototype.handleText = function (i, service, isExtended) {
     var packetData = this.current708Packet.data;
+    var b = packetData[i];
     var extended = isExtended ? 0x1000 : 0x0000;
-    var currentByte = packetData[i];
-    var nextByte = packetData[i + 1];
+
+    var _char = get708CharFromCode(extended | b);
+
     var win = service.currentWindow;
-
-    var _char;
-
-    var charCodeArray; // Use the TextDecoder if one was created for this service
-
-    if (service.textDecoder_ && !isExtended) {
-      if (isMultiByte) {
-        charCodeArray = [currentByte, nextByte];
-        i++;
-      } else {
-        charCodeArray = [currentByte];
-      }
-
-      _char = service.textDecoder_.decode(new Uint8Array(charCodeArray));
-    } else {
-      _char = get708CharFromCode(extended | currentByte);
-    }
 
     if (win.pendingNewLine && !win.isEmpty()) {
       win.newLine(this.getPts(i));
@@ -72893,28 +72441,6 @@ var workerCode$1 = transform(getWorkerString(function () {
 
     win.pendingNewLine = false;
     win.addText(_char);
-    return i;
-  };
-  /**
-   * Handle decoding of multibyte character
-   *
-   * @param  {Integer} i        Current index in the 708 packet
-   * @param  {Service} service  The service object to be affected
-   * @return {Integer}          New index after parsing
-   */
-
-
-  Cea708Stream.prototype.multiByteCharacter = function (i, service) {
-    var packetData = this.current708Packet.data;
-    var firstByte = packetData[i + 1];
-    var secondByte = packetData[i + 2];
-
-    if (within708TextBlock(firstByte) && within708TextBlock(secondByte)) {
-      i = this.handleText(++i, service, {
-        isMultiByte: true
-      });
-    }
-
     return i;
   };
   /**
@@ -76053,26 +75579,6 @@ var workerCode$1 = transform(getWorkerString(function () {
   var ONE_SECOND_IN_TS$1 = clock.ONE_SECOND_IN_TS; // object types
 
   var _VideoSegmentStream, _AudioSegmentStream, _Transmuxer, _CoalesceStream;
-
-  var retriggerForStream = function retriggerForStream(key, event) {
-    event.stream = key;
-    this.trigger('log', event);
-  };
-
-  var addPipelineLogRetriggers = function addPipelineLogRetriggers(transmuxer, pipeline) {
-    var keys = Object.keys(pipeline);
-
-    for (var i = 0; i < keys.length; i++) {
-      var key = keys[i]; // skip non-stream keys and headOfPipeline
-      // which is just a duplicate
-
-      if (key === 'headOfPipeline' || !pipeline[key].on) {
-        continue;
-      }
-
-      pipeline[key].on('log', retriggerForStream.bind(transmuxer, key));
-    }
-  };
   /**
    * Compare two arrays (even typed) for same-ness
    */
@@ -76904,7 +76410,6 @@ var workerCode$1 = transform(getWorkerString(function () {
       pipeline.coalesceStream.on('data', this.trigger.bind(this, 'data')); // Let the consumer know we have finished flushing the entire pipeline
 
       pipeline.coalesceStream.on('done', this.trigger.bind(this, 'done'));
-      addPipelineLogRetriggers(this, pipeline);
     };
 
     this.setupTsPipeline = function () {
@@ -77005,7 +76510,6 @@ var workerCode$1 = transform(getWorkerString(function () {
       pipeline.coalesceStream.on('caption', this.trigger.bind(this, 'caption')); // Let the consumer know we have finished flushing the entire pipeline
 
       pipeline.coalesceStream.on('done', this.trigger.bind(this, 'done'));
-      addPipelineLogRetriggers(this, pipeline);
     }; // hook up the segment streams once track metadata is delivered
 
 
@@ -77080,6 +76584,21 @@ var workerCode$1 = transform(getWorkerString(function () {
           this.setupAacPipeline();
         } else if (!isAac && this.transmuxPipeline_.type !== 'ts') {
           this.setupTsPipeline();
+        }
+
+        if (this.transmuxPipeline_) {
+          var keys = Object.keys(this.transmuxPipeline_);
+
+          for (var i = 0; i < keys.length; i++) {
+            var key = keys[i]; // skip non-stream keys and headOfPipeline
+            // which is just a duplicate
+
+            if (key === 'headOfPipeline' || !this.transmuxPipeline_[key].on) {
+              continue;
+            }
+
+            this.transmuxPipeline_[key].on('log', this.getLogTrigger_(key));
+          }
         }
 
         hasFlushed = false;
@@ -78089,7 +77608,7 @@ var workerCode$1 = transform(getWorkerString(function () {
 
         if (codecBox) {
           // https://tools.ietf.org/html/rfc6381#section-3.3
-          if (/^[asm]vc[1-9]$/i.test(track.codec)) {
+          if (/^[a-z]vc[1-9]$/i.test(track.codec)) {
             // we don't need anything but the "config" parameter of the
             // avc1 codecBox
             codecConfig = codecBox.subarray(78);
@@ -79319,7 +78838,7 @@ var workerCode$1 = transform(getWorkerString(function () {
   };
 }));
 var TransmuxWorker = factory(workerCode$1);
-/* rollup-plugin-worker-factory end for worker!/Users/gkatsevman/p/http-streaming-release/src/transmuxer-worker.js */
+/* rollup-plugin-worker-factory end for worker!/Users/bcasey/Projects/videojs-http-streaming/src/transmuxer-worker.js */
 
 var handleData_ = function handleData_(event, transmuxedData, callback) {
   var _event$data$segment = event.data.segment,
@@ -81926,10 +81445,6 @@ var segmentInfoString = function segmentInfoString(segmentInfo) {
     selection = 'getSyncSegmentCandidate (isSyncRequest)';
   }
 
-  if (segmentInfo.independent) {
-    selection += " with independent " + segmentInfo.independent;
-  }
-
   var hasPartIndex = typeof partIndex === 'number';
   var name = segmentInfo.segment.uri ? 'segment' : 'pre-segment';
   var zeroBasedPartCount = hasPartIndex ? getKnownPartCount({
@@ -82294,7 +81809,6 @@ var SegmentLoader = /*#__PURE__*/function (_videojs$EventTarget) {
     _this.timelineChangeController_ = settings.timelineChangeController;
     _this.shouldSaveSegmentTimingInfo_ = true;
     _this.parse708captions_ = settings.parse708captions;
-    _this.captionServices_ = settings.captionServices;
     _this.experimentalExactManifestTimings = settings.experimentalExactManifestTimings; // private instance variables
 
     _this.checkBufferTimeout_ = null;
@@ -82418,8 +81932,7 @@ var SegmentLoader = /*#__PURE__*/function (_videojs$EventTarget) {
       remux: false,
       alignGopsAtEnd: this.safeAppend_,
       keepOriginalTimestamps: true,
-      parse708captions: this.parse708captions_,
-      captionServices: this.captionServices_
+      parse708captions: this.parse708captions_
     });
   }
   /**
@@ -82804,19 +82317,9 @@ var SegmentLoader = /*#__PURE__*/function (_videojs$EventTarget) {
 
     if (!oldPlaylist || oldPlaylist.uri !== newPlaylist.uri) {
       if (this.mediaIndex !== null) {
-        // we must reset/resync the segment loader when we switch renditions and
+        // we must "resync" the segment loader when we switch renditions and
         // the segment loader is already synced to the previous rendition
-        // on playlist changes we want it to be possible to fetch
-        // at the buffer for vod but not for live. So we use resetLoader
-        // for live and resyncLoader for vod. We want this because
-        // if a playlist uses independent and non-independent segments/parts the
-        // buffer may not accurately reflect the next segment that we should try
-        // downloading.
-        if (!newPlaylist.endList) {
-          this.resetLoader();
-        } else {
-          this.resyncLoader();
-        }
+        this.resyncLoader();
       }
 
       this.currentMediaInfo_ = void 0;
@@ -82929,10 +82432,6 @@ var SegmentLoader = /*#__PURE__*/function (_videojs$EventTarget) {
     if (this.transmuxer_) {
       this.transmuxer_.postMessage({
         action: 'clearAllMp4Captions'
-      }); // reset the cache in the transmuxer
-
-      this.transmuxer_.postMessage({
-        action: 'reset'
       });
     }
   }
@@ -83171,9 +82670,8 @@ var SegmentLoader = /*#__PURE__*/function (_videojs$EventTarget) {
   ;
 
   _proto.chooseNextRequest_ = function chooseNextRequest_() {
-    var buffered = this.buffered_();
-    var bufferedEnd = lastBufferedEnd(buffered) || 0;
-    var bufferedTime = timeAheadOf(buffered, this.currentTime_());
+    var bufferedEnd = lastBufferedEnd(this.buffered_()) || 0;
+    var bufferedTime = Math.max(0, bufferedEnd - this.currentTime_());
     var preloaded = !this.hasPlayed_() && bufferedTime >= 1;
     var haveEnoughBuffer = bufferedTime >= this.goalBufferLength_();
     var segments = this.playlist_.segments; // return no segment if:
@@ -83221,7 +82719,7 @@ var SegmentLoader = /*#__PURE__*/function (_videojs$EventTarget) {
           startTime = _Playlist$getMediaInf.startTime,
           _partIndex = _Playlist$getMediaInf.partIndex;
 
-      next.getMediaInfoForTime = this.fetchAtBuffer_ ? "bufferedEnd " + bufferedEnd : "currentTime " + this.currentTime_();
+      next.getMediaInfoForTime = this.fetchAtBuffer_ ? 'bufferedEnd' : 'currentTime';
       next.mediaIndex = segmentIndex;
       next.startOfSegment = startTime;
       next.partIndex = _partIndex;
@@ -83239,27 +82737,6 @@ var SegmentLoader = /*#__PURE__*/function (_videojs$EventTarget) {
 
     if (typeof next.partIndex !== 'number' && nextSegment.parts) {
       next.partIndex = 0;
-      nextPart = nextSegment.parts[0];
-    } // if we have no buffered data then we need to make sure
-    // that the next part we append is "independent" if possible.
-    // So we check if the previous part is independent, and request
-    // it if it is.
-
-
-    if (!bufferedTime && nextPart && !nextPart.independent) {
-      if (next.partIndex === 0) {
-        var lastSegment = segments[next.mediaIndex - 1];
-        var lastSegmentLastPart = lastSegment.parts && lastSegment.parts.length && lastSegment.parts[lastSegment.parts.length - 1];
-
-        if (lastSegmentLastPart && lastSegmentLastPart.independent) {
-          next.mediaIndex -= 1;
-          next.partIndex = lastSegment.parts.length - 1;
-          next.independent = 'previous segment';
-        }
-      } else if (nextSegment.parts[next.partIndex - 1].independent) {
-        next.partIndex -= 1;
-        next.independent = 'previous part';
-      }
     }
 
     var ended = this.mediaSource_ && this.mediaSource_.readyState === 'ended'; // do not choose a next segment if all of the following:
@@ -83275,8 +82752,7 @@ var SegmentLoader = /*#__PURE__*/function (_videojs$EventTarget) {
   };
 
   _proto.generateSegmentInfo_ = function generateSegmentInfo_(options) {
-    var independent = options.independent,
-        playlist = options.playlist,
+    var playlist = options.playlist,
         mediaIndex = options.mediaIndex,
         startOfSegment = options.startOfSegment,
         isSyncRequest = options.isSyncRequest,
@@ -83315,8 +82791,7 @@ var SegmentLoader = /*#__PURE__*/function (_videojs$EventTarget) {
       byteLength: 0,
       transmuxer: this.transmuxer_,
       // type of getMediaInfoForTime that was used to get this segment
-      getMediaInfoForTime: getMediaInfoForTime,
-      independent: independent
+      getMediaInfoForTime: getMediaInfoForTime
     };
     var overrideCheck = typeof forceTimestampOffset !== 'undefined' ? forceTimestampOffset : this.isPendingTimestampOffset_;
     segmentInfo.timestampOffset = this.timestampOffsetForSegment_({
@@ -83779,7 +83254,7 @@ var SegmentLoader = /*#__PURE__*/function (_videojs$EventTarget) {
 
     this.setTimeMapping_(segmentInfo.timeline); // for tracking overall stats
 
-    this.updateMediaSecondsLoaded_(segmentInfo.part || segmentInfo.segment); // Note that the state isn't changed from loading to appending. This is because abort
+    this.updateMediaSecondsLoaded_(segmentInfo.segment); // Note that the state isn't changed from loading to appending. This is because abort
     // logic may change behavior depending on the state, and changing state too early may
     // inflate our estimates of bandwidth. In the future this should be re-examined to
     // note more granular states.
@@ -84756,16 +84231,12 @@ var SegmentLoader = /*#__PURE__*/function (_videojs$EventTarget) {
     // point would mean that this was the perfect segment to fetch
 
     this.trigger('syncinfoupdate');
-    var segment = segmentInfo.segment;
-    var part = segmentInfo.part;
-    var badSegmentGuess = segment.end && this.currentTime_() - segment.end > segmentInfo.playlist.targetDuration * 3;
-    var badPartGuess = part && part.end && this.currentTime_() - part.end > segmentInfo.playlist.partTargetDuration * 3; // If we previously appended a segment/part that ends more than 3 part/targetDurations before
+    var segment = segmentInfo.segment; // If we previously appended a segment that ends more than 3 targetDurations before
     // the currentTime_ that means that our conservative guess was too conservative.
     // In that case, reset the loader state so that we try to use any information gained
     // from the previous request to create a new, more accurate, sync-point.
 
-    if (badSegmentGuess || badPartGuess) {
-      this.logger_("bad " + (badSegmentGuess ? 'segment' : 'part') + " " + segmentInfoString(segmentInfo));
+    if (segment.end && this.currentTime_() - segment.end > segmentInfo.playlist.targetDuration * 3) {
       this.resetEverything();
       return;
     }
@@ -86409,13 +85880,8 @@ var updateAdCues = function updateAdCues(media, track, offset) {
 
     mediaTime += segment.duration;
   }
-}; // synchronize expired playlist segments.
-// the max media sequence diff is 48 hours of live stream
-// content with two second segments. Anything larger than that
-// will likely be invalid.
+};
 
-
-var MAX_MEDIA_SEQUENCE_DIFF_FOR_SYNC = 86400;
 var syncPointStrategies = [// Stategy "VOD": Handle the VOD-case where the sync-point is *always*
 //                the equivalence display-time 0 === segment-index 0
 {
@@ -86453,32 +85919,34 @@ var syncPointStrategies = [// Stategy "VOD": Handle the VOD-case where the sync-
       var segment = partAndSegment.segment;
       var datetimeMapping = syncController.timelineToDatetimeMappings[segment.timeline];
 
-      if (!datetimeMapping || !segment.dateTimeObject) {
+      if (!datetimeMapping) {
         continue;
       }
 
-      var segmentTime = segment.dateTimeObject.getTime() / 1000;
-      var start = segmentTime + datetimeMapping; // take part duration into account.
+      if (segment.dateTimeObject) {
+        var segmentTime = segment.dateTimeObject.getTime() / 1000;
+        var start = segmentTime + datetimeMapping; // take part duration into account.
 
-      if (segment.parts && typeof partAndSegment.partIndex === 'number') {
-        for (var z = 0; z < partAndSegment.partIndex; z++) {
-          start += segment.parts[z].duration;
+        if (segment.parts && typeof partAndSegment.partIndex === 'number') {
+          for (var z = 0; z < partAndSegment.partIndex; z++) {
+            start += segment.parts[z].duration;
+          }
         }
+
+        var distance = Math.abs(currentTime - start); // Once the distance begins to increase, or if distance is 0, we have passed
+        // currentTime and can stop looking for better candidates
+
+        if (lastDistance !== null && (distance === 0 || lastDistance < distance)) {
+          break;
+        }
+
+        lastDistance = distance;
+        syncPoint = {
+          time: start,
+          segmentIndex: partAndSegment.segmentIndex,
+          partIndex: partAndSegment.partIndex
+        };
       }
-
-      var distance = Math.abs(currentTime - start); // Once the distance begins to increase, or if distance is 0, we have passed
-      // currentTime and can stop looking for better candidates
-
-      if (lastDistance !== null && (distance === 0 || lastDistance < distance)) {
-        break;
-      }
-
-      lastDistance = distance;
-      syncPoint = {
-        time: start,
-        segmentIndex: partAndSegment.segmentIndex,
-        partIndex: partAndSegment.partIndex
-      };
     }
 
     return syncPoint;
@@ -86750,14 +86218,8 @@ var SyncController = /*#__PURE__*/function (_videojs$EventTarget) {
   ;
 
   _proto.saveExpiredSegmentInfo = function saveExpiredSegmentInfo(oldPlaylist, newPlaylist) {
-    var mediaSequenceDiff = newPlaylist.mediaSequence - oldPlaylist.mediaSequence; // Ignore large media sequence gaps
-
-    if (mediaSequenceDiff > MAX_MEDIA_SEQUENCE_DIFF_FOR_SYNC) {
-      videojs.log.warn("Not saving expired segment info. Media sequence gap " + mediaSequenceDiff + " is too large.");
-      return;
-    } // When a segment expires from the playlist and it has a start time
+    var mediaSequenceDiff = newPlaylist.mediaSequence - oldPlaylist.mediaSequence; // When a segment expires from the playlist and it has a start time
     // save that information as a possible sync-point reference in future
-
 
     for (var i = mediaSequenceDiff - 1; i >= 0; i--) {
       var lastRemovedSegment = oldPlaylist.segments[i];
@@ -87050,7 +86512,7 @@ var TimelineChangeController = /*#__PURE__*/function (_videojs$EventTarget) {
 
   return TimelineChangeController;
 }(videojs.EventTarget);
-/* rollup-plugin-worker-factory start for worker!/Users/gkatsevman/p/http-streaming-release/src/decrypter-worker.js */
+/* rollup-plugin-worker-factory start for worker!/Users/bcasey/Projects/videojs-http-streaming/src/decrypter-worker.js */
 
 
 var workerCode = transform(getWorkerString(function () {
@@ -87730,7 +87192,7 @@ var workerCode = transform(getWorkerString(function () {
   };
 }));
 var Decrypter = factory(workerCode);
-/* rollup-plugin-worker-factory end for worker!/Users/gkatsevman/p/http-streaming-release/src/decrypter-worker.js */
+/* rollup-plugin-worker-factory end for worker!/Users/bcasey/Projects/videojs-http-streaming/src/decrypter-worker.js */
 
 /**
  * Convert the properties of an HLS track into an audioTrackKind.
@@ -88636,9 +88098,8 @@ var sumLoaderStat = function sumLoaderStat(stat) {
 
 var shouldSwitchToMedia = function shouldSwitchToMedia(_ref) {
   var currentPlaylist = _ref.currentPlaylist,
-      buffered = _ref.buffered,
-      currentTime = _ref.currentTime,
       nextPlaylist = _ref.nextPlaylist,
+      forwardBuffer = _ref.forwardBuffer,
       bufferLowWaterLine = _ref.bufferLowWaterLine,
       bufferHighWaterLine = _ref.bufferHighWaterLine,
       duration = _ref.duration,
@@ -88660,27 +88121,17 @@ var shouldSwitchToMedia = function shouldSwitchToMedia(_ref) {
 
   if (nextPlaylist.id === currentPlaylist.id) {
     return false;
-  } // determine if current time is in a buffered range.
-
-
-  var isBuffered = Boolean(findRange(buffered, currentTime).length); // If the playlist is live, then we want to not take low water line into account.
+  } // If the playlist is live, then we want to not take low water line into account.
   // This is because in LIVE, the player plays 3 segments from the end of the
   // playlist, and if `BUFFER_LOW_WATER_LINE` is greater than the duration availble
   // in those segments, a viewer will never experience a rendition upswitch.
 
-  if (!currentPlaylist.endList) {
-    // For LLHLS live streams, don't switch renditions before playback has started, as it almost
-    // doubles the time to first playback.
-    if (!isBuffered && typeof currentPlaylist.partTargetDuration === 'number') {
-      log("not " + sharedLogLine + " as current playlist is live llhls, but currentTime isn't in buffered.");
-      return false;
-    }
 
+  if (!currentPlaylist.endList) {
     log(sharedLogLine + " as current playlist is live");
     return true;
   }
 
-  var forwardBuffer = timeAheadOf(buffered, currentTime);
   var maxBufferLowWaterLine = experimentalBufferBasedABR ? Config.EXPERIMENTAL_MAX_BUFFER_LOW_WATER_LINE : Config.MAX_BUFFER_LOW_WATER_LINE; // For the same reason as LIVE, we ignore the low water line when the VOD
   // duration is below the max potential low water line
 
@@ -88750,8 +88201,7 @@ var MasterPlaylistController = /*#__PURE__*/function (_videojs$EventTarget) {
         sourceType = options.sourceType,
         cacheEncryptionKeys = options.cacheEncryptionKeys,
         experimentalBufferBasedABR = options.experimentalBufferBasedABR,
-        experimentalLeastPixelDiffSelector = options.experimentalLeastPixelDiffSelector,
-        captionServices = options.captionServices;
+        experimentalLeastPixelDiffSelector = options.experimentalLeastPixelDiffSelector;
 
     if (!src) {
       throw new Error('A non-empty playlist URL or JSON manifest string is required');
@@ -88818,7 +88268,6 @@ var MasterPlaylistController = /*#__PURE__*/function (_videojs$EventTarget) {
     var segmentLoaderSettings = {
       vhs: _this.vhs_,
       parse708captions: options.parse708captions,
-      captionServices: captionServices,
       mediaSource: _this.mediaSource,
       currentTime: _this.tech_.currentTime.bind(_this.tech_),
       seekable: function seekable() {
@@ -89393,16 +88842,15 @@ var MasterPlaylistController = /*#__PURE__*/function (_videojs$EventTarget) {
   };
 
   _proto.shouldSwitchToMedia_ = function shouldSwitchToMedia_(nextPlaylist) {
-    var currentPlaylist = this.masterPlaylistLoader_.media() || this.masterPlaylistLoader_.pendingMedia_;
-    var currentTime = this.tech_.currentTime();
+    var currentPlaylist = this.masterPlaylistLoader_.media();
+    var buffered = this.tech_.buffered();
+    var forwardBuffer = buffered.length ? buffered.end(buffered.length - 1) - this.tech_.currentTime() : 0;
     var bufferLowWaterLine = this.bufferLowWaterLine();
     var bufferHighWaterLine = this.bufferHighWaterLine();
-    var buffered = this.tech_.buffered();
     return shouldSwitchToMedia({
-      buffered: buffered,
-      currentTime: currentTime,
       currentPlaylist: currentPlaylist,
       nextPlaylist: nextPlaylist,
+      forwardBuffer: forwardBuffer,
       bufferLowWaterLine: bufferLowWaterLine,
       bufferHighWaterLine: bufferHighWaterLine,
       duration: this.duration(),
@@ -90123,10 +89571,9 @@ var MasterPlaylistController = /*#__PURE__*/function (_videojs$EventTarget) {
   };
 
   _proto.onSyncInfoUpdate_ = function onSyncInfoUpdate_() {
-    var audioSeekable; // If we have two source buffers and only one is created then the seekable range will be incorrect.
-    // We should wait until all source buffers are created.
+    var audioSeekable;
 
-    if (!this.masterPlaylistLoader_ || this.sourceUpdater_.hasCreatedSourceBuffers()) {
+    if (!this.masterPlaylistLoader_) {
       return;
     }
 
@@ -90760,8 +90207,52 @@ var renditionSelectionMixin = function renditionSelectionMixin(vhsHandler) {
 
 var timerCancelEvents = ['seeking', 'seeked', 'pause', 'playing', 'error'];
 /**
+ * Returns whether or not the current time should be considered close to buffered content,
+ * taking into consideration whether there's enough buffered content for proper playback.
+ *
+ * @param {Object} options
+ *        Options object
+ * @param {TimeRange} options.buffered
+ *        Current buffer
+ * @param {number} options.targetDuration
+ *        The active playlist's target duration
+ * @param {number} options.currentTime
+ *        The current time of the player
+ * @return {boolean}
+ *         Whether the current time should be considered close to the buffer
+ */
+
+var closeToBufferedContent = function closeToBufferedContent(_ref) {
+  var buffered = _ref.buffered,
+      targetDuration = _ref.targetDuration,
+      currentTime = _ref.currentTime;
+
+  if (!buffered.length) {
+    return false;
+  } // At least two to three segments worth of content should be buffered before there's a
+  // full enough buffer to consider taking any actions.
+
+
+  if (buffered.end(0) - buffered.start(0) < targetDuration * 2) {
+    return false;
+  } // It's possible that, on seek, a remove hasn't completed and the buffered range is
+  // somewhere past the current time. In that event, don't consider the buffered content
+  // close.
+
+
+  if (currentTime > buffered.start(0)) {
+    return false;
+  } // Since target duration generally represents the max (or close to max) duration of a
+  // segment, if the buffer is within a segment of the current time, the gap probably
+  // won't be closed, and current time should be considered close to buffered content.
+
+
+  return buffered.start(0) - currentTime < targetDuration;
+};
+/**
  * @class PlaybackWatcher
  */
+
 
 var PlaybackWatcher = /*#__PURE__*/function () {
   /**
@@ -90802,6 +90293,10 @@ var PlaybackWatcher = /*#__PURE__*/function () {
       return _this.cancelTimer_();
     };
 
+    var fixesBadSeeksHandler = function fixesBadSeeksHandler() {
+      return _this.fixesBadSeeks_();
+    };
+
     var mpc = this.masterPlaylistController_;
     var loaderTypes = ['main', 'subtitle', 'audio'];
     var loaderChecks = {};
@@ -90825,41 +90320,7 @@ var PlaybackWatcher = /*#__PURE__*/function () {
 
       _this.tech_.on(['seeked', 'seeking'], loaderChecks[type].reset);
     });
-    /**
-     * We check if a seek was into a gap through the following steps:
-     * 1. We get a seeking event and we do not get a seeked event. This means that
-     *    a seek was attempted but not completed.
-     * 2. We run `fixesBadSeeks_` on segment loader appends. This means that we already
-     *    removed everything from our buffer and appended a segment, and should be ready
-     *    to check for gaps.
-     */
-
-    var setSeekingHandlers = function setSeekingHandlers(fn) {
-      ['main', 'audio'].forEach(function (type) {
-        mpc[type + "SegmentLoader_"][fn]('appended', _this.seekingAppendCheck_);
-      });
-    };
-
-    this.seekingAppendCheck_ = function () {
-      if (_this.fixesBadSeeks_()) {
-        _this.consecutiveUpdates = 0;
-        _this.lastRecordedTime = _this.tech_.currentTime();
-        setSeekingHandlers('off');
-      }
-    };
-
-    this.clearSeekingAppendCheck_ = function () {
-      return setSeekingHandlers('off');
-    };
-
-    this.watchForBadSeeking_ = function () {
-      _this.clearSeekingAppendCheck_();
-
-      setSeekingHandlers('on');
-    };
-
-    this.tech_.on('seeked', this.clearSeekingAppendCheck_);
-    this.tech_.on('seeking', this.watchForBadSeeking_);
+    this.tech_.on('seekablechanged', fixesBadSeeksHandler);
     this.tech_.on('waiting', waitingHandler);
     this.tech_.on(timerCancelEvents, cancelTimerHandler);
     this.tech_.on('canplay', canPlayHandler);
@@ -90877,9 +90338,9 @@ var PlaybackWatcher = /*#__PURE__*/function () {
     this.tech_.one('play', playHandler); // Define the dispose function to clean up our events
 
     this.dispose = function () {
-      _this.clearSeekingAppendCheck_();
-
       _this.logger_('dispose');
+
+      _this.tech_.off('seekablechanged', fixesBadSeeksHandler);
 
       _this.tech_.off('waiting', waitingHandler);
 
@@ -90888,10 +90349,6 @@ var PlaybackWatcher = /*#__PURE__*/function () {
       _this.tech_.off('canplay', canPlayHandler);
 
       _this.tech_.off('play', playHandler);
-
-      _this.tech_.off('seeking', _this.watchForBadSeeking_);
-
-      _this.tech_.off('seeked', _this.clearSeekingAppendCheck_);
 
       loaderTypes.forEach(function (type) {
         mpc[type + "SegmentLoader_"].off('appendsdone', loaderChecks[type].updateend);
@@ -91011,6 +90468,12 @@ var PlaybackWatcher = /*#__PURE__*/function () {
   ;
 
   _proto.checkCurrentTime_ = function checkCurrentTime_() {
+    if (this.tech_.seeking() && this.fixesBadSeeks_()) {
+      this.consecutiveUpdates = 0;
+      this.lastRecordedTime = this.tech_.currentTime();
+      return;
+    }
+
     if (this.tech_.paused() || this.tech_.seeking()) {
       return;
     }
@@ -91068,11 +90531,7 @@ var PlaybackWatcher = /*#__PURE__*/function () {
 
     if (!seeking) {
       return false;
-    } // TODO: It's possible that these seekable checks should be moved out of this function
-    // and into a function that runs on seekablechange. It's also possible that we only need
-    // afterSeekableWindow as the buffered check at the bottom is good enough to handle before
-    // seekable range.
-
+    }
 
     var seekable = this.seekable();
     var currentTime = this.tech_.currentTime();
@@ -91100,43 +90559,20 @@ var PlaybackWatcher = /*#__PURE__*/function () {
       return true;
     }
 
-    var sourceUpdater = this.masterPlaylistController_.sourceUpdater_;
     var buffered = this.tech_.buffered();
-    var audioBuffered = sourceUpdater.audioBuffer ? sourceUpdater.audioBuffered() : null;
-    var videoBuffered = sourceUpdater.videoBuffer ? sourceUpdater.videoBuffered() : null;
-    var media = this.media(); // verify that at least two segment durations or one part duration have been
-    // appended before checking for a gap.
 
-    var minAppendedDuration = media.partTargetDuration ? media.partTargetDuration : (media.targetDuration - TIME_FUDGE_FACTOR) * 2; // verify that at least two segment durations have been
-    // appended before checking for a gap.
-
-    var bufferedToCheck = [audioBuffered, videoBuffered];
-
-    for (var i = 0; i < bufferedToCheck.length; i++) {
-      // skip null buffered
-      if (!bufferedToCheck[i]) {
-        continue;
-      }
-
-      var timeAhead = timeAheadOf(bufferedToCheck[i], currentTime); // if we are less than two video/audio segment durations or one part
-      // duration behind we haven't appended enough to call this a bad seek.
-
-      if (timeAhead < minAppendedDuration) {
-        return false;
-      }
+    if (closeToBufferedContent({
+      buffered: buffered,
+      targetDuration: this.media().targetDuration,
+      currentTime: currentTime
+    })) {
+      seekTo = buffered.start(0) + SAFE_TIME_DELTA;
+      this.logger_("Buffered region starts (" + buffered.start(0) + ") " + (" just beyond seek point (" + currentTime + "). Seeking to " + seekTo + "."));
+      this.tech_.setCurrentTime(seekTo);
+      return true;
     }
 
-    var nextRange = findNextRange(buffered, currentTime); // we have appended enough content, but we don't have anything buffered
-    // to seek over the gap
-
-    if (nextRange.length === 0) {
-      return false;
-    }
-
-    seekTo = nextRange.start(0) + SAFE_TIME_DELTA;
-    this.logger_("Buffered region starts (" + nextRange.start(0) + ") " + (" just beyond seek point (" + currentTime + "). Seeking to " + seekTo + "."));
-    this.tech_.setCurrentTime(seekTo);
-    return true;
+    return false;
   }
   /**
    * Handler for situations when we determine the player is waiting.
@@ -91191,6 +90627,11 @@ var PlaybackWatcher = /*#__PURE__*/function () {
   _proto.techWaiting_ = function techWaiting_() {
     var seekable = this.seekable();
     var currentTime = this.tech_.currentTime();
+
+    if (this.tech_.seeking() && this.fixesBadSeeks_()) {
+      // Tech is seeking or bad seek fixed, no action needed
+      return true;
+    }
 
     if (this.tech_.seeking() || this.timer_ !== null) {
       // Tech is seeking or already waiting on another action, no action needed
@@ -91288,10 +90729,10 @@ var PlaybackWatcher = /*#__PURE__*/function () {
     return false;
   };
 
-  _proto.videoUnderflow_ = function videoUnderflow_(_ref) {
-    var videoBuffered = _ref.videoBuffered,
-        audioBuffered = _ref.audioBuffered,
-        currentTime = _ref.currentTime; // audio only content will not have video underflow :)
+  _proto.videoUnderflow_ = function videoUnderflow_(_ref2) {
+    var videoBuffered = _ref2.videoBuffered,
+        audioBuffered = _ref2.audioBuffered,
+        currentTime = _ref2.currentTime; // audio only content will not have video underflow :)
 
     if (!videoBuffered) {
       return;
@@ -91548,9 +90989,9 @@ var reloadSourceOnError = function reloadSourceOnError(options) {
   initPlugin(this, options);
 };
 
-var version$4 = "2.12.0";
-var version$3 = "5.14.1";
-var version$2 = "0.19.2";
+var version$4 = "2.10.2";
+var version$3 = "5.13.0";
+var version$2 = "0.19.0";
 var version$1 = "4.7.0";
 var version = "3.1.2";
 var Vhs = {
@@ -92115,7 +91556,6 @@ var VhsHandler = /*#__PURE__*/function (_Component) {
     this.options_.useDevicePixelRatio = this.options_.useDevicePixelRatio || false;
     this.options_.smoothQualityChange = this.options_.smoothQualityChange || false;
     this.options_.useBandwidthFromLocalStorage = typeof this.source_.useBandwidthFromLocalStorage !== 'undefined' ? this.source_.useBandwidthFromLocalStorage : this.options_.useBandwidthFromLocalStorage || false;
-    this.options_.useNetworkInformationApi = this.options_.useNetworkInformationApi || false;
     this.options_.customTagParsers = this.options_.customTagParsers || [];
     this.options_.customTagMappers = this.options_.customTagMappers || [];
     this.options_.cacheEncryptionKeys = this.options_.cacheEncryptionKeys || false;
@@ -92164,7 +91604,7 @@ var VhsHandler = /*#__PURE__*/function (_Component) {
 
     this.options_.enableLowInitialPlaylist = this.options_.enableLowInitialPlaylist && this.options_.bandwidth === Config.INITIAL_BANDWIDTH; // grab options passed to player.src
 
-    ['withCredentials', 'useDevicePixelRatio', 'limitRenditionByPlayerDimensions', 'bandwidth', 'smoothQualityChange', 'customTagParsers', 'customTagMappers', 'handleManifestRedirects', 'cacheEncryptionKeys', 'playlistSelector', 'initialPlaylistSelector', 'experimentalBufferBasedABR', 'liveRangeSafeTimeDelta', 'experimentalLLHLS', 'useNetworkInformationApi', 'experimentalExactManifestTimings', 'experimentalLeastPixelDiffSelector'].forEach(function (option) {
+    ['withCredentials', 'useDevicePixelRatio', 'limitRenditionByPlayerDimensions', 'bandwidth', 'smoothQualityChange', 'customTagParsers', 'customTagMappers', 'handleManifestRedirects', 'cacheEncryptionKeys', 'playlistSelector', 'initialPlaylistSelector', 'experimentalBufferBasedABR', 'liveRangeSafeTimeDelta', 'experimentalLLHLS', 'experimentalExactManifestTimings', 'experimentalLeastPixelDiffSelector'].forEach(function (option) {
       if (typeof _this2.source_[option] !== 'undefined') {
         _this2.options_[option] = _this2.source_[option];
       }
@@ -92263,25 +91703,7 @@ var VhsHandler = /*#__PURE__*/function (_Component) {
       },
       bandwidth: {
         get: function get() {
-          var playerBandwidthEst = this.masterPlaylistController_.mainSegmentLoader_.bandwidth;
-          var networkInformation = global_window__WEBPACK_IMPORTED_MODULE_0___default.a.navigator.connection || global_window__WEBPACK_IMPORTED_MODULE_0___default.a.navigator.mozConnection || global_window__WEBPACK_IMPORTED_MODULE_0___default.a.navigator.webkitConnection;
-          var tenMbpsAsBitsPerSecond = 10e6;
-
-          if (this.options_.useNetworkInformationApi && networkInformation) {
-            // downlink returns Mbps
-            // https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation/downlink
-            var networkInfoBandwidthEstBitsPerSec = networkInformation.downlink * 1000 * 1000; // downlink maxes out at 10 Mbps. In the event that both networkInformationApi and the player
-            // estimate a bandwidth greater than 10 Mbps, use the larger of the two estimates to ensure that
-            // high quality streams are not filtered out.
-
-            if (networkInfoBandwidthEstBitsPerSec >= tenMbpsAsBitsPerSecond && playerBandwidthEst >= tenMbpsAsBitsPerSecond) {
-              playerBandwidthEst = Math.max(playerBandwidthEst, networkInfoBandwidthEstBitsPerSec);
-            } else {
-              playerBandwidthEst = networkInfoBandwidthEstBitsPerSec;
-            }
-          }
-
-          return playerBandwidthEst;
+          return this.masterPlaylistController_.mainSegmentLoader_.bandwidth;
         },
         set: function set(bandwidth) {
           this.masterPlaylistController_.mainSegmentLoader_.bandwidth = bandwidth; // setting the bandwidth manually resets the throughput counter
@@ -92825,9 +92247,10 @@ if (!videojs.use) {
 videojs.options.vhs = videojs.options.vhs || {};
 videojs.options.hls = videojs.options.hls || {};
 
-if (!videojs.getPlugin || !videojs.getPlugin('reloadSourceOnError')) {
-  var registerPlugin = videojs.registerPlugin || videojs.plugin;
-  registerPlugin('reloadSourceOnError', reloadSourceOnError);
+if (videojs.registerPlugin) {
+  videojs.registerPlugin('reloadSourceOnError', reloadSourceOnError);
+} else {
+  videojs.plugin('reloadSourceOnError', reloadSourceOnError);
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (videojs);

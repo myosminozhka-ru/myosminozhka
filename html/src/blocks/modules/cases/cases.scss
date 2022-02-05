@@ -1,0 +1,60 @@
+.cases {
+    &__wrapper {
+        position: relative;
+        z-index: 5;
+        padding-bottom: 15.625vw;
+    }
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__item {
+        width: 50%;
+        display: block;
+        position: relative;
+        overflow: hidden;
+        &:after {
+            content: "";
+            display: block;
+            padding-top: 75%;
+            pointer-events: none;
+        }
+    }
+    &__item-bottom {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: vw(50) vw(373) vw(50) vw(50);
+        box-sizing: border-box;
+    }
+    &__item-title {
+        font-weight: bold;
+        font-size: vw(36);
+        margin-bottom: vw(16);
+        line-height: 160%;
+        color: #FFFFFF;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+    &__item-text {
+        font-size: vw(20);
+        line-height: 160%;
+        color: #FFFFFF;
+    }
+    &__item:hover &__item-title {
+        transform: translateX(0);
+    }
+}
+
+.blog-items-buttons__wrap {
+    padding: 0 2.60417vw;
+}
+
+.career-first {
+    position: relative;
+    z-index: 5;
+}
+
+@import './careof/styles';
+@import './zorge/styles';

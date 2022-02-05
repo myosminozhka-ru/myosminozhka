@@ -1,0 +1,16 @@
+.zorge {
+    background: url('../img/zorge.png') 50% 50% / cover no-repeat;
+    &__shadow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50.45%, rgba(0, 0, 0, 0.86) 100%);
+        transition: all 0.3s ease;
+    }
+    &:hover &__shadow {
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.69) 100%);
+        mix-blend-mode: multiply;
+    }
+}
