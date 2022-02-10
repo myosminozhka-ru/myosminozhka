@@ -1,6 +1,23 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Glide from '@glidejs/glide'
+import Glide from '@glidejs/glide';
+import $ from "jquery";
+$(function() {
+    if ((window.innerWidth <= 1366 && window.innerWidth > 1023) || (window.innerWidth > 1440)) {
+        window.addEventListener("scroll", function(event){
+    
+        var top = this.pageYOffset;
+    
+        var layers = $(".paralax_layer");
+        var speed, yPos;
+        layers.each(function() {
+            speed = $(this).attr('data-speed');
+            var yPos = -(top * speed / 100);
+            $(this).attr('style','transform: translate3d(0px, ' + yPos + 'px, 0px)');
+        });
+        });
+    }
+});
 
 gsap.registerPlugin(ScrollTrigger);
 
