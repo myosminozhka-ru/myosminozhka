@@ -1959,6 +1959,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _glidejs_glide__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @glidejs/glide */ "./node_modules/@glidejs/glide/dist/glide.esm.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var slick_carousel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! slick-carousel */ "./node_modules/slick-carousel/slick/slick.js");
+/* harmony import */ var slick_carousel__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(slick_carousel__WEBPACK_IMPORTED_MODULE_4__);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -1969,6 +1971,22 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
 
+
+jquery__WEBPACK_IMPORTED_MODULE_3___default()(function () {
+  if (window.innerWidth <= 1023) {
+    if (document.querySelector('.js_sl')) {
+      jquery__WEBPACK_IMPORTED_MODULE_3___default()('.js_sl').slick({
+        dots: false,
+        arrows: true,
+        infinite: true,
+        fade: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        slidesToShow: 1
+      });
+    }
+  }
+});
 jquery__WEBPACK_IMPORTED_MODULE_3___default()(function () {
   if (window.innerWidth <= 1366 && window.innerWidth > 1023 || window.innerWidth > 1440) {
     window.addEventListener("scroll", function (event) {
