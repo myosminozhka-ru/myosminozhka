@@ -13009,6 +13009,13 @@ body.company .company-ceo:not(.mobile) {
 
 .malina .case_page__bls--l {
   border-radius: 20px 0px 0px 20px;
+  background: #FF3B3B;
+  padding: 5.46875vw 0;
+}
+
+.malina .case_page__bls--l img {
+  max-width: 20.83333vw;
+  width: 100%;
 }
 
 .malina .no-padding .case_page__bls--l {
@@ -13244,70 +13251,77 @@ body.company .company-ceo:not(.mobile) {
   z-index: 2;
 }
 
-.case_pec {
-  padding-top: 10.41667vw;
+.malina .case_pec__item--scroll.new_scr {
   position: relative;
-  z-index: 2;
+  max-width: 24.47917vw;
+  height: 52.23958vw;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 1.5625vw 0.52083vw;
+  filter: none;
+  overflow: unset;
 }
 
-.case_pec__title {
-  font-family: 'Montserrat', serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 8.33333vw;
-  line-height: 100%;
-  text-transform: uppercase;
-  color: #4F4F4F;
-  margin-bottom: 80px;
-  padding-left: 50px;
-  padding-right: 50px;
-}
-
-.case_pec__item {
-  padding-left: 50px;
-  padding-top: 50px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-.case_pec__item--l {
-  max-width: 40.10417vw;
+.malina .case_pec__item--scroll.new_scr:before {
+  position: absolute;
+  content: '';
   width: 100%;
-  flex: none;
+  height: 100%;
+  pointer-events: none;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: url("../img/s72.png") 0 0/100% no-repeat;
 }
 
-.case_pec__item--txt {
-  font-family: 'Montserrat', serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 1.30208vw;
-  line-height: 160%;
-  color: #4F4F4F;
-  margin-bottom: 80px;
-}
-
-.case_pec__item--scroll {
-  height: 46.51042vw;
+.malina .new_scr .case_pec__item--in {
   overflow: auto;
-  filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
-  border-radius: 20px;
-  max-width: 21.35417vw;
+  height: 46.35417vw;
+  overflow: auto;
+  max-width: 21.875vw;
   width: 100%;
-  border: 10px solid #FFFFFF;
   margin-left: auto;
   margin-right: auto;
 }
 
-.case_pec__item--r {
-  margin-left: 7.8125vw;
-  width: 100%;
+.malina .case_pec__item--r .case_pec__item--scroll {
+  display: none;
 }
 
-.case_pec__item--r img {
+.malina .case_page__reds--bold {
+  margin-bottom: 1.5625vw;
+  font-family: 'Montserrat', serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.5625vw;
+  text-transform: uppercase;
+  display: block;
+  width: 100%;
+  color: #FFFFFF;
+}
+
+.malina .case_page__reds--item {
+  display: block;
+}
+
+.malin_imgs {
+  position: relative;
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.malin_imgs__big img {
   filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
   border-radius: 20px;
+}
+
+.malin_imgs__small img {
+  filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
+  border-radius: 5px;
 }
 
 @media screen and (min-width: 36rem) {
@@ -13422,6 +13436,10 @@ body.company .company-ceo:not(.mobile) {
     position: relative;
     z-index: 1;
     background: #fff;
+  }
+
+  .malin_imgs__small {
+    display: none;
   }
 }
 
@@ -14855,46 +14873,37 @@ body.company .company-ceo:not(.mobile) {
     padding-bottom: 0;
   }
 
-  .case_pec {
-    padding-top: 80px;
-    margin-bottom: -60px;
+  .malina .case_page__in.mobile .case_page__bls--l {
+    background: #FF3B3B;
   }
 
-  .case_pec__title {
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-bottom: 22px;
-    font-size: 26px;
-  }
-
-  .case_pec__item {
-    flex-direction: column;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .case_pec__item--l {
-    max-width: 100%;
-  }
-
-  .case_pec__item--txt {
-    font-size: 14px;
-    line-height: 160%;
-    margin-bottom: 22px;
-  }
-
-  .case_pec__item--scroll {
-    display: none;
-  }
-
-  .case_pec__item--r {
-    margin-left: 0;
-  }
-
-  .case_pec__item--r img {
+  .malina .case_page__in.mobile .case_page__bls--l img {
+    max-width: 207px;
     width: 100%;
-    border-radius: 10px;
+  }
+
+  .malina .case_pec__item--r {
+    padding-bottom: 140px;
+  }
+
+  .malina .case_pec__item--r > img {
+    padding-left: 4.42708vw;
+  }
+
+  .malina .case_pec__item--r .case_pec__item--scroll {
+    display: block;
+    bottom: 0;
+    left: 25px;
+    position: absolute;
+    z-index: 2;
+    border-radius: 5px;
     border-width: 5px;
+    max-width: 145px;
+    height: 315px;
+  }
+
+  .malin_imgs__big {
+    display: none;
   }
 }
 
