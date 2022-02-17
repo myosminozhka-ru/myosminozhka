@@ -1068,6 +1068,50 @@ var mainCases = /*#__PURE__*/function () {
           }, 1000);
         }
 
+        if (document.querySelector('.msite .case_page__reds')) {
+          setTimeout(function () {
+            gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.msite .case_page__reds--title', {
+              scrollTrigger: {
+                trigger: '.msite .case_page__reds',
+                start: 'top top',
+                end: 'bottom bottom-=1000',
+                scrub: 11,
+                // markers: true,
+                onUpdate: function onUpdate(item) {
+                  if (item.progress > 0.05 && item.progress < 0.65) {
+                    document.querySelector('.msite .case_page__reds--title').classList.add('isInViewport');
+                  } else {
+                    document.querySelector('.msite .case_page__reds--title').classList.remove('isInViewport');
+                  }
+                }
+              },
+              x: '-100%'
+            });
+          }, 1000);
+        }
+
+        if (document.querySelector('.msite .case_page__video')) {
+          setTimeout(function () {
+            gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.msite .case_page__video--title', {
+              scrollTrigger: {
+                trigger: '.msite .case_page__video',
+                start: 'top top',
+                end: 'bottom bottom-=1000',
+                scrub: 11,
+                // markers: true,
+                onUpdate: function onUpdate(item) {
+                  if (item.progress > 0.05 && item.progress < 0.65) {
+                    document.querySelector('.msite .case_page__video--title').classList.add('isInViewport');
+                  } else {
+                    document.querySelector('.msite .case_page__video--title').classList.remove('isInViewport');
+                  }
+                }
+              },
+              x: '-100%'
+            });
+          }, 1000);
+        }
+
         if (document.querySelector('.gl_blocks')) {
           setTimeout(function () {
             gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.case_page__gl--title', {

@@ -13304,14 +13304,38 @@ body.company .company-ceo:not(.mobile) {
 
 .malina .case_page__reds--item {
   display: block;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.malina .case_task {
+  padding-bottom: 6px;
 }
 
 .malin_imgs {
-  position: relative;
-  margin-top: 80px;
+  margin-top: 11.19792vw;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-bottom: 12.76042vw;
+}
+
+.malin_imgs__big {
+  position: relative;
+}
+
+.malin_imgs__big:before {
+  content: '';
+  position: absolute;
+  width: 46.875vw;
+  height: 48.4375vw;
+  right: -6.77083vw;
+  margin-top: -24.21875vw;
+  background: #FF3B3B;
+  border-radius: 20px;
+  top: 50%;
+  max-width: 65.3125vw;
+  width: 100%;
 }
 
 .malin_imgs__big img {
@@ -13322,6 +13346,428 @@ body.company .company-ceo:not(.mobile) {
 .malin_imgs__small img {
   filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
   border-radius: 5px;
+}
+
+.block_mal {
+  padding-left: 50px;
+  padding-right: 50px;
+  position: relative;
+  z-index: 2;
+  background: url("../img/s79.png") 0 67%/100% no-repeat;
+}
+
+.block_mal img {
+  filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
+  border-radius: 20px;
+}
+
+.block_mal__item {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 80px;
+}
+
+.block_mal__item--l {
+  max-width: 13.28125vw;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: -12.13542vw;
+}
+
+.block_mal__item--r {
+  max-width: 65.88542vw;
+  width: 100%;
+}
+
+.block_mal__item--img {
+  margin-left: auto;
+  max-width: 31.77083vw;
+  width: 100%;
+  margin-right: 17.1875vw;
+}
+
+.msite .case_page__bls--block.no-padding .case_page__bls--l {
+  padding: 0 !important;
+  background: none !important;
+}
+
+.msite .case_page__bls--block .case_page__about--rlist li,
+.msite .case_task .case_page__about--rlist li {
+  color: #4F4F4F;
+}
+
+.msite .case_page__bls--l {
+  border-radius: 0;
+}
+
+.msite .case_page__bls--block .case_page__about--rlist li:before,
+.msite .case_task .case_page__about--rlist li:before {
+  background: #4F4F4F !important;
+}
+
+.msite .case_frst__subtitle {
+  max-width: 100%;
+}
+
+.msite .full_img {
+  margin-bottom: 30px;
+}
+
+.msite .case_page__bls--title {
+  position: relative;
+}
+
+.msite .no-padding .case_page__bls--l {
+  padding: 0;
+}
+
+.msite .case_page__bls--title {
+  width: max-content;
+  white-space: nowrap;
+  transition: all .3s ease-out !important;
+}
+
+.msite .case_task__item--txt {
+  margin-top: 30px;
+  font-family: 'Montserrat', serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25px;
+  line-height: 160%;
+  color: #4F4F4F;
+}
+
+.msite .case_task {
+  padding-top: 10.41667vw;
+  padding-bottom: 4.27083vw;
+}
+
+.msite .case_task__item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3.22917vw;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.msite .case_task__item--l {
+  width: 100%;
+}
+
+.msite .case_task__item--r {
+  width: 100%;
+  margin-top: 1.875vw;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.5625vw;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #4F4F4F;
+}
+
+.msite .block_yel {
+  background: #FF7940 url("../img/s82.png") 0 0/100% no-repeat;
+  text-align: center;
+  padding-top: 12.91667vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 17.70833vw;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.msite .block_yel__img {
+  filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
+  border-radius: 45px;
+  margin-bottom: 3.64583vw;
+}
+
+.msite .block_yel__title {
+  font-family: 'Montserrat', serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.5625vw;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #121115;
+  margin-bottom: 3.64583vw;
+  max-width: 1206px;
+  width: 100%;
+}
+
+.msite .block_yel img {
+  border-radius: 20px;
+}
+
+.msite .block_yel__imgs {
+  max-width: 705px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: -12.96875vw;
+}
+
+.msite .block_yel__imgs--img {
+  filter: drop-shadow(0px 13px 10px rgba(0, 0, 0, 0.1));
+  border-radius: 45px;
+}
+
+.msite .block_yel__imgs--img:nth-child(1) {
+  position: relative;
+  bottom: -29.6875vw;
+}
+
+.msite .case_page__about--rlist li:before {
+  background: #fff;
+}
+
+.msite .case_page__about--rlist li {
+  color: #fff;
+}
+
+.msite .case_page__reds--r {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.msite .case_page__reds--r img {
+  border: 10px solid #FFFFFF;
+  filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
+  border-radius: 45px;
+}
+
+.msite .case_page__reds--item {
+  padding-bottom: 90px;
+}
+
+.msite .case_page__reds--img {
+  padding-bottom: 122px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.msite .case_page__reds--img img {
+  border: 10px solid #FFFFFF;
+  filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
+  border-radius: 45px;
+}
+
+.msite .blocks_pic {
+  padding-left: 50px;
+  padding-right: 50px;
+  font-size: 0;
+  padding-bottom: 200px;
+}
+
+.msite .blocks_pic__img {
+  width: calc(33% - 25px);
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 20px;
+  font-size: 0;
+}
+
+.msite .blocks_pic__img img {
+  width: 100%;
+}
+
+.msite .blocks_pic__pics {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -10px;
+  margin-right: -10px;
+  justify-content: flex-start;
+}
+
+.msite .blocks_pic__pics:nth-child(even) .blocks_pic__img:first-child {
+  margin-left: auto;
+}
+
+.msite .blocks_pic__pics:nth-child(odd) .blocks_pic__img:last-child {
+  margin-right: auto;
+}
+
+.msite .blocks_pic__pics:last-child .blocks_pic__img {
+  margin-bottom: 0;
+}
+
+.msite .job-stages-item-text {
+  margin-right: auto;
+}
+
+.msite .company-video {
+  filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.3));
+}
+
+.msite .company-video > div {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.msite .case_page__reds {
+  padding-top: 8.48958vw;
+}
+
+.msite .case_page__about {
+  padding-top: 0;
+}
+
+.msite .bl2 .case_page__video--text {
+  font-family: 'Montserrat', serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25px;
+  line-height: 160%;
+  color: #FFFFFF;
+  margin-bottom: 80px;
+}
+
+.msite .bl2 .case_page__video {
+  padding-bottom: 0;
+}
+
+.msite .bl2 .case_page__video .video-js {
+  position: relative;
+  z-index: 3;
+}
+
+.msite .bl2 .company-video {
+  position: relative;
+  z-index: 3;
+}
+
+.msite .bl2 {
+  position: relative;
+}
+
+.msite .bl2:before {
+  position: absolute;
+  content: '';
+  height: 10.41667vw;
+  background: #fff;
+  left: 0;
+  right: 0;
+  width: 100%;
+  bottom: 0;
+  z-index: 2;
+}
+
+.msite .case_page__bls--l {
+  background: #E2E2E2;
+}
+
+.msite .case_page__reds--img {
+  border-radius: 20px;
+  margin-bottom: 80px;
+  padding-bottom: 0;
+}
+
+.msite .case_page__reds--txt {
+  font-family: 'Montserrat', serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.30208vw;
+  line-height: 160%;
+  color: #FFFFFF;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 200px;
+}
+
+.msite .case_page__reds--txtitm {
+  display: flex;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-bottom: 80px;
+}
+
+.msite .case_page__reds--li,
+.msite .case_page__reds--ri {
+  padding-right: 7.8125vw;
+  font-family: 'Montserrat', serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.30208vw;
+  line-height: 160%;
+  color: #FFFFFF;
+}
+
+.msite .case_page__reds--im {
+  margin-bottom: 4.16667vw;
+}
+
+.msite .case_page__reds--r img {
+  margin-top: -19.53125vw;
+}
+
+.case_pec {
+  padding-top: 10.41667vw;
+  position: relative;
+  z-index: 2;
+}
+
+.case_pec__title {
+  font-family: 'Montserrat', serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 8.33333vw;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #4F4F4F;
+  margin-bottom: 80px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.case_pec__item {
+  padding-left: 50px;
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.case_pec__item--l {
+  max-width: 40.10417vw;
+  width: 100%;
+  flex: none;
+}
+
+.case_pec__item--txt {
+  font-family: 'Montserrat', serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.30208vw;
+  line-height: 160%;
+  color: #4F4F4F;
+  margin-bottom: 80px;
+}
+
+.case_pec__item--scroll {
+  height: 46.51042vw;
+  overflow: auto;
+  filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
+  border-radius: 20px;
+  max-width: 21.35417vw;
+  width: 100%;
+  border: 10px solid #FFFFFF;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.case_pec__item--r {
+  margin-left: 7.8125vw;
+  width: 100%;
+}
+
+.case_pec__item--r img {
+  filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
+  border-radius: 20px;
 }
 
 @media screen and (min-width: 36rem) {
@@ -14902,8 +15348,348 @@ body.company .company-ceo:not(.mobile) {
     height: 315px;
   }
 
+  .malina .case_page__in.mobile .case_page__reds--item {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .malina .case_page__reds--bold {
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 140%;
+  }
+
+  .malina .case_task {
+    padding-top: 0;
+  }
+
+  .malin_imgs {
+    margin-top: 50px;
+    position: relative;
+    padding-bottom: 85px;
+  }
+
+  .malin_imgs:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 272px;
+    top: -30px;
+    left: 0;
+    right: 0;
+    background: #FF3B3B;
+    border-radius: 20px;
+  }
+
   .malin_imgs__big {
     display: none;
+  }
+
+  .block_mal {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .block_mal img {
+    border-radius: 5px;
+  }
+
+  .block_mal__item {
+    margin-bottom: 50px;
+  }
+
+  .block_mal__item--l {
+    display: none;
+  }
+
+  .block_mal__item--r {
+    max-width: 100%;
+  }
+
+  .block_mal__item--img {
+    max-width: calc(100% - 80px);
+    margin-right: auto;
+  }
+
+  .msite .blocks_pic__pics:nth-child(even) .blocks_pic__img:first-child {
+    margin-left: 0;
+  }
+
+  .msite .blocks_pic__pics:nth-child(odd) .blocks_pic__img:last-child {
+    margin-right: 0;
+  }
+
+  .msite .case_page__in.mobile .case_page__bls--title {
+    white-space: unset;
+    width: auto;
+  }
+
+  .msite .full_img {
+    max-width: 140px;
+    width: 100%;
+    margin-bottom: 30px;
+    margin-top: 45px;
+  }
+
+  .msite .company-video > div {
+    border-radius: 0;
+  }
+
+  .msite .case_page__in.mobile .case_page__bls--title {
+    font-size: 26px;
+  }
+
+  .msite .case_page__in.mobile .case_page__bls--txt {
+    margin-bottom: 20px !important;
+  }
+
+  .msite .case_page__in.mobile .no-padding .case_page__bls--l {
+    padding: 0;
+    background: #EEF5FB;
+  }
+
+  .msite .case_page__in.mobile .case_page__bls--r {
+    margin-bottom: 20px !important;
+  }
+
+  .msite .case_task__item {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .msite .case_task__item--r {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #4F4F4F;
+  }
+
+  .msite .case_task__item--txt {
+    margin-top: 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 160%;
+    color: #4F4F4F;
+  }
+
+  .msite .block_yel {
+    padding-top: 70px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .msite .block_yel__img {
+    filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
+    border-radius: 15px;
+    margin-bottom: 30px;
+  }
+
+  .msite .block_yel__title {
+    margin-bottom: 30px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 140%;
+    text-align: center;
+    color: #121115;
+    text-transform: unset;
+  }
+
+  .msite .block_yel__imgs--img {
+    width: calc(50% - 10px);
+    border-radius: 20px;
+  }
+
+  .msite .block_yel__imgs--img:nth-child(1) {
+    bottom: -40px;
+  }
+
+  .msite .case_page__in.mobile .case_page__reds--title {
+    font-size: 26px;
+  }
+
+  .msite .case_page__in.mobile .case_page__reds--item {
+    padding-bottom: 0;
+  }
+
+  .msite .case_page__in.mobile .case_page__reds--l {
+    margin-bottom: 0;
+  }
+
+  .msite .case_page__reds--img {
+    display: none;
+  }
+
+  .msite .case_page__in.mobile .case_page__reds--r {
+    max-height: unset;
+    margin-bottom: 85px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: calc(100% - 30px);
+    height: auto;
+  }
+
+  .msite .case_page__in.mobile .case_page__reds--r img {
+    border: 5px solid #FFFFFF;
+    border-radius: 20px;
+  }
+
+  .msite .blocks_pic {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 80px;
+  }
+
+  .msite .blocks_pic__pics {
+    margin-left: 0;
+    margin-right: 0;
+    justify-content: space-between;
+  }
+
+  .msite .blocks_pic__img {
+    width: calc(50% - 5px);
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .msite .blocks_pic__pics:last-child .blocks_pic__img {
+    margin-bottom: 10px;
+  }
+
+  .msite .case_page__in.mobile .case_page__video {
+    background: url(../img/bg_red4.png) 0 0/100% no-repeat, linear-gradient(0deg, #4f4f4f 80%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0) 100%) !important;
+  }
+
+  .msite .bl2 .case_page__video--text {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    line-height: 160%;
+  }
+
+  .msite .bl2 .company-video {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .msite .bl2 .case_page__video .video-js {
+    border-radius: 5px;
+    box-shadow: 0px 13px 60px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  .msite .bl2:before {
+    height: 80px;
+  }
+
+  .msite .case_page__in.mobile .case_page__video {
+    padding-bottom: 0;
+  }
+
+  .msite .block_yel img {
+    border-radius: 6px;
+  }
+
+  .msite .case_page__reds--txtitm {
+    padding-left: 20px;
+    padding-right: 20px;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+
+  .msite .case_page__reds--li,
+  .msite .case_page__reds--ri {
+    font-size: 14px;
+    line-height: 160%;
+    margin-bottom: 20px;
+    padding-right: 0;
+  }
+
+  .msite .case_page__reds--img {
+    display: block;
+  }
+
+  .msite .case_page__in.mobile .case_page__reds--item {
+    flex-direction: column-reverse;
+    display: flex;
+    position: relative;
+    z-index: 3;
+  }
+
+  .msite .case_page__in.mobile .case_page__reds--r img {
+    border-radius: 6px;
+    margin-top: -110px;
+  }
+
+  .msite .case_page__in.mobile .case_page__reds--r {
+    overflow: unset;
+    margin-bottom: 0 !important;
+  }
+
+  .msite .case_page__reds--img {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  .msite .case_page__reds--img img {
+    border-radius: 5px;
+  }
+
+  .msite .case_page__reds--txt {
+    padding-bottom: 80px;
+    font-size: 14px;
+    line-height: 160%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .case_pec {
+    padding-top: 80px;
+    margin-bottom: -60px;
+  }
+
+  .case_pec__title {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 22px;
+    font-size: 26px;
+  }
+
+  .case_pec__item {
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .case_pec__item--l {
+    max-width: 100%;
+  }
+
+  .case_pec__item--txt {
+    font-size: 14px;
+    line-height: 160%;
+    margin-bottom: 22px;
+  }
+
+  .case_pec__item--scroll {
+    display: none;
+  }
+
+  .case_pec__item--r {
+    margin-left: 0;
+  }
+
+  .case_pec__item--r img {
+    width: 100%;
+    border-radius: 10px;
+    border-width: 5px;
   }
 }
 
@@ -15439,6 +16225,56 @@ body.company .company-ceo:not(.mobile) {
   .malina .case_page__in.mobile .case_page__reds--r {
     margin-bottom: 20px;
   }
+
+  .block_mal {
+    background: url("../img/s79.png") 0 27%/190% no-repeat;
+  }
+
+  .msite .block_yel__imgs--img {
+    border-width: 5px;
+    max-width: 84px;
+    border-radius: 15px;
+  }
+
+  .msite .block_yel__imgs {
+    justify-content: space-around;
+  }
+
+  .msite .blocks_pic__img {
+    width: 100%;
+  }
+
+  .msite .case_page__in.mobile .case_page__reds--r {
+    margin-bottom: 20px;
+  }
+
+  .msite .case_page__in.mobile .no-padding .case_page__bls--l {
+    height: 270px;
+    overflow: hidden;
+  }
+
+  .msite .case_page__in.mobile .no-padding .case_page__bls--l img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .msite .case_page__reds--im {
+    min-height: 166px;
+  }
+
+  .msite .case_page__reds--im img {
+    width: 100%;
+    height: 166px;
+    object-fit: cover;
+  }
+
+  .msite .case_page__in.mobile .case_page__reds--r {
+    max-width: 150px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media all and (max-width: 600px) {
@@ -15470,6 +16306,11 @@ body.company .company-ceo:not(.mobile) {
 
   .case_page__gl {
     background: url(../img/bg_red2.png) 0 0/100% no-repeat, linear-gradient(0deg, #4f4f4f 86%, rgba(255, 255, 255, 0) 86%, rgba(255, 255, 255, 0) 100%) !important;
+  }
+
+  .malin_imgs__small {
+    max-width: 190px;
+    width: 100%;
   }
 }
 
