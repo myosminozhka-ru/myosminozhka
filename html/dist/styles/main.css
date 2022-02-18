@@ -14193,6 +14193,83 @@ body.company .company-ceo:not(.mobile) {
   padding-bottom: 0;
 }
 
+.mosplitka .case_page__reds--txt {
+  font-family: 'Montserrat', serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.30208vw;
+  line-height: 160%;
+  color: #FFFFFF;
+}
+
+.mosplitka .case_page__reds--item {
+  padding-bottom: 32px;
+}
+
+.mosplitka .mosc_gal {
+  padding-left: 2.60417vw;
+  padding-right: 2.60417vw;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10.41667vw;
+}
+
+.mosplitka .mosc_gal img {
+  box-shadow: 0px 13px 60px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+
+.mosplitka .mosc_gal__l {
+  max-width: 29.16667vw;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mosplitka .mosc_gal__l img {
+  max-width: 13.22917vw;
+  width: 100%;
+}
+
+.mosplitka .mosc_gal__l img:nth-child(1) {
+  margin-top: 22.23958vw;
+}
+
+.mosplitka .mosc_gal__l img:nth-child(2) {
+  position: relative;
+  top: -6.35417vw;
+}
+
+.mosplitka .mosc_gal__r {
+  margin-left: 2.70833vw;
+  max-width: 62.86458vw;
+  width: 100%;
+  flex: none;
+  text-align: right;
+}
+
+.mosplitka .mosc_gal__r img {
+  width: 100%;
+}
+
+.mosplitka .pec_gal {
+  justify-content: space-between;
+}
+
+.mosplitka .pec_gal .mosc_gal__l {
+  flex-direction: row-reverse;
+}
+
+.mosplitka .pec_gal .mosc_gal__r {
+  text-align: right;
+}
+
+.mosplitka .case_pec__item--txt {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
 @media screen and (min-width: 36rem) {
   .container {
     max-width: 31.875rem;
@@ -16402,6 +16479,73 @@ body.company .company-ceo:not(.mobile) {
   .mosplitka .case_task__gals--img:nth-child(2) {
     max-width: 60%;
     margin-top: -55px;
+  }
+
+  .mosplitka .mosc_gal {
+    padding-left: 20px;
+    padding-right: 20px;
+    flex-direction: column-reverse;
+    padding-bottom: 80px;
+  }
+
+  .mosplitka .case_page__reds--txt {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 14px;
+    line-height: 160%;
+  }
+
+  .mosplitka .case_page__in.mobile .case_page__reds--title {
+    margin-bottom: 20px;
+  }
+
+  .mosplitka .mosc_gal img {
+    border-radius: 5px;
+  }
+
+  .mosplitka .mosc_gal__r {
+    margin-left: auto;
+    max-width: 73%;
+  }
+
+  .mosplitka .mosc_gal__l {
+    flex-direction: row-reverse;
+    max-width: 94%;
+    margin-top: -110px;
+  }
+
+  .mosplitka .mosc_gal__l img {
+    max-width: 34%;
+  }
+
+  .mosplitka .mosc_gal__l img:nth-child(1) {
+    margin-top: 170px;
+  }
+
+  .mosplitka .case_pec__item--txt {
+    padding-left: 20px;
+    padding-right: 60px;
+  }
+
+  .mosplitka .pec_gal {
+    flex-direction: column;
+  }
+
+  .mosplitka .pec_gal img {
+    border-radius: 5px;
+  }
+
+  .mosplitka .pec_gal .mosc_gal__l {
+    margin-top: -70px;
+  }
+
+  .mosplitka .pec_gal .mosc_gal__l img {
+    max-width: 45%;
+  }
+
+  .mosplitka .pec_gal .mosc_gal__r {
+    max-width: 100%;
+    margin-top: 20px;
   }
 }
 
