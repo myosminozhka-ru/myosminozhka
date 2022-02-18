@@ -104,6 +104,27 @@ const mainCases = class MainCases {
                     });
                 }, 1000);
             }
+            if (document.querySelector('.foot_task ')) {
+               setTimeout(() => {
+                    gsap.to('.foot_task .case_page__bls--title', {
+                        scrollTrigger: {
+                            trigger: '.foot_task',
+                            start: 'top top',
+                            end: 'bottom bottom-=1000',
+                            scrub: 11,
+                            // markers: true,
+                            onUpdate: (item) => {
+                                if (item.progress > 0.05 && item.progress < 0.65) {
+                                    document.querySelector('.foot_task .case_page__bls--title').classList.add('isInViewport');
+                                } else {
+                                    document.querySelector('.foot_task .case_page__bls--title').classList.remove('isInViewport');
+                                }
+                            }
+                        },
+                        x: '-100%',
+                    });
+                }, 1000);
+            }
             if (document.querySelector('.msite .case_page__video')) {
                setTimeout(() => {
                     gsap.to('.msite .case_page__video--title', {

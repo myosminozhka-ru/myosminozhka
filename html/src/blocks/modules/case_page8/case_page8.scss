@@ -271,6 +271,117 @@
     .case_page__reds--r img {
         margin-top: vw(-375);
     }
+    .case_page__video--tit {
+        font-family: 'Montserrat', serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: vw(30);
+        line-height: 140%;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        margin-bottom: 30px;
+    }
+    .case_page__video--title {
+        transition: all .3s ease-out !important;
+    }
+    .case_page__video--text {
+        max-width: vw(1227);
+        width: 100%;
+    }
+    .case_page__video--item {
+        display: flex;
+        align-items: center;
+    }
+    .case_page__video--l {
+        background: #E2E2E2;
+        border-radius: 20px;
+        max-width: vw(1227);
+        width: 100%;
+        margin-right: vw(155);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: vw(100) vw(95);
+        img {
+            transition: all .3s ease-out;
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+        img:first-child {
+            margin-bottom: 5px;
+        }
+        img:nth-child(2) {
+            margin-bottom: 25px;
+        }
+    }
+    .case_page__video--r {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: vw(348);
+        width: 100%;
+        img {
+            filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
+            border-radius: 20px;
+        }
+    }
+    .case_page__video--text {
+        font-family: 'Montserrat', serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: vw(25);
+        line-height: 160%;
+        color: #FFFFFF;
+    }
+    .fot_bl {
+        .case_page__bls--l {
+            padding-top: vw(85);
+            padding-bottom: vw(85);
+        }
+        img {
+            max-width: vw(440);
+            width: 100%;
+            filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
+            border-radius: 20px;
+            border: 10px solid #FFFFFF;
+        }
+    }
+    .foot_task  {
+        .case_task__item--r {
+            font-style: normal;
+            font-weight: normal;
+            font-size: vw(25);
+            line-height: 160%;
+            text-transform: unset;
+            margin-bottom: vw(80);
+        }
+        .case_task__gal {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            &--l {
+                max-width: vw(1513);
+                max-width: 100%;
+                margin-right: vw(305);
+                img {
+                    filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
+                    border-radius: 20px;
+                }
+            }
+            &--r {
+                position: absolute;
+                max-width: vw(270);
+                width: 100%;
+                right: vw(153);
+                img {
+                    filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
+                    border-radius: 20px;
+                }
+            }
+        }
+    }
     @media all and (max-width: 1023px) {
         .case_page__in.mobile .case_page__bls--title {
             white-space: unset;
@@ -461,6 +572,82 @@
             padding-left: 20px;
             padding-right: 20px;
         }
+        .case_page__in.mobile .case_page__video--title {
+            max-width: 100%;
+            line-height: normal;
+        }
+        .case_page__video--tit {
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-bottom: 20px;
+            font-size: 18px;
+            line-height: 140%;
+        }
+        .case_page__about--rlist {
+            padding-top: 0;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 160%;
+        }
+        .case_page__video--text {
+            max-width: 100%;
+            padding-left: 20px;
+            padding-right: 20px;
+            font-size: 14px;
+            line-height: 160%;
+            padding-bottom: 30px;
+        }
+        .case_page__video--item {
+            flex-direction: column;
+            margin-bottom: 30px;
+            padding-left: 0;
+            padding-right: 0;
+            .case_page__video--r {
+                max-width: 190px;
+            }
+            img {
+                border-radius: 10px;
+            }
+        }
+        .case_page__video--l {
+            border-radius: 0;
+            margin-right: 0;
+            max-width: 100%;
+            margin-bottom: 30px;
+        }
+        .case_page__in.mobile .case_page__video {
+            padding-bottom: 30px;
+        }
+        .foot_task .case_task__item--r {
+            font-size: 14px;
+            line-height: 160%;
+            margin-bottom: 30px;
+        }
+        .foot_task .case_task__gal {
+            flex-direction: column;
+        }
+        .foot_task .case_task__gal--l {
+            margin-right: 0;
+            max-width: 100%;
+            img {
+                filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
+                border-radius: 10px;
+            }
+        }
+        .foot_task .case_task__gal--r {
+            position: relative;
+            right: 0;
+            margin-right: auto;
+            max-width: 150px;
+            margin-left: auto;
+            margin-top: -25px;
+            img {
+                border-radius: 10px;
+            }
+            margin-bottom: 60px;
+        }
     }
     @media all and (max-width: 640px) {
         .block_yel__imgs--img {
@@ -499,6 +686,14 @@
             width: 100%;
             margin-left: auto;
             margin-right: auto;
+        }
+        .fot_bl .case_page__bls--l img {
+            border-radius: 10px !important;
+            border: 5px solid #FFFFFF !important;
+            max-width: 150px;
+        }
+        .fot_bl .case_page__bls--block {
+            margin-bottom: 0;
         }
     }
 }
