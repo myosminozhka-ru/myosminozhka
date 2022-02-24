@@ -7,4 +7,14 @@
         right: 0;
         bottom: 0;
     }
+    &__bottom {
+        z-index: 4;
+    }
+    canvas {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
 }
