@@ -1,4 +1,8 @@
 .msite {
+    .case_pec__item {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
     .case_page__bls--block.no-padding .case_page__bls--l {
         padding: 0 !important;
         background: none !important;
@@ -192,7 +196,8 @@
         }
     }
     .case_page__reds {
-        padding-top: vw(163);
+        margin-top: 0;
+        padding-top: vw(185);
     }
     .case_page__about {
         padding-top: 0;
@@ -383,6 +388,10 @@
         }
     }
     @media all and (max-width: 1023px) {
+        .case_pec__item {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
         .case_page__in.mobile .case_page__bls--title {
             white-space: unset;
             width: auto;
@@ -787,5 +796,13 @@
                 }
             }
         }
+    }
+}
+.case_pec__item {
+    padding-left: 50px;
+    padding-right: 50px;
+    @media all and (max-width: 1023px) {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }

@@ -212,4 +212,10 @@
             }
         }
     }
+    @media all and (max-width: 640px) {
+        .case_page__in.mobile .no-padding .case_page__bls--l {
+            height: 270px;
+            overflow: hidden;
+        }
+    }
 }

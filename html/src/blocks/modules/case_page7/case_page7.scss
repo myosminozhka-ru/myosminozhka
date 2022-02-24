@@ -445,7 +445,7 @@
                 left: 25px;
                 position: absolute;
                 z-index: 2;
-                border-radius: 5px;
+                border-radius: 20px;
                 border-width: 5px;
                 max-width: 145px;
                 height: 315px;
@@ -478,6 +478,9 @@
         }
         .case_page__in.mobile .case_page__reds--r {
             margin-bottom: 20px;
+        }
+        .block_mal {
+            background: url(../img/s118.png) 0 27%/100% no-repeat;
         }
     }
 }
