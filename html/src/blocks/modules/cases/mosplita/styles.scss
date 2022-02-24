@@ -1,0 +1,17 @@
+.mosplita {
+    background: #C83947;
+    &__image {
+        transition: all .6s ease;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: url('../img/mosplita.png') 50% 50%/cover no-repeat;
+        clip-path: polygon(#{vw(377)} #{vw(261)}, #{vw(582)} #{vw(261)}, #{vw(582)} #{vw(465)}, #{vw(377)} #{vw(465)});
+    }
+    &:hover &__image,
+    &.mobile &__image {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }  
+}
