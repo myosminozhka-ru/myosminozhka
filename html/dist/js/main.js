@@ -758,8 +758,7 @@ var casesUpdated = /*#__PURE__*/function () {
     value: function init() {
       if (!document.querySelector('.cases__items') || window.innerWidth <= 1024) return;
       this.bioline();
-      this.setParalax();
-      this.medex();
+      this.setParalax(); // this.medex();
     }
   }]);
 

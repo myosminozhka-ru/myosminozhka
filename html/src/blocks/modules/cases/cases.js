@@ -501,7 +501,7 @@ const casesUpdated = class CasesUpdated {
         if (!document.querySelector('.cases__items') || window.innerWidth <= 1024) return;
         this.bioline();
         this.setParalax();
-        this.medex();
+        // this.medex();
     }
 }
 export default casesUpdated;
