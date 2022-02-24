@@ -21,6 +21,7 @@ import vacanciesTabs from "%modules%/vacancies-tabs/vacancies-tabs";
 import jobInfo from "%modules%/job-info/job-info";
 import jobTeam from "%modules%/job-team/job-team";
 import jobStages from "%modules%/job-stages/job-stages";
+import casesUpdated from "%modules%/cases/cases";
 import case_page from "%modules%/case_page/case_page";
 // import applicationForm from "%modules%/application-form/application-form";
 // import postInfo from "%modules%/posts-info/posts-info";
@@ -101,6 +102,7 @@ window.app = new Vue({
         jobStages: new jobStages(),
         footer: new footer(),
         cookiesForm: new cookiesForm(),
+        casesUpdated: new casesUpdated(),
         isMounted: false,
         isPreloaderHidden: false,
         sizes: {
@@ -150,6 +152,7 @@ window.app = new Vue({
             this.jobTeam.init();
             this.jobStages.init();
             this.cookiesForm.init();
+            this.casesUpdated.init();
             // this.applicationForm.init();
             window.addEventListener('resize', () => {
                 this.window = {

@@ -1,0 +1,78 @@
+.mukomol {
+    background: #FFE1AA;
+    transition: background .6s ease;
+    &__image {
+        position: absolute;
+        transition: transform .6s ease;
+        z-index: 2;
+        img {
+            height: 100%;
+        }
+        &--center {
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            height: vw(319);
+            padding-bottom: vw(128);
+            box-sizing: content-box;
+        }
+        &--left {
+            top: 50%;
+            left: 50%;
+            // transform: translateX(calc(-50% - #{vw(215)}))translateY(-50%);
+            transform: translateX(calc(-50% - 1000px)) translateY(-50%);
+            height: vw(323);
+            padding-bottom: vw(128);
+            box-sizing: content-box;
+        }
+        &--right {
+            top: 50%;
+            left: 50%;
+            // transform: translateX(calc(-50% + #{vw(215)})) translateY(-50%);
+            transform: translateX(calc(-50% + 1000px)) translateY(-50%);
+            height: vw(323);
+            padding-bottom: vw(128);
+            box-sizing: content-box;
+        }
+        &--accessuars {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transform: scale(0);
+            z-index: 1;
+        }
+    }
+    &:hover,
+    &.mobile {
+        background: #F6F6F8;
+    }
+    &:hover &__image,
+    &.mobile &__image {
+        &--left {
+            transform: translateX(calc(-50% - #{vw(215)}))translateY(-50%);
+        }
+        &--right {
+            transform: translateX(calc(-50% + #{vw(215)})) translateY(-50%);
+        }
+        &--accessuars {
+            transform: scale(1);
+        }
+    }
+    &.mobile &__image {
+        &--center {
+            height: 108px;
+        }
+        &--left {
+            transform: translateX(calc(-50% - 100px))translateY(-50%);
+            height: 108px;
+        }
+        &--right {
+            transform: translateX(calc(-50% + 100px)) translateY(-50%);
+            height: 108px;
+        }
+        &--accessuars {
+            transform: scale(1);
+        }
+    }
+}

@@ -1,0 +1,26 @@
+.happybaby {
+    background: url('../img/happybaby.png') 50% 50%/cover no-repeat;
+    &__image {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        transition: all .6s ease;
+        svg rect,
+        svg path {
+            transition: all .6s ease;
+        }
+    }
+    &:hover &__image,
+    &.mobile &__image {
+        transform: scale(5);
+    }
+    &:hover svg rect,
+    &:hover svg path {
+        fill: transparent;
+    } 
+    &.mobile svg {
+        opacity: 0;
+    }
+}

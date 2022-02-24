@@ -1,0 +1,161 @@
+/* cyrillic-ext */
+@font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/rubik/v18/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-4I-FWkU1Z4Y.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/rubik/v18/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-4I-FU0U1Z4Y.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* hebrew */
+  @font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/rubik/v18/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-4I-FVUU1Z4Y.woff2) format('woff2');
+    unicode-range: U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/rubik/v18/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-4I-FWUU1Z4Y.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/rubik/v18/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-4I-FV0U1.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+.englex {
+    background: #CE4A37;
+    &__letter {
+        width: vw(250);
+        height: vw(311);
+        background: url('../img/svg/bicons.svg') 50% 50%/cover no-repeat;
+        position: absolute;
+        top: calc(50% - #{vw(60)});
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        &:before {
+            content: "A";
+            font-family: 'Rubik';
+            display: block;
+            font-weight: bold;
+            font-size: vw(180);
+            line-height: 160%;
+            text-align: center;
+            color: #FFD6B8;
+            -webkit-text-stroke-width: vw(7);
+            -webkit-text-stroke-color: #393736;
+            
+        }
+    }
+    &:hover &__letter:before {
+        animation: letters 33s infinite ease;
+    }
+    &.mobile &__letter:before {
+        content: "A" !important;
+    }
+}
+
+@keyframes letters {
+    0% {
+        content: "A";
+    }
+    3% {
+        content: "B";
+    }
+    6% {
+        content: "C";
+    }
+    9% {
+        content: "D";
+    }
+    12% {
+        content: "E";
+    }
+    15% {
+        content: "F";
+    }
+    18% {
+        content: "G";
+    }
+    21% {
+        content: "H";
+    }
+    24% {
+        content: "I";
+    }
+    27% {
+        content: "J";
+    }
+    30% {
+        content: "K";
+    }
+    33% {
+        content: "L";
+    }
+    36% {
+        content: "M";
+    }
+    39% {
+        content: "N";
+    }
+    41% {
+        content: "O";
+    }
+    44% {
+        content: "P";
+    }
+    47% {
+        content: "Q";
+    }
+    50% {
+        content: "R";
+    }
+    53% {
+        content: "S";
+    }
+    56% {
+        content: "T";
+    }
+    59% {
+        content: "U";
+    }
+    62% {
+        content: "V";
+    }
+    65% {
+        content: "W";
+    }
+    68% {
+        content: "X";
+    }
+    71% {
+        content: "Y";
+    }
+    74% {
+        content: "Z";
+    }
+    100% {
+        content: "Z";
+    }
+}

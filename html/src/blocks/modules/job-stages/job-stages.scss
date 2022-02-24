@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .job-stages {
     background: #fff;
     padding: 0 0 0 vw(50);
@@ -257,7 +259,7 @@
         right: 0;
         top: 0;
         height: vw(241);
-        background: #fff url('../img/svg/support_top.svg') 0 0 / calc(100% - 50vw) no-repeat;
+        background: #fff url('../img/svg/support_top.svg') 0 math.div(0, calc(100% - 50vw)) no-repeat;
     }
     &:not(.mobile) &-support::after {
         content: "";
@@ -268,7 +270,7 @@
         bottom: -1px;
         height: vw(241);
         transform: rotateX(180deg);
-        background: #fff url('../img/svg/support_top.svg') 0 0 / calc(100% - 50vw) no-repeat;
+        background: #fff url('../img/svg/support_top.svg') 0 math.div(0, calc(100% - 50vw)) no-repeat;
     }
     &-support-left {
         width: calc(100% - #{vw(977)});
