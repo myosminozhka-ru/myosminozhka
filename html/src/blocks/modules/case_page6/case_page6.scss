@@ -263,7 +263,27 @@
             }
         }
     }
+    @media all and (min-width: 1023px) {
+        .case_pec__item--r .mabsd {
+            display: none;
+        }
+    }
     @media all and (max-width: 1023px) {
+        .case_pec__item--r {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: -20px;
+        }
+        .case_pec__item--r img:first-child {
+            width: 73%;
+            margin-left: auto;
+        }
+        .case_pec__item--r .mabsd {
+            display: block;
+            max-width: 145px;
+            width: 100%;
+            margin-top: -185px;
+        }
         .case_page__in.mobile .case_page__bls--title {
             white-space: unset;
             width: auto;
