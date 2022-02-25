@@ -40,4 +40,10 @@
         opacity: 1;
         transform: scale(1);
     }
+    &.mobile &__image--bg {
+        @media all and (max-width: 400px) {
+            transform: scale(1.2) !important;
+        }
+    }
+    
 }

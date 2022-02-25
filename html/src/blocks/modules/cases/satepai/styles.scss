@@ -16,28 +16,28 @@
         top: 50%;
         transform: translateX(-50%) translateY(-50%) rotate(0deg);
         transition: all .6s ease;
-        mix-blend-mode: darken;
+        // mix-blend-mode: darken;
     }
     &__diamond {
         width: vw(174);
         position: absolute;
-        left: calc(50% - #{vw(17)});
+        left: calc(50% - #{vw(12)});
         top: -100%;
         transform: translateX(-50%) rotate(0deg);
         transition: all .6s ease;
-        mix-blend-mode: darken;
+        // mix-blend-mode: darken;
     }
     &:hover &__overlay,
     &.mobile &__overlay {
         opacity: 1;
     }
     &:not(.mobile):hover &__diamond {
-        top: vw(85);
+        top: vw(185);
     }
     &.mobile &__diamond {
         width: 58px;
-        top: 20px;
-        left: calc(50% - 7px);
+        top: calc(50% - 58px);
+        left: calc(50% - 5px);
     }
     &.mobile &__ring {
         width: 128px;
