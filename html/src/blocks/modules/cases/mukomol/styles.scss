@@ -74,5 +74,19 @@
         &--accessuars {
             transform: scale(1);
         }
+        @media all and (max-width: 400px) {
+            &--center {
+                height: 60px;
+                top: 35%;
+            }
+            &--left {
+                height: 60px;
+                top: 35%;
+            }
+            &--right {
+                height: 60px;
+                top: 35%;
+            }
+        }
     }
 }

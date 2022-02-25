@@ -189,6 +189,10 @@
   pointer-events: none;
 }
 
+.medex.mobile {
+  background: url("../img/medex_mobile_bg.png") 50% 50%/cover no-repeat !important;
+}
+
 .medex__image {
   position: absolute;
   left: 0;
@@ -1707,5 +1711,26 @@
 .karta.mobile .karta__image,
 .karta.mobile .karta__cloud {
   opacity: 1;
+}
+
+@media all and (max-width: 400px) {
+  .mukomol.mobile .mukomol__image--center {
+    height: 60px;
+    top: 35%;
+  }
+
+  .mukomol.mobile .mukomol__image--left {
+    height: 60px;
+    top: 35%;
+  }
+
+  .mukomol.mobile .mukomol__image--right {
+    height: 60px;
+    top: 35%;
+  }
+
+  .stroydvor.mobile .stroydvor__image--bg {
+    transform: scale(1.2) !important;
+  }
 }
 /*# sourceMappingURL=maps/cases.css.map */
