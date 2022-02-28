@@ -1,5 +1,5 @@
 html:root body.posts .post_info { 
-    background: url("data:image/svg+xml,%3Csvg width='1920' height='1965' viewBox='0 0 1920 1965' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-1 0H1929.5V1478H1409H1089.49C673.305 1478 276.779 1655.08 -1 1965V1478L-1 0Z' fill='%234F4F4F'/%3E%3C/svg%3E%0A") 0 0 / 100% no-repeat;
+    background: url("data:image/svg+xml,%3Csvg width='1920' height='1965' viewBox='0 0 1920 1965' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-1 0H1929.5V1478H1409H1089.49C673.305 1478 276.779 1655.08 -1 1965V1478L-1 0Z' fill='%230E0F1A'/%3E%3C/svg%3E%0A") 0 0 / 100% no-repeat;
     padding: vw(80) vw(50);
     padding-top: 0;
     .posts-blog {
@@ -17,7 +17,7 @@ html:root body.posts .post_info {
         font-weight: normal;
         font-size: vw(30);
         line-height: vw(45);
-        color: #4F4F4F;
+        color: #121423;
         max-width: 1246px;
         width: 100%;
         margin: 0 auto;
@@ -41,7 +41,7 @@ html:root body.posts .post_info {
     &__code {
         position: relative;
         z-index: 23;
-        background: #4F4F4F;
+        background: #121423;
         box-sizing: border-box;
         padding: vw(30);
         padding-bottom: vw(10);

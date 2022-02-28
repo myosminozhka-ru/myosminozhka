@@ -15,7 +15,12 @@
         left: 0;
     }
     &:not(.mobile) &-tentacle {
-        top: vw(-700);
+        top: vw(-730);
+    }
+    @media all and (min-width: 1024px) {
+        &-tentacle {
+            transform: scale(1.1);
+        }
     }
     @media all and (max-width: 1023px) {
         &-tentacle {
@@ -80,7 +85,7 @@
     }
     &-menu-title {
         font-weight: bold;
-        color: #4F4F4F;
+        color: #121423;
     }
     &:not(.mobile) &-menu-title {
         font-size: vw(30);
@@ -94,7 +99,7 @@
     }
     &-menu-item {
         font-weight: 500;
-        color: #4F4F4F;  
+        color: #121423;  
         &:hover a {
             text-decoration: none !important;
         }      
@@ -122,7 +127,7 @@
             justify-content: center;
         }
         .text {
-            color: #4F4F4F;
+            color: #121423;
             a {
                 text-decoration: none;
                 color: inherit;

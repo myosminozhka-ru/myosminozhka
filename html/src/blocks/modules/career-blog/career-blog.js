@@ -10,7 +10,7 @@ const careerBlog = class careerBlog {
             new Glide('.career-blog-items', {
                 startAt: 0,
                 perView: 3,
-                gap: 130,
+                gap: 20,
                 type: 'carousel',
             }).mount();
         }

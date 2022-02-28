@@ -11,6 +11,7 @@ import cookiesForm from "%modules%/cookie-form/cookie-form";
 import applicationForm from "%modules%/application-form/application-form";
 import mainQuestionForm from "%modules%/main-question/main-question";
 import header from "%modules%/header/header";
+import casesUpdated from "%modules%/cases/cases";
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -52,6 +53,7 @@ window.app = new Vue({
             textSelector: 'main-question.fileLoaderMain .main-question-form-item span'
         }),
         footer: new footer(),
+        casesUpdated: new casesUpdated(),
         cookiesForm: new cookiesForm(),
         applicationForm: new applicationForm(),
         isMounted: false,
@@ -77,7 +79,7 @@ window.app = new Vue({
                 this.isPreloaderHidden = true;
             })
             this.isMounted = true;
-            this.mainCases.init();
+            // this.mainCases.init();
             this.mainWords.countPosition();
             this.mainWeb.animateElement();
             this.mainAbout.animateCircle();
@@ -85,6 +87,7 @@ window.app = new Vue({
             this.cursorAnimation.init();
             this.mainCarousel.init();
             this.newsAndTrends.init();
+            this.casesUpdated.init();
             this.header.init();
             this.cookiesForm.init();
             this.applicationForm.init();

@@ -247,7 +247,7 @@ var careerBlog = /*#__PURE__*/function () {
         new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.career-blog-items', {
           startAt: 0,
           perView: 3,
-          gap: 130,
+          gap: 20,
           type: 'carousel'
         }).mount();
       }
@@ -853,6 +853,7 @@ var companyPartners = /*#__PURE__*/function () {
         startAt: 0,
         bound: 'Boolean',
         perView: 2,
+        gap: 0,
         breakpoints: {
           1023: {
             perView: 1
@@ -2079,7 +2080,7 @@ var jobTeam = /*#__PURE__*/function () {
           end: 'bottom+=1000 center',
           scrub: 1
         },
-        color: '#4f4f4f'
+        color: '#121423'
       });
       gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to('.job-team-circle', {
         scrollTrigger: {
@@ -2303,11 +2304,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 /* harmony import */ var interactjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! interactjs */ "./node_modules/interactjs/dist/interact.min.js");
 /* harmony import */ var interactjs__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(interactjs__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_2__);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
 
 
 
@@ -2354,7 +2358,11 @@ var mainCarousel = /*#__PURE__*/function () {
         document.querySelector(".main-carousel__text-item_texts .text[data-text-id=\"".concat((selectedIndex + 1) % +cellCount, "\"]")).classList.add('isActive');
         gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(document.querySelectorAll(".main-carousel__text-item_texts"), {
           height: document.querySelector(".main-carousel__text-item_texts .text[data-text-id=\"".concat((selectedIndex + 1) % +cellCount, "\"]")).clientHeight
-        }); // document.querySelector(`.main-carousel__text-item_titles .title[data-title-id="${selectedIndex}"]`).classList.add('isActive');
+        });
+        jquery__WEBPACK_IMPORTED_MODULE_2___default()(".main-carousel__text-item_gifts .gift").each(function () {
+          jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).hide('fast');
+        });
+        jquery__WEBPACK_IMPORTED_MODULE_2___default()(".main-carousel__text-item_gifts .gift[data-gift-id=\"".concat((selectedIndex + 1) % +cellCount, "\"]")).show('fast'); // document.querySelector(`.main-carousel__text-item_titles .title[data-title-id="${selectedIndex}"]`).classList.add('isActive');
       }
 
       var prevButton = document.querySelector('.previous-button');
@@ -2412,6 +2420,7 @@ var mainCarousel = /*#__PURE__*/function () {
       }
 
       function chooseElem(index) {
+        if (selectedIndex == index) return;
         selectedIndex = index;
         rotateCarousel();
       }

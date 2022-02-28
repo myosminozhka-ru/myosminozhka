@@ -13,7 +13,7 @@
     &__title {
         font-family: "Montserrat";
         font-weight: 600;
-        color: #4f4f4f;
+        color: #121423;
     }
     &:not(.mobile) &__title {
         font-size: vw(200);
@@ -45,8 +45,8 @@
     &:not(.mobile) &-scene {
         position: absolute;
         bottom: 0;
-        width: vw(530);
-        height: vw(626);
+        width: vw(515);
+        height: vw(688);
     }
     &.mobile &-scene {
         width: 70%;
@@ -169,7 +169,7 @@
         }
         .text {
             font-family: "Montserrat";
-            color: #4f4f4f;
+            color: #121423;
             white-space: initial;
             transform: translateY(-100%);
             position: absolute;
@@ -224,5 +224,76 @@
     }
     &.mobile &__text-item_texts {
         height: 50px;
+    }
+
+    &__text-item_gifts {
+        .gift {
+            display: none;
+            .gift_in {
+                display: flex;
+                align-items: center;
+                padding-top: vw(92);
+            }
+            .left {
+                width: vw(133);
+                height: vw(133);
+                border: 2px solid #121423;
+                border-radius: 50%;
+                position: relative;
+            }
+            .badge {
+                width: vw(50);
+                height: vw(50);
+                border-radius: 50%;
+                background: #FF4978;
+                text-align: center;
+                line-height: vw(50);
+                font-weight: 600;
+                font-size: vw(20);
+                color: #FFFFFF;
+                position: absolute;
+                right: 0;
+                top: 0;
+                transform: translateY(#{vw(-12)});
+            }
+            .right {
+                margin-left: vw(43);
+                font-weight: 600;
+                font-size: vw(24);
+                line-height: 1.2;
+                color: #121423;
+            }
+        }
+    }
+    &.mobile &__text-item_gifts {
+        .gift {
+            display: none;
+            .gift_in {
+                display: flex;
+                align-items: center;
+                padding-top: 30px;
+            }
+            .left {
+                width: 80px;
+                height: 80px;
+                border: 2px solid #121423;
+                border-radius: 50%;
+                position: relative;
+            }
+            .badge {
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+                font-size: 12px;
+                transform: translateY(-12px);
+            }
+            .right {
+                margin-left: 20px;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 1.2;
+                color: #121423;
+            }
+        }
     }
 }

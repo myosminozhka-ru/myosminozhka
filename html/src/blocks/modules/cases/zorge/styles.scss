@@ -6,15 +6,31 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(0, 0, 0, 0);
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 32.91%, rgba(0, 0, 0, 0.86) 100%);
         transition: all 0.6s ease;
+        opacity: 1;
     }
-    &:hover &__shadow {
+    &__shadow--hover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
         background: rgba(0, 0, 0, 0.69);
+        transition: all 0.6s ease;
+        opacity: 0;
         mix-blend-mode: multiply;
     }
+    &:hover &__shadow--hover {
+        opacity: 1;
+    }
+    &:hover &__shadow {
+        opacity: 0;
+    }
+    &.mobile &__shadow--hover {
+        opacity: 1; 
+    }
     &.mobile &__shadow {
-        background: rgba(0, 0, 0, 0.69);
-        mix-blend-mode: multiply; 
+        opacity: 0; 
     }
 }

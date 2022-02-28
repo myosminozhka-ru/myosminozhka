@@ -4,8 +4,8 @@
     background: #fff;
     overflow: hidden;
     &:not(.mobile) {
-        padding-top: vw(366);
-        padding-bottom: vw(208);
+        padding-top: vw(208);
+        padding-bottom: vw(278);
     }
     &.mobile {
         // padding: 155px 93px 65px 20px;
@@ -42,15 +42,16 @@
         // padding-top: vw(400);
         position: relative;
         z-index: 15;
-        @extend %white;
+        // @extend %white;
         
     }
     &:not(.mobile) &-title {
         padding-left: vw(50);
         font-weight: 600;
-        font-size: vw(300);
-        line-height: vw(300);
+        font-size: vw(160);
+        line-height: vw(160);
         margin-bottom: vw(80);
+        text-transform: uppercase;
     }
     &.mobile &-title {
         padding: 0 20px;

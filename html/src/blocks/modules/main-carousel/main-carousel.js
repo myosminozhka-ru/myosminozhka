@@ -1,5 +1,6 @@
 import gsap from 'gsap';
-import interact from 'interactjs'
+import interact from 'interactjs';
+import $ from 'jquery';
 const mainCarousel = class MainCarousel {
     constructor() {}
     onCarouselChange() {}
@@ -36,7 +37,11 @@ const mainCarousel = class MainCarousel {
             document.querySelector(`.main-carousel__text-item_texts .text[data-text-id="${(selectedIndex+1) % +cellCount}"]`).classList.add('isActive');
             gsap.to(document.querySelectorAll(`.main-carousel__text-item_texts`), {
                 height: document.querySelector(`.main-carousel__text-item_texts .text[data-text-id="${(selectedIndex+1) % +cellCount}"]`).clientHeight
+            })
+            $(`.main-carousel__text-item_gifts .gift`).each(function() {
+                $(this).hide('fast');
             }) 
+            $(`.main-carousel__text-item_gifts .gift[data-gift-id="${(selectedIndex+1) % +cellCount}"]`).show('fast');
             // document.querySelector(`.main-carousel__text-item_titles .title[data-title-id="${selectedIndex}"]`).classList.add('isActive');
         }
 
@@ -95,6 +100,7 @@ const mainCarousel = class MainCarousel {
         changeCarousel();
         }
         function chooseElem(index) {
+            if (selectedIndex == index) return;
             selectedIndex = index;
             rotateCarousel();
         }
