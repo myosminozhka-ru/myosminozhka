@@ -1,4 +1,7 @@
 .frost {
+    .first__fullscreen_frame:not(.mobile) {
+        padding-bottom: 0;
+    }
     .case_frst__subtitle {
         max-width: 100%;
     }
