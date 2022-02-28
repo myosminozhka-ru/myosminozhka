@@ -11,7 +11,7 @@
     &-title {
         white-space: nowrap;
         text-transform: uppercase;
-        color: #4a4a4a;
+        color: #121423;
     }
     &:not(.mobile) &-title {
         margin-bottom: vw(150);
@@ -175,21 +175,29 @@
         display: block;
         cursor: pointer;
         box-sizing: content-box;
-
+        transition: all .3s ease;
+        svg {
+            fill: #A0A0A0;
+            transition: fill;
+        }
         &:hover {
+            transform: scale(1.1);
             svg {
-                fill: $mainColor;
+                fill: #121423;
             }
         }
 
         &--prev {
             transform: rotate(180deg);
+            &:hover {
+                transform: rotate(180deg) scale(1.1);
+            }
         }
     }
     &:not(.mobile) &-arrow {
-        width: vw(89);
-        height: vw(38);
-        padding: vw(50);
+        width: vw(60);
+        height: vw(30);
+        padding: vw(45);
     }
     &.mobile &-arrow {
         width: 86px;

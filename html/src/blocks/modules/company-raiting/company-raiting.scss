@@ -11,8 +11,8 @@
     &-title {
         @extend %white;
         text-transform: uppercase;
-        mix-blend-mode: exclusion;
-        color: #7c7c7c;
+        // mix-blend-mode: exclusion;
+        color: #0E0F1A;
     }
     &:not(.mobile) &-title {
         overflow: hidden;
@@ -74,7 +74,7 @@
         max-width: vw(384);
         max-height: vw(384);
         padding: vw(100);
-        border: vw(2) solid #4F4F4F;
+        border: vw(2) solid #121423;
         margin: 0 vw(-18);
         .button-circle {
             background: $bgColor;
@@ -85,7 +85,7 @@
         &.isActive,
         &:hover {
             z-index: 4;
-            background: #4F4F4F;
+            background: #121423;
             transition: .3s background .3s ease;
             .image {
                 filter: brightness(100);
@@ -98,7 +98,7 @@
         max-width: 146px;
         max-height: 146px;
         padding: 27px;
-        border: 2px solid #4F4F4F;
+        border: 2px solid #121423;
         margin: 0 -5px;
         .button-circle {
           display: none;
@@ -172,7 +172,7 @@
     }
     &-texts-right-item {
         white-space: initial;
-        color: #4F4F4F;
+        color: #121423;
         font-weight: normal;
     }
     &:not(.mobile) &-texts-right-item {
@@ -184,4 +184,8 @@
         font-size: 16px;
         line-height: 22px;
     }
+}
+
+.company .company-raiting:not(.mobile) {
+    padding: 0 0 vw(200);
 }

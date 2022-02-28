@@ -10,7 +10,7 @@
     &-title {
         text-transform: uppercase;
         margin-bottom: vw(20);
-        color: #4f4f4f;
+        color: #121423;
     }
     &.mobile &-title {
         padding: 0 20px;
@@ -486,7 +486,7 @@
     mix-blend-mode: unset
 }
 .job-stages-trigger .text {
-    color: #4F4F4F;
+    color: #121423;
 }
 .job-stages-trigger:hover {
     .number, .text {
@@ -503,9 +503,9 @@
         mix-blend-mode: unset
     }
     .job-stages-trigger .number, .job-stages-trigger .text {
-        color: #4F4F4F;
+        color: #121423;
     }
 }
 .job-stages-trigger .number {
-    color: #4F4F4F;
+    color: #121423;
 }

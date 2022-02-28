@@ -8,13 +8,13 @@
         background: none !important;
     }
     .case_page__bls--block .case_page__about--rlist li, .case_task .case_page__about--rlist li {
-        color: #4F4F4F;
+        color: #121423;
     }
     .case_page__bls--l {
         border-radius: 0;
     }
     .case_page__bls--block .case_page__about--rlist li:before, .case_task .case_page__about--rlist li:before {
-        background: #4F4F4F !important;
+        background: #121423 !important;
     }
     .case_frst__subtitle {
         max-width: 100%;
@@ -40,7 +40,7 @@
         font-weight: normal;
         font-size: 25px;
         line-height: 160%;
-        color: #4F4F4F;
+        color: #121423;
     }
     .case_task {
         padding-top: vw(200);
@@ -62,7 +62,7 @@
                 font-size: vw(30);
                 line-height: 140%;
                 text-transform: uppercase;
-                color: #4F4F4F;
+                color: #121423;
             }
         }
     }
@@ -428,7 +428,7 @@
             font-size: 18px;
             line-height: 140%;
             text-transform: uppercase;
-            color: #4F4F4F;
+            color: #121423;
         }
         .case_task__item--txt {
             margin-top: 0;
@@ -436,7 +436,7 @@
             font-weight: normal;
             font-size: 14px;
             line-height: 160%;
-            color: #4F4F4F;
+            color: #121423;
         }
         .block_yel {
             padding-top: 70px;
@@ -509,7 +509,7 @@
             margin-bottom: 10px;
         }
         .case_page__in.mobile .case_page__video {
-            background: url(../img/bg_red4.png) 0 0/100% no-repeat, linear-gradient(0deg, #4f4f4f 80%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0) 100%) !important;
+            background: url(../img/bg_red4.png) 0 0/100% no-repeat, linear-gradient(0deg, #121423 80%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0) 100%) !important;
         }
         .bl2 .case_page__video--text {
             padding-left: 20px;
@@ -721,7 +721,7 @@
         font-size: vw(160);
         line-height: 100%;
         text-transform: uppercase;
-        color: #4F4F4F;
+        color: #121423;
         margin-bottom: 80px;
         padding-left: 50px;
         padding-right: 50px;
@@ -758,7 +758,7 @@
             font-weight: normal;
             font-size: vw(25);
             line-height: 160%;
-            color: #4F4F4F;
+            color: #121423;
             margin-bottom: 80px;
             @media all and (max-width: 1023px) {
                 font-size: 14px;
