@@ -125,6 +125,48 @@ const mainCases = class MainCases {
                     });
                 }, 1000);
             }
+            if (document.querySelector('.block_slks')) {
+               setTimeout(() => {
+                    gsap.to('.block_slks .case_pec__title', {
+                        scrollTrigger: {
+                            trigger: '.block_slks',
+                            start: 'top top',
+                            end: 'bottom bottom-=1000',
+                            scrub: 11,
+                            // markers: true,
+                            onUpdate: (item) => {
+                                if (item.progress > 0.05 && item.progress < 0.65) {
+                                    document.querySelector('.block_slks .case_pec__title').classList.add('isInViewport');
+                                } else {
+                                    document.querySelector('.block_slks .case_pec__title').classList.remove('isInViewport');
+                                }
+                            }
+                        },
+                        x: '-100%',
+                    });
+                }, 1000);
+            }
+            if (document.querySelector('.itm_new')) {
+               setTimeout(() => {
+                    gsap.to('.itm_new .case_page__video--title', {
+                        scrollTrigger: {
+                            trigger: '.itm_new',
+                            start: 'top top',
+                            end: 'bottom bottom-=1000',
+                            scrub: 11,
+                            // markers: true,
+                            onUpdate: (item) => {
+                                if (item.progress > 0.05 && item.progress < 0.65) {
+                                    document.querySelector('.itm_new .case_page__video--title').classList.add('isInViewport');
+                                } else {
+                                    document.querySelector('.itm_new .case_page__video--title').classList.remove('isInViewport');
+                                }
+                            }
+                        },
+                        x: '-100%',
+                    });
+                }, 1000);
+            }
             if (document.querySelector('.msite .case_page__video')) {
                setTimeout(() => {
                     gsap.to('.msite .case_page__video--title', {
