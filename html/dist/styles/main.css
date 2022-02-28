@@ -15861,7 +15861,7 @@ body.main .main-resume.mobile {
 }
 
 .trigger-wrapper-top {
-  background: #121423;
+  background: #121423 !important;
 }
 
 .web.mobile {
