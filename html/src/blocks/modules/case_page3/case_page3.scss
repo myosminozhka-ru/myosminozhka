@@ -1,4 +1,7 @@
 .lonmandi {
+    .first__fullscreen_frame:not(.mobile) {
+        padding-bottom: 0;
+    }
     .case_page__about--work {
         padding-top: 0;
     }

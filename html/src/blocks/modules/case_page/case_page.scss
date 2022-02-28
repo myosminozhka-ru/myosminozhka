@@ -418,7 +418,7 @@
     }
     &__gl {
         padding-top: vw(137);
-        background: url(../img/bg_red.png) 0 0 / contain no-repeat, linear-gradient(0deg, rgba(79,79,79,1) 84%, rgba(255,255,255,1) 84%, rgba(255,255,255,1) 100%);
+        background: url(../img/bg_red.png) 0 0 / contain no-repeat, linear-gradient(0deg, rgba(18,20,35,1) 84%, rgba(255,255,255,1) 84%, rgba(255,255,255,1) 100%);
         overflow: hidden;
         &--title {
             font-family: 'Montserrat', serif;
@@ -760,7 +760,7 @@
         padding-top: vw(137);
         margin-top: vw(60);
         padding-bottom: 0;
-        background: url(../img/bg_red.png) 0 0 / 100% no-repeat, linear-gradient(0deg, rgba(79,79,79,1) 84%, rgba(255,255,255,1) 84%, rgba(255,255,255,1) 100%);
+        background: url(../img/bg_red.png) 0 0 / 100% no-repeat, linear-gradient(0deg, rgba(18,20,35,1) 84%, rgba(255,255,255,1) 84%, rgba(255,255,255,1) 100%);
         &--title {
             font-family: 'Montserrat', serif;
             font-style: normal;
@@ -1510,7 +1510,7 @@
     .case_tabs_new {
         padding-left: 20px;
         padding-right: 20px;
-        background: url("../img/bg_mob.png") 0 0 no-repeat, linear-gradient(180deg, rgba(79,79,79,1) 155px, rgba(255,255,255,1) 155px, rgba(255,255,255,1) 155px);
+        background: url("../img/bg_mob.png") 0 0 no-repeat, linear-gradient(180deg, #121423 155px, rgba(255,255,255,1) 155px, rgba(255,255,255,1) 155px);
     }
     .case_page__about--l {
         max-width: 65px;

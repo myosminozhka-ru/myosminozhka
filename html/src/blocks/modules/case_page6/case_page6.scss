@@ -1,4 +1,7 @@
 .stroy {
+    .first__fullscreen_frame:not(.mobile) {
+        padding-bottom: 0;
+    }
     .no-padding .case_page__bls--l {
         padding: 0;
         img {
@@ -263,6 +266,11 @@
             }
         }
     }
+    .block_yel__img img, .block_yel__imgs--img img, .case_page__reds--r img, .case_page__reds--img img, .case_pec__item--r img {
+        border: 10px solid #FFFFFF;
+        filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
+        border-radius: 20px;
+    }
     @media all and (min-width: 1023px) {
         .case_pec__item--r .mabsd {
             display: none;
@@ -502,6 +510,11 @@
             &:hover {
                 background: url("data:image/svg+xml,%3Csvg width='43' height='26' viewBox='0 0 43 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M31.4774 0.517058L42.493 11.7517C43.169 12.4411 43.169 13.5589 42.493 14.2483L31.4774 25.4829C30.8015 26.1724 29.7055 26.1724 29.0295 25.4829C28.3536 24.7935 28.3536 23.6758 29.0295 22.9864L37.0902 14.7654L1.76536 14.7654C0.790377 14.7654 1.22173e-06 13.975 1.1365e-06 13C1.05126e-06 12.025 0.790377 11.2346 1.76536 11.2346L37.0902 11.2346L29.0295 3.01365C28.3536 2.32423 28.3536 1.20647 29.0295 0.517058C29.7055 -0.172356 30.8015 -0.172356 31.4774 0.517058Z' fill='white'/%3E%3C/svg%3E%0A") 50% no-repeat;
             }
+        }
+        .block_yel__img img, .block_yel__imgs--img img, .case_page__reds--r img, .case_page__reds--img img, .case_pec__item--r img, .case_page__in.mobile .case_page__reds--r img {
+            border: 5px solid #FFFFFF;
+            filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
+            border-radius: 5px;
         }
     }
     @media all and (max-width: 640px) {
