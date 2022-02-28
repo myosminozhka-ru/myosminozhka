@@ -2592,8 +2592,8 @@ var mainCases = /*#__PURE__*/function () {
             gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.msite .case_page__reds--title', {
               scrollTrigger: {
                 trigger: '.msite .case_page__reds',
-                start: 'top top',
-                end: 'bottom bottom-=1000',
+                start: '-=500',
+                end: '+=1000',
                 scrub: 11,
                 // markers: true,
                 onUpdate: function onUpdate(item) {
@@ -2614,8 +2614,8 @@ var mainCases = /*#__PURE__*/function () {
             gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.foot_task .case_page__bls--title', {
               scrollTrigger: {
                 trigger: '.foot_task',
-                start: 'top top',
-                end: 'bottom bottom-=1000',
+                start: '-=500',
+                end: '+=1000',
                 scrub: 11,
                 // markers: true,
                 onUpdate: function onUpdate(item) {
@@ -2680,8 +2680,8 @@ var mainCases = /*#__PURE__*/function () {
             gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.msite .case_page__video--title', {
               scrollTrigger: {
                 trigger: '.msite .case_page__video',
-                start: 'top top',
-                end: 'bottom bottom-=1000',
+                start: '-=500',
+                end: '+=1000',
                 scrub: 11,
                 // markers: true,
                 onUpdate: function onUpdate(item) {

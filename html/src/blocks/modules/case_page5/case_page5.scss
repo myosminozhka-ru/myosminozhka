@@ -64,9 +64,12 @@
         padding-left: 20px;
         padding-right: 20px;
         &__img {
-            filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
-            border-radius: 45px;
             margin-bottom: vw(70);
+            img {
+                border: 10px solid #FFFFFF;
+                filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
+                border-radius: 20px;
+            }
         }
         &__title {
             font-family: 'Montserrat', serif;
@@ -87,8 +90,11 @@
             justify-content: space-between;
             margin-bottom: vw(-249);
             &--img {
-                filter: drop-shadow(0px 13px 10px rgba(0, 0, 0, 0.1));
-                border-radius: 45px;
+                img {
+                    border: 10px solid #FFFFFF;
+                    filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
+                    border-radius: 20px;
+                }
                 &:nth-child(1) {
                     position: relative;
                     bottom: vw(-480);
@@ -109,7 +115,7 @@
         img {
             border: 10px solid #FFFFFF;
             filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
-            border-radius: 45px;
+            border-radius: 20px;
         }
     }
     .case_page__reds--item {
@@ -120,9 +126,8 @@
         padding-left: 50px;
         padding-right: 50px;
         img {
-            border: 10px solid #FFFFFF;
             filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
-            border-radius: 45px;
+            border-radius: 20px;
         }
     }
     .blocks_pic {
@@ -138,6 +143,7 @@
             font-size: 0;
             img {
                 width: 100%;
+                border-radius: 20px;
             }
         }
         &__pics {
@@ -361,6 +367,16 @@
         .case_page__in.mobile .case_page__video {
             padding-bottom: 0;
         }
+        .block_yel__img img, .block_yel__imgs--img img {
+            border: 5px solid #FFFFFF;
+            filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
+            border-radius: 6px;
+        }
+        .case_page__in.mobile .case_page__reds--r img {
+            border: 5px solid #FFFFFF;
+            filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
+            border-radius: 10px;
+        }
     }
     @media all and (max-width: 640px) {
         .block_yel__imgs--img {
@@ -376,6 +392,9 @@
         }
         .case_page__in.mobile .case_page__reds--r {
             margin-bottom: 20px;
+        }
+        .blocks_pic__img img {
+            border-radius: 5px;
         }
     }
 }
