@@ -10345,6 +10345,10 @@ body.company .company-ceo:not(.mobile) {
 }
 
 .case_page .first__fullscreen_frame:not(.mobile) {
+  padding-bottom: 0;
+}
+
+.case_page .first__fullscreen_frame:not(.mobile) {
   min-height: 0;
 }
 

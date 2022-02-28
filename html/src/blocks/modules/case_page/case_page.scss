@@ -1,5 +1,8 @@
 .case_page {
     .first__fullscreen_frame:not(.mobile) {
+        padding-bottom: 0;
+    }
+    .first__fullscreen_frame:not(.mobile) {
         min-height: 0;
     }
     background: none;
