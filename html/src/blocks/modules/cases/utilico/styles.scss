@@ -1,20 +1,20 @@
 .utilico {
     background: #F06666;
-    &__image {
-        width: vw(305);
-        height: vw(305);
-        position: absolute;
-        left: 50%;
-        top: calc(50% - #{vw(50)});
-        transform: translateX(-50%) translateY(-50%);
-    }
-    &:not(.mobile):hover &__image {
-        animation: saw 1s infinite linear;
-    }
-    &.mobile &__image {
-        width: 140px;
-        height: 140px;
-    }
+}
+.utilico__image {
+    width: vw(305);
+    height: vw(305);
+    position: absolute;
+    left: 50%;
+    top: calc(50% - #{vw(50)});
+    transform: translateX(-50%) translateY(-50%);
+}
+.utilico:not(.mobile):hover .utilico__image {
+    animation: saw 1s infinite linear;
+}
+.utilico.mobile .utilico__image {
+    width: 140px;
+    height: 140px;
 }
 
 @keyframes saw {

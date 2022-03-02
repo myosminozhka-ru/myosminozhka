@@ -102,28 +102,29 @@
     position: relative;
     z-index: 5;
 }
-
-@import './careof/styles';
-@import './zorge/styles';
-@import './bioline/styles';
-@import './medex/styles';
-@import './malina/styles';
-@import './mmcite/styles';
-@import './mukomol/styles';
-@import './happybaby/styles';
-@import './englex/styles';
-@import './fieldwire/styles';
-@import './foodband/styles';
-@import './mosplita/styles';
-@import './ast/styles';
-@import './stroydvor/styles';
-@import './utilico/styles';
-@import './homeoutlet/styles';
-@import './lonmadi/styles';
-@import './intacto/styles';
-@import './promprint/styles';
-@import './frost/styles';
-@import './satepai/styles';
-@import './napopravku/styles';
-@import './selis/styles';
-@import './karta/styles';
+.cases__wrapper {
+    @import './careof/styles';
+    @import './zorge/styles';
+    @import './bioline/styles';
+    @import './medex/styles';
+    @import './malina/styles';
+    @import './mmcite/styles';
+    @import './mukomol/styles';
+    @import './happybaby/styles';
+    @import './englex/styles';
+    @import './fieldwire/styles';
+    @import './foodband/styles';
+    @import './mosplita/styles';
+    @import './ast/styles';
+    @import './stroydvor/styles';
+    @import './utilico/styles';
+    @import './homeoutlet/styles';
+    @import './lonmadi/styles';
+    @import './intacto/styles';
+    @import './promprint/styles';
+    @import './frost/styles';
+    @import './satepai/styles';
+    @import './napopravku/styles';
+    @import './selis/styles';
+    @import './karta/styles';
+}
