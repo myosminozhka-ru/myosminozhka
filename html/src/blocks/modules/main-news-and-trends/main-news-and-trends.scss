@@ -382,6 +382,7 @@
         }
     }
     &.mobile &-arrows {
+        display: none !important;
         padding: 0;
         display: flex;
         justify-content: center;

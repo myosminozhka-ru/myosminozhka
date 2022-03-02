@@ -4283,6 +4283,39 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
   position: relative;
 }
 
+.main-carousel__arrows {
+  position: absolute;
+  bottom: 2.3958333333vw;
+  right: 0;
+  display: flex;
+  align-items: center;
+  z-index: 20;
+}
+
+.main-carousel__arrow {
+  width: 4.4791666667vw;
+  height: 1.9791666667vw;
+  cursor: pointer;
+}
+
+.main-carousel__arrow svg {
+  fill: #A0A0A0;
+  transition: all 0.3s ease;
+}
+
+.main-carousel__arrow--prev {
+  transform: rotate(180deg);
+  margin-right: 4.9479166667vw;
+}
+
+.main-carousel__arrow:hover svg {
+  fill: #121423;
+}
+
+.main-carousel.mobile .main-carousel__arrows {
+  display: none !important;
+}
+
 .main-carousel:not(.mobile) {
   background: #fff;
   z-index: 0;
@@ -4450,10 +4483,6 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
   transform: rotateY(320deg) translateZ(288px);
 }
 
-.main-carousel__text {
-  pointer-events: none;
-}
-
 .main-carousel__text .title {
   font-family: "Montserrat";
   font-weight: bold;
@@ -4521,12 +4550,14 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
   margin-bottom: 25px;
   height: 7.1875vw;
   overflow: hidden;
+  pointer-events: none;
 }
 
 .main-carousel__text-item_texts {
   position: relative;
   height: 7.8125vw;
   overflow: hidden;
+  pointer-events: none;
 }
 
 .main-carousel.mobile .main-carousel__text-item_titles {
@@ -4535,6 +4566,10 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
 
 .main-carousel.mobile .main-carousel__text-item_texts {
   height: 50px;
+}
+
+.main-carousel__text-item_gifts {
+  pointer-events: none;
 }
 
 .main-carousel__text-item_gifts .gift {
@@ -5065,6 +5100,7 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
 }
 
 .news-and-trends.mobile .news-and-trends-arrows {
+  display: none !important;
   padding: 0;
   display: flex;
   justify-content: center;
@@ -16198,10 +16234,6 @@ body.main .main-resume.mobile {
 
   .malin_imgs__small {
     display: none;
-  }
-
-  .main-carousel__text-item {
-    min-height: 35vw;
   }
 
   .news-and-trends-items {

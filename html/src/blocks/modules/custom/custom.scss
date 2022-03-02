@@ -275,9 +275,9 @@ body:not(.main) .wrapper:not(.services-page):not(.internet-marketing-page):not(.
     margin: 0;
 }
 @media all and (min-width: 1024px) {
-    .main-carousel__text-item {
-        min-height: 35vw;
-    }
+    // .main-carousel__text-item {
+    //     min-height: 35vw;
+    // }
     .news-and-trends-items {
         cursor: unset;
     }

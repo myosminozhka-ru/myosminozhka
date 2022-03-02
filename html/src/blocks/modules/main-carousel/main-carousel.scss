@@ -1,6 +1,35 @@
 .main-carousel {
     box-sizing: border-box;
     position: relative;
+    &__arrows {
+        position: absolute;
+        bottom: vw(46);
+        right: 0;
+        display: flex;
+        align-items: center;
+        z-index: 20;
+    }
+    &__arrow {
+        width: vw(86);
+        height: vw(38);
+        cursor: pointer;
+        svg {
+            fill: #A0A0A0;
+            transition: all .3s ease;
+        }
+        &--prev {
+            transform: rotate(180deg);
+            margin-right: vw(95);
+        }
+        &:hover {
+            svg {
+                fill: #121423;
+            }
+        }
+    }
+    &.mobile &__arrows {
+        display: none !important; 
+    }
     &:not(.mobile) {
         background: #fff;
         z-index: 0;
@@ -150,7 +179,7 @@
         transform: rotateY(320deg) translateZ(288px);
     }
     &__text {
-        pointer-events: none;
+        
         .title {
             font-family: "Montserrat";
             font-weight: bold;
@@ -213,11 +242,13 @@
         margin-bottom: 25px;
         height: vw(138);
         overflow: hidden;
+        pointer-events: none;
     }
     &__text-item_texts {
         position: relative;
         height: vw(150);
         overflow: hidden;
+        pointer-events: none;
     }
     &.mobile &__text-item_titles {
         height: 50px;
@@ -227,6 +258,7 @@
     }
 
     &__text-item_gifts {
+        pointer-events: none;
         .gift {
             display: none;
             .gift_in {

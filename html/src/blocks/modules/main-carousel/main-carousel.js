@@ -47,14 +47,14 @@ const mainCarousel = class MainCarousel {
 
         var prevButton = document.querySelector('.previous-button');
         prevButton.addEventListener( 'click', function() {
-        selectedIndex--;
-        rotateCarousel();
+            selectedIndex--;
+            rotateCarousel()
         });
 
         var nextButton = document.querySelector('.next-button');
         nextButton.addEventListener( 'click', function() {
-        selectedIndex++;
-        rotateCarousel();
+            selectedIndex++;
+            rotateCarousel()
         });
 
         var cellsRange = document.querySelector('.cells-range');
