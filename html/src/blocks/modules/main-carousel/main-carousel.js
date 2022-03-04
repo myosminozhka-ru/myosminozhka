@@ -21,6 +21,12 @@ const mainCarousel = class MainCarousel {
         function rotateCarousel() {
             self.onCarouselChange();
             var angle = theta * selectedIndex * -1;
+            $(`.main-carousel__text-item_gifts .badge`).css({
+                'transform': `translateY(-50%) translateX(50%) rotate(${angle}deg)`
+            })
+            $(`.main-carousel__text-item_gifts .left__in`).css({
+                'transform': `rotate(${angle * -1}deg)`
+            })
             carousel.style.transform = 'translateZ(' + -radius + 'px) ' + 
                 rotateFn + '(' + angle + 'deg)';
             var cells = carousel.querySelectorAll('.main-carousel-cell');
@@ -38,10 +44,13 @@ const mainCarousel = class MainCarousel {
             gsap.to(document.querySelectorAll(`.main-carousel__text-item_texts`), {
                 height: document.querySelector(`.main-carousel__text-item_texts .text[data-text-id="${(selectedIndex+1) % +cellCount}"]`).clientHeight
             })
-            $(`.main-carousel__text-item_gifts .gift`).each(function() {
-                $(this).hide('fast');
-            }) 
-            $(`.main-carousel__text-item_gifts .gift[data-gift-id="${(selectedIndex+1) % +cellCount}"]`).show('fast');
+            
+            
+            console.log('index', angle);
+            // $(`.main-carousel__text-item_gifts .gift`).each(function() {
+            //     $(this).hide('fast');
+            // }) 
+            // $(`.main-carousel__text-item_gifts .gift[data-gift-id="${(selectedIndex+1) % +cellCount}"]`).show('fast');
             // document.querySelector(`.main-carousel__text-item_titles .title[data-title-id="${selectedIndex}"]`).classList.add('isActive');
         }
 

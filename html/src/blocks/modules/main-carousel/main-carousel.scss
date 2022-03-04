@@ -260,18 +260,26 @@
     &__text-item_gifts {
         pointer-events: none;
         .gift {
-            display: none;
             .gift_in {
                 display: flex;
                 align-items: center;
                 padding-top: vw(92);
             }
+            
             .left {
                 width: vw(133);
                 height: vw(133);
                 border: 2px solid #121423;
                 border-radius: 50%;
                 position: relative;
+            }
+            .left__in {
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                transition: transform .3s ease;
             }
             .badge {
                 width: vw(50);
@@ -284,9 +292,10 @@
                 font-size: vw(20);
                 color: #FFFFFF;
                 position: absolute;
-                right: 0;
+                right: 50%;
                 top: 0;
-                transform: translateY(#{vw(-12)});
+                transition: transform .3s ease;
+                transform: translateY(-50%) translateX(50%);
             }
             .right {
                 margin-left: vw(43);
@@ -299,7 +308,7 @@
     }
     &.mobile &__text-item_gifts {
         .gift {
-            display: none;
+            // display: none;
             .gift_in {
                 display: flex;
                 align-items: center;

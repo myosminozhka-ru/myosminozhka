@@ -2343,6 +2343,12 @@ var mainCarousel = /*#__PURE__*/function () {
       function rotateCarousel() {
         self.onCarouselChange();
         var angle = theta * selectedIndex * -1;
+        jquery__WEBPACK_IMPORTED_MODULE_2___default()(".main-carousel__text-item_gifts .badge").css({
+          'transform': "translateY(-50%) translateX(50%) rotate(".concat(angle, "deg)")
+        });
+        jquery__WEBPACK_IMPORTED_MODULE_2___default()(".main-carousel__text-item_gifts .left__in").css({
+          'transform': "rotate(".concat(angle * -1, "deg)")
+        });
         carousel.style.transform = 'translateZ(' + -radius + 'px) ' + rotateFn + '(' + angle + 'deg)';
         var cells = carousel.querySelectorAll('.main-carousel-cell');
         document.querySelectorAll(".main-carousel__text-item_titles .title").forEach(function (item) {
@@ -2359,10 +2365,11 @@ var mainCarousel = /*#__PURE__*/function () {
         gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(document.querySelectorAll(".main-carousel__text-item_texts"), {
           height: document.querySelector(".main-carousel__text-item_texts .text[data-text-id=\"".concat((selectedIndex + 1) % +cellCount, "\"]")).clientHeight
         });
-        jquery__WEBPACK_IMPORTED_MODULE_2___default()(".main-carousel__text-item_gifts .gift").each(function () {
-          jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).hide('fast');
-        });
-        jquery__WEBPACK_IMPORTED_MODULE_2___default()(".main-carousel__text-item_gifts .gift[data-gift-id=\"".concat((selectedIndex + 1) % +cellCount, "\"]")).show('fast'); // document.querySelector(`.main-carousel__text-item_titles .title[data-title-id="${selectedIndex}"]`).classList.add('isActive');
+        console.log('index', angle); // $(`.main-carousel__text-item_gifts .gift`).each(function() {
+        //     $(this).hide('fast');
+        // }) 
+        // $(`.main-carousel__text-item_gifts .gift[data-gift-id="${(selectedIndex+1) % +cellCount}"]`).show('fast');
+        // document.querySelector(`.main-carousel__text-item_titles .title[data-title-id="${selectedIndex}"]`).classList.add('isActive');
       }
 
       var prevButton = document.querySelector('.previous-button');
