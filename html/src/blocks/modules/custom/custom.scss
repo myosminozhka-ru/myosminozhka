@@ -6,7 +6,7 @@
     min-height: 20vw; */
 /* } */
 .company-ceo1 {
-    background: #121423;
+    background: #121423 !important;
 }
 .web:not(.mobile).company-ceo1 {
     padding-bottom: 0;
@@ -145,7 +145,7 @@ body:not(.main) .wrapper:not(.services-page):not(.internet-marketing-page):not(.
 }
 
 .company .company-partners:not(.mobile) {
-    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyMyIgaGVpZ2h0PSIxMjUzIiB2aWV3Qm94PSIwIDAgMTkyMyAxMjUzIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMTkyMyAwLjk4NDc0MUwxOTIzIDEyNTEuNUMxOTIzIDEyNTIuMDUgMTkyMi41NSAxMjUyLjUgMTkyMiAxMjUyLjVMMC45OTk4NzggMTI1Mi41QzAuNDQ3NjMyIDEyNTIuNSAtMC4wMDAxMjIxMDkgMTI1Mi4wNSAtMC4wMDAxMjIxNTggMTI1MS41TC04LjQ1Mjk5ZS0wNSAyODUuNTlDLTguNDU4NWUtMDUgMjg0Ljk1OSAwLjU2OTAwNyAyODQuNDg0IDEuMTg3OSAyODQuNjAzQzI1LjQ5MTQgMjg5LjI5MyA0MTkuOTAzIDM2My40MjggOTI3Ljk1MyAzMzUuOTgyQzE0NDguNzYgMzA3Ljg0NyAxNTMxLjIzIDI1NC4xNjIgMTkxNC43IDQuNTQyNzNMMTkyMS40MiAwLjE3MDUzMkMxOTIyLjA4IC0wLjI2MjQ1MSAxOTIzIDAuMTkxMDQgMTkyMyAwLjk4NDc0MVoiIGZpbGw9IiMwRTBGMUEiLz4KPC9zdmc+Cg==") 0 0 / 100% no-repeat;
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyMyIgaGVpZ2h0PSIxMjUzIiB2aWV3Qm94PSIwIDAgMTkyMyAxMjUzIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMTkyMyAwLjk4NDc0MUwxOTIzIDEyNTEuNUMxOTIzIDEyNTIuMDUgMTkyMi41NSAxMjUyLjUgMTkyMiAxMjUyLjVMMC45OTk4NzggMTI1Mi41QzAuNDQ3NjMyIDEyNTIuNSAtMC4wMDAxMjIxMDkgMTI1Mi4wNSAtMC4wMDAxMjIxNTggMTI1MS41TC04LjQ1Mjk5ZS0wNSAyODUuNTlDLTguNDU4NWUtMDUgMjg0Ljk1OSAwLjU2OTAwNyAyODQuNDg0IDEuMTg3OSAyODQuNjAzQzI1LjQ5MTQgMjg5LjI5MyA0MTkuOTAzIDM2My40MjggOTI3Ljk1MyAzMzUuOTgyQzE0NDguNzYgMzA3Ljg0NyAxNTMxLjIzIDI1NC4xNjIgMTkxNC43IDQuNTQyNzNMMTkyMS40MiAwLjE3MDUzMkMxOTIyLjA4IC0wLjI2MjQ1MSAxOTIzIDAuMTkxMDQgMTkyMyAwLjk4NDc0MVoiIGZpbGw9IiMwRTBGMUEiLz4KPC9zdmc+Cg==") 0 0 / 100% no-repeat !important;
     padding-bottom: 0;
     padding-top: 12vw;
 }
@@ -1055,7 +1055,7 @@ margin:0 30px;
         z-index: 10;
     }
     .news-item-page .blog-item-text:not(.mobile) {
-        background: #121423;
+        background: #121423 !important;
         position: static;
         z-index: auto;
     }
@@ -1262,8 +1262,11 @@ margin:0 30px;
         min-height: auto;
     }
     .vacancies-page .first__fullscreen_frame {
-        background: #121423;
+        background: #121423 !important;
         padding-bottom: 3vw;
+    }
+    .vacancies-tabs:not(.mobile) {
+        padding-bottom: 20.625vw !important;
     }
     .vacancies-tabs:not(.mobile) .vacancies-tabs-items {
         padding-right: 8vw;

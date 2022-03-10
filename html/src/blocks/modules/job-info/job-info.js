@@ -14,6 +14,8 @@ const jobInfo = class jobInfo {
         document.querySelector('.job-info-right').style.height = document.querySelector(`.job-info-item[data-target-id="${index}"]`).offsetHeight + 'px';
         document.querySelector(`.job-info-title[data-item-id="${index}"]`).classList.add('isActive')
         document.querySelector(`.job-info-item[data-target-id="${index}"]`).classList.add('isActive')
+
+        // document.querySelector('.job-info-title.isActive').style.height = document.querySelector(`.job-info-title[data-item-id="${index}"]`).offsetHeight + 'px';
     }
     changeIndex(event) {
         if (event.target.className != 'job-info-title') return;

@@ -14,12 +14,12 @@
         border-radius: 50%;
     }
     &-title {
+        color: #fff !important;
         text-transform: uppercase;
         
         margin-bottom: vw(160);
         &:not(.colorChanged) {
             mix-blend-mode: difference;
-            @extend %white;
         }
         &.colorChanged {
             color: $bgColor;

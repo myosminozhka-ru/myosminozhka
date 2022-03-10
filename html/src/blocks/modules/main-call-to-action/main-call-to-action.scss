@@ -4,7 +4,7 @@
   position: relative;
   z-index: 2;
   &:not(.mobile) {
-    padding: 0 vw(286) vw(129);
+    padding: 0 vw(52) vw(129) vw(286) !important;
   }
   &.mobile {
     padding: 0 0 89px 0;
@@ -20,16 +20,16 @@
     text-align: center;
   }
   &-text {
-    font-weight: 300;
+    font-weight: 700;
     @extend %white;
   }
   &:not(.mobile) &-text {
-    font-size: vw(40);
-    line-height: vw(50);
-    margin-bottom: vw(50);
+    font-size: vw(30);
+    line-height: 140%;
+    margin-bottom: vw(82);
   }
   &.mobile &-text {
-    font-weight: 300;
+    font-weight: 700;
     font-size: 30px;
     line-height: 40px;
   }

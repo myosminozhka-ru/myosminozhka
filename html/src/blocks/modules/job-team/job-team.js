@@ -37,7 +37,7 @@ const jobTeam = class jobTeam {
                 end: 'bottom+=1000 center',
                 scrub: 1,
             },
-            color: '#121423'
+            // color: '#121423'
         })
         gsap.to('.job-team-circle', {
             scrollTrigger: {

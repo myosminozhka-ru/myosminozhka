@@ -1784,7 +1784,7 @@ var jobInfo = /*#__PURE__*/function () {
       });
       document.querySelector('.job-info-right').style.height = document.querySelector(".job-info-item[data-target-id=\"".concat(index, "\"]")).offsetHeight + 'px';
       document.querySelector(".job-info-title[data-item-id=\"".concat(index, "\"]")).classList.add('isActive');
-      document.querySelector(".job-info-item[data-target-id=\"".concat(index, "\"]")).classList.add('isActive');
+      document.querySelector(".job-info-item[data-target-id=\"".concat(index, "\"]")).classList.add('isActive'); // document.querySelector('.job-info-title.isActive').style.height = document.querySelector(`.job-info-title[data-item-id="${index}"]`).offsetHeight + 'px';
     }
   }, {
     key: "changeIndex",
@@ -2079,8 +2079,8 @@ var jobTeam = /*#__PURE__*/function () {
           start: 'center center',
           end: 'bottom+=1000 center',
           scrub: 1
-        },
-        color: '#121423'
+        } // color: '#121423'
+
       });
       gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to('.job-team-circle', {
         scrollTrigger: {
@@ -3703,6 +3703,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 
 
       window.addEventListener('resize', function () {
+        console.log();
         _this.window = {
           width: window.innerWidth,
           height: window.innerHeight
@@ -3726,6 +3727,13 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       _this.isSafary = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
     }, 250);
     setTimeout(this.animateTitles(), 500);
+    setTimeout(function () {
+      console.log(!document.querySelector('#app').classList.contains('.blog-page'));
+
+      if (document.querySelector('.career-first-title') && !document.querySelector('#app').classList.contains('blog-page')) {
+        document.querySelector('.career-first-title').classList.add('isMounted');
+      }
+    }, 2000);
   },
   computed: {
     window: {

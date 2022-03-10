@@ -9,7 +9,7 @@
     }
     &:not(.mobile) &__main {
         padding: 0 vw(50);
-        margin-bottom: vw(80);
+        // margin-bottom: vw(80);
     }
     &.mobile &__main {
         display: flex;
@@ -36,8 +36,8 @@
         color: #929292;
     }
     &:not(.mobile) &__name {
-        font-size: vw(80);
-        line-height: vw(120);
+        font-size: vw(60);
+        line-height: vw(60);
     }
     &.mobile &__name {
         font-size: 30px;
@@ -47,6 +47,7 @@
     &__info {
         display: flex;
         align-items: flex-start;
+        display: none !important;
     }
     &:not(.mobile) &__info {
         padding-right: vw(187);

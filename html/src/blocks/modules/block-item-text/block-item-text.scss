@@ -17,12 +17,15 @@
     }
     &:not(.mobile) {
         background: url('../img/svg/blog_item_bg.svg') 0 0/100% no-repeat;
-        padding: vw(80) vw(338) vw(195);
+        padding: vw(80) vw(200) vw(195);
         p {
             font-size: vw(30);
             line-height: vw(45);
             margin: vw(60) 0;
             color: #FFFFFF;
+            img {
+                width: 100%;
+            }
         }
         .code {
             padding: 0 vw(30);

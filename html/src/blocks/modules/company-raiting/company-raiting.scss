@@ -88,7 +88,7 @@
             background: #121423;
             transition: .3s background .3s ease;
             .image {
-                filter: brightness(100);
+                filter: contrast(0) brightness(10);
             }
         }
     }
@@ -107,7 +107,7 @@
             background: $bgColor;
             z-index: 4;
             .image {
-                filter: brightness(100);
+                filter: contrast(0) brightness(10);
             }
         }
     }

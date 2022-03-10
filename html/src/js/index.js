@@ -114,6 +114,7 @@ window.app = new Vue({
         isSafary: false
     }),
     mounted() {
+        
         let preloader = document.querySelector('.preloader svg animateTransform');
         preloader.addEventListener('endEvent', () => {
             this.isPreloaderHidden = true;
@@ -155,6 +156,7 @@ window.app = new Vue({
             this.casesUpdated.init();
             // this.applicationForm.init();
             window.addEventListener('resize', () => {
+                console.log()
                 this.window = {
                     width: window.innerWidth,
                     height: window.innerHeight,
@@ -175,8 +177,15 @@ window.app = new Vue({
             }))
             
             this.isSafary = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+            
         }, 250);
-        setTimeout(this.animateTitles(), 500)
+        setTimeout(this.animateTitles(), 500);
+        setTimeout(() => {
+            console.log(!document.querySelector('#app').classList.contains('.blog-page'));
+            if (document.querySelector('.career-first-title') && !document.querySelector('#app').classList.contains('blog-page')) {
+                document.querySelector('.career-first-title').classList.add('isMounted')
+            }
+        }, 2000);
     },
     computed: {
         window: {

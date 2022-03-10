@@ -7,6 +7,10 @@
     &.mobile {
         padding: 0;
     }
+
+    &:not(.mobile) &-slides {
+        position: relative;
+    }
     &-title {
         text-transform: uppercase;
         margin-bottom: vw(20);
@@ -51,8 +55,8 @@
         justify-content: center;
         align-items: center;
         text-decoration: none;
-        width: vw(220);
-        height: vw(220);
+        width: vw(260);
+        height: vw(260);
         border-radius: 50%;
         border: vw(2) solid $bgColor;
         margin: vw(-5);
@@ -115,19 +119,20 @@
     &-slides-double &-item {
         padding-bottom: vw(56);
     }
-    &-slide {
+    &-slide,
+    &-slides:not(.is-active) {
         overflow: hidden;
     }
     &-arrows {
-        display: inline-flex;
-        align-items: center;
-        border-bottom: vw(7) solid $bgColor;
-        margin-bottom: vw(60);
+        // display: inline-flex;
+        // align-items: center;
+        // border-bottom: vw(7) solid $bgColor;
+        // margin-bottom: vw(60);
         button {
             position: static;
         }
     }
-    &-arrow {
+    &-slides &-arrow {
         border: none;
         background: none;
         font-size: 0;
@@ -137,6 +142,9 @@
         height: vw(38);
         padding: vw(17);
         box-sizing: content-box;
+        position: absolute;
+        right: 0;
+        top: vw(-260);
         &:hover {
             svg {
                 fill: $mainColor;
@@ -145,6 +153,8 @@
 
         &--prev {
             transform: rotate(180deg);
+            right: auto;
+            left: 0;
         }
     }
     &.mobile &-arrows {
@@ -205,6 +215,7 @@
         align-items: center;
         margin-bottom: vw(60);
         min-height: vw(70);
+        border-bottom: vw(2) solid #E8E8E8;
     }
     &.mobile &-title-triggers {
         overflow-x: scroll;
@@ -221,10 +232,26 @@
         text-decoration: none !important;
         color: $bgColor;
         @extend %transition;
+        position: relative;
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: vw(-2);
+            left: 50%;
+            right: 50%;
+            height: vw(7);
+            background: #121423;
+            border-radius: vw(50);
+        }
         &.isActive {
             font-weight: 600;
             font-size: vw(50);
             line-height: vw(50);
+            &:after {
+                @extend %transition;
+                left: 0;
+                right: 0;
+            }
         }
         &:not(:last-child) {
             margin-right: vw(50);

@@ -16,6 +16,11 @@
     }
     &:not(.mobile) &-title  {
         padding: vw(50);
+        white-space: nowrap;
+        transition: 3s transform 1s ease;
+        &.isMounted {
+            transform: translate(-136vw);
+        }
     }
     &.mobile &-title  {
         font-size: 40px;

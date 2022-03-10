@@ -113,7 +113,7 @@
     }
     &.mobile &-item:first-child &-item-title {
         .icon {
-            filter: brightness(10);
+            filter: contrast(0) brightness(10);
         }
     }
     &.mobile &-item:first-child &-item-body p {

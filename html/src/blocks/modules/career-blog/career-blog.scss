@@ -14,7 +14,7 @@
     overflow: hidden;
     &:not(.mobile) {
         background: #fff;
-        padding: vw(100) vw(50) vw(480);
+        padding: vw(100) vw(50) vw(230);
     }
     &.mobile {
         padding: 0 20px 200px 20px;
@@ -135,6 +135,7 @@
         font-size: vw(20);
         line-height: vw(20);
         margin-bottom: vw(10);
+        color: #fff;
     }
     &.mobile &-item-date {
         display: none;
@@ -145,8 +146,8 @@
         color: #fff;
     }
     &:not(.mobile) &-item-title {
-        font-size: vw(40);
-        line-height: vw(40);
+        font-size: vw(30);
+        line-height: vw(42);
         margin-bottom: vw(10);
     }
     &.mobile &-item-title {
@@ -169,8 +170,8 @@
         color: #fff;
     }
     &:not(.mobile) &-item-description {
-        font-size: vw(30);
-        line-height: vw(30);
+        font-size: vw(25);
+        line-height: vw(40);
     }
     &.mobile &-item-description {
         font-size: 16px;
@@ -210,6 +211,7 @@
     padding: vw(100) vw(50) vw(450);
 }
 
+.career-page .career-blog,
 .career .career-blog {
     &-item-date {
         display: block;
@@ -222,7 +224,7 @@
     }
 }
 @media all and (max-width: 1023px) {
-    .career .career-blog {
+    .career-page .career-blog {
         .career-blog-item:nth-child(3) .career-blog-item-date,
         .career-blog-item:nth-child(3) .career-blog-item-title,
         .career-blog-item:nth-child(3) .career-blog-item-description {

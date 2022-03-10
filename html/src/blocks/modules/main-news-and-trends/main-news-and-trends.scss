@@ -261,7 +261,7 @@
         margin-bottom: 50px;
     }
     &-item {
-        
+        cursor: pointer;
         font-size: 0;
         &:not(:last-child) {
             margin-right: vw(112);
@@ -365,6 +365,10 @@
             width: vw(86);
             height: vw(38);
             cursor: pointer;
+            svg {
+                fill: #A0A0A0;
+                transition: all .3s ease;
+            }
             &.prev {
                 transform: rotate(180deg);
                 margin-right: vw(95);
@@ -376,7 +380,7 @@
             }
             &:not(.disabled):hover {
                 svg {
-                    fill: $mainColor;
+                    fill: #121423;
                 }
             }
         }
@@ -433,7 +437,7 @@
         }
         .button {
             width: vw(293);
-            margin-left: auto;
+            // margin-left: auto;
         }
     }
     &.mobile &-form {
@@ -463,5 +467,8 @@
     }
     &-screen {
         height: 50vh;
+    }
+    &-right-slider {
+        cursor: default;
     }
 }
