@@ -1315,9 +1315,9 @@ var companyVideo = /*#__PURE__*/function () {
           autoplay: true,
           aspectRatio: '16:9',
           muted: true,
-          poster: './local/img/video_preview.png',
+          poster: '../local/img/video_preview.png',
           sources: [{
-            src: './local/videos/pv.mp4',
+            src: '../local/videos/pv.mp4',
             type: './local/videos/mp4'
           }]
         });
@@ -1331,9 +1331,9 @@ var companyVideo = /*#__PURE__*/function () {
           autoplay: true,
           aspectRatio: '16:9',
           muted: true,
-          poster: './local/img/video_preview.png',
+          poster: '../local/img/video_preview.png',
           sources: [{
-            src: './local/videos/pv.mp4',
+            src: '../local/videos/pv.mp4',
             type: 'video/mp4'
           }]
         });
@@ -1347,9 +1347,9 @@ var companyVideo = /*#__PURE__*/function () {
           autoplay: true,
           aspectRatio: '16:9',
           muted: true,
-          poster: './local/img/video_preview.png',
+          poster: '../local/img/video_preview.png',
           sources: [{
-            src: './local/videos/pv.mp4',
+            src: '../local/videos/pv.mp4',
             type: 'video/mp4'
           }]
         });
