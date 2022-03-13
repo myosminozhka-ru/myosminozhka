@@ -13,9 +13,9 @@ const companyVideo = class companyVideo {
                 autoplay: true,
                 aspectRatio: '16:9',
                 muted: true,
-                poster: 'img/video_preview.png',
+                poster: '../local/img/video_preview.png',
                 sources: [{
-                    src: 'videos/pv.mp4',
+                    src: '../local/videos/pv.mp4',
                     type: 'video/mp4'
                 }]
             });
@@ -29,9 +29,9 @@ const companyVideo = class companyVideo {
                 autoplay: true,
                 aspectRatio: '16:9',
                 muted: true,
-                poster: 'img/video_preview.png',
+                poster: '../local/img/video_preview.png',
                 sources: [{
-                    src: 'videos/pv.mp4',
+                    src: '../local/videos/pv.mp4',
                     type: 'video/mp4'
                 }]
             });
@@ -45,9 +45,9 @@ const companyVideo = class companyVideo {
                 autoplay: true,
                 aspectRatio: '16:9',
                 muted: true,
-                poster: 'img/video_preview.png',
+                poster: '../local/img/video_preview.png',
                 sources: [{
-                    src: 'videos/pv.mp4',
+                    src: '../local/videos/pv.mp4',
                     type: 'video/mp4'
                 }]
             });
