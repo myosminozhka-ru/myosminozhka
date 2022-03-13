@@ -8,6 +8,7 @@
         display: flex;
         align-items: center;
         z-index: 20;
+        display: none !important;
     }
     &__arrow {
         width: vw(86);
@@ -41,7 +42,7 @@
     }
     &__title {
         font-family: "Montserrat";
-        font-weight: 600;
+        font-weight: 700;
         color: #121423;
     }
     &:not(.mobile) &__title {

@@ -145,7 +145,7 @@ body:not(.main) .wrapper:not(.services-page):not(.internet-marketing-page):not(.
 }
 
 .company .company-partners:not(.mobile) {
-    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyMyIgaGVpZ2h0PSIxMjUzIiB2aWV3Qm94PSIwIDAgMTkyMyAxMjUzIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMTkyMyAwLjk4NDc0MUwxOTIzIDEyNTEuNUMxOTIzIDEyNTIuMDUgMTkyMi41NSAxMjUyLjUgMTkyMiAxMjUyLjVMMC45OTk4NzggMTI1Mi41QzAuNDQ3NjMyIDEyNTIuNSAtMC4wMDAxMjIxMDkgMTI1Mi4wNSAtMC4wMDAxMjIxNTggMTI1MS41TC04LjQ1Mjk5ZS0wNSAyODUuNTlDLTguNDU4NWUtMDUgMjg0Ljk1OSAwLjU2OTAwNyAyODQuNDg0IDEuMTg3OSAyODQuNjAzQzI1LjQ5MTQgMjg5LjI5MyA0MTkuOTAzIDM2My40MjggOTI3Ljk1MyAzMzUuOTgyQzE0NDguNzYgMzA3Ljg0NyAxNTMxLjIzIDI1NC4xNjIgMTkxNC43IDQuNTQyNzNMMTkyMS40MiAwLjE3MDUzMkMxOTIyLjA4IC0wLjI2MjQ1MSAxOTIzIDAuMTkxMDQgMTkyMyAwLjk4NDc0MVoiIGZpbGw9IiMwRTBGMUEiLz4KPC9zdmc+Cg==") 0 0 / 100% no-repeat !important;
+    background: #fff url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyMyIgaGVpZ2h0PSIxMjUzIiB2aWV3Qm94PSIwIDAgMTkyMyAxMjUzIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMTkyMyAwLjk4NDc0MUwxOTIzIDEyNTEuNUMxOTIzIDEyNTIuMDUgMTkyMi41NSAxMjUyLjUgMTkyMiAxMjUyLjVMMC45OTk4NzggMTI1Mi41QzAuNDQ3NjMyIDEyNTIuNSAtMC4wMDAxMjIxMDkgMTI1Mi4wNSAtMC4wMDAxMjIxNTggMTI1MS41TC04LjQ1Mjk5ZS0wNSAyODUuNTlDLTguNDU4NWUtMDUgMjg0Ljk1OSAwLjU2OTAwNyAyODQuNDg0IDEuMTg3OSAyODQuNjAzQzI1LjQ5MTQgMjg5LjI5MyA0MTkuOTAzIDM2My40MjggOTI3Ljk1MyAzMzUuOTgyQzE0NDguNzYgMzA3Ljg0NyAxNTMxLjIzIDI1NC4xNjIgMTkxNC43IDQuNTQyNzNMMTkyMS40MiAwLjE3MDUzMkMxOTIyLjA4IC0wLjI2MjQ1MSAxOTIzIDAuMTkxMDQgMTkyMyAwLjk4NDc0MVoiIGZpbGw9IiMwRTBGMUEiLz4KPC9zdmc+Cg==") 0 0 / 100% no-repeat !important;
     padding-bottom: 0;
     padding-top: 12vw;
 }
@@ -295,7 +295,7 @@ body:not(.main) .wrapper:not(.services-page):not(.internet-marketing-page):not(.
 }
 
 .company-team:not(.mobile) .company-team-items {
-    padding-bottom: 30.66667vw;
+    padding-bottom: vw(176) !important;
 }
 .company-raiting:not(.mobile) .company-raiting-item.isActive, .company-raiting:not(.mobile) .company-raiting-item:hover {
     overflow: hidden;
@@ -397,7 +397,7 @@ body:not(.main) .wrapper:not(.services-page):not(.internet-marketing-page):not(.
 }
 
 .web-slider-title {
-    background: #121423;
+    background: #121423 !important;
     padding: 10px;
 }
 
@@ -707,6 +707,9 @@ width: 70px;
 .branding-page .job-info-item {
     top: 0;
 }
+.vacancies-tabs.mobile {
+    background: #fff !important;
+}
 .vacancies-tabs.mobile .vacancies-tabs-item:first-child {
     background: transparent;
 }
@@ -755,7 +758,7 @@ body.main .main-resume.mobile {
         line-height: 1.2;
     }
     .header-mobile-menu:not(.isOpened) {
-        background: rgba(79, 79, 79, 0.75);
+        background: rgba(18, 20, 35, 0.75);
     }
 }
 
@@ -861,7 +864,7 @@ html.scroll-by-script {
 }
 body.main .main-resume.mobile {
     margin-top: -10px;
-    background: #121423;
+    background: #121423 !important;
     position: relative;
     z-index: 10;
 }
@@ -918,7 +921,7 @@ body.main .main-resume.mobile {
     grid-row-end: auto;
 }
 .company-about:not(.mobile) {
-    padding-bottom: 12vw;
+    padding-bottom: 0 !important;
 }
 .company-ceo1.mobile {
     padding-bottom: 0;
@@ -1300,4 +1303,28 @@ margin:0 30px;
         text-transform: uppercase;
         text-decoration: none;
     }
+}
+
+
+
+.company .career-blog.mobile .career-blog-item-title,
+.company .career-blog.mobile .career-blog-item-description {
+    color: #121423 !important;
+}
+
+.company .career-blog.mobile .career-blog-button {
+    margin-top: 30px;
+}
+
+.main .web.mobile {
+    padding-bottom: 20px;
+}
+.main .main-about.mobile {
+    padding-top: 20px;
+}
+
+
+
+.case_page .main-cases {
+    padding: 0 !important;
 }

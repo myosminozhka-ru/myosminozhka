@@ -17,6 +17,17 @@ const mainCarousel = class MainCarousel {
         var rotateFn = isHorizontal ? 'rotateY' : 'rotateX';
         var radius, theta;
 
+        var maxTitlesHeight = Math.max.apply(null, $(".main-carousel__text-item_titles .title").map(function ()
+        {
+            console.log($(this).height());
+            return $(this).height();
+        }).get());
+        var maxTextsHeight = Math.max.apply(null, $(".main-carousel__text-item_texts .text").map(function ()
+        {
+            console.log($(this).height());
+            return $(this).height();
+        }).get());
+
 
         function rotateCarousel() {
             self.onCarouselChange();
@@ -24,6 +35,7 @@ const mainCarousel = class MainCarousel {
             $(`.main-carousel__text-item_gifts .badge`).css({
                 'transform': `translateY(-50%) translateX(50%) rotate(${angle}deg)`
             })
+            $(`.main-carousel__text-item_gifts .badge`).text(Math.round(360 / cellCount * (selectedIndex % cellCount)));
             $(`.main-carousel__text-item_gifts .left__in`).css({
                 'transform': `rotate(${angle * -1}deg)`
             })
@@ -33,16 +45,17 @@ const mainCarousel = class MainCarousel {
             document.querySelectorAll(`.main-carousel__text-item_titles .title`).forEach(item => {
                 item.classList.remove('isActive');
             })
-            document.querySelector(`.main-carousel__text-item_titles .title[data-title-id="${(selectedIndex+1) % +cellCount}"]`).classList.add('isActive');
+            document.querySelector(`.main-carousel__text-item_titles .title[data-title-id="${(selectedIndex % cellCount) + 1}"]`).classList.add('isActive');
             gsap.to(document.querySelectorAll(`.main-carousel__text-item_titles`), {
-                height: document.querySelector(`.main-carousel__text-item_titles .title[data-title-id="${(selectedIndex+1) % +cellCount}"]`).clientHeight
+                height: maxTitlesHeight
             }) 
             document.querySelectorAll(`.main-carousel__text-item_texts .text`).forEach(item => {
                 item.classList.remove('isActive');
             })
-            document.querySelector(`.main-carousel__text-item_texts .text[data-text-id="${(selectedIndex+1) % +cellCount}"]`).classList.add('isActive');
+            console.log('index is', (selectedIndex % cellCount) + 1);
+            document.querySelector(`.main-carousel__text-item_texts .text[data-text-id="${(selectedIndex % cellCount) + 1}"]`).classList.add('isActive');
             gsap.to(document.querySelectorAll(`.main-carousel__text-item_texts`), {
-                height: document.querySelector(`.main-carousel__text-item_texts .text[data-text-id="${(selectedIndex+1) % +cellCount}"]`).clientHeight
+                height: maxTextsHeight
             })
             
             

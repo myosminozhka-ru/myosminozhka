@@ -17,9 +17,12 @@
     &:not(.mobile) &-title  {
         padding: vw(50);
         white-space: nowrap;
-        transition: 3s transform 1s ease;
+        transition: transform .3s linear;
+        min-width: 100%;
+        width: fit-content;
+        box-sizing: border-box;
         &.isMounted {
-            transform: translate(-136vw);
+            transform: translate(calc(-100% + 100vw));
         }
     }
     &.mobile &-title  {
@@ -33,6 +36,11 @@
         margin-left: auto;
         margin-right: -20px;
         margin-bottom: 40px;
+    }
+    &:not(.mobile) &-tentacle {
+        img {
+            display: none !important;
+        }
     }
     &-info {
         display: flex;

@@ -25,8 +25,8 @@ const jobStages = class jobStages {
         }
     }
     initAnaliticsSlider() {
-        if (document.querySelector('.job-stages-slides--analitics')) {
-            new Glide('.job-stages-slides--analitics', {
+        if (document.querySelector('.job-stages-slides--3')) {
+            new Glide('.job-stages-slides--3', {
                 startAt: 0,
                 perView: 2,
                 gap: 120,
@@ -40,8 +40,8 @@ const jobStages = class jobStages {
         };
     }
     initDesignSlider() {
-        if (document.querySelector('.job-stages-slides--design')) {
-            new Glide('.job-stages-slides--design', {
+        if (document.querySelector('.job-stages-slides--2')) {
+            new Glide('.job-stages-slides--2', {
                 startAt: 0,
                 perView: 1,
                 gap: 0,
@@ -50,8 +50,8 @@ const jobStages = class jobStages {
         };
     }
     initProjectingSlider() {
-        if (document.querySelector('.job-stages-slides--projecting')) {
-            new Glide('.job-stages-slides--projecting', {
+        if (document.querySelector('.job-stages-slides--1')) {
+            new Glide('.job-stages-slides--1', {
                 startAt: 0,
                 perView: 2,
                 gap: 120,
@@ -65,8 +65,9 @@ const jobStages = class jobStages {
         };
     }
     initDevelopmentSlider() {
-        if (document.querySelector('.job-stages-slides--development')) {
-            new Glide('.job-stages-slides--development', {
+        console.log()
+        if (document.querySelector('.job-stages-slides--0')) {
+            new Glide('.job-stages-slides--0', {
                 startAt: 0,
                 perView: 1,
                 gap: 0,
@@ -102,6 +103,20 @@ const jobStages = class jobStages {
                     this.currentTab = +item.dataset.tabId;
                 })
             })
+            if (document.querySelector('.job-stages-triggers .job-stages-arrow--prev')) {
+                document.querySelector('.job-stages-triggers .job-stages-arrow--prev').addEventListener('click', () => {
+                    if (document.querySelector('.job-stages-trigger.isActive').dataset.tabId == 0) return;
+                    console.log(document.querySelector(`.job-stages-trigger[data-tab-id="${this.currentTab - 1}"]`));
+                    document.querySelector(`.job-stages-trigger[data-tab-id="${this.currentTab - 1}"]`).dispatchEvent(new Event('click'));
+                })
+            }
+            if (document.querySelector('.job-stages-triggers .job-stages--next')) {
+                document.querySelector('.job-stages-triggers .job-stages--next').addEventListener('click', () => {
+                    if (document.querySelector('.job-stages-trigger.isActive').dataset.tabId == 3) return;
+                    console.log(document.querySelector(`.job-stages-trigger[data-tab-id="${this.currentTab + 1}"]`));
+                    document.querySelector(`.job-stages-trigger[data-tab-id="${this.currentTab + 1}"]`).dispatchEvent(new Event('click'));
+                })
+            }
         };
         this.initAnaliticsSlider();
         this.initDesignSlider();

@@ -965,11 +965,14 @@ var footer = /*#__PURE__*/function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_1__);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
 
 
 
@@ -1061,7 +1064,14 @@ var header = /*#__PURE__*/function () {
     }
   }, {
     key: "onInit",
-    value: function onInit() {}
+    value: function onInit() {
+      if (!document.querySelector('.header-mobile-menu')) return;
+      jquery__WEBPACK_IMPORTED_MODULE_1___default()('.header-mobile-menu .has-child > a').on('click', function (event) {
+        event.preventDefault();
+        console.log(jquery__WEBPACK_IMPORTED_MODULE_1___default()(this), jquery__WEBPACK_IMPORTED_MODULE_1___default()(this).siblings('.header-phone_modal'));
+        jquery__WEBPACK_IMPORTED_MODULE_1___default()(this).siblings('.header-phone_modal').slideToggle();
+      });
+    }
   }, {
     key: "logoAnimationComplete",
     value: function logoAnimationComplete() {}
@@ -1325,6 +1335,14 @@ var mainCarousel = /*#__PURE__*/function () {
       var isHorizontal = true;
       var rotateFn = isHorizontal ? 'rotateY' : 'rotateX';
       var radius, theta;
+      var maxTitlesHeight = Math.max.apply(null, jquery__WEBPACK_IMPORTED_MODULE_2___default()(".main-carousel__text-item_titles .title").map(function () {
+        console.log(jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).height());
+        return jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).height();
+      }).get());
+      var maxTextsHeight = Math.max.apply(null, jquery__WEBPACK_IMPORTED_MODULE_2___default()(".main-carousel__text-item_texts .text").map(function () {
+        console.log(jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).height());
+        return jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).height();
+      }).get());
 
       function rotateCarousel() {
         self.onCarouselChange();
@@ -1332,6 +1350,7 @@ var mainCarousel = /*#__PURE__*/function () {
         jquery__WEBPACK_IMPORTED_MODULE_2___default()(".main-carousel__text-item_gifts .badge").css({
           'transform': "translateY(-50%) translateX(50%) rotate(".concat(angle, "deg)")
         });
+        jquery__WEBPACK_IMPORTED_MODULE_2___default()(".main-carousel__text-item_gifts .badge").text(Math.round(360 / cellCount * (selectedIndex % cellCount)));
         jquery__WEBPACK_IMPORTED_MODULE_2___default()(".main-carousel__text-item_gifts .left__in").css({
           'transform': "rotate(".concat(angle * -1, "deg)")
         });
@@ -1340,16 +1359,17 @@ var mainCarousel = /*#__PURE__*/function () {
         document.querySelectorAll(".main-carousel__text-item_titles .title").forEach(function (item) {
           item.classList.remove('isActive');
         });
-        document.querySelector(".main-carousel__text-item_titles .title[data-title-id=\"".concat((selectedIndex + 1) % +cellCount, "\"]")).classList.add('isActive');
+        document.querySelector(".main-carousel__text-item_titles .title[data-title-id=\"".concat(selectedIndex % cellCount + 1, "\"]")).classList.add('isActive');
         gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(document.querySelectorAll(".main-carousel__text-item_titles"), {
-          height: document.querySelector(".main-carousel__text-item_titles .title[data-title-id=\"".concat((selectedIndex + 1) % +cellCount, "\"]")).clientHeight
+          height: maxTitlesHeight
         });
         document.querySelectorAll(".main-carousel__text-item_texts .text").forEach(function (item) {
           item.classList.remove('isActive');
         });
-        document.querySelector(".main-carousel__text-item_texts .text[data-text-id=\"".concat((selectedIndex + 1) % +cellCount, "\"]")).classList.add('isActive');
+        console.log('index is', selectedIndex % cellCount + 1);
+        document.querySelector(".main-carousel__text-item_texts .text[data-text-id=\"".concat(selectedIndex % cellCount + 1, "\"]")).classList.add('isActive');
         gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(document.querySelectorAll(".main-carousel__text-item_texts"), {
-          height: document.querySelector(".main-carousel__text-item_texts .text[data-text-id=\"".concat((selectedIndex + 1) % +cellCount, "\"]")).clientHeight
+          height: maxTextsHeight
         });
         console.log('index', angle); // $(`.main-carousel__text-item_gifts .gift`).each(function() {
         //     $(this).hide('fast');
@@ -2474,9 +2494,9 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       newsAndTrends: new _modules_main_news_and_trends_main_news_and_trends__WEBPACK_IMPORTED_MODULE_5__["default"]({
         itemsSelector: '.news-and-trends-item'
       }),
-      mainCases: new _modules_main_cases_main_cases__WEBPACK_IMPORTED_MODULE_6__["default"]({
-        itemsClass: '.main-cases-item'
-      }),
+      // mainCases: new mainCases({
+      //     itemsClass: '.main-cases-item'
+      // }),
       mainQuestionFormModal: new _modules_main_question_main_question__WEBPACK_IMPORTED_MODULE_11__["default"]({
         inputSelector: '.main-question.fileLoaderModal .main-question-form-item [type="file"]',
         textSelector: 'main-question.fileLoaderModal .main-question-form-item span'

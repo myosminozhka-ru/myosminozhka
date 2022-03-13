@@ -208,7 +208,7 @@
 }
 
 .company .career-blog:not(.mobile) {
-    padding: vw(100) vw(50) vw(450);
+    padding: vw(100) vw(50) vw(200);
 }
 
 .career-page .career-blog,
@@ -231,4 +231,8 @@
             color: #fff !important;
         }
     }
+}
+
+.company .footer:not(.mobile) .footer-tentacle {
+    transform: scale(1) !important;
 }

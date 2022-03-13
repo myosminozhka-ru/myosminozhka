@@ -3,7 +3,18 @@
     position: relative;
     z-index: 2;
     &:not(.mobile) {
-        // padding: vw(70) 0 0;
+        background: #121423;
+        &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 1;
+            background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyMCIgaGVpZ2h0PSIxOTk5IiB2aWV3Qm94PSIwIDAgMTkyMCAxOTk5IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTAgNDg3LjVWMTk5OUgxOTIwVjAuMzQ4NjMzSDk1MS4yNDZDNjIzLjc0NiAwLjM0ODYzMyAzMTEuNzE2IDEzOS43MDIgOTMuMTM0OCAzODMuNTg1TDAgNDg3LjVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K") left 50%  top 0 / cover no-repeat;
+        }
+        padding: vw(70) 0 vw(240);
     }
     &.mobile {
         padding: 40px 0 150px;  
@@ -11,14 +22,16 @@
     &-title {
         @extend %white;
         text-transform: uppercase;
-        // mix-blend-mode: exclusion;
-        color: #0E0F1A;
+        mix-blend-mode: exclusion;
+        color: #e9f1ff;
     }
     &:not(.mobile) &-title {
         overflow: hidden;
         padding: 0 vw(50) vw(178);
         white-space: nowrap;
         margin-top: vw(60);
+        position: relative;
+        z-index: 10;
     }
     &.mobile &-title {
         padding: 0 20px 50px;
@@ -39,6 +52,8 @@
     &:not(.mobile) &-items {
         padding: 0 vw(68);
         margin-bottom: vw(120);
+        position: relative;
+        z-index: 10;
     }
     &.mobile &-items {
         padding: 0 20px;
@@ -184,8 +199,4 @@
         font-size: 16px;
         line-height: 22px;
     }
-}
-
-.company .company-raiting:not(.mobile) {
-    padding: 0 0 vw(200);
 }

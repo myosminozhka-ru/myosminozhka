@@ -1,4 +1,5 @@
 import gsap from 'gsap';
+import $ from 'jquery';
 
 const header = class Header {
     constructor() {
@@ -71,7 +72,14 @@ const header = class Header {
             })
         }
     }
-    onInit() {}
+    onInit() {
+        if (!document.querySelector('.header-mobile-menu')) return;
+        $('.header-mobile-menu .has-child > a').on('click', function (event) {
+            event.preventDefault();
+            console.log($(this), $(this).siblings('.header-phone_modal'))
+            $(this).siblings('.header-phone_modal').slideToggle();
+        })
+    }
     logoAnimationComplete() {}
     headerInAnimationComplete() {}
     setHeaderWavePositionOnLoad() {

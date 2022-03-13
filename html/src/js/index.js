@@ -30,6 +30,7 @@ import footer from "%modules%/footer/footer";
 import cookiesForm from "%modules%/cookie-form/cookie-form";
 import $ from "jquery";
 import 'slick-carousel';
+import {TweenMax, Power1} from 'gsap'
 $(function() {
     setTimeout(function(){
       window.addEventListener("scroll", function(event){
@@ -65,9 +66,9 @@ window.app = new Vue({
             element: '.web-tentacle',
             trigger: '.first-frame'
         }),
-        mainCases: new mainCases({
-            itemsClass: '.main-cases-item'
-        }),
+        // mainCases: new mainCases({
+        //     itemsClass: '.main-cases-item'
+        // }),
         mainQuestionForm: new mainQuestionForm({
             inputSelector: '.main-question-form-item [type="file"]',
             textSelector: '.main-question-form-item span'
@@ -122,7 +123,7 @@ window.app = new Vue({
         setTimeout(() => {
             
             this.isMounted = true;
-            this.mainCases.init();
+            // this.mainCases.init();
             // this.mainWords.countPosition();
             this.mainWeb.animateElement();
             // this.mainAbout.animateCircle();
@@ -180,12 +181,20 @@ window.app = new Vue({
             
         }, 250);
         setTimeout(this.animateTitles(), 500);
-        setTimeout(() => {
-            console.log(!document.querySelector('#app').classList.contains('.blog-page'));
-            if (document.querySelector('.career-first-title') && !document.querySelector('#app').classList.contains('blog-page')) {
-                document.querySelector('.career-first-title').classList.add('isMounted')
-            }
-        }, 2000);
+        if (!document.querySelector('.career-first-title')) return;
+        if (document.querySelector('.career-first-title').offsetWidth > window.innerWidth) {
+            console.log('animation')
+            // document.querySelector('.career-first-title').classList.add('isMounted')
+            document.addEventListener('mousemove', (event) => {
+                // xcoordinate = event.clientX;
+                // ycoordinate = event.clientY;
+                document.querySelector('.career-first-title').style.transform = `translateX(calc(${-event.clientX * 100 / window.innerWidth}% - ${-event.clientX * 100 / window.innerWidth}vw))`
+                // TweenMax.to('0', 1, {
+                //     translateX: ``,
+                //     ease: Power1.Circ,
+                // });
+            })
+        }
     },
     computed: {
         window: {

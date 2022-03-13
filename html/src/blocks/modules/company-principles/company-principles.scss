@@ -24,7 +24,7 @@
   &-title {
       text-transform: uppercase;
       mix-blend-mode: exclusion;
-      color: #fff;
+      color: #e9f1ff;
       position: relative;
       z-index: 1;
   }
@@ -65,6 +65,7 @@
   &-scene {
     width: vw(481);
     height: vw(740);
+    // transform-style: preserve-3d;
     perspective: 1000px;
     transform: rotateY(-25deg);
   }
@@ -88,6 +89,7 @@
     transition: transform 1s, opacity 1s;
     cursor: pointer;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
   &-cell-image {
     border-radius: vw(5);

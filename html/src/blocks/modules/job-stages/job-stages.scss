@@ -2,10 +2,10 @@
 
 .job-stages {
     background: #fff;
-    padding: 0 0 0 vw(50);
+    padding: 0 vw(50);
     overflow: hidden;
     &.mobile {
-        padding: 0;
+        padding: 20px 0 0 0;
     }
 
     &:not(.mobile) &-slides {
@@ -15,6 +15,7 @@
         text-transform: uppercase;
         margin-bottom: vw(20);
         color: #121423;
+        white-space: nowrap;
     }
     &.mobile &-title {
         padding: 0 20px;
@@ -24,6 +25,7 @@
         display: flex;
         justify-content: center;
         margin-bottom: vw(100);
+        position: relative;
     }
     &.mobile &-triggers {
         overflow: auto;
@@ -109,6 +111,9 @@
             line-height: 12px;
         }
     }
+    &:not(.mobile) &-tabs {
+        margin-right: vw(-50);
+    }
     &.mobile &-tabs {
         padding: 0 20px 40px;
     }
@@ -123,16 +128,17 @@
     &-slides:not(.is-active) {
         overflow: hidden;
     }
-    &-arrows {
+    &-slide &-arrows {
         // display: inline-flex;
         // align-items: center;
         // border-bottom: vw(7) solid $bgColor;
         // margin-bottom: vw(60);
+        display: none !important;
         button {
             position: static;
         }
     }
-    &-slides &-arrow {
+    &-arrow {
         border: none;
         background: none;
         font-size: 0;
@@ -144,7 +150,7 @@
         box-sizing: content-box;
         position: absolute;
         right: 0;
-        top: vw(-260);
+        top: calc(50% - #{vw(19)});
         &:hover {
             svg {
                 fill: $mainColor;
@@ -163,6 +169,7 @@
     &.mobile &-arrow {
         width: 89px;
         height: 38px;
+        display: none !important;
 
     }
     &-item {
@@ -321,8 +328,8 @@
     }
     &-support-title {
         font-weight: bold;
-        font-size: vw(120);
-        line-height: vw(120);
+        font-size: vw(100);
+        line-height: vw(100);
         text-transform: uppercase;
         margin-bottom: vw(50);
         white-space: initial !important;
@@ -339,6 +346,9 @@
         padding-right: vw(75);
         white-space: initial;
         @extend %white;
+    }
+    &:not(.mobile) &-track {
+        pointer-events: none !important;
     }
     &:not(.mobile) &-support-right-track {
         &, .glide__slides {
@@ -394,8 +404,8 @@
     &-support-right-item {
         font-size: 0;
     }
-    &-management {
-        padding: vw(170) 0 0;
+    &:not(.mobile) &-management {
+        padding: 0 0 0 !important;
     }
     &.mobile &-management {
         padding: 20px;
@@ -424,7 +434,7 @@
             content: "";
             position: absolute;
             bottom: vw(-70);
-            left: vw(-160);
+            left: 0;
             width: vw(267);
             height: vw(7);
             background: $bgColor;

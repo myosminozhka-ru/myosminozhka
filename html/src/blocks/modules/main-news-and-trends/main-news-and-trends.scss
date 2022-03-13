@@ -337,6 +337,7 @@
         max-width: 100%;
         border-width: 5px !important;
         box-sizing: border-box;
+        border-radius: 15px;
         &:not(:last-child) {
             margin-bottom: 34px;
         }
@@ -442,6 +443,7 @@
     }
     &.mobile &-form {
         margin-top: 50px;
+        padding: 0 20px;
         .title {
             margin-bottom: 30px;
             font-size: 20px;

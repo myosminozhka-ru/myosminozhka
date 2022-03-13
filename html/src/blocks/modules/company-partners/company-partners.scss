@@ -26,6 +26,8 @@ body.company .company-ceo:not(.mobile) {
     &:not(.mobile) {
         padding: vw(130) 0;
         margin-top: vw(-230);
+        position: relative;
+        z-index: 2;
     }
     &.mobile {
         padding: 40px 20px 56px;
@@ -39,7 +41,7 @@ body.company .company-ceo:not(.mobile) {
         background: #121423;
     }
     &-title {
-        @extend %white;
+        color: #e9f1ff;
     }
     &:not(.mobile) &-title {
         white-space: nowrap;
@@ -73,7 +75,7 @@ body.company .company-ceo:not(.mobile) {
         margin-bottom: vw(30);
     }
     &.mobile &-item-title {
-        font-size: 50px;
+        font-size: 40px;
         line-height: 50px;
         margin-bottom: 20px;
     }
@@ -109,10 +111,10 @@ body.company .company-ceo:not(.mobile) {
         font-size: 0;
         display: block;
         cursor: pointer;
-        mix-blend-mode: difference;
+        // mix-blend-mode: difference;
         box-sizing: content-box;
         svg {
-            fill: #fff;
+            fill: #121423;
         }
         // &:hover {
         //     svg {
@@ -122,6 +124,9 @@ body.company .company-ceo:not(.mobile) {
 
         &--prev {
             transform: rotate(180deg);
+            svg {
+                fill: #fff;
+            }
         }
     }
     &:not(.mobile) &-arrow {

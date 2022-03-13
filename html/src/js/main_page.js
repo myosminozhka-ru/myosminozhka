@@ -33,9 +33,9 @@ window.app = new Vue({
         newsAndTrends: new newsAndTrends({
             itemsSelector: '.news-and-trends-item'
         }),
-        mainCases: new mainCases({
-            itemsClass: '.main-cases-item'
-        }),
+        // mainCases: new mainCases({
+        //     itemsClass: '.main-cases-item'
+        // }),
         mainQuestionFormModal: new mainQuestionForm({
             inputSelector: '.main-question.fileLoaderModal .main-question-form-item [type="file"]',
             textSelector: 'main-question.fileLoaderModal .main-question-form-item span'
