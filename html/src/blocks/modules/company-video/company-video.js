@@ -16,7 +16,7 @@ const companyVideo = class companyVideo {
                 poster: '../local/img/video_preview.png',
                 sources: [{
                     src: '../local/videos/pv.mp4',
-                    type: './local/videos/mp4'
+                    type: 'video/mp4'
                 }]
             });
         }, 300)
