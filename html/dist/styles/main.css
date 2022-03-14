@@ -3384,6 +3384,10 @@ a:hover {
   padding-right: 0.5208333333vw;
 }
 
+.jb_lnks {
+  flex-wrap: wrap;
+}
+
 .main-words {
   overflow: hidden;
 }
@@ -10501,6 +10505,10 @@ body.company .company-ceo:not(.mobile) {
 
 .career-page .footer:not(.mobile) .footer-in {
   padding-top: 11vw;
+}
+
+.case_page__about--wtitle {
+  transition: all 0.3s ease-out;
 }
 
 .case_page {

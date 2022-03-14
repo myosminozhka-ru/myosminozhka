@@ -53,7 +53,16 @@ $(function() {
         dots: true, 
         fade: true
     });
-})
+    $('a[href^="#"').on('click', function(e) {
+        e.preventDefault;
+        let href = $(this).attr('href');
+    
+        $('html, body').animate({
+            scrollTop: $(href).offset().top
+        });
+        return false;
+    });
+});
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);

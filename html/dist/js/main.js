@@ -3615,6 +3615,14 @@ jquery__WEBPACK_IMPORTED_MODULE_27___default()(function () {
     dots: true,
     fade: true
   });
+  jquery__WEBPACK_IMPORTED_MODULE_27___default()('a[href^="#"').on('click', function (e) {
+    e.preventDefault;
+    var href = jquery__WEBPACK_IMPORTED_MODULE_27___default()(this).attr('href');
+    jquery__WEBPACK_IMPORTED_MODULE_27___default()('html, body').animate({
+      scrollTop: jquery__WEBPACK_IMPORTED_MODULE_27___default()(href).offset().top
+    });
+    return false;
+  });
 });
 
 
