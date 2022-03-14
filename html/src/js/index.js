@@ -66,9 +66,9 @@ window.app = new Vue({
             element: '.web-tentacle',
             trigger: '.first-frame'
         }),
-        // mainCases: new mainCases({
-        //     itemsClass: '.main-cases-item'
-        // }),
+        mainCases: new mainCases({
+            itemsClass: '.main-cases-item'
+        }),
         mainQuestionForm: new mainQuestionForm({
             inputSelector: '.main-question-form-item [type="file"]',
             textSelector: '.main-question-form-item span'
@@ -123,7 +123,7 @@ window.app = new Vue({
         setTimeout(() => {
             
             this.isMounted = true;
-            // this.mainCases.init();
+            this.mainCases.init();
             // this.mainWords.countPosition();
             this.mainWeb.animateElement();
             // this.mainAbout.animateCircle();

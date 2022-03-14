@@ -3627,9 +3627,9 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
         element: '.web-tentacle',
         trigger: '.first-frame'
       }),
-      // mainCases: new mainCases({
-      //     itemsClass: '.main-cases-item'
-      // }),
+      mainCases: new _modules_main_cases_main_cases__WEBPACK_IMPORTED_MODULE_6__["default"]({
+        itemsClass: '.main-cases-item'
+      }),
       mainQuestionForm: new _modules_main_question_main_question__WEBPACK_IMPORTED_MODULE_14__["default"]({
         inputSelector: '.main-question-form-item [type="file"]',
         textSelector: '.main-question-form-item span'
@@ -3684,8 +3684,10 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       _this.isPreloaderHidden = true;
     });
     setTimeout(function () {
-      _this.isMounted = true; // this.mainCases.init();
-      // this.mainWords.countPosition();
+      _this.isMounted = true;
+
+      _this.mainCases.init(); // this.mainWords.countPosition();
+
 
       _this.mainWeb.animateElement(); // this.mainAbout.animateCircle();
       // this.mainAbout.initVideoOpening();
