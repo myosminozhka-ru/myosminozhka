@@ -58,4 +58,8 @@
     @media all and (max-width: 540px) {
         background: url('../img/svg/blog_item_bg.svg') 50% 0/400% no-repeat !important;
     }
+    a img {
+        width: auto !important;
+        text-align: center;
+    }
 }

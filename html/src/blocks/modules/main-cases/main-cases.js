@@ -425,89 +425,89 @@ const mainCases = class MainCases {
         if (!document.querySelector('.main-cases')) return;
         let self = this;
         this.onInit()
-        if (window.innerWidth < 1023) {
-        this.initMobileSlider();
-        } else {
-            this.destroyMobileSlider();
-        }
+        // if (window.innerWidth < 1023) {
+        // this.initMobileSlider();
+        // } else {
+        //     this.destroyMobileSlider();
+        // }
          
-         if ((window.innerWidth <= 1366 && window.innerWidth > 1023) || (window.innerWidth > 1440)) {
-            setTimeout(() => {
-                gsap.to('.main-cases-items-in', {
-                    scrollTrigger: {
-                        trigger: '.main-cases',
-                        start: 'top top',
-                        end: 'bottom bottom-=200',
-                        scrub: 2,
-                        // markers: true,
-                        onUpdate: (item) => {
-                            if (item.progress > 0.05 && item.progress < 0.65) {
-                                document.querySelector('.main-cases-items-in').classList.add('isInViewport');
-                            } else {
-                                document.querySelector('.main-cases-items-in').classList.remove('isInViewport');
-                            }
-                        }
-                    },
-                    x: '-100%',
-                });
-                gsap.to('.main-cases', {
-                    scrollTrigger: {
-                        trigger: '.main-cases',
-                        start: 'top top-=350',
-                        end: 'bottom bottom',
-                        pin: true,
-                        scrub: 2,
-                        pinSpacing: false,
-                        // markers: true
-                    },
-                    x: 0,
-                    onStart() {
-                        self.onAnimationStart();
-                    },
-                    onComplete() {
-                        self.onAnimationEnd();
-                    }
-                });
-            }, 1000);
-        } else if (window.innerWidth <= 1440 && window.innerWidth > 1366) {
-            setTimeout(() => {
-                gsap.to('.main-cases-items-in', {
-                    scrollTrigger: {
-                        trigger: '.main-cases',
-                        start: 'top top',
-                        end: 'bottom bottom-=200',
-                        scrub: 2,
-                        // markers: true,
-                        onUpdate: (item) => {
-                            if (item.progress > 0.05 && item.progress < 0.65) {
-                                document.querySelector('.main-cases-items-in').classList.add('isInViewport');
-                            } else {
-                                document.querySelector('.main-cases-items-in').classList.remove('isInViewport');
-                            }
-                        }
-                    },
-                    x: '-100%',
-                });
-                gsap.to('.main-cases', {
-                    scrollTrigger: {
-                        trigger: '.main-cases',
-                        start: 'top top-=200',
-                        end: 'bottom bottom',
-                        pin: true,
-                        scrub: 2,
-                        pinSpacing: false,
-                        // markers: true
-                    },
-                    x: 0,
-                    onStart() {
-                        self.onAnimationStart();
-                    },
-                    onComplete() {
-                        self.onAnimationEnd();
-                    }
-                });
-            }, 1000);
-        } 
+        //  if ((window.innerWidth <= 1366 && window.innerWidth > 1023) || (window.innerWidth > 1440)) {
+        //     setTimeout(() => {
+        //         gsap.to('.main-cases-items-in', {
+        //             scrollTrigger: {
+        //                 trigger: '.main-cases',
+        //                 start: 'top top',
+        //                 end: 'bottom bottom-=200',
+        //                 scrub: 2,
+        //                 // markers: true,
+        //                 onUpdate: (item) => {
+        //                     if (item.progress > 0.05 && item.progress < 0.65) {
+        //                         document.querySelector('.main-cases-items-in').classList.add('isInViewport');
+        //                     } else {
+        //                         document.querySelector('.main-cases-items-in').classList.remove('isInViewport');
+        //                     }
+        //                 }
+        //             },
+        //             x: '-100%',
+        //         });
+        //         gsap.to('.main-cases', {
+        //             scrollTrigger: {
+        //                 trigger: '.main-cases',
+        //                 start: 'top top-=350',
+        //                 end: 'bottom bottom',
+        //                 pin: true,
+        //                 scrub: 2,
+        //                 pinSpacing: false,
+        //                 // markers: true
+        //             },
+        //             x: 0,
+        //             onStart() {
+        //                 self.onAnimationStart();
+        //             },
+        //             onComplete() {
+        //                 self.onAnimationEnd();
+        //             }
+        //         });
+        //     }, 1000);
+        // } else if (window.innerWidth <= 1440 && window.innerWidth > 1366) {
+        //     setTimeout(() => {
+        //         gsap.to('.main-cases-items-in', {
+        //             scrollTrigger: {
+        //                 trigger: '.main-cases',
+        //                 start: 'top top',
+        //                 end: 'bottom bottom-=200',
+        //                 scrub: 2,
+        //                 // markers: true,
+        //                 onUpdate: (item) => {
+        //                     if (item.progress > 0.05 && item.progress < 0.65) {
+        //                         document.querySelector('.main-cases-items-in').classList.add('isInViewport');
+        //                     } else {
+        //                         document.querySelector('.main-cases-items-in').classList.remove('isInViewport');
+        //                     }
+        //                 }
+        //             },
+        //             x: '-100%',
+        //         });
+        //         gsap.to('.main-cases', {
+        //             scrollTrigger: {
+        //                 trigger: '.main-cases',
+        //                 start: 'top top-=200',
+        //                 end: 'bottom bottom',
+        //                 pin: true,
+        //                 scrub: 2,
+        //                 pinSpacing: false,
+        //                 // markers: true
+        //             },
+        //             x: 0,
+        //             onStart() {
+        //                 self.onAnimationStart();
+        //             },
+        //             onComplete() {
+        //                 self.onAnimationEnd();
+        //             }
+        //         });
+        //     }, 1000);
+        // } 
         // else if (window.innerWidth <= 1023) {
         //     console.log('это мобилка')
         //     setTimeout(() => {

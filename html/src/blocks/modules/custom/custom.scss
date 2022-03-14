@@ -125,22 +125,17 @@ body:not(.main) .wrapper:not(.services-page):not(.internet-marketing-page):not(.
 }
 @media all and (max-width: 1700px) {
     .footer:not(.mobile) .footer-tentacle {
-        top: -37.45833vw;
-    }
-}
-@media all and (max-width: 1366px) {
-    .footer:not(.mobile) .footer-tentacle {
-        top: -38.45833vw;
+        top: -38.45833vw !important;
     }
 }
 @media all and (max-width: 1280px) {
     .footer:not(.mobile) .footer-tentacle {
-        top: -39.45833vw;
+        top: -39.45833vw !important;
     }
 }
 @media all and (max-width: 1100px) {
     .footer:not(.mobile) .footer-tentacle {
-        top: -40.45833vw;
+        top: -40.45833vw !important;
     }
 }
 
@@ -1328,4 +1323,39 @@ margin:0 30px;
 
 .case_page .main-cases {
     padding: 0 !important;
+}
+
+
+
+
+.new-cases-page .blog-items-buttons__wrap {
+    display: none !important;
+}
+
+
+.career-page .career-blog.mobile .career-blog-item-title {
+    color: #fff !important;
+}
+
+
+
+.main .main-resume.mobile form {
+    position: relative;
+    z-index: 12;
+}
+body.main .main-resume.mobile {
+    z-index: auto !important;
+}
+.main .footer.mobile .footer-tentacle {
+    z-index: 11;
+}
+
+.main .news-and-trends.mobile .news-and-trends-item {
+    margin-bottom: 0 !important;
+}
+
+
+
+.contacts-page .career-first.mobile {
+    padding-bottom: 0;
 }

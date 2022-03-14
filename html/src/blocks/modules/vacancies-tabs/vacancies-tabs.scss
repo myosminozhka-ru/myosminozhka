@@ -111,11 +111,11 @@
             color: #fff;
         }
     }
-    &.mobile &-item:first-child &-item-title {
-        .icon {
-            filter: contrast(0) brightness(10);
-        }
-    }
+    // &.mobile &-item:first-child &-item-title {
+    //     .icon {
+    //         filter: contrast(0) brightness(10);
+    //     }
+    // }
     &.mobile &-item:first-child &-item-body p {
         mix-blend-mode: difference;
         color: #fff;

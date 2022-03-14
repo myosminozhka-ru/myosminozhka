@@ -20,8 +20,12 @@
     bottom: 0;
     z-index: 1;
   }
+  &.mobile &-blur {
+    display: none !important;
+  }
   &.mobile.isOpened &-blur {
     background: rgba(0, 0, 0, 0.9);
+    display: block !important;
   }
   &-in {
     padding: 0 vw(50);
@@ -31,6 +35,10 @@
   }
   &.mobile &-in {
     padding: 0 20px;
+    background: #121423 !important;
+  }
+  &.mobile.isOpened &-in {
+    background: transparent !important;
   }
   &-logo {
     transition: all 0.1s ease-out 0s;
