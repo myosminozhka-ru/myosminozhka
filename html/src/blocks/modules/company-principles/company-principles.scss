@@ -106,6 +106,7 @@
     }
   }
   &-cell-text {
+    display: none !important;
     pointer-events: none;
     position: absolute;
     left: vw(45);

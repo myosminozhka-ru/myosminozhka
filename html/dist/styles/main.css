@@ -5855,6 +5855,7 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
 }
 
 .company-principles-cell-text {
+  display: none !important;
   pointer-events: none;
   position: absolute;
   left: 2.34375vw;
@@ -16659,6 +16660,7 @@ body.main .main-resume.mobile {
   .career-blocks:not(.mobile) .career-blocks-right {
     width: 50%;
     box-sizing: border-box;
+    height: 100%;
   }
 
   .career-blocks:not(.mobile) .career-blocks-title {
@@ -16778,6 +16780,13 @@ body.main .main-resume.mobile {
 @media all and (max-width: 1280px) {
   .footer:not(.mobile) .footer-tentacle {
     top: -39.45833vw;
+  }
+}
+
+@media all and (max-width: 1200px) {
+  .career-page .footer:not(.mobile) .footer-tentacle {
+    top: -36.020833vw;
+    transform: scale(1.4);
   }
 }
 

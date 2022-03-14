@@ -369,6 +369,10 @@ body.company .company-ceo:not(.mobile) {
 .career-page .footer:not(.mobile) .footer-tentacle {
     top: -35.020833vw;
     transform: scale(1.3);
+    @media all and (max-width: 1200px) {
+        top: -36.020833vw;
+        transform: scale(1.4);
+    }
 }
 .career-page .footer:not(.mobile) .footer-in {
     padding-top: 11vw;
