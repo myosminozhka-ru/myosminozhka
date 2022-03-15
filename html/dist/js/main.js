@@ -2528,11 +2528,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var slick_carousel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! slick-carousel */ "./node_modules/slick-carousel/slick/slick.js");
 /* harmony import */ var slick_carousel__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(slick_carousel__WEBPACK_IMPORTED_MODULE_4__);
+!(function webpackMissingModule() { var e = new Error("Cannot find module 'jquery.marquee'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
 
 
 
@@ -2552,6 +2554,21 @@ jquery__WEBPACK_IMPORTED_MODULE_3___default()(function () {
         slidesToShow: 1
       });
     }
+  }
+
+  if (window.innerWidth <= 1366 && window.innerWidth > 1023 || window.innerWidth > 1440) {
+    jquery__WEBPACK_IMPORTED_MODULE_3___default()('.marquee-js').marquee({
+      //duration in milliseconds of the marquee
+      duration: 10000,
+      //gap in pixels between the tickers
+      gap: 20,
+      //time in milliseconds before the marquee will start animating
+      delayBeforeStart: 0,
+      //'left' or 'right'
+      direction: 'left',
+      //true or false - should the marquee be duplicated to show an effect of continues flow
+      duplicated: true
+    });
   }
 });
 jquery__WEBPACK_IMPORTED_MODULE_3___default()(function () {
@@ -2610,28 +2627,27 @@ var mainCases = /*#__PURE__*/function () {
     key: "init",
     value: function init() {
       if (window.innerWidth <= 1366 && window.innerWidth > 1023 || window.innerWidth > 1440) {
-        if (document.querySelector('.case_page__prot')) {
-          setTimeout(function () {
-            gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.case_page__prot--title', {
-              scrollTrigger: {
-                trigger: '.case_page__prot',
-                start: 'top top',
-                end: 'bottom bottom-=1000',
-                scrub: 11,
-                // markers: true,
-                onUpdate: function onUpdate(item) {
-                  if (item.progress > 0.05 && item.progress < 0.65) {
-                    document.querySelector('.case_page__prot--title').classList.add('isInViewport');
-                  } else {
-                    document.querySelector('.case_page__prot--title').classList.remove('isInViewport');
-                  }
-                }
-              },
-              x: '-100%'
-            });
-          }, 1000);
-        }
-
+        // if (document.querySelector('.case_page__prot')) {
+        //    setTimeout(() => {
+        //         gsap.to('.case_page__prot--title', {
+        //             scrollTrigger: {
+        //                 trigger: '.case_page__prot',
+        //                 start: 'top top',
+        //                 end: 'bottom bottom-=1000',
+        //                 scrub: 11,
+        //                 // markers: true,
+        //                 onUpdate: (item) => {
+        //                     if (item.progress > 0.05 && item.progress < 0.65) {
+        //                         document.querySelector('.case_page__prot--title').classList.add('isInViewport');
+        //                     } else {
+        //                         document.querySelector('.case_page__prot--title').classList.remove('isInViewport');
+        //                     }
+        //                 }
+        //             },
+        //             x: '-100%',
+        //         });
+        //     }, 1000);
+        // }
         if (document.querySelector('.msite .case_page__reds')) {
           setTimeout(function () {
             gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.msite .case_page__reds--title', {
@@ -2740,29 +2756,28 @@ var mainCases = /*#__PURE__*/function () {
               x: '-100%'
             });
           }, 1000);
-        }
+        } // if (document.querySelector('.gl_blocks')) {
+        //     setTimeout(() => {
+        //          gsap.to('.case_page__gl--title', {
+        //              scrollTrigger: {
+        //                  trigger: '.gl_blocks',
+        //                  start: 'top top',
+        //                  end: 'bottom bottom-=300',
+        //                  scrub: 11,
+        //                  // markers: true,
+        //                  onUpdate: (item) => {
+        //                      if (item.progress > 0.05 && item.progress < 0.65) {
+        //                          document.querySelector('.case_page__gl--title').classList.add('isInViewport');
+        //                      } else {
+        //                          document.querySelector('.case_page__gl--title').classList.remove('isInViewport');
+        //                      }
+        //                  }
+        //              },
+        //              x: '-100%',
+        //          });
+        //      }, 1000);
+        // }
 
-        if (document.querySelector('.gl_blocks')) {
-          setTimeout(function () {
-            gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.case_page__gl--title', {
-              scrollTrigger: {
-                trigger: '.gl_blocks',
-                start: 'top top',
-                end: 'bottom bottom-=300',
-                scrub: 11,
-                // markers: true,
-                onUpdate: function onUpdate(item) {
-                  if (item.progress > 0.05 && item.progress < 0.65) {
-                    document.querySelector('.case_page__gl--title').classList.add('isInViewport');
-                  } else {
-                    document.querySelector('.case_page__gl--title').classList.remove('isInViewport');
-                  }
-                }
-              },
-              x: '-100%'
-            });
-          }, 1000);
-        }
 
         if (document.querySelector('.case_page__about--work')) {
           setTimeout(function () {
