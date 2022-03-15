@@ -16347,6 +16347,30 @@ body.main .main-resume.mobile {
 }
 
 @media all and (min-width: 1023px) {
+  .anim_title {
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .anim_title > div {
+    animation: marquee 15s linear infinite;
+    padding-left: 100%;
+  }
+
+  .anim_title > div:hover {
+    animation-play-state: paused;
+  }
+
+@keyframes marquee {
+    0% {
+      transform: translate(0, 0);
+    }
+
+    100% {
+      transform: translate(-100%, 0);
+    }
+}
+
   .stroy .case_pec__item--r .mabsd {
     display: none;
   }

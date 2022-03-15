@@ -3,6 +3,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Glide from '@glidejs/glide';
 import $ from "jquery";
 import 'slick-carousel';
+import  'jquery.marquee';
 $(function() {
     if (window.innerWidth <= 1023) {
         if (document.querySelector('.js_sl')) {
@@ -16,6 +17,20 @@ $(function() {
                 slidesToShow: 1
             });
         }
+    }
+    if ((window.innerWidth <= 1366 && window.innerWidth > 1023) || (window.innerWidth > 1440)) {
+        $('.marquee-js').marquee({
+            //duration in milliseconds of the marquee
+            duration: 10000,
+            //gap in pixels between the tickers
+            gap: 20,
+            //time in milliseconds before the marquee will start animating
+            delayBeforeStart: 0,
+            //'left' or 'right'
+            direction: 'left',
+            //true or false - should the marquee be duplicated to show an effect of continues flow
+            duplicated: true
+        });
     }
 })
 $(function() {
@@ -62,27 +77,27 @@ const mainCases = class MainCases {
     init() {
          
         if ((window.innerWidth <= 1366 && window.innerWidth > 1023) || (window.innerWidth > 1440)) {
-            if (document.querySelector('.case_page__prot')) {
-               setTimeout(() => {
-                    gsap.to('.case_page__prot--title', {
-                        scrollTrigger: {
-                            trigger: '.case_page__prot',
-                            start: 'top top',
-                            end: 'bottom bottom-=1000',
-                            scrub: 11,
-                            // markers: true,
-                            onUpdate: (item) => {
-                                if (item.progress > 0.05 && item.progress < 0.65) {
-                                    document.querySelector('.case_page__prot--title').classList.add('isInViewport');
-                                } else {
-                                    document.querySelector('.case_page__prot--title').classList.remove('isInViewport');
-                                }
-                            }
-                        },
-                        x: '-100%',
-                    });
-                }, 1000);
-            }
+            // if (document.querySelector('.case_page__prot')) {
+            //    setTimeout(() => {
+            //         gsap.to('.case_page__prot--title', {
+            //             scrollTrigger: {
+            //                 trigger: '.case_page__prot',
+            //                 start: 'top top',
+            //                 end: 'bottom bottom-=1000',
+            //                 scrub: 11,
+            //                 // markers: true,
+            //                 onUpdate: (item) => {
+            //                     if (item.progress > 0.05 && item.progress < 0.65) {
+            //                         document.querySelector('.case_page__prot--title').classList.add('isInViewport');
+            //                     } else {
+            //                         document.querySelector('.case_page__prot--title').classList.remove('isInViewport');
+            //                     }
+            //                 }
+            //             },
+            //             x: '-100%',
+            //         });
+            //     }, 1000);
+            // }
             if (document.querySelector('.msite .case_page__reds')) {
                setTimeout(() => {
                     gsap.to('.msite .case_page__reds--title', {
@@ -188,27 +203,27 @@ const mainCases = class MainCases {
                     });
                 }, 1000);
             }
-            if (document.querySelector('.gl_blocks')) {
-                setTimeout(() => {
-                     gsap.to('.case_page__gl--title', {
-                         scrollTrigger: {
-                             trigger: '.gl_blocks',
-                             start: 'top top',
-                             end: 'bottom bottom-=300',
-                             scrub: 11,
-                             // markers: true,
-                             onUpdate: (item) => {
-                                 if (item.progress > 0.05 && item.progress < 0.65) {
-                                     document.querySelector('.case_page__gl--title').classList.add('isInViewport');
-                                 } else {
-                                     document.querySelector('.case_page__gl--title').classList.remove('isInViewport');
-                                 }
-                             }
-                         },
-                         x: '-100%',
-                     });
-                 }, 1000);
-            }
+            // if (document.querySelector('.gl_blocks')) {
+            //     setTimeout(() => {
+            //          gsap.to('.case_page__gl--title', {
+            //              scrollTrigger: {
+            //                  trigger: '.gl_blocks',
+            //                  start: 'top top',
+            //                  end: 'bottom bottom-=300',
+            //                  scrub: 11,
+            //                  // markers: true,
+            //                  onUpdate: (item) => {
+            //                      if (item.progress > 0.05 && item.progress < 0.65) {
+            //                          document.querySelector('.case_page__gl--title').classList.add('isInViewport');
+            //                      } else {
+            //                          document.querySelector('.case_page__gl--title').classList.remove('isInViewport');
+            //                      }
+            //                  }
+            //              },
+            //              x: '-100%',
+            //          });
+            //      }, 1000);
+            // }
             if (document.querySelector('.case_page__about--work')) {
                  setTimeout(() => {
                       gsap.to('.case_page__about--wtitle', {
