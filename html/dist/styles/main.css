@@ -11362,7 +11362,7 @@ body.company .company-ceo:not(.mobile) {
 }
 
 .case_page__reds--r {
-  max-width: 940px;
+  max-width: 48.9583333333vw;
   width: 100%;
   flex: none;
   margin-left: 7.5vw;
