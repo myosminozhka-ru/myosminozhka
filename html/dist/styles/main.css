@@ -6290,6 +6290,86 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
   grid-row-end: 4;
 }
 
+.company-team__blocks {
+  margin-top: 5.2083333333vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: #121423;
+  flex-wrap: wrap;
+  margin-left: -10px;
+  margin-right: -10px;
+  padding: 5.2083333333vw 2.6041666667vw;
+}
+
+.company-team__blocks--item {
+  margin-left: 10px;
+  margin-right: 10px;
+  width: calc(25% - 20px);
+  margin-bottom: 4.1666666667vw;
+  text-align: center;
+}
+
+.company-team__blocks--image {
+  margin-bottom: 1.5625vw;
+  max-width: 10.4166666667vw;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.company-team__blocks--image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.company-team__blocks--name {
+  font-family: "Montserrat" serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.5625vw;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  line-height: 140%;
+  margin-bottom: 0.5208333333vw;
+}
+
+.company-team__blocks--position {
+  font-family: "Montserrat" serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.3020833333vw;
+  line-height: 160%;
+  color: #FFFFFF;
+}
+
+.company-team.mobile .company-team__blocks {
+  margin-top: 0;
+  padding: 70px 15px;
+}
+
+.company-team.mobile .company-team__blocks--item {
+  width: calc(33% - 20px);
+  margin-bottom: 30px;
+}
+
+.company-team.mobile .company-team__blocks--image {
+  margin-bottom: 20px;
+  max-width: 100px;
+}
+
+.company-team.mobile .company-team__blocks--name {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.company-team.mobile .company-team__blocks--position {
+  font-size: 14px;
+}
+
 .company-raiting {
   overflow: hidden;
   position: relative;
@@ -20067,6 +20147,12 @@ body.main .main-resume.mobile {
 @media all and (max-width: 668px) {
   .career-blog.mobile .career-blog-item[style="display: inline;"]:last-of-type {
     margin-bottom: 260px;
+  }
+}
+
+@media all and (max-width: 660px) {
+  .company-team.mobile .company-team__blocks--item {
+    width: calc(50% - 20px);
   }
 }
 
