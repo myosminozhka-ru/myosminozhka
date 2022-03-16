@@ -7504,7 +7504,7 @@ body.company .company-ceo:not(.mobile) {
 }
 
 .vacan .career-first:not(.mobile) {
-  background: url("data:image/svg+xml,%3Csvg width='1920' height='1292' viewBox='0 0 1920 1292' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 -5.5H1930.5V1050H1410H935.596C608.252 1050 286.289 1133.28 0 1292V1050V-5.5Z' fill='%230E0F1A'/%3E%3C/svg%3E%0A") 0 100%/100% no-repeat;
+  background: url("data:image/svg+xml,%3Csvg width='1920' height='1292' viewBox='0 0 1920 1292' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 -5.5H1930.5V1050H1410H935.596C608.252 1050 286.289 1133.28 0 1292V1050V-5.5Z' fill='%23121423'/%3E%3C/svg%3E%0A") 0 100%/100% no-repeat;
   padding-bottom: 40vh;
   position: relative;
 }
@@ -15038,6 +15038,7 @@ body.company .company-ceo:not(.mobile) {
 .englex .case_page__itm {
   display: flex;
   align-items: flex-start;
+  width: 100%;
   justify-content: flex-start;
 }
 
@@ -16347,6 +16348,14 @@ body.main .main-resume.mobile {
 }
 
 @media all and (min-width: 1023px) {
+  .marquee-js.inverse .js-marquee-wrapper {
+    mix-blend-mode: difference;
+  }
+
+  .marquee-js.inverse .js-marquee * {
+    mix-blend-mode: unset;
+  }
+
   .anim_title {
     white-space: nowrap;
     overflow: hidden;
@@ -17052,7 +17061,7 @@ body.main .main-resume.mobile {
   }
 
   .case_tabs_new .job-stages-item-text {
-    padding-top: 90px;
+    padding-top: 110px;
     margin-left: 0;
     max-width: 100%;
     font-size: 16px;
@@ -19641,7 +19650,7 @@ body.main .main-resume.mobile {
   .case_tabs_new {
     padding-left: 20px;
     padding-right: 20px;
-    background: url("../img/bg_mob.png") 0 0 no-repeat, linear-gradient(180deg, #121423 155px, white 155px, white 155px);
+    background: url("../img/bg_mob.png") 0 0 no-repeat, linear-gradient(180deg, #121423 37%, white 14.8958333333vw, white 155px);
   }
 
   .case_page__about--l {
@@ -20329,6 +20338,12 @@ body.main .main-resume.mobile {
 
   .case_page__gl {
     background: url(../img/bg_red2.png) 0 0/100% no-repeat, linear-gradient(0deg, #121423 86%, rgba(255, 255, 255, 0) 86%, rgba(255, 255, 255, 0) 100%) !important;
+  }
+
+  .case_tabs_new {
+    padding-left: 20px;
+    padding-right: 20px;
+    background: url("../img/bg_mob.png") 0 0 no-repeat, linear-gradient(180deg, #121423 25%, white 14.8958333333vw, white 155px);
   }
 
   .malin_imgs__small {
