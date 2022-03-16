@@ -15042,6 +15042,7 @@ body.company .company-ceo:not(.mobile) {
 }
 
 .englex .eng_img--l {
+  height: 41.1458333333vw;
   width: calc(100% - 20px);
 }
 
