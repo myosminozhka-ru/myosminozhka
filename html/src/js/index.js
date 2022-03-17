@@ -55,12 +55,15 @@ $(function() {
     });
     $('a[href^="#"').on('click', function(e) {
         e.preventDefault;
-        let href = $(this).attr('href');
-    
-        $('html, body').animate({
-            scrollTop: $(href).offset().top
-        });
-        return false;
+        if (!$(this).attr('data-tab-id')) {
+            // console.log($(this).attr('data-tab-id'));
+            let href = $(this).attr('href');
+        
+            $('html, body').animate({
+                scrollTop: $(href).offset().top
+            });
+            return false;
+        }
     });
 });
 import gsap from 'gsap';

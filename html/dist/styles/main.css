@@ -3011,7 +3011,7 @@ html {
 .footer-bank .copy,
 .footer-social,
 .footer-social svg,
-.job-stages-title-trigger.isActive:after,
+.job-stages-title-trigger.glide__bullet--active:after,
 .job-stages-title-trigger,
 .cases-items-post-text,
 .vacancies-tabs-item-title .text,
@@ -4297,18 +4297,16 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
 }
 
 .main-carousel__arrows {
-  position: absolute;
-  bottom: 2.3958333333vw;
-  right: 0;
   display: flex;
   align-items: center;
   z-index: 20;
-  display: none !important;
+  margin-top: 4.4791666667vw;
 }
 
 .main-carousel__arrow {
-  width: 4.4791666667vw;
+  width: 5.2604166667vw;
   height: 1.9791666667vw;
+  font-size: 0;
   cursor: pointer;
 }
 
@@ -4317,9 +4315,8 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
   transition: all 0.3s ease;
 }
 
-.main-carousel__arrow--prev {
+.main-carousel__arrow--next {
   transform: rotate(180deg);
-  margin-right: 4.9479166667vw;
 }
 
 .main-carousel__arrow:hover svg {
@@ -4339,6 +4336,14 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
 .main-carousel.mobile {
   padding: 50px 20px;
   z-index: 8;
+}
+
+.main-carousel__grades {
+  margin: 0 1.1979166667vw;
+  font-weight: 700;
+  font-size: 1.5625vw;
+  line-height: 2.6041666667vw;
+  color: #121423;
 }
 
 .main-carousel__title {
@@ -4364,6 +4369,7 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
 .main-carousel:not(.mobile) .main-carousel__body {
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .main-carousel-scene {
@@ -4372,15 +4378,17 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
 
 .main-carousel:not(.mobile) .main-carousel-scene {
   position: absolute;
-  bottom: 0;
+  top: 50%;
   width: 26.8229166667vw;
   height: 35.8333333333vw;
+  left: 9.0104166667vw;
+  transform: translateY(-50%);
 }
 
 .main-carousel.mobile .main-carousel-scene {
   width: 70%;
   height: 356px;
-  margin-bottom: 54px;
+  margin: 0 auto 54px;
 }
 
 .main-carousel-carousel {
@@ -4583,6 +4591,7 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
 }
 
 .main-carousel__text-item_gifts {
+  display: none !important;
   pointer-events: none;
 }
 
@@ -8980,13 +8989,13 @@ html:root body.posts .post_info__code--in {
   border-radius: 2.6041666667vw;
 }
 
-.job-stages-title-trigger.isActive {
+.job-stages-title-trigger.glide__bullet--active {
   font-weight: 600;
   font-size: 2.6041666667vw;
   line-height: 2.6041666667vw;
 }
 
-.job-stages-title-trigger.isActive:after {
+.job-stages-title-trigger.glide__bullet--active:after {
   left: 0;
   right: 0;
 }
@@ -9001,7 +9010,7 @@ html:root body.posts .post_info__code--in {
   white-space: nowrap;
 }
 
-.job-stages.mobile .job-stages-title-trigger.isActive {
+.job-stages.mobile .job-stages-title-trigger.glide__bullet--active {
   font-size: 18px;
   line-height: 1.2;
 }
@@ -9092,10 +9101,6 @@ html:root body.posts .post_info__code--in {
   line-height: 2.6041666667vw;
   padding-right: 3.90625vw;
   white-space: initial;
-}
-
-.job-stages:not(.mobile) .job-stages-track {
-  pointer-events: none !important;
 }
 
 .job-stages:not(.mobile) .job-stages-support-right-track,
@@ -16112,7 +16117,7 @@ html.scroll-by-script {
   width: auto;
 }
 
-.job-stages-title-trigger.isActive {
+.job-stages-title-trigger.glide__bullet--active {
   height: 5.5vw;
   display: flex;
   align-items: center;
@@ -16334,6 +16339,25 @@ body.main .main-resume.mobile {
 
 .contacts-page .career-first.mobile {
   padding-bottom: 0;
+}
+
+.job-stages:not(.mobile) .job-stages-slides:not(.job-stages-slides-double) .job-stages-item {
+  align-items: flex-start;
+}
+
+.job-stages:not(.mobile) .job-stages-slides:not(.job-stages-slides-double) .job-stages-item-left {
+  position: relative;
+  align-self: stretch;
+}
+
+.job-stages:not(.mobile) .job-stages-slides:not(.job-stages-slides-double) .job-stages-item-text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  overflow: auto;
+  pointer-events: all;
 }
 
 @media all and (min-width: 481px) {

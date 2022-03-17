@@ -58,6 +58,11 @@
 .napopravku.mobile .napopravku__overlay {
     opacity: 1;
 }
+
+.napopravku:hover .napopravku__image {
+    animation: heartbeat 1s ease infinite;
+}
+
 .napopravku:hover .napopravku__circle,
 .napopravku.mobile .napopravku__circle {
     left: vw(160);
@@ -80,4 +85,33 @@
 .napopravku.mobile .napopravku__medical {
     right: vw(52);
     bottom: vw(146);
+}
+
+
+@keyframes heartbeat
+{
+  0%
+  {
+    transform: translateX(-50%) translateY(-50%) rotate(0deg) scale( .75 );
+  }
+  20%
+  {
+    transform: translateX(-50%) translateY(-50%) rotate(0deg) scale( 1 );
+  }
+  40%
+  {
+    transform: translateX(-50%) translateY(-50%) rotate(0deg) scale( .75 );
+  }
+  60%
+  {
+    transform: translateX(-50%) translateY(-50%) rotate(0deg) scale( 1 );
+  }
+  80%
+  {
+    transform: translateX(-50%) translateY(-50%) rotate(0deg) scale( .75 );
+  }
+  100%
+  {
+    transform: translateX(-50%) translateY(-50%) rotate(0deg) scale( .75 );
+  }
 }

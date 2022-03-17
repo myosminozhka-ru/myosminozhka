@@ -100,14 +100,15 @@ const companyPrinciples = class CompanyPrinciples {
         function chooseElem(index) {
             selectedIndex = index;
             rotateCarousel();
+            clearInterval(interval);
         }
 
         document.addEventListener('click', function(event) {
             if (event.target.dataset.cellIndex) {
-                chooseElem(event.target.dataset.cellIndex - 1)
+                chooseElem(event.target.dataset.cellIndex - 1);
             }
             if (event.target.dataset.textIndex) {
-                chooseElem(event.target.dataset.textIndex - 1)
+                chooseElem(event.target.dataset.textIndex - 1);
             }
         });
 
@@ -115,7 +116,7 @@ const companyPrinciples = class CompanyPrinciples {
         onOrientationChange();
 
 
-        setInterval(() => {
+        var interval = setInterval(() => {
             if (!document.querySelector(`.company-principles-text[data-text-index="${selectedIndex+2}"]`)) {
                 selectedIndex = -1;
             }

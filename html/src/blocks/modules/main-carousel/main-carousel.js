@@ -30,12 +30,15 @@ const mainCarousel = class MainCarousel {
 
 
         function rotateCarousel() {
+            
             self.onCarouselChange();
             var angle = theta * selectedIndex * -1;
             $(`.main-carousel__text-item_gifts .badge`).css({
                 'transform': `translateY(-50%) translateX(50%) rotate(${angle}deg)`
             })
             $(`.main-carousel__text-item_gifts .badge`).text(Math.round(360 / cellCount * (selectedIndex % cellCount)));
+            $(`.main-carousel__grades .from`).text(Math.round(360 / cellCount * (selectedIndex % cellCount)));
+            
             $(`.main-carousel__text-item_gifts .left__in`).css({
                 'transform': `rotate(${angle * -1}deg)`
             })
@@ -70,13 +73,15 @@ const mainCarousel = class MainCarousel {
         var prevButton = document.querySelector('.previous-button');
         prevButton.addEventListener( 'click', function() {
             selectedIndex--;
-            rotateCarousel()
+            rotateCarousel();
+            clearInterval(interval);
         });
 
         var nextButton = document.querySelector('.next-button');
         nextButton.addEventListener( 'click', function() {
             selectedIndex++;
-            rotateCarousel()
+            rotateCarousel();
+            clearInterval(interval);
         });
 
         var cellsRange = document.querySelector('.cells-range');
@@ -129,7 +134,8 @@ const mainCarousel = class MainCarousel {
 
         document.addEventListener('click', function(event) {
             if (event.target.dataset.cellIndex) {
-                chooseElem(event.target.dataset.cellIndex - 1)
+                chooseElem(event.target.dataset.cellIndex - 1);
+                clearInterval(interval);
             }
         });
         var interval = setInterval(function () {
@@ -154,9 +160,11 @@ const mainCarousel = class MainCarousel {
                 if (starCoord > event.clientX) {
                     selectedIndex++;
                     rotateCarousel();
+                    clearInterval(interval);
                 } else {
                     selectedIndex--;
                     rotateCarousel();
+                    clearInterval(interval);
                 }
             })
         }

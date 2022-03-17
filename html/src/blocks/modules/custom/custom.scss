@@ -808,7 +808,7 @@ html.scroll-by-script {
 .header-menu li.has-child .header-phone_modal_in {
     width: auto;
 }
-.job-stages-title-trigger.isActive {
+.job-stages-title-trigger.glide__bullet--active {
     height: 5.5vw;
     display: flex;
     align-items: center;
@@ -1358,4 +1358,24 @@ body.main .main-resume.mobile {
 
 .contacts-page .career-first.mobile {
     padding-bottom: 0;
+}
+
+
+.job-stages:not(.mobile) .job-stages-slides:not(.job-stages-slides-double) {
+    .job-stages-item {
+        align-items: flex-start;
+    }
+    .job-stages-item-left {
+        position: relative;
+        align-self: stretch;
+    }
+    .job-stages-item-text {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        overflow: auto;
+        pointer-events: all;
+    }
 }

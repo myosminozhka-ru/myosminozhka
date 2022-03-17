@@ -250,7 +250,7 @@
             background: #121423;
             border-radius: vw(50);
         }
-        &.isActive {
+        &.glide__bullet--active {
             font-weight: 600;
             font-size: vw(50);
             line-height: vw(50);
@@ -268,7 +268,7 @@
         font-size: 13px;
         line-height: 1.2;
         white-space: nowrap;
-        &.isActive {
+        &.glide__bullet--active {
             font-size: 18px;
             line-height: 1.2;
         }
@@ -347,9 +347,9 @@
         white-space: initial;
         @extend %white;
     }
-    &:not(.mobile) &-track {
-        pointer-events: none !important;
-    }
+    // &:not(.mobile) &-track {
+    //     pointer-events: none !important;
+    // }
     &:not(.mobile) &-support-right-track {
         &, .glide__slides {
             height: 100%;

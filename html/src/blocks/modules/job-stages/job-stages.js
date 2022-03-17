@@ -18,7 +18,7 @@ const jobStages = class jobStages {
                     startAt: 0,
                     perView: 1,
                     gap: 0,
-                    type: 'carousel',
+                    type: 'slider',
                     transitionType: 'fade'
                 })
             }
@@ -30,7 +30,7 @@ const jobStages = class jobStages {
                 startAt: 0,
                 perView: 2,
                 gap: 120,
-                type: 'carousel',
+                type: 'slider',
                 breakpoints: {
                     800: {
                         perView: 1,
@@ -55,7 +55,7 @@ const jobStages = class jobStages {
                 startAt: 0,
                 perView: 2,
                 gap: 120,
-                type: 'carousel',
+                type: 'slider',
                 breakpoints: {
                     800: {
                         perView: 1,

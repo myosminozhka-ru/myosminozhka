@@ -2,25 +2,26 @@
     box-sizing: border-box;
     position: relative;
     &__arrows {
-        position: absolute;
-        bottom: vw(46);
-        right: 0;
+        // position: absolute;
+        // bottom: vw(46);
+        // right: 0;
         display: flex;
         align-items: center;
         z-index: 20;
-        display: none !important;
+        // display: none !important;
+        margin-top: vw(86);
     }
     &__arrow {
-        width: vw(86);
+        width: vw(101);
         height: vw(38);
+        font-size: 0;
         cursor: pointer;
         svg {
             fill: #A0A0A0;
             transition: all .3s ease;
         }
-        &--prev {
+        &--next {
             transform: rotate(180deg);
-            margin-right: vw(95);
         }
         &:hover {
             svg {
@@ -39,6 +40,13 @@
     &.mobile {
         padding: 50px 20px;
         z-index: 8;
+    }
+    &__grades {
+        margin: 0 vw(23);
+        font-weight: 700;
+        font-size: vw(30);
+        line-height: vw(50);
+        color: #121423;
     }
     &__title {
         font-family: "Montserrat";
@@ -60,6 +68,7 @@
     &:not(.mobile) &__body {
         display: flex;
         align-items: center;
+        position: relative;
     }
     &.mobile &__body {}
     // .carousel-options {
@@ -74,14 +83,16 @@
     }
     &:not(.mobile) &-scene {
         position: absolute;
-        bottom: 0;
+        top: 50%;
         width: vw(515);
         height: vw(688);
+        left: vw(173);
+        transform: translateY(-50%);
     }
     &.mobile &-scene {
         width: 70%;
         height: 356px;
-        margin-bottom: 54px;
+        margin: 0 auto 54px;
     }
     &-carousel {
         position: absolute;
@@ -259,6 +270,7 @@
     }
 
     &__text-item_gifts {
+        display: none !important;
         pointer-events: none;
         .gift {
             .gift_in {

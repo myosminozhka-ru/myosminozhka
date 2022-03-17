@@ -15,11 +15,11 @@
     // transition: all .6s ease;
 }
 .right_leg {
-    transform: translateY(100%);
+    transform: translateY(-100%);
     transition: transform .3s ease;
 }
 .center_leg {
-    transform: translateY(-100%) translateX(-100%);
+    transform: translateY(100%);
     transition: .3s transform .3s ease;
 }
 .left_leg {
@@ -35,7 +35,7 @@
     transition: .6s transform 1.2s ease;
 }
 .intacto:hover .center_leg {
-    transform: translateY(0) translateX(0);
+    transform: translateY(0);
     transition: .6s transform .6s ease;
 }
 .intacto:hover .left_leg {
