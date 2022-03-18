@@ -15,7 +15,7 @@ const companyVideo = class companyVideo {
                 muted: true,
                 // poster: '../local/img/video_preview.png',
                 sources: [{
-                    src: '../local/videos/pl1.mp4',
+                    src: '../local/videos/pl1.mkv',
                     type: 'video/mp4'
                 }]
             });
