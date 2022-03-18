@@ -911,54 +911,290 @@ var companyVideo = /*#__PURE__*/function () {
     value: function init() {
       var _this = this;
 
-      if (!document.getElementById('player')) return;
-      setTimeout(function () {
-        _this.player = document.getElementById('player');
-        Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player', {
-          fluid: true,
-          controls: false,
-          autoplay: true,
-          aspectRatio: '16:9',
-          muted: true,
-          poster: '../local/img/video_preview.png',
-          sources: [{
-            src: '../local/videos/pv.mp4',
-            type: 'video/mp4'
-          }]
-        });
-      }, 300);
-      if (!document.getElementById('player2')) return;
-      setTimeout(function () {
-        _this.player = document.getElementById('player2');
-        Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player2', {
-          fluid: true,
-          controls: false,
-          autoplay: true,
-          aspectRatio: '16:9',
-          muted: true,
-          poster: '../local/img/video_preview.png',
-          sources: [{
-            src: '../local/videos/pv.mp4',
-            type: 'video/mp4'
-          }]
-        });
-      }, 300);
-      if (!document.getElementById('player3')) return;
-      setTimeout(function () {
-        _this.player = document.getElementById('player3');
-        Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player3', {
-          fluid: true,
-          controls: false,
-          autoplay: true,
-          aspectRatio: '16:9',
-          muted: true,
-          poster: '../local/img/video_preview.png',
-          sources: [{
-            src: '../local/videos/pv.mp4',
-            type: 'video/mp4'
-          }]
-        });
-      }, 300);
+      if (document.querySelector('#player')) {
+        if (!document.getElementById('player')) return;
+        setTimeout(function () {
+          _this.player = document.getElementById('player');
+          Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player', {
+            fluid: true,
+            controls: false,
+            autoplay: true,
+            aspectRatio: '16:9',
+            muted: true,
+            // poster: '../local/img/video_preview.png',
+            sources: [{
+              src: '../local/videos/pl1.mkv',
+              type: 'video/mp4'
+            }]
+          });
+        }, 300);
+      }
+
+      if (document.querySelector('#player2')) {
+        if (!document.getElementById('player2')) return;
+        setTimeout(function () {
+          _this.player = document.getElementById('player2');
+          Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player2', {
+            fluid: true,
+            controls: false,
+            autoplay: true,
+            aspectRatio: '16:9',
+            muted: true,
+            // poster: '../local/img/video_preview.png',
+            sources: [{
+              src: '../local/videos/pl2.mkv',
+              type: 'video/mp4'
+            }]
+          });
+        }, 300);
+      }
+
+      if (document.querySelector('#player3')) {
+        if (!document.getElementById('player3')) return;
+        setTimeout(function () {
+          _this.player = document.getElementById('player3');
+          Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player3', {
+            fluid: true,
+            controls: false,
+            autoplay: true,
+            aspectRatio: '16:9',
+            muted: true,
+            // poster: '../local/img/video_preview.png',
+            sources: [{
+              src: '../local/videos/pl3.mkv',
+              type: 'video/mp4'
+            }]
+          });
+        }, 300);
+      }
+
+      if (document.querySelector('#player4')) {
+        if (!document.getElementById('player4')) return;
+        setTimeout(function () {
+          _this.player = document.getElementById('player4');
+          Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player4', {
+            fluid: true,
+            controls: false,
+            autoplay: true,
+            aspectRatio: '16:9',
+            muted: true,
+            // poster: '../local/img/video_preview.png',
+            sources: [{
+              src: '../local/videos/pl4.mkv',
+              type: 'video/mp4'
+            }]
+          });
+        }, 300);
+      }
+
+      if (document.querySelector('#player5')) {
+        if (!document.getElementById('player5')) return;
+        setTimeout(function () {
+          _this.player = document.getElementById('player5');
+          Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player5', {
+            fluid: true,
+            controls: false,
+            autoplay: true,
+            aspectRatio: '16:9',
+            muted: true,
+            // poster: '../local/img/video_preview.png',
+            sources: [{
+              src: '../local/videos/pl5.mkv',
+              type: 'video/mp4'
+            }]
+          });
+        }, 300);
+      }
+
+      if (document.querySelector('#player7')) {
+        if (!document.getElementById('player7')) return;
+        setTimeout(function () {
+          _this.player = document.getElementById('player7');
+          Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player7', {
+            fluid: true,
+            controls: false,
+            autoplay: true,
+            aspectRatio: '16:9',
+            muted: true,
+            // poster: '../local/img/video_preview.png',
+            sources: [{
+              src: '../local/videos/pl7.mkv',
+              type: 'video/mp4'
+            }]
+          });
+        }, 300);
+      }
+
+      if (document.querySelector('#player8')) {
+        if (!document.getElementById('player8')) return;
+        setTimeout(function () {
+          _this.player = document.getElementById('player8');
+          Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player8', {
+            fluid: true,
+            controls: false,
+            autoplay: true,
+            aspectRatio: '16:9',
+            muted: true,
+            // poster: '../local/img/video_preview.png',
+            sources: [{
+              src: '../local/videos/pl8.mkv',
+              type: 'video/mp4'
+            }]
+          });
+        }, 300);
+      }
+
+      if (document.querySelector('#player9')) {
+        if (!document.getElementById('player9')) return;
+        setTimeout(function () {
+          _this.player = document.getElementById('player9');
+          Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player9', {
+            fluid: true,
+            controls: false,
+            autoplay: true,
+            aspectRatio: '16:9',
+            muted: true,
+            // poster: '../local/img/video_preview.png',
+            sources: [{
+              src: '../local/videos/pl9.mkv',
+              type: 'video/mp4'
+            }]
+          });
+        }, 300);
+      }
+
+      if (document.querySelector('#player10')) {
+        if (!document.getElementById('player10')) return;
+        setTimeout(function () {
+          _this.player = document.getElementById('player10');
+          Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player10', {
+            fluid: true,
+            controls: false,
+            autoplay: true,
+            aspectRatio: '16:9',
+            muted: true,
+            // poster: '../local/img/video_preview.png',
+            sources: [{
+              src: '../local/videos/pl10.mkv',
+              type: 'video/mp4'
+            }]
+          });
+        }, 300);
+      }
+
+      if (document.querySelector('#player11')) {
+        if (!document.getElementById('player11')) return;
+        setTimeout(function () {
+          _this.player = document.getElementById('player11');
+          Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player11', {
+            fluid: true,
+            controls: false,
+            autoplay: true,
+            aspectRatio: '16:9',
+            muted: true,
+            // poster: '../local/img/video_preview.png',
+            sources: [{
+              src: '../local/videos/pl11.mkv',
+              type: 'video/mp4'
+            }]
+          });
+        }, 300);
+      }
+
+      if (document.querySelector('#player12')) {
+        if (!document.getElementById('player12')) return;
+        setTimeout(function () {
+          _this.player = document.getElementById('player12');
+          Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player12', {
+            fluid: true,
+            controls: false,
+            autoplay: true,
+            aspectRatio: '16:9',
+            muted: true,
+            // poster: '../local/img/video_preview.png',
+            sources: [{
+              src: '../local/videos/pl12.mkv',
+              type: 'video/mp4'
+            }]
+          });
+        }, 300);
+      }
+
+      if (document.querySelector('#player13')) {
+        if (!document.getElementById('player13')) return;
+        setTimeout(function () {
+          _this.player = document.getElementById('player13');
+          Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player13', {
+            fluid: true,
+            controls: false,
+            autoplay: true,
+            aspectRatio: '16:9',
+            muted: true,
+            // poster: '../local/img/video_preview.png',
+            sources: [{
+              src: '../local/videos/pl13.mkv',
+              type: 'video/mp4'
+            }]
+          });
+        }, 300);
+      }
+
+      if (document.querySelector('#player14')) {
+        if (!document.getElementById('player14')) return;
+        setTimeout(function () {
+          _this.player = document.getElementById('player14');
+          Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player14', {
+            fluid: true,
+            controls: false,
+            autoplay: true,
+            aspectRatio: '16:9',
+            muted: true,
+            // poster: '../local/img/video_preview.png',
+            sources: [{
+              src: '../local/videos/pl14.mkv',
+              type: 'video/mp4'
+            }]
+          });
+        }, 300);
+      }
+
+      if (document.querySelector('#player15')) {
+        if (!document.getElementById('player15')) return;
+        setTimeout(function () {
+          _this.player = document.getElementById('player15');
+          Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player15', {
+            fluid: true,
+            controls: false,
+            autoplay: true,
+            aspectRatio: '16:9',
+            muted: true,
+            // poster: '../local/img/video_preview.png',
+            sources: [{
+              src: '../local/videos/pl15.mkv',
+              type: 'video/mp4'
+            }]
+          });
+        }, 300);
+      }
+
+      if (document.querySelector('#player16')) {
+        if (!document.getElementById('player16')) return;
+        setTimeout(function () {
+          _this.player = document.getElementById('player16');
+          Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player16', {
+            fluid: true,
+            controls: false,
+            autoplay: true,
+            aspectRatio: '16:9',
+            muted: true,
+            // poster: '../local/img/video_preview.png',
+            sources: [{
+              src: '../local/videos/pl16.mkv',
+              type: 'video/mp4'
+            }]
+          });
+        }, 300);
+      }
     }
   }]);
 
