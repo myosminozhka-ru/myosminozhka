@@ -239,8 +239,14 @@ body:not(.main) .wrapper:not(.services-page):not(.internet-marketing-page):not(.
 .news-and-trends-item-blue {
     border: 0.26042vw solid #006ECC;
 }
-.news-and-trends-button__purple {
+.news-and-trends-button__purple,
+a.news-and-trends-button__purple {
     border-color: #9958A2 !important;
+    text-decoration: none !important;
+    display: block;
+}
+a.news-and-trends-button__purple:hover {
+    color: #9958A2 !important;
 }
 .news-and-trends-item-purple {
     border: 0.26042vw solid #9958A2;
@@ -1378,4 +1384,20 @@ body.main .main-resume.mobile {
         overflow: auto;
         pointer-events: all;
     }
+}
+
+
+.internet-marketing-page .career-first:not(.mobile) .career-first-title {
+    white-space: normal;
+    width: 100%;
+}
+.header-mobile-menu > ul {
+    max-height: 100%;
+}
+.company-page .career-blog:not(.mobile) .career-blog-buttons-left {
+    display: flex;
+    align-items: center;
+}
+.news-item-page .blog-item-button {
+    display: inline-block;
 }
