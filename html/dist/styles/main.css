@@ -15117,6 +15117,12 @@ body.company .company-ceo:not(.mobile) {
   background: #121423 !important;
 }
 
+.englex .vid_mal .company-video img {
+  border: 10px solid #FFFFFF;
+  filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
+  border-radius: 20px;
+}
+
 .englex .case_page__about--work {
   padding-top: 0;
 }
@@ -19214,6 +19220,12 @@ body.main .main-resume.mobile {
 
   .englex .blocks_pic__pics:nth-child(odd) .blocks_pic__img:last-child {
     margin-right: 0;
+  }
+
+  .englex .vid_mal .company-video img {
+    border: 5px solid #FFFFFF;
+    filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
+    border-radius: 5px;
   }
 
   .englex .hide_mob {

@@ -291,6 +291,13 @@
         li:before {
             background: #121423 !important;
         }
+        .company-video {
+            img {
+                border: 10px solid #FFFFFF;
+                filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
+                border-radius: 20px;
+            }
+        }
     }
     .case_page__about--work {
         padding-top: 0;
@@ -472,6 +479,15 @@
         border-radius: 20px;
     }
     @media all and (max-width: 1023px) {
+        .vid_mal {
+            .company-video {
+                img {
+                    border: 5px solid #FFFFFF;
+                    filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
+                    border-radius: 5px;
+                }
+            }
+        }
         .hide_mob {
             display: block;
             margin-top: 5px;
