@@ -23,7 +23,7 @@ const companyVideo = class companyVideo {
         if (!document.getElementById('player2')) return;
         setTimeout(() => {
             this.player = document.getElementById('player2');
-            videojs('player2', {
+            videojs('player', {
                 fluid: true,
                 controls: false,
                 autoplay: true,
@@ -39,7 +39,7 @@ const companyVideo = class companyVideo {
         if (!document.getElementById('player3')) return;
         setTimeout(() => {
             this.player = document.getElementById('player3');
-            videojs('player3', {
+            videojs('player', {
                 fluid: true,
                 controls: false,
                 autoplay: true,
@@ -55,7 +55,7 @@ const companyVideo = class companyVideo {
         if (!document.getElementById('player4')) return;
         setTimeout(() => {
             this.player = document.getElementById('player4');
-            videojs('player4', {
+            videojs('player', {
                 fluid: true,
                 controls: false,
                 autoplay: true,
@@ -71,7 +71,7 @@ const companyVideo = class companyVideo {
         if (!document.getElementById('player5')) return;
         setTimeout(() => {
             this.player = document.getElementById('player5');
-            videojs('player5', {
+            videojs('player', {
                 fluid: true,
                 controls: false,
                 autoplay: true,
@@ -87,7 +87,7 @@ const companyVideo = class companyVideo {
         if (!document.getElementById('player7')) return;
         setTimeout(() => {
             this.player = document.getElementById('player7');
-            videojs('player7', {
+            videojs('player', {
                 fluid: true,
                 controls: false,
                 autoplay: true,
@@ -103,7 +103,7 @@ const companyVideo = class companyVideo {
         if (!document.getElementById('player8')) return;
         setTimeout(() => {
             this.player = document.getElementById('player8');
-            videojs('player8', {
+            videojs('player', {
                 fluid: true,
                 controls: false,
                 autoplay: true,
@@ -119,7 +119,7 @@ const companyVideo = class companyVideo {
         if (!document.getElementById('player9')) return;
         setTimeout(() => {
             this.player = document.getElementById('player9');
-            videojs('player9', {
+            videojs('player', {
                 fluid: true,
                 controls: false,
                 autoplay: true,
@@ -135,7 +135,7 @@ const companyVideo = class companyVideo {
         if (!document.getElementById('player10')) return;
         setTimeout(() => {
             this.player = document.getElementById('player10');
-            videojs('player10', {
+            videojs('player', {
                 fluid: true,
                 controls: false,
                 autoplay: true,
@@ -151,7 +151,7 @@ const companyVideo = class companyVideo {
         if (!document.getElementById('player11')) return;
         setTimeout(() => {
             this.player = document.getElementById('player11');
-            videojs('player11', {
+            videojs('player', {
                 fluid: true,
                 controls: false,
                 autoplay: true,
@@ -167,7 +167,7 @@ const companyVideo = class companyVideo {
         if (!document.getElementById('player12')) return;
         setTimeout(() => {
             this.player = document.getElementById('player12');
-            videojs('player12', {
+            videojs('player', {
                 fluid: true,
                 controls: false,
                 autoplay: true,
@@ -183,7 +183,7 @@ const companyVideo = class companyVideo {
         if (!document.getElementById('player13')) return;
         setTimeout(() => {
             this.player = document.getElementById('player13');
-            videojs('player13', {
+            videojs('player', {
                 fluid: true,
                 controls: false,
                 autoplay: true,
@@ -199,7 +199,7 @@ const companyVideo = class companyVideo {
         if (!document.getElementById('player14')) return;
         setTimeout(() => {
             this.player = document.getElementById('player14');
-            videojs('player14', {
+            videojs('player', {
                 fluid: true,
                 controls: false,
                 autoplay: true,
@@ -215,7 +215,7 @@ const companyVideo = class companyVideo {
         if (!document.getElementById('player15')) return;
         setTimeout(() => {
             this.player = document.getElementById('player15');
-            videojs('player15', {
+            videojs('player', {
                 fluid: true,
                 controls: false,
                 autoplay: true,
@@ -231,7 +231,7 @@ const companyVideo = class companyVideo {
         if (!document.getElementById('player16')) return;
         setTimeout(() => {
             this.player = document.getElementById('player16');
-            videojs('player16', {
+            videojs('player', {
                 fluid: true,
                 controls: false,
                 autoplay: true,

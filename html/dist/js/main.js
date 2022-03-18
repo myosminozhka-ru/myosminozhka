@@ -930,7 +930,7 @@ var companyVideo = /*#__PURE__*/function () {
       if (!document.getElementById('player2')) return;
       setTimeout(function () {
         _this.player = document.getElementById('player2');
-        Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player2', {
+        Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player', {
           fluid: true,
           controls: false,
           autoplay: true,
@@ -946,7 +946,7 @@ var companyVideo = /*#__PURE__*/function () {
       if (!document.getElementById('player3')) return;
       setTimeout(function () {
         _this.player = document.getElementById('player3');
-        Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player3', {
+        Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player', {
           fluid: true,
           controls: false,
           autoplay: true,
@@ -962,7 +962,7 @@ var companyVideo = /*#__PURE__*/function () {
       if (!document.getElementById('player4')) return;
       setTimeout(function () {
         _this.player = document.getElementById('player4');
-        Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player4', {
+        Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player', {
           fluid: true,
           controls: false,
           autoplay: true,
@@ -978,7 +978,7 @@ var companyVideo = /*#__PURE__*/function () {
       if (!document.getElementById('player5')) return;
       setTimeout(function () {
         _this.player = document.getElementById('player5');
-        Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player5', {
+        Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player', {
           fluid: true,
           controls: false,
           autoplay: true,
@@ -994,7 +994,7 @@ var companyVideo = /*#__PURE__*/function () {
       if (!document.getElementById('player7')) return;
       setTimeout(function () {
         _this.player = document.getElementById('player7');
-        Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player7', {
+        Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player', {
           fluid: true,
           controls: false,
           autoplay: true,
@@ -1010,7 +1010,7 @@ var companyVideo = /*#__PURE__*/function () {
       if (!document.getElementById('player8')) return;
       setTimeout(function () {
         _this.player = document.getElementById('player8');
-        Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player8', {
+        Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player', {
           fluid: true,
           controls: false,
           autoplay: true,
@@ -1026,7 +1026,7 @@ var companyVideo = /*#__PURE__*/function () {
       if (!document.getElementById('player9')) return;
       setTimeout(function () {
         _this.player = document.getElementById('player9');
-        Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player9', {
+        Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player', {
           fluid: true,
           controls: false,
           autoplay: true,
@@ -1042,7 +1042,7 @@ var companyVideo = /*#__PURE__*/function () {
       if (!document.getElementById('player10')) return;
       setTimeout(function () {
         _this.player = document.getElementById('player10');
-        Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player10', {
+        Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player', {
           fluid: true,
           controls: false,
           autoplay: true,
@@ -1058,7 +1058,7 @@ var companyVideo = /*#__PURE__*/function () {
       if (!document.getElementById('player11')) return;
       setTimeout(function () {
         _this.player = document.getElementById('player11');
-        Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player11', {
+        Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player', {
           fluid: true,
           controls: false,
           autoplay: true,
@@ -1074,7 +1074,7 @@ var companyVideo = /*#__PURE__*/function () {
       if (!document.getElementById('player12')) return;
       setTimeout(function () {
         _this.player = document.getElementById('player12');
-        Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player12', {
+        Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player', {
           fluid: true,
           controls: false,
           autoplay: true,
@@ -1090,7 +1090,7 @@ var companyVideo = /*#__PURE__*/function () {
       if (!document.getElementById('player13')) return;
       setTimeout(function () {
         _this.player = document.getElementById('player13');
-        Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player13', {
+        Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player', {
           fluid: true,
           controls: false,
           autoplay: true,
@@ -1106,7 +1106,7 @@ var companyVideo = /*#__PURE__*/function () {
       if (!document.getElementById('player14')) return;
       setTimeout(function () {
         _this.player = document.getElementById('player14');
-        Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player14', {
+        Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player', {
           fluid: true,
           controls: false,
           autoplay: true,
@@ -1122,7 +1122,7 @@ var companyVideo = /*#__PURE__*/function () {
       if (!document.getElementById('player15')) return;
       setTimeout(function () {
         _this.player = document.getElementById('player15');
-        Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player15', {
+        Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player', {
           fluid: true,
           controls: false,
           autoplay: true,
@@ -1138,7 +1138,7 @@ var companyVideo = /*#__PURE__*/function () {
       if (!document.getElementById('player16')) return;
       setTimeout(function () {
         _this.player = document.getElementById('player16');
-        Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player16', {
+        Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player', {
           fluid: true,
           controls: false,
           autoplay: true,
