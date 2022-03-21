@@ -1078,6 +1078,9 @@
             @media all and (max-width: 1023px) {
                 padding-top: 0 !important;
             }
+            img {
+                border-radius: 50%;
+            }
         }
         &--wblock {
             margin-bottom: vw(111);
