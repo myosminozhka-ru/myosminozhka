@@ -11837,10 +11837,6 @@ body.company .company-ceo:not(.mobile) {
   flex: none;
 }
 
-.case_page__about--r {
-  margin-bottom: -8px;
-}
-
 .case_page__case {
   margin-bottom: 10.9375vw;
   background: #121423;
