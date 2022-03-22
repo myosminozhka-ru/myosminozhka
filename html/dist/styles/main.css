@@ -19793,6 +19793,10 @@ body.main .main-resume.mobile {
     z-index: 1;
   }
 
+  .case_tabs_new .job-stages-item-text {
+    background: transparent;
+  }
+
   .case_frst__title {
     padding-left: 0;
     padding-right: 0;
