@@ -243,7 +243,7 @@ body:not(.main) .wrapper:not(.services-page):not(.internet-marketing-page):not(.
 a.news-and-trends-button__purple {
     border-color: #9958A2 !important;
     text-decoration: none !important;
-    display: block;
+    display: inline-block;
 }
 a.news-and-trends-button__purple:hover {
     color: #9958A2 !important;
@@ -487,6 +487,16 @@ header.header.mobile ul.header-lang {
 .job-stages-support-left.mobile .web-slider-arrows {
     display: none;
 }
+.job-stages-support:not(.mobile) {
+    padding-right: 0;
+}
+.job-stages-management:not(.mobile) {
+    margin-right: vw(-50);
+}
+.cases__wrapper:not(.mobile) .cases-items-buttons {
+    display: flex;
+    align-items: center;
+}
 /* .company .company-partners:not(.mobile) {
     padding-top: 6.3125vw;
 } */
@@ -502,6 +512,10 @@ header.header.mobile ul.header-lang {
 .career-first:not(.mobile) .career-first-title {
     font-size: 11vw;
     line-height: 11vw;
+}
+.career-blog:not(.mobile) .career-blog-buttons-left {
+    align-items: center;
+    display: flex;
 }
 .header-menu {
     align-self: stretch;
@@ -1400,4 +1414,15 @@ body.main .main-resume.mobile {
 }
 .news-item-page .blog-item-button {
     display: inline-block;
+}
+.career-blog:not(.mobile) {
+    @media all and (max-width: 1100px) and (min-width: 1000px) {
+        padding-bottom: 16.979167vw;
+    } 
+}
+
+
+.blog-item-text p > a.button:hover {
+    background: #fff !important;
+    color: #FF4978 !important;
 }
