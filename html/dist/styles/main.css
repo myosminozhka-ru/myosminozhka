@@ -19788,6 +19788,11 @@ body.main .main-resume.mobile {
 }
 
 @media (max-width: 1023px) {
+  .case_page .job-stages-slide {
+    position: relative;
+    z-index: 1;
+  }
+
   .case_frst__title {
     padding-left: 0;
     padding-right: 0;
@@ -19824,7 +19829,7 @@ body.main .main-resume.mobile {
   .case_tabs_new {
     padding-left: 20px;
     padding-right: 20px;
-    background: url("../img/bg_mob.png") 0 0 no-repeat, linear-gradient(180deg, #121423 37%, white 14.8958333333vw, white 155px);
+    background: url("../img/bg_mob.png") 0 0 no-repeat, linear-gradient(180deg, #121423 38%, white 14.8958333333vw, white 155px);
   }
 
   .case_page__about--l {

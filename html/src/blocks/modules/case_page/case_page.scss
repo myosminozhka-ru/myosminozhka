@@ -1490,6 +1490,10 @@
     }
 }
 @media (max-width: 1023px) {
+    .case_page .job-stages-slide {
+        position: relative;
+        z-index: 1;
+    }
     .case_frst__title {
         padding-left: 0;
         padding-right: 0;
@@ -1520,7 +1524,7 @@
     .case_tabs_new {
         padding-left: 20px;
         padding-right: 20px;
-        background: url("../img/bg_mob.png") 0 0 no-repeat, linear-gradient(180deg, #121423 37%, rgba(255,255,255,1) vw(286), rgba(255,255,255,1) 155px);
+        background: url("../img/bg_mob.png") 0 0 no-repeat, linear-gradient(180deg, #121423 38%, rgba(255,255,255,1) vw(286), rgba(255,255,255,1) 155px);
     }
     .case_page__about--l {
         max-width: 65px;
