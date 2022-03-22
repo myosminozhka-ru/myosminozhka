@@ -60,11 +60,9 @@ body.company .company-ceo:not(.mobile) {
     }
     &:not(.mobile) &-item {
         padding: vw(135) vw(153) vw(235);
+        background: #0e0f1a;
         &.glide__slide--active + .company-partners-item {
             background: #fff;
-        }
-        &.glide__slide--active {
-            background: #0e0f1a;
         }
     }
     &-item-title {

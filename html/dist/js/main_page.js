@@ -603,7 +603,9 @@ var header = /*#__PURE__*/function () {
   }, {
     key: "closePhonesModal",
     value: function closePhonesModal() {
-      this.isPhonesOpened = false;
+      if (window.innerWidth > 1023) {
+        this.isPhonesOpened = false;
+      }
     }
   }, {
     key: "init",
@@ -669,12 +671,11 @@ var header = /*#__PURE__*/function () {
   }, {
     key: "onInit",
     value: function onInit() {
-      if (!document.querySelector('.header-mobile-menu')) return;
-      jquery__WEBPACK_IMPORTED_MODULE_1___default()('.header-mobile-menu .has-child > a').on('click', function (event) {
-        event.preventDefault();
-        console.log(jquery__WEBPACK_IMPORTED_MODULE_1___default()(this), jquery__WEBPACK_IMPORTED_MODULE_1___default()(this).siblings('.header-phone_modal'));
-        jquery__WEBPACK_IMPORTED_MODULE_1___default()(this).siblings('.header-phone_modal').slideToggle();
-      });
+      if (!document.querySelector('.header-mobile-menu')) return; // $('.header-mobile-menu .has-child > a').on('click', function (event) {
+      //     event.preventDefault();
+      //     console.log($(this), $(this).siblings('.header-phone_modal'))
+      //     // $(this).siblings('.header-phone_modal').slideToggle();
+      // })
     }
   }, {
     key: "logoAnimationComplete",
@@ -956,6 +957,12 @@ var mainCarousel = /*#__PURE__*/function () {
         });
         jquery__WEBPACK_IMPORTED_MODULE_2___default()(".main-carousel__text-item_gifts .badge").text(Math.round(360 / cellCount * (selectedIndex % cellCount)));
         jquery__WEBPACK_IMPORTED_MODULE_2___default()(".main-carousel__grades .from").text(Math.round(360 / cellCount * (selectedIndex % cellCount)));
+
+        if (Math.round(360 / cellCount * (selectedIndex % cellCount)) < 0) {
+          console.log('minus');
+          jquery__WEBPACK_IMPORTED_MODULE_2___default()(".main-carousel__grades .from").text(Math.round(360 / cellCount * (selectedIndex % cellCount)) * -1);
+        }
+
         jquery__WEBPACK_IMPORTED_MODULE_2___default()(".main-carousel__text-item_gifts .left__in").css({
           'transform': "rotate(".concat(angle * -1, "deg)")
         });
@@ -964,7 +971,11 @@ var mainCarousel = /*#__PURE__*/function () {
         document.querySelectorAll(".main-carousel__text-item_titles .title").forEach(function (item) {
           item.classList.remove('isActive');
         });
-        document.querySelector(".main-carousel__text-item_titles .title[data-title-id=\"".concat(selectedIndex % cellCount + 1, "\"]")).classList.add('isActive');
+
+        if (document.querySelector(".main-carousel__text-item_titles .title[data-title-id=\"".concat(selectedIndex % cellCount + 1, "\"]"))) {
+          document.querySelector(".main-carousel__text-item_titles .title[data-title-id=\"".concat(selectedIndex % cellCount + 1, "\"]")).classList.add('isActive');
+        }
+
         gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(document.querySelectorAll(".main-carousel__text-item_titles"), {
           height: maxTitlesHeight
         });
@@ -972,7 +983,11 @@ var mainCarousel = /*#__PURE__*/function () {
           item.classList.remove('isActive');
         });
         console.log('index is', selectedIndex % cellCount + 1);
-        document.querySelector(".main-carousel__text-item_texts .text[data-text-id=\"".concat(selectedIndex % cellCount + 1, "\"]")).classList.add('isActive');
+
+        if (document.querySelector(".main-carousel__text-item_texts .text[data-text-id=\"".concat(selectedIndex % cellCount + 1, "\"]"))) {
+          document.querySelector(".main-carousel__text-item_texts .text[data-text-id=\"".concat(selectedIndex % cellCount + 1, "\"]")).classList.add('isActive');
+        }
+
         gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(document.querySelectorAll(".main-carousel__text-item_texts"), {
           height: maxTextsHeight
         });
