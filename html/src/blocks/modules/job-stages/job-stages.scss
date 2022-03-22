@@ -31,6 +31,8 @@
         overflow: auto;
         justify-content: flex-start;
         padding: 20px;
+        box-sizing: border-box;
+        max-width: 100%;
         &::-webkit-scrollbar {
             height: 0;
         }
@@ -174,6 +176,10 @@
     }
     &-item {
         display: flex;
+        &:not(.glide__slide--active) {
+            padding: 0 5px;
+            box-sizing: border-box;
+        }
     }
     &-item-left {
         width: vw(980);
@@ -193,6 +199,7 @@
         font-size: vw(30);
         line-height: vw(50);
         color: $bgColor;
+        background: #fff;
         p {
             margin: 0;
             &:not(:last-child) {
@@ -252,8 +259,8 @@
         }
         &.glide__bullet--active {
             font-weight: 600;
-            font-size: vw(50);
-            line-height: vw(50);
+            font-size: vw(28);
+            line-height: vw(28);
             &:after {
                 @extend %transition;
                 left: 0;
@@ -274,11 +281,14 @@
         }
     }
     &-support {
-        padding: vw(240) vw(50);
+        padding: vw(240) vw(50) vw(240) 0;
         margin: 0 vw(-50);
         background: $bgColor;
         display: flex;
         position: relative;
+        &:not(.mobile) {
+            background-color: #fff;
+        }
         &.mobile {
             padding: 0 0 20px 0;
             box-sizing: border-box;
@@ -292,7 +302,7 @@
         left: 0;
         right: 0;
         top: 0;
-        height: vw(241);
+        height: vw(242);
         background: #fff url('../img/svg/support_top.svg') 0 math.div(0, calc(100% - 50vw)) no-repeat;
     }
     &:not(.mobile) &-support::after {
@@ -301,13 +311,20 @@
         position: absolute;
         left: 0;
         right: 0;
-        bottom: -1px;
-        height: vw(241);
+        bottom: 1px;
+        height: vw(242);
         transform: rotateX(180deg);
         background: #fff url('../img/svg/support_top.svg') 0 math.div(0, calc(100% - 50vw)) no-repeat;
     }
     &-support-left {
         width: calc(100% - #{vw(977)});
+        &:not(.mobile) {
+            position: relative;
+            z-index: 10;
+            background: #121423;
+            padding-left: vw(50);
+            box-sizing: border-box;
+        }
         .job-stages-trigger {
             border-color: #fff;
             margin: vw(-100) 0 vw(70);
@@ -354,6 +371,9 @@
         &, .glide__slides {
             height: 100%;
         }
+    }
+    &.mobile &-track .glide__slides {
+        align-items: flex-start;
     }
     &:not(.mobile) &-support-right-item {
         height: 100%;

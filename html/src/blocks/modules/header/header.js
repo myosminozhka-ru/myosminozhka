@@ -16,7 +16,9 @@ const header = class Header {
         this.isPhonesOpened = !this.isPhonesOpened;
     }
     closePhonesModal() {
-        this.isPhonesOpened = false;
+        if (window.innerWidth > 1023) {
+            this.isPhonesOpened = false;
+        }
     }
     init() {
         gsap.to('.header-logo', {
@@ -74,11 +76,11 @@ const header = class Header {
     }
     onInit() {
         if (!document.querySelector('.header-mobile-menu')) return;
-        $('.header-mobile-menu .has-child > a').on('click', function (event) {
-            event.preventDefault();
-            console.log($(this), $(this).siblings('.header-phone_modal'))
-            $(this).siblings('.header-phone_modal').slideToggle();
-        })
+        // $('.header-mobile-menu .has-child > a').on('click', function (event) {
+        //     event.preventDefault();
+        //     console.log($(this), $(this).siblings('.header-phone_modal'))
+        //     // $(this).siblings('.header-phone_modal').slideToggle();
+        // })
     }
     logoAnimationComplete() {}
     headerInAnimationComplete() {}

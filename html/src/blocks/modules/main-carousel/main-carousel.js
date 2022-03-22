@@ -38,7 +38,10 @@ const mainCarousel = class MainCarousel {
             })
             $(`.main-carousel__text-item_gifts .badge`).text(Math.round(360 / cellCount * (selectedIndex % cellCount)));
             $(`.main-carousel__grades .from`).text(Math.round(360 / cellCount * (selectedIndex % cellCount)));
-            
+            if (Math.round(360 / cellCount * (selectedIndex % cellCount)) < 0) {
+                console.log('minus');
+                $(`.main-carousel__grades .from`).text(Math.round(360 / cellCount * (selectedIndex % cellCount)) * -1 );
+            }
             $(`.main-carousel__text-item_gifts .left__in`).css({
                 'transform': `rotate(${angle * -1}deg)`
             })
@@ -48,7 +51,9 @@ const mainCarousel = class MainCarousel {
             document.querySelectorAll(`.main-carousel__text-item_titles .title`).forEach(item => {
                 item.classList.remove('isActive');
             })
-            document.querySelector(`.main-carousel__text-item_titles .title[data-title-id="${(selectedIndex % cellCount) + 1}"]`).classList.add('isActive');
+            if (document.querySelector(`.main-carousel__text-item_titles .title[data-title-id="${(selectedIndex % cellCount) + 1}"]`)) {
+                document.querySelector(`.main-carousel__text-item_titles .title[data-title-id="${(selectedIndex % cellCount) + 1}"]`).classList.add('isActive');
+            }
             gsap.to(document.querySelectorAll(`.main-carousel__text-item_titles`), {
                 height: maxTitlesHeight
             }) 
@@ -56,7 +61,9 @@ const mainCarousel = class MainCarousel {
                 item.classList.remove('isActive');
             })
             console.log('index is', (selectedIndex % cellCount) + 1);
-            document.querySelector(`.main-carousel__text-item_texts .text[data-text-id="${(selectedIndex % cellCount) + 1}"]`).classList.add('isActive');
+            if (document.querySelector(`.main-carousel__text-item_texts .text[data-text-id="${(selectedIndex % cellCount) + 1}"]`)) {
+                document.querySelector(`.main-carousel__text-item_texts .text[data-text-id="${(selectedIndex % cellCount) + 1}"]`).classList.add('isActive');
+            }
             gsap.to(document.querySelectorAll(`.main-carousel__text-item_texts`), {
                 height: maxTextsHeight
             })

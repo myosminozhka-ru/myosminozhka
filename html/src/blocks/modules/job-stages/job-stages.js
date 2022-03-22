@@ -28,7 +28,7 @@ const jobStages = class jobStages {
         if (document.querySelector('.job-stages-slides--3')) {
             new Glide('.job-stages-slides--3', {
                 startAt: 0,
-                perView: 2,
+                perView: 1,
                 gap: 120,
                 type: 'slider',
                 breakpoints: {
@@ -53,7 +53,7 @@ const jobStages = class jobStages {
         if (document.querySelector('.job-stages-slides--1')) {
             new Glide('.job-stages-slides--1', {
                 startAt: 0,
-                perView: 2,
+                perView: 1,
                 gap: 120,
                 type: 'slider',
                 breakpoints: {
