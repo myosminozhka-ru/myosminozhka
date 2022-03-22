@@ -11751,6 +11751,10 @@ body.company .company-ceo:not(.mobile) {
   padding-top: 9.6875vw;
 }
 
+.case_page__about--work img {
+  border-radius: 50%;
+}
+
 .case_page__about--wblock {
   margin-bottom: 5.78125vw;
   padding-left: 20px;
@@ -11831,10 +11835,6 @@ body.company .company-ceo:not(.mobile) {
   width: 100%;
   margin-right: 20px;
   flex: none;
-}
-
-.case_page__about--r {
-  margin-bottom: -8px;
 }
 
 .case_page__case {
