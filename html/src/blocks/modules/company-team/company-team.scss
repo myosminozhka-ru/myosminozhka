@@ -315,7 +315,7 @@
             }
         }
         &--name {
-            font-family: 'Montserrat' serif;
+            font-family: 'Montserrat', serif;
             font-style: normal;
             font-weight: 700;
             font-size: vw(30);
@@ -323,9 +323,17 @@
             color: #FFFFFF;
             line-height: 140%;
             margin-bottom: vw(10);
+            max-width: 200px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         &--position {
-            font-family: 'Montserrat' serif;
+            font-family: 'Montserrat', serif;
             font-style: normal;
             font-weight: 400;
             font-size: vw(25);

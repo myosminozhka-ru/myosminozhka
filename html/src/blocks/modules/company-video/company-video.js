@@ -16,7 +16,7 @@ const companyVideo = class companyVideo {
                     muted: true,
                     // poster: '../local/img/video_preview.png',
                     sources: [{
-                        src: '../local/videos/pl1.mkv',
+                        src: '../local/videos/pl1.mp4',
                         type: 'video/mp4'
                     }]
                 });
@@ -34,7 +34,7 @@ const companyVideo = class companyVideo {
                     muted: true,
                     // poster: '../local/img/video_preview.png',
                     sources: [{
-                        src: '../local/videos/pl2.mkv',
+                        src: '../local/videos/pl2.mp4',
                         type: 'video/mp4'
                     }]
                 });
@@ -52,7 +52,7 @@ const companyVideo = class companyVideo {
                     muted: true,
                     // poster: '../local/img/video_preview.png',
                     sources: [{
-                        src: '../local/videos/pl3.mkv',
+                        src: '../local/videos/pl3.mp4',
                         type: 'video/mp4'
                     }]
                 });
@@ -70,7 +70,7 @@ const companyVideo = class companyVideo {
                     muted: true,
                     // poster: '../local/img/video_preview.png',
                     sources: [{
-                        src: '../local/videos/pl4.mkv',
+                        src: '../local/videos/pl4.mp4',
                         type: 'video/mp4'
                     }]
                 });
@@ -88,7 +88,7 @@ const companyVideo = class companyVideo {
                     muted: true,
                     // poster: '../local/img/video_preview.png',
                     sources: [{
-                        src: '../local/videos/pl5.mkv',
+                        src: '../local/videos/pl5.mp4',
                         type: 'video/mp4'
                     }]
                 });
@@ -106,7 +106,7 @@ const companyVideo = class companyVideo {
                     muted: true,
                     // poster: '../local/img/video_preview.png',
                     sources: [{
-                        src: '../local/videos/pl7.mkv',
+                        src: '../local/videos/pl7.mp4',
                         type: 'video/mp4'
                     }]
                 });
@@ -124,7 +124,7 @@ const companyVideo = class companyVideo {
                     muted: true,
                     // poster: '../local/img/video_preview.png',
                     sources: [{
-                        src: '../local/videos/pl8.mkv',
+                        src: '../local/videos/pl8.mp4',
                         type: 'video/mp4'
                     }]
                 });
@@ -142,7 +142,7 @@ const companyVideo = class companyVideo {
                     muted: true,
                     // poster: '../local/img/video_preview.png',
                     sources: [{
-                        src: '../local/videos/pl9.mkv',
+                        src: '../local/videos/pl9.mp4',
                         type: 'video/mp4'
                     }]
                 });
@@ -160,7 +160,7 @@ const companyVideo = class companyVideo {
                     muted: true,
                     // poster: '../local/img/video_preview.png',
                     sources: [{
-                        src: '../local/videos/pl10.mkv',
+                        src: '../local/videos/pl10.mp4',
                         type: 'video/mp4'
                     }]
                 });
@@ -178,7 +178,7 @@ const companyVideo = class companyVideo {
                     muted: true,
                     // poster: '../local/img/video_preview.png',
                     sources: [{
-                        src: '../local/videos/pl11.mkv',
+                        src: '../local/videos/pl11.mp4',
                         type: 'video/mp4'
                     }]
                 });
@@ -196,7 +196,7 @@ const companyVideo = class companyVideo {
                     muted: true,
                     // poster: '../local/img/video_preview.png',
                     sources: [{
-                        src: '../local/videos/pl12.mkv',
+                        src: '../local/videos/pl12.mp4',
                         type: 'video/mp4'
                     }]
                 });
@@ -214,7 +214,7 @@ const companyVideo = class companyVideo {
                     muted: true,
                     // poster: '../local/img/video_preview.png',
                     sources: [{
-                        src: '../local/videos/pl13.mkv',
+                        src: '../local/videos/pl13.mp4',
                         type: 'video/mp4'
                     }]
                 });
@@ -232,7 +232,7 @@ const companyVideo = class companyVideo {
                     muted: true,
                     // poster: '../local/img/video_preview.png',
                     sources: [{
-                        src: '../local/videos/pl14.mkv',
+                        src: '../local/videos/pl14.mp4',
                         type: 'video/mp4'
                     }]
                 });
@@ -250,7 +250,7 @@ const companyVideo = class companyVideo {
                     muted: true,
                     // poster: '../local/img/video_preview.png',
                     sources: [{
-                        src: '../local/videos/pl15.mkv',
+                        src: '../local/videos/pl15.mp4',
                         type: 'video/mp4'
                     }]
                 });
@@ -268,7 +268,7 @@ const companyVideo = class companyVideo {
                     muted: true,
                     // poster: '../local/img/video_preview.png',
                     sources: [{
-                        src: '../local/videos/pl16.mkv',
+                        src: '../local/videos/pl16.mp4',
                         type: 'video/mp4'
                     }]
                 });

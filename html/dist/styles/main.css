@@ -6336,7 +6336,7 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
 }
 
 .company-team__blocks--name {
-  font-family: "Montserrat" serif;
+  font-family: "Montserrat", serif;
   font-style: normal;
   font-weight: 700;
   font-size: 1.5625vw;
@@ -6344,10 +6344,18 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
   color: #FFFFFF;
   line-height: 140%;
   margin-bottom: 0.5208333333vw;
+  max-width: 200px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .company-team__blocks--position {
-  font-family: "Montserrat" serif;
+  font-family: "Montserrat", serif;
   font-style: normal;
   font-weight: 400;
   font-size: 1.3020833333vw;
@@ -10638,6 +10646,11 @@ body.company .company-ceo:not(.mobile) {
 .case_page {
   background: none;
   box-sizing: border-box;
+}
+
+.case_page .job-stages-slides-double .job-stages-item {
+  position: relative;
+  z-index: -1;
 }
 
 .case_page .first__fullscreen_frame:not(.mobile) {
@@ -19796,6 +19809,11 @@ body.main .main-resume.mobile {
 }
 
 @media (max-width: 1023px) {
+  .case_page .job-stages-slide {
+    position: relative;
+    z-index: 1;
+  }
+
   .case_frst__title {
     padding-left: 0;
     padding-right: 0;
@@ -19832,7 +19850,7 @@ body.main .main-resume.mobile {
   .case_tabs_new {
     padding-left: 20px;
     padding-right: 20px;
-    background: url("../img/bg_mob.png") 0 0 no-repeat, linear-gradient(180deg, #121423 37%, white 14.8958333333vw, white 155px);
+    background: url("../img/bg_mob.png") 0 0 no-repeat, linear-gradient(180deg, #121423 38%, white 14.8958333333vw, white 155px);
   }
 
   .case_page__about--l {
@@ -20531,7 +20549,7 @@ body.main .main-resume.mobile {
   .case_tabs_new {
     padding-left: 20px;
     padding-right: 20px;
-    background: url("../img/bg_mob.png") 0 0 no-repeat, linear-gradient(180deg, #121423 25%, white 14.8958333333vw, white 155px);
+    background: url("../img/bg_mob.png") 0 0 no-repeat, linear-gradient(180deg, #121423 33%, white 14.8958333333vw, white 155px);
   }
 
   .malin_imgs__small {
@@ -20718,6 +20736,12 @@ body.main .main-resume.mobile {
   }
 }
 
+@media all and (max-width: 370px) {
+  .case_tabs_new {
+    background: url("../img/bg_mob.png") 0 0 no-repeat, linear-gradient(180deg, #121423 28%, white 14.8958333333vw, white 155px);
+  }
+}
+
 @media all and (max-width: 360px) {
   .main-question-tentacle {
     bottom: -140px;
@@ -20725,6 +20749,10 @@ body.main .main-resume.mobile {
 
   .case_page__in.mobile .case_page__video--title {
     font-size: 35px;
+  }
+
+  .case_tabs_new {
+    background: url("../img/bg_mob.png") 0 0 no-repeat, linear-gradient(180deg, #121423 25%, white 14.8958333333vw, white 155px);
   }
 
   .case_page__in.mobile .case_page__prot--title {
