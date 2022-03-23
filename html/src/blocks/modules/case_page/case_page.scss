@@ -1,6 +1,14 @@
 .case_page__about--wtitle {
     transition: all .3s ease-out;
 }
+.more_cases {
+    width: max-content;
+    margin-top: vw(40);
+    margin-left: auto;
+    margin-right: auto;
+    display: block !important;
+    z-index: 10;
+}
 .case_page {
     .job-stages-slides-double .job-stages-item {
         position: relative;

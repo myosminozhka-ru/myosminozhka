@@ -2784,7 +2784,7 @@ video::-webkit-media-text-track-display {
 
 @font-face {
   font-family: "gb";
-  src: url("../fonts/gb.ttf");
+  src: url("../fonts/gb.otf");
 }
 
 html {
@@ -10641,6 +10641,15 @@ body.company .company-ceo:not(.mobile) {
 
 .case_page__about--wtitle {
   transition: all 0.3s ease-out;
+}
+
+.more_cases {
+  width: max-content;
+  margin-top: 2.0833333333vw;
+  margin-left: auto;
+  margin-right: auto;
+  display: block !important;
+  z-index: 10;
 }
 
 .case_page {
