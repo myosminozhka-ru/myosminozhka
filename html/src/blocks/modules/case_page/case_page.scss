@@ -8,6 +8,9 @@
     margin-right: auto;
     display: block !important;
     z-index: 10;
+    &.border-case {
+        border: 2px solid #FF4978;
+    }
     @media all and (max-width: 1023px) {
         margin-top: 30px;
         margin-bottom: 30px;
@@ -1170,7 +1173,7 @@
         }
         &--witem {
             display: flex;
-            align-items: flex-end;
+            align-items: center;
         }
         &--l {
             max-width: 135px;
