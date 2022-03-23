@@ -1475,18 +1475,20 @@ var header = /*#__PURE__*/function () {
     key: "openMobileHeader",
     value: function openMobileHeader() {
       this.isOpened = !this.isOpened;
+      this.isPhonesOpened = false;
+      document.querySelector('html').classList.toggle('overflowed');
     }
   }, {
     key: "openPhonesModal",
     value: function openPhonesModal() {
       this.isPhonesOpened = !this.isPhonesOpened;
+      this.isOpened = false;
     }
   }, {
     key: "closePhonesModal",
     value: function closePhonesModal() {
-      if (window.innerWidth > 1023) {
-        this.isPhonesOpened = false;
-      }
+      // if (window.innerWidth > 1023) {
+      this.isPhonesOpened = false; // }
     }
   }, {
     key: "init",
@@ -3057,11 +3059,7 @@ var newsAndTrends = /*#__PURE__*/function () {
             _this.slider.destroy();
           }
 
-          jquery__WEBPACK_IMPORTED_MODULE_3___default()('.news-and-trends-right-slider .glide').replaceWith(jquery__WEBPACK_IMPORTED_MODULE_3___default()(_this.html).clone()); // $('.news-and-trends-item').hide();
-
-          if (item.dataset.news != 'all') {
-            jquery__WEBPACK_IMPORTED_MODULE_3___default()(".news-and-trends-right-slider .news-and-trends-item:not([data-id-news=\"".concat(item.dataset.news, "\"])")).remove();
-          }
+          jquery__WEBPACK_IMPORTED_MODULE_3___default()('.news-and-trends-right-slider .glide').replaceWith(jquery__WEBPACK_IMPORTED_MODULE_3___default()(_this.html).clone());
 
           _this.initSlider();
         });
@@ -3484,7 +3482,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 jquery__WEBPACK_IMPORTED_MODULE_27___default()(function () {
   setTimeout(function () {
     window.addEventListener("scroll", function (event) {
@@ -3676,10 +3673,10 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       document.addEventListener('mousemove', function (event) {
         // xcoordinate = event.clientX;
         // ycoordinate = event.clientY;
-        document.querySelector('.career-first-title').style.transform = "translateX(calc(".concat(-event.clientX * 100 / window.innerWidth, "% - ").concat(-event.clientX * 100 / window.innerWidth, "vw))"); // TweenMax.to('0', 1, {
-        //     translateX: ``,
-        //     ease: Power1.Circ,
-        // });
+        // document.querySelector('.career-first-title').style.transform = `translateX(calc(${-event.clientX * 100 / window.innerWidth}% - ${-event.clientX * 100 / window.innerWidth}vw))`
+        gsap__WEBPACK_IMPORTED_MODULE_29__["default"].to('.career-first-title', {
+          'transform': "translateX(calc(".concat(-event.clientX * 100 / window.innerWidth, "% - ").concat(-event.clientX * 100 / window.innerWidth, "vw))")
+        });
       });
     }
   },

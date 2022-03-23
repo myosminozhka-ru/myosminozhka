@@ -3904,7 +3904,7 @@ a:hover {
   bottom: -2.6041666667vw;
   width: 100%;
   height: 100%;
-  background: rgba(79, 79, 79, 0.85);
+  background: rgba(18, 20, 35, 0.85);
 }
 
 .main-about-advantages {
@@ -4754,7 +4754,6 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
 .news-and-trends.mobile .news-and-trends-buttons {
   margin-bottom: 50px;
   padding: 0 20px;
-  overflow: auto;
 }
 
 .news-and-trends.mobile .news-and-trends-buttons::-webkit-scrollbar {
@@ -4843,6 +4842,10 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
   line-height: 14px;
   padding: 14px 30px;
   border-radius: 10px;
+}
+
+.news-and-trends.mobile .news-and-trends-button span {
+  white-space: nowrap;
 }
 
 .news-and-trends.mobile .news-and-trends-button:not(:last-child) {
@@ -5234,6 +5237,12 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
 
 .news-and-trends-right-slider {
   cursor: default;
+}
+
+.blog-items-buttons__wrap .cases-items-buttons {
+  display: flex;
+  align-items: center;
+  width: fit-content;
 }
 
 .main-cases {
@@ -6096,6 +6105,7 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
 .company-team-title {
   color: #121423;
   text-transform: uppercase;
+  padding: 5.2083333333vw 2.6041666667vw;
 }
 
 .company-team.mobile .company-team-title {
@@ -6344,7 +6354,7 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
   color: #FFFFFF;
   line-height: 140%;
   margin-bottom: 0.5208333333vw;
-  max-width: 200px;
+  max-width: 100px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -6366,6 +6376,7 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
 .company-team.mobile .company-team__blocks {
   margin-top: 0;
   padding: 70px 15px;
+  align-items: flex-start;
 }
 
 .company-team.mobile .company-team__blocks--item {
@@ -7045,7 +7056,6 @@ body.company .company-ceo:not(.mobile) {
 .career-first:not(.mobile) .career-first-title {
   padding: 2.6041666667vw;
   white-space: nowrap;
-  transition: transform 0.3s linear;
   min-width: 100%;
   width: fit-content;
   box-sizing: border-box;
@@ -10313,7 +10323,7 @@ html:root body.posts .post_info__code--in {
 }
 
 .footer:not(.mobile) .footer-in {
-  grid-template-columns: 33.28125vw 5.78125vw auto 20.3125vw 4.7916666667vw 7.03125vw 5.2083333333vw 3.4375vw 5.3125vw;
+  grid-template-columns: 33.28125vw 5.78125vw auto 20.3125vw 4.7916666667vw 7.03125vw 5.2083333333vw 6.25vw 5.3125vw;
   grid-template-rows: auto 3.2291666667vw auto 4.1666666667vw auto 1.0416666667vw auto 1.5625vw 1.0416666667vw auto;
 }
 
@@ -10453,7 +10463,7 @@ html:root body.posts .post_info__code--in {
   grid-row-start: 1;
   grid-row-end: 2;
   grid-column-start: 8;
-  grid-column-end: 9;
+  grid-column-end: 10;
 }
 
 .footer-phones a {
@@ -16543,6 +16553,22 @@ body.main .main-resume.mobile {
   color: #FF4978 !important;
 }
 
+.footer-social.hidden {
+  display: none !important;
+}
+
+.blog-page .blog-items.mobile {
+  padding-bottom: 0;
+}
+
+html.overflowed {
+  overflow: hidden;
+}
+
+html.overflowed body {
+  overflow: hidden;
+}
+
 @media all and (min-width: 481px) {
   .header-phone_opener {
     position: relative;
@@ -17117,6 +17143,22 @@ body.main .main-resume.mobile {
     bottom: -628px;
   }
 
+  .news-and-trends-button > span {
+    white-space: nowrap;
+  }
+
+  .news-and-trends-button {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 14px 30px;
+    border-radius: 10px;
+  }
+
+  .news-and-trends-button:not(:last-child) {
+    margin-right: 20px;
+  }
+
   .hh_block {
     margin-bottom: 20px;
   }
@@ -17129,6 +17171,10 @@ body.main .main-resume.mobile {
   .career-page .career-blog .career-blog-item:nth-child(3) .career-blog-item-title,
   .career-page .career-blog .career-blog-item:nth-child(3) .career-blog-item-description {
     color: #fff !important;
+  }
+
+  .blog-items-buttons__wrap {
+    margin-bottom: 50px;
   }
 
   html body.posts .career-first-date {

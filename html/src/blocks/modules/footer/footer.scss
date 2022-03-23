@@ -65,7 +65,7 @@
         display: grid;
     }
     &:not(.mobile) &-in {
-        grid-template-columns: vw(639) vw(111) auto vw(390) vw(92) vw(135) vw(100) vw(66) vw(102);
+        grid-template-columns: vw(639) vw(111) auto vw(390) vw(92) vw(135) vw(100) vw(120) vw(102);
         grid-template-rows: auto vw(62) auto vw(80) auto vw(20) auto vw(30) vw(20) auto;
     }
     &.mobile &-in {
@@ -184,7 +184,7 @@
         grid-row-start: 1;
         grid-row-end: 2;
         grid-column-start: 8;
-        grid-column-end: 9;
+        grid-column-end: 10;
     }
     &-phones {
         a {

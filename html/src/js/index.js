@@ -30,7 +30,6 @@ import footer from "%modules%/footer/footer";
 import cookiesForm from "%modules%/cookie-form/cookie-form";
 import $ from "jquery";
 import 'slick-carousel';
-import {TweenMax, Power1} from 'gsap'
 $(function() {
     setTimeout(function(){
       window.addEventListener("scroll", function(event){
@@ -200,11 +199,10 @@ window.app = new Vue({
             document.addEventListener('mousemove', (event) => {
                 // xcoordinate = event.clientX;
                 // ycoordinate = event.clientY;
-                document.querySelector('.career-first-title').style.transform = `translateX(calc(${-event.clientX * 100 / window.innerWidth}% - ${-event.clientX * 100 / window.innerWidth}vw))`
-                // TweenMax.to('0', 1, {
-                //     translateX: ``,
-                //     ease: Power1.Circ,
-                // });
+                // document.querySelector('.career-first-title').style.transform = `translateX(calc(${-event.clientX * 100 / window.innerWidth}% - ${-event.clientX * 100 / window.innerWidth}vw))`
+                gsap.to('.career-first-title', {
+                    'transform': `translateX(calc(${-event.clientX * 100 / window.innerWidth}% - ${-event.clientX * 100 / window.innerWidth}vw))`
+                })
             })
         }
     },

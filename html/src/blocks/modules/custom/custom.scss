@@ -1426,3 +1426,20 @@ body.main .main-resume.mobile {
     background: #fff !important;
     color: #FF4978 !important;
 }
+
+
+.footer-social.hidden {
+    display: none !important;
+}
+
+
+.blog-page .blog-items.mobile {
+    padding-bottom: 0;
+}
+html.overflowed {
+    overflow: hidden;
+}
+html.overflowed body {
+    // height: 100vh;
+    overflow: hidden;
+}

@@ -11,14 +11,17 @@ const header = class Header {
     }
     openMobileHeader() {
         this.isOpened = !this.isOpened;
+        this.isPhonesOpened = false;
+        document.querySelector('html').classList.toggle('overflowed');
     }
     openPhonesModal() {
         this.isPhonesOpened = !this.isPhonesOpened;
+        this.isOpened = false;
     }
     closePhonesModal() {
-        if (window.innerWidth > 1023) {
+        // if (window.innerWidth > 1023) {
             this.isPhonesOpened = false;
-        }
+        // }
     }
     init() {
         gsap.to('.header-logo', {

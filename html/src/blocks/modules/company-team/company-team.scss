@@ -97,6 +97,7 @@
     &-title {
         color: #121423;
         text-transform: uppercase;
+        padding: vw(100) vw(50);
     }
     &.mobile &-title {
         padding: 0 20px 50px;
@@ -323,7 +324,7 @@
             color: #FFFFFF;
             line-height: 140%;
             margin-bottom: vw(10);
-            max-width: 200px;
+            max-width: 100px;
             width: 100%;
             margin-left: auto;
             margin-right: auto;
@@ -345,6 +346,7 @@
         .company-team__blocks {
             margin-top: 0;
             padding: 70px 15px;
+            align-items: flex-start;
             &--item {
                 width: calc(33% - 20px);
                 margin-bottom: 30px;

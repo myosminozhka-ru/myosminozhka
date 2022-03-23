@@ -64,7 +64,7 @@
     &.mobile &-buttons {
         margin-bottom: 50px;
         padding: 0 20px;
-        overflow: auto;
+        // overflow: auto;
         &::-webkit-scrollbar {
             height: 0;
         }
@@ -85,6 +85,9 @@
         > span {
             position: relative;
             z-index: 2;
+            @media all and (max-width: 1023px) {
+                    white-space: nowrap;
+            }
         }
         &__main {
             background: $mainColor;
@@ -130,6 +133,16 @@
         &:not(:last-child) {
             margin-right: vw(30);
         }
+        @media all and (max-width: 1023px) {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 14px;
+            padding: 14px 30px;
+            border-radius: 10px;
+            &:not(:last-child) {
+                margin-right: 20px;
+            }
+        }
     }
     &.mobile &-button {
         font-weight: 500;
@@ -137,6 +150,9 @@
         line-height: 14px;
         padding: 14px 30px;
         border-radius: 10px;
+        span {
+            white-space: nowrap;
+        }
         &:not(:last-child) {
             margin-right: 20px;
         }
@@ -474,4 +490,10 @@
     &-right-slider {
         cursor: default;
     }
+}
+
+.blog-items-buttons__wrap .cases-items-buttons {
+    display: flex;
+    align-items: center;
+    width: fit-content;
 }

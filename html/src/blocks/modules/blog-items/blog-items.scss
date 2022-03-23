@@ -30,6 +30,9 @@
         &::-webkit-scrollbar {
             height: 0;
         }
+        @media all and (max-width: 1023px) {
+            margin-bottom: 50px;
+        }
     }
     &:not(.mobile) &-posts {
         display: grid;

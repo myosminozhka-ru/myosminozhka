@@ -594,18 +594,20 @@ var header = /*#__PURE__*/function () {
     key: "openMobileHeader",
     value: function openMobileHeader() {
       this.isOpened = !this.isOpened;
+      this.isPhonesOpened = false;
+      document.querySelector('html').classList.toggle('overflowed');
     }
   }, {
     key: "openPhonesModal",
     value: function openPhonesModal() {
       this.isPhonesOpened = !this.isPhonesOpened;
+      this.isOpened = false;
     }
   }, {
     key: "closePhonesModal",
     value: function closePhonesModal() {
-      if (window.innerWidth > 1023) {
-        this.isPhonesOpened = false;
-      }
+      // if (window.innerWidth > 1023) {
+      this.isPhonesOpened = false; // }
     }
   }, {
     key: "init",
@@ -1788,11 +1790,7 @@ var newsAndTrends = /*#__PURE__*/function () {
             _this.slider.destroy();
           }
 
-          jquery__WEBPACK_IMPORTED_MODULE_3___default()('.news-and-trends-right-slider .glide').replaceWith(jquery__WEBPACK_IMPORTED_MODULE_3___default()(_this.html).clone()); // $('.news-and-trends-item').hide();
-
-          if (item.dataset.news != 'all') {
-            jquery__WEBPACK_IMPORTED_MODULE_3___default()(".news-and-trends-right-slider .news-and-trends-item:not([data-id-news=\"".concat(item.dataset.news, "\"])")).remove();
-          }
+          jquery__WEBPACK_IMPORTED_MODULE_3___default()('.news-and-trends-right-slider .glide').replaceWith(jquery__WEBPACK_IMPORTED_MODULE_3___default()(_this.html).clone());
 
           _this.initSlider();
         });

@@ -44,10 +44,6 @@ const newsAndTrends = class NewsAndTrends {
                     this.slider.destroy();
                 }
                 $('.news-and-trends-right-slider .glide').replaceWith($(this.html).clone());
-                // $('.news-and-trends-item').hide();
-                if (item.dataset.news != 'all') {
-                    $(`.news-and-trends-right-slider .news-and-trends-item:not([data-id-news="${item.dataset.news}"])`).remove();
-                }
                 this.initSlider();
                 
             })
