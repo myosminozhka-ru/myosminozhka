@@ -17211,6 +17211,11 @@ body.main .main-resume.mobile {
     grid-column-end: 2;
   }
 
+  .more_cases {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
   .case_page__prot {
     padding-top: 0 !important;
   }
