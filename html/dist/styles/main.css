@@ -6776,7 +6776,7 @@ body.company .company-ceo:not(.mobile) {
 .company-partners.mobile .company-partners-arrows {
   padding-top: 20px;
   padding-bottom: 20px;
-  background: #121423;
+  background: #0e0f1a;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10652,6 +10652,10 @@ body.company .company-ceo:not(.mobile) {
   z-index: 10;
 }
 
+.more_cases.border-case {
+  border: 2px solid #FF4978;
+}
+
 .case_page {
   background: none;
   box-sizing: border-box;
@@ -11874,7 +11878,7 @@ body.company .company-ceo:not(.mobile) {
 
 .case_page__about--witem {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .case_page__about--l {
