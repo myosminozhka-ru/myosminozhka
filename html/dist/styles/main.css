@@ -10662,6 +10662,10 @@ body.company .company-ceo:not(.mobile) {
   z-index: -1;
 }
 
+.case_page .job-stages-slides {
+  min-height: 18.2291666667vw;
+}
+
 .case_page .first__fullscreen_frame:not(.mobile) {
   padding-bottom: 0;
 }

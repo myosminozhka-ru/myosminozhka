@@ -14,6 +14,9 @@
         position: relative;
         z-index: -1;
     }
+    .job-stages-slides {
+        min-height: vw(350);
+    }
     .first__fullscreen_frame:not(.mobile) {
         padding-bottom: 0;
     }
