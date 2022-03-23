@@ -17216,6 +17216,10 @@ body.main .main-resume.mobile {
     margin-bottom: 30px;
   }
 
+  .case_page .more_cases {
+    margin-bottom: 10px;
+  }
+
   .case_page__prot {
     padding-top: 0 !important;
   }
