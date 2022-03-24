@@ -16592,6 +16592,7 @@ html.overflowed body {
 
 body {
   display: none !important;
+  opacity: 0;
 }
 
 @media all and (min-width: 481px) {
