@@ -19,7 +19,7 @@ if(isset($json->push) && isset($json->push->changes)) {
             // cd folder_project && git fetch
             exec('cd ' . $web_root_dir . ' && ' . $git_bin_path  . ' fetch');
 
-            exec('cd ' . $web_root_dir . ' && ' . $git_bin_path  . ' pull origin master 2>&1',$output, $exit);
+            exec('cd ' . $web_root_dir . ' && ' . $git_bin_path  . ' pull',$output, $exit);
 
             //exec('cd ' . $web_root_dir . ' && ' . 'php artisan migrate',$output, $exit);
             //exec('cd ' . $web_root_dir . ' && ' . 'vendor/bin/phpunit',$output, $exit);
