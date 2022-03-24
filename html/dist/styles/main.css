@@ -16594,6 +16594,7 @@ body {
   display: none !important;
   opacity: 0;
   visibility: hidden;
+  margin: 0;
 }
 
 @media all and (min-width: 481px) {
