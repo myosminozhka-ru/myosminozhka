@@ -143,9 +143,6 @@
         width: calc(100% - #{vw(50)} - #{vw(920)});
     }
     &.mobile &-texts-left {
-        // display: flex;
-        // align-items: center;
-        // justify-content: space-between;
         width: 100%;
         margin-bottom: 30px;
     }
