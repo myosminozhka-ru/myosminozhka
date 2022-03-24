@@ -17,9 +17,9 @@ if(isset($json->push) && isset($json->push->changes)) {
         if(isset($change->new) && $change->new->name == $branch) {
 
             // cd folder_project && git fetch
-            exec('cd ' . $web_root_dir . ' && ' . $git_bin_path  . ' fetch');
+            exec('cd ' . $web_root_dir . ' && ' . $git_bin_path  . ' fetch origin --force');
 
-            exec('cd ' . $web_root_dir . ' && ' . $git_bin_path  . ' pull',$output, $exit);
+            // exec('cd ' . $web_root_dir . ' && ' . $git_bin_path  . ' pull',$output, $exit);
 
             //exec('cd ' . $web_root_dir . ' && ' . 'php artisan migrate',$output, $exit);
             //exec('cd ' . $web_root_dir . ' && ' . 'vendor/bin/phpunit',$output, $exit);
