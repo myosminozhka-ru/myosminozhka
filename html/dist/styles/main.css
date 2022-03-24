@@ -4185,6 +4185,10 @@ a:hover {
 
 .main-question-form-item > span > .text {
   color: #FF4978;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .main-question-form-item.checkbox {
@@ -6310,7 +6314,6 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
 }
 
 .company-team__blocks {
-  margin-top: 5.2083333333vw;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -6417,7 +6420,7 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
   top: 0;
   bottom: 0;
   z-index: 1;
-  background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyMCIgaGVpZ2h0PSIxOTk5IiB2aWV3Qm94PSIwIDAgMTkyMCAxOTk5IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTAgNDg3LjVWMTk5OUgxOTIwVjAuMzQ4NjMzSDk1MS4yNDZDNjIzLjc0NiAwLjM0ODYzMyAzMTEuNzE2IDEzOS43MDIgOTMuMTM0OCAzODMuNTg1TDAgNDg3LjVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K") left 50% top 0/cover no-repeat;
+  background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyMCIgaGVpZ2h0PSIxOTk5IiB2aWV3Qm94PSIwIDAgMTkyMCAxOTk5IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTAgNDg3LjVWMTk5OUgxOTIwVjAuMzQ4NjMzSDk1MS4yNDZDNjIzLjc0NiAwLjM0ODYzMyAzMTEuNzE2IDEzOS43MDIgOTMuMTM0OCAzODMuNTg1TDAgNDg3LjVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K") left 50% top 0/122% no-repeat;
 }
 
 .company-raiting.mobile {
@@ -7079,10 +7082,6 @@ body.company .company-ceo:not(.mobile) {
   margin-bottom: 40px;
 }
 
-.career-first:not(.mobile) .career-first-tentacle img {
-  display: none !important;
-}
-
 .career-first-info {
   display: flex;
   align-items: flex-start;
@@ -7380,7 +7379,6 @@ body.company .company-ceo:not(.mobile) {
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
-  overflow: auto;
 }
 
 .career-blog.mobile .career-blog-buttons-left::-webkit-scrollbar {
@@ -7601,6 +7599,14 @@ body.company .company-ceo:not(.mobile) {
 
 .company .footer:not(.mobile) .footer-tentacle {
   transform: scale(1) !important;
+}
+
+.career-blog.mobile .career-blog-buttons {
+  overflow: auto;
+}
+
+.career-blog.mobile .career-blog-buttons::-webkit-scrollbar {
+  height: 0;
 }
 
 .vacan {
@@ -8361,7 +8367,8 @@ body.company .company-ceo:not(.mobile) {
 .job-first {
   margin-bottom: 0vw;
   margin-top: -16.6666666667vw;
-  display: none !important;
+  position: relative;
+  z-index: 10;
 }
 
 .job-first-tentacle {
@@ -8371,7 +8378,7 @@ body.company .company-ceo:not(.mobile) {
 .job-info {
   display: flex;
   align-items: flex-start;
-  padding: 0 2.6041666667vw 7.8125vw;
+  padding: 0 2.6041666667vw 5.2083333333vw;
 }
 
 .job-info.mobile {
@@ -15964,8 +15971,9 @@ header.header.mobile ul.header-lang {
 }
 
 .career-first:not(.mobile) .career-first-title {
-  font-size: 11vw;
-  line-height: 11vw;
+  font-size: 11vw !important;
+  line-height: 11vw !important;
+  white-space: normal;
 }
 
 .career-blog:not(.mobile) .career-blog-buttons-left {
@@ -16409,7 +16417,7 @@ body.main .main-resume.mobile {
 }
 
 .career-page .main-question:not(.mobile).dropped {
-  padding-top: 10vw;
+  padding-top: 0 !important;
 }
 
 .vacan .career-first:not(.mobile) {
@@ -16534,11 +16542,6 @@ body.main .main-resume.mobile {
   pointer-events: all;
 }
 
-.internet-marketing-page .career-first:not(.mobile) .career-first-title {
-  white-space: normal;
-  width: 100%;
-}
-
 .header-mobile-menu > ul {
   max-height: 100%;
 }
@@ -16571,6 +16574,20 @@ html.overflowed {
 
 html.overflowed body {
   overflow: hidden;
+}
+
+.career-blog.mobile .more_cases {
+  display: none !important;
+}
+
+.career-page .footer:not(.mobile) .footer-tentacle {
+  top: -27.45833vw !important;
+}
+
+.services-page .career-first.mobile,
+.internet-marketing-page .career-first.mobile,
+.branding-page .career-first.mobile {
+  padding-bottom: 0;
 }
 
 @media all and (min-width: 481px) {
@@ -16958,12 +16975,6 @@ html.overflowed body {
   .footer-in {
     padding-left: 2.23958vw;
     padding-right: 2.23958vw;
-  }
-
-  .career-first:not(.mobile) .career-first-title {
-    font-size: 14.5vw;
-    line-height: 17.5vw;
-    padding-bottom: 1vw;
   }
 
   .career-first:not(.mobile) .career-first-text {
@@ -19862,6 +19873,12 @@ html.overflowed body {
 
   .blog-item-text img {
     max-width: 100%;
+  }
+
+  .services-page .job-first,
+  .internet-marketing-page .job-first,
+  .branding-page .job-first {
+    display: none !important;
   }
 }
 

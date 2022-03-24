@@ -3,6 +3,7 @@ import Glide from '@glidejs/glide'
 const jobInfo = class jobInfo {
     constructor() {
         this.index = 0;
+        this.interval = null;
     }
     changeSlide(index) {
         document.querySelectorAll('.job-info-title').forEach(item => {
@@ -22,7 +23,7 @@ const jobInfo = class jobInfo {
         this.changeSlide(event.target.dataset.itemId)
     }
     sliderInterval() {
-        setInterval(() => {
+        this.interval = setInterval(() => {
             var index = this.index++;
             if (!document.querySelector(`.job-info-title[data-item-id="${++index}"]`) && !document.querySelector(`.job-info-item[data-target-id="${++index}"]`)) {
                 this.index = 0;
@@ -34,7 +35,10 @@ const jobInfo = class jobInfo {
         if (!document.querySelector('.job-info')) return;
         this.changeSlide(this.index);
         this.sliderInterval();
-        document.addEventListener('click', (event) => this.changeIndex(event))
+        document.addEventListener('click', (event) => {
+            this.changeIndex(event);
+            clearInterval(this.interval);
+        })
     }
 }
 

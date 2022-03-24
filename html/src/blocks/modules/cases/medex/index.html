@@ -1,5 +1,9 @@
 <a href="#" class="cases__item medex" :class="{'mobile': window.width <=1023}">
-    <div class="cases__item-image medex__image"></div>
+    <div class="cases__item-image medex__video">
+        <video muted loop autoplay controls="false" poster="videos/medex.mp4">
+            <source src="videos/medex.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+        </video>
+    </div>
     <div class="cases__item-bottom medex__bottom">
         <div class="cases__item-title">MedEx</div>
         <div class="cases__item-text">
@@ -7,25 +11,3 @@
         </div>
     </div>
 </a>
-
-<script id="vertexShader" type="x-shader/x-vertex">
-    varying vec3 vNormal;
-    varying vec3 vPositionNormal;
-    void main() {
-        vNormal = normalize( normalMatrix * normal ); // 转换到视图空间
-        vPositionNormal = normalize(( modelViewMatrix * vec4(position, 1.0) ).xyz);
-        gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
-    }
-</script>
-<script id="fragmentShader" type="x-shader/x-vertex">
-    uniform vec3 glowColor;
-    uniform float b;
-    uniform float p;
-    uniform float s;
-    varying vec3 vNormal;
-    varying vec3 vPositionNormal;
-    void main() {
-		float a = pow( b + s * abs(dot(vNormal, vPositionNormal)), p );
-		gl_FragColor = vec4( glowColor, a );
-    }
-</script>

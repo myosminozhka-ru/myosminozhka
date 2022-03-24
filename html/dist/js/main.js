@@ -1440,10 +1440,10 @@ var footer = /*#__PURE__*/function () {
 
 /***/ }),
 
-/***/ "./src/blocks/modules/header/header.js":
-/*!*********************************************!*\
-  !*** ./src/blocks/modules/header/header.js ***!
-  \*********************************************/
+/***/ "./src/blocks/modules/header/header__inner.js":
+/*!****************************************************!*\
+  !*** ./src/blocks/modules/header/header__inner.js ***!
+  \****************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1554,11 +1554,12 @@ var header = /*#__PURE__*/function () {
   }, {
     key: "onInit",
     value: function onInit() {
-      if (!document.querySelector('.header-mobile-menu')) return; // $('.header-mobile-menu .has-child > a').on('click', function (event) {
-      //     event.preventDefault();
-      //     console.log($(this), $(this).siblings('.header-phone_modal'))
-      //     // $(this).siblings('.header-phone_modal').slideToggle();
-      // })
+      if (!document.querySelector('.header-mobile-menu')) return;
+      jquery__WEBPACK_IMPORTED_MODULE_1___default()('.header-mobile-menu .has-child > a').on('click', function (event) {
+        event.preventDefault(); // console.log($(this), $(this).siblings('.header-phone_modal'))
+
+        jquery__WEBPACK_IMPORTED_MODULE_1___default()(this).siblings('.header-phone_modal').slideToggle();
+      });
     }
   }, {
     key: "logoAnimationComplete",
@@ -1625,6 +1626,7 @@ var jobInfo = /*#__PURE__*/function () {
     _classCallCheck(this, jobInfo);
 
     this.index = 0;
+    this.interval = null;
   }
 
   _createClass(jobInfo, [{
@@ -1651,7 +1653,7 @@ var jobInfo = /*#__PURE__*/function () {
     value: function sliderInterval() {
       var _this = this;
 
-      setInterval(function () {
+      this.interval = setInterval(function () {
         var index = _this.index++;
 
         if (!document.querySelector(".job-info-title[data-item-id=\"".concat(++index, "\"]")) && !document.querySelector(".job-info-item[data-target-id=\"".concat(++index, "\"]"))) {
@@ -1670,7 +1672,9 @@ var jobInfo = /*#__PURE__*/function () {
       this.changeSlide(this.index);
       this.sliderInterval();
       document.addEventListener('click', function (event) {
-        return _this2.changeIndex(event);
+        _this2.changeIndex(event);
+
+        clearInterval(_this2.interval);
       });
     }
   }]);
@@ -3429,7 +3433,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_company_partners_company_partners__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! %modules%/company-partners/company-partners */ "./src/blocks/modules/company-partners/company-partners.js");
 /* harmony import */ var _modules_company_reviews_company_reviews__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! %modules%/company-reviews/company-reviews */ "./src/blocks/modules/company-reviews/company-reviews.js");
 /* harmony import */ var _modules_company_team_company_team__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! %modules%/company-team/company-team */ "./src/blocks/modules/company-team/company-team.js");
-/* harmony import */ var _modules_header_header__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! %modules%/header/header */ "./src/blocks/modules/header/header.js");
+/* harmony import */ var _modules_header_header_inner__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! %modules%/header/header__inner */ "./src/blocks/modules/header/header__inner.js");
 /* harmony import */ var _modules_main_question_main_question__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! %modules%/main-question/main-question */ "./src/blocks/modules/main-question/main-question.js");
 /* harmony import */ var _modules_company_about_company_about__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! %modules%/company-about/company-about */ "./src/blocks/modules/company-about/company-about.js");
 /* harmony import */ var _modules_company_raiting_company_raiting__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! %modules%/company-raiting/company-raiting */ "./src/blocks/modules/company-raiting/company-raiting.js");
@@ -3508,9 +3512,13 @@ jquery__WEBPACK_IMPORTED_MODULE_27___default()(function () {
     if (!jquery__WEBPACK_IMPORTED_MODULE_27___default()(this).attr('data-tab-id')) {
       // console.log($(this).attr('data-tab-id'));
       var href = jquery__WEBPACK_IMPORTED_MODULE_27___default()(this).attr('href');
-      jquery__WEBPACK_IMPORTED_MODULE_27___default()('html, body').animate({
-        scrollTop: jquery__WEBPACK_IMPORTED_MODULE_27___default()(href).offset().top
-      });
+
+      if (href != '#') {
+        jquery__WEBPACK_IMPORTED_MODULE_27___default()('html, body').animate({
+          scrollTop: jquery__WEBPACK_IMPORTED_MODULE_27___default()(href).offset().top
+        });
+      }
+
       return false;
     }
   });
@@ -3539,7 +3547,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       companyTeam: new _modules_company_team_company_team__WEBPACK_IMPORTED_MODULE_12__["default"](),
       careerBlog: new _modules_career_blog_career_blog__WEBPACK_IMPORTED_MODULE_18__["default"](),
       companyReviews: new _modules_company_reviews_company_reviews__WEBPACK_IMPORTED_MODULE_11__["default"](),
-      header: new _modules_header_header__WEBPACK_IMPORTED_MODULE_13__["default"](),
+      header: new _modules_header_header_inner__WEBPACK_IMPORTED_MODULE_13__["default"](),
       companyAbout: new _modules_company_about_company_about__WEBPACK_IMPORTED_MODULE_15__["default"]({
         selector: '.company-about:not(.company-about__title)'
       }),

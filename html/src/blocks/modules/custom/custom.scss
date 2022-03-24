@@ -510,8 +510,9 @@ header.header.mobile ul.header-lang {
     width: 19.76042vw;
 }
 .career-first:not(.mobile) .career-first-title {
-    font-size: 11vw;
-    line-height: 11vw;
+    font-size: 11vw !important;
+    line-height: 11vw !important;
+    white-space: normal;
 }
 .career-blog:not(.mobile) .career-blog-buttons-left {
     align-items: center;
@@ -945,7 +946,7 @@ body.main .main-resume.mobile {
     text-align-last: left;
 }
 .career-page .main-question:not(.mobile).dropped {
-    padding-top: 10vw;
+    padding-top: 0 !important;
 }
 .vacan .career-first:not(.mobile) {
     min-height: 100vh;
@@ -1246,11 +1247,11 @@ margin:0 30px;
         padding-left: 2.23958vw;
         padding-right: 2.23958vw;
     }
-    .career-first:not(.mobile) .career-first-title {
-        font-size: 14.5vw;
-        line-height: 17.5vw;
-        padding-bottom: 1vw;
-    }
+    // .career-first:not(.mobile) .career-first-title {
+    //     font-size: 14.5vw;
+    //     line-height: 17.5vw;
+    //     padding-bottom: 1vw;
+    // }
     .career-first:not(.mobile) .career-first-text {
         font-size: 1.58333vw;
         line-height: 2.40417vw;
@@ -1401,10 +1402,10 @@ body.main .main-resume.mobile {
 }
 
 
-.internet-marketing-page .career-first:not(.mobile) .career-first-title {
-    white-space: normal;
-    width: 100%;
-}
+// .internet-marketing-page .career-first:not(.mobile) .career-first-title {
+//     white-space: normal;
+//     width: 100%;
+// }
 .header-mobile-menu > ul {
     max-height: 100%;
 }
@@ -1442,4 +1443,23 @@ html.overflowed {
 html.overflowed body {
     // height: 100vh;
     overflow: hidden;
+}
+
+.career-blog.mobile .more_cases {
+    display: none !important;
+}
+.career-page .footer:not(.mobile) .footer-tentacle {
+    top: -27.45833vw !important;
+}
+.services-page .job-first,
+.internet-marketing-page .job-first,
+.branding-page .job-first {
+    @media all and (max-width: 1023px) {
+        display: none !important;
+    }
+}
+.services-page .career-first.mobile,
+.internet-marketing-page .career-first.mobile,
+.branding-page .career-first.mobile {
+    padding-bottom: 0;
 }

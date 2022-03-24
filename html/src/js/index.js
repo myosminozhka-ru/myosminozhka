@@ -11,7 +11,7 @@ import companyPrinciples from "%modules%/company-principles/company-principles";
 import companyPartners from "%modules%/company-partners/company-partners";
 import companyReviews from "%modules%/company-reviews/company-reviews";
 import companyTeam from "%modules%/company-team/company-team";
-import header from "%modules%/header/header";
+import header from "%modules%/header/header__inner";
 import mainQuestionForm from "%modules%/main-question/main-question";
 import companyAbout from "%modules%/company-about/company-about";
 import companyRaiting from "%modules%/company-raiting/company-raiting";
@@ -57,10 +57,11 @@ $(function() {
         if (!$(this).attr('data-tab-id')) {
             // console.log($(this).attr('data-tab-id'));
             let href = $(this).attr('href');
-        
-            $('html, body').animate({
-                scrollTop: $(href).offset().top
-            });
+            if (href != '#') {
+               $('html, body').animate({
+                    scrollTop: $(href).offset().top
+                });
+            }
             return false;
         }
     });

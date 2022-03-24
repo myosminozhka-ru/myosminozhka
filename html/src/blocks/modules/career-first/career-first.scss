@@ -37,11 +37,11 @@
         margin-right: -20px;
         margin-bottom: 40px;
     }
-    &:not(.mobile) &-tentacle {
-        img {
-            display: none !important;
-        }
-    }
+    // &:not(.mobile) &-tentacle {
+    //     img {
+    //         display: none !important;
+    //     }
+    // }
     &-info {
         display: flex;
         align-items: flex-start;

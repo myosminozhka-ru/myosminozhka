@@ -41,7 +41,7 @@
         display: flex;
         align-items: center;
         flex-wrap: nowrap;
-        overflow: auto;
+        // overflow: auto;
         &::-webkit-scrollbar {
             height: 0;
         }
@@ -235,4 +235,10 @@
 
 .company .footer:not(.mobile) .footer-tentacle {
     transform: scale(1) !important;
+}
+.career-blog.mobile .career-blog-buttons {
+    overflow: auto;
+    &::-webkit-scrollbar {
+        height: 0;
+    }
 }

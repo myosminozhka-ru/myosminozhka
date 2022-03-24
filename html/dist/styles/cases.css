@@ -197,25 +197,29 @@
 .main-cases .medex.mobile {
   background: url("../img/medex_mobile_bg.png") 50% 50%/cover no-repeat !important;
 }
-.cases__wrapper .medex__image,
-.main-cases .medex__image {
+.cases__wrapper .medex__video,
+.main-cases .medex__video {
   position: absolute;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
+  pointer-events: none;
+}
+.cases__wrapper .medex__video video,
+.main-cases .medex__video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+.cases__wrapper .medex.mobile .medex__video,
+.main-cases .medex.mobile .medex__video {
+  display: none;
 }
 .cases__wrapper .medex__bottom,
 .main-cases .medex__bottom {
   z-index: 4;
-}
-.cases__wrapper canvas,
-.main-cases canvas {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
 }
 .cases__wrapper .malina,
 .main-cases .malina {
