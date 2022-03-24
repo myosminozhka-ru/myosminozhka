@@ -16590,6 +16590,10 @@ html.overflowed body {
   padding-bottom: 0;
 }
 
+body {
+  display: none !important;
+}
+
 @media all and (min-width: 481px) {
   .header-phone_opener {
     position: relative;

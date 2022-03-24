@@ -5,3 +5,8 @@
 @import "base/fonts";
 @import "base/general";
 @import "../blocks/modules";
+
+
+body {
+    display: none !important;
+}
