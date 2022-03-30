@@ -15403,6 +15403,78 @@ body.company .company-ceo:not(.mobile) {
   border-radius: 20px;
 }
 
+.case-not-found {
+  padding: 12.2916666667vw 0 15.625vw;
+  position: relative;
+  z-index: 10;
+}
+
+.case-not-found.mobile {
+  padding: 100px 0 30px;
+}
+
+.case-not-found__loader {
+  width: 100%;
+  max-width: 10.46875vw;
+  margin: 0 auto 4.1666666667vw;
+}
+
+.case-not-found.mobile .case-not-found__loader {
+  max-width: 111px;
+  margin-bottom: 30px;
+}
+
+.case-not-found__title {
+  width: 100%;
+  max-width: 51.9791666667vw;
+  margin: 0 auto 2.0833333333vw;
+  font-weight: 700;
+  font-size: 3.125vw;
+  line-height: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.case-not-found.mobile .case-not-found__title {
+  max-width: 320px;
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 32px;
+}
+
+.case-not-found__subtitle {
+  font-weight: 700;
+  font-size: 1.5625vw;
+  margin-bottom: 1.0416666667vw;
+  line-height: 140%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #595965;
+}
+
+.case-not-found.mobile .case-not-found__subtitle {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.case-not-found__wait {
+  font-weight: 400;
+  font-size: 1.3020833333vw;
+  line-height: 160%;
+  text-align: center;
+  color: #595965;
+}
+
+.case-not-found.mobile .case-not-found__wait {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+}
+
 .grecaptcha-badge {
   visibility: hidden;
 }
@@ -16590,6 +16662,15 @@ html.overflowed body {
   padding-bottom: 0;
 }
 
+.en-version .header:not(.mobile) .header-logo {
+  max-width: 7.8125vw;
+}
+
+.en-version .web-buttons .web-button {
+  padding-right: 0;
+  padding-left: 0;
+}
+
 @media all and (min-width: 481px) {
   .header-phone_opener {
     position: relative;
@@ -17061,7 +17142,7 @@ html.overflowed body {
   .contacts-info:not(.mobile) .contacts-info-text,
   .contacts-info:not(.mobile) .contacts-info-address,
   .contacts-info:not(.mobile) .contacts-info-link {
-    text-transform: uppercase;
+    text-transform: none !important;
     text-decoration: none;
   }
 }

@@ -1317,7 +1317,7 @@ margin:0 30px;
         margin-bottom: 1vw;
     }
     .contacts-info:not(.mobile) .contacts-info-text, .contacts-info:not(.mobile) .contacts-info-address, .contacts-info:not(.mobile) .contacts-info-link {
-        text-transform: uppercase;
+        text-transform: none !important;
         text-decoration: none;
     }
 }
@@ -1462,4 +1462,12 @@ html.overflowed body {
 .internet-marketing-page .career-first.mobile,
 .branding-page .career-first.mobile {
     padding-bottom: 0;
+}
+
+.en-version .header:not(.mobile) .header-logo {
+    max-width: vw(150);
+}
+.en-version .web-buttons .web-button {
+    padding-right: 0;
+    padding-left: 0;
 }

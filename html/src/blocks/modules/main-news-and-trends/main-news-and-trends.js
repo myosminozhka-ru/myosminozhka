@@ -14,11 +14,10 @@ const newsAndTrends = class NewsAndTrends {
     initSlider() {
         this.sliderItems = document.querySelectorAll('.news-and-trends-item');
         // this.html = $('.news-and-trends-right-slider').clone();
-        console.log(this.html);
         this.slider = new Glide('.news-and-trends-right-slider', {
             type: 'carousel',
             startAt: 0,
-            perView: 5,
+            perView: 4,
             breakpoints: {
                 800: {
                     perView: 2
@@ -40,6 +39,7 @@ const newsAndTrends = class NewsAndTrends {
 
         document.querySelectorAll('.news-and-trends .news-and-trends-button').forEach(item => {
             item.addEventListener('click', () => {
+                console.log(this.html);
                 if (this.slider) {
                     this.slider.destroy();
                 }

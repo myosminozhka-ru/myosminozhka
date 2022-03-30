@@ -33,7 +33,12 @@ const header = class Header {
                 // markers: true,
             },
             width: () => {
-                return 200 * 100 / window.innerWidth + 'vw'
+                if (document.querySelector('.en-version')) {
+                    return 120 * 100 / window.innerWidth + 'vw'
+                } else {
+                    return 200 * 100 / window.innerWidth + 'vw'
+                }
+                
             },
             onComplete: () => {
                 this.logoAnimationComplete();
