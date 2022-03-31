@@ -15798,6 +15798,10 @@ body.company .company-ceo:not(.mobile) {
   margin-bottom: auto;
 }
 
+.medex .medex_design {
+  padding: 10.4166666667vw 2.6041666667vw;
+}
+
 .case-not-found {
   padding: 12.2916666667vw 0 15.625vw;
   position: relative;

@@ -371,6 +371,10 @@
             }
         }
     }
+    .medex_design {
+        padding: vw(200) vw(50);
+        
+    }
     @media all and (max-width: 1023px) {
         .case_page__in.mobile .case_page__bls--title {
             white-space: unset;
