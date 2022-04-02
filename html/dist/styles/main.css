@@ -7164,7 +7164,13 @@ body.company .company-ceo:not(.mobile) {
   justify-content: space-between;
 }
 
+.career-qualities-item {
+  text-align: center;
+}
+
 .career-qualities-item .icon {
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   justify-content: center;
   align-items: center;

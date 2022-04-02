@@ -17,7 +17,7 @@ const newsAndTrends = class NewsAndTrends {
         this.slider = new Glide('.news-and-trends-right-slider', {
             type: 'carousel',
             startAt: 0,
-            perView: 4,
+            perView: 3,
             breakpoints: {
                 800: {
                     perView: 2
