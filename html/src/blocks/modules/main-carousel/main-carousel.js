@@ -19,12 +19,10 @@ const mainCarousel = class MainCarousel {
 
         var maxTitlesHeight = Math.max.apply(null, $(".main-carousel__text-item_titles .title").map(function ()
         {
-            console.log($(this).height());
             return $(this).height();
         }).get());
         var maxTextsHeight = Math.max.apply(null, $(".main-carousel__text-item_texts .text").map(function ()
         {
-            console.log($(this).height());
             return $(this).height();
         }).get());
 
@@ -39,7 +37,6 @@ const mainCarousel = class MainCarousel {
             $(`.main-carousel__text-item_gifts .badge`).text(Math.round(360 / cellCount * (selectedIndex % cellCount)));
             $(`.main-carousel__grades .from`).text(Math.round(360 / cellCount * (selectedIndex % cellCount)));
             if (Math.round(360 / cellCount * (selectedIndex % cellCount)) < 0) {
-                console.log('minus');
                 $(`.main-carousel__grades .from`).text(Math.round(360 / cellCount * (selectedIndex % cellCount)) * -1 );
             }
             $(`.main-carousel__text-item_gifts .left__in`).css({
@@ -60,16 +57,12 @@ const mainCarousel = class MainCarousel {
             document.querySelectorAll(`.main-carousel__text-item_texts .text`).forEach(item => {
                 item.classList.remove('isActive');
             })
-            console.log('index is', (selectedIndex % cellCount) + 1);
             if (document.querySelector(`.main-carousel__text-item_texts .text[data-text-id="${(selectedIndex % cellCount) + 1}"]`)) {
                 document.querySelector(`.main-carousel__text-item_texts .text[data-text-id="${(selectedIndex % cellCount) + 1}"]`).classList.add('isActive');
             }
             gsap.to(document.querySelectorAll(`.main-carousel__text-item_texts`), {
                 height: maxTextsHeight
             })
-            
-            
-            console.log('index', angle);
             // $(`.main-carousel__text-item_gifts .gift`).each(function() {
             //     $(this).hide('fast');
             // }) 

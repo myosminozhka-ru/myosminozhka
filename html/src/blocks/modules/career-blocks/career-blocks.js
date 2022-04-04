@@ -23,7 +23,6 @@ const careerBlocks = class careerBlocks {
     }
     init() {
         this.animateItems();
-        console.log('career blocks inited');
     }
 }
 

@@ -28,9 +28,7 @@ const newsAndTrends = class NewsAndTrends {
             }
         }).mount();
     }
-    filterSlider({type}) {
-        console.log(type);
-    }
+    filterSlider({type}) {}
     onInit() {}
     init() {
         if (!document.querySelector('.news-and-trends')) return;
@@ -38,12 +36,15 @@ const newsAndTrends = class NewsAndTrends {
         this.onInit();
 
         document.querySelectorAll('.news-and-trends .news-and-trends-button').forEach(item => {
-            item.addEventListener('click', () => {
-                console.log(this.html);
+            item.addEventListener('click', (event) => {
                 if (this.slider) {
                     this.slider.destroy();
                 }
                 $('.news-and-trends-right-slider .glide').replaceWith($(this.html).clone());
+                if (item.dataset.news != 'all') {
+                    event.preventDefault();
+                    $(`.news-and-trends-right-slider .news-and-trends-item:not([data-id-news="${item.dataset.news}"])`).remove();
+                }
                 this.initSlider();
                 
             })

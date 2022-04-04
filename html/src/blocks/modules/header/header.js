@@ -21,6 +21,7 @@ const header = class Header {
     closePhonesModal() {
         // if (window.innerWidth > 1023) {
             this.isPhonesOpened = false;
+            document.querySelector('html').classList.remove('overflowed');
         // }
     }
     init() {
@@ -34,7 +35,6 @@ const header = class Header {
             },
             width: () => {
                 if (document.querySelector('.en-version')) {
-                    console.log('is en-version')
                     return 120 * 100 / window.innerWidth + 'vw'
                 } else {
                     return 200 * 100 / window.innerWidth + 'vw'
@@ -75,7 +75,6 @@ const header = class Header {
                 this.closePhonesModal();
             })
             document.addEventListener('click', (event) => {
-                console.log(event.target.closest('.header-phone_opener'))
                 if (!event.target.closest('.header-phone_opener')) {
                     this.closePhonesModal();
                 }
@@ -84,11 +83,6 @@ const header = class Header {
     }
     onInit() {
         if (!document.querySelector('.header-mobile-menu')) return;
-        // $('.header-mobile-menu .has-child > a').on('click', function (event) {
-        //     event.preventDefault();
-        //     console.log($(this), $(this).siblings('.header-phone_modal'))
-        //     // $(this).siblings('.header-phone_modal').slideToggle();
-        // })
     }
     logoAnimationComplete() {}
     headerInAnimationComplete() {}

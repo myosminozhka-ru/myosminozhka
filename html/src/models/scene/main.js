@@ -17,12 +17,6 @@ const loadModel = (url) => {
         loader.load(url,
             function (gltf) {
                 resolve(gltf.scene)
-            },
-            function (xhr) {
-
-            },
-            function (error) {
-                console.log(error);
             }
         );
     });
@@ -525,7 +519,6 @@ window.step3 = () => {
         }, 2000)
         .onComplete(function () {
             shield2.visible = false;
-            console.log(shield2.scale);
         }).start();
     new TWEEN.Tween(camera.position)
         .to({

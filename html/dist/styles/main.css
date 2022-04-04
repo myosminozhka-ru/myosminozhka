@@ -16671,6 +16671,12 @@ html.overflowed body {
   padding-left: 0;
 }
 
+.centeredItem {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
+}
+
 @media all and (min-width: 481px) {
   .header-phone_opener {
     position: relative;
@@ -16868,8 +16874,8 @@ html.overflowed body {
     grid-column-end: auto !important;
   }
 
-  .blog-items-post-image {
-    height: 21vw !important;
+  body .blog-items-post-image {
+    height: 17vw !important;
     flex: none !important;
   }
 

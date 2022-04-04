@@ -75,7 +75,6 @@ const header = class Header {
                 this.closePhonesModal();
             })
             document.addEventListener('click', (event) => {
-                console.log(event.target.closest('.header-phone_opener'))
                 if (!event.target.closest('.header-phone_opener')) {
                     this.closePhonesModal();
                 }
@@ -86,7 +85,6 @@ const header = class Header {
         if (!document.querySelector('.header-mobile-menu')) return;
         $('.header-mobile-menu .has-child > a').on('click', function (event) {
             event.preventDefault();
-            // console.log($(this), $(this).siblings('.header-phone_modal'))
             $(this).siblings('.header-phone_modal').slideToggle();
         })
     }

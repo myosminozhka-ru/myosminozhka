@@ -202,7 +202,6 @@ var careerBlocks = /*#__PURE__*/function () {
     key: "init",
     value: function init() {
       this.animateItems();
-      console.log('career blocks inited');
     }
   }]);
 
@@ -320,9 +319,7 @@ var casesUpdated = /*#__PURE__*/function () {
     value: function setParalax() {
       document.querySelectorAll('.cases__item[data-is_paralaxed]').forEach(function (item) {
         item.addEventListener('mousemove', function (event) {
-          console.log(event.offsetX, event.offsetY);
           item.querySelectorAll('[data-speed]').forEach(function (elem) {
-            console.log(elem.dataset.speed);
             gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(elem, {
               x: event.offsetX / elem.dataset.speed,
               y: event.offsetY / elem.dataset.speed
@@ -339,8 +336,6 @@ var casesUpdated = /*#__PURE__*/function () {
         var loader = new THREE.GLTFLoader(manager);
         loader.load(url, function (gltf) {
           resolve(gltf.scene);
-        }, function (xhr) {}, function (error) {
-          console.log(error);
         });
       });
     }
@@ -352,7 +347,6 @@ var casesUpdated = /*#__PURE__*/function () {
 
         if (window.innerWidth > 1023) {
           jquery__WEBPACK_IMPORTED_MODULE_1___default()(this).html("<div class=\"cases__item-title--forslide cases__item-title--top\">".concat(text, "</div><div class=\"cases__item-title--forslide cases__item-title--bottom\">").concat(text, "</div>"));
-          console.log(text);
         }
       });
     }
@@ -1547,8 +1541,6 @@ var header = /*#__PURE__*/function () {
           _this.closePhonesModal();
         });
         document.addEventListener('click', function (event) {
-          console.log(event.target.closest('.header-phone_opener'));
-
           if (!event.target.closest('.header-phone_opener')) {
             _this.closePhonesModal();
           }
@@ -1560,8 +1552,7 @@ var header = /*#__PURE__*/function () {
     value: function onInit() {
       if (!document.querySelector('.header-mobile-menu')) return;
       jquery__WEBPACK_IMPORTED_MODULE_1___default()('.header-mobile-menu .has-child > a').on('click', function (event) {
-        event.preventDefault(); // console.log($(this), $(this).siblings('.header-phone_modal'))
-
+        event.preventDefault();
         jquery__WEBPACK_IMPORTED_MODULE_1___default()(this).siblings('.header-phone_modal').slideToggle();
       });
     }
@@ -1794,8 +1785,6 @@ var jobStages = /*#__PURE__*/function () {
   }, {
     key: "initDevelopmentSlider",
     value: function initDevelopmentSlider() {
-      console.log();
-
       if (document.querySelector('.job-stages-slides--0')) {
         new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.job-stages-slides--0', {
           startAt: 0,
@@ -1845,7 +1834,6 @@ var jobStages = /*#__PURE__*/function () {
         if (document.querySelector('.job-stages-triggers .job-stages-arrow--prev')) {
           document.querySelector('.job-stages-triggers .job-stages-arrow--prev').addEventListener('click', function () {
             if (document.querySelector('.job-stages-trigger.isActive').dataset.tabId == 0) return;
-            console.log(document.querySelector(".job-stages-trigger[data-tab-id=\"".concat(_this.currentTab - 1, "\"]")));
             document.querySelector(".job-stages-trigger[data-tab-id=\"".concat(_this.currentTab - 1, "\"]")).dispatchEvent(new Event('click'));
           });
         }
@@ -1853,7 +1841,6 @@ var jobStages = /*#__PURE__*/function () {
         if (document.querySelector('.job-stages-triggers .job-stages--next')) {
           document.querySelector('.job-stages-triggers .job-stages--next').addEventListener('click', function () {
             if (document.querySelector('.job-stages-trigger.isActive').dataset.tabId == 3) return;
-            console.log(document.querySelector(".job-stages-trigger[data-tab-id=\"".concat(_this.currentTab + 1, "\"]")));
             document.querySelector(".job-stages-trigger[data-tab-id=\"".concat(_this.currentTab + 1, "\"]")).dispatchEvent(new Event('click'));
           });
         }
@@ -2220,11 +2207,9 @@ var mainCarousel = /*#__PURE__*/function () {
       var rotateFn = isHorizontal ? 'rotateY' : 'rotateX';
       var radius, theta;
       var maxTitlesHeight = Math.max.apply(null, jquery__WEBPACK_IMPORTED_MODULE_2___default()(".main-carousel__text-item_titles .title").map(function () {
-        console.log(jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).height());
         return jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).height();
       }).get());
       var maxTextsHeight = Math.max.apply(null, jquery__WEBPACK_IMPORTED_MODULE_2___default()(".main-carousel__text-item_texts .text").map(function () {
-        console.log(jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).height());
         return jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).height();
       }).get());
 
@@ -2238,7 +2223,6 @@ var mainCarousel = /*#__PURE__*/function () {
         jquery__WEBPACK_IMPORTED_MODULE_2___default()(".main-carousel__grades .from").text(Math.round(360 / cellCount * (selectedIndex % cellCount)));
 
         if (Math.round(360 / cellCount * (selectedIndex % cellCount)) < 0) {
-          console.log('minus');
           jquery__WEBPACK_IMPORTED_MODULE_2___default()(".main-carousel__grades .from").text(Math.round(360 / cellCount * (selectedIndex % cellCount)) * -1);
         }
 
@@ -2261,7 +2245,6 @@ var mainCarousel = /*#__PURE__*/function () {
         document.querySelectorAll(".main-carousel__text-item_texts .text").forEach(function (item) {
           item.classList.remove('isActive');
         });
-        console.log('index is', selectedIndex % cellCount + 1);
 
         if (document.querySelector(".main-carousel__text-item_texts .text[data-text-id=\"".concat(selectedIndex % cellCount + 1, "\"]"))) {
           document.querySelector(".main-carousel__text-item_texts .text[data-text-id=\"".concat(selectedIndex % cellCount + 1, "\"]")).classList.add('isActive');
@@ -2269,8 +2252,7 @@ var mainCarousel = /*#__PURE__*/function () {
 
         gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(document.querySelectorAll(".main-carousel__text-item_texts"), {
           height: maxTextsHeight
-        });
-        console.log('index', angle); // $(`.main-carousel__text-item_gifts .gift`).each(function() {
+        }); // $(`.main-carousel__text-item_gifts .gift`).each(function() {
         //     $(this).hide('fast');
         // }) 
         // $(`.main-carousel__text-item_gifts .gift[data-gift-id="${(selectedIndex+1) % +cellCount}"]`).show('fast');
@@ -2945,7 +2927,6 @@ var mainCases = /*#__PURE__*/function () {
       //     }, 1000);
       // } 
       // else if (window.innerWidth <= 1023) {
-      //     console.log('это мобилка')
       //     setTimeout(() => {
       //         gsap.to('.main-cases-items-in', {
       //             scrollTrigger: {
@@ -3047,7 +3028,6 @@ var newsAndTrends = /*#__PURE__*/function () {
     key: "filterSlider",
     value: function filterSlider(_ref2) {
       var type = _ref2.type;
-      console.log(type);
     }
   }, {
     key: "onInit",
@@ -3061,14 +3041,17 @@ var newsAndTrends = /*#__PURE__*/function () {
       this.initSlider();
       this.onInit();
       document.querySelectorAll('.news-and-trends .news-and-trends-button').forEach(function (item) {
-        item.addEventListener('click', function () {
-          console.log(_this.html);
-
+        item.addEventListener('click', function (event) {
           if (_this.slider) {
             _this.slider.destroy();
           }
 
           jquery__WEBPACK_IMPORTED_MODULE_3___default()('.news-and-trends-right-slider .glide').replaceWith(jquery__WEBPACK_IMPORTED_MODULE_3___default()(_this.html).clone());
+
+          if (item.dataset.news != 'all') {
+            event.preventDefault();
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()(".news-and-trends-right-slider .news-and-trends-item:not([data-id-news=\"".concat(item.dataset.news, "\"])")).remove();
+          }
 
           _this.initSlider();
         });
@@ -3112,7 +3095,7 @@ var mainQuestionForm = /*#__PURE__*/function () {
 
     this.inputSelector = inputSelector;
     this.file = '';
-    this.hasFile = false; // console.log(this.inputSelector);
+    this.hasFile = false;
   }
 
   _createClass(mainQuestionForm, [{
@@ -3133,7 +3116,6 @@ var mainQuestionForm = /*#__PURE__*/function () {
     value: function init() {
       var _this = this;
 
-      console.log(document.querySelector(this.inputSelector));
       if (!document.querySelector(this.inputSelector)) return;
       var fileInput = document.querySelector(this.inputSelector);
       fileInput.addEventListener('change', function () {
@@ -3220,7 +3202,6 @@ var mainWeb = /*#__PURE__*/function () {
           // snap: 1,
           onUpdate: function onUpdate(item) {
             if (item.progress > 0) {
-              // console.log(item.trigger.dataset.itemId)
               if (document.querySelector(".web-subtitles")) {
                 document.querySelectorAll(".web-subtitle").forEach(function (item) {
                   item.classList.remove('isActive');
@@ -3515,7 +3496,6 @@ jquery__WEBPACK_IMPORTED_MODULE_27___default()(function () {
     e.preventDefault;
 
     if (!jquery__WEBPACK_IMPORTED_MODULE_27___default()(this).attr('data-tab-id')) {
-      // console.log($(this).attr('data-tab-id'));
       var href = jquery__WEBPACK_IMPORTED_MODULE_27___default()(this).attr('href');
 
       if (href != '#') {
@@ -3654,7 +3634,6 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 
 
       window.addEventListener('resize', function () {
-        console.log();
         _this.window = {
           width: window.innerWidth,
           height: window.innerHeight
@@ -3681,8 +3660,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     if (!document.querySelector('.career-first-title')) return;
 
     if (document.querySelector('.career-first-title').offsetWidth > window.innerWidth) {
-      console.log('animation'); // document.querySelector('.career-first-title').classList.add('isMounted')
-
+      // document.querySelector('.career-first-title').classList.add('isMounted')
       document.addEventListener('mousemove', function (event) {
         // xcoordinate = event.clientX;
         // ycoordinate = event.clientY;

@@ -271,9 +271,7 @@ var casesUpdated = /*#__PURE__*/function () {
     value: function setParalax() {
       document.querySelectorAll('.cases__item[data-is_paralaxed]').forEach(function (item) {
         item.addEventListener('mousemove', function (event) {
-          console.log(event.offsetX, event.offsetY);
           item.querySelectorAll('[data-speed]').forEach(function (elem) {
-            console.log(elem.dataset.speed);
             gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(elem, {
               x: event.offsetX / elem.dataset.speed,
               y: event.offsetY / elem.dataset.speed
@@ -290,8 +288,6 @@ var casesUpdated = /*#__PURE__*/function () {
         var loader = new THREE.GLTFLoader(manager);
         loader.load(url, function (gltf) {
           resolve(gltf.scene);
-        }, function (xhr) {}, function (error) {
-          console.log(error);
         });
       });
     }
@@ -303,7 +299,6 @@ var casesUpdated = /*#__PURE__*/function () {
 
         if (window.innerWidth > 1023) {
           jquery__WEBPACK_IMPORTED_MODULE_1___default()(this).html("<div class=\"cases__item-title--forslide cases__item-title--top\">".concat(text, "</div><div class=\"cases__item-title--forslide cases__item-title--bottom\">").concat(text, "</div>"));
-          console.log(text);
         }
       });
     }
@@ -607,7 +602,8 @@ var header = /*#__PURE__*/function () {
     key: "closePhonesModal",
     value: function closePhonesModal() {
       // if (window.innerWidth > 1023) {
-      this.isPhonesOpened = false; // }
+      this.isPhonesOpened = false;
+      document.querySelector('html').classList.remove('overflowed'); // }
     }
   }, {
     key: "init",
@@ -624,7 +620,6 @@ var header = /*#__PURE__*/function () {
         },
         width: function width() {
           if (document.querySelector('.en-version')) {
-            console.log('is en-version');
             return 120 * 100 / window.innerWidth + 'vw';
           } else {
             return 200 * 100 / window.innerWidth + 'vw';
@@ -667,8 +662,6 @@ var header = /*#__PURE__*/function () {
           _this.closePhonesModal();
         });
         document.addEventListener('click', function (event) {
-          console.log(event.target.closest('.header-phone_opener'));
-
           if (!event.target.closest('.header-phone_opener')) {
             _this.closePhonesModal();
           }
@@ -678,11 +671,7 @@ var header = /*#__PURE__*/function () {
   }, {
     key: "onInit",
     value: function onInit() {
-      if (!document.querySelector('.header-mobile-menu')) return; // $('.header-mobile-menu .has-child > a').on('click', function (event) {
-      //     event.preventDefault();
-      //     console.log($(this), $(this).siblings('.header-phone_modal'))
-      //     // $(this).siblings('.header-phone_modal').slideToggle();
-      // })
+      if (!document.querySelector('.header-mobile-menu')) return;
     }
   }, {
     key: "logoAnimationComplete",
@@ -948,11 +937,9 @@ var mainCarousel = /*#__PURE__*/function () {
       var rotateFn = isHorizontal ? 'rotateY' : 'rotateX';
       var radius, theta;
       var maxTitlesHeight = Math.max.apply(null, jquery__WEBPACK_IMPORTED_MODULE_2___default()(".main-carousel__text-item_titles .title").map(function () {
-        console.log(jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).height());
         return jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).height();
       }).get());
       var maxTextsHeight = Math.max.apply(null, jquery__WEBPACK_IMPORTED_MODULE_2___default()(".main-carousel__text-item_texts .text").map(function () {
-        console.log(jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).height());
         return jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).height();
       }).get());
 
@@ -966,7 +953,6 @@ var mainCarousel = /*#__PURE__*/function () {
         jquery__WEBPACK_IMPORTED_MODULE_2___default()(".main-carousel__grades .from").text(Math.round(360 / cellCount * (selectedIndex % cellCount)));
 
         if (Math.round(360 / cellCount * (selectedIndex % cellCount)) < 0) {
-          console.log('minus');
           jquery__WEBPACK_IMPORTED_MODULE_2___default()(".main-carousel__grades .from").text(Math.round(360 / cellCount * (selectedIndex % cellCount)) * -1);
         }
 
@@ -989,7 +975,6 @@ var mainCarousel = /*#__PURE__*/function () {
         document.querySelectorAll(".main-carousel__text-item_texts .text").forEach(function (item) {
           item.classList.remove('isActive');
         });
-        console.log('index is', selectedIndex % cellCount + 1);
 
         if (document.querySelector(".main-carousel__text-item_texts .text[data-text-id=\"".concat(selectedIndex % cellCount + 1, "\"]"))) {
           document.querySelector(".main-carousel__text-item_texts .text[data-text-id=\"".concat(selectedIndex % cellCount + 1, "\"]")).classList.add('isActive');
@@ -997,8 +982,7 @@ var mainCarousel = /*#__PURE__*/function () {
 
         gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(document.querySelectorAll(".main-carousel__text-item_texts"), {
           height: maxTextsHeight
-        });
-        console.log('index', angle); // $(`.main-carousel__text-item_gifts .gift`).each(function() {
+        }); // $(`.main-carousel__text-item_gifts .gift`).each(function() {
         //     $(this).hide('fast');
         // }) 
         // $(`.main-carousel__text-item_gifts .gift[data-gift-id="${(selectedIndex+1) % +cellCount}"]`).show('fast');
@@ -1673,7 +1657,6 @@ var mainCases = /*#__PURE__*/function () {
       //     }, 1000);
       // } 
       // else if (window.innerWidth <= 1023) {
-      //     console.log('это мобилка')
       //     setTimeout(() => {
       //         gsap.to('.main-cases-items-in', {
       //             scrollTrigger: {
@@ -1775,7 +1758,6 @@ var newsAndTrends = /*#__PURE__*/function () {
     key: "filterSlider",
     value: function filterSlider(_ref2) {
       var type = _ref2.type;
-      console.log(type);
     }
   }, {
     key: "onInit",
@@ -1789,14 +1771,17 @@ var newsAndTrends = /*#__PURE__*/function () {
       this.initSlider();
       this.onInit();
       document.querySelectorAll('.news-and-trends .news-and-trends-button').forEach(function (item) {
-        item.addEventListener('click', function () {
-          console.log(_this.html);
-
+        item.addEventListener('click', function (event) {
           if (_this.slider) {
             _this.slider.destroy();
           }
 
           jquery__WEBPACK_IMPORTED_MODULE_3___default()('.news-and-trends-right-slider .glide').replaceWith(jquery__WEBPACK_IMPORTED_MODULE_3___default()(_this.html).clone());
+
+          if (item.dataset.news != 'all') {
+            event.preventDefault();
+            jquery__WEBPACK_IMPORTED_MODULE_3___default()(".news-and-trends-right-slider .news-and-trends-item:not([data-id-news=\"".concat(item.dataset.news, "\"])")).remove();
+          }
 
           _this.initSlider();
         });
@@ -1840,7 +1825,7 @@ var mainQuestionForm = /*#__PURE__*/function () {
 
     this.inputSelector = inputSelector;
     this.file = '';
-    this.hasFile = false; // console.log(this.inputSelector);
+    this.hasFile = false;
   }
 
   _createClass(mainQuestionForm, [{
@@ -1861,7 +1846,6 @@ var mainQuestionForm = /*#__PURE__*/function () {
     value: function init() {
       var _this = this;
 
-      console.log(document.querySelector(this.inputSelector));
       if (!document.querySelector(this.inputSelector)) return;
       var fileInput = document.querySelector(this.inputSelector);
       fileInput.addEventListener('change', function () {
@@ -1948,7 +1932,6 @@ var mainWeb = /*#__PURE__*/function () {
           // snap: 1,
           onUpdate: function onUpdate(item) {
             if (item.progress > 0) {
-              // console.log(item.trigger.dataset.itemId)
               if (document.querySelector(".web-subtitles")) {
                 document.querySelectorAll(".web-subtitle").forEach(function (item) {
                   item.classList.remove('isActive');

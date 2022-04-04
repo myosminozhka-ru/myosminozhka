@@ -524,7 +524,6 @@ const mainCases = class MainCases {
         //     }, 1000);
         // } 
         // else if (window.innerWidth <= 1023) {
-        //     console.log('это мобилка')
         //     setTimeout(() => {
         //         gsap.to('.main-cases-items-in', {
         //             scrollTrigger: {

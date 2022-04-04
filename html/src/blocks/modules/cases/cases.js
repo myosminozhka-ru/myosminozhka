@@ -25,9 +25,7 @@ const casesUpdated = class CasesUpdated {
     setParalax() {
         document.querySelectorAll('.cases__item[data-is_paralaxed]').forEach(item => {
             item.addEventListener('mousemove', (event) => {
-                console.log(event.offsetX,event.offsetY);
                 item.querySelectorAll('[data-speed]').forEach(elem => {
-                    console.log(elem.dataset.speed);
                     gsap.to(elem, {
                         x: event.offsetX / elem.dataset.speed,
                         y: event.offsetY / elem.dataset.speed
@@ -45,12 +43,6 @@ const casesUpdated = class CasesUpdated {
             loader.load(url,
                 function (gltf) {
                     resolve(gltf.scene)
-                },
-                function (xhr) {
-    
-                },
-                function (error) {
-                    console.log(error);
                 }
             );
         });
@@ -59,8 +51,7 @@ const casesUpdated = class CasesUpdated {
         $('.cases__item .cases__item-title').each(function() {
             let text = $(this).text();
             if (window.innerWidth > 1023) {
-                $(this).html(`<div class="cases__item-title--forslide cases__item-title--top">${text}</div><div class="cases__item-title--forslide cases__item-title--bottom">${text}</div>`)
-                console.log(text);
+                $(this).html(`<div class="cases__item-title--forslide cases__item-title--top">${text}</div><div class="cases__item-title--forslide cases__item-title--bottom">${text}</div>`);
             }
         })
     }

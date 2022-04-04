@@ -55,7 +55,6 @@ $(function() {
     $('a[href^="#"').on('click', function(e) {
         e.preventDefault;
         if (!$(this).attr('data-tab-id')) {
-            // console.log($(this).attr('data-tab-id'));
             let href = $(this).attr('href');
             if (href != '#') {
                $('html, body').animate({
@@ -169,7 +168,6 @@ window.app = new Vue({
             this.casesUpdated.init();
             // this.applicationForm.init();
             window.addEventListener('resize', () => {
-                console.log()
                 this.window = {
                     width: window.innerWidth,
                     height: window.innerHeight,
@@ -195,7 +193,6 @@ window.app = new Vue({
         setTimeout(this.animateTitles(), 500);
         if (!document.querySelector('.career-first-title')) return;
         if (document.querySelector('.career-first-title').offsetWidth > window.innerWidth) {
-            console.log('animation')
             // document.querySelector('.career-first-title').classList.add('isMounted')
             document.addEventListener('mousemove', (event) => {
                 // xcoordinate = event.clientX;
