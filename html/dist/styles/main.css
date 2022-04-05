@@ -17389,6 +17389,10 @@ html.overflowed body {
   transition: all 0s ease;
 }
 
+.blog-item-text p a:not(.button) {
+  color: #FF4978;
+}
+
 @media all and (min-width: 481px) {
   .header-phone_opener {
     position: relative;

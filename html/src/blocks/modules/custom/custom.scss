@@ -1483,3 +1483,7 @@ html.overflowed body {
 .main .news-and-trends-item {
     transition: all 0s ease;
 }
+
+.blog-item-text p a:not(.button) {
+    color: $mainColor;
+}
