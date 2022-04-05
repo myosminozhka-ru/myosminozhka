@@ -16677,6 +16677,10 @@ html.overflowed body {
   -webkit-transform-origin: 50% 50%;
 }
 
+.main .news-and-trends-item {
+  transition: all 0s ease;
+}
+
 @media all and (min-width: 481px) {
   .header-phone_opener {
     position: relative;
