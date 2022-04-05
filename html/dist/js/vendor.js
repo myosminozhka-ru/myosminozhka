@@ -4056,7 +4056,7 @@ var Glide = /*#__PURE__*/function (_Core) {
 /*!************************************************************!*\
   !*** ./node_modules/@videojs/vhs-utils/es/byte-helpers.js ***!
   \************************************************************/
-/*! exports provided: countBits, countBytes, padStart, isTypedArray, toUint8, toHexString, toBinaryString, ENDIANNESS, IS_BIG_ENDIAN, IS_LITTLE_ENDIAN, bytesToNumber, numberToBytes, bytesToString, stringToBytes, concatTypedArrays, bytesMatch, sliceBytes, reverseBytes */
+/*! exports provided: countBits, countBytes, padStart, isArrayBufferView, isTypedArray, toUint8, toHexString, toBinaryString, ENDIANNESS, IS_BIG_ENDIAN, IS_LITTLE_ENDIAN, bytesToNumber, numberToBytes, bytesToString, stringToBytes, concatTypedArrays, bytesMatch, sliceBytes, reverseBytes */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4064,6 +4064,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "countBits", function() { return countBits; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "countBytes", function() { return countBytes; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "padStart", function() { return padStart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isArrayBufferView", function() { return isArrayBufferView; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isTypedArray", function() { return isTypedArray; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "toUint8", function() { return toUint8; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "toHexString", function() { return toHexString; });
@@ -4110,8 +4111,15 @@ var padStart = function padStart(b, len, str) {
 
   return (repeat(str, len) + b.toString()).slice(-len);
 };
+var isArrayBufferView = function isArrayBufferView(obj) {
+  if (ArrayBuffer.isView === 'function') {
+    return ArrayBuffer.isView(obj);
+  }
+
+  return obj && obj.buffer instanceof ArrayBuffer;
+};
 var isTypedArray = function isTypedArray(obj) {
-  return ArrayBuffer.isView(obj);
+  return isArrayBufferView(obj);
 };
 var toUint8 = function toUint8(bytes) {
   if (bytes instanceof Uint8Array) {
@@ -5539,6 +5547,40 @@ var getId3Offset = function getId3Offset(bytes, offset) {
   // they should not.
 
   return getId3Offset(bytes, offset);
+};
+
+/***/ }),
+
+/***/ "./node_modules/@videojs/vhs-utils/es/media-groups.js":
+/*!************************************************************!*\
+  !*** ./node_modules/@videojs/vhs-utils/es/media-groups.js ***!
+  \************************************************************/
+/*! exports provided: forEachMediaGroup */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "forEachMediaGroup", function() { return forEachMediaGroup; });
+/**
+ * Loops through all supported media groups in master and calls the provided
+ * callback for each group
+ *
+ * @param {Object} master
+ *        The parsed master manifest object
+ * @param {string[]} groups
+ *        The media groups to call the callback for
+ * @param {Function} callback
+ *        Callback to call for each media group
+ */
+var forEachMediaGroup = function forEachMediaGroup(master, groups, callback) {
+  groups.forEach(function (mediaType) {
+    for (var groupKey in master.mediaGroups[mediaType]) {
+      for (var labelKey in master.mediaGroups[mediaType][groupKey]) {
+        var mediaProperties = master.mediaGroups[mediaType][groupKey][labelKey];
+        callback(mediaProperties, mediaType, groupKey, labelKey);
+      }
+    }
+  });
 };
 
 /***/ }),
@@ -9852,14 +9894,14 @@ exports.ParseError = ParseError;
 
 "use strict";
 /*!
- * Accordion v3.1.1
+ * Accordion v3.2.0
  * Simple accordion created in pure Javascript.
  * https://github.com/michu2k/Accordion
  *
  * Copyright (c) Michał Strumpf
  * Published under MIT License
- */
-!function(e){var t=0,n=function e(n,i){var s=this,r=this,o=!1;if(Array.isArray(n))return!!n.length&&n.map((function(t){return new e(t,i)}));var a={init:function(){var e=this;this.options=Object.assign({duration:600,ariaEnabled:!0,collapse:!0,showMultiple:!1,openOnInit:[],elementClass:"ac",triggerClass:"ac-trigger",panelClass:"ac-panel",activeClass:"is-active",beforeOpen:function(){},onOpen:function(){},beforeClose:function(){},onClose:function(){}},i);var s=this.options,o=s.elementClass,a=s.openOnInit,c="string"==typeof n;this.container=c?document.querySelector(n):n,this.elements=Array.from(this.container.childNodes).filter((function(e){return e.classList&&e.classList.contains(o)})),this.firstElement=this.elements[0],this.lastElement=this.elements[this.elements.length-1],this.currFocusedIdx=0,this.elements.map((function(n,i){return n.classList.add("js-enabled"),e.generateIDs(n),e.setARIA(n),e.setTransition(n),t++,a.includes(i)?e.showElement(n,!1):e.closeElement(n,!1)})),r.attachEvents()},setTransition:function(e){var t=arguments.length>1&&void 0!==arguments[1]&&arguments[1],n=this.options,i=n.duration,s=n.panelClass,r=e.querySelector(".".concat(s)),o=c("transitionDuration");r.style[o]=t?null:"".concat(i,"ms")},generateIDs:function(e){var n=this.options,i=n.triggerClass,s=n.panelClass,r=e.querySelector(".".concat(i)),o=e.querySelector(".".concat(s));e.setAttribute("id","ac-".concat(t)),r.setAttribute("id","ac-trigger-".concat(t)),o.setAttribute("id","ac-panel-".concat(t))},removeIDs:function(e){var t=this.options,n=t.triggerClass,i=t.panelClass,s=e.querySelector(".".concat(n)),r=e.querySelector(".".concat(i));e.removeAttribute("id"),s.removeAttribute("id"),r.removeAttribute("id")},setARIA:function(e){var n=this.options,i=n.ariaEnabled,s=n.triggerClass,r=n.panelClass;if(i){var o=e.querySelector(".".concat(s)),a=e.querySelector(".".concat(r));o.setAttribute("role","button"),o.setAttribute("aria-controls","ac-panel-".concat(t)),o.setAttribute("aria-disabled",!1),o.setAttribute("aria-expanded",!1),a.setAttribute("role","region"),a.setAttribute("aria-labelledby","ac-trigger-".concat(t))}},updateARIA:function(e,t){var n=t.ariaExpanded,i=t.ariaDisabled,s=this.options,r=s.ariaEnabled,o=s.triggerClass;if(r){var a=e.querySelector(".".concat(o));a.setAttribute("aria-expanded",n),a.setAttribute("aria-disabled",i)}},removeARIA:function(e){var t=this.options,n=t.ariaEnabled,i=t.triggerClass,s=t.panelClass;if(n){var r=e.querySelector(".".concat(i)),o=e.querySelector(".".concat(s));r.removeAttribute("role"),r.removeAttribute("aria-controls"),r.removeAttribute("aria-disabled"),r.removeAttribute("aria-expanded"),o.removeAttribute("role"),o.removeAttribute("aria-labelledby")}},focus:function(e,t){e.preventDefault();var n=this.options.triggerClass;t.querySelector(".".concat(n)).focus()},focusFirstElement:function(e){this.focus(e,this.firstElement),this.currFocusedIdx=0},focusLastElement:function(e){this.focus(e,this.lastElement),this.currFocusedIdx=this.elements.length-1},focusNextElement:function(e){var t=this.currFocusedIdx+1;if(t>this.elements.length-1)return this.focusFirstElement(e);this.focus(e,this.elements[t]),this.currFocusedIdx=t},focusPrevElement:function(e){var t=this.currFocusedIdx-1;if(t<0)return this.focusLastElement(e);this.focus(e,this.elements[t]),this.currFocusedIdx=t},showElement:function(e){var t=!(arguments.length>1&&void 0!==arguments[1])||arguments[1],n=this.options,i=n.panelClass,s=n.activeClass,r=n.collapse,o=n.beforeOpen,a=e.querySelector(".".concat(i)),c=a.scrollHeight;e.classList.add(s),t&&o(e),requestAnimationFrame((function(){requestAnimationFrame((function(){a.style.height=t?"".concat(c,"px"):"auto"}))})),this.updateARIA(e,{ariaExpanded:!0,ariaDisabled:!r})},closeElement:function(e){var t=!(arguments.length>1&&void 0!==arguments[1])||arguments[1],n=this.options,i=n.panelClass,s=n.activeClass,r=n.beforeClose,o=e.querySelector(".".concat(i)),a=o.scrollHeight;e.classList.remove(s),t?(r(e),requestAnimationFrame((function(){o.style.height="".concat(a,"px"),requestAnimationFrame((function(){o.style.height=0}))})),this.updateARIA(e,{ariaExpanded:!1,ariaDisabled:!1})):o.style.height=0},toggleElement:function(e){var t=this.options,n=t.activeClass,i=t.collapse,s=e.classList.contains(n);if(!s||i)return s?this.closeElement(e):this.showElement(e)},closeElements:function(){var e=this,t=this.options,n=t.activeClass;t.showMultiple||this.elements.map((function(t,i){t.classList.contains(n)&&i!=e.currFocusedIdx&&e.closeElement(t)}))},handleClick:function(e){var t=this,n=e.currentTarget;this.elements.map((function(i,s){i.contains(n)&&"A"!==e.target.nodeName&&(t.currFocusedIdx=s,t.closeElements(),t.focus(e,i),t.toggleElement(i))}))},handleKeydown:function(e){var t=38,n=40,i=36,s=35;switch(e.keyCode){case t:return this.focusPrevElement(e);case n:return this.focusNextElement(e);case i:return this.focusFirstElement(e);case s:return this.focusLastElement(e);default:return null}},handleTransitionEnd:function(e){if("height"===e.propertyName){var t=this.options,n=t.onOpen,i=t.onClose,s=e.currentTarget,r=parseInt(s.style.height),o=this.elements.find((function(e){return e.contains(s)}));r>0?(s.style.height="auto",n(o)):i(o)}}};this.attachEvents=function(){if(!o){var e=a.options,t=e.triggerClass,n=e.panelClass;a.handleClick=a.handleClick.bind(a),a.handleKeydown=a.handleKeydown.bind(a),a.handleTransitionEnd=a.handleTransitionEnd.bind(a),a.elements.map((function(e){var i=e.querySelector(".".concat(t)),s=e.querySelector(".".concat(n));i.addEventListener("click",a.handleClick),i.addEventListener("keydown",a.handleKeydown),s.addEventListener("webkitTransitionEnd",a.handleTransitionEnd),s.addEventListener("transitionend",a.handleTransitionEnd)})),o=!0}},this.detachEvents=function(){if(o){var e=a.options,t=e.triggerClass,n=e.panelClass;a.elements.map((function(e){var i=e.querySelector(".".concat(t)),s=e.querySelector(".".concat(n));i.removeEventListener("click",a.handleClick),i.removeEventListener("keydown",a.handleKeydown),s.removeEventListener("webkitTransitionEnd",a.handleTransitionEnd),s.removeEventListener("transitionend",a.handleTransitionEnd)})),o=!1}},this.toggle=function(e){var t=a.elements.find((function(t,n){return n===e}));t&&a.toggleElement(t)},this.open=function(e){var t=a.elements.find((function(t,n){return n===e}));t&&a.showElement(t)},this.openAll=function(){a.elements.map((function(e){return a.showElement(e,!1)}))},this.close=function(e){var t=a.elements.find((function(t,n){return n===e}));t&&a.closeElement(t)},this.closeAll=function(){a.elements.map((function(e){return a.closeElement(e,!1)}))},this.destroy=function(){s.detachEvents(),s.openAll(),a.elements.map((function(e){a.removeIDs(e),a.removeARIA(e),a.setTransition(e,!0)})),o=!0};var c=function(e){return"string"==typeof document.documentElement.style[e]?e:(e=l(e),e="webkit".concat(e))},l=function(e){return e.charAt(0).toUpperCase()+e.slice(1)};a.init()}; true&&void 0!==module.exports?module.exports=n:e.Accordion=n}(window);
+*/
+!function(e){var t=0,n=function e(n,i){var s=this,r=this,o=!1;if(Array.isArray(n))return!!n.length&&n.map((function(t){return new e(t,i)}));var a={init:function(){this.options=Object.assign({duration:600,ariaEnabled:!0,collapse:!0,showMultiple:!1,openOnInit:[],elementClass:"ac",triggerClass:"ac-trigger",panelClass:"ac-panel",activeClass:"is-active",beforeOpen:function(){},onOpen:function(){},beforeClose:function(){},onClose:function(){}},i);var e="string"==typeof n;this.container=e?document.querySelector(n):n,this.createDefinitions(),r.attachEvents()},createDefinitions:function(){var e=this,n=this.options,i=n.elementClass,s=n.openOnInit;this.elements=Array.from(this.container.childNodes).filter((function(e){return e.classList&&e.classList.contains(i)})),this.firstElement=this.elements[0],this.lastElement=this.elements[this.elements.length-1],this.elements.filter((function(e){return!e.classList.contains("js-enabled")})).map((function(n,i){return n.classList.add("js-enabled"),e.generateIDs(n),e.setARIA(n),e.setTransition(n),t++,s.includes(i)?e.showElement(n,!1):e.closeElement(n,!1)}))},setTransition:function(e){var t=arguments.length>1&&void 0!==arguments[1]&&arguments[1],n=this.options,i=n.duration,s=n.panelClass,r=e.querySelector(".".concat(s)),o=c("transitionDuration");r.style[o]=t?null:"".concat(i,"ms")},generateIDs:function(e){var n=this.options,i=n.triggerClass,s=n.panelClass,r=e.querySelector(".".concat(i)),o=e.querySelector(".".concat(s));e.setAttribute("id","ac-".concat(t)),r.setAttribute("id","ac-trigger-".concat(t)),o.setAttribute("id","ac-panel-".concat(t))},removeIDs:function(e){var t=this.options,n=t.triggerClass,i=t.panelClass,s=e.querySelector(".".concat(n)),r=e.querySelector(".".concat(i));e.removeAttribute("id"),s.removeAttribute("id"),r.removeAttribute("id")},setARIA:function(e){var n=this.options,i=n.ariaEnabled,s=n.triggerClass,r=n.panelClass;if(i){var o=e.querySelector(".".concat(s)),a=e.querySelector(".".concat(r));o.setAttribute("role","button"),o.setAttribute("aria-controls","ac-panel-".concat(t)),o.setAttribute("aria-disabled",!1),o.setAttribute("aria-expanded",!1),a.setAttribute("role","region"),a.setAttribute("aria-labelledby","ac-trigger-".concat(t))}},updateARIA:function(e,t){var n=t.ariaExpanded,i=t.ariaDisabled,s=this.options,r=s.ariaEnabled,o=s.triggerClass;if(r){var a=e.querySelector(".".concat(o));a.setAttribute("aria-expanded",n),a.setAttribute("aria-disabled",i)}},removeARIA:function(e){var t=this.options,n=t.ariaEnabled,i=t.triggerClass,s=t.panelClass;if(n){var r=e.querySelector(".".concat(i)),o=e.querySelector(".".concat(s));r.removeAttribute("role"),r.removeAttribute("aria-controls"),r.removeAttribute("aria-disabled"),r.removeAttribute("aria-expanded"),o.removeAttribute("role"),o.removeAttribute("aria-labelledby")}},focus:function(e,t){e.preventDefault();var n=this.options.triggerClass;t.querySelector(".".concat(n)).focus()},focusFirstElement:function(e){this.focus(e,this.firstElement),this.currFocusedIdx=0},focusLastElement:function(e){this.focus(e,this.lastElement),this.currFocusedIdx=this.elements.length-1},focusNextElement:function(e){var t=this.currFocusedIdx+1;if(t>this.elements.length-1)return this.focusFirstElement(e);this.focus(e,this.elements[t]),this.currFocusedIdx=t},focusPrevElement:function(e){var t=this.currFocusedIdx-1;if(t<0)return this.focusLastElement(e);this.focus(e,this.elements[t]),this.currFocusedIdx=t},showElement:function(e){var t=!(arguments.length>1&&void 0!==arguments[1])||arguments[1],n=this.options,i=n.panelClass,s=n.activeClass,r=n.collapse,o=n.beforeOpen,a=e.querySelector(".".concat(i)),c=a.scrollHeight;e.classList.add(s),t&&o(e),requestAnimationFrame((function(){requestAnimationFrame((function(){a.style.height=t?"".concat(c,"px"):"auto"}))})),this.updateARIA(e,{ariaExpanded:!0,ariaDisabled:!r})},closeElement:function(e){var t=!(arguments.length>1&&void 0!==arguments[1])||arguments[1],n=this.options,i=n.panelClass,s=n.activeClass,r=n.beforeClose,o=e.querySelector(".".concat(i)),a=o.scrollHeight;e.classList.remove(s),t?(r(e),requestAnimationFrame((function(){o.style.height="".concat(a,"px"),requestAnimationFrame((function(){o.style.height=0}))})),this.updateARIA(e,{ariaExpanded:!1,ariaDisabled:!1})):o.style.height=0},toggleElement:function(e){var t=this.options,n=t.activeClass,i=t.collapse,s=e.classList.contains(n);if(!s||i)return s?this.closeElement(e):this.showElement(e)},closeElements:function(){var e=this,t=this.options,n=t.activeClass;t.showMultiple||this.elements.map((function(t,i){t.classList.contains(n)&&i!=e.currFocusedIdx&&e.closeElement(t)}))},handleClick:function(e){var t=this,n=e.currentTarget;this.elements.map((function(i,s){i.contains(n)&&"A"!==e.target.nodeName&&(t.currFocusedIdx=s,t.closeElements(),t.focus(e,i),t.toggleElement(i))}))},handleKeydown:function(e){var t=38,n=40,i=36,s=35;switch(e.keyCode){case t:return this.focusPrevElement(e);case n:return this.focusNextElement(e);case i:return this.focusFirstElement(e);case s:return this.focusLastElement(e);default:return null}},handleTransitionEnd:function(e){if("height"===e.propertyName){var t=this.options,n=t.onOpen,i=t.onClose,s=e.currentTarget,r=parseInt(s.style.height),o=this.elements.find((function(e){return e.contains(s)}));r>0?(s.style.height="auto",n(o)):i(o)}}};this.attachEvents=function(){if(!o){var e=a.options,t=e.triggerClass,n=e.panelClass;a.handleClick=a.handleClick.bind(a),a.handleKeydown=a.handleKeydown.bind(a),a.handleTransitionEnd=a.handleTransitionEnd.bind(a),a.elements.map((function(e){var i=e.querySelector(".".concat(t)),s=e.querySelector(".".concat(n));i.addEventListener("click",a.handleClick),i.addEventListener("keydown",a.handleKeydown),s.addEventListener("webkitTransitionEnd",a.handleTransitionEnd),s.addEventListener("transitionend",a.handleTransitionEnd)})),o=!0}},this.detachEvents=function(){if(o){var e=a.options,t=e.triggerClass,n=e.panelClass;a.elements.map((function(e){var i=e.querySelector(".".concat(t)),s=e.querySelector(".".concat(n));i.removeEventListener("click",a.handleClick),i.removeEventListener("keydown",a.handleKeydown),s.removeEventListener("webkitTransitionEnd",a.handleTransitionEnd),s.removeEventListener("transitionend",a.handleTransitionEnd)})),o=!1}},this.toggle=function(e){var t=a.elements.find((function(t,n){return n===e}));t&&a.toggleElement(t)},this.open=function(e){var t=a.elements.find((function(t,n){return n===e}));t&&a.showElement(t)},this.openAll=function(){a.elements.map((function(e){return a.showElement(e,!1)}))},this.close=function(e){var t=a.elements.find((function(t,n){return n===e}));t&&a.closeElement(t)},this.closeAll=function(){a.elements.map((function(e){return a.closeElement(e,!1)}))},this.destroy=function(){s.detachEvents(),s.openAll(),a.elements.map((function(e){a.removeIDs(e),a.removeARIA(e),a.setTransition(e,!0)})),o=!0},this.update=function(){a.createDefinitions(),s.detachEvents(),s.attachEvents()};var c=function(e){return"string"==typeof document.documentElement.style[e]?e:(e=l(e),e="webkit".concat(e))},l=function(e){return e.charAt(0).toUpperCase()+e.slice(1)};a.init()}; true&&void 0!==module.exports?module.exports=n:e.Accordion=n}(window);
 
 /***/ }),
 
@@ -10095,10 +10137,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "checkPrefix", function() { return _checkPropPrefix; });
 /* harmony import */ var _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./gsap-core.js */ "./node_modules/gsap/gsap-core.js");
 /*!
- * CSSPlugin 3.9.1
+ * CSSPlugin 3.10.2
  * https://greensock.com
  *
- * Copyright 2008-2021, GreenSock. All rights reserved.
+ * Copyright 2008-2022, GreenSock. All rights reserved.
  * Subject to the terms at https://greensock.com/standard-license or for
  * Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
@@ -10123,7 +10165,7 @@ var _win,
     _atan2 = Math.atan2,
     _bigNum = 1e8,
     _capsExp = /([A-Z])/g,
-    _horizontalExp = /(?:left|right|width|margin|padding|x)/i,
+    _horizontalExp = /(left|right|width|margin|padding|x)/i,
     _complexExp = /[\s,\(]\S/,
     _propertyAliases = {
   autoAlpha: "opacity,visibility",
@@ -10409,7 +10451,7 @@ _convertToUnit = function _convertToUnit(target, property, value, unit) {
   return unit && !~(value + "").trim().indexOf(" ") ? _convertToUnit(target, property, value, unit) + unit : value;
 },
     _tweenComplexCSSString = function _tweenComplexCSSString(target, prop, start, end) {
-  //note: we call _tweenComplexCSSString.call(pluginInstance...) to ensure that it's scoped properly. We may call it from within a plugin too, thus "this" would refer to the plugin.
+  // note: we call _tweenComplexCSSString.call(pluginInstance...) to ensure that it's scoped properly. We may call it from within a plugin too, thus "this" would refer to the plugin.
   if (!start || start === "none") {
     // some browsers like Safari actually PREFER the prefixed property and mis-report the unprefixed value like clipPath (BUG). In other words, even though clipPath exists in the style ("clipPath" in target.style) and it's set in the CSS properly (along with -webkit-clip-path), Safari reports clipPath as "none" whereas WebkitClipPath reports accurately like "ellipse(100% 0% at 50% 0%)", so in this case we must SWITCH to using the prefixed property instead. See https://greensock.com/forums/topic/18310-clippath-doesnt-work-on-ios/
     var p = _checkPropPrefix(prop, target, 1),
@@ -10437,11 +10479,10 @@ _convertToUnit = function _convertToUnit(target, property, value, unit) {
       chunk,
       endUnit,
       startUnit,
-      relative,
       endValues;
   pt.b = start;
   pt.e = end;
-  start += ""; //ensure values are strings
+  start += ""; // ensure values are strings
 
   end += "";
 
@@ -10453,7 +10494,7 @@ _convertToUnit = function _convertToUnit(target, property, value, unit) {
 
   a = [start, end];
 
-  Object(_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["_colorStringFilter"])(a); //pass an array with the starting and ending values and let the filter do whatever it needs to the values. If colors are found, it returns true and then we must match where the color shows up order-wise because for things like boxShadow, sometimes the browser provides the computed values with the color FIRST, but the user provides it with the color LAST, so flip them if necessary. Same for drop-shadow().
+  Object(_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["_colorStringFilter"])(a); // pass an array with the starting and ending values and let the filter do whatever it needs to the values. If colors are found, it returns true and then we must match where the color shows up order-wise because for things like boxShadow, sometimes the browser provides the computed values with the color FIRST, but the user provides it with the color LAST, so flip them if necessary. Same for drop-shadow().
 
 
   start = a[0];
@@ -10475,12 +10516,7 @@ _convertToUnit = function _convertToUnit(target, property, value, unit) {
       if (endValue !== (startValue = startValues[matchIndex++] || "")) {
         startNum = parseFloat(startValue) || 0;
         startUnit = startValue.substr((startNum + "").length);
-        relative = endValue.charAt(1) === "=" ? +(endValue.charAt(0) + "1") : 0;
-
-        if (relative) {
-          endValue = endValue.substr(2);
-        }
-
+        endValue.charAt(1) === "=" && (endValue = Object(_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["_parseRelative"])(startNum, endValue) + startUnit);
         endNum = parseFloat(endValue);
         endUnit = endValue.substr((endNum + "").length);
         index = _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["_numWithUnitExp"].lastIndex - endUnit.length;
@@ -10497,7 +10533,7 @@ _convertToUnit = function _convertToUnit(target, property, value, unit) {
 
         if (startUnit !== endUnit) {
           startNum = _convertToUnit(target, prop, startValue, endUnit) || 0;
-        } //these nested PropTweens are handled in a special way - we'll never actually call a render or setter method on them. We'll just loop through them in the parent complex string PropTween's render method.
+        } // these nested PropTweens are handled in a special way - we'll never actually call a render or setter method on them. We'll just loop through them in the parent complex string PropTween's render method.
 
 
         pt._pt = {
@@ -10505,7 +10541,7 @@ _convertToUnit = function _convertToUnit(target, property, value, unit) {
           p: chunk || matchIndex === 1 ? chunk : ",",
           //note: SVG spec allows omission of comma/space when a negative sign is wedged between two numbers, like 2.5-5.3 instead of 2.5,-5.3 but when tweening, the negative value may switch to positive, so we insert the comma just in case.
           s: startNum,
-          c: relative ? relative * endNum : endNum - startNum,
+          c: endNum - startNum,
           m: color && color < 4 || prop === "zIndex" ? Math.round : 0
         };
       }
@@ -10959,8 +10995,9 @@ _identity2DMatrix = [1, 0, 0, 1, 0, 0],
     }
   }
 
-  cache.x = x - ((cache.xPercent = x && (cache.xPercent || (Math.round(target.offsetWidth / 2) === Math.round(-x) ? -50 : 0))) ? target.offsetWidth * cache.xPercent / 100 : 0) + px;
-  cache.y = y - ((cache.yPercent = y && (cache.yPercent || (Math.round(target.offsetHeight / 2) === Math.round(-y) ? -50 : 0))) ? target.offsetHeight * cache.yPercent / 100 : 0) + px;
+  uncache = uncache || cache.uncache;
+  cache.x = x - ((cache.xPercent = x && (!uncache && cache.xPercent || (Math.round(target.offsetWidth / 2) === Math.round(-x) ? -50 : 0))) ? target.offsetWidth * cache.xPercent / 100 : 0) + px;
+  cache.y = y - ((cache.yPercent = y && (!uncache && cache.yPercent || (Math.round(target.offsetHeight / 2) === Math.round(-y) ? -50 : 0))) ? target.offsetHeight * cache.yPercent / 100 : 0) + px;
   cache.z = z + px;
   cache.scaleX = Object(_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["_round"])(scaleX);
   cache.scaleY = Object(_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["_round"])(scaleY);
@@ -11158,11 +11195,11 @@ _addPxTranslate = function _addPxTranslate(target, start, value) {
   target.setAttribute("transform", temp);
   forceCSS && (target.style[_transformProp] = temp); //some browsers prioritize CSS transforms over the transform attribute. When we sense that the user has CSS transforms applied, we must overwrite them this way (otherwise some browser simply won't render the  transform attribute changes!)
 },
-    _addRotationalPropTween = function _addRotationalPropTween(plugin, target, property, startNum, endValue, relative) {
+    _addRotationalPropTween = function _addRotationalPropTween(plugin, target, property, startNum, endValue) {
   var cap = 360,
       isString = Object(_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["_isString"])(endValue),
       endNum = parseFloat(endValue) * (isString && ~endValue.indexOf("rad") ? _RAD2DEG : 1),
-      change = relative ? endNum * relative : endNum - startNum,
+      change = endNum - startNum,
       finalValue = startNum + change + "deg",
       direction,
       pt;
@@ -11363,7 +11400,7 @@ var CSSPlugin = {
         }
 
         startNum = parseFloat(startValue);
-        relative = type === "string" && endValue.charAt(1) === "=" ? +(endValue.charAt(0) + "1") : 0;
+        relative = type === "string" && endValue.charAt(1) === "=" && endValue.substr(0, 2);
         relative && (endValue = endValue.substr(2));
         endNum = parseFloat(endValue);
 
@@ -11398,7 +11435,7 @@ var CSSPlugin = {
           }
 
           if (p === "scale") {
-            this._pt = new _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["PropTween"](this._pt, cache, "scaleY", cache.scaleY, (relative ? relative * endNum : endNum - cache.scaleY) || 0);
+            this._pt = new _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["PropTween"](this._pt, cache, "scaleY", cache.scaleY, (relative ? Object(_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["_parseRelative"])(cache.scaleY, relative + endNum) : endNum) - cache.scaleY || 0);
             props.push("scaleY", p);
             p += "X";
           } else if (p === "transformOrigin") {
@@ -11420,7 +11457,7 @@ var CSSPlugin = {
 
             continue;
           } else if (p in _rotationalProperties) {
-            _addRotationalPropTween(this, cache, p, startNum, endValue, relative);
+            _addRotationalPropTween(this, cache, p, startNum, relative ? Object(_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["_parseRelative"])(startNum, relative + endValue) : endValue);
 
             continue;
           } else if (p === "smoothOrigin") {
@@ -11445,7 +11482,7 @@ var CSSPlugin = {
 
           endUnit = Object(_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["getUnit"])(endValue) || (p in _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["_config"].units ? _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["_config"].units[p] : startUnit);
           startUnit !== endUnit && (startNum = _convertToUnit(target, p, startValue, endUnit));
-          this._pt = new _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["PropTween"](this._pt, isTransformRelated ? cache : style, p, startNum, relative ? relative * endNum : endNum - startNum, !isTransformRelated && (endUnit === "px" || p === "zIndex") && vars.autoRound !== false ? _renderRoundedCSSProp : _renderCSSProp);
+          this._pt = new _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["PropTween"](this._pt, isTransformRelated ? cache : style, p, startNum, (relative ? Object(_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["_parseRelative"])(startNum, relative + endNum) : endNum) - startNum, !isTransformRelated && (endUnit === "px" || p === "zIndex") && vars.autoRound !== false ? _renderRoundedCSSProp : _renderCSSProp);
           this._pt.u = endUnit || 0;
 
           if (startUnit !== endUnit && endUnit !== "%") {
@@ -11456,14 +11493,14 @@ var CSSPlugin = {
         } else if (!(p in style)) {
           if (p in target) {
             //maybe it's not a style - it could be a property added directly to an element in which case we'll try to animate that.
-            this.add(target, p, startValue || target[p], endValue, index, targets);
+            this.add(target, p, startValue || target[p], relative ? relative + endValue : endValue, index, targets);
           } else {
             Object(_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["_missingPlugin"])(p, endValue);
 
             continue;
           }
         } else {
-          _tweenComplexCSSString.call(this, target, p, startValue, endValue);
+          _tweenComplexCSSString.call(this, target, p, startValue, relative ? relative + endValue : endValue);
         }
 
         props.push(p);
@@ -11514,6 +11551,626 @@ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["gsap"].registerPlugin(CSSPlugin);
 
 /***/ }),
 
+/***/ "./node_modules/gsap/Observer.js":
+/*!***************************************!*\
+  !*** ./node_modules/gsap/Observer.js ***!
+  \***************************************/
+/*! exports provided: Observer, default, _isViewport, _scrollers, _getScrollFunc, _getProxyProp, _proxies, _getVelocityProp, _vertical, _horizontal, _getTarget */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Observer", function() { return Observer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Observer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_isViewport", function() { return _isViewport; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_scrollers", function() { return _scrollers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_getScrollFunc", function() { return _getScrollFunc; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_getProxyProp", function() { return _getProxyProp; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_proxies", function() { return _proxies; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_getVelocityProp", function() { return _getVelocityProp; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_vertical", function() { return _vertical; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_horizontal", function() { return _horizontal; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_getTarget", function() { return _getTarget; });
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+/*!
+ * Observer 3.10.2
+ * https://greensock.com
+ *
+ * @license Copyright 2008-2022, GreenSock. All rights reserved.
+ * Subject to the terms at https://greensock.com/standard-license or for
+ * Club GreenSock members, the agreement issued with that membership.
+ * @author: Jack Doyle, jack@greensock.com
+*/
+
+/* eslint-disable */
+var gsap,
+    _coreInitted,
+    _clamp,
+    _win,
+    _doc,
+    _docEl,
+    _body,
+    _isTouch,
+    _pointerType,
+    ScrollTrigger,
+    _root,
+    _normalizer,
+    _getGSAP = function _getGSAP() {
+  return gsap || typeof window !== "undefined" && (gsap = window.gsap) && gsap.registerPlugin && gsap;
+},
+    _passThrough = function _passThrough(p) {
+  return p;
+},
+    _startup = 1,
+    _observers = [],
+    _scrollers = [],
+    _proxies = [],
+    _getTime = Date.now,
+    _bridge = function _bridge(name, value) {
+  return value;
+},
+    _integrate = function _integrate() {
+  var core = ScrollTrigger.core,
+      data = core.bridge || {},
+      scrollers = core._scrollers,
+      proxies = core._proxies;
+  scrollers.push.apply(scrollers, _scrollers);
+  proxies.push.apply(proxies, _proxies);
+  _scrollers = scrollers;
+  _proxies = proxies;
+
+  _bridge = function _bridge(name, value) {
+    return data[name](value);
+  };
+},
+    _getProxyProp = function _getProxyProp(element, property) {
+  return ~_proxies.indexOf(element) && _proxies[_proxies.indexOf(element) + 1][property];
+},
+    _isViewport = function _isViewport(el) {
+  return !!~_root.indexOf(el);
+},
+    _addListener = function _addListener(element, type, func, nonPassive) {
+  return element.addEventListener(type, func, {
+    passive: !nonPassive
+  });
+},
+    _removeListener = function _removeListener(element, type, func) {
+  return element.removeEventListener(type, func);
+},
+    _scrollLeft = "scrollLeft",
+    _scrollTop = "scrollTop",
+    _onScroll = function _onScroll() {
+  return _normalizer && _normalizer.isPressed || _scrollers.cache++;
+},
+    _scrollCacheFunc = function _scrollCacheFunc(f) {
+  return function (value) {
+    // since reading the scrollTop/scrollLeft/pageOffsetY/pageOffsetX can trigger a layout, this function allows us to cache the value so it only gets read fresh after a "scroll" event fires (or while we're refreshing because that can lengthen the page and alter the scroll position). when "soft" is true, that means don't actually set the scroll, but cache the new value instead (useful in ScrollSmoother)
+    if (value || value === 0) {
+      _startup && (_win.history.scrollRestoration = "manual"); // otherwise the new position will get overwritten by the browser onload.
+
+      f(value);
+      f.v = value;
+      f.c = _scrollers.cache;
+      _normalizer && _normalizer.isPressed && _bridge("ss", value); // set scroll (notify ScrollTrigger so it can dispatch a "scrollStart" event if necessary
+    } else if (_scrollers.cache !== f.c || _bridge("ref")) {
+      f.c = _scrollers.cache;
+      f.v = f();
+    }
+
+    return f.v;
+  };
+},
+    _horizontal = {
+  s: _scrollLeft,
+  p: "left",
+  p2: "Left",
+  os: "right",
+  os2: "Right",
+  d: "width",
+  d2: "Width",
+  a: "x",
+  sc: _scrollCacheFunc(function (value) {
+    return arguments.length ? _win.scrollTo(value, _vertical.sc()) : _win.pageXOffset || _doc[_scrollLeft] || _docEl[_scrollLeft] || _body[_scrollLeft] || 0;
+  })
+},
+    _vertical = {
+  s: _scrollTop,
+  p: "top",
+  p2: "Top",
+  os: "bottom",
+  os2: "Bottom",
+  d: "height",
+  d2: "Height",
+  a: "y",
+  op: _horizontal,
+  sc: _scrollCacheFunc(function (value) {
+    return arguments.length ? _win.scrollTo(_horizontal.sc(), value) : _win.pageYOffset || _doc[_scrollTop] || _docEl[_scrollTop] || _body[_scrollTop] || 0;
+  })
+},
+    _getTarget = function _getTarget(t) {
+  return gsap.utils.toArray(t)[0] || (typeof t === "string" && gsap.config().nullTargetWarn !== false ? console.warn("Element not found:", t) : null);
+},
+    _getScrollFunc = function _getScrollFunc(element, _ref) {
+  var s = _ref.s,
+      sc = _ref.sc;
+
+  // we store the scroller functions in a alternating sequenced Array like [element, verticalScrollFunc, horizontalScrollFunc, ...] so that we can minimize memory, maximize performance, and we also record the last position as a ".rec" property in order to revert to that after refreshing to ensure things don't shift around.
+  var i = _scrollers.indexOf(element),
+      offset = sc === _vertical.sc ? 1 : 2;
+
+  !~i && (i = _scrollers.push(element) - 1);
+  return _scrollers[i + offset] || (_scrollers[i + offset] = _getProxyProp(element, s) || (_isViewport(element) ? sc : function (value) {
+    return arguments.length ? element[s] = value : element[s];
+  }));
+},
+    _getVelocityProp = function _getVelocityProp(value, minTimeRefresh, useDelta) {
+  var v1 = value,
+      v2 = value,
+      t1 = _getTime(),
+      t2 = t1,
+      min = minTimeRefresh || 50,
+      dropToZeroTime = Math.max(500, min * 3),
+      update = function update(value, force) {
+    var t = _getTime();
+
+    if (force || t - t1 > min) {
+      v2 = v1;
+      v1 = value;
+      t2 = t1;
+      t1 = t;
+    } else if (useDelta) {
+      v1 += value;
+    } else {
+      // not totally necessary, but makes it a bit more accurate by adjusting the v1 value according to the new slope. This way we're not just ignoring the incoming data. Removing for now because it doesn't seem to make much practical difference and it's probably not worth the kb.
+      v1 = v2 + (value - v2) / (t - t2) * (t1 - t2);
+    }
+  },
+      reset = function reset() {
+    v2 = v1 = useDelta ? 0 : v1;
+    t2 = t1 = 0;
+  },
+      getVelocity = function getVelocity(latestValue) {
+    var tOld = t2,
+        vOld = v2,
+        t = _getTime();
+
+    (latestValue || latestValue === 0) && latestValue !== v1 && update(latestValue);
+    return t1 === t2 || t - t2 > dropToZeroTime ? 0 : (v1 + (useDelta ? vOld : -vOld)) / ((useDelta ? t : t1) - tOld) * 1000;
+  };
+
+  return {
+    update: update,
+    reset: reset,
+    getVelocity: getVelocity
+  };
+},
+    _getEvent = function _getEvent(e, preventDefault) {
+  preventDefault && e.preventDefault();
+  return e.changedTouches ? e.changedTouches[0] : e;
+},
+    _getAbsoluteMax = function _getAbsoluteMax(a) {
+  var max = Math.max.apply(Math, a),
+      min = Math.min.apply(Math, a);
+  return Math.abs(max) >= Math.abs(min) ? max : min;
+},
+    _initCore = function _initCore(core) {
+  gsap = core || _getGSAP();
+
+  if (gsap && !_coreInitted && typeof document !== "undefined" && document.body) {
+    _win = window;
+    _doc = document;
+    _docEl = _doc.documentElement;
+    _body = _doc.body;
+    _root = [_win, _doc, _docEl, _body];
+    _clamp = gsap.utils.clamp;
+    _pointerType = "onpointerenter" in _body ? "pointer" : "mouse"; // isTouch is 0 if no touch, 1 if ONLY touch, and 2 if it can accommodate touch but also other types like mouse/pointer.
+
+    _isTouch = Observer.isTouch = _win.matchMedia && _win.matchMedia("(hover: none), (pointer: coarse)").matches ? 1 : "ontouchstart" in _win || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0 ? 2 : 0;
+    setTimeout(function () {
+      return _startup = 0;
+    }, 500);
+    _coreInitted = 1;
+  }
+
+  return _coreInitted;
+};
+
+_horizontal.op = _vertical;
+_scrollers.cache = 0;
+var Observer = /*#__PURE__*/function () {
+  function Observer(vars) {
+    this.init(vars);
+  }
+
+  var _proto = Observer.prototype;
+
+  _proto.init = function init(vars) {
+    _coreInitted || _initCore(gsap) || console.warn("Please gsap.registerPlugin(Observer)");
+
+    if (!ScrollTrigger) {
+      ScrollTrigger = gsap.core.globals().ScrollTrigger;
+      ScrollTrigger && ScrollTrigger.core && _integrate();
+    }
+
+    var tolerance = vars.tolerance,
+        dragMinimum = vars.dragMinimum,
+        type = vars.type,
+        target = vars.target,
+        lineHeight = vars.lineHeight,
+        debounce = vars.debounce,
+        preventDefault = vars.preventDefault,
+        onStop = vars.onStop,
+        onStopDelay = vars.onStopDelay,
+        ignore = vars.ignore,
+        wheelSpeed = vars.wheelSpeed,
+        event = vars.event,
+        onDragStart = vars.onDragStart,
+        onDragEnd = vars.onDragEnd,
+        onDrag = vars.onDrag,
+        onPress = vars.onPress,
+        onRelease = vars.onRelease,
+        onRight = vars.onRight,
+        onLeft = vars.onLeft,
+        onUp = vars.onUp,
+        onDown = vars.onDown,
+        onChangeX = vars.onChangeX,
+        onChangeY = vars.onChangeY,
+        onChange = vars.onChange,
+        onToggleX = vars.onToggleX,
+        onToggleY = vars.onToggleY,
+        onHover = vars.onHover,
+        onHoverEnd = vars.onHoverEnd,
+        onMove = vars.onMove,
+        ignoreCheck = vars.ignoreCheck,
+        isNormalizer = vars.isNormalizer,
+        onGestureStart = vars.onGestureStart,
+        onGestureEnd = vars.onGestureEnd,
+        onWheel = vars.onWheel,
+        onEnable = vars.onEnable,
+        onDisable = vars.onDisable,
+        onClick = vars.onClick,
+        scrollSpeed = vars.scrollSpeed;
+    this.target = target = _getTarget(target) || _docEl;
+    this.vars = vars;
+    ignore && (ignore = gsap.utils.toArray(ignore));
+    tolerance = tolerance || 0;
+    dragMinimum = dragMinimum || 0;
+    wheelSpeed = wheelSpeed || 1;
+    scrollSpeed = scrollSpeed || 1;
+    type = type || "wheel,touch,pointer";
+    debounce = debounce !== false;
+    lineHeight || (lineHeight = parseFloat(_win.getComputedStyle(_body).lineHeight) || 22); // note: browser may report "normal", so default to 22.
+
+    var id,
+        onStopDelayedCall,
+        dragged,
+        moved,
+        wheeled,
+        self = this,
+        prevDeltaX = 0,
+        prevDeltaY = 0,
+        scrollFuncX = _getScrollFunc(target, _horizontal),
+        scrollFuncY = _getScrollFunc(target, _vertical),
+        scrollX = scrollFuncX(),
+        scrollY = scrollFuncY(),
+        events = ("ontouchstart" in _docEl ? "touchstart,touchmove,touchcancel,touchend" : type.indexOf("pointer") >= 0 && !("onpointerdown" in _docEl) ? "mousedown,mousemove,mouseup,mouseup" : "pointerdown,pointermove,pointercancel,pointerup").split(","),
+        limitToTouch = ~type.indexOf("touch") && !~type.indexOf("pointer") && events[0] === "pointerdown",
+        // for devices that accommodate mouse events and touch events, we need to distinguish.
+    isViewport = _isViewport(target),
+        ownerDoc = target.ownerDocument || _doc,
+        deltaX = [0, 0, 0],
+        // wheel, scroll, pointer/touch
+    deltaY = [0, 0, 0],
+        _ignoreCheck = function _ignoreCheck(e, isPointerOrTouch) {
+      return (self.event = e) && ignore && ~ignore.indexOf(e.target) || isPointerOrTouch && limitToTouch && e.pointerType !== "touch" || ignoreCheck && ignoreCheck(e);
+    },
+        onStopFunc = function onStopFunc() {
+      self._vx.reset();
+
+      self._vy.reset();
+
+      onStopDelayedCall.pause();
+      onStop && onStop(self);
+    },
+        update = function update() {
+      var dx = self.deltaX = _getAbsoluteMax(deltaX),
+          dy = self.deltaY = _getAbsoluteMax(deltaY),
+          changedX = Math.abs(dx) >= tolerance,
+          changedY = Math.abs(dy) >= tolerance;
+
+      onChange && (changedX || changedY) && onChange(self, dx, dy, deltaX, deltaY); // in ScrollTrigger.normalizeScroll(), we need to know if it was touch/pointer so we need access to the deltaX/deltaY Arrays before we clear them out.
+
+      if (changedX) {
+        onRight && self.deltaX > 0 && onRight(self);
+        onLeft && self.deltaX < 0 && onLeft(self);
+        onChangeX && onChangeX(self);
+        onToggleX && self.deltaX < 0 !== prevDeltaX < 0 && onToggleX(self);
+        prevDeltaX = self.deltaX;
+        deltaX[0] = deltaX[1] = deltaX[2] = 0;
+      }
+
+      if (changedY) {
+        onDown && self.deltaY > 0 && onDown(self);
+        onUp && self.deltaY < 0 && onUp(self);
+        onChangeY && onChangeY(self);
+        onToggleY && self.deltaY < 0 !== prevDeltaY < 0 && onToggleY(self);
+        prevDeltaY = self.deltaY;
+        deltaY[0] = deltaY[1] = deltaY[2] = 0;
+      }
+
+      if (moved) {
+        onMove(self);
+        moved = false;
+      }
+
+      if (dragged) {
+        onDrag(self);
+        dragged = false;
+      }
+
+      if (wheeled) {
+        onWheel(self);
+        wheeled = false;
+      }
+
+      id = 0;
+    },
+        onDelta = function onDelta(x, y, index) {
+      deltaX[index] += x;
+      deltaY[index] += y;
+
+      self._vx.update(x, index === 2); // update the velocity as frequently as possible instead of in the debounced function so that very quick touch-scrolls (flicks) feel natural. If it's the mouse/touch/pointer, force it so that we get snappy/accurate momentum scroll.
+
+
+      self._vy.update(y, index === 2);
+
+      debounce ? id || (id = requestAnimationFrame(update)) : update();
+    },
+        _onDrag = function _onDrag(e) {
+      if (_ignoreCheck(e, 1)) {
+        return;
+      }
+
+      e = _getEvent(e, preventDefault);
+      var x = e.clientX,
+          y = e.clientY,
+          dx = x - self.x,
+          dy = y - self.y,
+          isDragging = self.isDragging;
+      self.x = x;
+      self.y = y;
+
+      if (isDragging || Math.abs(self.startX - x) >= dragMinimum || Math.abs(self.startY - y) >= dragMinimum) {
+        onDrag && (dragged = true);
+        isDragging || (self.isDragging = true);
+        onDelta(dx, dy, 2);
+        isDragging || onDragStart && onDragStart(self);
+      }
+    },
+        _onPress = self.onPress = function (e) {
+      if (_ignoreCheck(e, 1)) {
+        return;
+      }
+
+      onStopDelayedCall.pause();
+      self.isPressed = true;
+      e = _getEvent(e, preventDefault);
+      prevDeltaX = prevDeltaY = 0;
+      self.startX = self.x = e.clientX;
+      self.startY = self.y = e.clientY;
+
+      self._vx.reset(); // otherwise the t2 may be stale if the user touches and flicks super fast and releases in less than 2 requestAnimationFrame ticks, causing velocity to be 0.
+
+
+      self._vy.reset();
+
+      _addListener(isNormalizer ? target : ownerDoc, events[1], _onDrag, preventDefault);
+
+      self.deltaX = self.deltaY = 0;
+      onPress && onPress(self);
+    },
+        _onRelease = function _onRelease(e) {
+      if (_ignoreCheck(e, 1)) {
+        return;
+      }
+
+      _removeListener(isNormalizer ? target : ownerDoc, events[1], _onDrag);
+
+      var wasDragging = self.isDragging;
+
+      if (!wasDragging) {
+        self._vx.reset();
+
+        self._vy.reset();
+      }
+
+      self.isDragging = self.isGesturing = self.isPressed = false;
+      onStop && !isNormalizer && onStopDelayedCall.restart(true);
+      onDragEnd && wasDragging && onDragEnd(self);
+      onRelease && onRelease(self, wasDragging);
+    },
+        _onGestureStart = function _onGestureStart(e) {
+      return e.touches && e.touches.length > 1 && (self.isGesturing = true) && onGestureStart(e, self.isDragging);
+    },
+        _onGestureEnd = function _onGestureEnd() {
+      return (self.isGesturing = false) || onGestureEnd(self);
+    },
+        onScroll = function onScroll(e) {
+      if (_ignoreCheck(e)) {
+        return;
+      }
+
+      var x = scrollFuncX(),
+          y = scrollFuncY();
+      onDelta((x - scrollX) * scrollSpeed, (y - scrollY) * scrollSpeed, 1);
+      scrollX = x;
+      scrollY = y;
+      onStop && onStopDelayedCall.restart(true);
+    },
+        _onWheel = function _onWheel(e) {
+      if (_ignoreCheck(e)) {
+        return;
+      }
+
+      e = _getEvent(e, preventDefault);
+      onWheel && (wheeled = true);
+      var multiplier = (e.deltaMode === 1 ? lineHeight : e.deltaMode === 2 ? _win.innerHeight : 1) * wheelSpeed;
+      onDelta(e.deltaX * multiplier, e.deltaY * multiplier, 0);
+      onStop && !isNormalizer && onStopDelayedCall.restart(true);
+    },
+        _onMove = function _onMove(e) {
+      if (_ignoreCheck(e)) {
+        return;
+      }
+
+      var x = e.clientX,
+          y = e.clientY,
+          dx = x - self.x,
+          dy = y - self.y;
+      self.x = x;
+      self.y = y;
+      onMove && (moved = true);
+      (dx || dy) && onDelta(dx, dy, 2);
+    },
+        _onHover = function _onHover(e) {
+      self.event = e;
+      onHover(self);
+    },
+        _onHoverEnd = function _onHoverEnd(e) {
+      self.event = e;
+      onHoverEnd(self);
+    },
+        _onClick = function _onClick(e) {
+      return _ignoreCheck(e) || _getEvent(e, preventDefault) && onClick(self);
+    };
+
+    onStopDelayedCall = self._dc = gsap.delayedCall(onStopDelay || 0.25, onStopFunc).pause();
+    self.deltaX = self.deltaY = 0;
+    self._vx = _getVelocityProp(0, 50, true);
+    self._vy = _getVelocityProp(0, 50, true);
+    self.scrollX = scrollFuncX;
+    self.scrollY = scrollFuncY;
+    self.isDragging = self.isGesturing = self.isPressed = false;
+
+    self.enable = function (e) {
+      if (!self.isEnabled) {
+        _addListener(isViewport ? ownerDoc : target, "scroll", _onScroll);
+
+        type.indexOf("scroll") >= 0 && _addListener(isViewport ? ownerDoc : target, "scroll", onScroll, preventDefault);
+        type.indexOf("wheel") >= 0 && _addListener(target, "wheel", _onWheel, preventDefault);
+
+        if (type.indexOf("touch") >= 0 && _isTouch || type.indexOf("pointer") >= 0) {
+          _addListener(target, events[0], _onPress, preventDefault);
+
+          _addListener(ownerDoc, events[2], _onRelease);
+
+          _addListener(ownerDoc, events[3], _onRelease);
+
+          onClick && _addListener(target, "click", _onClick);
+          onGestureStart && _addListener(ownerDoc, "gesturestart", _onGestureStart);
+          onGestureEnd && _addListener(ownerDoc, "gestureend", _onGestureEnd);
+          onHover && _addListener(target, _pointerType + "enter", _onHover);
+          onHoverEnd && _addListener(target, _pointerType + "leave", _onHoverEnd);
+          onMove && _addListener(target, _pointerType + "move", _onMove);
+        }
+
+        self.isEnabled = true;
+        e && e.type && _onPress(e);
+        onEnable && onEnable(self);
+      }
+
+      return self;
+    };
+
+    self.disable = function () {
+      if (self.isEnabled) {
+        // only remove the _onScroll listener if there aren't any others that rely on the functionality.
+        _observers.filter(function (o) {
+          return o !== self && _isViewport(o.target);
+        }).length || _removeListener(isViewport ? ownerDoc : target, "scroll", _onScroll);
+
+        _removeListener(isViewport ? ownerDoc : target, "scroll", onScroll);
+
+        _removeListener(target, "wheel", _onWheel);
+
+        _removeListener(target, events[0], _onPress);
+
+        _removeListener(ownerDoc, events[2], _onRelease);
+
+        _removeListener(ownerDoc, events[3], _onRelease);
+
+        _removeListener(target, "click", _onClick);
+
+        _removeListener(ownerDoc, "gesturestart", _onGestureStart);
+
+        _removeListener(ownerDoc, "gestureend", _onGestureEnd);
+
+        _removeListener(target, _pointerType + "enter", _onHover);
+
+        _removeListener(target, _pointerType + "leave", _onHoverEnd);
+
+        _removeListener(target, _pointerType + "move", _onMove);
+
+        self.isEnabled = false;
+        onDisable && onDisable(self);
+      }
+    };
+
+    self.kill = function () {
+      self.disable();
+
+      var i = _observers.indexOf(self);
+
+      i >= 0 && _observers.splice(i, 1);
+      _normalizer === self && (_normalizer = 0);
+    };
+
+    _observers.push(self);
+
+    isNormalizer && (_normalizer = self);
+    self.enable(event);
+  };
+
+  _createClass(Observer, [{
+    key: "velocityX",
+    get: function get() {
+      return this._vx.getVelocity();
+    }
+  }, {
+    key: "velocityY",
+    get: function get() {
+      return this._vy.getVelocity();
+    }
+  }]);
+
+  return Observer;
+}();
+Observer.version = "3.10.2";
+
+Observer.create = function (vars) {
+  return new Observer(vars);
+};
+
+Observer.register = _initCore;
+
+Observer.getAll = function () {
+  return _observers.slice();
+};
+
+Observer.getById = function (id) {
+  return _observers.filter(function (o) {
+    return o.vars.id === id;
+  })[0];
+};
+
+_getGSAP() && gsap.registerPlugin(Observer);
+
+
+/***/ }),
+
 /***/ "./node_modules/gsap/ScrollTrigger.js":
 /*!********************************************!*\
   !*** ./node_modules/gsap/ScrollTrigger.js ***!
@@ -11525,17 +12182,20 @@ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["gsap"].registerPlugin(CSSPlugin);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScrollTrigger", function() { return ScrollTrigger; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ScrollTrigger; });
+/* harmony import */ var _Observer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Observer.js */ "./node_modules/gsap/Observer.js");
 /*!
- * ScrollTrigger 3.9.1
+ * ScrollTrigger 3.10.2
  * https://greensock.com
  *
- * @license Copyright 2008-2021, GreenSock. All rights reserved.
+ * @license Copyright 2008-2022, GreenSock. All rights reserved.
  * Subject to the terms at https://greensock.com/standard-license or for
  * Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
 */
 
 /* eslint-disable */
+
+
 var gsap,
     _coreInitted,
     _win,
@@ -11558,20 +12218,25 @@ var gsap,
     _sort,
     _suppressOverwrites,
     _ignoreResize,
+    _normalizer,
+    _ignoreMobileResize,
+    _baseScreenHeight,
+    _baseScreenWidth,
     _limitCallbacks,
     // if true, we'll only trigger callbacks if the active state toggles, so if you scroll immediately past both the start and end positions of a ScrollTrigger (thus inactive to inactive), neither its onEnter nor onLeave will be called. This is useful during startup.
 _startup = 1,
-    _proxies = [],
-    _scrollers = [],
     _getTime = Date.now,
     _time1 = _getTime(),
     _lastScrollTime = 0,
-    _enabled = 1,
+    _enabled = 0,
+    _pointerDownHandler = function _pointerDownHandler() {
+  return _pointerIsDown = 1;
+},
+    _pointerUpHandler = function _pointerUpHandler() {
+  return _pointerIsDown = 0;
+},
     _passThrough = function _passThrough(v) {
   return v;
-},
-    _getTarget = function _getTarget(t) {
-  return _toArray(t)[0] || (_isString(t) && gsap.config().nullTargetWarn !== false ? console.warn("Element not found:", t) : null);
 },
     _round = function _round(value) {
   return Math.round(value * 100000) / 100000 || 0;
@@ -11585,24 +12250,8 @@ _startup = 1,
     _isViewport = function _isViewport(e) {
   return !!~_root.indexOf(e);
 },
-    _getProxyProp = function _getProxyProp(element, property) {
-  return ~_proxies.indexOf(element) && _proxies[_proxies.indexOf(element) + 1][property];
-},
-    _getScrollFunc = function _getScrollFunc(element, _ref) {
-  var s = _ref.s,
-      sc = _ref.sc;
-
-  // we store the scroller functions in a alternating sequenced Array like [element, verticalScrollFunc, horizontalScrollFunc, ...] so that we can minimize memory, maximize performance, and we also record the last position as a ".rec" property in order to revert to that after refreshing to ensure things don't shift around.
-  var i = _scrollers.indexOf(element),
-      offset = sc === _vertical.sc ? 1 : 2;
-
-  !~i && (i = _scrollers.push(element) - 1);
-  return _scrollers[i + offset] || (_scrollers[i + offset] = _getProxyProp(element, s) || (_isViewport(element) ? sc : function (value) {
-    return arguments.length ? element[s] = value : element[s];
-  }));
-},
     _getBoundsFunc = function _getBoundsFunc(element) {
-  return _getProxyProp(element, "getBoundingClientRect") || (_isViewport(element) ? function () {
+  return Object(_Observer_js__WEBPACK_IMPORTED_MODULE_0__["_getProxyProp"])(element, "getBoundingClientRect") || (_isViewport(element) ? function () {
     _winOffsets.width = _win.innerWidth;
     _winOffsets.height = _win.innerHeight;
     return _winOffsets;
@@ -11610,27 +12259,27 @@ _startup = 1,
     return _getBounds(element);
   });
 },
-    _getSizeFunc = function _getSizeFunc(scroller, isViewport, _ref2) {
-  var d = _ref2.d,
-      d2 = _ref2.d2,
-      a = _ref2.a;
-  return (a = _getProxyProp(scroller, "getBoundingClientRect")) ? function () {
+    _getSizeFunc = function _getSizeFunc(scroller, isViewport, _ref) {
+  var d = _ref.d,
+      d2 = _ref.d2,
+      a = _ref.a;
+  return (a = Object(_Observer_js__WEBPACK_IMPORTED_MODULE_0__["_getProxyProp"])(scroller, "getBoundingClientRect")) ? function () {
     return a()[d];
   } : function () {
     return (isViewport ? _win["inner" + d2] : scroller["client" + d2]) || 0;
   };
 },
     _getOffsetsFunc = function _getOffsetsFunc(element, isViewport) {
-  return !isViewport || ~_proxies.indexOf(element) ? _getBoundsFunc(element) : function () {
+  return !isViewport || ~_Observer_js__WEBPACK_IMPORTED_MODULE_0__["_proxies"].indexOf(element) ? _getBoundsFunc(element) : function () {
     return _winOffsets;
   };
 },
-    _maxScroll = function _maxScroll(element, _ref3) {
-  var s = _ref3.s,
-      d2 = _ref3.d2,
-      d = _ref3.d,
-      a = _ref3.a;
-  return (s = "scroll" + d2) && (a = _getProxyProp(element, s)) ? a() - _getBoundsFunc(element)()[d] : _isViewport(element) ? (_body[s] || _docEl[s]) - (_win["inner" + d2] || _docEl["client" + d2] || _body["client" + d2]) : element[s] - element["offset" + d2];
+    _maxScroll = function _maxScroll(element, _ref2) {
+  var s = _ref2.s,
+      d2 = _ref2.d2,
+      d = _ref2.d,
+      a = _ref2.a;
+  return (s = "scroll" + d2) && (a = Object(_Observer_js__WEBPACK_IMPORTED_MODULE_0__["_getProxyProp"])(element, s)) ? a() - _getBoundsFunc(element)()[d] : _isViewport(element) ? (_docEl[s] || _body[s]) - (_win["inner" + d2] || _docEl["client" + d2] || _body["client" + d2]) : element[s] - element["offset" + d2];
 },
     _iterateAutoRefresh = function _iterateAutoRefresh(func, events) {
   for (var i = 0; i < _autoRefresh.length; i += 3) {
@@ -11691,33 +12340,6 @@ _startup = 1,
     _Width = "Width",
     _Height = "Height",
     _px = "px",
-    _horizontal = {
-  s: _scrollLeft,
-  p: _left,
-  p2: _Left,
-  os: _right,
-  os2: _Right,
-  d: _width,
-  d2: _Width,
-  a: "x",
-  sc: function sc(value) {
-    return arguments.length ? _win.scrollTo(value, _vertical.sc()) : _win.pageXOffset || _doc[_scrollLeft] || _docEl[_scrollLeft] || _body[_scrollLeft] || 0;
-  }
-},
-    _vertical = {
-  s: _scrollTop,
-  p: _top,
-  p2: _Top,
-  os: _bottom,
-  os2: _Bottom,
-  d: _height,
-  d2: _Height,
-  a: "y",
-  op: _horizontal,
-  sc: function sc(value) {
-    return arguments.length ? _win.scrollTo(_horizontal.sc(), value) : _win.pageYOffset || _doc[_scrollTop] || _docEl[_scrollTop] || _body[_scrollTop] || 0;
-  }
-},
     _getComputedStyle = function _getComputedStyle(element) {
   return _win.getComputedStyle(element);
 },
@@ -11751,8 +12373,8 @@ _startup = 1,
   tween && tween.progress(0).kill();
   return bounds;
 },
-    _getSize = function _getSize(element, _ref4) {
-  var d2 = _ref4.d2;
+    _getSize = function _getSize(element, _ref3) {
+  var d2 = _ref3.d2;
   return element["offset" + d2] || element["client" + d2] || 0;
 },
     _getLabelRatioArray = function _getLabelRatioArray(timeline) {
@@ -11829,13 +12451,16 @@ _startup = 1,
     return func(element, type, callback);
   });
 },
-    _addListener = function _addListener(element, type, func) {
+    _addListener = function _addListener(element, type, func, nonPassive) {
   return element.addEventListener(type, func, {
-    passive: true
+    passive: !nonPassive
   });
 },
     _removeListener = function _removeListener(element, type, func) {
   return element.removeEventListener(type, func);
+},
+    _wheelListener = function _wheelListener(func, el, scrollFunc) {
+  return scrollFunc && scrollFunc.wheelHandler && func(el, "wheel", scrollFunc);
 },
     _markerDefaults = {
   startColor: "green",
@@ -11870,15 +12495,15 @@ _startup = 1,
 
   return value;
 },
-    _createMarker = function _createMarker(type, name, container, direction, _ref5, offset, matchWidthEl, containerAnimation) {
-  var startColor = _ref5.startColor,
-      endColor = _ref5.endColor,
-      fontSize = _ref5.fontSize,
-      indent = _ref5.indent,
-      fontWeight = _ref5.fontWeight;
+    _createMarker = function _createMarker(type, name, container, direction, _ref4, offset, matchWidthEl, containerAnimation) {
+  var startColor = _ref4.startColor,
+      endColor = _ref4.endColor,
+      fontSize = _ref4.fontSize,
+      indent = _ref4.indent,
+      fontWeight = _ref4.fontWeight;
 
   var e = _doc.createElement("div"),
-      useFixedPosition = _isViewport(container) || _getProxyProp(container, "pinType") === "fixed",
+      useFixedPosition = _isViewport(container) || Object(_Observer_js__WEBPACK_IMPORTED_MODULE_0__["_getProxyProp"])(container, "pinType") === "fixed",
       isScroller = type.indexOf("scroller") !== -1,
       parent = useFixedPosition ? _body : container,
       isStart = type.indexOf("start") !== -1,
@@ -11886,7 +12511,7 @@ _startup = 1,
       css = "border-color:" + color + ";font-size:" + fontSize + ";color:" + color + ";font-weight:" + fontWeight + ";pointer-events:none;white-space:nowrap;font-family:sans-serif,Arial;z-index:1000;padding:4px 8px;border-width:0;border-style:solid;";
 
   css += "position:" + ((isScroller || containerAnimation) && useFixedPosition ? "fixed;" : "absolute;");
-  (isScroller || containerAnimation || !useFixedPosition) && (css += (direction === _vertical ? _right : _bottom) + ":" + (offset + parseFloat(indent)) + "px;");
+  (isScroller || containerAnimation || !useFixedPosition) && (css += (direction === _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_vertical"] ? _right : _bottom) + ":" + (offset + parseFloat(indent)) + "px;");
   matchWidthEl && (css += "box-sizing:border-box;text-align:left;width:" + matchWidthEl.offsetWidth + "px;");
   e._isStart = isStart;
   e.setAttribute("class", "gsap-marker-" + type + (name ? " marker-" + name : ""));
@@ -11915,18 +12540,22 @@ _startup = 1,
 },
     _triggers = [],
     _ids = {},
+    _rafID,
     _sync = function _sync() {
   return _getTime() - _lastScrollTime > 34 && _updateAll();
 },
     _onScroll = function _onScroll() {
-  // previously, we tried to optimize performance by batching/deferring to the next requestAnimationFrame(), but discovered that Safari has a few bugs that make this unworkable (especially on iOS). See https://codepen.io/GreenSock/pen/16c435b12ef09c38125204818e7b45fc?editors=0010
-  _updateAll();
-
-  _lastScrollTime || _dispatch("scrollStart");
-  _lastScrollTime = _getTime();
+  // previously, we tried to optimize performance by batching/deferring to the next requestAnimationFrame(), but discovered that Safari has a few bugs that make this unworkable (especially on iOS). See https://codepen.io/GreenSock/pen/16c435b12ef09c38125204818e7b45fc?editors=0010 and https://codepen.io/GreenSock/pen/JjOxYpQ/3dd65ccec5a60f1d862c355d84d14562?editors=0010 and https://codepen.io/GreenSock/pen/ExbrPNa/087cef197dc35445a0951e8935c41503?editors=0010
+  if (!_normalizer || !_normalizer.isPressed) {
+    _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_scrollers"].cache++;
+    _rafID || (_rafID = requestAnimationFrame(_updateAll));
+    _lastScrollTime || _dispatch("scrollStart");
+    _lastScrollTime = _getTime();
+  }
 },
     _onResize = function _onResize() {
-  return !_refreshing && !_ignoreResize && !_doc.fullscreenElement && _resizeDelay.restart(true);
+  _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_scrollers"].cache++;
+  !_refreshing && !_ignoreResize && !_doc.fullscreenElement && (!_ignoreMobileResize || _baseScreenWidth !== _win.innerWidth || Math.abs(_win.innerHeight - _baseScreenHeight) > _win.innerHeight * 0.25) && _resizeDelay.restart(true);
 },
     // ignore resizes triggered by refresh()
 _listeners = {},
@@ -12008,12 +12637,13 @@ _revertRecorded = function _revertRecorded(media) {
   media || _dispatch("revert");
 },
     _clearScrollMemory = function _clearScrollMemory() {
-  return _scrollers.forEach(function (obj) {
+  return _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_scrollers"].cache++ && _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_scrollers"].forEach(function (obj) {
     return typeof obj === "function" && (obj.rec = 0);
   });
 },
     // zero-out all the recorded scroll positions. Don't use _triggers because if, for example, .matchMedia() is used to create some ScrollTriggers and then the user resizes and it removes ALL ScrollTriggers, and then go back to a size where there are ScrollTriggers, it would have kept the position(s) saved from the initial state.
 _refreshingAll,
+    _refreshID = 0,
     _refreshAll = function _refreshAll(force, skipRevert) {
   if (_lastScrollTime && !force) {
     _addListener(ScrollTrigger, "scrollEnd", _softRefresh);
@@ -12028,7 +12658,7 @@ _refreshingAll,
   _sort && ScrollTrigger.sort();
   skipRevert || _revertAll();
 
-  _triggers.forEach(function (t) {
+  _triggers.slice(0).forEach(function (t) {
     return t.refresh();
   }); // don't loop with _i because during a refresh() someone could call ScrollTrigger.update() which would iterate through _i resulting in a skip.
 
@@ -12046,14 +12676,20 @@ _refreshingAll,
 
   _resizeDelay.pause();
 
+  _refreshID++;
   _refreshingAll = false;
 
   _dispatch("refresh");
 },
     _lastScroll = 0,
     _direction = 1,
+    _primary,
     _updateAll = function _updateAll() {
   if (!_refreshingAll) {
+    _primary && _primary.update(0); // ScrollSmoother users refreshPriority -9999 to become the primary that gets updated before all others because it affects the scroll position.
+
+    ScrollTrigger.isUpdating = true;
+
     var l = _triggers.length,
         time = _getTime(),
         recordVelocity = time - _time1 >= 50,
@@ -12086,7 +12722,11 @@ _refreshingAll,
         _triggers[_i] && _triggers[_i].update(0, recordVelocity);
       }
     }
+
+    ScrollTrigger.isUpdating = false;
   }
+
+  _rafID = 0;
 },
     _propNamesToCopy = [_left, _top, _bottom, _right, _margin + _Bottom, _margin + _Right, _margin + _Top, _margin + _Left, "display", "flexShrink", "float", "zIndex", "gridColumnStart", "gridColumnEnd", "gridRowStart", "gridRowEnd", "gridArea", "justifySelf", "alignSelf", "placeSelf", "order"],
     _stateProps = _propNamesToCopy.concat([_width, _height, "boxSizing", "max" + _Width, "max" + _Height, "position", _margin, _padding, _padding + _Top, _padding + _Right, _padding + _Bottom, _padding + _Left]),
@@ -12123,8 +12763,8 @@ _refreshingAll,
     pinStyle[_bottom] = pinStyle[_right] = spacerStyle.flexBasis = "auto";
     spacerStyle.overflow = "visible";
     spacerStyle.boxSizing = "border-box";
-    spacerStyle[_width] = _getSize(pin, _horizontal) + _px;
-    spacerStyle[_height] = _getSize(pin, _vertical) + _px;
+    spacerStyle[_width] = _getSize(pin, _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_horizontal"]) + _px;
+    spacerStyle[_height] = _getSize(pin, _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_vertical"]) + _px;
     spacerStyle[_padding] = pinStyle[_margin] = pinStyle[_top] = pinStyle[_left] = "0";
 
     _setState(spacerState);
@@ -12219,7 +12859,7 @@ _parsePosition = function _parsePosition(value, trigger, scrollerSize, direction
         localOffset,
         globalOffset,
         display;
-    element = _getTarget(trigger) || _body;
+    element = Object(_Observer_js__WEBPACK_IMPORTED_MODULE_0__["_getTarget"])(trigger) || _body;
     bounds = _getBounds(element) || {};
 
     if ((!bounds || !bounds.left && !bounds.top) && _getComputedStyle(element).display === "none") {
@@ -12263,7 +12903,7 @@ _parsePosition = function _parsePosition(value, trigger, scrollerSize, direction
   containerAnimation && containerAnimation.seek(time);
   return containerAnimation ? value : Math.round(value);
 },
-    _prefixExp = /(?:webkit|moz|length|cssText|inset)/i,
+    _prefixExp = /(webkit|moz|length|cssText|inset)/i,
     _reparent = function _reparent(element, parent, top, left) {
   if (element.parentNode !== parent) {
     var style = element.style,
@@ -12300,7 +12940,7 @@ _parsePosition = function _parsePosition(value, trigger, scrollerSize, direction
 // },
 // returns a function that can be used to tween the scroll position in the direction provided, and when doing so it'll add a .tween property to the FUNCTION itself, and remove it when the tween completes or gets killed. This gives us a way to have multiple ScrollTriggers use a central function for any given scroller and see if there's a scroll tween running (which would affect if/how things get updated)
 _getTweenCreator = function _getTweenCreator(scroller, direction) {
-  var getScroll = _getScrollFunc(scroller, direction),
+  var getScroll = Object(_Observer_js__WEBPACK_IMPORTED_MODULE_0__["_getScrollFunc"])(scroller, direction),
       prop = "_scroll" + direction.p2,
       // add a tweenable property to the scroller that's a getter/setter function, like _scrollTop or _scrollLeft. This way, if someone does gsap.killTweensOf(scroller) it'll kill the scroll tween.
   lastScroll1,
@@ -12309,6 +12949,10 @@ _getTweenCreator = function _getTweenCreator(scroller, direction) {
     var tween = getTween.tween,
         onComplete = vars.onComplete,
         modifiers = {};
+    initialValue = initialValue || getScroll();
+    change2 = change1 && change2 || 0; // if change1 is 0, we set that to the difference and ignore change2. Otherwise, there would be a compound effect.
+
+    change1 = change1 || scrollTo - initialValue;
     tween && tween.kill();
     lastScroll1 = Math.round(initialValue);
     vars[prop] = scrollTo;
@@ -12340,15 +12984,16 @@ _getTweenCreator = function _getTweenCreator(scroller, direction) {
 
   scroller[prop] = getScroll;
 
-  _addListener(scroller, "wheel", function () {
+  getScroll.wheelHandler = function () {
     return getTween.tween && getTween.tween.kill() && (getTween.tween = 0);
-  }); // Windows machines handle mousewheel scrolling in chunks (like "3 lines per scroll") meaning the typical strategy for cancelling the scroll isn't as sensitive. It's much more likely to match one of the previous 2 scroll event positions. So we kill any snapping as soon as there's a wheel event.
+  };
+
+  _addListener(scroller, "wheel", getScroll.wheelHandler); // Windows machines handle mousewheel scrolling in chunks (like "3 lines per scroll") meaning the typical strategy for cancelling the scroll isn't as sensitive. It's much more likely to match one of the previous 2 scroll event positions. So we kill any snapping as soon as there's a wheel event.
 
 
   return getTween;
 };
 
-_horizontal.op = _vertical;
 var ScrollTrigger = /*#__PURE__*/function () {
   function ScrollTrigger(vars, animation) {
     _coreInitted || ScrollTrigger.register(gsap) || console.warn("Please gsap.registerPlugin(ScrollTrigger)");
@@ -12359,7 +13004,7 @@ var ScrollTrigger = /*#__PURE__*/function () {
 
   _proto.init = function init(vars, animation) {
     this.progress = this.start = 0;
-    this.vars && this.kill(1); // in case it's being initted again
+    this.vars && this.kill(true, true); // in case it's being initted again
 
     if (!_enabled) {
       this.update = this.refresh = this.kill = _passThrough;
@@ -12391,12 +13036,12 @@ var ScrollTrigger = /*#__PURE__*/function () {
         containerAnimation = _vars.containerAnimation,
         fastScrollEnd = _vars.fastScrollEnd,
         preventOverlaps = _vars.preventOverlaps,
-        direction = vars.horizontal || vars.containerAnimation && vars.horizontal !== false ? _horizontal : _vertical,
+        direction = vars.horizontal || vars.containerAnimation && vars.horizontal !== false ? _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_horizontal"] : _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_vertical"],
         isToggle = !scrub && scrub !== 0,
-        scroller = _getTarget(vars.scroller || _win),
+        scroller = Object(_Observer_js__WEBPACK_IMPORTED_MODULE_0__["_getTarget"])(vars.scroller || _win),
         scrollerCache = gsap.core.getCache(scroller),
         isViewport = _isViewport(scroller),
-        useFixedPosition = ("pinType" in vars ? vars.pinType : _getProxyProp(scroller, "pinType") || isViewport && "fixed") === "fixed",
+        useFixedPosition = ("pinType" in vars ? vars.pinType : Object(_Observer_js__WEBPACK_IMPORTED_MODULE_0__["_getProxyProp"])(scroller, "pinType") || isViewport && "fixed") === "fixed",
         callbacks = [vars.onEnter, vars.onLeave, vars.onEnterBack, vars.onLeaveBack],
         toggleActions = isToggle && vars.toggleActions.split(" "),
         markers = "markers" in vars ? vars.markers : _defaults.markers,
@@ -12408,7 +13053,7 @@ var ScrollTrigger = /*#__PURE__*/function () {
         getScrollerSize = _getSizeFunc(scroller, isViewport, direction),
         getScrollerOffsets = _getOffsetsFunc(scroller, isViewport),
         lastSnap = 0,
-        scrollFunc = _getScrollFunc(scroller, direction),
+        scrollFunc = Object(_Observer_js__WEBPACK_IMPORTED_MODULE_0__["_getScrollFunc"])(scroller, direction),
         tweenTo,
         pinCache,
         snapFunc,
@@ -12445,7 +13090,8 @@ var ScrollTrigger = /*#__PURE__*/function () {
         prevProgress,
         prevScroll,
         prevAnimProgress,
-        caMarkerSetter;
+        caMarkerSetter,
+        customRevertReturn;
 
     self.media = _creatingMedia;
     self._dir = direction;
@@ -12455,26 +13101,43 @@ var ScrollTrigger = /*#__PURE__*/function () {
     scroll1 = scrollFunc();
     self.vars = vars;
     animation = animation || vars.animation;
-    "refreshPriority" in vars && (_sort = 1);
+
+    if ("refreshPriority" in vars) {
+      _sort = 1;
+      vars.refreshPriority === -9999 && (_primary = self); // used by ScrollSmoother
+    }
+
     scrollerCache.tweenScroll = scrollerCache.tweenScroll || {
-      top: _getTweenCreator(scroller, _vertical),
-      left: _getTweenCreator(scroller, _horizontal)
+      top: _getTweenCreator(scroller, _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_vertical"]),
+      left: _getTweenCreator(scroller, _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_horizontal"])
     };
     self.tweenTo = tweenTo = scrollerCache.tweenScroll[direction.p];
+
+    self.scrubDuration = function (value) {
+      scrubSmooth = _isNumber(value) && value;
+
+      if (!scrubSmooth) {
+        scrubTween && scrubTween.progress(1).kill();
+        scrubTween = 0;
+      } else {
+        scrubTween ? scrubTween.duration(value) : scrubTween = gsap.to(animation, {
+          ease: "expo",
+          totalProgress: "+=0.001",
+          duration: scrubSmooth,
+          paused: true,
+          onComplete: function onComplete() {
+            return onScrubComplete && onScrubComplete(self);
+          }
+        });
+      }
+    };
 
     if (animation) {
       animation.vars.lazy = false;
       animation._initted || animation.vars.immediateRender !== false && vars.immediateRender !== false && animation.render(0, true, true);
       self.animation = animation.pause();
       animation.scrollTrigger = self;
-      scrubSmooth = _isNumber(scrub) && scrub;
-      scrubSmooth && (scrubTween = gsap.to(animation, {
-        ease: "power3",
-        duration: scrubSmooth,
-        onComplete: function onComplete() {
-          return onScrubComplete && onScrubComplete(self);
-        }
-      }));
+      self.scrubDuration(scrub);
       snap1 = 0;
       id || (id = animation.vars.id);
     }
@@ -12493,7 +13156,7 @@ var ScrollTrigger = /*#__PURE__*/function () {
       }); // smooth scrolling doesn't work with snap.
 
       snapFunc = _isFunction(snap.snapTo) ? snap.snapTo : snap.snapTo === "labels" ? _getClosestLabel(animation) : snap.snapTo === "labelsDirectional" ? _getLabelAtDirection(animation) : snap.directional !== false ? function (value, st) {
-        return _snapDirectional(snap.snapTo)(value, st.direction);
+        return _snapDirectional(snap.snapTo)(value, _refreshing ? 0 : st.direction);
       } : gsap.utils.snap(snap.snapTo);
       snapDurClamp = snap.duration || {
         min: 0.1,
@@ -12550,8 +13213,11 @@ var ScrollTrigger = /*#__PURE__*/function () {
     }
 
     id && (_ids[id] = self);
-    trigger = self.trigger = _getTarget(trigger || pin);
-    pin = pin === true ? trigger : _getTarget(pin);
+    trigger = self.trigger = Object(_Observer_js__WEBPACK_IMPORTED_MODULE_0__["_getTarget"])(trigger || pin); // if a trigger has some kind of scroll-related effect applied that could contaminate the "y" or "x" position (like a ScrollSmoother effect), we needed a way to temporarily revert it, so we use the stRevert property of the gsCache. It can return another function that we'll call at the end so it can return to its normal state.
+
+    customRevertReturn = trigger && trigger._gsap && trigger._gsap.stRevert;
+    customRevertReturn && (customRevertReturn = customRevertReturn(self));
+    pin = pin === true ? trigger : Object(_Observer_js__WEBPACK_IMPORTED_MODULE_0__["_getTarget"])(pin);
     _isString(toggleClass) && (toggleClass = {
       targets: trigger,
       className: toggleClass
@@ -12569,7 +13235,7 @@ var ScrollTrigger = /*#__PURE__*/function () {
       if (!pinCache.spacer) {
         // record the spacer and pinOriginalState on the cache in case someone tries pinning the same element with MULTIPLE ScrollTriggers - we don't want to have multiple spacers or record the "original" pin state after it has already been affected by another ScrollTrigger.
         if (pinSpacer) {
-          pinSpacer = _getTarget(pinSpacer);
+          pinSpacer = Object(_Observer_js__WEBPACK_IMPORTED_MODULE_0__["_getTarget"])(pinSpacer);
           pinSpacer && !pinSpacer.nodeType && (pinSpacer = pinSpacer.current || pinSpacer.nativeElement); // for React & Angular
 
           pinCache.spacerIsNative = !!pinSpacer;
@@ -12600,11 +13266,14 @@ var ScrollTrigger = /*#__PURE__*/function () {
       markerStartTrigger = _createMarker("scroller-start", id, scroller, direction, markerVars, 0);
       markerEndTrigger = _createMarker("scroller-end", id, scroller, direction, markerVars, 0, markerStartTrigger);
       offset = markerStartTrigger["offset" + direction.op.d2];
-      markerStart = _createMarker("start", id, scroller, direction, markerVars, offset, 0, containerAnimation);
-      markerEnd = _createMarker("end", id, scroller, direction, markerVars, offset, 0, containerAnimation);
+
+      var content = Object(_Observer_js__WEBPACK_IMPORTED_MODULE_0__["_getTarget"])(Object(_Observer_js__WEBPACK_IMPORTED_MODULE_0__["_getProxyProp"])(scroller, "content") || scroller);
+
+      markerStart = this.markerStart = _createMarker("start", id, content, direction, markerVars, offset, 0, containerAnimation);
+      markerEnd = this.markerEnd = _createMarker("end", id, content, direction, markerVars, offset, 0, containerAnimation);
       containerAnimation && (caMarkerSetter = gsap.quickSetter([markerStart, markerEnd], direction.a, _px));
 
-      if (!useFixedPosition && !(_proxies.length && _getProxyProp(scroller, "fixedMarkers") === true)) {
+      if (!useFixedPosition && !(_Observer_js__WEBPACK_IMPORTED_MODULE_0__["_proxies"].length && Object(_Observer_js__WEBPACK_IMPORTED_MODULE_0__["_getProxyProp"])(scroller, "fixedMarkers") === true)) {
         _makePositionable(isViewport ? _body : scroller);
 
         gsap.set([markerStartTrigger, markerEndTrigger], {
@@ -12638,7 +13307,7 @@ var ScrollTrigger = /*#__PURE__*/function () {
 
       if (r !== self.isReverted) {
         if (r) {
-          self.scroll.rec || (self.scroll.rec = scrollFunc());
+          self.scroll.rec || !_refreshing || !_refreshingAll || (self.scroll.rec = scrollFunc());
           prevScroll = Math.max(scrollFunc(), self.scroll.rec || 0); // record the scroll so we can revert later (repositioning/pinning things can affect scroll position). In the static refresh() method, we first record all the scroll positions as a reference.
 
           prevProgress = self.progress;
@@ -12668,6 +13337,7 @@ var ScrollTrigger = /*#__PURE__*/function () {
         return;
       }
 
+      !_refreshingAll && onRefreshInit && onRefreshInit(self);
       _refreshing = 1;
       scrubTween && scrubTween.pause();
       invalidateOnRefresh && animation && animation.time(-0.01, true).invalidate();
@@ -12681,7 +13351,7 @@ var ScrollTrigger = /*#__PURE__*/function () {
           parsedEnd = vars.end,
           parsedEndTrigger = vars.endTrigger || trigger,
           parsedStart = vars.start || (vars.start === 0 || !trigger ? 0 : pin ? "0 0" : "0 100%"),
-          pinnedContainer = vars.pinnedContainer && _getTarget(vars.pinnedContainer),
+          pinnedContainer = self.pinnedContainer = vars.pinnedContainer && Object(_Observer_js__WEBPACK_IMPORTED_MODULE_0__["_getTarget"])(vars.pinnedContainer),
           triggerIndex = trigger && Math.max(0, _triggers.indexOf(self)) || 0,
           i = triggerIndex,
           cs,
@@ -12707,6 +13377,12 @@ var ScrollTrigger = /*#__PURE__*/function () {
           revertedPins.unshift(curTrigger); // we'll revert from first to last to make sure things reach their end state properly
 
           curTrigger.revert();
+        }
+
+        if (curTrigger !== _triggers[i]) {
+          // in case it got removed.
+          triggerIndex--;
+          i--;
         }
       }
 
@@ -12734,7 +13410,7 @@ var ScrollTrigger = /*#__PURE__*/function () {
         curTrigger = _triggers[i];
         curPin = curTrigger.pin;
 
-        if (curPin && curTrigger.start - curTrigger._pinPush < start && !containerAnimation) {
+        if (curPin && curTrigger.start - curTrigger._pinPush < start && !containerAnimation && curTrigger.end > 0) {
           cs = curTrigger.end - curTrigger.start;
 
           if ((curPin === trigger || curPin === pinnedContainer) && !_isNumber(parsedStart)) {
@@ -12760,7 +13436,7 @@ var ScrollTrigger = /*#__PURE__*/function () {
 
       if (pin) {
         cs = _getComputedStyle(pin);
-        isVertical = direction === _vertical;
+        isVertical = direction === _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_vertical"];
         scroll = scrollFunc(); // recalculate because the triggers can affect the scroll
 
         pinStart = parseFloat(pinGetter(direction.a)) + otherPinOffset;
@@ -12771,7 +13447,7 @@ var ScrollTrigger = /*#__PURE__*/function () {
         pinState = _getState(pin); // transforms will interfere with the top/left/right/bottom placement, so remove them temporarily. getBoundingClientRect() factors in transforms.
 
         bounds = _getBounds(pin, true);
-        oppositeScroll = useFixedPosition && _getScrollFunc(scroller, isVertical ? _horizontal : _vertical)();
+        oppositeScroll = useFixedPosition && Object(_Observer_js__WEBPACK_IMPORTED_MODULE_0__["_getScrollFunc"])(scroller, isVertical ? _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_horizontal"] : _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_vertical"])();
 
         if (pinSpacing) {
           spacerState = [pinSpacing + direction.os2, change + otherPinOffset + _px];
@@ -12846,8 +13522,10 @@ var ScrollTrigger = /*#__PURE__*/function () {
       }
 
       self.revert(false);
+      snapDelayedCall && self.isActive && scrollFunc(start + change * prevProgress); // just so snapping gets re-enabled, clear out any recorded last value
+
       _refreshing = 0;
-      animation && isToggle && animation._initted && animation.progress() !== prevAnimProgress && animation.progress(prevAnimProgress, true).render(animation.time(), true, true); // must force a re-render because if saveStyles() was used on the target(s), the styles could have been wiped out during the refresh().
+      animation && isToggle && (animation._initted || prevAnimProgress) && animation.progress() !== prevAnimProgress && animation.progress(prevAnimProgress, true).render(animation.time(), true, true); // must force a re-render because if saveStyles() was used on the target(s), the styles could have been wiped out during the refresh().
 
       if (prevProgress !== self.progress || containerAnimation) {
         // ensures that the direction is set properly (when refreshing, progress is set back to 0 initially, then back again to wherever it needs to be) and that callbacks are triggered.
@@ -12857,7 +13535,8 @@ var ScrollTrigger = /*#__PURE__*/function () {
         self.update(0, 0, 1);
       }
 
-      pin && pinSpacing && (spacer._pinOffset = Math.round(self.progress * pinChange));
+      pin && pinSpacing && (spacer._pinOffset = Math.round(self.progress * pinChange)); //			scrubTween && scrubTween.invalidate();
+
       onRefresh && onRefresh(self);
     };
 
@@ -12881,9 +13560,11 @@ var ScrollTrigger = /*#__PURE__*/function () {
       var i = _triggers.indexOf(self),
           a = self.direction > 0 ? _triggers.slice(0, i).reverse() : _triggers.slice(i + 1);
 
-      return _isString(name) ? a.filter(function (t) {
+      return (_isString(name) ? a.filter(function (t) {
         return t.vars.preventOverlaps === name;
-      }) : a;
+      }) : a).filter(function (t) {
+        return self.direction > 0 ? t.end <= start : t.start >= end;
+      });
     };
 
     self.update = function (reset, recordVelocity, forceFake) {
@@ -12936,14 +13617,21 @@ var ScrollTrigger = /*#__PURE__*/function () {
           }
         }
 
-        preventOverlaps && toggled && (isTakingAction || scrub || !animation) && (_isFunction(preventOverlaps) ? preventOverlaps(self) : self.getTrailing(preventOverlaps).forEach(function (t) {
+        preventOverlaps && (toggled || isTakingAction) && (isTakingAction || scrub || !animation) && (_isFunction(preventOverlaps) ? preventOverlaps(self) : self.getTrailing(preventOverlaps).forEach(function (t) {
           return t.endAnimation();
         }));
 
         if (!isToggle) {
           if (scrubTween && !_refreshing && !_startup) {
-            scrubTween.vars.totalProgress = clipped;
-            scrubTween.invalidate().restart();
+            (containerAnimation || _primary && _primary !== self) && scrubTween.render(scrubTween._dp._time - scrubTween._start); // if there's a scrub on both the container animation and this one (or a ScrollSmoother), the update order would cause this one not to have rendered yet, so it wouldn't make any progress before we .restart() it heading toward the new progress so it'd appear stuck thus we force a render here.
+
+            if (scrubTween.resetTo) {
+              scrubTween.resetTo("totalProgress", clipped, animation._tTime / animation._tDur);
+            } else {
+              // legacy support (courtesy), before 3.10.0
+              scrubTween.vars.totalProgress = clipped;
+              scrubTween.invalidate().restart();
+            }
           } else if (animation) {
             animation.totalProgress(clipped, !!_refreshing);
           }
@@ -12953,7 +13641,7 @@ var ScrollTrigger = /*#__PURE__*/function () {
           reset && pinSpacing && (spacer.style[pinSpacing + direction.os2] = spacingStart);
 
           if (!useFixedPosition) {
-            pinSetter(pinStart + pinChange * clipped);
+            pinSetter(_round(pinStart + pinChange * clipped));
           } else if (stateChanged) {
             isAtMax = !reset && clipped > prevProgress && end + 1 > scroll && scroll + 1 >= _maxScroll(scroller, direction); // if it's at the VERY end of the page, don't switch away from position: fixed because it's pointless and it could cause a brief flash when the user scrolls back up (when it gets pinned again)
 
@@ -12962,7 +13650,7 @@ var ScrollTrigger = /*#__PURE__*/function () {
                 var bounds = _getBounds(pin, true),
                     _offset = scroll - start;
 
-                _reparent(pin, _body, bounds.top + (direction === _vertical ? _offset : 0) + _px, bounds.left + (direction === _vertical ? 0 : _offset) + _px);
+                _reparent(pin, _body, bounds.top + (direction === _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_vertical"] ? _offset : 0) + _px, bounds.left + (direction === _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_vertical"] ? 0 : _offset) + _px);
               } else {
                 _reparent(pin, spacer);
               }
@@ -13037,7 +13725,7 @@ var ScrollTrigger = /*#__PURE__*/function () {
 
         _addListener(scroller, "resize", _onResize);
 
-        _addListener(scroller, "scroll", _onScroll);
+        _addListener(isViewport ? _doc : scroller, "scroll", _onScroll);
 
         onRefreshInit && _addListener(ScrollTrigger, "refreshInit", onRefreshInit);
 
@@ -13099,7 +13787,7 @@ var ScrollTrigger = /*#__PURE__*/function () {
 
     self.kill = function (revert, allowAnimation) {
       self.disable(revert, allowAnimation);
-      scrubTween && scrubTween.kill();
+      scrubTween && !allowAnimation && scrubTween.kill();
       id && delete _ids[id];
 
       var i = _triggers.indexOf(self);
@@ -13136,9 +13824,12 @@ var ScrollTrigger = /*#__PURE__*/function () {
 
         i || (pinCache.spacer = 0); // if there aren't any more ScrollTriggers with the same pin, remove the spacer, otherwise it could be contaminated with old/stale values if the user re-creates a ScrollTrigger for the same element.
       }
+
+      vars.onKill && vars.onKill(self);
     };
 
     self.enable(false, false);
+    customRevertReturn && customRevertReturn(self);
     !animation || !animation.add || change ? self.refresh() : gsap.delayedCall(0.01, function () {
       return start || end || self.refresh();
     }) && (change = 0.01) && (start = end = 0); // if the animation is a timeline, it may not have been populated yet, so it wouldn't render at the proper place on the first refresh(), thus we should schedule one for the next tick. If "change" is defined, we know it must be re-enabling, thus we can refresh() right away.
@@ -13147,80 +13838,8 @@ var ScrollTrigger = /*#__PURE__*/function () {
   ScrollTrigger.register = function register(core) {
     if (!_coreInitted) {
       gsap = core || _getGSAP();
-
-      if (_windowExists() && window.document) {
-        _win = window;
-        _doc = document;
-        _docEl = _doc.documentElement;
-        _body = _doc.body;
-      }
-
-      if (gsap) {
-        _toArray = gsap.utils.toArray;
-        _clamp = gsap.utils.clamp;
-        _suppressOverwrites = gsap.core.suppressOverwrites || _passThrough;
-        gsap.core.globals("ScrollTrigger", ScrollTrigger); // must register the global manually because in Internet Explorer, functions (classes) don't have a "name" property.
-
-        if (_body) {
-          _addListener(_win, "wheel", _onScroll);
-
-          _root = [_win, _doc, _docEl, _body];
-
-          _addListener(_doc, "scroll", _onScroll); // some browsers (like Chrome), the window stops dispatching scroll events on the window if you scroll really fast, but it's consistent on the document!
-
-
-          var bodyStyle = _body.style,
-              border = bodyStyle.borderTopStyle,
-              bounds;
-          bodyStyle.borderTopStyle = "solid"; // works around an issue where a margin of a child element could throw off the bounds of the _body, making it seem like there's a margin when there actually isn't. The border ensures that the bounds are accurate.
-
-          bounds = _getBounds(_body);
-          _vertical.m = Math.round(bounds.top + _vertical.sc()) || 0; // accommodate the offset of the <body> caused by margins and/or padding
-
-          _horizontal.m = Math.round(bounds.left + _horizontal.sc()) || 0;
-          border ? bodyStyle.borderTopStyle = border : bodyStyle.removeProperty("border-top-style");
-          _syncInterval = setInterval(_sync, 200);
-          gsap.delayedCall(0.5, function () {
-            return _startup = 0;
-          });
-
-          _addListener(_doc, "touchcancel", _passThrough); // some older Android devices intermittently stop dispatching "touchmove" events if we don't listen for "touchcancel" on the document.
-
-
-          _addListener(_body, "touchstart", _passThrough); //works around Safari bug: https://greensock.com/forums/topic/21450-draggable-in-iframe-on-mobile-is-buggy/
-
-
-          _multiListener(_addListener, _doc, "pointerdown,touchstart,mousedown", function () {
-            return _pointerIsDown = 1;
-          });
-
-          _multiListener(_addListener, _doc, "pointerup,touchend,mouseup", function () {
-            return _pointerIsDown = 0;
-          });
-
-          _transformProp = gsap.utils.checkPrefix("transform");
-
-          _stateProps.push(_transformProp);
-
-          _coreInitted = _getTime();
-          _resizeDelay = gsap.delayedCall(0.2, _refreshAll).pause();
-          _autoRefresh = [_doc, "visibilitychange", function () {
-            var w = _win.innerWidth,
-                h = _win.innerHeight;
-
-            if (_doc.hidden) {
-              _prevWidth = w;
-              _prevHeight = h;
-            } else if (_prevWidth !== w || _prevHeight !== h) {
-              _onResize();
-            }
-          }, _doc, "DOMContentLoaded", _refreshAll, _win, "load", function () {
-            return _lastScrollTime || _refreshAll();
-          }, _win, "resize", _onResize];
-
-          _iterateAutoRefresh(_addListener);
-        }
-      }
+      _windowExists() && window.document && ScrollTrigger.enable();
+      _coreInitted = _enabled;
     }
 
     return _coreInitted;
@@ -13236,18 +13855,128 @@ var ScrollTrigger = /*#__PURE__*/function () {
     return _defaults;
   };
 
-  ScrollTrigger.kill = function kill() {
+  ScrollTrigger.disable = function disable(reset, kill) {
     _enabled = 0;
 
-    _triggers.slice(0).forEach(function (trigger) {
-      return trigger.kill(1);
+    _triggers.forEach(function (trigger) {
+      return trigger[kill ? "kill" : "disable"](reset);
     });
+
+    _removeListener(_win, "wheel", _onScroll);
+
+    _removeListener(_doc, "scroll", _onScroll);
+
+    clearInterval(_syncInterval);
+
+    _removeListener(_doc, "touchcancel", _passThrough);
+
+    _removeListener(_body, "touchstart", _passThrough);
+
+    _multiListener(_removeListener, _doc, "pointerdown,touchstart,mousedown", _pointerDownHandler);
+
+    _multiListener(_removeListener, _doc, "pointerup,touchend,mouseup", _pointerUpHandler);
+
+    _resizeDelay.kill();
+
+    _iterateAutoRefresh(_removeListener);
+
+    for (var i = 0; i < _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_scrollers"].length; i += 3) {
+      _wheelListener(_removeListener, _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_scrollers"][i], _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_scrollers"][i + 1]);
+
+      _wheelListener(_removeListener, _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_scrollers"][i], _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_scrollers"][i + 2]);
+    }
+  };
+
+  ScrollTrigger.enable = function enable() {
+    _win = window;
+    _doc = document;
+    _docEl = _doc.documentElement;
+    _body = _doc.body;
+
+    if (gsap) {
+      _toArray = gsap.utils.toArray;
+      _clamp = gsap.utils.clamp;
+      _suppressOverwrites = gsap.core.suppressOverwrites || _passThrough;
+      gsap.core.globals("ScrollTrigger", ScrollTrigger); // must register the global manually because in Internet Explorer, functions (classes) don't have a "name" property.
+
+      if (_body) {
+        _enabled = 1; // isTouch is 0 if no touch, 1 if ONLY touch, and 2 if it can accommodate touch but also other types like mouse/pointer.
+
+        ScrollTrigger.isTouch = _win.matchMedia && _win.matchMedia("(hover: none), (pointer: coarse)").matches ? 1 : "ontouchstart" in _win || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0 ? 2 : 0; //_addListener(_win, "wheel", _onScroll);
+
+        _root = [_win, _doc, _docEl, _body];
+        _baseScreenHeight = _win.innerHeight;
+        _baseScreenWidth = _win.innerWidth;
+        _Observer_js__WEBPACK_IMPORTED_MODULE_0__["Observer"].register(gsap);
+
+        _addListener(_doc, "scroll", _onScroll); // some browsers (like Chrome), the window stops dispatching scroll events on the window if you scroll really fast, but it's consistent on the document!
+
+
+        var bodyStyle = _body.style,
+            border = bodyStyle.borderTopStyle,
+            bounds,
+            i;
+        bodyStyle.borderTopStyle = "solid"; // works around an issue where a margin of a child element could throw off the bounds of the _body, making it seem like there's a margin when there actually isn't. The border ensures that the bounds are accurate.
+
+        bounds = _getBounds(_body);
+        _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_vertical"].m = Math.round(bounds.top + _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_vertical"].sc()) || 0; // accommodate the offset of the <body> caused by margins and/or padding
+
+        _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_horizontal"].m = Math.round(bounds.left + _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_horizontal"].sc()) || 0;
+        border ? bodyStyle.borderTopStyle = border : bodyStyle.removeProperty("border-top-style"); // TODO: (?) maybe move to leveraging the velocity mechanism in Observer and skip intervals.
+
+        _syncInterval = setInterval(_sync, 250);
+        gsap.delayedCall(0.5, function () {
+          return _startup = 0;
+        });
+
+        _addListener(_doc, "touchcancel", _passThrough); // some older Android devices intermittently stop dispatching "touchmove" events if we don't listen for "touchcancel" on the document.
+
+
+        _addListener(_body, "touchstart", _passThrough); //works around Safari bug: https://greensock.com/forums/topic/21450-draggable-in-iframe-on-mobile-is-buggy/
+
+
+        _multiListener(_addListener, _doc, "pointerdown,touchstart,mousedown", _pointerDownHandler);
+
+        _multiListener(_addListener, _doc, "pointerup,touchend,mouseup", _pointerUpHandler);
+
+        _transformProp = gsap.utils.checkPrefix("transform");
+
+        _stateProps.push(_transformProp);
+
+        _coreInitted = _getTime();
+        _resizeDelay = gsap.delayedCall(0.2, _refreshAll).pause();
+        _autoRefresh = [_doc, "visibilitychange", function () {
+          var w = _win.innerWidth,
+              h = _win.innerHeight;
+
+          if (_doc.hidden) {
+            _prevWidth = w;
+            _prevHeight = h;
+          } else if (_prevWidth !== w || _prevHeight !== h) {
+            _onResize();
+          }
+        }, _doc, "DOMContentLoaded", _refreshAll, _win, "load", _refreshAll, _win, "resize", _onResize];
+
+        _iterateAutoRefresh(_addListener);
+
+        _triggers.forEach(function (trigger) {
+          return trigger.enable(0, 1);
+        });
+
+        for (i = 0; i < _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_scrollers"].length; i += 3) {
+          _wheelListener(_removeListener, _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_scrollers"][i], _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_scrollers"][i + 1]);
+
+          _wheelListener(_removeListener, _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_scrollers"][i], _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_scrollers"][i + 2]);
+        }
+      }
+    }
   };
 
   ScrollTrigger.config = function config(vars) {
     "limitCallbacks" in vars && (_limitCallbacks = !!vars.limitCallbacks);
     var ms = vars.syncInterval;
     ms && clearInterval(_syncInterval) || (_syncInterval = ms) && setInterval(_sync, ms);
+    "ignoreMobileResize" in vars && (_ignoreMobileResize = ScrollTrigger.isTouch === 1 && vars.ignoreMobileResize);
 
     if ("autoRefreshEvents" in vars) {
       _iterateAutoRefresh(_removeListener) || _iterateAutoRefresh(_addListener, vars.autoRefreshEvents || "none");
@@ -13256,16 +13985,16 @@ var ScrollTrigger = /*#__PURE__*/function () {
   };
 
   ScrollTrigger.scrollerProxy = function scrollerProxy(target, vars) {
-    var t = _getTarget(target),
-        i = _scrollers.indexOf(t),
+    var t = Object(_Observer_js__WEBPACK_IMPORTED_MODULE_0__["_getTarget"])(target),
+        i = _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_scrollers"].indexOf(t),
         isViewport = _isViewport(t);
 
     if (~i) {
-      _scrollers.splice(i, isViewport ? 6 : 2);
+      _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_scrollers"].splice(i, isViewport ? 6 : 2);
     }
 
     if (vars) {
-      isViewport ? _proxies.unshift(_win, vars, _body, vars, _docEl, vars) : _proxies.unshift(t, vars);
+      isViewport ? _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_proxies"].unshift(_win, vars, _body, vars, _docEl, vars) : _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_proxies"].unshift(t, vars);
     }
   };
 
@@ -13314,13 +14043,13 @@ var ScrollTrigger = /*#__PURE__*/function () {
   };
 
   ScrollTrigger.isInViewport = function isInViewport(element, ratio, horizontal) {
-    var bounds = (_isString(element) ? _getTarget(element) : element).getBoundingClientRect(),
+    var bounds = (_isString(element) ? Object(_Observer_js__WEBPACK_IMPORTED_MODULE_0__["_getTarget"])(element) : element).getBoundingClientRect(),
         offset = bounds[horizontal ? _width : _height] * ratio || 0;
     return horizontal ? bounds.right - offset > 0 && bounds.left + offset < _win.innerWidth : bounds.bottom - offset > 0 && bounds.top + offset < _win.innerHeight;
   };
 
   ScrollTrigger.positionInViewport = function positionInViewport(element, referencePoint, horizontal) {
-    _isString(element) && (element = _getTarget(element));
+    _isString(element) && (element = Object(_Observer_js__WEBPACK_IMPORTED_MODULE_0__["_getTarget"])(element));
     var bounds = element.getBoundingClientRect(),
         size = bounds[horizontal ? _width : _height],
         offset = referencePoint == null ? size / 2 : referencePoint in _keywords ? _keywords[referencePoint] * size : ~referencePoint.indexOf("%") ? parseFloat(referencePoint) * size / 100 : parseFloat(referencePoint) || 0;
@@ -13329,7 +14058,7 @@ var ScrollTrigger = /*#__PURE__*/function () {
 
   return ScrollTrigger;
 }();
-ScrollTrigger.version = "3.9.1";
+ScrollTrigger.version = "3.10.2";
 
 ScrollTrigger.saveStyles = function (targets) {
   return targets ? _toArray(targets).forEach(function (target) {
@@ -13360,11 +14089,11 @@ ScrollTrigger.update = _updateAll;
 ScrollTrigger.clearScrollMemory = _clearScrollMemory;
 
 ScrollTrigger.maxScroll = function (element, horizontal) {
-  return _maxScroll(element, horizontal ? _horizontal : _vertical);
+  return _maxScroll(element, horizontal ? _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_horizontal"] : _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_vertical"]);
 };
 
 ScrollTrigger.getScrollFunc = function (element, horizontal) {
-  return _getScrollFunc(_getTarget(element), horizontal ? _horizontal : _vertical);
+  return Object(_Observer_js__WEBPACK_IMPORTED_MODULE_0__["_getScrollFunc"])(Object(_Observer_js__WEBPACK_IMPORTED_MODULE_0__["_getTarget"])(element), horizontal ? _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_horizontal"] : _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_vertical"]);
 };
 
 ScrollTrigger.getById = function (id) {
@@ -13372,8 +14101,11 @@ ScrollTrigger.getById = function (id) {
 };
 
 ScrollTrigger.getAll = function () {
-  return _triggers.slice(0);
-};
+  return _triggers.filter(function (t) {
+    return t.vars.id !== "ScrollSmoother";
+  });
+}; // it's common for people to ScrollTrigger.getAll(t => t.kill()) on page routes, for example, and we don't want it to ruin smooth scrolling by killing the main ScrollSmoother one.
+
 
 ScrollTrigger.isScrolling = function () {
   return !!_lastScrollTime;
@@ -13438,6 +14170,181 @@ ScrollTrigger.batch = function (targets, vars) {
   });
 
   return result;
+}; // to reduce file size. clamps the scroll and also returns a duration multiplier so that if the scroll gets chopped shorter, the duration gets curtailed as well (otherwise if you're very close to the top of the page, for example, and swipe up really fast, it'll suddenly slow down and take a long time to reach the top).
+
+
+var _clampScrollAndGetDurationMultiplier = function _clampScrollAndGetDurationMultiplier(scrollFunc, current, end, max) {
+  current > max ? scrollFunc(max) : current < 0 && scrollFunc(0);
+  return end > max ? (max - current) / (end - current) : end < 0 ? current / (current - end) : 1;
+},
+    _allowNativePanning = function _allowNativePanning(direction) {
+  if (direction === true) {
+    _body.style.removeProperty("touch-action");
+
+    _docEl.style.removeProperty("touch-action");
+  } else {
+    _body.style.touchAction = _docEl.style.touchAction = direction ? "pan-" + direction : "none"; // note: we tried adding pinch-zoom too, but Firefox doesn't support it properly.
+  }
+},
+    _getScrollNormalizer = function _getScrollNormalizer(vars) {
+  _isObject(vars) || (vars = {});
+  vars.preventDefault = vars.isNormalizer = true;
+  vars.type || (vars.type = "wheel,touch");
+  vars.debounce = !!vars.debounce;
+  vars.id = vars.id || "normalizer";
+
+  var _vars2 = vars,
+      normalizeScrollX = _vars2.normalizeScrollX,
+      momentum = _vars2.momentum,
+      self,
+      maxY,
+      onClickTime = 0,
+      scrollFuncY = Object(_Observer_js__WEBPACK_IMPORTED_MODULE_0__["_getScrollFunc"])(_docEl, _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_vertical"]),
+      scrollFuncX = Object(_Observer_js__WEBPACK_IMPORTED_MODULE_0__["_getScrollFunc"])(_docEl, _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_horizontal"]),
+      scale = 1,
+      resolveMomentumDuration = _isFunction(momentum) ? function () {
+    return momentum(self);
+  } : function () {
+    return momentum || 2.8;
+  },
+      skipTouchMove,
+      lastRefreshID,
+      onClick = function onClick() {
+    return onClickTime = _getTime();
+  },
+      resumeTouchMove = function resumeTouchMove() {
+    return skipTouchMove = false;
+  },
+      scrollClampX = _passThrough,
+      scrollClampY = _passThrough,
+      updateClamps = function updateClamps() {
+    maxY = _maxScroll(_docEl, _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_vertical"]);
+    scrollClampY = _clamp(0, maxY);
+    normalizeScrollX && (scrollClampX = _clamp(0, _maxScroll(_docEl, _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_horizontal"])));
+    lastRefreshID = _refreshID;
+  },
+      fixIOSBug = ScrollTrigger.isTouch && /(iPad|iPhone|iPod|Mac)/g.test(navigator.userAgent),
+      ignoreDrag = function ignoreDrag() {
+    if (skipTouchMove) {
+      requestAnimationFrame(resumeTouchMove); // we MUST wait for a requestAnimationFrame, otherwise iOS will misreport the value.
+
+      return true;
+    }
+
+    skipTouchMove = true;
+  },
+      tween,
+      startScrollX,
+      startScrollY,
+      ownerDoc,
+      onStopDelayedCall,
+      onResize = function onResize() {
+    // if the window resizes, like on an iPhone which Apple FORCES the address bar to show/hide even if we event.preventDefault(), it may be scrolling too far now that the address bar is showing, so we must dynamically adjust the momentum tween.
+    updateClamps();
+    tween.isActive() && tween.vars.scrollY > maxY && tween.resetTo("scrollY", _maxScroll(_docEl, _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_vertical"]));
+  };
+
+  vars.ignoreCheck = function (e) {
+    return fixIOSBug && e.type === "touchmove" && ignoreDrag() || scale > 1 || self.isGesturing || e.touches && e.touches.length > 1;
+  };
+
+  vars.onPress = function () {
+    var prevScale = scale;
+    scale = _win.visualViewport && _win.visualViewport.scale || 1;
+    tween.pause();
+    prevScale !== scale && _allowNativePanning(scale > 1 ? true : normalizeScrollX ? false : "x");
+    skipTouchMove = false;
+    startScrollX = scrollFuncX();
+    startScrollY = scrollFuncY();
+    updateClamps();
+    lastRefreshID = _refreshID;
+  };
+
+  vars.onRelease = vars.onGestureStart = function (self, wasDragging) {
+    var e = self.event,
+        eventData = e.changedTouches ? e.changedTouches[0] : e;
+
+    if (!wasDragging || Math.abs(self.x - self.startX) <= 3 && Math.abs(self.y - self.startY) <= 3) {
+      // some touch devices need some wiggle room in terms of sensing clicks - the finger may move a few pixels.
+      gsap.delayedCall(0.05, function () {
+        // some browsers (like Firefox) won't trust script-generated clicks, so if the user tries to click on a video to play it, for example, it simply won't work. Since a regular "click" event will most likely be generated anyway (one that has its isTrusted flag set to true), we must slightly delay our script-generated click so that the "real"/trusted one is prioritized. Remember, when there are duplicate events in quick succession, we suppress all but the first one. Some browsers don't even trigger the "real" one at all, so our synthetic one is a safety valve that ensures that no matter what, a click event does get dispatched.
+        if (_getTime() - onClickTime > 300 && !e.defaultPrevented) {
+          if (e.target.click) {
+            //some browsers (like mobile Safari) don't properly trigger the click event
+            e.target.click();
+          } else if (ownerDoc.createEvent) {
+            var syntheticEvent = ownerDoc.createEvent("MouseEvents");
+            syntheticEvent.initMouseEvent("click", true, true, _win, 1, eventData.screenX, eventData.screenY, eventData.clientX, eventData.clientY, false, false, false, false, 0, null);
+            e.target.dispatchEvent(syntheticEvent);
+          }
+        }
+      });
+      onStopDelayedCall.restart(true);
+    } else {
+      // alternate algorithm: durX = Math.min(6, Math.abs(self.velocityX / 800)),	dur = Math.max(durX, Math.min(6, Math.abs(self.velocityY / 800))); dur = dur * (0.4 + (1 - _power4In(dur / 6)) * 0.6)) * (momentumSpeed || 1)
+      var dur = resolveMomentumDuration(),
+          currentScroll,
+          endScroll;
+
+      if (normalizeScrollX) {
+        currentScroll = scrollFuncX();
+        endScroll = currentScroll + dur * 0.05 * -self.velocityX / 0.227 / scale; // the constant .227 is from power4(0.05). velocity is inverted because scrolling goes in the opposite direction.
+
+        dur *= _clampScrollAndGetDurationMultiplier(scrollFuncX, currentScroll, endScroll, _maxScroll(_docEl, _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_horizontal"]));
+        tween.vars.scrollX = scrollClampX(endScroll);
+      }
+
+      currentScroll = scrollFuncY();
+      endScroll = currentScroll + dur * 0.05 * -self.velocityY / 0.227 / scale; // the constant .227 is from power4(0.05)
+
+      dur *= _clampScrollAndGetDurationMultiplier(scrollFuncY, currentScroll, endScroll, _maxScroll(_docEl, _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_vertical"]));
+      tween.vars.scrollY = scrollClampY(endScroll);
+      tween.invalidate().duration(dur).play(0.01);
+    }
+  };
+
+  vars.onWheel = function () {
+    return tween._ts && tween.pause();
+  };
+
+  vars.onChange = function (self, dx, dy, xArray, yArray) {
+    _refreshID !== lastRefreshID && updateClamps();
+    dx && normalizeScrollX && scrollFuncX(scrollClampX(xArray[2] === dx ? startScrollX + (self.startX - self.x) / scale : scrollFuncX() + dx - xArray[1])); // for more precision, we track pointer/touch movement from the start, otherwise it'll drift.
+
+    dy && scrollFuncY(scrollClampY(yArray[2] === dy ? startScrollY + (self.startY - self.y) / scale : scrollFuncY() + dy - yArray[1]));
+
+    _updateAll();
+  };
+
+  vars.onEnable = function (self) {
+    _allowNativePanning(normalizeScrollX ? false : "x");
+
+    _addListener(_win, "resize", onResize);
+
+    self.target.addEventListener("click", onClick, {
+      capture: true
+    });
+  };
+
+  vars.onDisable = function (self) {
+    _allowNativePanning(true);
+
+    _removeListener(_win, "resize", onResize);
+
+    _removeListener(self.target, "click", onClick);
+  };
+
+  self = new _Observer_js__WEBPACK_IMPORTED_MODULE_0__["Observer"](vars);
+  ownerDoc = self.target.ownerDocument || _doc;
+  onStopDelayedCall = self._dc;
+  tween = gsap.to(self, {
+    ease: "power4",
+    paused: true,
+    scrollX: normalizeScrollX ? "+=0.1" : "+=0",
+    scrollY: "+=0.1",
+    onComplete: onStopDelayedCall.vars.onComplete
+  });
+  return self;
 };
 
 ScrollTrigger.sort = function (func) {
@@ -13446,6 +14353,42 @@ ScrollTrigger.sort = function (func) {
   });
 };
 
+ScrollTrigger.observe = function (vars) {
+  return new _Observer_js__WEBPACK_IMPORTED_MODULE_0__["Observer"](vars);
+};
+
+ScrollTrigger.normalizeScroll = function (vars) {
+  if (typeof vars === "undefined") {
+    return _normalizer;
+  }
+
+  if (vars === true && _normalizer) {
+    return _normalizer.enable();
+  }
+
+  var isInstance = vars instanceof _Observer_js__WEBPACK_IMPORTED_MODULE_0__["Observer"];
+  _normalizer && (vars === false || isInstance && vars !== _normalizer) && _normalizer.kill();
+  vars && !isInstance && (vars = _getScrollNormalizer(vars));
+  return _normalizer = vars && vars.enable();
+};
+
+ScrollTrigger.core = {
+  // smaller file size way to leverage in ScrollSmoother and Observer
+  _getVelocityProp: _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_getVelocityProp"],
+  _scrollers: _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_scrollers"],
+  _proxies: _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_proxies"],
+  bridge: {
+    // when normalizeScroll sets the scroll position (ss = setScroll)
+    ss: function ss() {
+      _lastScrollTime || _dispatch("scrollStart");
+      _lastScrollTime = _getTime();
+    },
+    // a way to get the _refreshing value in Observer
+    ref: function ref() {
+      return _refreshing;
+    }
+  }
+};
 _getGSAP() && gsap.registerPlugin(ScrollTrigger);
 
 
@@ -13455,7 +14398,7 @@ _getGSAP() && gsap.registerPlugin(ScrollTrigger);
 /*!****************************************!*\
   !*** ./node_modules/gsap/gsap-core.js ***!
   \****************************************/
-/*! exports provided: GSCache, Animation, Timeline, Tween, PropTween, gsap, Power0, Power1, Power2, Power3, Power4, Linear, Quad, Cubic, Quart, Quint, Strong, Elastic, Back, SteppedEase, Bounce, Sine, Expo, Circ, TweenMax, TweenLite, TimelineMax, TimelineLite, default, wrap, wrapYoyo, distribute, random, snap, normalize, getUnit, clamp, splitColor, toArray, selector, mapRange, pipe, unitize, interpolate, shuffle, _getProperty, _numExp, _numWithUnitExp, _isString, _isUndefined, _renderComplexString, _relExp, _setDefaults, _removeLinkedListItem, _forEachName, _sortPropTweensByPriority, _colorStringFilter, _replaceRandom, _checkPlugin, _plugins, _ticker, _config, _roundModifier, _round, _missingPlugin, _getSetter, _getCache, _colorExp */
+/*! exports provided: GSCache, Animation, Timeline, Tween, PropTween, gsap, Power0, Power1, Power2, Power3, Power4, Linear, Quad, Cubic, Quart, Quint, Strong, Elastic, Back, SteppedEase, Bounce, Sine, Expo, Circ, TweenMax, TweenLite, TimelineMax, TimelineLite, default, wrap, wrapYoyo, distribute, random, snap, normalize, getUnit, clamp, splitColor, toArray, selector, mapRange, pipe, unitize, interpolate, shuffle, _getProperty, _numExp, _numWithUnitExp, _isString, _isUndefined, _renderComplexString, _relExp, _setDefaults, _removeLinkedListItem, _forEachName, _sortPropTweensByPriority, _colorStringFilter, _replaceRandom, _checkPlugin, _plugins, _ticker, _config, _roundModifier, _round, _missingPlugin, _getSetter, _getCache, _colorExp, _parseRelative */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -13528,15 +14471,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_getSetter", function() { return _getSetter; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_getCache", function() { return _getCache; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_colorExp", function() { return _colorExp; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_parseRelative", function() { return _parseRelative; });
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 /*!
- * GSAP 3.9.1
+ * GSAP 3.10.2
  * https://greensock.com
  *
- * @license Copyright 2008-2021, GreenSock. All rights reserved.
+ * @license Copyright 2008-2022, GreenSock. All rights reserved.
  * Subject to the terms at https://greensock.com/standard-license or for
  * Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
@@ -13602,7 +14546,7 @@ _numWithUnitExp = /[-+=.]*\d+[.e-]*\d*[a-z%]*/g,
 _relExp = /[+-]=-?[.\d]+/,
     _delimitedValueExp = /[^,'"\[\]\s]+/gi,
     // previously /[#\-+.]*\b[a-z\d\-=+%.]+/gi but didn't catch special characters.
-_unitExp = /[\d.+\-=]+(?:e[-+]\d*)*/i,
+_unitExp = /^[+\-=e\s\d]*\d+[.\d]*([a-z]*|%)\s*$/i,
     _globalTimeline,
     _win,
     _coreInitted,
@@ -13674,7 +14618,13 @@ _round = function _round(value) {
   return Math.round(value * 10000000) / 10000000 || 0;
 },
     // increased precision mostly for timing values.
-_arrayContainsAny = function _arrayContainsAny(toSearch, toFind) {
+_parseRelative = function _parseRelative(start, value) {
+  var operator = value.charAt(0),
+      end = parseFloat(value.substr(2));
+  start = parseFloat(start);
+  return operator === "+" ? start + end : operator === "-" ? start - end : operator === "*" ? start * end : start / end;
+},
+    _arrayContainsAny = function _arrayContainsAny(toSearch, toFind) {
   //searches one array to find matches for any of the items in the toFind array. As soon as one is found, it returns true. It does NOT return all the matches; it's simply a boolean search.
   var l = toFind.length,
       i = 0;
@@ -14143,7 +15093,7 @@ _isFromOrFromStart = function _isFromOrFromStart(_ref2) {
   return value < min ? min : value > max ? max : value;
 },
     getUnit = function getUnit(value, v) {
-  return !_isString(value) || !(v = _unitExp.exec(value)) ? "" : value.substr(v.index + v[0].length);
+  return !_isString(value) || !(v = _unitExp.exec(value)) ? "" : v[1];
 },
     // note: protect against padded numbers as strings, like "100.100". That shouldn't return "00" as the unit. If it's numeric, return no unit.
 clamp = function clamp(min, max, value) {
@@ -14855,10 +15805,20 @@ _tickerActive,
       _gap = 1000 / (_fps || 240);
       _nextTime = _self.time * 1000 + _gap;
     },
-    add: function add(callback) {
-      _listeners.indexOf(callback) < 0 && _listeners.push(callback);
+    add: function add(callback, once, prioritize) {
+      var func = once ? function (t, d, f, v) {
+        callback(t, d, f, v);
+
+        _self.remove(func);
+      } : callback;
+
+      _self.remove(callback);
+
+      _listeners[prioritize ? "unshift" : "push"](func);
 
       _wake();
+
+      return func;
     },
     remove: function remove(callback, i) {
       ~(i = _listeners.indexOf(callback)) && _listeners.splice(i, 1) && _i >= i && _i--;
@@ -15249,12 +16209,12 @@ var Animation = /*#__PURE__*/function () {
     this._rts = +value || 0;
     this._ts = this._ps || value === -_tinyNum ? 0 : this._rts; // _ts is the functional timeScale which would be 0 if the animation is paused.
 
-    _recacheAncestors(this.totalTime(_clamp(-this._delay, this._tDur, tTime), true));
+    this.totalTime(_clamp(-this._delay, this._tDur, tTime), true);
 
     _setEnd(this); // if parent.smoothChildTiming was false, the end time didn't get updated in the _alignPlayhead() method, so do it here.
 
 
-    return this;
+    return _recacheAncestors(this);
   };
 
   _proto.paused = function paused(value) {
@@ -15763,7 +16723,8 @@ var Timeline = /*#__PURE__*/function (_Animation) {
       }
 
       this._onUpdate && !suppressEvents && _callback(this, "onUpdate", true);
-      if (tTime === tDur && tDur >= this.totalDuration() || !tTime && prevTime) if (prevStart === this._start || Math.abs(timeScale) !== Math.abs(this._ts)) if (!this._lock) {
+      if (tTime === tDur && this._tTime >= this.totalDuration() || !tTime && prevTime) if (prevStart === this._start || Math.abs(timeScale) !== Math.abs(this._ts)) if (!this._lock) {
+        // remember, a child's callback may alter this timeline's playhead or timeScale which is why we need to add some of these checks.
         (totalTime || !dur) && (tTime === tDur && this._ts > 0 || !tTime && this._ts < 0) && _removeFromParent(this, 1); // don't remove if the timeline is reversed and the playhead isn't at 0, otherwise tl.progress(1).reverse() won't work. Only remove if the playhead is at the end and timeScale is positive, or if the playhead is at 0 and the timeScale is negative.
 
         if (!suppressEvents && !(totalTime < 0 && !prevTime) && (tTime || prevTime || !tDur)) {
@@ -16222,7 +17183,7 @@ var _addComplexStringPropTween = function _addComplexStringPropTween(target, pro
         p: chunk || matchIndex === 1 ? chunk : ",",
         //note: SVG spec allows omission of comma/space when a negative sign is wedged between two numbers, like 2.5-5.3 instead of 2.5,-5.3 but when tweening, the negative value may switch to positive, so we insert the comma just in case.
         s: startNum,
-        c: endNum.charAt(1) === "=" ? parseFloat(endNum.substr(2)) * (endNum.charAt(0) === "-" ? -1 : 1) : parseFloat(endNum) - startNum,
+        c: endNum.charAt(1) === "=" ? _parseRelative(startNum, endNum) - startNum : parseFloat(endNum) - startNum,
         m: color && color < 4 ? Math.round : 0
       };
       index = _complexStringNumExp.lastIndex;
@@ -16254,7 +17215,7 @@ var _addComplexStringPropTween = function _addComplexStringPropTween(target, pro
     }
 
     if (end.charAt(1) === "=") {
-      pt = parseFloat(parsedStart) + parseFloat(end.substr(2)) * (end.charAt(0) === "-" ? -1 : 1) + (getUnit(parsedStart) || 0);
+      pt = _parseRelative(parsedStart, end) + (getUnit(parsedStart) || 0);
 
       if (pt || pt === 0) {
         // to avoid isNaN, like if someone passes in a value like "!= whatever"
@@ -16263,7 +17224,7 @@ var _addComplexStringPropTween = function _addComplexStringPropTween(target, pro
     }
   }
 
-  if (parsedStart !== end) {
+  if (parsedStart !== end || _forceAllPropTweens) {
     if (!isNaN(parsedStart * end) && end !== "") {
       // fun fact: any number multiplied by "" is evaluated as the number 0!
       pt = new PropTween(this._pt, target, prop, +parsedStart || 0, end - (parsedStart || 0), typeof currentValue === "boolean" ? _renderBoolean : _renderPlain, 0, setter);
@@ -16314,7 +17275,8 @@ _processVars = function _processVars(vars, index, target, targets, tween) {
 },
     _overwritingTween,
     //store a reference temporarily so we can avoid overwriting itself.
-_initTween = function _initTween(tween, time) {
+_forceAllPropTweens,
+    _initTween = function _initTween(tween, time) {
   var vars = tween.vars,
       ease = vars.ease,
       startAt = vars.startAt,
@@ -16366,7 +17328,12 @@ _initTween = function _initTween(tween, time) {
     harnessVars = harness && vars[harness.prop]; //someone may need to specify CSS-specific values AND non-CSS values, like if the element has an "x" property plus it's a standard DOM element. We allow people to distinguish by wrapping plugin-specific stuff in a css:{} object for example.
 
     cleanVars = _copyExcluding(vars, _reservedProps);
-    prevStartAt && _removeFromParent(prevStartAt.render(-1, true));
+
+    if (prevStartAt) {
+      _removeFromParent(prevStartAt.render(-1, true));
+
+      prevStartAt._lazy = 0;
+    }
 
     if (startAt) {
       _removeFromParent(tween._startAt = Tween.set(targets, _setDefaults({
@@ -16437,7 +17404,7 @@ _initTween = function _initTween(tween, time) {
       }
     }
 
-    tween._pt = 0;
+    tween._pt = tween._ptCache = 0;
     lazy = dur && _isNotFalse(lazy) || lazy && !dur;
 
     for (i = 0; i < targets.length; i++) {
@@ -16491,6 +17458,57 @@ _initTween = function _initTween(tween, time) {
   tween._initted = (!tween._op || tween._pt) && !overwritten; // if overwrittenProps resulted in the entire tween being killed, do NOT flag it as initted or else it may render for one tick.
 
   keyframes && time <= 0 && tl.render(_bigNum, true, true); // if there's a 0% keyframe, it'll render in the "before" state for any staggered/delayed animations thus when the following tween initializes, it'll use the "before" state instead of the "after" state as the initial values.
+},
+    _updatePropTweens = function _updatePropTweens(tween, property, value, start, startIsRelative, ratio, time) {
+  var ptCache = (tween._pt && tween._ptCache || (tween._ptCache = {}))[property],
+      pt,
+      lookup,
+      i;
+
+  if (!ptCache) {
+    ptCache = tween._ptCache[property] = [];
+    lookup = tween._ptLookup;
+    i = tween._targets.length;
+
+    while (i--) {
+      pt = lookup[i][property];
+
+      if (pt && pt.d && pt.d._pt) {
+        // it's a plugin, so find the nested PropTween
+        pt = pt.d._pt;
+
+        while (pt && pt.p !== property) {
+          pt = pt._next;
+        }
+      }
+
+      if (!pt) {
+        // there is no PropTween associated with that property, so we must FORCE one to be created and ditch out of this
+        // if the tween has other properties that already rendered at new positions, we'd normally have to rewind to put them back like tween.render(0, true) before forcing an _initTween(), but that can create another edge case like tweening a timeline's progress would trigger onUpdates to fire which could move other things around. It's better to just inform users that .resetTo() should ONLY be used for tweens that already have that property. For example, you can't gsap.to(...{ y: 0 }) and then tween.restTo("x", 200) for example.
+        _forceAllPropTweens = 1; // otherwise, when we _addPropTween() and it finds no change between the start and end values, it skips creating a PropTween (for efficiency...why tween when there's no difference?) but in this case we NEED that PropTween created so we can edit it.
+
+        tween.vars[property] = "+=0";
+
+        _initTween(tween, time);
+
+        _forceAllPropTweens = 0;
+        return 1;
+      }
+
+      ptCache.push(pt);
+    }
+  }
+
+  i = ptCache.length;
+
+  while (i--) {
+    pt = ptCache[i];
+    pt.s = (start || start === 0) && !startIsRelative ? start : pt.s + (start || 0) + ratio * pt.c;
+    pt.c = value - pt.s;
+    pt.e && (pt.e = _round(value) + getUnit(pt.e)); // mainly for CSSPlugin (end value)
+
+    pt.b && (pt.b = pt.s + getUnit(pt.b)); // (beginning value)
+  }
 },
     _addAliasesToVars = function _addAliasesToVars(targets, vars) {
   var harness = targets[0] ? _getCache(targets[0]).harness : 0,
@@ -16549,7 +17567,7 @@ _parseKeyframe = function _parseKeyframe(prop, obj, allProps, easeEach) {
     _parseFuncOrString = function _parseFuncOrString(value, tween, i, target, targets) {
   return _isFunction(value) ? value.call(tween, i, target, targets) : _isString(value) && ~value.indexOf("random(") ? _replaceRandom(value) : value;
 },
-    _staggerTweenProps = _callbackNames + "repeat,repeatDelay,yoyo,repeatRefresh,yoyoEase",
+    _staggerTweenProps = _callbackNames + "repeat,repeatDelay,yoyo,repeatRefresh,yoyoEase,autoRevert",
     _staggerPropsToSkip = {};
 
 _forEachName(_staggerTweenProps + ",id,stagger,delay,duration,paused,scrollTrigger", function (name) {
@@ -16781,6 +17799,7 @@ var Tween = /*#__PURE__*/function (_Animation2) {
 
         if (time === prevTime && !force && this._initted) {
           //could be during the repeatDelay part. No need to render and fire callbacks.
+          this._tTime = tTime;
           return this;
         }
 
@@ -16799,6 +17818,11 @@ var Tween = /*#__PURE__*/function (_Animation2) {
         if (_attemptInitTween(this, totalTime < 0 ? totalTime : time, force, suppressEvents)) {
           this._tTime = 0; // in constructor if immediateRender is true, we set _tTime to -_tinyNum to have the playhead cross the starting point but we can't leave _tTime as a negative number.
 
+          return this;
+        }
+
+        if (prevTime !== this._time) {
+          // rare edge case - during initialization, an onUpdate in the _startAt (.fromTo()) might force this tween to render at a different spot in which case we should ditch this render() call so that it doesn't revert the values.
           return this;
         }
 
@@ -16874,6 +17898,34 @@ var Tween = /*#__PURE__*/function (_Animation2) {
     this._ptLookup = [];
     this.timeline && this.timeline.invalidate();
     return _Animation2.prototype.invalidate.call(this);
+  };
+
+  _proto3.resetTo = function resetTo(property, value, start, startIsRelative) {
+    _tickerActive || _ticker.wake();
+    this._ts || this.play();
+    var time = Math.min(this._dur, (this._dp._time - this._start) * this._ts),
+        ratio,
+        p;
+    this._initted || _initTween(this, time);
+    ratio = this._ease(time / this._dur); // don't just get tween.ratio because it may not have rendered yet.
+    // possible future addition to allow an object with multiple values to update, like tween.resetTo({x: 100, y: 200}); At this point, it doesn't seem worth the added kb given the fact that most users will likely opt for the convenient gsap.quickTo() way of interacting with this method.
+    // if (_isObject(property)) { // performance optimization
+    // 	for (p in property) {
+    // 		if (_updatePropTweens(this, p, property[p], value ? value[p] : null, start, ratio, time)) {
+    // 			return this.resetTo(property, value, start, startIsRelative); // if a PropTween wasn't found for the property, it'll get forced with a re-initialization so we need to jump out and start over again.
+    // 		}
+    // 	}
+    // } else {
+
+    if (_updatePropTweens(this, property, value, start, startIsRelative, ratio, time)) {
+      return this.resetTo(property, value, start, startIsRelative); // if a PropTween wasn't found for the property, it'll get forced with a re-initialization so we need to jump out and start over again.
+    } //}
+
+
+    _alignPlayhead(this, 0);
+
+    this.parent || _addLinkedListItem(this._dp, this, "_first", "_last", this._dp._sort ? "_start" : 0);
+    return this.render(0);
   };
 
   _proto3.kill = function kill(targets, vars) {
@@ -17269,6 +18321,17 @@ var _gsap = {
       return setter(target, p, unit ? value + unit : value, cache, 1);
     };
   },
+  quickTo: function quickTo(target, property, vars) {
+    var _merge2;
+
+    var tween = gsap.to(target, _merge((_merge2 = {}, _merge2[property] = "+=0.1", _merge2.paused = true, _merge2), vars || {})),
+        func = function func(value, start, startIsRelative) {
+      return tween.resetTo(property, value, start, startIsRelative);
+    };
+
+    func.tween = tween;
+    return func;
+  },
   isTweening: function isTweening(targets) {
     return _globalTimeline.getTweensOf(targets, true).length > 0;
   },
@@ -17479,7 +18542,7 @@ var gsap = _gsap.registerPlugin({
   }
 }, _buildModifierPlugin("roundProps", _roundModifier), _buildModifierPlugin("modifiers"), _buildModifierPlugin("snap", snap)) || _gsap; //to prevent the core plugins from being dropped via aggressive tree shaking, we must include them in the variable declaration in this way.
 
-Tween.version = Timeline.version = gsap.version = "3.9.1";
+Tween.version = Timeline.version = gsap.version = "3.10.2";
 _coreReady = 1;
 _windowExists() && _wake();
 var Power0 = _easeMap.Power0,
@@ -30385,7 +31448,7 @@ var Parser = /*#__PURE__*/function (_Stream) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VERSION", function() { return VERSION; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addSidxSegmentsToPlaylist", function() { return addSidxSegmentsToPlaylist; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addSidxSegmentsToPlaylist", function() { return addSidxSegmentsToPlaylist$1; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "generateSidxKey", function() { return generateSidxKey; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "inheritAttributes", function() { return inheritAttributes; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "parse", function() { return parse; });
@@ -30396,16 +31459,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _videojs_vhs_utils_es_resolve_url__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @videojs/vhs-utils/es/resolve-url */ "./node_modules/@videojs/vhs-utils/es/resolve-url.js");
 /* harmony import */ var global_window__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! global/window */ "./node_modules/global/window.js");
 /* harmony import */ var global_window__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(global_window__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _videojs_vhs_utils_es_decode_b64_to_uint8_array__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @videojs/vhs-utils/es/decode-b64-to-uint8-array */ "./node_modules/@videojs/vhs-utils/es/decode-b64-to-uint8-array.js");
-/* harmony import */ var _xmldom_xmldom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @xmldom/xmldom */ "./node_modules/@xmldom/xmldom/lib/index.js");
-/* harmony import */ var _xmldom_xmldom__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_xmldom_xmldom__WEBPACK_IMPORTED_MODULE_3__);
-/*! @name mpd-parser @version 0.19.2 @license Apache-2.0 */
+/* harmony import */ var _videojs_vhs_utils_es_media_groups__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @videojs/vhs-utils/es/media-groups */ "./node_modules/@videojs/vhs-utils/es/media-groups.js");
+/* harmony import */ var _videojs_vhs_utils_es_decode_b64_to_uint8_array__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @videojs/vhs-utils/es/decode-b64-to-uint8-array */ "./node_modules/@videojs/vhs-utils/es/decode-b64-to-uint8-array.js");
+/* harmony import */ var _xmldom_xmldom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @xmldom/xmldom */ "./node_modules/@xmldom/xmldom/lib/index.js");
+/* harmony import */ var _xmldom_xmldom__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_xmldom_xmldom__WEBPACK_IMPORTED_MODULE_4__);
+/*! @name mpd-parser @version 0.21.0 @license Apache-2.0 */
 
 
 
 
 
-var version = "0.19.2";
+
+var version = "0.21.0";
 
 var isObject = function isObject(obj) {
   return !!obj && typeof obj === 'object';
@@ -30475,6 +31540,43 @@ var findIndexes = function findIndexes(l, key) {
     return a;
   }, []);
 };
+/**
+ * Returns the first index that satisfies the matching function, or -1 if not found.
+ *
+ * Only necessary because of IE11 support.
+ *
+ * @param {Array} list - the list to search through
+ * @param {Function} matchingFunction - the matching function
+ *
+ * @return {number} the matching index or -1 if not found
+ */
+
+var findIndex = function findIndex(list, matchingFunction) {
+  for (var i = 0; i < list.length; i++) {
+    if (matchingFunction(list[i])) {
+      return i;
+    }
+  }
+
+  return -1;
+};
+/**
+ * Returns a union of the included lists provided each element can be identified by a key.
+ *
+ * @param {Array} list - list of lists to get the union of
+ * @param {Function} keyFunction - the function to use as a key for each element
+ *
+ * @return {Array} the union of the arrays
+ */
+
+var union = function union(lists, keyFunction) {
+  return values(lists.reduce(function (acc, list) {
+    list.forEach(function (el) {
+      acc[keyFunction(el)] = el;
+    });
+    return acc;
+  }, {}));
+};
 
 var errors = {
   INVALID_NUMBER_OF_PERIOD: 'INVALID_NUMBER_OF_PERIOD',
@@ -30528,13 +31630,35 @@ var urlTypeToSegment = function urlTypeToSegment(_ref) {
 
   if (range || indexRange) {
     var rangeStr = range ? range : indexRange;
-    var ranges = rangeStr.split('-');
-    var startRange = parseInt(ranges[0], 10);
-    var endRange = parseInt(ranges[1], 10); // byterange should be inclusive according to
+    var ranges = rangeStr.split('-'); // default to parsing this as a BigInt if possible
+
+    var startRange = global_window__WEBPACK_IMPORTED_MODULE_1___default.a.BigInt ? global_window__WEBPACK_IMPORTED_MODULE_1___default.a.BigInt(ranges[0]) : parseInt(ranges[0], 10);
+    var endRange = global_window__WEBPACK_IMPORTED_MODULE_1___default.a.BigInt ? global_window__WEBPACK_IMPORTED_MODULE_1___default.a.BigInt(ranges[1]) : parseInt(ranges[1], 10); // convert back to a number if less than MAX_SAFE_INTEGER
+
+    if (startRange < Number.MAX_SAFE_INTEGER && typeof startRange === 'bigint') {
+      startRange = Number(startRange);
+    }
+
+    if (endRange < Number.MAX_SAFE_INTEGER && typeof endRange === 'bigint') {
+      endRange = Number(endRange);
+    }
+
+    var length;
+
+    if (typeof endRange === 'bigint' || typeof startRange === 'bigint') {
+      length = global_window__WEBPACK_IMPORTED_MODULE_1___default.a.BigInt(endRange) - global_window__WEBPACK_IMPORTED_MODULE_1___default.a.BigInt(startRange) + global_window__WEBPACK_IMPORTED_MODULE_1___default.a.BigInt(1);
+    } else {
+      length = endRange - startRange + 1;
+    }
+
+    if (typeof length === 'bigint' && length < Number.MAX_SAFE_INTEGER) {
+      length = Number(length);
+    } // byterange should be inclusive according to
     // RFC 2616, Clause 14.35.1
 
+
     segment.byterange = {
-      length: endRange - startRange + 1,
+      length: length,
       offset: startRange
     };
   }
@@ -30544,7 +31668,14 @@ var urlTypeToSegment = function urlTypeToSegment(_ref) {
 var byteRangeToString = function byteRangeToString(byterange) {
   // `endRange` is one less than `offset + length` because the HTTP range
   // header uses inclusive ranges
-  var endRange = byterange.offset + byterange.length - 1;
+  var endRange;
+
+  if (typeof byterange.offset === 'bigint' || typeof byterange.length === 'bigint') {
+    endRange = global_window__WEBPACK_IMPORTED_MODULE_1___default.a.BigInt(byterange.offset) + global_window__WEBPACK_IMPORTED_MODULE_1___default.a.BigInt(byterange.length) - global_window__WEBPACK_IMPORTED_MODULE_1___default.a.BigInt(1);
+  } else {
+    endRange = byterange.offset + byterange.length - 1;
+  }
+
   return byterange.offset + "-" + endRange;
 };
 
@@ -30629,15 +31760,20 @@ var segmentRange = {
         _attributes$timescale2 = attributes.timescale,
         timescale = _attributes$timescale2 === void 0 ? 1 : _attributes$timescale2,
         duration = attributes.duration,
-        _attributes$start = attributes.start,
-        start = _attributes$start === void 0 ? 0 : _attributes$start,
+        _attributes$periodSta = attributes.periodStart,
+        periodStart = _attributes$periodSta === void 0 ? 0 : _attributes$periodSta,
         _attributes$minimumUp = attributes.minimumUpdatePeriod,
         minimumUpdatePeriod = _attributes$minimumUp === void 0 ? 0 : _attributes$minimumUp,
         _attributes$timeShift = attributes.timeShiftBufferDepth,
         timeShiftBufferDepth = _attributes$timeShift === void 0 ? Infinity : _attributes$timeShift;
-    var endNumber = parseEndNumber(attributes.endNumber);
-    var now = (NOW + clientOffset) / 1000;
-    var periodStartWC = availabilityStartTime + start;
+    var endNumber = parseEndNumber(attributes.endNumber); // clientOffset is passed in at the top level of mpd-parser and is an offset calculated
+    // after retrieving UTC server time.
+
+    var now = (NOW + clientOffset) / 1000; // WC stands for Wall Clock.
+    // Convert the period start time to EPOCH.
+
+    var periodStartWC = availabilityStartTime + periodStart; // Period end in EPOCH is manifest's retrieval time + time until next update.
+
     var periodEndWC = now + minimumUpdatePeriod;
     var periodDuration = periodEndWC - periodStartWC;
     var segmentCount = Math.ceil(periodDuration * timescale / duration);
@@ -30674,18 +31810,18 @@ var segmentRange = {
  */
 
 var toSegments = function toSegments(attributes) {
-  return function (number, index) {
+  return function (number) {
     var duration = attributes.duration,
         _attributes$timescale3 = attributes.timescale,
         timescale = _attributes$timescale3 === void 0 ? 1 : _attributes$timescale3,
-        periodIndex = attributes.periodIndex,
+        periodStart = attributes.periodStart,
         _attributes$startNumb = attributes.startNumber,
         startNumber = _attributes$startNumb === void 0 ? 1 : _attributes$startNumb;
     return {
       number: startNumber + number,
       duration: duration / timescale,
-      timeline: periodIndex,
-      time: index * duration
+      timeline: periodStart,
+      time: number * duration
     };
   };
 };
@@ -30743,6 +31879,10 @@ var segmentsFromBase = function segmentsFromBase(attributes) {
       sourceDuration = attributes.sourceDuration,
       _attributes$indexRang = attributes.indexRange,
       indexRange = _attributes$indexRang === void 0 ? '' : _attributes$indexRang,
+      periodStart = attributes.periodStart,
+      presentationTime = attributes.presentationTime,
+      _attributes$number = attributes.number,
+      number = _attributes$number === void 0 ? 0 : _attributes$number,
       duration = attributes.duration; // base url is required for SegmentBase to work, per spec (Section 5.3.9.2.1)
 
   if (!baseUrl) {
@@ -30771,11 +31911,15 @@ var segmentsFromBase = function segmentsFromBase(attributes) {
     }
   } else if (sourceDuration) {
     segment.duration = sourceDuration;
-    segment.timeline = 0;
-  } // This is used for mediaSequence
+    segment.timeline = periodStart;
+  } // If presentation time is provided, these segments are being generated by SIDX
+  // references, and should use the time provided. For the general case of SegmentBase,
+  // there should only be one segment in the period, so its presentation time is the same
+  // as its period start.
 
 
-  segment.number = 0;
+  segment.presentationTime = presentationTime || periodStart;
+  segment.number = number;
   return [segment];
 };
 /**
@@ -30790,7 +31934,7 @@ var segmentsFromBase = function segmentsFromBase(attributes) {
  * @return {Object} the playlist object with the updated sidx information
  */
 
-var addSidxSegmentsToPlaylist = function addSidxSegmentsToPlaylist(playlist, sidx, baseUrl) {
+var addSidxSegmentsToPlaylist$1 = function addSidxSegmentsToPlaylist(playlist, sidx, baseUrl) {
   // Retain init segment information
   var initSegment = playlist.sidx.map ? playlist.sidx.map : null; // Retain source duration from initial main manifest parsing
 
@@ -30806,9 +31950,18 @@ var addSidxSegmentsToPlaylist = function addSidxSegmentsToPlaylist(playlist, sid
     return r.referenceType !== 1;
   });
   var segments = [];
-  var type = playlist.endList ? 'static' : 'dynamic'; // firstOffset is the offset from the end of the sidx box
+  var type = playlist.endList ? 'static' : 'dynamic';
+  var periodStart = playlist.sidx.timeline;
+  var presentationTime = periodStart;
+  var number = playlist.mediaSequence || 0; // firstOffset is the offset from the end of the sidx box
 
-  var startIndex = sidxEnd + sidx.firstOffset;
+  var startIndex; // eslint-disable-next-line
+
+  if (typeof sidx.firstOffset === 'bigint') {
+    startIndex = global_window__WEBPACK_IMPORTED_MODULE_1___default.a.BigInt(sidxEnd) + sidx.firstOffset;
+  } else {
+    startIndex = sidxEnd + sidx.firstOffset;
+  }
 
   for (var i = 0; i < mediaReferences.length; i++) {
     var reference = sidx.references[i]; // size of the referenced (sub)segment
@@ -30818,14 +31971,22 @@ var addSidxSegmentsToPlaylist = function addSidxSegmentsToPlaylist(playlist, sid
 
     var duration = reference.subsegmentDuration; // should be an inclusive range
 
-    var endIndex = startIndex + size - 1;
+    var endIndex = void 0; // eslint-disable-next-line
+
+    if (typeof startIndex === 'bigint') {
+      endIndex = startIndex + global_window__WEBPACK_IMPORTED_MODULE_1___default.a.BigInt(size) - global_window__WEBPACK_IMPORTED_MODULE_1___default.a.BigInt(1);
+    } else {
+      endIndex = startIndex + size - 1;
+    }
+
     var indexRange = startIndex + "-" + endIndex;
     var attributes = {
       baseUrl: baseUrl,
       timescale: timescale,
       timeline: timeline,
-      // this is used in parseByDuration
-      periodIndex: timeline,
+      periodStart: periodStart,
+      presentationTime: presentationTime,
+      number: number,
       duration: duration,
       sourceDuration: sourceDuration,
       indexRange: indexRange,
@@ -30838,11 +31999,255 @@ var addSidxSegmentsToPlaylist = function addSidxSegmentsToPlaylist(playlist, sid
     }
 
     segments.push(segment);
-    startIndex += size;
+
+    if (typeof startIndex === 'bigint') {
+      startIndex += global_window__WEBPACK_IMPORTED_MODULE_1___default.a.BigInt(size);
+    } else {
+      startIndex += size;
+    }
+
+    presentationTime += duration / timescale;
+    number++;
   }
 
   playlist.segments = segments;
   return playlist;
+};
+
+var SUPPORTED_MEDIA_TYPES = ['AUDIO', 'SUBTITLES']; // allow one 60fps frame as leniency (arbitrarily chosen)
+
+var TIME_FUDGE = 1 / 60;
+/**
+ * Given a list of timelineStarts, combines, dedupes, and sorts them.
+ *
+ * @param {TimelineStart[]} timelineStarts - list of timeline starts
+ *
+ * @return {TimelineStart[]} the combined and deduped timeline starts
+ */
+
+var getUniqueTimelineStarts = function getUniqueTimelineStarts(timelineStarts) {
+  return union(timelineStarts, function (_ref) {
+    var timeline = _ref.timeline;
+    return timeline;
+  }).sort(function (a, b) {
+    return a.timeline > b.timeline ? 1 : -1;
+  });
+};
+/**
+ * Finds the playlist with the matching NAME attribute.
+ *
+ * @param {Array} playlists - playlists to search through
+ * @param {string} name - the NAME attribute to search for
+ *
+ * @return {Object|null} the matching playlist object, or null
+ */
+
+var findPlaylistWithName = function findPlaylistWithName(playlists, name) {
+  for (var i = 0; i < playlists.length; i++) {
+    if (playlists[i].attributes.NAME === name) {
+      return playlists[i];
+    }
+  }
+
+  return null;
+};
+/**
+ * Gets a flattened array of media group playlists.
+ *
+ * @param {Object} manifest - the main manifest object
+ *
+ * @return {Array} the media group playlists
+ */
+
+var getMediaGroupPlaylists = function getMediaGroupPlaylists(manifest) {
+  var mediaGroupPlaylists = [];
+  Object(_videojs_vhs_utils_es_media_groups__WEBPACK_IMPORTED_MODULE_2__["forEachMediaGroup"])(manifest, SUPPORTED_MEDIA_TYPES, function (properties, type, group, label) {
+    mediaGroupPlaylists = mediaGroupPlaylists.concat(properties.playlists || []);
+  });
+  return mediaGroupPlaylists;
+};
+/**
+ * Updates the playlist's media sequence numbers.
+ *
+ * @param {Object} config - options object
+ * @param {Object} config.playlist - the playlist to update
+ * @param {number} config.mediaSequence - the mediaSequence number to start with
+ */
+
+var updateMediaSequenceForPlaylist = function updateMediaSequenceForPlaylist(_ref2) {
+  var playlist = _ref2.playlist,
+      mediaSequence = _ref2.mediaSequence;
+  playlist.mediaSequence = mediaSequence;
+  playlist.segments.forEach(function (segment, index) {
+    segment.number = playlist.mediaSequence + index;
+  });
+};
+/**
+ * Updates the media and discontinuity sequence numbers of newPlaylists given oldPlaylists
+ * and a complete list of timeline starts.
+ *
+ * If no matching playlist is found, only the discontinuity sequence number of the playlist
+ * will be updated.
+ *
+ * Since early available timelines are not supported, at least one segment must be present.
+ *
+ * @param {Object} config - options object
+ * @param {Object[]} oldPlaylists - the old playlists to use as a reference
+ * @param {Object[]} newPlaylists - the new playlists to update
+ * @param {Object} timelineStarts - all timelineStarts seen in the stream to this point
+ */
+
+var updateSequenceNumbers = function updateSequenceNumbers(_ref3) {
+  var oldPlaylists = _ref3.oldPlaylists,
+      newPlaylists = _ref3.newPlaylists,
+      timelineStarts = _ref3.timelineStarts;
+  newPlaylists.forEach(function (playlist) {
+    playlist.discontinuitySequence = findIndex(timelineStarts, function (_ref4) {
+      var timeline = _ref4.timeline;
+      return timeline === playlist.timeline;
+    }); // Playlists NAMEs come from DASH Representation IDs, which are mandatory
+    // (see ISO_23009-1-2012 5.3.5.2).
+    //
+    // If the same Representation existed in a prior Period, it will retain the same NAME.
+
+    var oldPlaylist = findPlaylistWithName(oldPlaylists, playlist.attributes.NAME);
+
+    if (!oldPlaylist) {
+      // Since this is a new playlist, the media sequence values can start from 0 without
+      // consequence.
+      return;
+    } // TODO better support for live SIDX
+    //
+    // As of this writing, mpd-parser does not support multiperiod SIDX (in live or VOD).
+    // This is evident by a playlist only having a single SIDX reference. In a multiperiod
+    // playlist there would need to be multiple SIDX references. In addition, live SIDX is
+    // not supported when the SIDX properties change on refreshes.
+    //
+    // In the future, if support needs to be added, the merging logic here can be called
+    // after SIDX references are resolved. For now, exit early to prevent exceptions being
+    // thrown due to undefined references.
+
+
+    if (playlist.sidx) {
+      return;
+    } // Since we don't yet support early available timelines, we don't need to support
+    // playlists with no segments.
+
+
+    var firstNewSegment = playlist.segments[0];
+    var oldMatchingSegmentIndex = findIndex(oldPlaylist.segments, function (oldSegment) {
+      return Math.abs(oldSegment.presentationTime - firstNewSegment.presentationTime) < TIME_FUDGE;
+    }); // No matching segment from the old playlist means the entire playlist was refreshed.
+    // In this case the media sequence should account for this update, and the new segments
+    // should be marked as discontinuous from the prior content, since the last prior
+    // timeline was removed.
+
+    if (oldMatchingSegmentIndex === -1) {
+      updateMediaSequenceForPlaylist({
+        playlist: playlist,
+        mediaSequence: oldPlaylist.mediaSequence + oldPlaylist.segments.length
+      });
+      playlist.segments[0].discontinuity = true;
+      playlist.discontinuityStarts.unshift(0); // No matching segment does not necessarily mean there's missing content.
+      //
+      // If the new playlist's timeline is the same as the last seen segment's timeline,
+      // then a discontinuity can be added to identify that there's potentially missing
+      // content. If there's no missing content, the discontinuity should still be rather
+      // harmless. It's possible that if segment durations are accurate enough, that the
+      // existence of a gap can be determined using the presentation times and durations,
+      // but if the segment timing info is off, it may introduce more problems than simply
+      // adding the discontinuity.
+      //
+      // If the new playlist's timeline is different from the last seen segment's timeline,
+      // then a discontinuity can be added to identify that this is the first seen segment
+      // of a new timeline. However, the logic at the start of this function that
+      // determined the disconinuity sequence by timeline index is now off by one (the
+      // discontinuity of the newest timeline hasn't yet fallen off the manifest...since
+      // we added it), so the disconinuity sequence must be decremented.
+      //
+      // A period may also have a duration of zero, so the case of no segments is handled
+      // here even though we don't yet support early available periods.
+
+      if (!oldPlaylist.segments.length && playlist.timeline > oldPlaylist.timeline || oldPlaylist.segments.length && playlist.timeline > oldPlaylist.segments[oldPlaylist.segments.length - 1].timeline) {
+        playlist.discontinuitySequence--;
+      }
+
+      return;
+    } // If the first segment matched with a prior segment on a discontinuity (it's matching
+    // on the first segment of a period), then the discontinuitySequence shouldn't be the
+    // timeline's matching one, but instead should be the one prior, and the first segment
+    // of the new manifest should be marked with a discontinuity.
+    //
+    // The reason for this special case is that discontinuity sequence shows how many
+    // discontinuities have fallen off of the playlist, and discontinuities are marked on
+    // the first segment of a new "timeline." Because of this, while DASH will retain that
+    // Period while the "timeline" exists, HLS keeps track of it via the discontinuity
+    // sequence, and that first segment is an indicator, but can be removed before that
+    // timeline is gone.
+
+
+    var oldMatchingSegment = oldPlaylist.segments[oldMatchingSegmentIndex];
+
+    if (oldMatchingSegment.discontinuity && !firstNewSegment.discontinuity) {
+      firstNewSegment.discontinuity = true;
+      playlist.discontinuityStarts.unshift(0);
+      playlist.discontinuitySequence--;
+    }
+
+    updateMediaSequenceForPlaylist({
+      playlist: playlist,
+      mediaSequence: oldPlaylist.segments[oldMatchingSegmentIndex].number
+    });
+  });
+};
+/**
+ * Given an old parsed manifest object and a new parsed manifest object, updates the
+ * sequence and timing values within the new manifest to ensure that it lines up with the
+ * old.
+ *
+ * @param {Array} oldManifest - the old main manifest object
+ * @param {Array} newManifest - the new main manifest object
+ *
+ * @return {Object} the updated new manifest object
+ */
+
+var positionManifestOnTimeline = function positionManifestOnTimeline(_ref5) {
+  var oldManifest = _ref5.oldManifest,
+      newManifest = _ref5.newManifest;
+  // Starting from v4.1.2 of the IOP, section 4.4.3.3 states:
+  //
+  // "MPD@availabilityStartTime and Period@start shall not be changed over MPD updates."
+  //
+  // This was added from https://github.com/Dash-Industry-Forum/DASH-IF-IOP/issues/160
+  //
+  // Because of this change, and the difficulty of supporting periods with changing start
+  // times, periods with changing start times are not supported. This makes the logic much
+  // simpler, since periods with the same start time can be considerred the same period
+  // across refreshes.
+  //
+  // To give an example as to the difficulty of handling periods where the start time may
+  // change, if a single period manifest is refreshed with another manifest with a single
+  // period, and both the start and end times are increased, then the only way to determine
+  // if it's a new period or an old one that has changed is to look through the segments of
+  // each playlist and determine the presentation time bounds to find a match. In addition,
+  // if the period start changed to exceed the old period end, then there would be no
+  // match, and it would not be possible to determine whether the refreshed period is a new
+  // one or the old one.
+  var oldPlaylists = oldManifest.playlists.concat(getMediaGroupPlaylists(oldManifest));
+  var newPlaylists = newManifest.playlists.concat(getMediaGroupPlaylists(newManifest)); // Save all seen timelineStarts to the new manifest. Although this potentially means that
+  // there's a "memory leak" in that it will never stop growing, in reality, only a couple
+  // of properties are saved for each seen Period. Even long running live streams won't
+  // generate too many Periods, unless the stream is watched for decades. In the future,
+  // this can be optimized by mapping to discontinuity sequence numbers for each timeline,
+  // but it may not become an issue, and the additional info can be useful for debugging.
+
+  newManifest.timelineStarts = getUniqueTimelineStarts([oldManifest.timelineStarts, newManifest.timelineStarts]);
+  updateSequenceNumbers({
+    oldPlaylists: oldPlaylists,
+    newPlaylists: newPlaylists,
+    timelineStarts: newManifest.timelineStarts
+  });
+  return newManifest;
 };
 
 var generateSidxKey = function generateSidxKey(sidx) {
@@ -30854,42 +32259,52 @@ var mergeDiscontiguousPlaylists = function mergeDiscontiguousPlaylists(playlists
     // assuming playlist IDs are the same across periods
     // TODO: handle multiperiod where representation sets are not the same
     // across periods
-    var name = playlist.attributes.id + (playlist.attributes.lang || ''); // Periods after first
+    var name = playlist.attributes.id + (playlist.attributes.lang || '');
 
-    if (acc[name]) {
-      var _acc$name$segments;
+    if (!acc[name]) {
+      // First Period
+      acc[name] = playlist;
+      acc[name].attributes.timelineStarts = [];
+    } else {
+      // Subsequent Periods
+      if (playlist.segments) {
+        var _acc$name$segments;
 
-      // first segment of subsequent periods signal a discontinuity
-      if (playlist.segments[0]) {
-        playlist.segments[0].discontinuity = true;
-      }
+        // first segment of subsequent periods signal a discontinuity
+        if (playlist.segments[0]) {
+          playlist.segments[0].discontinuity = true;
+        }
 
-      (_acc$name$segments = acc[name].segments).push.apply(_acc$name$segments, playlist.segments); // bubble up contentProtection, this assumes all DRM content
+        (_acc$name$segments = acc[name].segments).push.apply(_acc$name$segments, playlist.segments);
+      } // bubble up contentProtection, this assumes all DRM content
       // has the same contentProtection
 
 
       if (playlist.attributes.contentProtection) {
         acc[name].attributes.contentProtection = playlist.attributes.contentProtection;
       }
-    } else {
-      // first Period
-      acc[name] = playlist;
     }
 
+    acc[name].attributes.timelineStarts.push({
+      // Although they represent the same number, it's important to have both to make it
+      // compatible with HLS potentially having a similar attribute.
+      start: playlist.attributes.periodStart,
+      timeline: playlist.attributes.periodStart
+    });
     return acc;
   }, {}));
   return mergedPlaylists.map(function (playlist) {
-    playlist.discontinuityStarts = findIndexes(playlist.segments, 'discontinuity');
+    playlist.discontinuityStarts = findIndexes(playlist.segments || [], 'discontinuity');
     return playlist;
   });
 };
 
-var addSidxSegmentsToPlaylist$1 = function addSidxSegmentsToPlaylist$1(playlist, sidxMapping) {
+var addSidxSegmentsToPlaylist = function addSidxSegmentsToPlaylist(playlist, sidxMapping) {
   var sidxKey = generateSidxKey(playlist.sidx);
   var sidxMatch = sidxKey && sidxMapping[sidxKey] && sidxMapping[sidxKey].sidx;
 
   if (sidxMatch) {
-    addSidxSegmentsToPlaylist(playlist, sidxMatch, playlist.sidx.resolvedUri);
+    addSidxSegmentsToPlaylist$1(playlist, sidxMatch, playlist.sidx.resolvedUri);
   }
 
   return playlist;
@@ -30904,7 +32319,7 @@ var addSidxSegmentsToPlaylists = function addSidxSegmentsToPlaylists(playlists, 
   }
 
   for (var i in playlists) {
-    playlists[i] = addSidxSegmentsToPlaylist$1(playlists[i], sidxMapping);
+    playlists[i] = addSidxSegmentsToPlaylist(playlists[i], sidxMapping);
   }
 
   return playlists;
@@ -30914,7 +32329,10 @@ var formatAudioPlaylist = function formatAudioPlaylist(_ref, isAudioOnly) {
 
   var attributes = _ref.attributes,
       segments = _ref.segments,
-      sidx = _ref.sidx;
+      sidx = _ref.sidx,
+      mediaSequence = _ref.mediaSequence,
+      discontinuitySequence = _ref.discontinuitySequence,
+      discontinuityStarts = _ref.discontinuityStarts;
   var playlist = {
     attributes: (_attributes = {
       NAME: attributes.id,
@@ -30923,11 +32341,14 @@ var formatAudioPlaylist = function formatAudioPlaylist(_ref, isAudioOnly) {
     }, _attributes['PROGRAM-ID'] = 1, _attributes),
     uri: '',
     endList: attributes.type === 'static',
-    timeline: attributes.periodIndex,
+    timeline: attributes.periodStart,
     resolvedUri: '',
     targetDuration: attributes.duration,
-    segments: segments,
-    mediaSequence: segments.length ? segments[0].number : 1
+    discontinuitySequence: discontinuitySequence,
+    discontinuityStarts: discontinuityStarts,
+    timelineStarts: attributes.timelineStarts,
+    mediaSequence: mediaSequence,
+    segments: segments
   };
 
   if (attributes.contentProtection) {
@@ -30949,13 +32370,16 @@ var formatVttPlaylist = function formatVttPlaylist(_ref2) {
   var _m3u8Attributes;
 
   var attributes = _ref2.attributes,
-      segments = _ref2.segments;
+      segments = _ref2.segments,
+      mediaSequence = _ref2.mediaSequence,
+      discontinuityStarts = _ref2.discontinuityStarts,
+      discontinuitySequence = _ref2.discontinuitySequence;
 
   if (typeof segments === 'undefined') {
     // vtt tracks may use single file in BaseURL
     segments = [{
       uri: attributes.baseUrl,
-      timeline: attributes.periodIndex,
+      timeline: attributes.periodStart,
       resolvedUri: attributes.baseUrl || '',
       duration: attributes.sourceDuration,
       number: 0
@@ -30977,11 +32401,14 @@ var formatVttPlaylist = function formatVttPlaylist(_ref2) {
     attributes: m3u8Attributes,
     uri: '',
     endList: attributes.type === 'static',
-    timeline: attributes.periodIndex,
+    timeline: attributes.periodStart,
     resolvedUri: attributes.baseUrl || '',
     targetDuration: attributes.duration,
-    segments: segments,
-    mediaSequence: segments.length ? segments[0].number : 1
+    timelineStarts: attributes.timelineStarts,
+    discontinuityStarts: discontinuityStarts,
+    discontinuitySequence: discontinuitySequence,
+    mediaSequence: mediaSequence,
+    segments: segments
   };
 };
 var organizeAudioPlaylists = function organizeAudioPlaylists(playlists, sidxMapping, isAudioOnly) {
@@ -31014,7 +32441,7 @@ var organizeAudioPlaylists = function organizeAudioPlaylists(playlists, sidxMapp
       };
     }
 
-    var formatted = addSidxSegmentsToPlaylist$1(formatAudioPlaylist(playlist, isAudioOnly), sidxMapping);
+    var formatted = addSidxSegmentsToPlaylist(formatAudioPlaylist(playlist, isAudioOnly), sidxMapping);
     a[label].playlists.push(formatted);
 
     if (typeof mainPlaylist === 'undefined' && role === 'main') {
@@ -31050,7 +32477,7 @@ var organizeVttPlaylists = function organizeVttPlaylists(playlists, sidxMapping)
       };
     }
 
-    a[label].playlists.push(addSidxSegmentsToPlaylist$1(formatVttPlaylist(playlist), sidxMapping));
+    a[label].playlists.push(addSidxSegmentsToPlaylist(formatVttPlaylist(playlist), sidxMapping));
     return a;
   }, {});
 };
@@ -31092,7 +32519,8 @@ var formatVideoPlaylist = function formatVideoPlaylist(_ref3) {
 
   var attributes = _ref3.attributes,
       segments = _ref3.segments,
-      sidx = _ref3.sidx;
+      sidx = _ref3.sidx,
+      discontinuityStarts = _ref3.discontinuityStarts;
   var playlist = {
     attributes: (_attributes2 = {
       NAME: attributes.id,
@@ -31107,11 +32535,12 @@ var formatVideoPlaylist = function formatVideoPlaylist(_ref3) {
     }, _attributes2['PROGRAM-ID'] = 1, _attributes2),
     uri: '',
     endList: attributes.type === 'static',
-    timeline: attributes.periodIndex,
+    timeline: attributes.periodStart,
     resolvedUri: '',
     targetDuration: attributes.duration,
-    segments: segments,
-    mediaSequence: segments.length ? segments[0].number : 1
+    discontinuityStarts: discontinuityStarts,
+    timelineStarts: attributes.timelineStarts,
+    segments: segments
   };
 
   if (attributes.contentProtection) {
@@ -31139,13 +32568,84 @@ var vttOnly = function vttOnly(_ref6) {
   var attributes = _ref6.attributes;
   return attributes.mimeType === 'text/vtt' || attributes.contentType === 'text';
 };
+/**
+ * Contains start and timeline properties denoting a timeline start. For DASH, these will
+ * be the same number.
+ *
+ * @typedef {Object} TimelineStart
+ * @property {number} start - the start time of the timeline
+ * @property {number} timeline - the timeline number
+ */
 
-var toM3u8 = function toM3u8(dashPlaylists, locations, sidxMapping) {
+/**
+ * Adds appropriate media and discontinuity sequence values to the segments and playlists.
+ *
+ * Throughout mpd-parser, the `number` attribute is used in relation to `startNumber`, a
+ * DASH specific attribute used in constructing segment URI's from templates. However, from
+ * an HLS perspective, the `number` attribute on a segment would be its `mediaSequence`
+ * value, which should start at the original media sequence value (or 0) and increment by 1
+ * for each segment thereafter. Since DASH's `startNumber` values are independent per
+ * period, it doesn't make sense to use it for `number`. Instead, assume everything starts
+ * from a 0 mediaSequence value and increment from there.
+ *
+ * Note that VHS currently doesn't use the `number` property, but it can be helpful for
+ * debugging and making sense of the manifest.
+ *
+ * For live playlists, to account for values increasing in manifests when periods are
+ * removed on refreshes, merging logic should be used to update the numbers to their
+ * appropriate values (to ensure they're sequential and increasing).
+ *
+ * @param {Object[]} playlists - the playlists to update
+ * @param {TimelineStart[]} timelineStarts - the timeline starts for the manifest
+ */
+
+
+var addMediaSequenceValues = function addMediaSequenceValues(playlists, timelineStarts) {
+  // increment all segments sequentially
+  playlists.forEach(function (playlist) {
+    playlist.mediaSequence = 0;
+    playlist.discontinuitySequence = findIndex(timelineStarts, function (_ref7) {
+      var timeline = _ref7.timeline;
+      return timeline === playlist.timeline;
+    });
+
+    if (!playlist.segments) {
+      return;
+    }
+
+    playlist.segments.forEach(function (segment, index) {
+      segment.number = index;
+    });
+  });
+};
+/**
+ * Given a media group object, flattens all playlists within the media group into a single
+ * array.
+ *
+ * @param {Object} mediaGroupObject - the media group object
+ *
+ * @return {Object[]}
+ *         The media group playlists
+ */
+
+var flattenMediaGroupPlaylists = function flattenMediaGroupPlaylists(mediaGroupObject) {
+  if (!mediaGroupObject) {
+    return [];
+  }
+
+  return Object.keys(mediaGroupObject).reduce(function (acc, label) {
+    var labelContents = mediaGroupObject[label];
+    return acc.concat(labelContents.playlists);
+  }, []);
+};
+var toM3u8 = function toM3u8(_ref8) {
   var _mediaGroups;
 
-  if (sidxMapping === void 0) {
-    sidxMapping = {};
-  }
+  var dashPlaylists = _ref8.dashPlaylists,
+      locations = _ref8.locations,
+      _ref8$sidxMapping = _ref8.sidxMapping,
+      sidxMapping = _ref8$sidxMapping === void 0 ? {} : _ref8$sidxMapping,
+      previousManifest = _ref8.previousManifest;
 
   if (!dashPlaylists.length) {
     return {};
@@ -31159,7 +32659,7 @@ var toM3u8 = function toM3u8(dashPlaylists, locations, sidxMapping) {
       minimumUpdatePeriod = _dashPlaylists$0$attr.minimumUpdatePeriod;
   var videoPlaylists = mergeDiscontiguousPlaylists(dashPlaylists.filter(videoOnly)).map(formatVideoPlaylist);
   var audioPlaylists = mergeDiscontiguousPlaylists(dashPlaylists.filter(audioOnly));
-  var vttPlaylists = dashPlaylists.filter(vttOnly);
+  var vttPlaylists = mergeDiscontiguousPlaylists(dashPlaylists.filter(vttOnly));
   var captions = dashPlaylists.map(function (playlist) {
     return playlist.attributes.captionServices;
   }).filter(Boolean);
@@ -31190,17 +32690,33 @@ var toM3u8 = function toM3u8(dashPlaylists, locations, sidxMapping) {
   }
 
   var isAudioOnly = manifest.playlists.length === 0;
+  var organizedAudioGroup = audioPlaylists.length ? organizeAudioPlaylists(audioPlaylists, sidxMapping, isAudioOnly) : null;
+  var organizedVttGroup = vttPlaylists.length ? organizeVttPlaylists(vttPlaylists, sidxMapping) : null;
+  var formattedPlaylists = videoPlaylists.concat(flattenMediaGroupPlaylists(organizedAudioGroup), flattenMediaGroupPlaylists(organizedVttGroup));
+  var playlistTimelineStarts = formattedPlaylists.map(function (_ref9) {
+    var timelineStarts = _ref9.timelineStarts;
+    return timelineStarts;
+  });
+  manifest.timelineStarts = getUniqueTimelineStarts(playlistTimelineStarts);
+  addMediaSequenceValues(formattedPlaylists, manifest.timelineStarts);
 
-  if (audioPlaylists.length) {
-    manifest.mediaGroups.AUDIO.audio = organizeAudioPlaylists(audioPlaylists, sidxMapping, isAudioOnly);
+  if (organizedAudioGroup) {
+    manifest.mediaGroups.AUDIO.audio = organizedAudioGroup;
   }
 
-  if (vttPlaylists.length) {
-    manifest.mediaGroups.SUBTITLES.subs = organizeVttPlaylists(vttPlaylists, sidxMapping);
+  if (organizedVttGroup) {
+    manifest.mediaGroups.SUBTITLES.subs = organizedVttGroup;
   }
 
   if (captions.length) {
     manifest.mediaGroups['CLOSED-CAPTIONS'].cc = organizeCaptionServices(captions);
+  }
+
+  if (previousManifest) {
+    return positionManifestOnTimeline({
+      oldManifest: previousManifest,
+      newManifest: manifest
+    });
   }
 
   return manifest;
@@ -31227,12 +32743,12 @@ var getLiveRValue = function getLiveRValue(attributes, time, duration) {
       availabilityStartTime = attributes.availabilityStartTime,
       _attributes$timescale = attributes.timescale,
       timescale = _attributes$timescale === void 0 ? 1 : _attributes$timescale,
-      _attributes$start = attributes.start,
-      start = _attributes$start === void 0 ? 0 : _attributes$start,
+      _attributes$periodSta = attributes.periodStart,
+      periodStart = _attributes$periodSta === void 0 ? 0 : _attributes$periodSta,
       _attributes$minimumUp = attributes.minimumUpdatePeriod,
       minimumUpdatePeriod = _attributes$minimumUp === void 0 ? 0 : _attributes$minimumUp;
   var now = (NOW + clientOffset) / 1000;
-  var periodStartWC = availabilityStartTime + start;
+  var periodStartWC = availabilityStartTime + periodStart;
   var periodEndWC = now + minimumUpdatePeriod;
   var periodDuration = periodEndWC - periodStartWC;
   return Math.ceil((periodDuration * timescale - time) / duration);
@@ -31263,7 +32779,7 @@ var parseByTimeline = function parseByTimeline(attributes, segmentTimeline) {
       timescale = _attributes$timescale2 === void 0 ? 1 : _attributes$timescale2,
       _attributes$startNumb = attributes.startNumber,
       startNumber = _attributes$startNumb === void 0 ? 1 : _attributes$startNumb,
-      timeline = attributes.periodIndex;
+      timeline = attributes.periodStart;
   var segments = [];
   var time = -1;
 
@@ -31453,7 +32969,7 @@ var parseTemplateInfo = function parseTemplateInfo(attributes, segmentTimeline) 
       number: attributes.startNumber || 1,
       duration: attributes.sourceDuration,
       time: 0,
-      timeline: attributes.periodIndex
+      timeline: attributes.periodStart
     }];
   }
 
@@ -32152,7 +33668,7 @@ var generateKeySystemInformation = function generateKeySystemInformation(content
 
       if (psshNode) {
         var pssh = getContent(psshNode);
-        var psshBuffer = pssh && Object(_videojs_vhs_utils_es_decode_b64_to_uint8_array__WEBPACK_IMPORTED_MODULE_2__["default"])(pssh);
+        var psshBuffer = pssh && Object(_videojs_vhs_utils_es_decode_b64_to_uint8_array__WEBPACK_IMPORTED_MODULE_3__["default"])(pssh);
         acc[keySystem].pssh = psshBuffer;
       }
     }
@@ -32328,8 +33844,8 @@ var toRepresentations = function toRepresentations(periodAttributes, periodBaseU
  * @function
  * @param {PeriodInformation} period
  *        Period object containing necessary period information
- * @param {number} periodIndex
- *        Index of the Period within the mpd
+ * @param {number} periodStart
+ *        Start time of the Period within the mpd
  * @return {RepresentationInformation[]}
  *         List of objects containing Representaion information
  */
@@ -32349,11 +33865,7 @@ var toRepresentations = function toRepresentations(periodAttributes, periodBaseU
 var toAdaptationSets = function toAdaptationSets(mpdAttributes, mpdBaseUrls) {
   return function (period, index) {
     var periodBaseUrls = buildBaseUrls(mpdBaseUrls, findChildren(period.node, 'BaseURL'));
-    var parsedPeriodId = parseInt(period.attributes.id, 10); // fallback to mapping index if Period@id is not a number
-
-    var periodIndex = global_window__WEBPACK_IMPORTED_MODULE_1___default.a.isNaN(parsedPeriodId) ? index : parsedPeriodId;
     var periodAttributes = merge(mpdAttributes, {
-      periodIndex: periodIndex,
       periodStart: period.attributes.start
     });
 
@@ -32503,7 +34015,7 @@ var stringToMpdXml = function stringToMpdXml(manifestString) {
     throw new Error(errors.DASH_EMPTY_MANIFEST);
   }
 
-  var parser = new _xmldom_xmldom__WEBPACK_IMPORTED_MODULE_3__["DOMParser"]();
+  var parser = new _xmldom_xmldom__WEBPACK_IMPORTED_MODULE_4__["DOMParser"]();
   var xml;
   var mpd;
 
@@ -32568,6 +34080,19 @@ var parseUTCTimingScheme = function parseUTCTimingScheme(mpd) {
 };
 
 var VERSION = version;
+/*
+ * Given a DASH manifest string and options, parses the DASH manifest into an object in the
+ * form outputed by m3u8-parser and accepted by videojs/http-streaming.
+ *
+ * For live DASH manifests, if `previousManifest` is provided in options, then the newly
+ * parsed DASH manifest will have its media sequence and discontinuity sequence values
+ * updated to reflect its position relative to the prior manifest.
+ *
+ * @param {string} manifestString - the DASH manifest as a string
+ * @param {options} [options] - any options
+ *
+ * @return {Object} the manifest object
+ */
 
 var parse = function parse(manifestString, options) {
   if (options === void 0) {
@@ -32576,7 +34101,12 @@ var parse = function parse(manifestString, options) {
 
   var parsedManifestInfo = inheritAttributes(stringToMpdXml(manifestString), options);
   var playlists = toPlaylists(parsedManifestInfo.representationInfo);
-  return toM3u8(playlists, parsedManifestInfo.locations, options.sidxMapping);
+  return toM3u8({
+    dashPlaylists: playlists,
+    locations: parsedManifestInfo.locations,
+    sidxMapping: options.sidxMapping,
+    previousManifest: options.previousManifest
+  });
 };
 /**
  * Parses the manifest for a UTCTiming node, returning the nodes attributes if found
@@ -32602,9 +34132,9 @@ var parseUTCTiming = function parseUTCTiming(manifestString) {
   !*** ./node_modules/mux.js/lib/tools/parse-sidx.js ***!
   \*****************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-var MAX_UINT32 = Math.pow(2, 32);
+var getUint64 = __webpack_require__(/*! ../utils/numbers.js */ "./node_modules/mux.js/lib/utils/numbers.js").getUint64;
 
 var parseSidx = function(data) {
   var view = new DataView(data.buffer, data.byteOffset, data.byteLength),
@@ -32623,8 +34153,8 @@ var parseSidx = function(data) {
     i += 8;
   } else {
     // read 64 bits
-    result.earliestPresentationTime = (view.getUint32(i) * MAX_UINT32) + view.getUint32(i + 4);
-    result.firstOffset = (view.getUint32(i + 8) * MAX_UINT32) + view.getUint32(i + 12);
+    result.earliestPresentationTime = getUint64(data.subarray(i));
+    result.firstOffset = getUint64(data.subarray(i + 8));
     i += 16;
   }
 
@@ -32718,6 +34248,40 @@ module.exports = {
   audioTsToVideoTs: audioTsToVideoTs,
   videoTsToAudioTs: videoTsToAudioTs,
   metadataTsToSeconds: metadataTsToSeconds
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/mux.js/lib/utils/numbers.js":
+/*!**************************************************!*\
+  !*** ./node_modules/mux.js/lib/utils/numbers.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var MAX_UINT32 = Math.pow(2, 32);
+
+var getUint64 = function(uint8) {
+  var dv = new DataView(uint8.buffer, uint8.byteOffset, uint8.byteLength);
+  var value;
+
+  if (dv.getBigUint64) {
+    value = dv.getBigUint64(0);
+
+    if (value < Number.MAX_SAFE_INTEGER) {
+      return Number(value);
+    }
+
+    return value;
+  }
+
+  return (dv.getUint32(0) * MAX_UINT32) + dv.getUint32(4);
+};
+
+module.exports = {
+  getUint64: getUint64,
+  MAX_UINT32: MAX_UINT32
 };
 
 
@@ -38228,20 +39792,20 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var global_window__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! global/window */ "./node_modules/global/window.js");
+/* WEBPACK VAR INJECTION */(function(global) {/* harmony import */ var global_window__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! global/window */ "./node_modules/global/window.js");
 /* harmony import */ var global_window__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(global_window__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var global_document__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! global/document */ "./node_modules/global/document.js");
 /* harmony import */ var global_document__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(global_document__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/extends.js");
 /* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/assertThisInitialized.js");
-/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/inheritsLoose */ "./node_modules/@babel/runtime/helpers/inheritsLoose.js");
-/* harmony import */ var _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var safe_json_parse_tuple__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! safe-json-parse/tuple */ "./node_modules/safe-json-parse/tuple.js");
-/* harmony import */ var safe_json_parse_tuple__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(safe_json_parse_tuple__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var keycode__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! keycode */ "./node_modules/keycode/index.js");
-/* harmony import */ var keycode__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(keycode__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var keycode__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! keycode */ "./node_modules/keycode/index.js");
+/* harmony import */ var keycode__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(keycode__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/inheritsLoose */ "./node_modules/@babel/runtime/helpers/inheritsLoose.js");
+/* harmony import */ var _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var safe_json_parse_tuple__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! safe-json-parse/tuple */ "./node_modules/safe-json-parse/tuple.js");
+/* harmony import */ var safe_json_parse_tuple__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(safe_json_parse_tuple__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _videojs_xhr__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @videojs/xhr */ "./node_modules/@videojs/xhr/lib/index.js");
 /* harmony import */ var _videojs_xhr__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_videojs_xhr__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var videojs_vtt_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! videojs-vtt.js */ "./node_modules/videojs-vtt.js/lib/browser-index.js");
@@ -38264,7 +39828,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var mux_js_lib_utils_clock__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(mux_js_lib_utils_clock__WEBPACK_IMPORTED_MODULE_20__);
 /**
  * @license
- * Video.js 7.17.0 <http://videojs.com/>
+ * Video.js 7.18.1 <http://videojs.com/>
  * Copyright Brightcove, Inc. <https://www.brightcove.com/>
  * Available under Apache License Version 2.0
  * <https://github.com/videojs/video.js/blob/main/LICENSE>
@@ -38296,7 +39860,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var version$5 = "7.17.0";
+var version$5 = "7.18.1";
 
 /**
  * An Object that contains lifecycle hooks as keys which point to an array
@@ -43190,8 +44754,11 @@ var Component$1 = /*#__PURE__*/function () {
   _proto.handleKeyDown = function handleKeyDown(event) {
     if (this.player_) {
       // We only stop propagation here because we want unhandled events to fall
-      // back to the browser.
-      event.stopPropagation();
+      // back to the browser. Exclude Tab for focus trapping.
+      if (!keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(event, 'Tab')) {
+        event.stopPropagation();
+      }
+
       this.player_.handleKeyDown(event);
     }
   }
@@ -44199,7 +45766,7 @@ var MODAL_CLASS_NAME = 'vjs-modal-dialog';
  */
 
 var ModalDialog = /*#__PURE__*/function (_Component) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(ModalDialog, _Component);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(ModalDialog, _Component);
 
   /**
    * Create an instance of this class.
@@ -44656,14 +46223,14 @@ var ModalDialog = /*#__PURE__*/function (_Component) {
     // Do not allow keydowns to reach out of the modal dialog.
     event.stopPropagation();
 
-    if (keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(event, 'Escape') && this.closeable()) {
+    if (keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(event, 'Escape') && this.closeable()) {
       event.preventDefault();
       this.close();
       return;
     } // exit early if it isn't a tab key
 
 
-    if (!keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(event, 'Tab')) {
+    if (!keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(event, 'Tab')) {
       return;
     }
 
@@ -44728,7 +46295,7 @@ Component$1.registerComponent('ModalDialog', ModalDialog);
  */
 
 var TrackList = /*#__PURE__*/function (_EventTarget) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(TrackList, _EventTarget);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(TrackList, _EventTarget);
 
   /**
    * Create an instance of this class
@@ -44754,7 +46321,7 @@ var TrackList = /*#__PURE__*/function (_EventTarget) {
      * @instance
      */
 
-    Object.defineProperty(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this), 'length', {
+    Object.defineProperty(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this), 'length', {
       get: function get() {
         return this.tracks_.length;
       }
@@ -44961,7 +46528,7 @@ var disableOthers$1 = function disableOthers(list, track) {
 
 
 var AudioTrackList = /*#__PURE__*/function (_TrackList) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(AudioTrackList, _TrackList);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(AudioTrackList, _TrackList);
 
   /**
    * Create an instance of this class.
@@ -45081,7 +46648,7 @@ var disableOthers = function disableOthers(list, track) {
 
 
 var VideoTrackList = /*#__PURE__*/function (_TrackList) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(VideoTrackList, _TrackList);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(VideoTrackList, _TrackList);
 
   /**
    * Create an instance of this class.
@@ -45112,7 +46679,7 @@ var VideoTrackList = /*#__PURE__*/function (_TrackList) {
      *         The current index of the selected {@link VideoTrack`}.
      */
 
-    Object.defineProperty(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this), 'selectedIndex', {
+    Object.defineProperty(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this), 'selectedIndex', {
       get: function get() {
         for (var _i = 0; _i < this.length; _i++) {
           if (this[_i].selected) {
@@ -45192,7 +46759,7 @@ var VideoTrackList = /*#__PURE__*/function (_TrackList) {
  */
 
 var TextTrackList = /*#__PURE__*/function (_TrackList) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(TextTrackList, _TrackList);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(TextTrackList, _TrackList);
 
   function TextTrackList() {
     return _TrackList.apply(this, arguments) || this;
@@ -45569,7 +47136,7 @@ var TextTrackMode = {
  */
 
 var Track = /*#__PURE__*/function (_EventTarget) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(Track, _EventTarget);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(Track, _EventTarget);
 
   /**
    * Create an instance of this class.
@@ -45634,7 +47201,7 @@ var Track = /*#__PURE__*/function (_EventTarget) {
      */
 
     var _loop = function _loop(key) {
-      Object.defineProperty(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this), key, {
+      Object.defineProperty(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this), key, {
         get: function get() {
           return trackProps[key];
         },
@@ -45655,7 +47222,7 @@ var Track = /*#__PURE__*/function (_EventTarget) {
      */
 
 
-    Object.defineProperty(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this), 'label', {
+    Object.defineProperty(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this), 'label', {
       get: function get() {
         return label;
       },
@@ -45963,7 +47530,7 @@ var loadTrack = function loadTrack(src, track) {
 
 
 var TextTrack = /*#__PURE__*/function (_Track) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(TextTrack, _Track);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(TextTrack, _Track);
 
   /**
    * Create an instance of this class.
@@ -46029,7 +47596,7 @@ var TextTrack = /*#__PURE__*/function (_Track) {
     var cues = new TextTrackCueList(_this.cues_);
     var activeCues = new TextTrackCueList(_this.activeCues_);
     var changed = false;
-    var timeupdateHandler = bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this), function () {
+    var timeupdateHandler = bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this), function () {
       if (!this.tech_.isReady_ || this.tech_.isDisposed()) {
         return;
       } // Accessing this.activeCues for the side-effects of updating itself
@@ -46056,7 +47623,7 @@ var TextTrack = /*#__PURE__*/function (_Track) {
       _this.tech_.on('timeupdate', timeupdateHandler);
     }
 
-    Object.defineProperties(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this), {
+    Object.defineProperties(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this), {
       /**
        * @memberof TextTrack
        * @member {boolean} default
@@ -46200,7 +47767,7 @@ var TextTrack = /*#__PURE__*/function (_Track) {
       }
 
       if (_this.preload_ || settings.kind !== 'subtitles' && settings.kind !== 'captions') {
-        loadTrack(_this.src, _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this));
+        loadTrack(_this.src, _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this));
       }
     } else {
       _this.loaded_ = true;
@@ -46288,7 +47855,7 @@ TextTrack.prototype.allowedEvents_ = {
  */
 
 var AudioTrack = /*#__PURE__*/function (_Track) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(AudioTrack, _Track);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(AudioTrack, _Track);
 
   /**
    * Create an instance of this class.
@@ -46334,7 +47901,7 @@ var AudioTrack = /*#__PURE__*/function (_Track) {
      * @fires VideoTrack#selectedchange
      */
 
-    Object.defineProperty(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this), 'enabled', {
+    Object.defineProperty(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this), 'enabled', {
       get: function get() {
         return enabled;
       },
@@ -46381,7 +47948,7 @@ var AudioTrack = /*#__PURE__*/function (_Track) {
  */
 
 var VideoTrack = /*#__PURE__*/function (_Track) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(VideoTrack, _Track);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(VideoTrack, _Track);
 
   /**
    * Create an instance of this class.
@@ -46426,7 +47993,7 @@ var VideoTrack = /*#__PURE__*/function (_Track) {
      * @fires VideoTrack#selectedchange
      */
 
-    Object.defineProperty(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this), 'selected', {
+    Object.defineProperty(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this), 'selected', {
       get: function get() {
         return selected;
       },
@@ -46482,7 +48049,7 @@ var ERROR = 3;
  */
 
 var HTMLTrackElement = /*#__PURE__*/function (_EventTarget) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(HTMLTrackElement, _EventTarget);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(HTMLTrackElement, _EventTarget);
 
   /**
    * Create an instance of this class.
@@ -46533,7 +48100,7 @@ var HTMLTrackElement = /*#__PURE__*/function (_EventTarget) {
     _this.srclang = track.language;
     _this.label = track.label;
     _this["default"] = track["default"];
-    Object.defineProperties(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this), {
+    Object.defineProperties(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this), {
       /**
        * @memberof HTMLTrackElement
        * @member {HTMLTrackElement~ReadyState} readyState
@@ -46570,7 +48137,7 @@ var HTMLTrackElement = /*#__PURE__*/function (_EventTarget) {
 
       _this.trigger({
         type: 'load',
-        target: _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this)
+        target: _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this)
       });
     });
     return _this;
@@ -46705,7 +48272,7 @@ function createTrackHelper(self, kind, label, language, options) {
 
 
 var Tech = /*#__PURE__*/function (_Component) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(Tech, _Component);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(Tech, _Component);
 
   /**
   * Create an instance of this Tech.
@@ -48631,7 +50198,7 @@ function fixSource(src) {
  */
 
 var MediaLoader = /*#__PURE__*/function (_Component) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(MediaLoader, _Component);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(MediaLoader, _Component);
 
   /**
    * Create an instance of this class.
@@ -48695,7 +50262,7 @@ Component$1.registerComponent('MediaLoader', MediaLoader);
  */
 
 var ClickableComponent = /*#__PURE__*/function (_Component) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(ClickableComponent, _Component);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(ClickableComponent, _Component);
 
   /**
    * Creates an instance of this class.
@@ -48950,7 +50517,7 @@ var ClickableComponent = /*#__PURE__*/function (_Component) {
     // Support Space or Enter key operation to fire a click event. Also,
     // prevent the event from propagating through the DOM and triggering
     // Player hotkeys.
-    if (keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(event, 'Space') || keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(event, 'Enter')) {
+    if (keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(event, 'Space') || keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(event, 'Enter')) {
       event.preventDefault();
       event.stopPropagation();
       this.trigger('click');
@@ -48972,7 +50539,7 @@ Component$1.registerComponent('ClickableComponent', ClickableComponent);
  */
 
 var PosterImage = /*#__PURE__*/function (_ClickableComponent) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(PosterImage, _ClickableComponent);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(PosterImage, _ClickableComponent);
 
   /**
    * Create an instance of this class.
@@ -49178,7 +50745,7 @@ function tryUpdateStyle(el, style, rule) {
 
 
 var TextTrackDisplay = /*#__PURE__*/function (_Component) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(TextTrackDisplay, _Component);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(TextTrackDisplay, _Component);
 
   /**
    * Creates an instance of this class.
@@ -49212,7 +50779,7 @@ var TextTrackDisplay = /*#__PURE__*/function (_Component) {
     // Should probably be moved to an external track loader when we support
     // tracks that don't need a display.
 
-    player.ready(bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this), function () {
+    player.ready(bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this), function () {
       if (player.tech_ && player.tech_.featuresNativeTextTracks) {
         this.hide();
         return;
@@ -49539,7 +51106,7 @@ Component$1.registerComponent('TextTrackDisplay', TextTrackDisplay);
  */
 
 var LoadingSpinner = /*#__PURE__*/function (_Component) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(LoadingSpinner, _Component);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(LoadingSpinner, _Component);
 
   function LoadingSpinner() {
     return _Component.apply(this, arguments) || this;
@@ -49582,7 +51149,7 @@ Component$1.registerComponent('LoadingSpinner', LoadingSpinner);
  */
 
 var Button = /*#__PURE__*/function (_ClickableComponent) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(Button, _ClickableComponent);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(Button, _ClickableComponent);
 
   function Button() {
     return _ClickableComponent.apply(this, arguments) || this;
@@ -49702,7 +51269,7 @@ var Button = /*#__PURE__*/function (_ClickableComponent) {
     // prevent the event from propagating through the DOM and triggering Player
     // hotkeys. We do not preventDefault here because we _want_ the browser to
     // handle it.
-    if (keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(event, 'Space') || keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(event, 'Enter')) {
+    if (keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(event, 'Space') || keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(event, 'Enter')) {
       event.stopPropagation();
       return;
     } // Pass keypress handling up for unsupported keys
@@ -49724,7 +51291,7 @@ Component$1.registerComponent('Button', Button);
  */
 
 var BigPlayButton = /*#__PURE__*/function (_Button) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(BigPlayButton, _Button);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(BigPlayButton, _Button);
 
   function BigPlayButton(player, options) {
     var _this;
@@ -49831,7 +51398,7 @@ Component$1.registerComponent('BigPlayButton', BigPlayButton);
  */
 
 var CloseButton = /*#__PURE__*/function (_Button) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(CloseButton, _Button);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(CloseButton, _Button);
 
   /**
   * Creates an instance of the this class.
@@ -49910,7 +51477,7 @@ var CloseButton = /*#__PURE__*/function (_Button) {
 
   _proto.handleKeyDown = function handleKeyDown(event) {
     // Esc button will trigger `click` event
-    if (keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(event, 'Esc')) {
+    if (keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(event, 'Esc')) {
       event.preventDefault();
       event.stopPropagation();
       this.trigger('click');
@@ -49932,7 +51499,7 @@ Component$1.registerComponent('CloseButton', CloseButton);
  */
 
 var PlayToggle = /*#__PURE__*/function (_Button) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(PlayToggle, _Button);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(PlayToggle, _Button);
 
   /**
    * Creates an instance of this class.
@@ -50192,7 +51759,7 @@ function formatTime(seconds, guide) {
  */
 
 var TimeDisplay = /*#__PURE__*/function (_Component) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(TimeDisplay, _Component);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(TimeDisplay, _Component);
 
   /**
    * Creates an instance of this class.
@@ -50352,7 +51919,7 @@ Component$1.registerComponent('TimeDisplay', TimeDisplay);
  */
 
 var CurrentTimeDisplay = /*#__PURE__*/function (_TimeDisplay) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(CurrentTimeDisplay, _TimeDisplay);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(CurrentTimeDisplay, _TimeDisplay);
 
   function CurrentTimeDisplay() {
     return _TimeDisplay.apply(this, arguments) || this;
@@ -50422,7 +51989,7 @@ Component$1.registerComponent('CurrentTimeDisplay', CurrentTimeDisplay);
  */
 
 var DurationDisplay = /*#__PURE__*/function (_TimeDisplay) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(DurationDisplay, _TimeDisplay);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(DurationDisplay, _TimeDisplay);
 
   /**
    * Creates an instance of this class.
@@ -50521,7 +52088,7 @@ Component$1.registerComponent('DurationDisplay', DurationDisplay);
  */
 
 var TimeDivider = /*#__PURE__*/function (_Component) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(TimeDivider, _Component);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(TimeDivider, _Component);
 
   function TimeDivider() {
     return _Component.apply(this, arguments) || this;
@@ -50568,7 +52135,7 @@ Component$1.registerComponent('TimeDivider', TimeDivider);
  */
 
 var RemainingTimeDisplay = /*#__PURE__*/function (_TimeDisplay) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(RemainingTimeDisplay, _TimeDisplay);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(RemainingTimeDisplay, _TimeDisplay);
 
   /**
    * Creates an instance of this class.
@@ -50614,9 +52181,12 @@ var RemainingTimeDisplay = /*#__PURE__*/function (_TimeDisplay) {
   _proto.createEl = function createEl$1() {
     var el = _TimeDisplay.prototype.createEl.call(this);
 
-    el.insertBefore(createEl('span', {}, {
-      'aria-hidden': true
-    }, '-'), this.contentEl_);
+    if (this.options_.displayNegative !== false) {
+      el.insertBefore(createEl('span', {}, {
+        'aria-hidden': true
+      }, '-'), this.contentEl_);
+    }
+
     return el;
   }
   /**
@@ -50679,7 +52249,7 @@ Component$1.registerComponent('RemainingTimeDisplay', RemainingTimeDisplay);
  */
 
 var LiveDisplay = /*#__PURE__*/function (_Component) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(LiveDisplay, _Component);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(LiveDisplay, _Component);
 
   /**
    * Creates an instance of this class.
@@ -50768,7 +52338,7 @@ Component$1.registerComponent('LiveDisplay', LiveDisplay);
  */
 
 var SeekToLive = /*#__PURE__*/function (_Button) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(SeekToLive, _Button);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(SeekToLive, _Button);
 
   /**
    * Creates an instance of this class.
@@ -50896,7 +52466,7 @@ var clamp = function clamp(number, min, max) {
  */
 
 var Slider = /*#__PURE__*/function (_Component) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(Slider, _Component);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(Slider, _Component);
 
   /**
   * Create an instance of this class
@@ -51093,7 +52663,7 @@ var Slider = /*#__PURE__*/function (_Component) {
     this.on(doc, 'mouseup', this.handleMouseUp_);
     this.on(doc, 'touchmove', this.handleMouseMove_);
     this.on(doc, 'touchend', this.handleMouseUp_);
-    this.handleMouseMove(event);
+    this.handleMouseMove(event, true);
   }
   /**
    * Handle the `mousemove`, `touchmove`, and `mousedown` events on this `Slider`.
@@ -51104,6 +52674,7 @@ var Slider = /*#__PURE__*/function (_Component) {
    * @param {EventTarget~Event} event
    *        `mousedown`, `mousemove`, `touchstart`, or `touchmove` event that triggered
    *        this function
+   * @param {boolean} mouseDown this is a flag that should be set to true if `handleMouseMove` is called directly. It allows us to skip things that should not happen if coming from mouse down but should happen on regular mouse move handler. Defaults to false.
    *
    * @listens mousemove
    * @listens touchmove
@@ -51226,11 +52797,11 @@ var Slider = /*#__PURE__*/function (_Component) {
 
   _proto.handleKeyDown = function handleKeyDown(event) {
     // Left and Down Arrows
-    if (keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(event, 'Left') || keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(event, 'Down')) {
+    if (keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(event, 'Left') || keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(event, 'Down')) {
       event.preventDefault();
       event.stopPropagation();
       this.stepBack(); // Up and Right Arrows
-    } else if (keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(event, 'Right') || keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(event, 'Up')) {
+    } else if (keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(event, 'Right') || keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(event, 'Up')) {
       event.preventDefault();
       event.stopPropagation();
       this.stepForward();
@@ -51295,7 +52866,7 @@ var percentify = function percentify(time, end) {
 
 
 var LoadProgressBar = /*#__PURE__*/function (_Component) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(LoadProgressBar, _Component);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(LoadProgressBar, _Component);
 
   /**
    * Creates an instance of this class.
@@ -51434,7 +53005,7 @@ Component$1.registerComponent('LoadProgressBar', LoadProgressBar);
  */
 
 var TimeTooltip = /*#__PURE__*/function (_Component) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(TimeTooltip, _Component);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(TimeTooltip, _Component);
 
   /**
    * Creates an instance of this class.
@@ -51449,7 +53020,7 @@ var TimeTooltip = /*#__PURE__*/function (_Component) {
     var _this;
 
     _this = _Component.call(this, player, options) || this;
-    _this.update = throttle(bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this), _this.update), UPDATE_REFRESH_INTERVAL);
+    _this.update = throttle(bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this), _this.update), UPDATE_REFRESH_INTERVAL);
     return _this;
   }
   /**
@@ -51597,7 +53168,7 @@ Component$1.registerComponent('TimeTooltip', TimeTooltip);
  */
 
 var PlayProgressBar = /*#__PURE__*/function (_Component) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(PlayProgressBar, _Component);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(PlayProgressBar, _Component);
 
   /**
    * Creates an instance of this class.
@@ -51612,7 +53183,7 @@ var PlayProgressBar = /*#__PURE__*/function (_Component) {
     var _this;
 
     _this = _Component.call(this, player, options) || this;
-    _this.update = throttle(bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this), _this.update), UPDATE_REFRESH_INTERVAL);
+    _this.update = throttle(bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this), _this.update), UPDATE_REFRESH_INTERVAL);
     return _this;
   }
   /**
@@ -51686,7 +53257,7 @@ Component$1.registerComponent('PlayProgressBar', PlayProgressBar);
  */
 
 var MouseTimeDisplay = /*#__PURE__*/function (_Component) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(MouseTimeDisplay, _Component);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(MouseTimeDisplay, _Component);
 
   /**
    * Creates an instance of this class.
@@ -51701,7 +53272,7 @@ var MouseTimeDisplay = /*#__PURE__*/function (_Component) {
     var _this;
 
     _this = _Component.call(this, player, options) || this;
-    _this.update = throttle(bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this), _this.update), UPDATE_REFRESH_INTERVAL);
+    _this.update = throttle(bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this), _this.update), UPDATE_REFRESH_INTERVAL);
     return _this;
   }
   /**
@@ -51767,7 +53338,7 @@ var PAGE_KEY_MULTIPLIER = 12;
  */
 
 var SeekBar = /*#__PURE__*/function (_Slider) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(SeekBar, _Slider);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(SeekBar, _Slider);
 
   /**
    * Creates an instance of this class.
@@ -52006,7 +53577,6 @@ var SeekBar = /*#__PURE__*/function (_Slider) {
 
 
     event.stopPropagation();
-    this.player_.scrubbing(true);
     this.videoWasPlaying = !this.player_.paused();
     this.player_.pause();
 
@@ -52017,14 +53587,23 @@ var SeekBar = /*#__PURE__*/function (_Slider) {
    *
    * @param {EventTarget~Event} event
    *        The `mousemove` event that caused this to run.
+   * @param {boolean} mouseDown this is a flag that should be set to true if `handleMouseMove` is called directly. It allows us to skip things that should not happen if coming from mouse down but should happen on regular mouse move handler. Defaults to false
    *
    * @listens mousemove
    */
   ;
 
-  _proto.handleMouseMove = function handleMouseMove(event) {
+  _proto.handleMouseMove = function handleMouseMove(event, mouseDown) {
+    if (mouseDown === void 0) {
+      mouseDown = false;
+    }
+
     if (!isSingleLeftClick(event)) {
       return;
+    }
+
+    if (!mouseDown && !this.player_.scrubbing()) {
+      this.player_.scrubbing(true);
     }
 
     var newTime;
@@ -52187,15 +53766,15 @@ var SeekBar = /*#__PURE__*/function (_Slider) {
   _proto.handleKeyDown = function handleKeyDown(event) {
     var liveTracker = this.player_.liveTracker;
 
-    if (keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(event, 'Space') || keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(event, 'Enter')) {
+    if (keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(event, 'Space') || keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(event, 'Enter')) {
       event.preventDefault();
       event.stopPropagation();
       this.handleAction(event);
-    } else if (keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(event, 'Home')) {
+    } else if (keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(event, 'Home')) {
       event.preventDefault();
       event.stopPropagation();
       this.userSeek_(0);
-    } else if (keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(event, 'End')) {
+    } else if (keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(event, 'End')) {
       event.preventDefault();
       event.stopPropagation();
 
@@ -52204,21 +53783,21 @@ var SeekBar = /*#__PURE__*/function (_Slider) {
       } else {
         this.userSeek_(this.player_.duration());
       }
-    } else if (/^[0-9]$/.test(keycode__WEBPACK_IMPORTED_MODULE_6___default()(event))) {
+    } else if (/^[0-9]$/.test(keycode__WEBPACK_IMPORTED_MODULE_3___default()(event))) {
       event.preventDefault();
       event.stopPropagation();
-      var gotoFraction = (keycode__WEBPACK_IMPORTED_MODULE_6___default.a.codes[keycode__WEBPACK_IMPORTED_MODULE_6___default()(event)] - keycode__WEBPACK_IMPORTED_MODULE_6___default.a.codes['0']) * 10.0 / 100.0;
+      var gotoFraction = (keycode__WEBPACK_IMPORTED_MODULE_3___default.a.codes[keycode__WEBPACK_IMPORTED_MODULE_3___default()(event)] - keycode__WEBPACK_IMPORTED_MODULE_3___default.a.codes['0']) * 10.0 / 100.0;
 
       if (liveTracker && liveTracker.isLive()) {
         this.userSeek_(liveTracker.seekableStart() + liveTracker.liveWindow() * gotoFraction);
       } else {
         this.userSeek_(this.player_.duration() * gotoFraction);
       }
-    } else if (keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(event, 'PgDn')) {
+    } else if (keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(event, 'PgDn')) {
       event.preventDefault();
       event.stopPropagation();
       this.userSeek_(this.player_.currentTime() - STEP_SECONDS * PAGE_KEY_MULTIPLIER);
-    } else if (keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(event, 'PgUp')) {
+    } else if (keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(event, 'PgUp')) {
       event.preventDefault();
       event.stopPropagation();
       this.userSeek_(this.player_.currentTime() + STEP_SECONDS * PAGE_KEY_MULTIPLIER);
@@ -52276,7 +53855,7 @@ Component$1.registerComponent('SeekBar', SeekBar);
  */
 
 var ProgressControl = /*#__PURE__*/function (_Component) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(ProgressControl, _Component);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(ProgressControl, _Component);
 
   /**
    * Creates an instance of this class.
@@ -52291,8 +53870,8 @@ var ProgressControl = /*#__PURE__*/function (_Component) {
     var _this;
 
     _this = _Component.call(this, player, options) || this;
-    _this.handleMouseMove = throttle(bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this), _this.handleMouseMove), UPDATE_REFRESH_INTERVAL);
-    _this.throttledHandleMouseSeek = throttle(bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this), _this.handleMouseSeek), UPDATE_REFRESH_INTERVAL);
+    _this.handleMouseMove = throttle(bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this), _this.handleMouseMove), UPDATE_REFRESH_INTERVAL);
+    _this.throttledHandleMouseSeek = throttle(bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this), _this.handleMouseSeek), UPDATE_REFRESH_INTERVAL);
 
     _this.handleMouseUpHandler_ = function (e) {
       return _this.handleMouseUp(e);
@@ -52529,7 +54108,7 @@ Component$1.registerComponent('ProgressControl', ProgressControl);
  */
 
 var PictureInPictureToggle = /*#__PURE__*/function (_Button) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(PictureInPictureToggle, _Button);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(PictureInPictureToggle, _Button);
 
   /**
    * Creates an instance of this class.
@@ -52649,7 +54228,7 @@ Component$1.registerComponent('PictureInPictureToggle', PictureInPictureToggle);
  */
 
 var FullscreenToggle = /*#__PURE__*/function (_Button) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(FullscreenToggle, _Button);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(FullscreenToggle, _Button);
 
   /**
    * Creates an instance of this class.
@@ -52774,7 +54353,7 @@ var checkVolumeSupport = function checkVolumeSupport(self, player) {
  */
 
 var VolumeLevel = /*#__PURE__*/function (_Component) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(VolumeLevel, _Component);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(VolumeLevel, _Component);
 
   function VolumeLevel() {
     return _Component.apply(this, arguments) || this;
@@ -52811,7 +54390,7 @@ Component$1.registerComponent('VolumeLevel', VolumeLevel);
  */
 
 var VolumeLevelTooltip = /*#__PURE__*/function (_Component) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(VolumeLevelTooltip, _Component);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(VolumeLevelTooltip, _Component);
 
   /**
    * Creates an instance of this class.
@@ -52826,7 +54405,7 @@ var VolumeLevelTooltip = /*#__PURE__*/function (_Component) {
     var _this;
 
     _this = _Component.call(this, player, options) || this;
-    _this.update = throttle(bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this), _this.update), UPDATE_REFRESH_INTERVAL);
+    _this.update = throttle(bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this), _this.update), UPDATE_REFRESH_INTERVAL);
     return _this;
   }
   /**
@@ -52956,7 +54535,7 @@ Component$1.registerComponent('VolumeLevelTooltip', VolumeLevelTooltip);
  */
 
 var MouseVolumeLevelDisplay = /*#__PURE__*/function (_Component) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(MouseVolumeLevelDisplay, _Component);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(MouseVolumeLevelDisplay, _Component);
 
   /**
    * Creates an instance of this class.
@@ -52971,7 +54550,7 @@ var MouseVolumeLevelDisplay = /*#__PURE__*/function (_Component) {
     var _this;
 
     _this = _Component.call(this, player, options) || this;
-    _this.update = throttle(bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this), _this.update), UPDATE_REFRESH_INTERVAL);
+    _this.update = throttle(bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this), _this.update), UPDATE_REFRESH_INTERVAL);
     return _this;
   }
   /**
@@ -53042,7 +54621,7 @@ Component$1.registerComponent('MouseVolumeLevelDisplay', MouseVolumeLevelDisplay
  */
 
 var VolumeBar = /*#__PURE__*/function (_Slider) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(VolumeBar, _Slider);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(VolumeBar, _Slider);
 
   /**
    * Creates an instance of this class.
@@ -53263,7 +54842,7 @@ Component$1.registerComponent('VolumeBar', VolumeBar);
  */
 
 var VolumeControl = /*#__PURE__*/function (_Component) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(VolumeControl, _Component);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(VolumeControl, _Component);
 
   /**
    * Creates an instance of this class.
@@ -53291,8 +54870,8 @@ var VolumeControl = /*#__PURE__*/function (_Component) {
 
     _this = _Component.call(this, player, options) || this; // hide this control if volume support is missing
 
-    checkVolumeSupport(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this), player);
-    _this.throttledHandleMouseMove = throttle(bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this), _this.handleMouseMove), UPDATE_REFRESH_INTERVAL);
+    checkVolumeSupport(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this), player);
+    _this.throttledHandleMouseMove = throttle(bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this), _this.handleMouseMove), UPDATE_REFRESH_INTERVAL);
 
     _this.handleMouseUpHandler_ = function (e) {
       return _this.handleMouseUp(e);
@@ -53451,7 +55030,7 @@ var checkMuteSupport = function checkMuteSupport(self, player) {
  */
 
 var MuteToggle = /*#__PURE__*/function (_Button) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(MuteToggle, _Button);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(MuteToggle, _Button);
 
   /**
    * Creates an instance of this class.
@@ -53467,7 +55046,7 @@ var MuteToggle = /*#__PURE__*/function (_Button) {
 
     _this = _Button.call(this, player, options) || this; // hide this control if volume support is missing
 
-    checkMuteSupport(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this), player);
+    checkMuteSupport(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this), player);
 
     _this.on(player, ['loadstart', 'volumechange'], function (e) {
       return _this.update(e);
@@ -53607,7 +55186,7 @@ Component$1.registerComponent('MuteToggle', MuteToggle);
  */
 
 var VolumePanel = /*#__PURE__*/function (_Component) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(VolumePanel, _Component);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(VolumePanel, _Component);
 
   /**
    * Creates an instance of this class.
@@ -53763,7 +55342,7 @@ var VolumePanel = /*#__PURE__*/function (_Component) {
   ;
 
   _proto.handleVolumeControlKeyUp = function handleVolumeControlKeyUp(event) {
-    if (keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(event, 'Esc')) {
+    if (keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(event, 'Esc')) {
       this.muteToggle.focus();
     }
   }
@@ -53811,7 +55390,7 @@ var VolumePanel = /*#__PURE__*/function (_Component) {
   ;
 
   _proto.handleKeyPress = function handleKeyPress(event) {
-    if (keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(event, 'Esc')) {
+    if (keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(event, 'Esc')) {
       this.handleMouseOut();
     }
   };
@@ -53839,7 +55418,7 @@ Component$1.registerComponent('VolumePanel', VolumePanel);
  */
 
 var Menu = /*#__PURE__*/function (_Component) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(Menu, _Component);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(Menu, _Component);
 
   /**
    * Create an instance of this class.
@@ -54056,11 +55635,11 @@ var Menu = /*#__PURE__*/function (_Component) {
 
   _proto.handleKeyDown = function handleKeyDown(event) {
     // Left and Down Arrows
-    if (keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(event, 'Left') || keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(event, 'Down')) {
+    if (keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(event, 'Left') || keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(event, 'Down')) {
       event.preventDefault();
       event.stopPropagation();
       this.stepForward(); // Up and Right Arrows
-    } else if (keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(event, 'Right') || keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(event, 'Up')) {
+    } else if (keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(event, 'Right') || keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(event, 'Up')) {
       event.preventDefault();
       event.stopPropagation();
       this.stepBack();
@@ -54138,7 +55717,7 @@ Component$1.registerComponent('Menu', Menu);
  */
 
 var MenuButton = /*#__PURE__*/function (_Component) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(MenuButton, _Component);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(MenuButton, _Component);
 
   /**
    * Creates an instance of this class.
@@ -54445,19 +56024,19 @@ var MenuButton = /*#__PURE__*/function (_Component) {
 
   _proto.handleKeyDown = function handleKeyDown(event) {
     // Escape or Tab unpress the 'button'
-    if (keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(event, 'Esc') || keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(event, 'Tab')) {
+    if (keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(event, 'Esc') || keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(event, 'Tab')) {
       if (this.buttonPressed_) {
         this.unpressButton();
       } // Don't preventDefault for Tab key - we still want to lose focus
 
 
-      if (!keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(event, 'Tab')) {
+      if (!keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(event, 'Tab')) {
         event.preventDefault(); // Set focus back to the menu button's button
 
         this.menuButton_.focus();
       } // Up Arrow or Down Arrow also 'press' the button to open the menu
 
-    } else if (keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(event, 'Up') || keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(event, 'Down')) {
+    } else if (keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(event, 'Up') || keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(event, 'Down')) {
       if (!this.buttonPressed_) {
         event.preventDefault();
         this.pressButton();
@@ -54477,7 +56056,7 @@ var MenuButton = /*#__PURE__*/function (_Component) {
 
   _proto.handleMenuKeyUp = function handleMenuKeyUp(event) {
     // Escape hides popup menu
-    if (keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(event, 'Esc') || keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(event, 'Tab')) {
+    if (keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(event, 'Esc') || keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(event, 'Tab')) {
       this.removeClass('vjs-hover');
     }
   }
@@ -54507,13 +56086,13 @@ var MenuButton = /*#__PURE__*/function (_Component) {
 
   _proto.handleSubmenuKeyDown = function handleSubmenuKeyDown(event) {
     // Escape or Tab unpress the 'button'
-    if (keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(event, 'Esc') || keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(event, 'Tab')) {
+    if (keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(event, 'Esc') || keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(event, 'Tab')) {
       if (this.buttonPressed_) {
         this.unpressButton();
       } // Don't preventDefault for Tab key - we still want to lose focus
 
 
-      if (!keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(event, 'Tab')) {
+      if (!keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(event, 'Tab')) {
         event.preventDefault(); // Set focus back to the menu button's button
 
         this.menuButton_.focus();
@@ -54588,7 +56167,7 @@ Component$1.registerComponent('MenuButton', MenuButton);
  */
 
 var TrackButton = /*#__PURE__*/function (_MenuButton) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(TrackButton, _MenuButton);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(TrackButton, _MenuButton);
 
   /**
    * Creates an instance of this class.
@@ -54610,10 +56189,10 @@ var TrackButton = /*#__PURE__*/function (_MenuButton) {
     }
 
     if (!tracks) {
-      return _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this);
+      return _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this);
     }
 
-    var updateHandler = bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this), _this.update);
+    var updateHandler = bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this), _this.update);
     tracks.addEventListener('removetrack', updateHandler);
     tracks.addEventListener('addtrack', updateHandler);
     tracks.addEventListener('labelchange', updateHandler);
@@ -54654,7 +56233,7 @@ var MenuKeys = ['Tab', 'Esc', 'Up', 'Down', 'Right', 'Left'];
  */
 
 var MenuItem = /*#__PURE__*/function (_ClickableComponent) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(MenuItem, _ClickableComponent);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(MenuItem, _ClickableComponent);
 
   /**
    * Creates an instance of the this class.
@@ -54736,7 +56315,7 @@ var MenuItem = /*#__PURE__*/function (_ClickableComponent) {
 
   _proto.handleKeyDown = function handleKeyDown(event) {
     if (!MenuKeys.some(function (key) {
-      return keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(event, key);
+      return keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(event, key);
     })) {
       // Pass keydown handling up for unused keys
       _ClickableComponent.prototype.handleKeyDown.call(this, event);
@@ -54797,7 +56376,7 @@ Component$1.registerComponent('MenuItem', MenuItem);
  */
 
 var TextTrackMenuItem = /*#__PURE__*/function (_MenuItem) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(TextTrackMenuItem, _MenuItem);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(TextTrackMenuItem, _MenuItem);
 
   /**
    * Creates an instance of this class.
@@ -54827,7 +56406,7 @@ var TextTrackMenuItem = /*#__PURE__*/function (_MenuItem) {
         args[_key] = arguments[_key];
       }
 
-      _this.handleTracksChange.apply(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this), args);
+      _this.handleTracksChange.apply(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this), args);
     };
 
     var selectedLanguageChangeHandler = function selectedLanguageChangeHandler() {
@@ -54835,7 +56414,7 @@ var TextTrackMenuItem = /*#__PURE__*/function (_MenuItem) {
         args[_key2] = arguments[_key2];
       }
 
-      _this.handleSelectedLanguageChange.apply(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this), args);
+      _this.handleSelectedLanguageChange.apply(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this), args);
     };
 
     player.on(['loadstart', 'texttrackchange'], changeHandler);
@@ -54980,7 +56559,7 @@ Component$1.registerComponent('TextTrackMenuItem', TextTrackMenuItem);
  */
 
 var OffTextTrackMenuItem = /*#__PURE__*/function (_TextTrackMenuItem) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(OffTextTrackMenuItem, _TextTrackMenuItem);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(OffTextTrackMenuItem, _TextTrackMenuItem);
 
   /**
    * Creates an instance of this class.
@@ -55083,7 +56662,7 @@ Component$1.registerComponent('OffTextTrackMenuItem', OffTextTrackMenuItem);
  */
 
 var TextTrackButton = /*#__PURE__*/function (_TrackButton) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(TextTrackButton, _TrackButton);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(TextTrackButton, _TrackButton);
 
   /**
    * Creates an instance of this class.
@@ -55178,7 +56757,7 @@ Component$1.registerComponent('TextTrackButton', TextTrackButton);
  */
 
 var ChaptersTrackMenuItem = /*#__PURE__*/function (_MenuItem) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(ChaptersTrackMenuItem, _MenuItem);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(ChaptersTrackMenuItem, _MenuItem);
 
   /**
    * Creates an instance of this class.
@@ -55203,7 +56782,7 @@ var ChaptersTrackMenuItem = /*#__PURE__*/function (_MenuItem) {
     _this = _MenuItem.call(this, player, options) || this;
     _this.track = track;
     _this.cue = cue;
-    track.addEventListener('cuechange', bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this), _this.update));
+    track.addEventListener('cuechange', bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this), _this.update));
     return _this;
   }
   /**
@@ -55258,7 +56837,7 @@ Component$1.registerComponent('ChaptersTrackMenuItem', ChaptersTrackMenuItem);
  */
 
 var ChaptersButton = /*#__PURE__*/function (_TextTrackButton) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(ChaptersButton, _TextTrackButton);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(ChaptersButton, _TextTrackButton);
 
   /**
    * Creates an instance of this class.
@@ -55461,7 +57040,7 @@ Component$1.registerComponent('ChaptersButton', ChaptersButton);
  */
 
 var DescriptionsButton = /*#__PURE__*/function (_TextTrackButton) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(DescriptionsButton, _TextTrackButton);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(DescriptionsButton, _TextTrackButton);
 
   /**
    * Creates an instance of this class.
@@ -55480,7 +57059,7 @@ var DescriptionsButton = /*#__PURE__*/function (_TextTrackButton) {
 
     _this = _TextTrackButton.call(this, player, options, ready) || this;
     var tracks = player.textTracks();
-    var changeHandler = bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this), _this.handleTracksChange);
+    var changeHandler = bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this), _this.handleTracksChange);
     tracks.addEventListener('change', changeHandler);
 
     _this.on('dispose', function () {
@@ -55565,7 +57144,7 @@ Component$1.registerComponent('DescriptionsButton', DescriptionsButton);
  */
 
 var SubtitlesButton = /*#__PURE__*/function (_TextTrackButton) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(SubtitlesButton, _TextTrackButton);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(SubtitlesButton, _TextTrackButton);
 
   /**
    * Creates an instance of this class.
@@ -55628,7 +57207,7 @@ Component$1.registerComponent('SubtitlesButton', SubtitlesButton);
  */
 
 var CaptionSettingsMenuItem = /*#__PURE__*/function (_TextTrackMenuItem) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(CaptionSettingsMenuItem, _TextTrackMenuItem);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(CaptionSettingsMenuItem, _TextTrackMenuItem);
 
   /**
    * Creates an instance of this class.
@@ -55692,7 +57271,7 @@ Component$1.registerComponent('CaptionSettingsMenuItem', CaptionSettingsMenuItem
  */
 
 var CaptionsButton = /*#__PURE__*/function (_TextTrackButton) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(CaptionsButton, _TextTrackButton);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(CaptionsButton, _TextTrackButton);
 
   /**
    * Creates an instance of this class.
@@ -55776,7 +57355,7 @@ Component$1.registerComponent('CaptionsButton', CaptionsButton);
  */
 
 var SubsCapsMenuItem = /*#__PURE__*/function (_TextTrackMenuItem) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(SubsCapsMenuItem, _TextTrackMenuItem);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(SubsCapsMenuItem, _TextTrackMenuItem);
 
   function SubsCapsMenuItem() {
     return _TextTrackMenuItem.apply(this, arguments) || this;
@@ -55818,7 +57397,7 @@ Component$1.registerComponent('SubsCapsMenuItem', SubsCapsMenuItem);
  */
 
 var SubsCapsButton = /*#__PURE__*/function (_TextTrackButton) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(SubsCapsButton, _TextTrackButton);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(SubsCapsButton, _TextTrackButton);
 
   function SubsCapsButton(player, options) {
     var _this;
@@ -55908,7 +57487,7 @@ Component$1.registerComponent('SubsCapsButton', SubsCapsButton);
  */
 
 var AudioTrackMenuItem = /*#__PURE__*/function (_MenuItem) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(AudioTrackMenuItem, _MenuItem);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(AudioTrackMenuItem, _MenuItem);
 
   /**
    * Creates an instance of this class.
@@ -55937,7 +57516,7 @@ var AudioTrackMenuItem = /*#__PURE__*/function (_MenuItem) {
         args[_key] = arguments[_key];
       }
 
-      _this.handleTracksChange.apply(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this), args);
+      _this.handleTracksChange.apply(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this), args);
     };
 
     tracks.addEventListener('change', changeHandler);
@@ -55951,20 +57530,20 @@ var AudioTrackMenuItem = /*#__PURE__*/function (_MenuItem) {
 
   var _proto = AudioTrackMenuItem.prototype;
 
-  _proto.createEl = function createEl(type, props, attrs) {
+  _proto.createEl = function createEl$1(type, props, attrs) {
     var el = _MenuItem.prototype.createEl.call(this, type, props, attrs);
 
     var parentSpan = el.querySelector('.vjs-menu-item-text');
 
     if (this.options_.track.kind === 'main-desc') {
-      parentSpan.appendChild(_MenuItem.prototype.createEl.call(this, 'span', {
+      parentSpan.appendChild(createEl('span', {
         className: 'vjs-icon-placeholder'
       }, {
         'aria-hidden': true
       }));
-      parentSpan.appendChild(_MenuItem.prototype.createEl.call(this, 'span', {
+      parentSpan.appendChild(createEl('span', {
         className: 'vjs-control-text',
-        textContent: this.localize('Descriptions')
+        textContent: ' ' + this.localize('Descriptions')
       }));
     }
 
@@ -55988,7 +57567,21 @@ var AudioTrackMenuItem = /*#__PURE__*/function (_MenuItem) {
     // off for us.
 
 
-    this.track.enabled = true;
+    this.track.enabled = true; // when native audio tracks are used, we want to make sure that other tracks are turned off
+
+    if (this.player_.tech_.featuresNativeAudioTracks) {
+      var tracks = this.player_.audioTracks();
+
+      for (var i = 0; i < tracks.length; i++) {
+        var track = tracks[i]; // skip the current track since we enabled it above
+
+        if (track === this.track) {
+          continue;
+        }
+
+        track.enabled = track === this.track;
+      }
+    }
   }
   /**
    * Handle any {@link AudioTrack} change.
@@ -56016,7 +57609,7 @@ Component$1.registerComponent('AudioTrackMenuItem', AudioTrackMenuItem);
  */
 
 var AudioTrackButton = /*#__PURE__*/function (_TrackButton) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(AudioTrackButton, _TrackButton);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(AudioTrackButton, _TrackButton);
 
   /**
    * Creates an instance of this class.
@@ -56106,7 +57699,7 @@ Component$1.registerComponent('AudioTrackButton', AudioTrackButton);
  */
 
 var PlaybackRateMenuItem = /*#__PURE__*/function (_MenuItem) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(PlaybackRateMenuItem, _MenuItem);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(PlaybackRateMenuItem, _MenuItem);
 
   /**
    * Creates an instance of this class.
@@ -56191,7 +57784,7 @@ Component$1.registerComponent('PlaybackRateMenuItem', PlaybackRateMenuItem);
  */
 
 var PlaybackRateMenuButton = /*#__PURE__*/function (_MenuButton) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(PlaybackRateMenuButton, _MenuButton);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(PlaybackRateMenuButton, _MenuButton);
 
   /**
    * Creates an instance of this class.
@@ -56313,18 +57906,11 @@ var PlaybackRateMenuButton = /*#__PURE__*/function (_MenuButton) {
   _proto.handleClick = function handleClick(event) {
     // select next rate option
     var currentRate = this.player().playbackRate();
-    var rates = this.playbackRates(); // this will select first one if the last one currently selected
+    var rates = this.playbackRates();
+    var currentIndex = rates.indexOf(currentRate); // this get the next rate and it will select first one if the last one currently selected
 
-    var newRate = rates[0];
-
-    for (var i = 0; i < rates.length; i++) {
-      if (rates[i] > currentRate) {
-        newRate = rates[i];
-        break;
-      }
-    }
-
-    this.player().playbackRate(newRate);
+    var newIndex = (currentIndex + 1) % rates.length;
+    this.player().playbackRate(rates[newIndex]);
   }
   /**
    * On playbackrateschange, update the menu to account for the new items.
@@ -56414,7 +58000,7 @@ Component$1.registerComponent('PlaybackRateMenuButton', PlaybackRateMenuButton);
  */
 
 var Spacer = /*#__PURE__*/function (_Component) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(Spacer, _Component);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(Spacer, _Component);
 
   function Spacer() {
     return _Component.apply(this, arguments) || this;
@@ -56471,7 +58057,7 @@ Component$1.registerComponent('Spacer', Spacer);
  */
 
 var CustomControlSpacer = /*#__PURE__*/function (_Spacer) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(CustomControlSpacer, _Spacer);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(CustomControlSpacer, _Spacer);
 
   function CustomControlSpacer() {
     return _Spacer.apply(this, arguments) || this;
@@ -56517,7 +58103,7 @@ Component$1.registerComponent('CustomControlSpacer', CustomControlSpacer);
  */
 
 var ControlBar = /*#__PURE__*/function (_Component) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(ControlBar, _Component);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(ControlBar, _Component);
 
   function ControlBar() {
     return _Component.apply(this, arguments) || this;
@@ -56566,7 +58152,7 @@ Component$1.registerComponent('ControlBar', ControlBar);
  */
 
 var ErrorDisplay = /*#__PURE__*/function (_ModalDialog) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(ErrorDisplay, _ModalDialog);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(ErrorDisplay, _ModalDialog);
 
   /**
    * Creates an instance of this class.
@@ -56803,7 +58389,7 @@ function setSelectedOption(el, value, parser) {
 
 
 var TextTrackSettings = /*#__PURE__*/function (_ModalDialog) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(TextTrackSettings, _ModalDialog);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(TextTrackSettings, _ModalDialog);
 
   /**
    * Creates an instance of this class.
@@ -56819,7 +58405,7 @@ var TextTrackSettings = /*#__PURE__*/function (_ModalDialog) {
 
     options.temporary = false;
     _this = _ModalDialog.call(this, player, options) || this;
-    _this.updateDisplay = _this.updateDisplay.bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this)); // fill the modal and pretend we have opened it
+    _this.updateDisplay = _this.updateDisplay.bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this)); // fill the modal and pretend we have opened it
 
     _this.fill();
 
@@ -57151,7 +58737,7 @@ Component$1.registerComponent('TextTrackSettings', TextTrackSettings);
  */
 
 var ResizeManager = /*#__PURE__*/function (_Component) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(ResizeManager, _Component);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(ResizeManager, _Component);
 
   /**
    * Create the ResizeManager.
@@ -57186,7 +58772,7 @@ var ResizeManager = /*#__PURE__*/function (_Component) {
     _this.resizeObserver_ = null;
     _this.debouncedHandler_ = debounce(function () {
       _this.resizeHandler();
-    }, 100, false, _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this));
+    }, 100, false, _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this));
 
     if (RESIZE_OBSERVER_AVAILABLE) {
       _this.resizeObserver_ = new _this.ResizeObserver(_this.debouncedHandler_);
@@ -57298,7 +58884,7 @@ var defaults = {
  */
 
 var LiveTracker = /*#__PURE__*/function (_Component) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(LiveTracker, _Component);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(LiveTracker, _Component);
 
   /**
    * Creates an instance of this class.
@@ -57360,7 +58946,7 @@ var LiveTracker = /*#__PURE__*/function (_Component) {
     // may not have the proper values for things like seekableEnd until then
 
 
-    _this.one(_this.player_, 'canplay', function () {
+    _this.on(_this.player_, 'canplay', function () {
       return _this.toggleTracking();
     }); // we don't need to track live playback if the document is hidden,
     // also, tracking when the document is hidden can
@@ -58070,7 +59656,7 @@ var defineLazyProperty = function defineLazyProperty(obj, key, getValue, setter)
  */
 
 var Html5 = /*#__PURE__*/function (_Tech) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(Html5, _Tech);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(Html5, _Tech);
 
   /**
   * Create an instance of this Tech.
@@ -58703,7 +60289,11 @@ var Html5 = /*#__PURE__*/function (_Tech) {
     var endFn = function endFn() {
       this.trigger('fullscreenchange', {
         isFullscreen: false
-      });
+      }); // Safari will sometimes set contols on the videoelement when existing fullscreen.
+
+      if (this.el_.controls && !this.options_.nativeControlsForTouch && this.controls()) {
+        this.el_.controls = false;
+      }
     };
 
     var beginFn = function beginFn() {
@@ -59113,7 +60703,23 @@ Html5.canControlVolume = function () {
   try {
     var volume = Html5.TEST_VID.volume;
     Html5.TEST_VID.volume = volume / 2 + 0.1;
-    return volume !== Html5.TEST_VID.volume;
+    var canControl = volume !== Html5.TEST_VID.volume; // With the introduction of iOS 15, there are cases where the volume is read as
+    // changed but reverts back to its original state at the start of the next tick.
+    // To determine whether volume can be controlled on iOS,
+    // a timeout is set and the volume is checked asynchronously.
+    // Since `features` doesn't currently work asynchronously, the value is manually set.
+
+    if (canControl && IS_IOS) {
+      global_window__WEBPACK_IMPORTED_MODULE_0___default.a.setTimeout(function () {
+        if (Html5 && Html5.prototype) {
+          Html5.prototype.featuresVolumeControl = volume !== Html5.TEST_VID.volume;
+        }
+      }); // default iOS to false, which will be updated in the timeout above.
+
+      return false;
+    }
+
+    return canControl;
   } catch (e) {
     return false;
   }
@@ -59307,13 +60913,14 @@ Html5.Events = ['loadstart', 'suspend', 'abort', 'error', 'emptied', 'stalled', 
  * @default {@link Html5.supportsNativeAudioTracks}
  */
 
-[['featuresVolumeControl', 'canControlVolume'], ['featuresMuteControl', 'canMuteVolume'], ['featuresPlaybackRate', 'canControlPlaybackRate'], ['featuresSourceset', 'canOverrideAttributes'], ['featuresNativeTextTracks', 'supportsNativeTextTracks'], ['featuresNativeVideoTracks', 'supportsNativeVideoTracks'], ['featuresNativeAudioTracks', 'supportsNativeAudioTracks']].forEach(function (_ref) {
+[['featuresMuteControl', 'canMuteVolume'], ['featuresPlaybackRate', 'canControlPlaybackRate'], ['featuresSourceset', 'canOverrideAttributes'], ['featuresNativeTextTracks', 'supportsNativeTextTracks'], ['featuresNativeVideoTracks', 'supportsNativeVideoTracks'], ['featuresNativeAudioTracks', 'supportsNativeAudioTracks']].forEach(function (_ref) {
   var key = _ref[0],
       fn = _ref[1];
   defineLazyProperty(Html5.prototype, key, function () {
     return Html5[fn]();
   }, true);
 });
+Html5.prototype.featuresVolumeControl = Html5.canControlVolume();
 /**
  * Boolean indicating whether the `HTML5` tech currently supports the media element
  * moving in the DOM. iOS breaks if you move the media element, so this is set this to
@@ -60334,7 +61941,7 @@ var DEFAULT_BREAKPOINTS = {
  */
 
 var Player = /*#__PURE__*/function (_Component) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(Player, _Component);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(Player, _Component);
 
   /**
    * Create an instance of this class.
@@ -60524,7 +62131,7 @@ var Player = /*#__PURE__*/function (_Component) {
     _this.scrubbing_ = false;
     _this.el_ = _this.createEl(); // Make this an evented object and use `el_` as its event bus.
 
-    evented(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this), {
+    evented(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this), {
       eventBusKey: 'el_'
     }); // listen to document and player fullscreenchange handlers so we receive those events
     // before a user can receive them so we can update isFullscreen appropriately.
@@ -60607,7 +62214,7 @@ var Player = /*#__PURE__*/function (_Component) {
     } // Make player easily findable by ID
 
 
-    Player.players[_this.id_] = _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this); // Add a major version class to aid css in plugins
+    Player.players[_this.id_] = _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this); // Add a major version class to aid css in plugins
 
     var majorVersion = version$5.split('.')[0];
 
@@ -62236,9 +63843,14 @@ var Player = /*#__PURE__*/function (_Component) {
   ;
 
   _proto.handleTechFullscreenChange_ = function handleTechFullscreenChange_(event, data) {
+    var _this9 = this;
+
     if (data) {
       if (data.nativeIOSFullscreen) {
-        this.toggleClass('vjs-ios-native-fs');
+        this.addClass('vjs-ios-native-fs');
+        this.tech_.one('webkitendfullscreen', function () {
+          _this9.removeClass('vjs-ios-native-fs');
+        });
       }
 
       this.isFullscreen(data.isFullscreen);
@@ -62460,13 +64072,13 @@ var Player = /*#__PURE__*/function (_Component) {
   ;
 
   _proto.play = function play() {
-    var _this9 = this;
+    var _this10 = this;
 
     var PromiseClass = this.options_.Promise || global_window__WEBPACK_IMPORTED_MODULE_0___default.a.Promise;
 
     if (PromiseClass) {
       return new PromiseClass(function (resolve) {
-        _this9.play_(resolve);
+        _this10.play_(resolve);
       });
     }
 
@@ -62484,7 +64096,7 @@ var Player = /*#__PURE__*/function (_Component) {
   ;
 
   _proto.play_ = function play_(callback) {
-    var _this10 = this;
+    var _this11 = this;
 
     if (callback === void 0) {
       callback = silencePromise;
@@ -62502,7 +64114,7 @@ var Player = /*#__PURE__*/function (_Component) {
 
     if (!this.isReady_ || !isSrcReady) {
       this.waitToPlay_ = function (e) {
-        _this10.play_();
+        _this11.play_();
       };
 
       this.one(['ready', 'loadstart'], this.waitToPlay_); // if we are in Safari, there is a high chance that loadstart will trigger after the gesture timeperiod
@@ -63019,7 +64631,7 @@ var Player = /*#__PURE__*/function (_Component) {
   };
 
   _proto.requestFullscreenHelper_ = function requestFullscreenHelper_(fullscreenOptions) {
-    var _this11 = this;
+    var _this12 = this;
 
     var fsOptions; // Only pass fullscreen options to requestFullscreen in spec-compliant browsers.
     // Use defaults or player configured option unless passed directly to this method.
@@ -63044,9 +64656,9 @@ var Player = /*#__PURE__*/function (_Component) {
 
       if (promise) {
         promise.then(function () {
-          return _this11.isFullscreen(true);
+          return _this12.isFullscreen(true);
         }, function () {
-          return _this11.isFullscreen(false);
+          return _this12.isFullscreen(false);
         });
       }
 
@@ -63105,7 +64717,7 @@ var Player = /*#__PURE__*/function (_Component) {
   };
 
   _proto.exitFullscreenHelper_ = function exitFullscreenHelper_() {
-    var _this12 = this;
+    var _this13 = this;
 
     if (this.fsApi_.requestFullscreen) {
       var promise = global_document__WEBPACK_IMPORTED_MODULE_1___default.a[this.fsApi_.exitFullscreen]();
@@ -63114,7 +64726,7 @@ var Player = /*#__PURE__*/function (_Component) {
         // we're splitting the promise here, so, we want to catch the
         // potential error so that this chain doesn't have unhandled errors
         silencePromise(promise.then(function () {
-          return _this12.isFullscreen(false);
+          return _this13.isFullscreen(false);
         }));
       }
 
@@ -63161,7 +64773,7 @@ var Player = /*#__PURE__*/function (_Component) {
   ;
 
   _proto.fullWindowOnEscKey = function fullWindowOnEscKey(event) {
-    if (keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(event, 'Esc')) {
+    if (keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(event, 'Esc')) {
       if (this.isFullscreen() === true) {
         if (!this.isFullWindow) {
           this.exitFullscreen();
@@ -63354,15 +64966,15 @@ var Player = /*#__PURE__*/function (_Component) {
 
     var _hotkeys$fullscreenKe = hotkeys.fullscreenKey,
         fullscreenKey = _hotkeys$fullscreenKe === void 0 ? function (keydownEvent) {
-      return keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(keydownEvent, 'f');
+      return keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(keydownEvent, 'f');
     } : _hotkeys$fullscreenKe,
         _hotkeys$muteKey = hotkeys.muteKey,
         muteKey = _hotkeys$muteKey === void 0 ? function (keydownEvent) {
-      return keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(keydownEvent, 'm');
+      return keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(keydownEvent, 'm');
     } : _hotkeys$muteKey,
         _hotkeys$playPauseKey = hotkeys.playPauseKey,
         playPauseKey = _hotkeys$playPauseKey === void 0 ? function (keydownEvent) {
-      return keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(keydownEvent, 'k') || keycode__WEBPACK_IMPORTED_MODULE_6___default.a.isEventKey(keydownEvent, 'Space');
+      return keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(keydownEvent, 'k') || keycode__WEBPACK_IMPORTED_MODULE_3___default.a.isEventKey(keydownEvent, 'Space');
     } : _hotkeys$playPauseKey;
 
     if (fullscreenKey.call(this, event)) {
@@ -63442,7 +65054,7 @@ var Player = /*#__PURE__*/function (_Component) {
   ;
 
   _proto.selectSource = function selectSource(sources) {
-    var _this13 = this;
+    var _this14 = this;
 
     // Get only the techs specified in `techOrder` that exist and are supported by the
     // current platform
@@ -63490,7 +65102,7 @@ var Player = /*#__PURE__*/function (_Component) {
       var techName = _ref2[0],
           tech = _ref2[1];
 
-      if (tech.canPlaySource(source, _this13.options_[techName.toLowerCase()])) {
+      if (tech.canPlaySource(source, _this14.options_[techName.toLowerCase()])) {
         return {
           source: source,
           tech: techName
@@ -63530,7 +65142,7 @@ var Player = /*#__PURE__*/function (_Component) {
   ;
 
   _proto.handleSrc_ = function handleSrc_(source, isRetry) {
-    var _this14 = this;
+    var _this15 = this;
 
     // getter usage
     if (typeof source === 'undefined') {
@@ -63569,25 +65181,25 @@ var Player = /*#__PURE__*/function (_Component) {
     this.updateSourceCaches_(sources[0]); // middlewareSource is the source after it has been changed by middleware
 
     setSource(this, sources[0], function (middlewareSource, mws) {
-      _this14.middleware_ = mws; // since sourceSet is async we have to update the cache again after we select a source since
+      _this15.middleware_ = mws; // since sourceSet is async we have to update the cache again after we select a source since
       // the source that is selected could be out of order from the cache update above this callback.
 
       if (!isRetry) {
-        _this14.cache_.sources = sources;
+        _this15.cache_.sources = sources;
       }
 
-      _this14.updateSourceCaches_(middlewareSource);
+      _this15.updateSourceCaches_(middlewareSource);
 
-      var err = _this14.src_(middlewareSource);
+      var err = _this15.src_(middlewareSource);
 
       if (err) {
         if (sources.length > 1) {
-          return _this14.handleSrc_(sources.slice(1));
+          return _this15.handleSrc_(sources.slice(1));
         }
 
-        _this14.changingSrc_ = false; // We need to wrap this in a timeout to give folks a chance to add error event handlers
+        _this15.changingSrc_ = false; // We need to wrap this in a timeout to give folks a chance to add error event handlers
 
-        _this14.setTimeout(function () {
+        _this15.setTimeout(function () {
           this.error({
             code: 4,
             message: this.localize(this.options_.notSupportedMessage)
@@ -63596,33 +65208,33 @@ var Player = /*#__PURE__*/function (_Component) {
         // this needs a better comment about why this is needed
 
 
-        _this14.triggerReady();
+        _this15.triggerReady();
 
         return;
       }
 
-      setTech(mws, _this14.tech_);
+      setTech(mws, _this15.tech_);
     }); // Try another available source if this one fails before playback.
 
     if (this.options_.retryOnError && sources.length > 1) {
       var retry = function retry() {
         // Remove the error modal
-        _this14.error(null);
+        _this15.error(null);
 
-        _this14.handleSrc_(sources.slice(1), true);
+        _this15.handleSrc_(sources.slice(1), true);
       };
 
       var stopListeningForErrors = function stopListeningForErrors() {
-        _this14.off('error', retry);
+        _this15.off('error', retry);
       };
 
       this.one('error', retry);
       this.one('playing', stopListeningForErrors);
 
       this.resetRetryOnError_ = function () {
-        _this14.off('error', retry);
+        _this15.off('error', retry);
 
-        _this14.off('playing', stopListeningForErrors);
+        _this15.off('playing', stopListeningForErrors);
       };
     }
   }
@@ -63662,7 +65274,7 @@ var Player = /*#__PURE__*/function (_Component) {
   ;
 
   _proto.src_ = function src_(source) {
-    var _this15 = this;
+    var _this16 = this;
 
     var sourceTech = this.selectSource([source]);
 
@@ -63675,7 +65287,7 @@ var Player = /*#__PURE__*/function (_Component) {
 
       this.loadTech_(sourceTech.tech, sourceTech.source);
       this.tech_.ready(function () {
-        _this15.changingSrc_ = false;
+        _this16.changingSrc_ = false;
       });
       return false;
     } // wait until the tech is ready to set the source
@@ -63713,7 +65325,7 @@ var Player = /*#__PURE__*/function (_Component) {
   ;
 
   _proto.reset = function reset() {
-    var _this16 = this;
+    var _this17 = this;
 
     var PromiseClass = this.options_.Promise || global_window__WEBPACK_IMPORTED_MODULE_0___default.a.Promise;
 
@@ -63722,7 +65334,7 @@ var Player = /*#__PURE__*/function (_Component) {
     } else {
       var playPromise = this.play();
       silencePromise(playPromise.then(function () {
-        return _this16.doReset_();
+        return _this17.doReset_();
       }));
     }
   };
@@ -64156,7 +65768,7 @@ var Player = /*#__PURE__*/function (_Component) {
   ;
 
   _proto.error = function error(err) {
-    var _this17 = this;
+    var _this18 = this;
 
     if (err === undefined) {
       return this.error_ || null;
@@ -64164,10 +65776,10 @@ var Player = /*#__PURE__*/function (_Component) {
 
 
     hooks('beforeerror').forEach(function (hookFunction) {
-      var newErr = hookFunction(_this17, err);
+      var newErr = hookFunction(_this18, err);
 
       if (!(isObject(newErr) && !Array.isArray(newErr) || typeof newErr === 'string' || typeof newErr === 'number' || newErr === null)) {
-        _this17.log.error('please return a value that MediaError expects in beforeerror hooks');
+        _this18.log.error('please return a value that MediaError expects in beforeerror hooks');
 
         return;
       }
@@ -64215,7 +65827,7 @@ var Player = /*#__PURE__*/function (_Component) {
     this.trigger('error'); // notify hooks of the per player error
 
     hooks('error').forEach(function (hookFunction) {
-      return hookFunction(_this17, _this17.error_);
+      return hookFunction(_this18, _this18.error_);
     });
     return;
   }
@@ -64691,14 +66303,14 @@ var Player = /*#__PURE__*/function (_Component) {
   ;
 
   _proto.createModal = function createModal(content, options) {
-    var _this18 = this;
+    var _this19 = this;
 
     options = options || {};
     options.content = content || '';
     var modal = new ModalDialog(this, options);
     this.addChild(modal);
     modal.on('dispose', function () {
-      _this18.removeChild(modal);
+      _this19.removeChild(modal);
     });
     modal.open();
     return modal;
@@ -64929,7 +66541,7 @@ var Player = /*#__PURE__*/function (_Component) {
   ;
 
   _proto.loadMedia = function loadMedia(media, ready) {
-    var _this19 = this;
+    var _this20 = this;
 
     if (!media || typeof media !== 'object') {
       return;
@@ -64961,7 +66573,7 @@ var Player = /*#__PURE__*/function (_Component) {
 
     if (Array.isArray(textTracks)) {
       textTracks.forEach(function (tt) {
-        return _this19.addRemoteTextTrack(tt, false);
+        return _this20.addRemoteTextTrack(tt, false);
       });
     }
 
@@ -65039,7 +66651,7 @@ var Player = /*#__PURE__*/function (_Component) {
     if (dataSetup !== null) {
       // Parse options JSON
       // If empty string, make it a parsable json object.
-      var _safeParseTuple = safe_json_parse_tuple__WEBPACK_IMPORTED_MODULE_5___default()(dataSetup || '{}'),
+      var _safeParseTuple = safe_json_parse_tuple__WEBPACK_IMPORTED_MODULE_6___default()(dataSetup || '{}'),
           err = _safeParseTuple[0],
           data = _safeParseTuple[1];
 
@@ -66481,7 +68093,7 @@ videojs.addLanguage('en', {
   'Non-Fullscreen': 'Exit Fullscreen'
 });
 
-/*! @name @videojs/http-streaming @version 2.12.0 @license Apache-2.0 */
+/*! @name @videojs/http-streaming @version 2.13.1 @license Apache-2.0 */
 /**
  * @file resolve-url.js - Handling how URLs are resolved and manipulated
  */
@@ -68359,7 +69971,7 @@ var refreshDelay = function refreshDelay(media, update) {
 
 
 var PlaylistLoader = /*#__PURE__*/function (_EventTarget) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(PlaylistLoader, _EventTarget);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(PlaylistLoader, _EventTarget);
 
   function PlaylistLoader(src, vhs, options) {
     var _this;
@@ -68396,7 +70008,7 @@ var PlaylistLoader = /*#__PURE__*/function (_EventTarget) {
 
     _this.state = 'HAVE_NOTHING'; // live playlist staleness timeout
 
-    _this.handleMediaupdatetimeout_ = _this.handleMediaupdatetimeout_.bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this));
+    _this.handleMediaupdatetimeout_ = _this.handleMediaupdatetimeout_.bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this));
 
     _this.on('mediaupdatetimeout', _this.handleMediaupdatetimeout_);
 
@@ -69016,8 +70628,15 @@ var xhrFactory = function xhrFactory() {
 var byterangeStr = function byterangeStr(byterange) {
   // `byterangeEnd` is one less than `offset + length` because the HTTP range
   // header uses inclusive ranges
-  var byterangeEnd = byterange.offset + byterange.length - 1;
+  var byterangeEnd;
   var byterangeStart = byterange.offset;
+
+  if (typeof byterange.offset === 'bigint' || typeof byterange.length === 'bigint') {
+    byterangeEnd = global_window__WEBPACK_IMPORTED_MODULE_0___default.a.BigInt(byterange.offset) + global_window__WEBPACK_IMPORTED_MODULE_0___default.a.BigInt(byterange.length) - global_window__WEBPACK_IMPORTED_MODULE_0___default.a.BigInt(1);
+  } else {
+    byterangeEnd = byterange.offset + byterange.length - 1;
+  }
+
   return 'bytes=' + byterangeStart + '-' + byterangeEnd;
 };
 /**
@@ -69724,14 +71343,16 @@ var parseMasterXml = function parseMasterXml(_ref) {
   var masterXml = _ref.masterXml,
       srcUrl = _ref.srcUrl,
       clientOffset = _ref.clientOffset,
-      sidxMapping = _ref.sidxMapping;
-  var master = Object(mpd_parser__WEBPACK_IMPORTED_MODULE_15__["parse"])(masterXml, {
+      sidxMapping = _ref.sidxMapping,
+      previousManifest = _ref.previousManifest;
+  var manifest = Object(mpd_parser__WEBPACK_IMPORTED_MODULE_15__["parse"])(masterXml, {
     manifestUri: srcUrl,
     clientOffset: clientOffset,
-    sidxMapping: sidxMapping
+    sidxMapping: sidxMapping,
+    previousManifest: previousManifest
   });
-  addPropertiesToMaster(master, srcUrl);
-  return master;
+  addPropertiesToMaster(manifest, srcUrl);
+  return manifest;
 };
 /**
  * Returns a new master manifest that is the result of merging an updated master manifest
@@ -69752,7 +71373,8 @@ var updateMaster = function updateMaster(oldMaster, newMaster, sidxMapping) {
   var update = mergeOptions(oldMaster, {
     // These are top level properties that can be updated
     duration: newMaster.duration,
-    minimumUpdatePeriod: newMaster.minimumUpdatePeriod
+    minimumUpdatePeriod: newMaster.minimumUpdatePeriod,
+    timelineStarts: newMaster.timelineStarts
   }); // First update the playlists in playlist list
 
   for (var i = 0; i < newMaster.playlists.length; i++) {
@@ -69859,7 +71481,7 @@ var filterChangedSidxMappings = function filterChangedSidxMappings(master, oldSi
 };
 
 var DashPlaylistLoader = /*#__PURE__*/function (_EventTarget) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(DashPlaylistLoader, _EventTarget); // DashPlaylistLoader must accept either a src url or a playlist because subsequent
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(DashPlaylistLoader, _EventTarget); // DashPlaylistLoader must accept either a src url or a playlist because subsequent
   // playlist loader setups from media groups will expect to be able to pass a playlist
   // (since there aren't external URLs to media playlists with DASH)
 
@@ -69872,7 +71494,7 @@ var DashPlaylistLoader = /*#__PURE__*/function (_EventTarget) {
     }
 
     _this = _EventTarget.call(this) || this;
-    _this.masterPlaylistLoader_ = masterPlaylistLoader || _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this);
+    _this.masterPlaylistLoader_ = masterPlaylistLoader || _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this);
 
     if (!masterPlaylistLoader) {
       _this.isMaster_ = true;
@@ -70346,13 +71968,14 @@ var DashPlaylistLoader = /*#__PURE__*/function (_EventTarget) {
   _proto.handleMaster_ = function handleMaster_() {
     // clear media request
     this.mediaRequest_ = null;
+    var oldMaster = this.masterPlaylistLoader_.master;
     var newMaster = parseMasterXml({
       masterXml: this.masterPlaylistLoader_.masterXml_,
       srcUrl: this.masterPlaylistLoader_.srcUrl,
       clientOffset: this.masterPlaylistLoader_.clientOffset_,
-      sidxMapping: this.masterPlaylistLoader_.sidxMapping_
-    });
-    var oldMaster = this.masterPlaylistLoader_.master; // if we have an old master to compare the new master against
+      sidxMapping: this.masterPlaylistLoader_.sidxMapping_,
+      previousManifest: oldMaster
+    }); // if we have an old master to compare the new master against
 
     if (oldMaster) {
       newMaster = updateMaster(oldMaster, newMaster, this.masterPlaylistLoader_.sidxMapping_);
@@ -70581,7 +72204,7 @@ var transform = function transform(code) {
 var getWorkerString = function getWorkerString(fn) {
   return fn.toString().replace(/^function.+?{/, '').slice(0, -1);
 };
-/* rollup-plugin-worker-factory start for worker!/Users/gkatsevman/p/http-streaming-release/src/transmuxer-worker.js */
+/* rollup-plugin-worker-factory start for worker!/Users/gsinger/repos/clean/http-streaming/src/transmuxer-worker.js */
 
 
 var workerCode$1 = transform(getWorkerString(function () {
@@ -70736,17 +72359,30 @@ var workerCode$1 = transform(getWorkerString(function () {
   };
 
   var stream = Stream;
-  /**
-   * mux.js
-   *
-   * Copyright (c) Brightcove
-   * Licensed Apache-2.0 https://github.com/videojs/mux.js/blob/master/LICENSE
-   *
-   * Functions that generate fragmented MP4s suitable for use with Media
-   * Source Extensions.
-   */
+  var MAX_UINT32$1 = Math.pow(2, 32);
 
-  var UINT32_MAX = Math.pow(2, 32) - 1;
+  var getUint64$2 = function getUint64(uint8) {
+    var dv = new DataView(uint8.buffer, uint8.byteOffset, uint8.byteLength);
+    var value;
+
+    if (dv.getBigUint64) {
+      value = dv.getBigUint64(0);
+
+      if (value < Number.MAX_SAFE_INTEGER) {
+        return Number(value);
+      }
+
+      return value;
+    }
+
+    return dv.getUint32(0) * MAX_UINT32$1 + dv.getUint32(4);
+  };
+
+  var numbers = {
+    getUint64: getUint64$2,
+    MAX_UINT32: MAX_UINT32$1
+  };
+  var MAX_UINT32 = numbers.MAX_UINT32;
   var box, dinf, esds, ftyp, mdat, mfhd, minf, moof, moov, mvex, mvhd, trak, tkhd, mdia, mdhd, hdlr, sdtp, stbl, stsd, traf, trex, trun$1, types, MAJOR_BRAND, MINOR_VERSION, AVC1_BRAND, VIDEO_HDLR, AUDIO_HDLR, HDLR_TYPES, VMHD, SMHD, DREF, STCO, STSC, STSZ, STTS; // pre-calculate constants
 
   (function () {
@@ -71163,8 +72799,8 @@ var workerCode$1 = transform(getWorkerString(function () {
     0x00, 0x00, 0x00, 0x00, // default_sample_size
     0x00, 0x00, 0x00, 0x00 // default_sample_flags
     ]));
-    upperWordBaseMediaDecodeTime = Math.floor(track.baseMediaDecodeTime / (UINT32_MAX + 1));
-    lowerWordBaseMediaDecodeTime = Math.floor(track.baseMediaDecodeTime % (UINT32_MAX + 1));
+    upperWordBaseMediaDecodeTime = Math.floor(track.baseMediaDecodeTime / MAX_UINT32);
+    lowerWordBaseMediaDecodeTime = Math.floor(track.baseMediaDecodeTime % MAX_UINT32);
     trackFragmentDecodeTime = box(types.tfdt, new Uint8Array([0x01, // version 1
     0x00, 0x00, 0x00, // flags
     // baseMediaDecodeTime
@@ -77211,17 +78847,18 @@ var workerCode$1 = transform(getWorkerString(function () {
 
   var findBox_1 = findBox;
   var toUnsigned$1 = bin.toUnsigned;
+  var getUint64$1 = numbers.getUint64;
 
   var tfdt = function tfdt(data) {
     var result = {
       version: data[0],
-      flags: new Uint8Array(data.subarray(1, 4)),
-      baseMediaDecodeTime: toUnsigned$1(data[4] << 24 | data[5] << 16 | data[6] << 8 | data[7])
+      flags: new Uint8Array(data.subarray(1, 4))
     };
 
     if (result.version === 1) {
-      result.baseMediaDecodeTime *= Math.pow(2, 32);
-      result.baseMediaDecodeTime += toUnsigned$1(data[8] << 24 | data[9] << 16 | data[10] << 8 | data[11]);
+      result.baseMediaDecodeTime = getUint64$1(data.subarray(4));
+    } else {
+      result.baseMediaDecodeTime = toUnsigned$1(data[4] << 24 | data[5] << 16 | data[6] << 8 | data[7]);
     }
 
     return result;
@@ -77397,6 +79034,20 @@ var workerCode$1 = transform(getWorkerString(function () {
   };
 
   var parseTfhd = tfhd;
+  var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+  var win;
+
+  if (typeof window !== "undefined") {
+    win = window;
+  } else if (typeof commonjsGlobal !== "undefined") {
+    win = commonjsGlobal;
+  } else if (typeof self !== "undefined") {
+    win = self;
+  } else {
+    win = {};
+  }
+
+  var window_1 = win;
   var discardEmulationPreventionBytes = captionPacketParser.discardEmulationPreventionBytes;
   var CaptionStream = captionStream.CaptionStream;
   /**
@@ -77501,7 +79152,7 @@ var workerCode$1 = transform(getWorkerString(function () {
     * the absolute presentation and decode timestamps of each sample.
     *
     * @param {Array<Uint8Array>} truns - The Trun Run boxes to be parsed
-    * @param {Number} baseMediaDecodeTime - base media decode time from tfdt
+    * @param {Number|BigInt} baseMediaDecodeTime - base media decode time from tfdt
         @see ISO-BMFF-12/2015, Section 8.8.12
     * @param {Object} tfhd - The parsed Track Fragment Header
     *   @see inspect.parseTfhd
@@ -77539,8 +79190,13 @@ var workerCode$1 = transform(getWorkerString(function () {
           sample.compositionTimeOffset = 0;
         }
 
-        sample.pts = currentDts + sample.compositionTimeOffset;
-        currentDts += sample.duration;
+        if (typeof currentDts === 'bigint') {
+          sample.pts = currentDts + window_1.BigInt(sample.compositionTimeOffset);
+          currentDts += window_1.BigInt(sample.duration);
+        } else {
+          sample.pts = currentDts + sample.compositionTimeOffset;
+          currentDts += sample.duration;
+        }
       });
       allSamples = allSamples.concat(samples);
     });
@@ -77855,6 +79511,7 @@ var workerCode$1 = transform(getWorkerString(function () {
   var captionParser = CaptionParser;
   var toUnsigned = bin.toUnsigned;
   var toHexString = bin.toHexString;
+  var getUint64 = numbers.getUint64;
   var timescale, startTime, compositionStartTime, getVideoTrackIds, getTracks, getTimescaleFromMediaHeader;
   /**
    * Parses an MP4 initialization segment and extracts the timescale
@@ -77921,38 +79578,47 @@ var workerCode$1 = transform(getWorkerString(function () {
 
 
   startTime = function startTime(timescale, fragment) {
-    var trafs, baseTimes, result; // we need info from two childrend of each track fragment box
+    var trafs; // we need info from two childrend of each track fragment box
 
     trafs = findBox_1(fragment, ['moof', 'traf']); // determine the start times for each track
 
-    baseTimes = [].concat.apply([], trafs.map(function (traf) {
-      return findBox_1(traf, ['tfhd']).map(function (tfhd) {
-        var id, scale, baseTime; // get the track id from the tfhd
+    var lowestTime = trafs.reduce(function (acc, traf) {
+      var tfhd = findBox_1(traf, ['tfhd'])[0]; // get the track id from the tfhd
 
-        id = toUnsigned(tfhd[4] << 24 | tfhd[5] << 16 | tfhd[6] << 8 | tfhd[7]); // assume a 90kHz clock if no timescale was specified
+      var id = toUnsigned(tfhd[4] << 24 | tfhd[5] << 16 | tfhd[6] << 8 | tfhd[7]); // assume a 90kHz clock if no timescale was specified
 
-        scale = timescale[id] || 90e3; // get the base media decode time from the tfdt
+      var scale = timescale[id] || 90e3; // get the base media decode time from the tfdt
 
-        baseTime = findBox_1(traf, ['tfdt']).map(function (tfdt) {
-          var version, result;
-          version = tfdt[0];
-          result = toUnsigned(tfdt[4] << 24 | tfdt[5] << 16 | tfdt[6] << 8 | tfdt[7]);
+      var tfdt = findBox_1(traf, ['tfdt'])[0];
+      var dv = new DataView(tfdt.buffer, tfdt.byteOffset, tfdt.byteLength);
+      var baseTime; // version 1 is 64 bit
 
-          if (version === 1) {
-            result *= Math.pow(2, 32);
-            result += toUnsigned(tfdt[8] << 24 | tfdt[9] << 16 | tfdt[10] << 8 | tfdt[11]);
-          }
+      if (tfdt[0] === 1) {
+        baseTime = getUint64(tfdt.subarray(4, 12));
+      } else {
+        baseTime = dv.getUint32(4);
+      } // convert base time to seconds if it is a valid number.
 
-          return result;
-        })[0];
-        baseTime = typeof baseTime === 'number' && !isNaN(baseTime) ? baseTime : Infinity; // convert base time to seconds
 
-        return baseTime / scale;
-      });
-    })); // return the minimum
+      var seconds;
 
-    result = Math.min.apply(null, baseTimes);
-    return isFinite(result) ? result : 0;
+      if (typeof baseTime === 'bigint') {
+        seconds = baseTime / window_1.BigInt(scale);
+      } else if (typeof baseTime === 'number' && !isNaN(baseTime)) {
+        seconds = baseTime / scale;
+      }
+
+      if (seconds < Number.MAX_SAFE_INTEGER) {
+        seconds = Number(seconds);
+      }
+
+      if (seconds < acc) {
+        acc = seconds;
+      }
+
+      return acc;
+    }, Infinity);
+    return typeof lowestTime === 'bigint' || isFinite(lowestTime) ? lowestTime : 0;
   };
   /**
    * Determine the composition start, in seconds, for an MP4
@@ -78012,7 +79678,18 @@ var workerCode$1 = transform(getWorkerString(function () {
 
     var timescale = timescales[trackId] || 90e3; // return the composition start time, in seconds
 
-    return (baseMediaDecodeTime + compositionTimeOffset) / timescale;
+    if (typeof baseMediaDecodeTime === 'bigint') {
+      compositionTimeOffset = window_1.BigInt(compositionTimeOffset);
+      timescale = window_1.BigInt(timescale);
+    }
+
+    var result = (baseMediaDecodeTime + compositionTimeOffset) / timescale;
+
+    if (typeof result === 'bigint' && result < Number.MAX_SAFE_INTEGER) {
+      result = Number(result);
+    }
+
+    return result;
   };
   /**
     * Find the trackIds of the video tracks in this source.
@@ -79333,7 +81010,7 @@ var workerCode$1 = transform(getWorkerString(function () {
   };
 }));
 var TransmuxWorker = factory(workerCode$1);
-/* rollup-plugin-worker-factory end for worker!/Users/gkatsevman/p/http-streaming-release/src/transmuxer-worker.js */
+/* rollup-plugin-worker-factory end for worker!/Users/gsinger/repos/clean/http-streaming/src/transmuxer-worker.js */
 
 var handleData_ = function handleData_(event, transmuxedData, callback) {
   var _event$data$segment = event.data.segment,
@@ -82182,10 +83859,36 @@ var shouldWaitForTimelineChange = function shouldWaitForTimelineChange(_ref2) {
   return false;
 };
 
-var mediaDuration = function mediaDuration(audioTimingInfo, videoTimingInfo) {
-  var audioDuration = audioTimingInfo && typeof audioTimingInfo.start === 'number' && typeof audioTimingInfo.end === 'number' ? audioTimingInfo.end - audioTimingInfo.start : 0;
-  var videoDuration = videoTimingInfo && typeof videoTimingInfo.start === 'number' && typeof videoTimingInfo.end === 'number' ? videoTimingInfo.end - videoTimingInfo.start : 0;
-  return Math.max(audioDuration, videoDuration);
+var mediaDuration = function mediaDuration(timingInfos) {
+  var maxDuration = 0;
+  ['video', 'audio'].forEach(function (type) {
+    var typeTimingInfo = timingInfos[type + "TimingInfo"];
+
+    if (!typeTimingInfo) {
+      return;
+    }
+
+    var start = typeTimingInfo.start,
+        end = typeTimingInfo.end;
+    var duration;
+
+    if (typeof start === 'bigint' || typeof end === 'bigint') {
+      duration = global_window__WEBPACK_IMPORTED_MODULE_0___default.a.BigInt(end) - global_window__WEBPACK_IMPORTED_MODULE_0___default.a.BigInt(start);
+    } else if (typeof start === 'number' && typeof end === 'number') {
+      duration = end - start;
+    }
+
+    if (typeof duration !== 'undefined' && duration > maxDuration) {
+      maxDuration = duration;
+    }
+  }); // convert back to a number if it is lower than MAX_SAFE_INTEGER
+  // as we only need BigInt when we are above that.
+
+  if (typeof maxDuration === 'bigint' && maxDuration < Number.MAX_SAFE_INTEGER) {
+    maxDuration = Number(maxDuration);
+  }
+
+  return maxDuration;
 };
 
 var segmentTooLong = function segmentTooLong(_ref3) {
@@ -82218,7 +83921,10 @@ var getTroublesomeSegmentDurationMessage = function getTroublesomeSegmentDuratio
     return null;
   }
 
-  var segmentDuration = mediaDuration(segmentInfo.audioTimingInfo, segmentInfo.videoTimingInfo); // Don't report if we lack information.
+  var segmentDuration = mediaDuration({
+    audioTimingInfo: segmentInfo.audioTimingInfo,
+    videoTimingInfo: segmentInfo.videoTimingInfo
+  }); // Don't report if we lack information.
   //
   // If the segment has a duration of 0 it is either a lack of information or a
   // metadata only segment and shouldn't be reported here.
@@ -82257,7 +83963,7 @@ var getTroublesomeSegmentDurationMessage = function getTroublesomeSegmentDuratio
 
 
 var SegmentLoader = /*#__PURE__*/function (_videojs$EventTarget) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(SegmentLoader, _videojs$EventTarget);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(SegmentLoader, _videojs$EventTarget);
 
   function SegmentLoader(settings, options) {
     var _this;
@@ -82376,7 +84082,7 @@ var SegmentLoader = /*#__PURE__*/function (_videojs$EventTarget) {
 
     _this.fetchAtBuffer_ = false;
     _this.logger_ = logger("SegmentLoader[" + _this.loaderType_ + "]");
-    Object.defineProperty(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this), 'state', {
+    Object.defineProperty(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this), 'state', {
       get: function get() {
         return this.state_;
       },
@@ -85229,7 +86935,7 @@ var onUpdateend = function onUpdateend(type, sourceUpdater) {
 
 
 var SourceUpdater = /*#__PURE__*/function (_videojs$EventTarget) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(SourceUpdater, _videojs$EventTarget);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(SourceUpdater, _videojs$EventTarget);
 
   function SourceUpdater(mediaSource) {
     var _this;
@@ -85238,7 +86944,7 @@ var SourceUpdater = /*#__PURE__*/function (_videojs$EventTarget) {
     _this.mediaSource = mediaSource;
 
     _this.sourceopenListener_ = function () {
-      return shiftQueue('mediaSource', _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this));
+      return shiftQueue('mediaSource', _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this));
     };
 
     _this.mediaSource.addEventListener('sourceopen', _this.sourceopenListener_);
@@ -85255,8 +86961,8 @@ var SourceUpdater = /*#__PURE__*/function (_videojs$EventTarget) {
     _this.delayedAudioAppendQueue_ = [];
     _this.videoAppendQueued_ = false;
     _this.codecs = {};
-    _this.onVideoUpdateEnd_ = onUpdateend('video', _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this));
-    _this.onAudioUpdateEnd_ = onUpdateend('audio', _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this));
+    _this.onVideoUpdateEnd_ = onUpdateend('video', _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this));
+    _this.onAudioUpdateEnd_ = onUpdateend('audio', _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this));
 
     _this.onVideoError_ = function (e) {
       // used for debugging
@@ -85850,7 +87556,7 @@ var VTT_LINE_TERMINATORS = new Uint8Array('\n\n'.split('').map(function (_char3)
  */
 
 var VTTSegmentLoader = /*#__PURE__*/function (_SegmentLoader) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(VTTSegmentLoader, _SegmentLoader);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(VTTSegmentLoader, _SegmentLoader);
 
   function VTTSegmentLoader(settings, options) {
     var _this;
@@ -86593,7 +88299,7 @@ var syncPointStrategies = [// Stategy "VOD": Handle the VOD-case where the sync-
 }];
 
 var SyncController = /*#__PURE__*/function (_videojs$EventTarget) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(SyncController, _videojs$EventTarget);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(SyncController, _videojs$EventTarget);
 
   function SyncController(options) {
     var _this;
@@ -87002,7 +88708,7 @@ var SyncController = /*#__PURE__*/function (_videojs$EventTarget) {
 
 
 var TimelineChangeController = /*#__PURE__*/function (_videojs$EventTarget) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(TimelineChangeController, _videojs$EventTarget);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(TimelineChangeController, _videojs$EventTarget);
 
   function TimelineChangeController() {
     var _this;
@@ -87064,7 +88770,7 @@ var TimelineChangeController = /*#__PURE__*/function (_videojs$EventTarget) {
 
   return TimelineChangeController;
 }(videojs.EventTarget);
-/* rollup-plugin-worker-factory start for worker!/Users/gkatsevman/p/http-streaming-release/src/decrypter-worker.js */
+/* rollup-plugin-worker-factory start for worker!/Users/gsinger/repos/clean/http-streaming/src/decrypter-worker.js */
 
 
 var workerCode = transform(getWorkerString(function () {
@@ -87744,7 +89450,7 @@ var workerCode = transform(getWorkerString(function () {
   };
 }));
 var Decrypter = factory(workerCode);
-/* rollup-plugin-worker-factory end for worker!/Users/gkatsevman/p/http-streaming-release/src/decrypter-worker.js */
+/* rollup-plugin-worker-factory end for worker!/Users/gsinger/repos/clean/http-streaming/src/decrypter-worker.js */
 
 /**
  * Convert the properties of an HLS track into an audioTrackKind.
@@ -88746,7 +90452,7 @@ var shouldSwitchToMedia = function shouldSwitchToMedia(_ref) {
 
 
 var MasterPlaylistController = /*#__PURE__*/function (_videojs$EventTarget) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(MasterPlaylistController, _videojs$EventTarget);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(MasterPlaylistController, _videojs$EventTarget);
 
   function MasterPlaylistController(options) {
     var _this;
@@ -88805,9 +90511,9 @@ var MasterPlaylistController = /*#__PURE__*/function (_videojs$EventTarget) {
 
     _this.mediaTypes_ = createMediaTypes();
     _this.mediaSource = new global_window__WEBPACK_IMPORTED_MODULE_0___default.a.MediaSource();
-    _this.handleDurationChange_ = _this.handleDurationChange_.bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this));
-    _this.handleSourceOpen_ = _this.handleSourceOpen_.bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this));
-    _this.handleSourceEnded_ = _this.handleSourceEnded_.bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this));
+    _this.handleDurationChange_ = _this.handleDurationChange_.bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this));
+    _this.handleSourceOpen_ = _this.handleSourceOpen_.bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this));
+    _this.handleSourceEnded_ = _this.handleSourceEnded_.bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this));
 
     _this.mediaSource.addEventListener('durationchange', _this.handleDurationChange_); // load the media source into the player
 
@@ -88908,7 +90614,7 @@ var MasterPlaylistController = /*#__PURE__*/function (_videojs$EventTarget) {
 
 
     loaderStats.forEach(function (stat) {
-      _this[stat + '_'] = sumLoaderStat.bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this), stat);
+      _this[stat + '_'] = sumLoaderStat.bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this), stat);
     });
     _this.logger_ = logger('MPC');
     _this.triggeredFmp4Usage = false;
@@ -90137,10 +91843,27 @@ var MasterPlaylistController = /*#__PURE__*/function (_videojs$EventTarget) {
   };
 
   _proto.onSyncInfoUpdate_ = function onSyncInfoUpdate_() {
-    var audioSeekable; // If we have two source buffers and only one is created then the seekable range will be incorrect.
-    // We should wait until all source buffers are created.
+    var audioSeekable; // TODO check for creation of both source buffers before updating seekable
+    //
+    // A fix was made to this function where a check for
+    // this.sourceUpdater_.hasCreatedSourceBuffers
+    // was added to ensure that both source buffers were created before seekable was
+    // updated. However, it originally had a bug where it was checking for a true and
+    // returning early instead of checking for false. Setting it to check for false to
+    // return early though created other issues. A call to play() would check for seekable
+    // end without verifying that a seekable range was present. In addition, even checking
+    // for that didn't solve some issues, as handleFirstPlay is sometimes worked around
+    // due to a media update calling load on the segment loaders, skipping a seek to live,
+    // thereby starting live streams at the beginning of the stream rather than at the end.
+    //
+    // This conditional should be fixed to wait for the creation of two source buffers at
+    // the same time as the other sections of code are fixed to properly seek to live and
+    // not throw an error due to checking for a seekable end when no seekable range exists.
+    //
+    // For now, fall back to the older behavior, with the understanding that the seekable
+    // range may not be completely correct, leading to a suboptimal initial live point.
 
-    if (!this.masterPlaylistLoader_ || this.sourceUpdater_.hasCreatedSourceBuffers()) {
+    if (!this.masterPlaylistLoader_) {
       return;
     }
 
@@ -91562,9 +93285,9 @@ var reloadSourceOnError = function reloadSourceOnError(options) {
   initPlugin(this, options);
 };
 
-var version$4 = "2.12.0";
-var version$3 = "5.14.1";
-var version$2 = "0.19.2";
+var version$4 = "2.13.1";
+var version$3 = "6.0.1";
+var version$2 = "0.21.0";
 var version$1 = "4.7.0";
 var version = "3.1.2";
 var Vhs = {
@@ -92000,7 +93723,7 @@ var Component = videojs.getComponent('Component');
  */
 
 var VhsHandler = /*#__PURE__*/function (_Component) {
-  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_4___default()(VhsHandler, _Component);
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_5___default()(VhsHandler, _Component);
 
   function VhsHandler(source, tech, options) {
     var _this;
@@ -92031,7 +93754,7 @@ var VhsHandler = /*#__PURE__*/function (_Component) {
               type: 'usage',
               name: 'hls-player-access'
             });
-            return _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this);
+            return _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this);
           },
           configurable: true
         });
@@ -92045,7 +93768,7 @@ var VhsHandler = /*#__PURE__*/function (_Component) {
               type: 'usage',
               name: 'vhs-player-access'
             });
-            return _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this);
+            return _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this);
           },
           configurable: true
         });
@@ -92055,7 +93778,7 @@ var VhsHandler = /*#__PURE__*/function (_Component) {
         Object.defineProperty(_player, 'dash', {
           get: function get() {
             videojs.log.warn('player.dash is deprecated. Use player.tech().vhs instead.');
-            return _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this);
+            return _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this);
           },
           configurable: true
         });
@@ -92521,44 +94244,12 @@ var VhsHandler = /*#__PURE__*/function (_Component) {
 
     this.mediaSourceUrl_ = global_window__WEBPACK_IMPORTED_MODULE_0___default.a.URL.createObjectURL(this.masterPlaylistController_.mediaSource);
     this.tech_.src(this.mediaSourceUrl_);
-  }
-  /**
-   * If necessary and EME is available, sets up EME options and waits for key session
-   * creation.
-   *
-   * This function also updates the source updater so taht it can be used, as for some
-   * browsers, EME must be configured before content is appended (if appending unencrypted
-   * content before encrypted content).
-   */
-  ;
+  };
 
-  _proto.setupEme_ = function setupEme_() {
+  _proto.createKeySessions_ = function createKeySessions_() {
     var _this4 = this;
 
     var audioPlaylistLoader = this.masterPlaylistController_.mediaTypes_.AUDIO.activePlaylistLoader;
-    var didSetupEmeOptions = setupEmeOptions({
-      player: this.player_,
-      sourceKeySystems: this.source_.keySystems,
-      media: this.playlists.media(),
-      audioMedia: audioPlaylistLoader && audioPlaylistLoader.media()
-    });
-    this.player_.tech_.on('keystatuschange', function (e) {
-      if (e.status === 'output-restricted') {
-        _this4.masterPlaylistController_.blacklistCurrentPlaylist({
-          playlist: _this4.masterPlaylistController_.media(),
-          message: "DRM keystatus changed to " + e.status + ". Playlist will fail to play. Check for HDCP content.",
-          blacklistDuration: Infinity
-        });
-      }
-    }); // In IE11 this is too early to initialize media keys, and IE11 does not support
-    // promises.
-
-    if (videojs.browser.IE_VERSION === 11 || !didSetupEmeOptions) {
-      // If EME options were not set up, we've done all we could to initialize EME.
-      this.masterPlaylistController_.sourceUpdater_.initializedEme();
-      return;
-    }
-
     this.logger_('waiting for EME key session creation');
     waitForKeySessionCreation({
       player: this.player_,
@@ -92577,6 +94268,60 @@ var VhsHandler = /*#__PURE__*/function (_Component) {
         code: 3
       });
     });
+  };
+
+  _proto.handleWaitingForKey_ = function handleWaitingForKey_() {
+    // If waitingforkey is fired, it's possible that the data that's necessary to retrieve
+    // the key is in the manifest. While this should've happened on initial source load, it
+    // may happen again in live streams where the keys change, and the manifest info
+    // reflects the update.
+    //
+    // Because videojs-contrib-eme compares the PSSH data we send to that of PSSH data it's
+    // already requested keys for, we don't have to worry about this generating extraneous
+    // requests.
+    this.logger_('waitingforkey fired, attempting to create any new key sessions');
+    this.createKeySessions_();
+  }
+  /**
+   * If necessary and EME is available, sets up EME options and waits for key session
+   * creation.
+   *
+   * This function also updates the source updater so taht it can be used, as for some
+   * browsers, EME must be configured before content is appended (if appending unencrypted
+   * content before encrypted content).
+   */
+  ;
+
+  _proto.setupEme_ = function setupEme_() {
+    var _this5 = this;
+
+    var audioPlaylistLoader = this.masterPlaylistController_.mediaTypes_.AUDIO.activePlaylistLoader;
+    var didSetupEmeOptions = setupEmeOptions({
+      player: this.player_,
+      sourceKeySystems: this.source_.keySystems,
+      media: this.playlists.media(),
+      audioMedia: audioPlaylistLoader && audioPlaylistLoader.media()
+    });
+    this.player_.tech_.on('keystatuschange', function (e) {
+      if (e.status === 'output-restricted') {
+        _this5.masterPlaylistController_.blacklistCurrentPlaylist({
+          playlist: _this5.masterPlaylistController_.media(),
+          message: "DRM keystatus changed to " + e.status + ". Playlist will fail to play. Check for HDCP content.",
+          blacklistDuration: Infinity
+        });
+      }
+    });
+    this.handleWaitingForKey_ = this.handleWaitingForKey_.bind(this);
+    this.player_.tech_.on('waitingforkey', this.handleWaitingForKey_); // In IE11 this is too early to initialize media keys, and IE11 does not support
+    // promises.
+
+    if (videojs.browser.IE_VERSION === 11 || !didSetupEmeOptions) {
+      // If EME options were not set up, we've done all we could to initialize EME.
+      this.masterPlaylistController_.sourceUpdater_.initializedEme();
+      return;
+    }
+
+    this.createKeySessions_();
   }
   /**
    * Initializes the quality levels and sets listeners to update them.
@@ -92587,7 +94332,7 @@ var VhsHandler = /*#__PURE__*/function (_Component) {
   ;
 
   _proto.setupQualityLevels_ = function setupQualityLevels_() {
-    var _this5 = this;
+    var _this6 = this;
 
     var player = videojs.players[this.tech_.options_.playerId]; // if there isn't a player or there isn't a qualityLevels plugin
     // or qualityLevels_ listeners have already been setup, do nothing.
@@ -92598,10 +94343,10 @@ var VhsHandler = /*#__PURE__*/function (_Component) {
 
     this.qualityLevels_ = player.qualityLevels();
     this.masterPlaylistController_.on('selectedinitialmedia', function () {
-      handleVhsLoadedMetadata(_this5.qualityLevels_, _this5);
+      handleVhsLoadedMetadata(_this6.qualityLevels_, _this6);
     });
     this.playlists.on('mediachange', function () {
-      handleVhsMediaChange(_this5.qualityLevels_, _this5.playlists);
+      handleVhsMediaChange(_this6.qualityLevels_, _this6.playlists);
     });
   }
   /**
@@ -92700,6 +94445,10 @@ var VhsHandler = /*#__PURE__*/function (_Component) {
       this.mediaSourceUrl_ = null;
     }
 
+    if (this.tech_) {
+      this.tech_.off('waitingforkey', this.handleWaitingForKey_);
+    }
+
     _Component.prototype.dispose.call(this);
   };
 
@@ -92782,11 +94531,17 @@ var VhsSourceHandler = {
     }
 
     var _videojs$mergeOptions = videojs.mergeOptions(videojs.options, options),
-        _videojs$mergeOptions2 = _videojs$mergeOptions.vhs.overrideNative,
-        overrideNative = _videojs$mergeOptions2 === void 0 ? !videojs.browser.IS_ANY_SAFARI : _videojs$mergeOptions2;
+        _videojs$mergeOptions2 = _videojs$mergeOptions.vhs;
 
+    _videojs$mergeOptions2 = _videojs$mergeOptions2 === void 0 ? {} : _videojs$mergeOptions2;
+    var _videojs$mergeOptions3 = _videojs$mergeOptions2.overrideNative,
+        overrideNative = _videojs$mergeOptions3 === void 0 ? !videojs.browser.IS_ANY_SAFARI : _videojs$mergeOptions3,
+        _videojs$mergeOptions4 = _videojs$mergeOptions.hls;
+    _videojs$mergeOptions4 = _videojs$mergeOptions4 === void 0 ? {} : _videojs$mergeOptions4;
+    var _videojs$mergeOptions5 = _videojs$mergeOptions4.overrideNative,
+        legacyOverrideNative = _videojs$mergeOptions5 === void 0 ? false : _videojs$mergeOptions5;
     var supportedType = Object(_videojs_vhs_utils_es_media_types_js__WEBPACK_IMPORTED_MODULE_14__["simpleTypeFromSourceType"])(type);
-    var canUseMsePlayback = supportedType && (!Vhs.supportsTypeNatively(supportedType) || overrideNative);
+    var canUseMsePlayback = supportedType && (!Vhs.supportsTypeNatively(supportedType) || legacyOverrideNative || overrideNative);
     return canUseMsePlayback ? 'maybe' : '';
   }
 };
@@ -92846,6 +94601,7 @@ if (!videojs.getPlugin || !videojs.getPlugin('reloadSourceOnError')) {
 
 /* harmony default export */ __webpack_exports__["default"] = (videojs);
 
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
 

@@ -1189,6 +1189,63 @@ var companyVideo = /*#__PURE__*/function () {
           });
         }, 300);
       }
+
+      if (document.querySelector('#player17')) {
+        if (!document.getElementById('player17')) return;
+        setTimeout(function () {
+          _this.player = document.getElementById('player17');
+          Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player17', {
+            fluid: true,
+            controls: false,
+            autoplay: true,
+            aspectRatio: '16:9',
+            muted: true,
+            // poster: '../local/img/video_preview.png',
+            sources: [{
+              src: 'videos/pv.mp4',
+              type: 'video/mp4'
+            }]
+          });
+        }, 300);
+      }
+
+      if (document.querySelector('#player18')) {
+        if (!document.getElementById('player18')) return;
+        setTimeout(function () {
+          _this.player = document.getElementById('player18');
+          Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player18', {
+            fluid: true,
+            controls: false,
+            autoplay: true,
+            aspectRatio: '16:9',
+            muted: true,
+            // poster: '../local/img/video_preview.png',
+            sources: [{
+              src: 'videos/medex.mp4',
+              type: 'video/mp4'
+            }]
+          });
+        }, 300);
+      }
+
+      if (document.querySelector('#player19')) {
+        if (!document.getElementById('player19')) return;
+        setTimeout(function () {
+          _this.player = document.getElementById('player19');
+          Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player19', {
+            fluid: true,
+            controls: false,
+            autoplay: true,
+            aspectRatio: '16:9',
+            muted: true,
+            // poster: '../local/img/video_preview.png',
+            sources: [{
+              src: 'videos/pv.mp4',
+              type: 'video/mp4'
+            }]
+          });
+        }, 300);
+      }
     }
   }]);
 
@@ -3013,7 +3070,7 @@ var newsAndTrends = /*#__PURE__*/function () {
       this.slider = new _glidejs_glide__WEBPACK_IMPORTED_MODULE_2__["default"]('.news-and-trends-right-slider', {
         type: 'carousel',
         startAt: 0,
-        perView: 4,
+        perView: 3,
         breakpoints: {
           800: {
             perView: 2

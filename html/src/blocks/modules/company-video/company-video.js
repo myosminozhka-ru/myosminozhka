@@ -274,6 +274,60 @@ const companyVideo = class companyVideo {
                 });
             }, 300)
         }
+        if (document.querySelector('#player17')) {
+            if (!document.getElementById('player17')) return;
+            setTimeout(() => {
+                this.player = document.getElementById('player17');
+                videojs('player17', {
+                    fluid: true,
+                    controls: false,
+                    autoplay: true,
+                    aspectRatio: '16:9',
+                    muted: true,
+                    // poster: '../local/img/video_preview.png',
+                    sources: [{
+                        src: 'videos/pv.mp4',
+                        type: 'video/mp4'
+                    }]
+                });
+            }, 300)
+        }
+        if (document.querySelector('#player18')) {
+            if (!document.getElementById('player18')) return;
+            setTimeout(() => {
+                this.player = document.getElementById('player18');
+                videojs('player18', {
+                    fluid: true,
+                    controls: false,
+                    autoplay: true,
+                    aspectRatio: '16:9',
+                    muted: true,
+                    // poster: '../local/img/video_preview.png',
+                    sources: [{
+                        src: 'videos/medex.mp4',
+                        type: 'video/mp4'
+                    }]
+                });
+            }, 300)
+        }
+        if (document.querySelector('#player19')) {
+            if (!document.getElementById('player19')) return;
+            setTimeout(() => {
+                this.player = document.getElementById('player19');
+                videojs('player19', {
+                    fluid: true,
+                    controls: false,
+                    autoplay: true,
+                    aspectRatio: '16:9',
+                    muted: true,
+                    // poster: '../local/img/video_preview.png',
+                    sources: [{
+                        src: 'videos/pv.mp4',
+                        type: 'video/mp4'
+                    }]
+                });
+            }, 300)
+        }
     }
 }
 

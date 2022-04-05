@@ -1743,7 +1743,7 @@ var newsAndTrends = /*#__PURE__*/function () {
       this.slider = new _glidejs_glide__WEBPACK_IMPORTED_MODULE_2__["default"]('.news-and-trends-right-slider', {
         type: 'carousel',
         startAt: 0,
-        perView: 4,
+        perView: 3,
         breakpoints: {
           800: {
             perView: 2
