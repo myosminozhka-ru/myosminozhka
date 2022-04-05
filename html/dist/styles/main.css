@@ -17576,7 +17576,7 @@ html.overflowed body {
     grid-column-end: auto !important;
   }
 
-  .blog-items-post-image {
+  body .blog-items-post-image {
     height: 17vw !important;
     flex: none !important;
   }
