@@ -286,7 +286,7 @@ const companyVideo = class companyVideo {
                     muted: true,
                     // poster: '../local/img/video_preview.png',
                     sources: [{
-                        src: 'videos/pv.mp4',
+                        src: 'videos/pl17.mp4',
                         type: 'video/mp4'
                     }]
                 });
@@ -322,7 +322,43 @@ const companyVideo = class companyVideo {
                     muted: true,
                     // poster: '../local/img/video_preview.png',
                     sources: [{
-                        src: 'videos/pv.mp4',
+                        src: 'videos/pl18.mp4',
+                        type: 'video/mp4'
+                    }]
+                });
+            }, 300)
+        }
+        if (document.querySelector('#player20')) {
+            if (!document.getElementById('player20')) return;
+            setTimeout(() => {
+                this.player = document.getElementById('player20');
+                videojs('player20', {
+                    fluid: true,
+                    controls: false,
+                    autoplay: true,
+                    aspectRatio: '16:9',
+                    muted: true,
+                    // poster: '../local/img/video_preview.png',
+                    sources: [{
+                        src: 'videos/pl19.mp4',
+                        type: 'video/mp4'
+                    }]
+                });
+            }, 300)
+        }
+        if (document.querySelector('#player21')) {
+            if (!document.getElementById('player21')) return;
+            setTimeout(() => {
+                this.player = document.getElementById('player21');
+                videojs('player21', {
+                    fluid: true,
+                    controls: false,
+                    autoplay: true,
+                    aspectRatio: '16:9',
+                    muted: true,
+                    // poster: '../local/img/video_preview.png',
+                    sources: [{
+                        src: 'videos/pl20.mp4',
                         type: 'video/mp4'
                     }]
                 });

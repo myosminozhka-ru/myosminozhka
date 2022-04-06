@@ -1202,7 +1202,7 @@ var companyVideo = /*#__PURE__*/function () {
             muted: true,
             // poster: '../local/img/video_preview.png',
             sources: [{
-              src: 'videos/pv.mp4',
+              src: 'videos/pl17.mp4',
               type: 'video/mp4'
             }]
           });
@@ -1240,7 +1240,45 @@ var companyVideo = /*#__PURE__*/function () {
             muted: true,
             // poster: '../local/img/video_preview.png',
             sources: [{
-              src: 'videos/pv.mp4',
+              src: 'videos/pl18.mp4',
+              type: 'video/mp4'
+            }]
+          });
+        }, 300);
+      }
+
+      if (document.querySelector('#player20')) {
+        if (!document.getElementById('player20')) return;
+        setTimeout(function () {
+          _this.player = document.getElementById('player20');
+          Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player20', {
+            fluid: true,
+            controls: false,
+            autoplay: true,
+            aspectRatio: '16:9',
+            muted: true,
+            // poster: '../local/img/video_preview.png',
+            sources: [{
+              src: 'videos/pl19.mp4',
+              type: 'video/mp4'
+            }]
+          });
+        }, 300);
+      }
+
+      if (document.querySelector('#player21')) {
+        if (!document.getElementById('player21')) return;
+        setTimeout(function () {
+          _this.player = document.getElementById('player21');
+          Object(video_js__WEBPACK_IMPORTED_MODULE_0__["default"])('player21', {
+            fluid: true,
+            controls: false,
+            autoplay: true,
+            aspectRatio: '16:9',
+            muted: true,
+            // poster: '../local/img/video_preview.png',
+            sources: [{
+              src: 'videos/pl20.mp4',
               type: 'video/mp4'
             }]
           });
