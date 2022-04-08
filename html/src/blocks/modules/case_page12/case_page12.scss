@@ -1258,7 +1258,6 @@
 }
 @media all and (max-width: 370px) {
     body .case_tabs_new {
-        background: url("../img/bg_mob.png") 0 0 no-repeat !important;
-        background-size: 100%;
+        background: url("../img/bg_mob.png") 0 0 / 100% no-repeat !important;
     }
 }
