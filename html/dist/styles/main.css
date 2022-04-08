@@ -22537,8 +22537,12 @@ html.overflowed body {
     margin-top: -80px;
   }
 
+  .car_button .button {
+    display: inline-block;
+  }
+
   .case_tabs_new {
-    background-position: 0% -36% !important;
+    background-position: 0% -24% !important;
   }
 
   .cases-items-info-text {
@@ -22608,6 +22612,11 @@ html.overflowed body {
 }
 
 @media (max-width: 1023px) {
+  .first__fullscreen_frame {
+    position: relative;
+    margin-bottom: -1px;
+  }
+
   .case_page .job-stages-slide {
     position: relative;
     z-index: 1;
@@ -22653,7 +22662,7 @@ html.overflowed body {
   .case_tabs_new {
     padding-left: 20px;
     padding-right: 20px;
-    background: url("../img/bg_mob.png") 0 0 no-repeat, linear-gradient(180deg, #121423 27%, rgb(255, 255, 255) 14.8958333333vw, rgb(255, 255, 255) 155px);
+    background: url("../img/bg_mob.png") 0 0 no-repeat, linear-gradient(180deg, #121423 27%, rgb(255, 255, 255) 27%, rgb(255, 255, 255) 27%);
   }
 
   .case_page__about--l {
@@ -23612,6 +23621,11 @@ html.overflowed body {
 @media all and (max-width: 370px) {
   .case_tabs_new {
     background: url("../img/bg_mob.png") 0 0 no-repeat, linear-gradient(180deg, #121423 14%, rgb(255, 255, 255) 14.8958333333vw, rgb(255, 255, 255) 155px);
+  }
+
+  body .case_tabs_new {
+    background: url("../img/bg_mob.png") 0 0 no-repeat !important;
+    background-size: 100%;
   }
 }
 

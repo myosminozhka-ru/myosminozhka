@@ -1242,12 +1242,23 @@
     }
 }
 @media all and (max-width: 1023px) {
+    .car_button {
+        .button {
+            display: inline-block;
+        }
+    }
     .case_tabs_new {
-        background-position: 0% -36% !important;
+        background-position: 0% -24% !important;
     }
 }
 @media all and (max-width: 420px) {
     .case_tabs_new {
         background-position: 0% -24% !important;
+    }
+}
+@media all and (max-width: 370px) {
+    body .case_tabs_new {
+        background: url("../img/bg_mob.png") 0 0 no-repeat !important;
+        background-size: 100%;
     }
 }
