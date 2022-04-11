@@ -5218,6 +5218,7 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
 }
 
 .news-and-trends-form.send .news-and-trends-form__in .main-question-subtitle {
+  display: block;
   font-weight: normal !important;
   text-transform: unset !important;
 }
