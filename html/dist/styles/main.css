@@ -18862,6 +18862,10 @@ html.overflowed body {
     padding: 40px 20px !important;
   }
 
+  .news-and-trends-form.send .news-and-trends-form__in .main-question-subtitle span {
+    font-size: 20px;
+  }
+
   .news-and-trends-form.send .application-form__form-closer {
     right: 20px;
     top: 20px;
