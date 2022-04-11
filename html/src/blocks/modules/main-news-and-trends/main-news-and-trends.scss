@@ -429,6 +429,9 @@
                 }
             }
         }
+        .application-form__form-closer {
+            display: none;
+        }
         &.send {
             position: fixed;
             top: 0;
@@ -457,6 +460,17 @@
                 .title, .main-question-subtitle {
                     color: #fff;
                 }
+            }
+            .application-form__form-closer {
+                display: block;
+                position: absolute;
+                top: vw(20);
+                right: vw(20);
+                width: vw(20);
+                height: vw(20);
+                font-size: 0;
+                cursor: pointer;
+                z-index: 10;
             }
         }
     }

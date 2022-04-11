@@ -5178,6 +5178,10 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
   color: #FF4978;
 }
 
+.news-and-trends-form .application-form__form-closer {
+  display: none;
+}
+
 .news-and-trends-form.send {
   position: fixed;
   top: 0;
@@ -5207,6 +5211,18 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
 .news-and-trends-form.send .news-and-trends-form__in .title,
 .news-and-trends-form.send .news-and-trends-form__in .main-question-subtitle {
   color: #fff;
+}
+
+.news-and-trends-form.send .application-form__form-closer {
+  display: block;
+  position: absolute;
+  top: 1.0416666667vw;
+  right: 1.0416666667vw;
+  width: 1.0416666667vw;
+  height: 1.0416666667vw;
+  font-size: 0;
+  cursor: pointer;
+  z-index: 10;
 }
 
 .news-and-trends:not(.mobile) .news-and-trends-form {
