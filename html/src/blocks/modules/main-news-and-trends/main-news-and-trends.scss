@@ -461,17 +461,22 @@
                     color: #fff;
                 }
                 .title {
-                    text-transform: uppercase;
-                    font-weight: bold;
-                    @media all and (max-width: 640px) {
-                        margin-bottom: 10px !important;
-                    }
+                    display: none;
                 }
                 .main-question-subtitle {
                     font-weight: normal !important;
                     text-transform: unset !important;
                     @media all and (max-width: 640px) {
                         margin-bottom: 0px !important;
+                    }
+                    span {
+                        display: block;
+                        margin-bottom: 20px !important;
+                        text-transform: uppercase !important;
+                        font-weight: bold !important;
+                        @media all and (max-width: 640px) {
+                            margin-bottom: 10px !important;
+                        }
                     }
                 }
             }
