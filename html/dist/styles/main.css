@@ -5178,6 +5178,31 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
   color: #FF4978;
 }
 
+.news-and-trends-form.send {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 250;
+  padding: 2.6041666667vw 5.2083333333vw;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.news-and-trends-form.send .news-and-trends-form__in {
+  background: #121423;
+  overflow: auto;
+  max-height: 100%;
+  position: relative;
+  border-radius: 10px;
+  padding: 6.7708333333vw 2.8645833333vw 9.3229166667vw;
+}
+
 .news-and-trends:not(.mobile) .news-and-trends-form {
   width: 38.1770833333vw;
   padding-left: 2.6041666667vw;
@@ -10247,6 +10272,7 @@ html:root body.posts .post_info__code--in {
   overflow: auto;
   max-height: 100%;
   position: relative;
+  border-radius: 10px;
 }
 
 .application-form__form-closer {
@@ -18786,6 +18812,10 @@ html.overflowed body {
 
   .news-and-trends-button:not(:last-child) {
     margin-right: 20px;
+  }
+
+  .news-and-trends-form.send .news-and-trends-form__in {
+    padding: 40px 20px !important;
   }
 
   .hh_block {

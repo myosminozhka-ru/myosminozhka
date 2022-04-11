@@ -57,13 +57,15 @@
                 </button>
             </div>
             <form action="#" class="news-and-trends-form">
-                <div class="title">Подпишись на наши рассылки</div>
-                <div class="input">
-                    <input type="email" placeholder="E-mail:">
+                <div class="news-and-trends-form__in">
+                    <div class="title">Подпишись на наши рассылки</div>
+                    <div class="input">
+                        <input type="email" placeholder="E-mail:">
+                    </div>
+                    <button type="submit" class="button button--main button--main-border" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
+                        <div class="text">Подписаться</div>
+                    </button>
                 </div>
-                <button type="submit" class="button button--main button--main-border" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
-                    <div class="text">Подписаться</div>
-                </button>
             </form>
         </div>
     </div>

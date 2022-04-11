@@ -429,6 +429,32 @@
                 }
             }
         }
+        &.send {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background: rgba(0, 0, 0, .9);
+            z-index: 250;
+            padding: vw(50) vw(100);
+            transition: all .3s ease;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .news-and-trends-form__in {
+                background: $bgColor;
+                overflow: auto;
+                max-height: 100%;
+                position: relative;
+                border-radius: 10px;
+                padding: vw(130) vw(55) vw(179);
+                @media all and (max-width: 1023px) {
+                    padding: 40px 20px !important;
+                }
+            }
+        }
     }
     &:not(.mobile) &-form {
         width: vw(733);
