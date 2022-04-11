@@ -5231,7 +5231,7 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
   font-weight: bold !important;
 }
 
-.news-and-trends-form.send .application-form__form-closer {
+.news-and-trends-form.send .closer {
   display: block;
   position: absolute;
   top: 1.0416666667vw;
@@ -18866,7 +18866,7 @@ html.overflowed body {
     font-size: 20px;
   }
 
-  .news-and-trends-form.send .application-form__form-closer {
+  .news-and-trends-form.send .closer {
     right: 20px;
     top: 20px;
     width: 20px;
