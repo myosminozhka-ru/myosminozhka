@@ -5213,6 +5213,11 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
   color: #fff;
 }
 
+.news-and-trends-form.send .news-and-trends-form__in .title {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
 .news-and-trends-form.send .application-form__form-closer {
   display: block;
   position: absolute;

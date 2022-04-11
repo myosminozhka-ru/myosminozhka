@@ -460,6 +460,10 @@
                 .title, .main-question-subtitle {
                     color: #fff;
                 }
+                .title {
+                    text-transform: uppercase;
+                    font-weight: bold;
+                }
             }
             .application-form__form-closer {
                 display: block;
