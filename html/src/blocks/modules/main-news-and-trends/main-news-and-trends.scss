@@ -464,6 +464,10 @@
                     text-transform: uppercase;
                     font-weight: bold;
                 }
+                .main-question-subtitle {
+                    font-weight: normal !important;
+                    text-transform: unset !important;
+                }
             }
             .application-form__form-closer {
                 display: block;

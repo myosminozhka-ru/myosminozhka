@@ -5218,6 +5218,11 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
   font-weight: bold;
 }
 
+.news-and-trends-form.send .news-and-trends-form__in .main-question-subtitle {
+  font-weight: normal !important;
+  text-transform: unset !important;
+}
+
 .news-and-trends-form.send .application-form__form-closer {
   display: block;
   position: absolute;
