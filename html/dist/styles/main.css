@@ -16842,22 +16842,32 @@ body.company .company-ceo:not(.mobile) {
   z-index: 2;
 }
 
+.zorge9 .zorge_mores__imgs div:nth-child(1) {
+  margin-left: auto;
+}
+
+.zorge9 .zorge_mores__imgs div:nth-child(2) {
+  position: relative;
+  z-index: 2;
+  margin-top: -5.2083333333vw;
+}
+
+.zorge9 .zorge_mores__imgs div:nth-child(2):before {
+  position: absolute;
+  content: "";
+  width: 18.90625vw;
+  height: 8.6979166667vw;
+  background: url("data:image/svg+xml,%3Csvg width='363' height='167' viewBox='0 0 363 167' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.1' fill-rule='evenodd' clip-rule='evenodd' d='M177.254 0.886061C161.69 4.44334 148.966 16.9891 145.381 32.3103C143.042 42.3091 144.274 53.7802 148.683 63.0511C151.52 69.018 161.228 78.8843 167.013 81.682C176.36 86.202 188.122 87.4378 198.451 84.9845C213.209 81.4796 225.834 68.6553 229.284 53.6659C230.694 47.5402 230.499 36.6414 228.88 30.988C224.953 17.2851 214.394 6.03388 201.675 2.00039C194.919 -0.142551 183.943 -0.643363 177.254 0.886061ZM299.299 1.26782C286.798 2.8909 276.923 8.0157 266.945 18.0597C261.519 23.5203 259.477 26.2664 256.908 31.5523C252.505 40.6138 251.304 45.9465 251.304 56.4437C251.304 66.8735 252.51 72.292 256.779 81.0479C263.822 95.4929 276.104 106.262 290.34 110.474C295.786 112.086 307.603 112.354 312.312 110.972C314.021 110.47 315.493 110.14 315.584 110.237C315.674 110.335 309.036 121.129 300.833 134.225C292.63 147.32 284.869 159.731 283.586 161.805L281.253 165.575L293.654 165.557L306.054 165.538L329.293 128.214C357.484 82.936 357.087 83.6305 360.047 74.4048C365.994 55.8715 362.868 37.0216 351.484 22.7845C338.148 6.10293 319.925 -1.41006 299.299 1.26782ZM0.200111 84.0242L0.400966 165.178L11.2273 165.399L22.0535 165.619L22.256 111.213L22.4584 56.8049L68.8035 111.19C106.404 155.313 115.509 165.575 117.054 165.575H118.96V84.2226V2.87026H108.33H97.7011L97.4986 57.816L97.2961 112.763L51.7169 57.816L6.13748 2.87026H3.06837H0L0.200111 84.0242ZM197.58 22.3853C205.199 26.2108 209.553 33.6897 209.553 42.9512C209.553 52.1698 204.742 60.3629 197.137 64.0956C191.518 66.8537 183.11 66.7021 177.089 63.7345C169.057 59.7748 165.247 53.2571 165.198 43.3917C165.15 33.454 169.454 26.1354 177.648 22.2258C183.385 19.4892 191.947 19.5574 197.58 22.3853ZM320.943 25.733C341.931 35.6287 347.345 62.6734 331.678 79.3637C316.753 95.2627 290.981 93.1698 278.994 75.0842C275.148 69.2808 274.167 66.2886 273.586 58.5859C272.756 47.5712 277.672 36.3509 286.097 30.0292C294.124 24.0076 298.465 22.6496 308.529 23.0147C314.606 23.2353 316.544 23.6592 320.943 25.733ZM180.784 138.109C177.438 139.578 173.539 144.329 172.505 148.199C169.522 159.36 180.72 169.982 191.514 166.232C197.011 164.322 200.85 159.785 201.937 153.914C202.965 148.355 198.867 140.788 193.259 137.891C190.94 136.694 183.721 136.819 180.784 138.109Z' fill='white'/%3E%3C/svg%3E%0A") 50%/100% no-repeat;
+  left: 10.9375vw;
+  top: -8.3333333333vw;
+}
+
 .zorge9 .zorge_mores__imgs img {
   border: 10px solid #FFFFFF;
   filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
   border-radius: 20px;
   max-width: 54.84375vw;
   width: 100%;
-}
-
-.zorge9 .zorge_mores__imgs img:nth-child(1) {
-  margin-left: auto;
-}
-
-.zorge9 .zorge_mores__imgs img:nth-child(2) {
-  position: relative;
-  z-index: 2;
-  margin-top: -5.2083333333vw;
 }
 
 .zorge9 .zorge_mores__item {
@@ -21940,6 +21950,10 @@ html.overflowed body {
     padding-right: 20px;
   }
 
+  .zorge9 .zorge_mores__black:before {
+    height: 110px;
+  }
+
   .zorge9 .zorge_mores__img img {
     border: 5px solid #FFFFFF;
     filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
@@ -21975,9 +21989,20 @@ html.overflowed body {
     margin-top: 15px;
   }
 
+  .zorge9 .zorge_mores__imgs div {
+    margin-bottom: 30px;
+  }
+
+  .zorge9 .zorge_mores__imgs div:nth-child(2) {
+    margin-top: 0;
+  }
+
+  .zorge9 .zorge_mores__imgs div:nth-child(2):before {
+    display: none;
+  }
+
   .zorge9 .zorge_mores__imgs img {
     max-width: 100%;
-    margin-bottom: 30px;
     border: 5px solid #FFFFFF;
     filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
     border-radius: 15px;
@@ -21985,10 +22010,6 @@ html.overflowed body {
 
   .zorge9 .zorge_mores__imgs img:last-child {
     margin-bottom: 0;
-  }
-
-  .zorge9 .zorge_mores__imgs img:nth-child(2) {
-    margin-top: 0;
   }
 
   .zorge9 .zorge_mores__item {
@@ -22129,7 +22150,7 @@ html.overflowed body {
   }
 
   .zorge9 .block_yel {
-    padding-top: 110px;
+    padding-top: 125px;
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -22546,7 +22567,8 @@ html.overflowed body {
   }
 
   .case_tabs_new {
-    background-position: 0% -24% !important;
+    background: url("../img/bg_mob.png") 0 0 no-repeat, linear-gradient(180deg, #121423 37%, rgb(255, 255, 255) 27%, rgb(255, 255, 255) 37%) !important;
+    background-position: 0% 0% !important;
   }
 
   .cases-items-info-text {
@@ -22911,6 +22933,12 @@ html.overflowed body {
 
   .case_page__gl--title {
     margin-bottom: 130px;
+  }
+}
+
+@media all and (max-width: 1023px) and (max-width: 420px) {
+  .zorge9 .block_yel {
+    padding-top: 99px;
   }
 }
 
@@ -23591,7 +23619,7 @@ html.overflowed body {
   }
 
   .case_tabs_new {
-    background-position: 0% -24% !important;
+    background-position: 0% 5% !important;
   }
 }
 
