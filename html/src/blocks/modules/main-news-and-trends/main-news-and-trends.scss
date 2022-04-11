@@ -443,7 +443,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 100%;
+            width: 100% !important;
             .news-and-trends-form__in {
                 background: $bgColor;
                 overflow: auto;
@@ -491,6 +491,9 @@
     &.mobile &-form {
         margin-top: 50px;
         padding: 0 20px;
+        &.send {
+            padding: 0 !important;
+        }
         .title {
             margin-bottom: 30px;
             font-size: 20px;

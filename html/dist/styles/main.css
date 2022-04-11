@@ -5192,7 +5192,7 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 100% !important;
 }
 
 .news-and-trends-form.send .news-and-trends-form__in {
@@ -5246,6 +5246,10 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
 .news-and-trends.mobile .news-and-trends-form {
   margin-top: 50px;
   padding: 0 20px;
+}
+
+.news-and-trends.mobile .news-and-trends-form.send {
+  padding: 0 !important;
 }
 
 .news-and-trends.mobile .news-and-trends-form .title {
