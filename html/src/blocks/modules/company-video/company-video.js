@@ -286,7 +286,7 @@ const companyVideo = class companyVideo {
                     muted: true,
                     // poster: '../local/img/video_preview.png',
                     sources: [{
-                        src: 'videos/pl17.mp4',
+                        src: '../local/videos/pl17.mp4',
                         type: 'video/mp4'
                     }]
                 });
@@ -304,7 +304,7 @@ const companyVideo = class companyVideo {
                     muted: true,
                     // poster: '../local/img/video_preview.png',
                     sources: [{
-                        src: 'videos/medex.mp4',
+                        src: '../local/videos/medex.mp4',
                         type: 'video/mp4'
                     }]
                 });
@@ -322,7 +322,7 @@ const companyVideo = class companyVideo {
                     muted: true,
                     // poster: '../local/img/video_preview.png',
                     sources: [{
-                        src: 'videos/pl18.mp4',
+                        src: '../local/videos/pl18.mp4',
                         type: 'video/mp4'
                     }]
                 });
@@ -340,7 +340,7 @@ const companyVideo = class companyVideo {
                     muted: true,
                     // poster: '../local/img/video_preview.png',
                     sources: [{
-                        src: 'videos/pl19.mp4',
+                        src: '../local/videos/pl19.mp4',
                         type: 'video/mp4'
                     }]
                 });
@@ -358,7 +358,7 @@ const companyVideo = class companyVideo {
                     muted: true,
                     // poster: '../local/img/video_preview.png',
                     sources: [{
-                        src: 'videos/pl20.mp4',
+                        src: '../local/videos/pl20.mp4',
                         type: 'video/mp4'
                     }]
                 });
