@@ -443,6 +443,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            width: 100%;
             .news-and-trends-form__in {
                 background: $bgColor;
                 overflow: auto;
@@ -452,6 +453,9 @@
                 padding: vw(130) vw(55) vw(179);
                 @media all and (max-width: 1023px) {
                     padding: 40px 20px !important;
+                }
+                .title, .main-question-subtitle {
+                    color: #fff;
                 }
             }
         }

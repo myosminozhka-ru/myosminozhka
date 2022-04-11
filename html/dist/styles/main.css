@@ -5192,6 +5192,7 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 .news-and-trends-form.send .news-and-trends-form__in {
@@ -5201,6 +5202,11 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
   position: relative;
   border-radius: 10px;
   padding: 6.7708333333vw 2.8645833333vw 9.3229166667vw;
+}
+
+.news-and-trends-form.send .news-and-trends-form__in .title,
+.news-and-trends-form.send .news-and-trends-form__in .main-question-subtitle {
+  color: #fff;
 }
 
 .news-and-trends:not(.mobile) .news-and-trends-form {
