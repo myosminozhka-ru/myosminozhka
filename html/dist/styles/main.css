@@ -5224,6 +5224,7 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
 }
 
 .news-and-trends-form.send .news-and-trends-form__in .main-question-subtitle span {
+  font-size: 2.0833333333vw;
   display: block;
   margin-bottom: 20px !important;
   text-transform: uppercase !important;
