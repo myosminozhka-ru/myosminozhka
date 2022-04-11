@@ -5178,7 +5178,7 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
   color: #FF4978;
 }
 
-.news-and-trends-form .application-form__form-closer {
+.news-and-trends-form .closer {
   display: none;
 }
 
