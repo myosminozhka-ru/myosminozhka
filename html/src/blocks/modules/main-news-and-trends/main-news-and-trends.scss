@@ -463,10 +463,16 @@
                 .title {
                     text-transform: uppercase;
                     font-weight: bold;
+                    @media all and (max-width: 640px) {
+                        margin-bottom: 10px !important;
+                    }
                 }
                 .main-question-subtitle {
                     font-weight: normal !important;
                     text-transform: unset !important;
+                    @media all and (max-width: 640px) {
+                        margin-bottom: 0px !important;
+                    }
                 }
             }
             .application-form__form-closer {
@@ -479,6 +485,14 @@
                 font-size: 0;
                 cursor: pointer;
                 z-index: 10;
+                @media all and (max-width: 1023px) {
+                    right: 20px;
+                    top: 20px;
+                    width: 20px;
+                    height: 20px;
+                    padding: 4px;
+                    box-sizing: border-box;
+                }
             }
         }
     }

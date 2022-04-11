@@ -18854,6 +18854,15 @@ html.overflowed body {
     padding: 40px 20px !important;
   }
 
+  .news-and-trends-form.send .application-form__form-closer {
+    right: 20px;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+    padding: 4px;
+    box-sizing: border-box;
+  }
+
   .hh_block {
     margin-bottom: 20px;
   }
@@ -23195,6 +23204,14 @@ html.overflowed body {
 @media all and (max-width: 640px) {
   .main-question-tentacle {
     bottom: -333px;
+  }
+
+  .news-and-trends-form.send .news-and-trends-form__in .title {
+    margin-bottom: 10px !important;
+  }
+
+  .news-and-trends-form.send .news-and-trends-form__in .main-question-subtitle {
+    margin-bottom: 0px !important;
   }
 
   .footer-tentacle {
