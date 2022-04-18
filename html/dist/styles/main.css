@@ -3072,8 +3072,8 @@ a:hover {
 }
 
 body .en-version .footer:not(.mobile) .footer-in {
-  grid-template-columns: 33.28125vw 5.78125vw auto 13.3333333333vw 5.1041666667vw 9.6354166667vw 4.1666666667vw 8.28125vw 4.4270833333vw;
-  grid-template-rows: auto 10.2083333333vw 4.1666666667vw auto 2.3958333333vw auto;
+  grid-template-columns: 33.28125vw 5.78125vw auto 13.3333333333vw 5.1041666667vw 9.6354166667vw 4.1666666667vw 8.28125vw 4.4270833333vw !important;
+  grid-template-rows: auto 10.2083333333vw 4.1666666667vw auto 2.3958333333vw auto !important;
 }
 
 body .en-version .footer:not(.mobile) .footer-phones {
@@ -3093,7 +3093,7 @@ body .en-version .footer:not(.mobile) .footer-bookkeeping {
 }
 
 body .en-version .footer:not(.mobile) .footer-bookkeeping .text {
-  font-weight: 900;
+  font-weight: 700;
 }
 
 body .en-version .footer:not(.mobile) .footer-bookkeeping .text a {
@@ -3106,7 +3106,7 @@ body .en-version .footer:not(.mobile) .footer-address {
 }
 
 body .en-version .footer:not(.mobile) .footer-address .text {
-  font-style: 1.25vw;
+  font-style: 1.25vw !important;
 }
 
 body .en-version .footer:not(.mobile) .footer-socials {
