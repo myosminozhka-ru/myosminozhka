@@ -3108,7 +3108,7 @@ body .en-version .footer:not(.mobile) .footer-address {
 }
 
 body .en-version .footer:not(.mobile) .footer-address .text {
-  font-style: 1.25vw !important;
+  font-size: 1.25vw !important;
 }
 
 body .en-version .footer:not(.mobile) .footer-socials {
