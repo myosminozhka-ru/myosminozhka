@@ -3120,6 +3120,10 @@ body .en-version .footer-bank {
   display: none;
 }
 
+body .en-version .footer:not(.mobile) .footer-presentation {
+  font-size: 1.3020833333vw;
+}
+
 .header {
   position: fixed;
   top: 0;

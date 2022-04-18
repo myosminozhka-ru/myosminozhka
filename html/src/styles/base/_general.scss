@@ -300,4 +300,7 @@ body .en-version {
   .footer-bank {
     display: none;
   }
+  .footer:not(.mobile) .footer-presentation {
+    font-size: vw(25);
+  }
 }
