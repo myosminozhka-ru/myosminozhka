@@ -301,6 +301,8 @@ body .en-version {
     display: none;
   }
   .footer:not(.mobile) .footer-presentation {
-    font-size: vw(25);
+    a {
+      font-size: vw(25);
+    }
   }
 }

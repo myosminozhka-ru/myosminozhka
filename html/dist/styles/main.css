@@ -3120,7 +3120,7 @@ body .en-version .footer-bank {
   display: none;
 }
 
-body .en-version .footer:not(.mobile) .footer-presentation {
+body .en-version .footer:not(.mobile) .footer-presentation a {
   font-size: 1.3020833333vw;
 }
 
