@@ -3079,6 +3079,8 @@ body .en-version .footer:not(.mobile) .footer-in {
 body .en-version .footer:not(.mobile) .footer-phones {
   grid-row-start: 2;
   grid-row-end: 3;
+  grid-column-start: 4;
+  grid-column-end: 7;
   display: flex;
   align-items: flex-end;
 }
