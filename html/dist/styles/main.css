@@ -3071,6 +3071,59 @@ a:hover {
   outline: none !important;
 }
 
+body .en-version .footer:not(.mobile) .footer-in {
+  grid-template-columns: 33.28125vw 5.78125vw auto 13.3333333333vw 5.1041666667vw 9.6354166667vw 4.1666666667vw 8.28125vw 4.4270833333vw !important;
+  grid-template-rows: auto 10.2083333333vw 4.1666666667vw auto 2.3958333333vw auto !important;
+}
+
+body .en-version .footer:not(.mobile) .footer-phones {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 4;
+  grid-column-end: 7;
+  display: flex;
+  align-items: flex-end;
+}
+
+body .en-version .footer:not(.mobile) .footer-phones a {
+  line-height: 9.53125vw;
+}
+
+body .en-version .footer:not(.mobile) .footer-bookkeeping {
+  grid-row-start: 4;
+  grid-row-end: 5;
+}
+
+body .en-version .footer:not(.mobile) .footer-bookkeeping .text {
+  font-weight: 700;
+}
+
+body .en-version .footer:not(.mobile) .footer-bookkeeping .text a {
+  display: block;
+  font-weight: normal;
+}
+
+body .en-version .footer:not(.mobile) .footer-address {
+  grid-row-start: 6 !important;
+}
+
+body .en-version .footer:not(.mobile) .footer-address .text {
+  font-size: 1.25vw !important;
+}
+
+body .en-version .footer:not(.mobile) .footer-socials {
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+
+body .en-version .footer-bank {
+  display: none;
+}
+
+body .en-version .footer:not(.mobile) .footer-presentation a {
+  font-size: 1.3020833333vw;
+}
+
 .header {
   position: fixed;
   top: 0;
