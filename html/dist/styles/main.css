@@ -23585,7 +23585,7 @@ html.overflowed body {
 
 @media all and (max-width: 580px) {
   .footer.mobile .footer-menu-first {
-    padding-top: 30px;
+    padding-top: 40px;
   }
 
   .case_page__in.mobile .case_page__style--cl:first-child {
