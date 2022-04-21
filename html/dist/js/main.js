@@ -315,6 +315,24 @@ var casesUpdated = /*#__PURE__*/function () {
       });
     }
   }, {
+    key: "medex",
+    value: function medex() {
+      var figure = jquery__WEBPACK_IMPORTED_MODULE_1___default()(".medex");
+      var vid = figure.find("video");
+      [].forEach.call(figure, function (item, index) {
+        item.addEventListener('mouseover', hoverVideo.bind(item, index), false);
+        item.addEventListener('mouseout', hideVideo.bind(item, index), false);
+      });
+
+      function hoverVideo(index, e) {
+        vid[index].play();
+      }
+
+      function hideVideo(index, e) {
+        vid[index].pause();
+      }
+    }
+  }, {
     key: "setParalax",
     value: function setParalax() {
       document.querySelectorAll('.cases__item[data-is_paralaxed]').forEach(function (item) {
@@ -355,6 +373,7 @@ var casesUpdated = /*#__PURE__*/function () {
     value: function init() {
       if (!document.querySelector('.cases__items') || window.innerWidth <= 1024) return;
       this.bioline();
+      this.medex();
       this.setParalax();
       this.duplicateTitle(); // this.medex();
     }

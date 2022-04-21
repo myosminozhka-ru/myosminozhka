@@ -22,6 +22,23 @@ const casesUpdated = class CasesUpdated {
             })
         })
     }
+    medex() {
+        var figure = $(".medex");
+        var vid = figure.find("video");
+        
+        [].forEach.call(figure, function (item,index) {
+            item.addEventListener('mouseover', hoverVideo.bind(item,index), false);
+            item.addEventListener('mouseout', hideVideo.bind(item,index), false);
+        });
+        
+        function hoverVideo(index, e) {
+            vid[index].play(); 
+        }
+        
+        function hideVideo(index, e) {
+            vid[index].pause(); 
+        }
+    }
     setParalax() {
         document.querySelectorAll('.cases__item[data-is_paralaxed]').forEach(item => {
             item.addEventListener('mousemove', (event) => {
@@ -58,6 +75,7 @@ const casesUpdated = class CasesUpdated {
     init() {
         if (!document.querySelector('.cases__items') || window.innerWidth <= 1024) return;
         this.bioline();
+        this.medex();
         this.setParalax();
         this.duplicateTitle();
         // this.medex();
