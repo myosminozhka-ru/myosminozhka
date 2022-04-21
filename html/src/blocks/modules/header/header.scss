@@ -8,6 +8,11 @@
     bottom: 0;
     display: flex;
     flex-direction: column;
+    @media all and (max-width: 768px) {
+      img {
+        width: 38px !important;
+      }
+    }
   }
   
   &-blur {
