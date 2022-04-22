@@ -20,7 +20,7 @@
     transition: all .6s ease;
 }
 .frost:not(.mobile):hover .frost__image .propeller {
-    animation: propeller .2s infinite linear;
+    animation: propeller .29s infinite linear;
 }
 .frost:hover .frost__overlay,
 .frost.mobile .frost__overlay {
@@ -28,6 +28,7 @@
 }
 .frost.mobile .frost__image {
     width: 142px;
+    min-width: 142px;
 }
 
 @keyframes propeller {

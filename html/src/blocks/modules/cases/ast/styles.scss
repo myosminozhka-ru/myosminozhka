@@ -8,10 +8,7 @@
     left: 50%;
     top: calc(50% - #{vw(50)});
     transform: translateX(-50%) translateY(-50%) rotate(0deg);
-    -ms-transform:  translateX(-50%) translateY(-50%) rotate(0deg);
-    -webkit-transform:  translateX(-50%) translateY(-50%) rotate(0deg);
-    -moz-transform:  translateX(-50%) translateY(-50%) rotate(0deg);
-    -o-transform:  translateX(-50%) translateY(-50%) rotate(0deg);
+    transform-box: fill-box; transform-origin: 50% 50%;
     transition: transform .6s linear, width .6s linear, height .6s linear;
     z-index: 4;
 }
@@ -22,10 +19,7 @@
     left: 50%;
     top: calc(50% - #{vw(50)});
     transform: translateX(-50%) translateY(-50%) rotate(0deg);
-    -ms-transform:  translateX(-50%) translateY(-50%) rotate(0deg);
-    -webkit-transform:  translateX(-50%) translateY(-50%) rotate(0deg);
-    -moz-transform:  translateX(-50%) translateY(-50%) rotate(0deg);
-    -o-transform:  translateX(-50%) translateY(-50%) rotate(0deg);
+    transform-box: fill-box; transform-origin: 50% 50%;
     transition: transform .6s linear, width .6s linear, height .6s linear, opacity .6s linear;
     opacity: 0;
 }
@@ -36,10 +30,7 @@
     left: 50%;
     top: calc(50% - #{vw(50)});
     transform: translateX(-50%) translateY(-50%) rotate(0deg);
-    -ms-transform:  translateX(-50%) translateY(-50%) rotate(0deg);
-    -webkit-transform:  translateX(-50%) translateY(-50%) rotate(0deg);
-    -moz-transform:  translateX(-50%) translateY(-50%) rotate(0deg);
-    -o-transform:  translateX(-50%) translateY(-50%) rotate(0deg);
+    transform-box: fill-box; transform-origin: 50% 50%;
     transition: transform .6s linear, width .6s linear, height .6s linear, opacity .6s linear;
     opacity: 0;
 }
@@ -50,10 +41,7 @@
     left: 50%;
     top: calc(50% - #{vw(50)});
     transform: translateX(-50%) translateY(-50%) rotate(0deg);
-    -ms-transform:  translateX(-50%) translateY(-50%) rotate(0deg);
-    -webkit-transform:  translateX(-50%) translateY(-50%) rotate(0deg);
-    -moz-transform:  translateX(-50%) translateY(-50%) rotate(0deg);
-    -o-transform:  translateX(-50%) translateY(-50%) rotate(0deg);
+    transform-box: fill-box; transform-origin: 50% 50%;
     transition: transform .6s linear, width .6s linear, height .6s linear, opacity .6s linear;
     opacity: 0;
 }
@@ -61,30 +49,21 @@
     width: vw(195);
     height: vw(195);
     transform: translateX(-50%) translateY(-50%) rotate(8000deg);
-    -ms-transform:  translateX(-50%) translateY(-50%) rotate(8000deg);
-    -webkit-transform:  translateX(-50%) translateY(-50%) rotate(8000deg);
-    -moz-transform:  translateX(-50%) translateY(-50%) rotate(8000deg);
-    -o-transform:  translateX(-50%) translateY(-50%) rotate(8000deg);
+    transform-box: fill-box; transform-origin: 50% 50%;
     transition: transform 60s linear, width .6s linear, height .6s linear;
 }
 .ast.mobile .ast__image {
     width: 67px;
     height: 67px;
     transform: translateX(-50%) translateY(-50%) rotate(0);
-    -ms-transform:  translateX(-50%) translateY(-50%) rotate(0);
-    -webkit-transform:  translateX(-50%) translateY(-50%) rotate(0);
-    -moz-transform:  translateX(-50%) translateY(-50%) rotate(0);
-    -o-transform:  translateX(-50%) translateY(-50%) rotate(0);
+    transform-box: fill-box; transform-origin: 50% 50%;
     opacity: 1;
 }
 .ast:not(.mobile):hover .ast__image-ship {
     width: vw(317);
     height: vw(317);
     transform: translateX(-50%) translateY(-50%) rotate(-8000deg);
-    -ms-transform:  translateX(-50%) translateY(-50%) rotate(-8000deg);
-    -webkit-transform:  translateX(-50%) translateY(-50%) rotate(-8000deg);
-    -moz-transform:  translateX(-50%) translateY(-50%) rotate(-8000deg);
-    -o-transform:  translateX(-50%) translateY(-50%) rotate(-8000deg);
+    transform-box: fill-box; transform-origin: 50% 50%;
     transition: transform 60s linear, width .6s linear, height .6s linear;
     opacity: 1;
 }  
@@ -92,20 +71,13 @@
     width: 109px;
     height: 109px;
     transform: translateX(-50%) translateY(-50%) rotate(0);
-    -ms-transform:  translateX(-50%) translateY(-50%) rotate(0);
-    -webkit-transform:  translateX(-50%) translateY(-50%) rotate(0);
-    -moz-transform:  translateX(-50%) translateY(-50%) rotate(0);
-    -o-transform:  translateX(-50%) translateY(-50%) rotate(0);
     opacity: 1;
 }
 .ast:not(.mobile):hover .ast__image-car {
     width: vw(414);
     height: vw(414);
     transform: translateX(-50%) translateY(-50%) rotate(-8000deg);
-    -ms-transform:  translateX(-50%) translateY(-50%) rotate(-8000deg);
-    -webkit-transform:  translateX(-50%) translateY(-50%) rotate(-8000deg);
-    -moz-transform:  translateX(-50%) translateY(-50%) rotate(-8000deg);
-    -o-transform:  translateX(-50%) translateY(-50%) rotate(-8000deg);
+    transform-box: fill-box; transform-origin: 50% 50%;
     transition: transform 80s linear, width .6s linear, height .6s linear;
     opacity: 1;
 }  
@@ -113,20 +85,14 @@
     width: 139px;
     height: 139px;
     transform: translateX(-50%) translateY(-50%) rotate(0);
-    -ms-transform:  translateX(-50%) translateY(-50%) rotate(0);
-    -webkit-transform:  translateX(-50%) translateY(-50%) rotate(0);
-    -moz-transform:  translateX(-50%) translateY(-50%) rotate(0);
-    -o-transform:  translateX(-50%) translateY(-50%) rotate(0);
+    transform-box: fill-box; transform-origin: 50% 50%;
     opacity: 1;
 }
 .ast:not(.mobile):hover .ast__image-airplane {
     width: vw(493);
     height: vw(493);
     transform: translateX(-50%) translateY(-50%) rotate(-8000deg);
-    -ms-transform:  translateX(-50%) translateY(-50%) rotate(-8000deg);
-    -webkit-transform:  translateX(-50%) translateY(-50%) rotate(-8000deg);
-    -moz-transform:  translateX(-50%) translateY(-50%) rotate(-8000deg);
-    -o-transform:  translateX(-50%) translateY(-50%) rotate(-8000deg);
+    transform-box: fill-box; transform-origin: 50% 50%;
     transition: transform 50s linear, width .6s linear, height .6s linear;
     opacity: 1;
 }  
@@ -134,9 +100,6 @@
     width: 169px;
     height: 169px;
     transform: translateX(-50%) translateY(-50%) rotate(0);
-    -ms-transform:  translateX(-50%) translateY(-50%) rotate(0);
-    -webkit-transform:  translateX(-50%) translateY(-50%) rotate(0);
-    -moz-transform:  translateX(-50%) translateY(-50%) rotate(0);
-    -o-transform:  translateX(-50%) translateY(-50%) rotate(0);
+    transform-box: fill-box; transform-origin: 50% 50%;
     opacity: 1;
 }
