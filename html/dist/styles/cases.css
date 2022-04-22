@@ -1099,6 +1099,7 @@
 }
 .cases__wrapper .ast__image-ship,
 .main-cases .ast__image-ship {
+  font-size: 0;
   width: 10.4166666667vw;
   height: 10.4166666667vw;
   position: absolute;
@@ -1122,6 +1123,7 @@
   transform-origin: 50% 50%;
   transition: transform 0.6s linear, width 0.6s linear, height 0.6s linear, opacity 0.6s linear;
   opacity: 0;
+  font-size: 0;
 }
 .cases__wrapper .ast__image-airplane,
 .main-cases .ast__image-airplane {
@@ -1135,6 +1137,7 @@
   transform-origin: 50% 50%;
   transition: transform 0.6s linear, width 0.6s linear, height 0.6s linear, opacity 0.6s linear;
   opacity: 0;
+  font-size: 0;
 }
 .cases__wrapper .ast:not(.mobile):hover .ast__image,
 .main-cases .ast:not(.mobile):hover .ast__image {
@@ -1455,6 +1458,19 @@
 .cases__wrapper .frost,
 .main-cases .frost {
   background: url("../img/frost_bg.jpg") 50% 50%/cover no-repeat;
+}
+.cases__wrapper .frost .mob_cond,
+.main-cases .frost .mob_cond {
+  display: none;
+}
+.cases__wrapper .frost.mobile svg,
+.main-cases .frost.mobile svg {
+  display: none;
+}
+.cases__wrapper .frost.mobile .mob_cond,
+.main-cases .frost.mobile .mob_cond {
+  display: block;
+  max-width: 100%;
 }
 .cases__wrapper .frost__overlay,
 .main-cases .frost__overlay {

@@ -1,5 +1,17 @@
 .frost {
     background: url('../img/frost_bg.jpg') 50% 50% / cover no-repeat;
+    .mob_cond {
+        display: none;
+    }
+    &.mobile {
+        svg {
+            display: none;
+        }
+        .mob_cond {
+            display: block;
+            max-width: 100%;
+        }
+    }
 }
 .frost__overlay {
     background: linear-gradient(0deg, #EEF6F9, #EEF6F9), #DD2F44;
