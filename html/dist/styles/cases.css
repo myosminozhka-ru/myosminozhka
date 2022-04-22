@@ -1691,6 +1691,7 @@
   top: 0;
   transition: all 0.6s ease;
   opacity: 1;
+  width: 100%;
 }
 .cases__wrapper .selis:hover .selis__image,
 .cases__wrapper .selis.mobile .selis__image,
