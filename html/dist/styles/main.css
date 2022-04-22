@@ -6596,6 +6596,7 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
   flex-wrap: nowrap;
   overflow: auto;
   scrollbar-width: none;
+  justify-content: center;
 }
 
 .company-raiting-items::-webkit-scrollbar {
