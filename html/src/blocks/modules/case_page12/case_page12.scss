@@ -1269,18 +1269,4 @@
             display: inline-block;
         }
     }
-    .case_tabs_new {
-        background: url("../img/bg_mob.png") 0 0 no-repeat, linear-gradient(180deg, #121423 37%, rgb(255, 255, 255) 27%, rgb(255, 255, 255) 37%) !important;
-        background-position: 0% 0% !important;
-    }
-}
-@media all and (max-width: 420px) {
-    .case_tabs_new {
-        background-position: 0% 5% !important;
-    }
-}
-@media all and (max-width: 370px) {
-    body .case_tabs_new {
-        background: url("../img/bg_mob.png") 0 0 / 100% no-repeat !important;
-    }
 }

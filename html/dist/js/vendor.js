@@ -9893,15 +9893,16 @@ exports.ParseError = ParseError;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*!
- * Accordion v3.2.0
- * Simple accordion created in pure Javascript.
+/**
+ * Accordion v3.3.0
+ * Lightweight and accessible accordion module created in pure Javascript
  * https://github.com/michu2k/Accordion
  *
  * Copyright (c) Michał Strumpf
  * Published under MIT License
-*/
-!function(e){var t=0,n=function e(n,i){var s=this,r=this,o=!1;if(Array.isArray(n))return!!n.length&&n.map((function(t){return new e(t,i)}));var a={init:function(){this.options=Object.assign({duration:600,ariaEnabled:!0,collapse:!0,showMultiple:!1,openOnInit:[],elementClass:"ac",triggerClass:"ac-trigger",panelClass:"ac-panel",activeClass:"is-active",beforeOpen:function(){},onOpen:function(){},beforeClose:function(){},onClose:function(){}},i);var e="string"==typeof n;this.container=e?document.querySelector(n):n,this.createDefinitions(),r.attachEvents()},createDefinitions:function(){var e=this,n=this.options,i=n.elementClass,s=n.openOnInit;this.elements=Array.from(this.container.childNodes).filter((function(e){return e.classList&&e.classList.contains(i)})),this.firstElement=this.elements[0],this.lastElement=this.elements[this.elements.length-1],this.elements.filter((function(e){return!e.classList.contains("js-enabled")})).map((function(n,i){return n.classList.add("js-enabled"),e.generateIDs(n),e.setARIA(n),e.setTransition(n),t++,s.includes(i)?e.showElement(n,!1):e.closeElement(n,!1)}))},setTransition:function(e){var t=arguments.length>1&&void 0!==arguments[1]&&arguments[1],n=this.options,i=n.duration,s=n.panelClass,r=e.querySelector(".".concat(s)),o=c("transitionDuration");r.style[o]=t?null:"".concat(i,"ms")},generateIDs:function(e){var n=this.options,i=n.triggerClass,s=n.panelClass,r=e.querySelector(".".concat(i)),o=e.querySelector(".".concat(s));e.setAttribute("id","ac-".concat(t)),r.setAttribute("id","ac-trigger-".concat(t)),o.setAttribute("id","ac-panel-".concat(t))},removeIDs:function(e){var t=this.options,n=t.triggerClass,i=t.panelClass,s=e.querySelector(".".concat(n)),r=e.querySelector(".".concat(i));e.removeAttribute("id"),s.removeAttribute("id"),r.removeAttribute("id")},setARIA:function(e){var n=this.options,i=n.ariaEnabled,s=n.triggerClass,r=n.panelClass;if(i){var o=e.querySelector(".".concat(s)),a=e.querySelector(".".concat(r));o.setAttribute("role","button"),o.setAttribute("aria-controls","ac-panel-".concat(t)),o.setAttribute("aria-disabled",!1),o.setAttribute("aria-expanded",!1),a.setAttribute("role","region"),a.setAttribute("aria-labelledby","ac-trigger-".concat(t))}},updateARIA:function(e,t){var n=t.ariaExpanded,i=t.ariaDisabled,s=this.options,r=s.ariaEnabled,o=s.triggerClass;if(r){var a=e.querySelector(".".concat(o));a.setAttribute("aria-expanded",n),a.setAttribute("aria-disabled",i)}},removeARIA:function(e){var t=this.options,n=t.ariaEnabled,i=t.triggerClass,s=t.panelClass;if(n){var r=e.querySelector(".".concat(i)),o=e.querySelector(".".concat(s));r.removeAttribute("role"),r.removeAttribute("aria-controls"),r.removeAttribute("aria-disabled"),r.removeAttribute("aria-expanded"),o.removeAttribute("role"),o.removeAttribute("aria-labelledby")}},focus:function(e,t){e.preventDefault();var n=this.options.triggerClass;t.querySelector(".".concat(n)).focus()},focusFirstElement:function(e){this.focus(e,this.firstElement),this.currFocusedIdx=0},focusLastElement:function(e){this.focus(e,this.lastElement),this.currFocusedIdx=this.elements.length-1},focusNextElement:function(e){var t=this.currFocusedIdx+1;if(t>this.elements.length-1)return this.focusFirstElement(e);this.focus(e,this.elements[t]),this.currFocusedIdx=t},focusPrevElement:function(e){var t=this.currFocusedIdx-1;if(t<0)return this.focusLastElement(e);this.focus(e,this.elements[t]),this.currFocusedIdx=t},showElement:function(e){var t=!(arguments.length>1&&void 0!==arguments[1])||arguments[1],n=this.options,i=n.panelClass,s=n.activeClass,r=n.collapse,o=n.beforeOpen,a=e.querySelector(".".concat(i)),c=a.scrollHeight;e.classList.add(s),t&&o(e),requestAnimationFrame((function(){requestAnimationFrame((function(){a.style.height=t?"".concat(c,"px"):"auto"}))})),this.updateARIA(e,{ariaExpanded:!0,ariaDisabled:!r})},closeElement:function(e){var t=!(arguments.length>1&&void 0!==arguments[1])||arguments[1],n=this.options,i=n.panelClass,s=n.activeClass,r=n.beforeClose,o=e.querySelector(".".concat(i)),a=o.scrollHeight;e.classList.remove(s),t?(r(e),requestAnimationFrame((function(){o.style.height="".concat(a,"px"),requestAnimationFrame((function(){o.style.height=0}))})),this.updateARIA(e,{ariaExpanded:!1,ariaDisabled:!1})):o.style.height=0},toggleElement:function(e){var t=this.options,n=t.activeClass,i=t.collapse,s=e.classList.contains(n);if(!s||i)return s?this.closeElement(e):this.showElement(e)},closeElements:function(){var e=this,t=this.options,n=t.activeClass;t.showMultiple||this.elements.map((function(t,i){t.classList.contains(n)&&i!=e.currFocusedIdx&&e.closeElement(t)}))},handleClick:function(e){var t=this,n=e.currentTarget;this.elements.map((function(i,s){i.contains(n)&&"A"!==e.target.nodeName&&(t.currFocusedIdx=s,t.closeElements(),t.focus(e,i),t.toggleElement(i))}))},handleKeydown:function(e){var t=38,n=40,i=36,s=35;switch(e.keyCode){case t:return this.focusPrevElement(e);case n:return this.focusNextElement(e);case i:return this.focusFirstElement(e);case s:return this.focusLastElement(e);default:return null}},handleTransitionEnd:function(e){if("height"===e.propertyName){var t=this.options,n=t.onOpen,i=t.onClose,s=e.currentTarget,r=parseInt(s.style.height),o=this.elements.find((function(e){return e.contains(s)}));r>0?(s.style.height="auto",n(o)):i(o)}}};this.attachEvents=function(){if(!o){var e=a.options,t=e.triggerClass,n=e.panelClass;a.handleClick=a.handleClick.bind(a),a.handleKeydown=a.handleKeydown.bind(a),a.handleTransitionEnd=a.handleTransitionEnd.bind(a),a.elements.map((function(e){var i=e.querySelector(".".concat(t)),s=e.querySelector(".".concat(n));i.addEventListener("click",a.handleClick),i.addEventListener("keydown",a.handleKeydown),s.addEventListener("webkitTransitionEnd",a.handleTransitionEnd),s.addEventListener("transitionend",a.handleTransitionEnd)})),o=!0}},this.detachEvents=function(){if(o){var e=a.options,t=e.triggerClass,n=e.panelClass;a.elements.map((function(e){var i=e.querySelector(".".concat(t)),s=e.querySelector(".".concat(n));i.removeEventListener("click",a.handleClick),i.removeEventListener("keydown",a.handleKeydown),s.removeEventListener("webkitTransitionEnd",a.handleTransitionEnd),s.removeEventListener("transitionend",a.handleTransitionEnd)})),o=!1}},this.toggle=function(e){var t=a.elements.find((function(t,n){return n===e}));t&&a.toggleElement(t)},this.open=function(e){var t=a.elements.find((function(t,n){return n===e}));t&&a.showElement(t)},this.openAll=function(){a.elements.map((function(e){return a.showElement(e,!1)}))},this.close=function(e){var t=a.elements.find((function(t,n){return n===e}));t&&a.closeElement(t)},this.closeAll=function(){a.elements.map((function(e){return a.closeElement(e,!1)}))},this.destroy=function(){s.detachEvents(),s.openAll(),a.elements.map((function(e){a.removeIDs(e),a.removeARIA(e),a.setTransition(e,!0)})),o=!0},this.update=function(){a.createDefinitions(),s.detachEvents(),s.attachEvents()};var c=function(e){return"string"==typeof document.documentElement.style[e]?e:(e=l(e),e="webkit".concat(e))},l=function(e){return e.charAt(0).toUpperCase()+e.slice(1)};a.init()}; true&&void 0!==module.exports?module.exports=n:e.Accordion=n}(window);
+ */
+
+!function(e){var t=0,n=function e(n,i){var s=this,o=this,r=!1;if(Array.isArray(n))return!!n.length&&n.map((function(t){return new e(t,i)}));var a={init:function(){this.options=Object.assign({duration:600,ariaEnabled:!0,collapse:!0,showMultiple:!1,onlyChildNodes:!0,openOnInit:[],elementClass:"ac",triggerClass:"ac-trigger",panelClass:"ac-panel",activeClass:"is-active",beforeOpen:function(){},onOpen:function(){},beforeClose:function(){},onClose:function(){}},i);var e="string"==typeof n;this.container=e?document.querySelector(n):n,this.createDefinitions(),o.attachEvents()},createDefinitions:function(){var e=this,n=this.options,i=n.elementClass,s=n.openOnInit,o=n.onlyChildNodes?this.container.childNodes:this.container.querySelectorAll(".".concat(i));this.elements=Array.from(o).filter((function(e){return e.classList&&e.classList.contains(i)})),this.firstElement=this.elements[0],this.lastElement=this.elements[this.elements.length-1],this.elements.filter((function(e){return!e.classList.contains("js-enabled")})).forEach((function(n){n.classList.add("js-enabled"),e.generateIDs(n),e.setARIA(n),e.setTransition(n);var i=e.elements.indexOf(n);t++,s.includes(i)?e.showElement(n,!1):e.closeElement(n,!1)}))},setTransition:function(e){var t=arguments.length>1&&void 0!==arguments[1]&&arguments[1],n=this.options,i=n.duration,s=n.panelClass,o=e.querySelector(".".concat(s)),r=c("transitionDuration");o.style[r]=t?null:"".concat(i,"ms")},generateIDs:function(e){var n=this.options,i=n.triggerClass,s=n.panelClass,o=e.querySelector(".".concat(i)),r=e.querySelector(".".concat(s));e.setAttribute("id","ac-".concat(t)),o.setAttribute("id","ac-trigger-".concat(t)),r.setAttribute("id","ac-panel-".concat(t))},removeIDs:function(e){var t=this.options,n=t.triggerClass,i=t.panelClass,s=e.querySelector(".".concat(n)),o=e.querySelector(".".concat(i));e.removeAttribute("id"),s.removeAttribute("id"),o.removeAttribute("id")},setARIA:function(e){var n=this.options,i=n.ariaEnabled,s=n.triggerClass,o=n.panelClass;if(i){var r=e.querySelector(".".concat(s)),a=e.querySelector(".".concat(o));r.setAttribute("role","button"),r.setAttribute("aria-controls","ac-panel-".concat(t)),r.setAttribute("aria-disabled",!1),r.setAttribute("aria-expanded",!1),a.setAttribute("role","region"),a.setAttribute("aria-labelledby","ac-trigger-".concat(t))}},updateARIA:function(e,t){var n=t.ariaExpanded,i=t.ariaDisabled,s=this.options,o=s.ariaEnabled,r=s.triggerClass;if(o){var a=e.querySelector(".".concat(r));a.setAttribute("aria-expanded",n),a.setAttribute("aria-disabled",i)}},removeARIA:function(e){var t=this.options,n=t.ariaEnabled,i=t.triggerClass,s=t.panelClass;if(n){var o=e.querySelector(".".concat(i)),r=e.querySelector(".".concat(s));o.removeAttribute("role"),o.removeAttribute("aria-controls"),o.removeAttribute("aria-disabled"),o.removeAttribute("aria-expanded"),r.removeAttribute("role"),r.removeAttribute("aria-labelledby")}},focus:function(e,t){e.preventDefault();var n=this.options.triggerClass;t.querySelector(".".concat(n)).focus()},focusFirstElement:function(e){this.focus(e,this.firstElement),this.currFocusedIdx=0},focusLastElement:function(e){this.focus(e,this.lastElement),this.currFocusedIdx=this.elements.length-1},focusNextElement:function(e){var t=this.currFocusedIdx+1;if(t>this.elements.length-1)return this.focusFirstElement(e);this.focus(e,this.elements[t]),this.currFocusedIdx=t},focusPrevElement:function(e){var t=this.currFocusedIdx-1;if(t<0)return this.focusLastElement(e);this.focus(e,this.elements[t]),this.currFocusedIdx=t},showElement:function(e){var t=!(arguments.length>1&&void 0!==arguments[1])||arguments[1],n=this.options,i=n.panelClass,s=n.activeClass,o=n.collapse,r=n.beforeOpen,a=e.querySelector(".".concat(i)),c=a.scrollHeight;e.classList.add(s),t&&r(e),requestAnimationFrame((function(){requestAnimationFrame((function(){a.style.height=t?"".concat(c,"px"):"auto"}))})),this.updateARIA(e,{ariaExpanded:!0,ariaDisabled:!o})},closeElement:function(e){var t=!(arguments.length>1&&void 0!==arguments[1])||arguments[1],n=this.options,i=n.panelClass,s=n.activeClass,o=n.beforeClose,r=e.querySelector(".".concat(i)),a=r.scrollHeight;e.classList.remove(s),t?(o(e),requestAnimationFrame((function(){r.style.height="".concat(a,"px"),requestAnimationFrame((function(){r.style.height=0}))})),this.updateARIA(e,{ariaExpanded:!1,ariaDisabled:!1})):r.style.height=0},toggleElement:function(e){var t=this.options,n=t.activeClass,i=t.collapse,s=e.classList.contains(n);if(!s||i)return s?this.closeElement(e):this.showElement(e)},closeElements:function(){var e=this,t=this.options,n=t.activeClass;t.showMultiple||this.elements.forEach((function(t,i){t.classList.contains(n)&&i!==e.currFocusedIdx&&e.closeElement(t)}))},handleClick:function(e){var t=this,n=e.currentTarget;this.elements.forEach((function(i,s){i.contains(n)&&"A"!==e.target.nodeName&&(t.currFocusedIdx=s,t.closeElements(),t.focus(e,i),t.toggleElement(i))}))},handleKeydown:function(e){var t=38,n=40,i=36,s=35;switch(e.keyCode){case t:return this.focusPrevElement(e);case n:return this.focusNextElement(e);case i:return this.focusFirstElement(e);case s:return this.focusLastElement(e);default:return null}},handleTransitionEnd:function(e){if("height"===e.propertyName){var t=this.options,n=t.onOpen,i=t.onClose,s=e.currentTarget,o=parseInt(s.style.height),r=this.elements.find((function(e){return e.contains(s)}));o>0?(s.style.height="auto",n(r)):i(r)}}};this.attachEvents=function(){if(!r){var e=a.options,t=e.triggerClass,n=e.panelClass;a.handleClick=a.handleClick.bind(a),a.handleKeydown=a.handleKeydown.bind(a),a.handleTransitionEnd=a.handleTransitionEnd.bind(a),a.elements.forEach((function(e){var i=e.querySelector(".".concat(t)),s=e.querySelector(".".concat(n));i.addEventListener("click",a.handleClick),i.addEventListener("keydown",a.handleKeydown),s.addEventListener("webkitTransitionEnd",a.handleTransitionEnd),s.addEventListener("transitionend",a.handleTransitionEnd)})),r=!0}},this.detachEvents=function(){if(r){var e=a.options,t=e.triggerClass,n=e.panelClass;a.elements.forEach((function(e){var i=e.querySelector(".".concat(t)),s=e.querySelector(".".concat(n));i.removeEventListener("click",a.handleClick),i.removeEventListener("keydown",a.handleKeydown),s.removeEventListener("webkitTransitionEnd",a.handleTransitionEnd),s.removeEventListener("transitionend",a.handleTransitionEnd)})),r=!1}},this.toggle=function(e){var t=a.elements[e];t&&a.toggleElement(t)},this.open=function(e){var t=a.elements[e];t&&a.showElement(t)},this.openAll=function(){a.elements.forEach((function(e){return a.showElement(e,!1)}))},this.close=function(e){var t=a.elements[e];t&&a.closeElement(t)},this.closeAll=function(){a.elements.forEach((function(e){return a.closeElement(e,!1)}))},this.destroy=function(){s.detachEvents(),s.openAll(),a.elements.forEach((function(e){a.removeIDs(e),a.removeARIA(e),a.setTransition(e,!0)})),r=!0},this.update=function(){a.createDefinitions(),s.detachEvents(),s.attachEvents()};var c=function(e){return"string"==typeof document.documentElement.style[e]?e:(e=l(e),e="webkit".concat(e))},l=function(e){return e.charAt(0).toUpperCase()+e.slice(1)};a.init()}; true&&void 0!==module.exports?module.exports=n:e.Accordion=n}(window);
 
 /***/ }),
 
@@ -10137,7 +10138,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "checkPrefix", function() { return _checkPropPrefix; });
 /* harmony import */ var _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./gsap-core.js */ "./node_modules/gsap/gsap-core.js");
 /*!
- * CSSPlugin 3.10.2
+ * CSSPlugin 3.10.4
  * https://greensock.com
  *
  * Copyright 2008-2022, GreenSock. All rights reserved.
@@ -11576,7 +11577,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 /*!
- * Observer 3.10.2
+ * Observer 3.10.4
  * https://greensock.com
  *
  * @license Copyright 2008-2022, GreenSock. All rights reserved.
@@ -11598,6 +11599,7 @@ var gsap,
     ScrollTrigger,
     _root,
     _normalizer,
+    _eventTypes,
     _getGSAP = function _getGSAP() {
   return gsap || typeof window !== "undefined" && (gsap = window.gsap) && gsap.registerPlugin && gsap;
 },
@@ -11632,36 +11634,42 @@ var gsap,
     _isViewport = function _isViewport(el) {
   return !!~_root.indexOf(el);
 },
-    _addListener = function _addListener(element, type, func, nonPassive) {
+    _addListener = function _addListener(element, type, func, nonPassive, capture) {
   return element.addEventListener(type, func, {
-    passive: !nonPassive
+    passive: !nonPassive,
+    capture: !!capture
   });
 },
-    _removeListener = function _removeListener(element, type, func) {
-  return element.removeEventListener(type, func);
+    _removeListener = function _removeListener(element, type, func, capture) {
+  return element.removeEventListener(type, func, !!capture);
 },
     _scrollLeft = "scrollLeft",
     _scrollTop = "scrollTop",
     _onScroll = function _onScroll() {
   return _normalizer && _normalizer.isPressed || _scrollers.cache++;
 },
-    _scrollCacheFunc = function _scrollCacheFunc(f) {
-  return function (value) {
+    _scrollCacheFunc = function _scrollCacheFunc(f, doNotCache) {
+  var cachingFunc = function cachingFunc(value) {
     // since reading the scrollTop/scrollLeft/pageOffsetY/pageOffsetX can trigger a layout, this function allows us to cache the value so it only gets read fresh after a "scroll" event fires (or while we're refreshing because that can lengthen the page and alter the scroll position). when "soft" is true, that means don't actually set the scroll, but cache the new value instead (useful in ScrollSmoother)
     if (value || value === 0) {
       _startup && (_win.history.scrollRestoration = "manual"); // otherwise the new position will get overwritten by the browser onload.
 
+      var isNormalizing = _normalizer && _normalizer.isPressed;
+      value = cachingFunc.v = Math.round(value) || (_normalizer && _normalizer.iOS ? 1 : 0); //TODO: iOS Bug: if you allow it to go to 0, Safari can start to report super strange (wildly inaccurate) touch positions!
+
       f(value);
-      f.v = value;
-      f.c = _scrollers.cache;
-      _normalizer && _normalizer.isPressed && _bridge("ss", value); // set scroll (notify ScrollTrigger so it can dispatch a "scrollStart" event if necessary
-    } else if (_scrollers.cache !== f.c || _bridge("ref")) {
-      f.c = _scrollers.cache;
-      f.v = f();
+      cachingFunc.cacheID = _scrollers.cache;
+      isNormalizing && _bridge("ss", value); // set scroll (notify ScrollTrigger so it can dispatch a "scrollStart" event if necessary
+    } else if (doNotCache || _scrollers.cache !== cachingFunc.cacheID || _bridge("ref")) {
+      cachingFunc.cacheID = _scrollers.cache;
+      cachingFunc.v = f();
     }
 
-    return f.v;
+    return cachingFunc.v + cachingFunc.offset;
   };
+
+  cachingFunc.offset = 0;
+  return f && cachingFunc;
 },
     _horizontal = {
   s: _scrollLeft,
@@ -11702,9 +11710,9 @@ var gsap,
       offset = sc === _vertical.sc ? 1 : 2;
 
   !~i && (i = _scrollers.push(element) - 1);
-  return _scrollers[i + offset] || (_scrollers[i + offset] = _getProxyProp(element, s) || (_isViewport(element) ? sc : function (value) {
+  return _scrollers[i + offset] || (_scrollers[i + offset] = _scrollCacheFunc(_getProxyProp(element, s), true) || (_isViewport(element) ? sc : _scrollCacheFunc(function (value) {
     return arguments.length ? element[s] = value : element[s];
-  }));
+  })));
 },
     _getVelocityProp = function _getVelocityProp(value, minTimeRefresh, useDelta) {
   var v1 = value,
@@ -11748,7 +11756,7 @@ var gsap,
   };
 },
     _getEvent = function _getEvent(e, preventDefault) {
-  preventDefault && e.preventDefault();
+  preventDefault && !e._gsapAllow && e.preventDefault();
   return e.changedTouches ? e.changedTouches[0] : e;
 },
     _getAbsoluteMax = function _getAbsoluteMax(a) {
@@ -11756,10 +11764,14 @@ var gsap,
       min = Math.min.apply(Math, a);
   return Math.abs(max) >= Math.abs(min) ? max : min;
 },
+    _setScrollTrigger = function _setScrollTrigger() {
+  ScrollTrigger = gsap.core.globals().ScrollTrigger;
+  ScrollTrigger && ScrollTrigger.core && _integrate();
+},
     _initCore = function _initCore(core) {
   gsap = core || _getGSAP();
 
-  if (gsap && !_coreInitted && typeof document !== "undefined" && document.body) {
+  if (gsap && typeof document !== "undefined" && document.body) {
     _win = window;
     _doc = document;
     _docEl = _doc.documentElement;
@@ -11769,9 +11781,13 @@ var gsap,
     _pointerType = "onpointerenter" in _body ? "pointer" : "mouse"; // isTouch is 0 if no touch, 1 if ONLY touch, and 2 if it can accommodate touch but also other types like mouse/pointer.
 
     _isTouch = Observer.isTouch = _win.matchMedia && _win.matchMedia("(hover: none), (pointer: coarse)").matches ? 1 : "ontouchstart" in _win || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0 ? 2 : 0;
+    _eventTypes = Observer.eventTypes = ("ontouchstart" in _docEl ? "touchstart,touchmove,touchcancel,touchend" : !("onpointerdown" in _docEl) ? "mousedown,mousemove,mouseup,mouseup" : "pointerdown,pointermove,pointercancel,pointerup").split(",");
     setTimeout(function () {
       return _startup = 0;
     }, 500);
+
+    _setScrollTrigger();
+
     _coreInitted = 1;
   }
 
@@ -11789,12 +11805,7 @@ var Observer = /*#__PURE__*/function () {
 
   _proto.init = function init(vars) {
     _coreInitted || _initCore(gsap) || console.warn("Please gsap.registerPlugin(Observer)");
-
-    if (!ScrollTrigger) {
-      ScrollTrigger = gsap.core.globals().ScrollTrigger;
-      ScrollTrigger && ScrollTrigger.core && _integrate();
-    }
-
+    ScrollTrigger || _setScrollTrigger();
     var tolerance = vars.tolerance,
         dragMinimum = vars.dragMinimum,
         type = vars.type,
@@ -11832,7 +11843,11 @@ var Observer = /*#__PURE__*/function () {
         onEnable = vars.onEnable,
         onDisable = vars.onDisable,
         onClick = vars.onClick,
-        scrollSpeed = vars.scrollSpeed;
+        scrollSpeed = vars.scrollSpeed,
+        capture = vars.capture,
+        allowClicks = vars.allowClicks,
+        lockAxis = vars.lockAxis,
+        onLockAxis = vars.onLockAxis;
     this.target = target = _getTarget(target) || _docEl;
     this.vars = vars;
     ignore && (ignore = gsap.utils.toArray(ignore));
@@ -11849,6 +11864,8 @@ var Observer = /*#__PURE__*/function () {
         dragged,
         moved,
         wheeled,
+        locked,
+        axis,
         self = this,
         prevDeltaX = 0,
         prevDeltaY = 0,
@@ -11856,16 +11873,19 @@ var Observer = /*#__PURE__*/function () {
         scrollFuncY = _getScrollFunc(target, _vertical),
         scrollX = scrollFuncX(),
         scrollY = scrollFuncY(),
-        events = ("ontouchstart" in _docEl ? "touchstart,touchmove,touchcancel,touchend" : type.indexOf("pointer") >= 0 && !("onpointerdown" in _docEl) ? "mousedown,mousemove,mouseup,mouseup" : "pointerdown,pointermove,pointercancel,pointerup").split(","),
-        limitToTouch = ~type.indexOf("touch") && !~type.indexOf("pointer") && events[0] === "pointerdown",
+        limitToTouch = ~type.indexOf("touch") && !~type.indexOf("pointer") && _eventTypes[0] === "pointerdown",
         // for devices that accommodate mouse events and touch events, we need to distinguish.
     isViewport = _isViewport(target),
         ownerDoc = target.ownerDocument || _doc,
         deltaX = [0, 0, 0],
         // wheel, scroll, pointer/touch
     deltaY = [0, 0, 0],
+        onClickTime = 0,
+        clickCapture = function clickCapture() {
+      return onClickTime = _getTime();
+    },
         _ignoreCheck = function _ignoreCheck(e, isPointerOrTouch) {
-      return (self.event = e) && ignore && ~ignore.indexOf(e.target) || isPointerOrTouch && limitToTouch && e.pointerType !== "touch" || ignoreCheck && ignoreCheck(e);
+      return (self.event = e) && ignore && ~ignore.indexOf(e.target) || isPointerOrTouch && limitToTouch && e.pointerType !== "touch" || ignoreCheck && ignoreCheck(e, isPointerOrTouch);
     },
         onStopFunc = function onStopFunc() {
       self._vx.reset();
@@ -11901,14 +11921,16 @@ var Observer = /*#__PURE__*/function () {
         deltaY[0] = deltaY[1] = deltaY[2] = 0;
       }
 
-      if (moved) {
-        onMove(self);
-        moved = false;
-      }
+      if (moved || dragged) {
+        onMove && onMove(self);
+        onLockAxis && locked && onLockAxis(self);
 
-      if (dragged) {
-        onDrag(self);
-        dragged = false;
+        if (dragged) {
+          onDrag(self);
+          dragged = false;
+        }
+
+        moved = locked = false;
       }
 
       if (wheeled) {
@@ -11922,10 +11944,30 @@ var Observer = /*#__PURE__*/function () {
       deltaX[index] += x;
       deltaY[index] += y;
 
-      self._vx.update(x, index === 2); // update the velocity as frequently as possible instead of in the debounced function so that very quick touch-scrolls (flicks) feel natural. If it's the mouse/touch/pointer, force it so that we get snappy/accurate momentum scroll.
+      self._vx.update(x);
 
+      self._vy.update(y);
 
-      self._vy.update(y, index === 2);
+      debounce ? id || (id = requestAnimationFrame(update)) : update();
+    },
+        onTouchOrPointerDelta = function onTouchOrPointerDelta(x, y) {
+      if (axis !== "y") {
+        deltaX[2] += x;
+
+        self._vx.update(x, true); // update the velocity as frequently as possible instead of in the debounced function so that very quick touch-scrolls (flicks) feel natural. If it's the mouse/touch/pointer, force it so that we get snappy/accurate momentum scroll.
+
+      }
+
+      if (axis !== "x") {
+        deltaY[2] += y;
+
+        self._vy.update(y, true);
+      }
+
+      if (lockAxis && !axis) {
+        self.axis = axis = Math.abs(x) > Math.abs(y) ? "x" : "y";
+        locked = true;
+      }
 
       debounce ? id || (id = requestAnimationFrame(update)) : update();
     },
@@ -11946,7 +11988,7 @@ var Observer = /*#__PURE__*/function () {
       if (isDragging || Math.abs(self.startX - x) >= dragMinimum || Math.abs(self.startY - y) >= dragMinimum) {
         onDrag && (dragged = true);
         isDragging || (self.isDragging = true);
-        onDelta(dx, dy, 2);
+        onTouchOrPointerDelta(dx, dy);
         isDragging || onDragStart && onDragStart(self);
       }
     },
@@ -11955,9 +11997,11 @@ var Observer = /*#__PURE__*/function () {
         return;
       }
 
+      self.axis = axis = null;
       onStopDelayedCall.pause();
       self.isPressed = true;
-      e = _getEvent(e, preventDefault);
+      e = _getEvent(e); // note: may need to preventDefault(?) Won't side-scroll on iOS Safari if we do, though.
+
       prevDeltaX = prevDeltaY = 0;
       self.startX = self.x = e.clientX;
       self.startY = self.y = e.clientY;
@@ -11967,7 +12011,7 @@ var Observer = /*#__PURE__*/function () {
 
       self._vy.reset();
 
-      _addListener(isNormalizer ? target : ownerDoc, events[1], _onDrag, preventDefault);
+      _addListener(isNormalizer ? target : ownerDoc, _eventTypes[1], _onDrag, preventDefault, true);
 
       self.deltaX = self.deltaY = 0;
       onPress && onPress(self);
@@ -11977,14 +12021,32 @@ var Observer = /*#__PURE__*/function () {
         return;
       }
 
-      _removeListener(isNormalizer ? target : ownerDoc, events[1], _onDrag);
+      _removeListener(isNormalizer ? target : ownerDoc, _eventTypes[1], _onDrag, true);
 
-      var wasDragging = self.isDragging;
+      var wasDragging = self.isDragging && (Math.abs(self.x - self.startX) > 3 || Math.abs(self.y - self.startY) > 3),
+          // some touch devices need some wiggle room in terms of sensing clicks - the finger may move a few pixels.
+      eventData = _getEvent(e);
 
       if (!wasDragging) {
         self._vx.reset();
 
         self._vy.reset();
+
+        if (preventDefault && allowClicks) {
+          gsap.delayedCall(0.08, function () {
+            // some browsers (like Firefox) won't trust script-generated clicks, so if the user tries to click on a video to play it, for example, it simply won't work. Since a regular "click" event will most likely be generated anyway (one that has its isTrusted flag set to true), we must slightly delay our script-generated click so that the "real"/trusted one is prioritized. Remember, when there are duplicate events in quick succession, we suppress all but the first one. Some browsers don't even trigger the "real" one at all, so our synthetic one is a safety valve that ensures that no matter what, a click event does get dispatched.
+            if (_getTime() - onClickTime > 300 && !e.defaultPrevented) {
+              if (e.target.click) {
+                //some browsers (like mobile Safari) don't properly trigger the click event
+                e.target.click();
+              } else if (ownerDoc.createEvent) {
+                var syntheticEvent = ownerDoc.createEvent("MouseEvents");
+                syntheticEvent.initMouseEvent("click", true, true, _win, 1, eventData.screenX, eventData.screenY, eventData.clientX, eventData.clientY, false, false, false, false, 0, null);
+                e.target.dispatchEvent(syntheticEvent);
+              }
+            }
+          });
+        }
       }
 
       self.isDragging = self.isGesturing = self.isPressed = false;
@@ -12032,8 +12094,8 @@ var Observer = /*#__PURE__*/function () {
           dy = y - self.y;
       self.x = x;
       self.y = y;
-      onMove && (moved = true);
-      (dx || dy) && onDelta(dx, dy, 2);
+      moved = true;
+      (dx || dy) && onTouchOrPointerDelta(dx, dy);
     },
         _onHover = function _onHover(e) {
       self.event = e;
@@ -12059,16 +12121,17 @@ var Observer = /*#__PURE__*/function () {
       if (!self.isEnabled) {
         _addListener(isViewport ? ownerDoc : target, "scroll", _onScroll);
 
-        type.indexOf("scroll") >= 0 && _addListener(isViewport ? ownerDoc : target, "scroll", onScroll, preventDefault);
-        type.indexOf("wheel") >= 0 && _addListener(target, "wheel", _onWheel, preventDefault);
+        type.indexOf("scroll") >= 0 && _addListener(isViewport ? ownerDoc : target, "scroll", onScroll, preventDefault, capture);
+        type.indexOf("wheel") >= 0 && _addListener(target, "wheel", _onWheel, preventDefault, capture);
 
         if (type.indexOf("touch") >= 0 && _isTouch || type.indexOf("pointer") >= 0) {
-          _addListener(target, events[0], _onPress, preventDefault);
+          _addListener(target, _eventTypes[0], _onPress, preventDefault, capture);
 
-          _addListener(ownerDoc, events[2], _onRelease);
+          _addListener(ownerDoc, _eventTypes[2], _onRelease);
 
-          _addListener(ownerDoc, events[3], _onRelease);
+          _addListener(ownerDoc, _eventTypes[3], _onRelease);
 
+          allowClicks && _addListener(target, "click", clickCapture, false, true);
           onClick && _addListener(target, "click", _onClick);
           onGestureStart && _addListener(ownerDoc, "gesturestart", _onGestureStart);
           onGestureEnd && _addListener(ownerDoc, "gestureend", _onGestureEnd);
@@ -12092,15 +12155,25 @@ var Observer = /*#__PURE__*/function () {
           return o !== self && _isViewport(o.target);
         }).length || _removeListener(isViewport ? ownerDoc : target, "scroll", _onScroll);
 
-        _removeListener(isViewport ? ownerDoc : target, "scroll", onScroll);
+        if (self.isPressed) {
+          self._vx.reset();
 
-        _removeListener(target, "wheel", _onWheel);
+          self._vy.reset();
 
-        _removeListener(target, events[0], _onPress);
+          _removeListener(isNormalizer ? target : ownerDoc, _eventTypes[1], _onDrag, true);
+        }
 
-        _removeListener(ownerDoc, events[2], _onRelease);
+        _removeListener(isViewport ? ownerDoc : target, "scroll", onScroll, capture);
 
-        _removeListener(ownerDoc, events[3], _onRelease);
+        _removeListener(target, "wheel", _onWheel, capture);
+
+        _removeListener(target, _eventTypes[0], _onPress, capture);
+
+        _removeListener(ownerDoc, _eventTypes[2], _onRelease);
+
+        _removeListener(ownerDoc, _eventTypes[3], _onRelease);
+
+        _removeListener(target, "click", clickCapture, true);
 
         _removeListener(target, "click", _onClick);
 
@@ -12114,7 +12187,7 @@ var Observer = /*#__PURE__*/function () {
 
         _removeListener(target, _pointerType + "move", _onMove);
 
-        self.isEnabled = false;
+        self.isEnabled = self.isPressed = self.isDragging = false;
         onDisable && onDisable(self);
       }
     };
@@ -12130,7 +12203,7 @@ var Observer = /*#__PURE__*/function () {
 
     _observers.push(self);
 
-    isNormalizer && (_normalizer = self);
+    isNormalizer && _isViewport(target) && (_normalizer = self);
     self.enable(event);
   };
 
@@ -12148,7 +12221,7 @@ var Observer = /*#__PURE__*/function () {
 
   return Observer;
 }();
-Observer.version = "3.10.2";
+Observer.version = "3.10.4";
 
 Observer.create = function (vars) {
   return new Observer(vars);
@@ -12184,7 +12257,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ScrollTrigger; });
 /* harmony import */ var _Observer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Observer.js */ "./node_modules/gsap/Observer.js");
 /*!
- * ScrollTrigger 3.10.2
+ * ScrollTrigger 3.10.4
  * https://greensock.com
  *
  * @license Copyright 2008-2022, GreenSock. All rights reserved.
@@ -12222,6 +12295,7 @@ var gsap,
     _ignoreMobileResize,
     _baseScreenHeight,
     _baseScreenWidth,
+    _fixIOSBug,
     _limitCallbacks,
     // if true, we'll only trigger callbacks if the active state toggles, so if you scroll immediately past both the start and end positions of a ScrollTrigger (thus inactive to inactive), neither its onEnter nor onLeave will be called. This is useful during startup.
 _startup = 1,
@@ -12451,13 +12525,14 @@ _startup = 1,
     return func(element, type, callback);
   });
 },
-    _addListener = function _addListener(element, type, func, nonPassive) {
+    _addListener = function _addListener(element, type, func, nonPassive, capture) {
   return element.addEventListener(type, func, {
-    passive: !nonPassive
+    passive: !nonPassive,
+    capture: !!capture
   });
 },
-    _removeListener = function _removeListener(element, type, func) {
-  return element.removeEventListener(type, func);
+    _removeListener = function _removeListener(element, type, func, capture) {
+  return element.removeEventListener(type, func, !!capture);
 },
     _wheelListener = function _wheelListener(func, el, scrollFunc) {
   return scrollFunc && scrollFunc.wheelHandler && func(el, "wheel", scrollFunc);
@@ -12546,16 +12621,21 @@ _startup = 1,
 },
     _onScroll = function _onScroll() {
   // previously, we tried to optimize performance by batching/deferring to the next requestAnimationFrame(), but discovered that Safari has a few bugs that make this unworkable (especially on iOS). See https://codepen.io/GreenSock/pen/16c435b12ef09c38125204818e7b45fc?editors=0010 and https://codepen.io/GreenSock/pen/JjOxYpQ/3dd65ccec5a60f1d862c355d84d14562?editors=0010 and https://codepen.io/GreenSock/pen/ExbrPNa/087cef197dc35445a0951e8935c41503?editors=0010
-  if (!_normalizer || !_normalizer.isPressed) {
+  if (!_normalizer || !_normalizer.isPressed || _normalizer.startX > _body.clientWidth) {
+    // if the user is dragging the scrollbar, allow it.
     _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_scrollers"].cache++;
     _rafID || (_rafID = requestAnimationFrame(_updateAll));
     _lastScrollTime || _dispatch("scrollStart");
     _lastScrollTime = _getTime();
   }
 },
+    _setBaseDimensions = function _setBaseDimensions() {
+  _baseScreenWidth = _win.innerWidth;
+  _baseScreenHeight = _win.innerHeight;
+},
     _onResize = function _onResize() {
   _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_scrollers"].cache++;
-  !_refreshing && !_ignoreResize && !_doc.fullscreenElement && (!_ignoreMobileResize || _baseScreenWidth !== _win.innerWidth || Math.abs(_win.innerHeight - _baseScreenHeight) > _win.innerHeight * 0.25) && _resizeDelay.restart(true);
+  !_refreshing && !_ignoreResize && !_doc.fullscreenElement && !_doc.webkitFullscreenElement && (!_ignoreMobileResize || _baseScreenWidth !== _win.innerWidth || Math.abs(_win.innerHeight - _baseScreenHeight) > _win.innerHeight * 0.25) && _resizeDelay.restart(true);
 },
     // ignore resizes triggered by refresh()
 _listeners = {},
@@ -12686,9 +12766,8 @@ _refreshingAll,
     _primary,
     _updateAll = function _updateAll() {
   if (!_refreshingAll) {
-    _primary && _primary.update(0); // ScrollSmoother users refreshPriority -9999 to become the primary that gets updated before all others because it affects the scroll position.
-
     ScrollTrigger.isUpdating = true;
+    _primary && _primary.update(0); // ScrollSmoother users refreshPriority -9999 to become the primary that gets updated before all others because it affects the scroll position.
 
     var l = _triggers.length,
         time = _getTime(),
@@ -13053,6 +13132,7 @@ var ScrollTrigger = /*#__PURE__*/function () {
         getScrollerSize = _getSizeFunc(scroller, isViewport, direction),
         getScrollerOffsets = _getOffsetsFunc(scroller, isViewport),
         lastSnap = 0,
+        lastRefresh = 0,
         scrollFunc = Object(_Observer_js__WEBPACK_IMPORTED_MODULE_0__["_getScrollFunc"])(scroller, direction),
         tweenTo,
         pinCache,
@@ -13156,7 +13236,7 @@ var ScrollTrigger = /*#__PURE__*/function () {
       }); // smooth scrolling doesn't work with snap.
 
       snapFunc = _isFunction(snap.snapTo) ? snap.snapTo : snap.snapTo === "labels" ? _getClosestLabel(animation) : snap.snapTo === "labelsDirectional" ? _getLabelAtDirection(animation) : snap.directional !== false ? function (value, st) {
-        return _snapDirectional(snap.snapTo)(value, _refreshing ? 0 : st.direction);
+        return _snapDirectional(snap.snapTo)(value, _getTime() - lastRefresh < 500 ? 0 : st.direction);
       } : gsap.utils.snap(snap.snapTo);
       snapDurClamp = snap.duration || {
         min: 0.1,
@@ -13164,19 +13244,22 @@ var ScrollTrigger = /*#__PURE__*/function () {
       };
       snapDurClamp = _isObject(snapDurClamp) ? _clamp(snapDurClamp.min, snapDurClamp.max) : _clamp(snapDurClamp, snapDurClamp);
       snapDelayedCall = gsap.delayedCall(snap.delay || scrubSmooth / 2 || 0.1, function () {
-        if (Math.abs(self.getVelocity()) < 10 && !_pointerIsDown && lastSnap !== scrollFunc()) {
-          var totalProgress = animation && !isToggle ? animation.totalProgress() : self.progress,
-              velocity = (totalProgress - snap2) / (_getTime() - _time2) * 1000 || 0,
-              change1 = gsap.utils.clamp(-self.progress, 1 - self.progress, _abs(velocity / 2) * velocity / 0.185),
-              naturalEnd = self.progress + (snap.inertia === false ? 0 : change1),
+        var scroll = scrollFunc(),
+            refreshedRecently = _getTime() - lastRefresh < 500,
+            tween = tweenTo.tween;
+
+        if ((refreshedRecently || Math.abs(self.getVelocity()) < 10) && !tween && !_pointerIsDown && lastSnap !== scroll) {
+          var progress = (scroll - start) / change,
+              totalProgress = animation && !isToggle ? animation.totalProgress() : progress,
+              velocity = refreshedRecently ? 0 : (totalProgress - snap2) / (_getTime() - _time2) * 1000 || 0,
+              change1 = gsap.utils.clamp(-progress, 1 - progress, _abs(velocity / 2) * velocity / 0.185),
+              naturalEnd = progress + (snap.inertia === false ? 0 : change1),
               endValue = _clamp(0, 1, snapFunc(naturalEnd, self)),
-              scroll = scrollFunc(),
               endScroll = Math.round(start + endValue * change),
               _snap = snap,
               onStart = _snap.onStart,
               _onInterrupt = _snap.onInterrupt,
-              _onComplete = _snap.onComplete,
-              tween = tweenTo.tween;
+              _onComplete = _snap.onComplete;
 
           if (scroll <= end && scroll >= start && endScroll !== scroll) {
             if (tween && !tween._initted && tween.data <= _abs(endScroll - scroll)) {
@@ -13185,7 +13268,7 @@ var ScrollTrigger = /*#__PURE__*/function () {
             }
 
             if (snap.inertia === false) {
-              change1 = endValue - self.progress;
+              change1 = endValue - progress;
             }
 
             tweenTo(endScroll, {
@@ -13206,7 +13289,7 @@ var ScrollTrigger = /*#__PURE__*/function () {
             }, scroll, change1 * change, endScroll - scroll - change1 * change);
             onStart && onStart(self, tweenTo.tween);
           }
-        } else if (self.isActive) {
+        } else if (self.isActive && lastSnap !== scroll) {
           snapDelayedCall.restart(true);
         }
       }).pause();
@@ -13339,6 +13422,13 @@ var ScrollTrigger = /*#__PURE__*/function () {
 
       !_refreshingAll && onRefreshInit && onRefreshInit(self);
       _refreshing = 1;
+      lastRefresh = _getTime();
+
+      if (tweenTo.tween) {
+        tweenTo.tween.kill();
+        tweenTo.tween = 0;
+      }
+
       scrubTween && scrubTween.pause();
       invalidateOnRefresh && animation && animation.time(-0.01, true).invalidate();
       self.isReverted || self.revert();
@@ -13486,7 +13576,7 @@ var ScrollTrigger = /*#__PURE__*/function () {
 
           animation.render(animation.duration(), true, true);
           pinChange = pinGetter(direction.a) - pinStart + change + otherPinOffset;
-          change !== pinChange && pinActiveState.splice(pinActiveState.length - 2, 2); // transform is the last property/value set in the state Array. Since the animation is controlling that, we should omit it.
+          change !== pinChange && useFixedPosition && pinActiveState.splice(pinActiveState.length - 2, 2); // transform is the last property/value set in the state Array. Since the animation is controlling that, we should omit it.
 
           animation.render(0, true, true);
           initted || animation.invalidate();
@@ -13522,7 +13612,13 @@ var ScrollTrigger = /*#__PURE__*/function () {
       }
 
       self.revert(false);
-      snapDelayedCall && self.isActive && scrollFunc(start + change * prevProgress); // just so snapping gets re-enabled, clear out any recorded last value
+
+      if (snapDelayedCall) {
+        lastSnap = -1;
+        self.isActive && scrollFunc(start + change * prevProgress); // just so snapping gets re-enabled, clear out any recorded last value
+
+        snapDelayedCall.restart(true);
+      }
 
       _refreshing = 0;
       animation && isToggle && (animation._initted || prevAnimProgress) && animation.progress() !== prevAnimProgress && animation.progress(prevAnimProgress, true).render(animation.time(), true, true); // must force a re-render because if saveStyles() was used on the target(s), the styles could have been wiped out during the refresh().
@@ -13813,6 +13909,7 @@ var ScrollTrigger = /*#__PURE__*/function () {
       markerStart && [markerStart, markerEnd, markerStartTrigger, markerEndTrigger].forEach(function (m) {
         return m.parentNode && m.parentNode.removeChild(m);
       });
+      _primary === self && (_primary = 0);
 
       if (pin) {
         pinCache && (pinCache.uncache = 1);
@@ -13900,14 +13997,24 @@ var ScrollTrigger = /*#__PURE__*/function () {
       gsap.core.globals("ScrollTrigger", ScrollTrigger); // must register the global manually because in Internet Explorer, functions (classes) don't have a "name" property.
 
       if (_body) {
-        _enabled = 1; // isTouch is 0 if no touch, 1 if ONLY touch, and 2 if it can accommodate touch but also other types like mouse/pointer.
+        _enabled = 1;
+        _Observer_js__WEBPACK_IMPORTED_MODULE_0__["Observer"].register(gsap); // isTouch is 0 if no touch, 1 if ONLY touch, and 2 if it can accommodate touch but also other types like mouse/pointer.
 
-        ScrollTrigger.isTouch = _win.matchMedia && _win.matchMedia("(hover: none), (pointer: coarse)").matches ? 1 : "ontouchstart" in _win || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0 ? 2 : 0; //_addListener(_win, "wheel", _onScroll);
+        ScrollTrigger.isTouch = _Observer_js__WEBPACK_IMPORTED_MODULE_0__["Observer"].isTouch;
+        _fixIOSBug = _Observer_js__WEBPACK_IMPORTED_MODULE_0__["Observer"].isTouch && /(iPad|iPhone|iPod|Mac)/g.test(navigator.userAgent); // since 2017, iOS has had a bug that causes event.clientX/Y to be inaccurate when a scroll occurs, thus we must alternate ignoring every other touchmove event to work around it. See https://bugs.webkit.org/show_bug.cgi?id=181954 and https://codepen.io/GreenSock/pen/ExbrPNa/087cef197dc35445a0951e8935c41503
+
+        _addListener(_win, "wheel", _onScroll); // mostly for 3rd party smooth scrolling libraries.
+
 
         _root = [_win, _doc, _docEl, _body];
-        _baseScreenHeight = _win.innerHeight;
-        _baseScreenWidth = _win.innerWidth;
-        _Observer_js__WEBPACK_IMPORTED_MODULE_0__["Observer"].register(gsap);
+        ScrollTrigger.matchMedia({
+          // when orientation changes, we should take new base measurements for the ignoreMobileResize feature.
+          "(orientation: portrait)": function orientationPortrait() {
+            _setBaseDimensions();
+
+            return _setBaseDimensions;
+          }
+        });
 
         _addListener(_doc, "scroll", _onScroll); // some browsers (like Chrome), the window stops dispatching scroll events on the window if you scroll really fast, but it's consistent on the document!
 
@@ -14058,7 +14165,7 @@ var ScrollTrigger = /*#__PURE__*/function () {
 
   return ScrollTrigger;
 }();
-ScrollTrigger.version = "3.10.2";
+ScrollTrigger.version = "3.10.4";
 
 ScrollTrigger.saveStyles = function (targets) {
   return targets ? _toArray(targets).forEach(function (target) {
@@ -14177,18 +14284,74 @@ var _clampScrollAndGetDurationMultiplier = function _clampScrollAndGetDurationMu
   current > max ? scrollFunc(max) : current < 0 && scrollFunc(0);
   return end > max ? (max - current) / (end - current) : end < 0 ? current / (current - end) : 1;
 },
-    _allowNativePanning = function _allowNativePanning(direction) {
+    _allowNativePanning = function _allowNativePanning(target, direction) {
   if (direction === true) {
-    _body.style.removeProperty("touch-action");
-
-    _docEl.style.removeProperty("touch-action");
+    target.style.removeProperty("touch-action");
   } else {
-    _body.style.touchAction = _docEl.style.touchAction = direction ? "pan-" + direction : "none"; // note: we tried adding pinch-zoom too, but Firefox doesn't support it properly.
+    target.style.touchAction = direction === true ? "auto" : direction ? "pan-" + direction + (_Observer_js__WEBPACK_IMPORTED_MODULE_0__["Observer"].isTouch ? " pinch-zoom" : "") : "none"; // note: Firefox doesn't support it pinch-zoom properly, at least in addition to a pan-x or pan-y.
+  }
+
+  target === _docEl && _allowNativePanning(_body, direction);
+},
+    _overflow = {
+  auto: 1,
+  scroll: 1
+},
+    _nestedScroll = function _nestedScroll(_ref5) {
+  var event = _ref5.event,
+      target = _ref5.target,
+      axis = _ref5.axis;
+
+  var node = (event.changedTouches ? event.changedTouches[0] : event).target,
+      cache = node._gsap || gsap.core.getCache(node),
+      time = _getTime(),
+      cs;
+
+  if (!cache._isScrollT || time - cache._isScrollT > 2000) {
+    // cache for 2 seconds to improve performance.
+    while (node && node.scrollHeight <= node.clientHeight) {
+      node = node.parentNode;
+    }
+
+    cache._isScroll = node && !_isViewport(node) && node !== target && (_overflow[(cs = _getComputedStyle(node)).overflowY] || _overflow[cs.overflowX]);
+    cache._isScrollT = time;
+  }
+
+  (cache._isScroll || axis === "x") && (event._gsapAllow = true);
+},
+    // capture events on scrollable elements INSIDE the <body> and allow those by calling stopPropagation() when we find a scrollable ancestor
+_inputObserver = function _inputObserver(target, type, inputs, nested) {
+  return _Observer_js__WEBPACK_IMPORTED_MODULE_0__["Observer"].create({
+    target: target,
+    capture: true,
+    debounce: false,
+    lockAxis: true,
+    type: type,
+    onWheel: nested = nested && _nestedScroll,
+    onPress: nested,
+    onDrag: nested,
+    onScroll: nested,
+    onEnable: function onEnable() {
+      return inputs && _addListener(_doc, _Observer_js__WEBPACK_IMPORTED_MODULE_0__["Observer"].eventTypes[0], _captureInputs, false, true);
+    },
+    onDisable: function onDisable() {
+      return _removeListener(_doc, _Observer_js__WEBPACK_IMPORTED_MODULE_0__["Observer"].eventTypes[0], _captureInputs, true);
+    }
+  });
+},
+    _inputExp = /(input|label|select|textarea)/i,
+    _inputIsFocused,
+    _captureInputs = function _captureInputs(e) {
+  var isInput = _inputExp.test(e.target.tagName);
+
+  if (isInput || _inputIsFocused) {
+    e._gsapAllow = true;
+    _inputIsFocused = isInput;
   }
 },
     _getScrollNormalizer = function _getScrollNormalizer(vars) {
   _isObject(vars) || (vars = {});
-  vars.preventDefault = vars.isNormalizer = true;
+  vars.preventDefault = vars.isNormalizer = vars.allowClicks = true;
   vars.type || (vars.type = "wheel,touch");
   vars.debounce = !!vars.debounce;
   vars.id = vars.id || "normalizer";
@@ -14196,12 +14359,17 @@ var _clampScrollAndGetDurationMultiplier = function _clampScrollAndGetDurationMu
   var _vars2 = vars,
       normalizeScrollX = _vars2.normalizeScrollX,
       momentum = _vars2.momentum,
+      allowNestedScroll = _vars2.allowNestedScroll,
       self,
       maxY,
-      onClickTime = 0,
-      scrollFuncY = Object(_Observer_js__WEBPACK_IMPORTED_MODULE_0__["_getScrollFunc"])(_docEl, _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_vertical"]),
-      scrollFuncX = Object(_Observer_js__WEBPACK_IMPORTED_MODULE_0__["_getScrollFunc"])(_docEl, _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_horizontal"]),
+      target = Object(_Observer_js__WEBPACK_IMPORTED_MODULE_0__["_getTarget"])(vars.target) || _docEl,
+      smoother = gsap.core.globals().ScrollSmoother,
+      content = _fixIOSBug && (vars.content && Object(_Observer_js__WEBPACK_IMPORTED_MODULE_0__["_getTarget"])(vars.content) || smoother && smoother.get() && smoother.get().content()),
+      scrollFuncY = Object(_Observer_js__WEBPACK_IMPORTED_MODULE_0__["_getScrollFunc"])(target, _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_vertical"]),
+      scrollFuncX = Object(_Observer_js__WEBPACK_IMPORTED_MODULE_0__["_getScrollFunc"])(target, _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_horizontal"]),
       scale = 1,
+      initialScale = (_Observer_js__WEBPACK_IMPORTED_MODULE_0__["Observer"].isTouch && _win.visualViewport ? _win.visualViewport.scale * _win.visualViewport.width : _win.outerWidth) / _win.innerWidth,
+      wheelRefresh = 0,
       resolveMomentumDuration = _isFunction(momentum) ? function () {
     return momentum(self);
   } : function () {
@@ -14209,26 +14377,41 @@ var _clampScrollAndGetDurationMultiplier = function _clampScrollAndGetDurationMu
   },
       skipTouchMove,
       lastRefreshID,
-      onClick = function onClick() {
-    return onClickTime = _getTime();
-  },
+      inputObserver = _inputObserver(target, vars.type, true, allowNestedScroll),
       resumeTouchMove = function resumeTouchMove() {
     return skipTouchMove = false;
   },
       scrollClampX = _passThrough,
       scrollClampY = _passThrough,
       updateClamps = function updateClamps() {
-    maxY = _maxScroll(_docEl, _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_vertical"]);
-    scrollClampY = _clamp(0, maxY);
-    normalizeScrollX && (scrollClampX = _clamp(0, _maxScroll(_docEl, _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_horizontal"])));
+    maxY = _maxScroll(target, _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_vertical"]);
+    scrollClampY = _clamp(_fixIOSBug ? 1 : 0, maxY);
+    normalizeScrollX && (scrollClampX = _clamp(0, _maxScroll(target, _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_horizontal"])));
     lastRefreshID = _refreshID;
   },
-      fixIOSBug = ScrollTrigger.isTouch && /(iPad|iPhone|iPod|Mac)/g.test(navigator.userAgent),
       ignoreDrag = function ignoreDrag() {
     if (skipTouchMove) {
       requestAnimationFrame(resumeTouchMove); // we MUST wait for a requestAnimationFrame, otherwise iOS will misreport the value.
 
+      var offset = _round(self.deltaY / 2),
+          scroll = scrollClampY(scrollFuncY.v - offset);
+
+      if (content && scroll !== scrollFuncY.v + scrollFuncY.offset) {
+        scrollFuncY.offset = scroll - scrollFuncY.v;
+        content.style.transform = "translateY(" + -scrollFuncY.offset + "px)";
+        content._gsap && (content._gsap.y = -scrollFuncY.offset + "px");
+        scrollFuncY.cacheID = _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_scrollers"].cache;
+
+        _updateAll();
+      }
+
       return true;
+    }
+
+    if (content) {
+      content.style.transform = "translateY(0px)";
+      scrollFuncY.offset = scrollFuncY.cacheID = 0;
+      content._gsap && (content._gsap.y = "0px");
     }
 
     skipTouchMove = true;
@@ -14236,23 +14419,25 @@ var _clampScrollAndGetDurationMultiplier = function _clampScrollAndGetDurationMu
       tween,
       startScrollX,
       startScrollY,
-      ownerDoc,
       onStopDelayedCall,
       onResize = function onResize() {
     // if the window resizes, like on an iPhone which Apple FORCES the address bar to show/hide even if we event.preventDefault(), it may be scrolling too far now that the address bar is showing, so we must dynamically adjust the momentum tween.
     updateClamps();
-    tween.isActive() && tween.vars.scrollY > maxY && tween.resetTo("scrollY", _maxScroll(_docEl, _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_vertical"]));
+
+    if (tween.isActive() && tween.vars.scrollY > maxY) {
+      scrollFuncY() > maxY ? tween.progress(1) && scrollFuncY(maxY) : tween.resetTo("scrollY", maxY);
+    }
   };
 
   vars.ignoreCheck = function (e) {
-    return fixIOSBug && e.type === "touchmove" && ignoreDrag() || scale > 1 || self.isGesturing || e.touches && e.touches.length > 1;
+    return _fixIOSBug && e.type === "touchmove" && ignoreDrag(e) || scale > 1.05 && e.type !== "touchstart" || self.isGesturing || e.touches && e.touches.length > 1;
   };
 
   vars.onPress = function () {
     var prevScale = scale;
-    scale = _win.visualViewport && _win.visualViewport.scale || 1;
+    scale = _round((_win.visualViewport && _win.visualViewport.scale || 1) / initialScale);
     tween.pause();
-    prevScale !== scale && _allowNativePanning(scale > 1 ? true : normalizeScrollX ? false : "x");
+    prevScale !== scale && _allowNativePanning(target, scale > 1.01 ? true : normalizeScrollX ? false : "x");
     skipTouchMove = false;
     startScrollX = scrollFuncX();
     startScrollY = scrollFuncY();
@@ -14261,81 +14446,87 @@ var _clampScrollAndGetDurationMultiplier = function _clampScrollAndGetDurationMu
   };
 
   vars.onRelease = vars.onGestureStart = function (self, wasDragging) {
-    var e = self.event,
-        eventData = e.changedTouches ? e.changedTouches[0] : e;
+    if (content) {
+      content.style.transform = "translateY(0px)";
+      scrollFuncY.offset = scrollFuncY.cacheID = 0;
+      content._gsap && (content._gsap.y = "0px");
+    }
 
-    if (!wasDragging || Math.abs(self.x - self.startX) <= 3 && Math.abs(self.y - self.startY) <= 3) {
-      // some touch devices need some wiggle room in terms of sensing clicks - the finger may move a few pixels.
-      gsap.delayedCall(0.05, function () {
-        // some browsers (like Firefox) won't trust script-generated clicks, so if the user tries to click on a video to play it, for example, it simply won't work. Since a regular "click" event will most likely be generated anyway (one that has its isTrusted flag set to true), we must slightly delay our script-generated click so that the "real"/trusted one is prioritized. Remember, when there are duplicate events in quick succession, we suppress all but the first one. Some browsers don't even trigger the "real" one at all, so our synthetic one is a safety valve that ensures that no matter what, a click event does get dispatched.
-        if (_getTime() - onClickTime > 300 && !e.defaultPrevented) {
-          if (e.target.click) {
-            //some browsers (like mobile Safari) don't properly trigger the click event
-            e.target.click();
-          } else if (ownerDoc.createEvent) {
-            var syntheticEvent = ownerDoc.createEvent("MouseEvents");
-            syntheticEvent.initMouseEvent("click", true, true, _win, 1, eventData.screenX, eventData.screenY, eventData.clientX, eventData.clientY, false, false, false, false, 0, null);
-            e.target.dispatchEvent(syntheticEvent);
-          }
-        }
-      });
+    if (!wasDragging) {
       onStopDelayedCall.restart(true);
     } else {
+      _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_scrollers"].cache++; // make sure we're pulling the non-cached value
       // alternate algorithm: durX = Math.min(6, Math.abs(self.velocityX / 800)),	dur = Math.max(durX, Math.min(6, Math.abs(self.velocityY / 800))); dur = dur * (0.4 + (1 - _power4In(dur / 6)) * 0.6)) * (momentumSpeed || 1)
+
       var dur = resolveMomentumDuration(),
           currentScroll,
           endScroll;
 
       if (normalizeScrollX) {
         currentScroll = scrollFuncX();
-        endScroll = currentScroll + dur * 0.05 * -self.velocityX / 0.227 / scale; // the constant .227 is from power4(0.05). velocity is inverted because scrolling goes in the opposite direction.
+        endScroll = currentScroll + dur * 0.05 * -self.velocityX / 0.227; // the constant .227 is from power4(0.05). velocity is inverted because scrolling goes in the opposite direction.
 
-        dur *= _clampScrollAndGetDurationMultiplier(scrollFuncX, currentScroll, endScroll, _maxScroll(_docEl, _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_horizontal"]));
+        dur *= _clampScrollAndGetDurationMultiplier(scrollFuncX, currentScroll, endScroll, _maxScroll(target, _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_horizontal"]));
         tween.vars.scrollX = scrollClampX(endScroll);
       }
 
       currentScroll = scrollFuncY();
-      endScroll = currentScroll + dur * 0.05 * -self.velocityY / 0.227 / scale; // the constant .227 is from power4(0.05)
+      endScroll = currentScroll + dur * 0.05 * -self.velocityY / 0.227; // the constant .227 is from power4(0.05)
 
-      dur *= _clampScrollAndGetDurationMultiplier(scrollFuncY, currentScroll, endScroll, _maxScroll(_docEl, _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_vertical"]));
+      dur *= _clampScrollAndGetDurationMultiplier(scrollFuncY, currentScroll, endScroll, _maxScroll(target, _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_vertical"]));
       tween.vars.scrollY = scrollClampY(endScroll);
       tween.invalidate().duration(dur).play(0.01);
+
+      if (_fixIOSBug && tween.vars.scrollY >= maxY || currentScroll >= maxY - 1) {
+        // iOS bug: it'll show the address bar but NOT fire the window "resize" event until the animation is done but we must protect against overshoot so we leverage an onUpdate to do so.
+        gsap.to({}, {
+          onUpdate: onResize,
+          duration: dur
+        });
+      }
     }
   };
 
   vars.onWheel = function () {
-    return tween._ts && tween.pause();
+    tween._ts && tween.pause();
+
+    if (_getTime() - wheelRefresh > 1000) {
+      // after 1 second, refresh the clamps otherwise that'll only happen when ScrollTrigger.refresh() is called or for touch-scrolling.
+      lastRefreshID = 0;
+      wheelRefresh = _getTime();
+    }
   };
 
   vars.onChange = function (self, dx, dy, xArray, yArray) {
     _refreshID !== lastRefreshID && updateClamps();
-    dx && normalizeScrollX && scrollFuncX(scrollClampX(xArray[2] === dx ? startScrollX + (self.startX - self.x) / scale : scrollFuncX() + dx - xArray[1])); // for more precision, we track pointer/touch movement from the start, otherwise it'll drift.
+    dx && normalizeScrollX && scrollFuncX(scrollClampX(xArray[2] === dx ? startScrollX + (self.startX - self.x) : scrollFuncX() + dx - xArray[1])); // for more precision, we track pointer/touch movement from the start, otherwise it'll drift.
 
-    dy && scrollFuncY(scrollClampY(yArray[2] === dy ? startScrollY + (self.startY - self.y) / scale : scrollFuncY() + dy - yArray[1]));
+    dy && scrollFuncY(scrollClampY(yArray[2] === dy ? startScrollY + (self.startY - self.y) : scrollFuncY() + dy - yArray[1]));
 
     _updateAll();
   };
 
-  vars.onEnable = function (self) {
-    _allowNativePanning(normalizeScrollX ? false : "x");
+  vars.onEnable = function () {
+    _allowNativePanning(target, normalizeScrollX ? false : "x");
 
     _addListener(_win, "resize", onResize);
 
-    self.target.addEventListener("click", onClick, {
-      capture: true
-    });
+    inputObserver.enable();
   };
 
-  vars.onDisable = function (self) {
-    _allowNativePanning(true);
+  vars.onDisable = function () {
+    _allowNativePanning(target, true);
 
     _removeListener(_win, "resize", onResize);
 
-    _removeListener(self.target, "click", onClick);
+    inputObserver.kill();
   };
 
   self = new _Observer_js__WEBPACK_IMPORTED_MODULE_0__["Observer"](vars);
-  ownerDoc = self.target.ownerDocument || _doc;
+  self.iOS = _fixIOSBug; // used in the Observer getCachedScroll() function to work around an iOS bug that wreaks havoc with TouchEvent.clientY if we allow scroll to go all the way back to 0.
+
+  _fixIOSBug && !scrollFuncY() && scrollFuncY(1); // iOS bug causes event.clientY values to freak out (wildly inaccurate) if the scroll position is exactly 0.
+
   onStopDelayedCall = self._dc;
   tween = gsap.to(self, {
     ease: "power4",
@@ -14366,15 +14557,20 @@ ScrollTrigger.normalizeScroll = function (vars) {
     return _normalizer.enable();
   }
 
-  var isInstance = vars instanceof _Observer_js__WEBPACK_IMPORTED_MODULE_0__["Observer"];
-  _normalizer && (vars === false || isInstance && vars !== _normalizer) && _normalizer.kill();
-  vars && !isInstance && (vars = _getScrollNormalizer(vars));
-  return _normalizer = vars && vars.enable();
+  if (vars === false) {
+    return _normalizer && _normalizer.kill();
+  }
+
+  var normalizer = vars instanceof _Observer_js__WEBPACK_IMPORTED_MODULE_0__["Observer"] ? vars : _getScrollNormalizer(vars);
+  _normalizer && _normalizer.target === normalizer.target && _normalizer.kill();
+  _isViewport(normalizer.target) && (_normalizer = normalizer);
+  return normalizer;
 };
 
 ScrollTrigger.core = {
   // smaller file size way to leverage in ScrollSmoother and Observer
   _getVelocityProp: _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_getVelocityProp"],
+  _inputObserver: _inputObserver,
   _scrollers: _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_scrollers"],
   _proxies: _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_proxies"],
   bridge: {
@@ -14477,7 +14673,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 /*!
- * GSAP 3.10.2
+ * GSAP 3.10.4
  * https://greensock.com
  *
  * @license Copyright 2008-2022, GreenSock. All rights reserved.
@@ -17904,8 +18100,7 @@ var Tween = /*#__PURE__*/function (_Animation2) {
     _tickerActive || _ticker.wake();
     this._ts || this.play();
     var time = Math.min(this._dur, (this._dp._time - this._start) * this._ts),
-        ratio,
-        p;
+        ratio;
     this._initted || _initTween(this, time);
     ratio = this._ease(time / this._dur); // don't just get tween.ratio because it may not have rendered yet.
     // possible future addition to allow an object with multiple values to update, like tween.resetTo({x: 100, y: 200}); At this point, it doesn't seem worth the added kb given the fact that most users will likely opt for the convenient gsap.quickTo() way of interacting with this method.
@@ -18542,7 +18737,7 @@ var gsap = _gsap.registerPlugin({
   }
 }, _buildModifierPlugin("roundProps", _roundModifier), _buildModifierPlugin("modifiers"), _buildModifierPlugin("snap", snap)) || _gsap; //to prevent the core plugins from being dropped via aggressive tree shaking, we must include them in the variable declaration in this way.
 
-Tween.version = Timeline.version = gsap.version = "3.10.2";
+Tween.version = Timeline.version = gsap.version = "3.10.4";
 _coreReady = 1;
 _windowExists() && _wake();
 var Power0 = _easeMap.Power0,

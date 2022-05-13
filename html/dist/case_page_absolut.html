@@ -26,7 +26,7 @@
         <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap&family=Lora&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles/main.css">
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -38,7 +38,7 @@
             });
         </script>
     </head>
-    <body class="case_page">
+    <body class="case_page absolut">
         <div class="wrapper" id="app">
             
             <div class="first__fullscreen_frame" :class="{ 'mobile': window.width <= 1023 }">
@@ -132,14 +132,12 @@
 </header>
                 <section class="career-first block_caseg" :class="{'mobile': window.width <=1023}">
     <h2 class="case_frst__title">Кейс</h2>
-    <h1 class="case_frst__subtitle">Разработка сайта для мукомольного комбината</h1>
+    <h1 class="case_frst__subtitle">Интернет-магазин для инклюзивных детей <span>благотворительный проект инвестиционной группы «Абсолют»</span></h1>
     <div class="car_button" v-if="window.width <=1023">
         <button class="button button--main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><div class="text">Перейти на сайт</div></button>
     </div>
         <div class="career-first-info" v-if="window.width > 1023">
             <button class="button button--main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><div class="text">Перейти на сайт</div></button>
-            
-                <div><img src="./img/log_a.png" alt=""></div>
             
         </div>
 </section>
@@ -150,13 +148,19 @@
             <div class="text">Описание</div>
         </a>
         <a href="#yak2" class="jb_lnk">
-            <div class="text">Разработка</div>
+            <div class="text">Цель</div>
         </a>
         <a href="#yak3" class="jb_lnk">
-            <div class="text">Дизайн</div>
+            <div class="text">Задачи</div>
         </a>
         <a href="#yak4" class="jb_lnk">
-            <div class="text">Команда</div>
+            <div class="text">Исследование</div>
+        </a>
+        <a href="#yak5" class="jb_lnk">
+            <div class="text">Дизайн</div>
+        </a>
+        <a href="#yak6" class="jb_lnk">
+            <div class="text">Итоги</div>
         </a>
     </div>
     <div class="job-stages-slides job-stages-slides-double" id="yak1">
@@ -164,7 +168,9 @@
         <div class="job-stages-slide">
             <li class="glide__slide job-stages-item">
                 <div class="job-stages-item-text">
-                    Зачастую сайты промышленных организаций скучные и однотипные. Заказчик по данному кейсу хотел получить сайт-визитку с особенным выделяющимся интерфейсом. Мы разработали функциональный и интересный дизайн сайта для мукомольного комбината, опираясь на его многолетнюю историю. Применяя нестандартные инструменты проектирования, нам удалось удовлетворить запрос заказчика.
+                    <div class="full_img"><img src="./img/svg/logo_absolut.svg" alt=""></div>
+                    <p>Абс и Лютик — виртуальные помощники. Они помогают ученикам инклюзивной частной школы разобраться в устройстве интернет-магазина, научиться принимать решение о покупке и повысить мотивацию к учебе. </p>
+                    <p>«Абсолют» — российская инвестиционная и девелоперская группа, основана в 1990 году. Работает с финансами, страхованием и производством, управляет объектами недвижимости, развивает социальные проекты, занимается благотворительностью.</p>
                 </div>
             </li>
         </div>
@@ -176,53 +182,29 @@
             <video id="player" playsinline class="video-js vjs-theme-city"></video>
         </div>
     </div>
-    <div class="case_page__tx">
-        <h2 class="case_page__tx--title">Проблема</h2>
-        <div class="case_page__tx--text">Главная проблема — отсутствие удобной инфраструктуры сайтов промышленных организаций, из-за чего возникает сложность взаимодействия с ЦА, чрезмерная загрузка менеджеров. Полное отсутствие дизайна и визуальной привлекательности сайта. Результат — потеря потенциальных клиентов, а также сотрудников, тк многие, занимаясь поиском работы проверяют информацию о компании в Интернете.</div>
-    </div>
     <div class="case_page__bls career-blocks">
         <div class="case_page__bls--block">
             <div class="case_page__bls--r">
-                <div class="case_page__bls--tit" data-aos="fade-up" data-aos-offset="200" data-aos-delay="200" data-aos-duration="500" data-aos-easing="ease-in-out">В проекте</div>
+                <div class="case_page__bls--title" data-aos="fade-up" data-aos-offset="200" data-aos-delay="200" data-aos-duration="500" data-aos-easing="ease-in-out">Цель</div>
                 <div class="case_page__bls--txt career-blocks-text" data-aos="fade-up" data-aos-offset="200" data-aos-delay="200" data-aos-duration="700" data-aos-easing="ease-in-out">
-                    Проект предполагал создание нестандартного удобного юзабилити сайта, который бы упрощал взаимодействие с B2B-клиентами; делал комбинат узнаваемым среди сложного сегмента промышленных компаний. Дополнительно нужно было внедрить в проект функционал корпоративного сайта, настроить «1С: Предприятие 8. Управление торговлей».
-                </div>
-                <div class="case_page__bls--tit" data-aos="fade-up" data-aos-offset="200" data-aos-delay="200" data-aos-duration="500" data-aos-easing="ease-in-out">В разработке</div>
-                <div class="case_page__bls--txt career-blocks-text" data-aos="fade-up" data-aos-offset="200" data-aos-delay="200" data-aos-duration="700" data-aos-easing="ease-in-out">
-                    В процессе разработки акцент делался на дизайн, ориентируясь на уже готовый бренд бук, и исследования пользовательского опыта. Так как компания работает исключительно с B2B-сегментом, нам нужно было предложить функциональный, понятный и стильный проект, который бы отвечал на все вопросы потенциальных заказчиков, и при этом обладал «вау-эффектом».
+                    Разработать внутренний интернет-магазин для инклюзивной частной школы. В магазине не используются реальные деньги, а товар — мерч «Абсолюта»: футболки, рюкзаки, тетради и т.д. Проект обучает детей самостоятельно делать покупки онлайн и принимать решения, что купить. Кроме этого, ребёнок получает дополнительную мотивацию хорошо учиться и участвовать в мероприятиях школы, чтобы зарабатывать баллы для следующих покупок.
                 </div>
             </div>
-            <div class="case_page__bls--l"><img src="./img/mac.png" alt=""></div>
+            <div class="case_page__bls--l"><img src="./img/lutik.png" alt=""></div>
         </div>
-        <div class="case_page__bls--block muk">
+        <div class="case_page__bls--block">
             <div class="case_page__bls--r">
                 <div class="case_page__bls--title" data-aos="fade-up" data-aos-offset="200" data-aos-delay="200" data-aos-duration="500" data-aos-easing="ease-in-out">Задачи</div>
                 <div class="case_page__bls--text career-blocks-text" data-aos="fade-up" data-aos-offset="200" data-aos-delay="200" data-aos-duration="700" data-aos-easing="ease-in-out">
                     <ul class="case_page__about--rlist">
-                        <li>Стильный, необычный и оригинальный дизайн, который бы сделал комбинат узнаваемым среди промышленных компаний.</li>
-                        <li>Простое оформление заявки без менеджера за счет правильно настроенного функционала.</li>
-                        <li>Понятная и одновременно правильная структура, продуманная до мелочей, без лишних разделов.</li>
-                        <li>Создать имидж сильного HR-бренда <br> для привлечения новых сотрудников <br> на работу на комбинате.</li>
+                        <li>Проанализировать поведение детей на сайте.</li>
+                        <li>Разработать дизайн онлайн-магазина.</li>
+                        <li>Создать сайт.</li>
+                        <li>Разработать приложение для обмена данными между системами 1С и Bitrix.</li>
                     </ul>
                 </div>
             </div>
-            <div class="case_page__bls--l"><img src="./img/log.png" alt=""></div>
-        </div>
-    </div>
-    <div class="case_page__ref" id="yak2">
-        <div class="case_page__ref--title">Решение</div>
-        <div class="case_page__ref--img" data-aos="fade-up" data-aos-offset="200" data-aos-delay="200" data-aos-duration="500" data-aos-easing="ease-in-out"><img src="./img/s9.png" alt=""></div>
-        <div class="case_page__ref--text">
-            <div class="case_page__ref--subtitle">Работа над проектом мукомольного комбината <br> с историей (функционирует с 1872 года) включала следующие шаги: </div>
-            <ul class="case_page__about--rlist">
-                <li>Проведение комплексных исследований с подбором KPI и построением карты пользовательского опыта CJM.</li>
-                <li>Создание комплексной интеллект-карты.</li>
-                <li>Вдумчивое прототипирование.</li>
-                <li>Выбор типографики.</li>
-                <li>Разработка уникального дизайна с технологией motion design.</li>
-                <li>Создание главной страницы с построением правильной навигации и разработкой других страниц.</li>
-                <li>Создание мобильной версии сайта с единым концептом для мобильной и десктопной версии и вариативной CJM.</li>
-            </ul>
+            <div class="case_page__bls--l"><img src="./img/girl_absolut.png" alt=""></div>
         </div>
     </div>
     <div class="block_pal">
@@ -698,7 +680,7 @@
         </div>
     </div>
 </div>
-<div class="preloader" :class="{'isHidden': isPreloaderHidden, 'mobile': window.width <= 1023}">
+            <div class="preloader" :class="{'isHidden': isPreloaderHidden, 'mobile': window.width <= 1023}">
     <div class="preloader__in">
         <div class="preloader__image">
             <svg width="100%" height="100%" viewBox="0 0 94 109" fill="none" xmlns="http://www.w3.org/2000/svg">

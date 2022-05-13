@@ -1306,14 +1306,31 @@
     }
 }
 .case_tabs_new {
-    background: url('../img/bg_tab.png') 0 0 / 100% no-repeat;
-    padding-top: vw(23);
-    padding-left: 50px;
-    padding-right: 50px;
+    .job-stages-slide {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
     .jb_lnks {
         display: flex;
+        background: #121423;
         align-items: center;
         justify-content: center;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-bottom: vw(88);
+        padding-top: vw(36);
+        position: relative;
+        z-index: 1;
+        &:before {
+            position: absolute;
+            content: '';
+            width: 492px;
+            z-index: 0;
+            height: 260px;
+            background: url("data:image/svg+xml,%3Csvg width='492' height='259' viewBox='0 0 492 259' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0H492H438.876C265.8 0 105.033 89.5072 13.8656 236.625L0 259V0Z' fill='%23121423'/%3E%3C/svg%3E%0A") 50% no-repeat;
+            top: calc(100% - 2px);
+            left: 0;
+        }
     }
     .jb_lnk .text {
         color: #FFFFFF !important;
@@ -1332,7 +1349,7 @@
         border: 0;
         font-family: 'Montserrat', serif;
         font-style: normal;
-        font-weight: 500;
+        font-weight: 400;
         font-size: vw(40);
         color: #FFFFFF !important;
         line-height: normal;
@@ -1353,14 +1370,13 @@
         color: #121423;
         max-width: vw(1497);
         width: 100%;
-        padding-top: vw(285);
+        padding-top: vw(107);
     }
     @media all and (max-width: 1023px) {
         .jb_lnks {
             flex-direction: column;
             align-items: flex-start;
             justify-content: flex-start;
-            min-height: 200px;
         }
         .jb_lnk {
             margin: 0;
@@ -1370,11 +1386,8 @@
             font-size: 16px;
             line-height: 36px;
         }
-        padding-left: 20px;
-        padding-right: 20px;
-        background: url('../img/bg_mob.png') 0 0 no-repeat;
         .job-stages-item-text {
-            padding-top: 110px;
+            padding-top: 180px;
             margin-left: 0;
             max-width: 100%;
             font-size: 16px;
@@ -1533,7 +1546,7 @@
     .case_frst__subtitle {
         font-size: 25px;
         line-height: 140%;
-        margin-bottom: 20px;
+        margin-bottom: 35px;
         padding-left: 0;
         padding-right: 0;
     }
@@ -1552,9 +1565,21 @@
         margin-top: 30px;
     }
     .case_tabs_new {
-        padding-left: 20px;
-        padding-right: 20px;
-        background: url("../img/bg_mob.png") 0 0 no-repeat, linear-gradient(180deg, #121423 27%, rgba(255,255,255,1) 27%, rgba(255,255,255,1) 27%);
+        padding-left: 0;
+        padding-right: 0;
+        .jb_lnks {
+            padding-left: 20px;
+            padding-right: 20px;
+            &:before {
+                background: url("data:image/svg+xml,%3Csvg width='360' height='162' viewBox='0 0 360 162' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0L360 0.000193L278.266 2.01259C164.54 4.81264 59.8995 64.7874 0 161.5V161.5V0Z' fill='%23121423'/%3E%3C/svg%3E%0A") 50% / 100% no-repeat;
+                width: 360px;
+                height: 162px;
+            }
+        }
+        .job-stages-slide {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
     }
     .case_page__about--l {
         max-width: 65px;
@@ -1775,22 +1800,8 @@
     .case_page__gl {
         background: url(../img/bg_red2.png) 0 0/100% no-repeat, linear-gradient(0deg, #121423 86%, rgba(255, 255, 255, 0) 86%, rgba(255, 255, 255, 0) 100%) !important;
     }
-    
-    .case_tabs_new {
-        padding-left: 20px;
-        padding-right: 20px;
-        background: url("../img/bg_mob.png") 0 0 no-repeat, linear-gradient(180deg, #121423 23%, rgba(255,255,255,1) vw(286), rgba(255,255,255,1) 155px);
-    }
-}
-@media all and (max-width: 370px) {
-    .case_tabs_new {
-        background: url("../img/bg_mob.png") 0 0 no-repeat, linear-gradient(180deg, #121423 14%, rgba(255,255,255,1) vw(286), rgba(255,255,255,1) 155px);
-    }
 }
 @media all and (max-width: 360px) {
-    .case_tabs_new {
-        background: url("../img/bg_mob.png") 0 0 no-repeat, linear-gradient(180deg, #121423 14%, rgba(255,255,255,1) vw(286), rgba(255,255,255,1) 155px);
-    }
     .case_page__in.mobile .case_page__prot--title {
         font-size: 22px;
     }

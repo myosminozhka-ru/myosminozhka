@@ -4,10 +4,10 @@
     <div class="car_button" v-if="window.width <=1023">
         <button class="button button--main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><div class="text">Перейти на сайт</div></button>
     </div>
-    @@if (isInfoHidden !== true) {
         <div class="career-first-info" v-if="window.width > 1023">
             <button class="button button--main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><div class="text">Перейти на сайт</div></button>
-            <div><img src="./img/log_a.png" alt=""></div>
+            @@if (isInfoHidden !== true) {
+                <div><img src="./img/log_a.png" alt=""></div>
+            }
         </div>
-    }
 </section>
