@@ -18379,6 +18379,10 @@ html.overflowed body {
 }
 
 @media all and (min-width: 1023px) {
+  .full_img {
+    margin-top: 0 !important;
+  }
+
   .marquee-js.inverse .js-marquee-wrapper {
     mix-blend-mode: difference;
   }
@@ -19154,7 +19158,7 @@ html.overflowed body {
   }
 
   .case_page__blue .case_tabs_new .job-stages-item-text {
-    padding-top: 100px;
+    padding-top: 130px;
   }
 
   .case_page__blue .company-video {

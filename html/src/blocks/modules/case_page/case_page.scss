@@ -1819,6 +1819,9 @@
     }
 }
 @media all and (min-width: 1023px) {
+    .full_img {
+        margin-top: 0 !important;
+    }
     .marquee-js.inverse {
         .js-marquee-wrapper {
             mix-blend-mode: difference;
