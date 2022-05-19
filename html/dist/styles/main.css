@@ -12129,8 +12129,8 @@ body.company .company-ceo:not(.mobile) {
   background: #121423;
   align-items: center;
   justify-content: center;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 1.5625vw;
+  padding-right: 1.5625vw;
   padding-bottom: 4.5833333333vw;
   padding-top: 1.875vw;
   position: relative;
