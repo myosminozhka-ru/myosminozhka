@@ -17162,6 +17162,67 @@ body.company .company-ceo:not(.mobile) {
   overflow: hidden;
 }
 
+.rishe .case_page__bls--l {
+  padding: 0;
+  background: none;
+}
+
+.rishe .case_frst__subtitle {
+  max-width: 100%;
+}
+
+.rishe .case_page__ref--tit {
+  font-family: "Montserrat", serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.3020833333vw;
+  line-height: 160%;
+  color: #121423;
+  margin-top: 2.0833333333vw;
+}
+
+.rishe .case_page__ref--subtitle {
+  margin-top: 4.1666666667vw;
+}
+
+.rishe .case_page__ref--txt {
+  font-family: "Montserrat", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.3020833333vw;
+  line-height: 160%;
+  color: #4F4F4F;
+}
+
+.rishe .case_page__ref--style_l {
+  font-weight: 700;
+}
+
+.rishe .case_page__ref--style_b {
+  color: #000;
+  font-weight: 700;
+}
+
+.rishe .case_page__ref--img {
+  margin-top: 4.1666666667vw;
+  background: #EAEAEA;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4.53125vw 1.0416666667vw;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 0;
+}
+
+.rishe .case_page__ref--img img {
+  max-width: 445px;
+  width: 100%;
+  border-radius: 20px;
+  width: 100%;
+}
+
 .grecaptcha-badge {
   visibility: hidden;
 }
@@ -22764,6 +22825,34 @@ html.overflowed body {
     filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
     border: 0;
     border-radius: 0;
+  }
+
+  .rishe .case_page__in.mobile .case_page__bls--l {
+    padding: 0;
+    margin-top: 20px;
+  }
+
+  .rishe .case_page__ref--tit {
+    margin-top: 30px;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .rishe .case_page__ref--txt {
+    font-size: 14px;
+  }
+
+  .rishe .case_page__ref--img {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 60px 45px !important;
+    margin-top: 40px;
+    margin-bottom: 80px !important;
+  }
+
+  .rishe .case_page__ref--img img {
+    max-width: 445px;
+    border-radius: 10px;
   }
 
   .cases-items-info-text {
