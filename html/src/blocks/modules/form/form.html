@@ -1,0 +1,27 @@
+<section class="main-question form-section" :class="{'mobile': window.width <=1023}">
+    <div class="main-question-tentacle" v-if="!isSafary">
+        <img v-if="window.width > 1023" src="img/svg/big_tentacle.svg" alt="">
+        <img v-if="window.width <=1023" src="img/svg/main-question-mobile.svg" alt="">
+    </div>
+    <div class="main-question-tentacle" v-else>
+        <img v-if="window.width > 1023" src="img/svg/big_tentacle_static.svg" alt="">
+        <img v-if="window.width <=1023" src="img/svg/main-question-mobile.svg" alt="">
+    </div>
+    <h4 class="main-question-title">Вы все еще здесь?</h4>
+    <div class="main-question-subtitle">Тогда вам точно что-то нужно!</div>
+    <form action="#">
+        <div class="main-question-form">
+            <div class="main-question-inputs">
+                <input type="text" placeholder="ФИО">
+                <input type="tel" placeholder="Телефон">
+                <input type="text" placeholder="Мой вопрос">
+                
+            </div>
+            <div class="main-question-form-item button">
+                <button type="submit" class="button button--main"  @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
+                    <div class="text">Отправить</div>
+                </button>
+            </div>
+        </div>
+    </form>
+</section>  
