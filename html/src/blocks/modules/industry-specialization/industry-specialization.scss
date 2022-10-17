@@ -51,9 +51,11 @@
             }
         }
     }
+
+    &.isMobile {
+        display: none;
+    }
 }
-
-
 
 .industry-specialization-slider-nav__btn {
     width: vw(55);
@@ -111,6 +113,45 @@
         padding: 12px;
         border: 1px solid $darkGray;
         border-radius: 8px;
+    }
+}
+
+.industry-specialization__tabs {
+    display: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-bottom: 24px;
+
+    &.isMobile {
+        display: block;
+    }
+}
+
+.industry-specialization__tabs-content {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -6px;
+}
+
+.industry-specialization__tabs-item {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    margin: 6px;
+    padding: 12px;
+    border: 1px solid $darkGray;
+    border-radius: 8px;
+
+    &--active {
+        background-color: $wildWatermelon;
+        color: $white;
+        pointer-events: none;
     }
 }
 
