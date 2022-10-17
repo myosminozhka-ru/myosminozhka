@@ -1,15 +1,52 @@
 <section class="main-about" :class="{'mobile': window.width <=1023}">
-    <div class="main-about-info">
+    <div class="main-about__content">
+        <div class="main-about__circle"></div>
+        <div class="main-about__top">
+            <h2 class="main-about__title">о нас</h2>
+            <p class="main-about__description">
+                <span class="main-about__description-bold">Осьминожка</span> - это <span class="main-about__description-medium">digital агентство</span> полного цикла. Мы креативны и амбициозны, а значит, готовы воплотить самые нестандартные решения и задумки.
+            </p>
+        </div>
+
+        <div class="main-about__bottom">
+            <div class="main-about__statistics-list">
+                <div class="main-about__statistics-block">
+                    <div class="main-about-statistics-item main-about__statistics-item main-about__statistics-item--1">
+                        <span class="main-about-statistics-item__title">75%</span>
+                        <span class="main-about-statistics-item__description">клиентов<br> остаются с нами</span>
+                    </div>
+                    
+                    <div class="main-about-statistics-item main-about__statistics-item main-about__statistics-item--2">
+                        <span class="main-about-statistics-item__title">5</span>
+                        <span class="main-about-statistics-item__description">лет работы</span>
+                    </div>
+                </div>
+
+                <div class="main-about__statistics-block">
+                    <div class="main-about-statistics-item main-about__statistics-item main-about__statistics-item--3">
+                        <span class="main-about-statistics-item__title">35</span>
+                        <span class="main-about-statistics-item__description">сотрудников</span>
+                    </div>
+                    
+                    <div class="main-about-statistics-item main-about__statistics-item main-about__statistics-item--4">
+                        <span class="main-about-statistics-item__title">79</span>
+                        <span class="main-about-statistics-item__description">завершенных<br>проектов</span>
+                    </div>
+                </div>
+            </div>
+
+            <img src="/img/main-about-team.png" alt="" class="main-about__team">
+        </div>
+    </div>
+    <!-- <div class="main-about-info">
         <div class="main-about-circle"></div>
         <div class="main-about-left">
             <h1 class="main-about-title">о нас</h1>
         </div>
         <div class="main-about-right">
-            <div class="main-about-name">Осьминожка</div>
+            <div class="main-about-name"></div>
             <div class="main-about-text">
-                - это прогрессивное дизайнерское агентство, обладающее техническими и творческими навыками, чтобы воплотить ваш бренд
-                стал лучше. Наш подход к дизайну и разработке создает впечатляющие, привлекательные бренды, которые возвращают вам
-                творческий потенциал.
+                <span class="main-about-text__bold">Осьминожка</span> - это <span class="main-about-text__medium">digital агентство</span> полного цикла. Мы креативны и амбициозны, а значит, готовы воплотить самые нестандартные решения и задумки.
             </div>
             <div class="main-about-video">
                 <div class="main-about-preview">
@@ -35,5 +72,5 @@
             <div class="count">10</div>
             <div class="text">Сотрудников</div>
         </div>
-    </div>
+    </div> -->
 </section>

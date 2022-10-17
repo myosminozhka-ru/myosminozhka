@@ -68,16 +68,16 @@ html {
 .first-frame {
   position: relative;
   z-index: 1;
-  &:not(.mobile):after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: vw(500);
-    z-index: 0;
-    background: linear-gradient(to top, #{$bgColor} 30%, transparent 100%);
-  }
+  // &:not(.mobile):after {
+  //   content: "";
+  //   position: absolute;
+  //   bottom: 0;
+  //   left: 0;
+  //   right: 0;
+  //   height: vw(500);
+  //   z-index: 0;
+  //   background: linear-gradient(to top, #{$bgColor} 30%, transparent 100%);
+  // }
   &:not(.mobile) {
     min-height: 100vh;
   }

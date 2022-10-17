@@ -29,8 +29,8 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
             rel="stylesheet">
-        <link rel="stylesheet" href="styles/main.css">
-        <link rel="stylesheet" href="styles/cases.css">
+        <link rel="stylesheet" href="styles/main.min.css">
+        <link rel="stylesheet" href="styles/cases.min.css">
     </head>
     <body class="main">
         <div class="wrapper" id="app">
@@ -164,24 +164,160 @@
     <img class="cursor-shape" src="img/shape.png" alt="">
     <canvas id="cursor"></canvas>
 </div>
-                    <div class="main-words" :class="{'main-words__animated': mainWords.isAnimated, 'mobile': window.width <=1023}">
-    <div :class="`main-words-wrap main-words-wrap__${this.mainWords.x.position} ${window.width <=1023 ? 'mobile' : 'desktop'}`">
-        <div class="main-words-item" :class="{'main-words-item__active' : this.mainWords.x.position == 'left', 'main-words-item__loaded': isMounted}" style="--delay: 0s;">digital</div>
-        <div class="main-words-item" :class="{'main-words-item__active' : this.mainWords.x.position == 'right', 'main-words-item__loaded': isMounted}" style="--delay: 0.2s;">agency</div>
-    </div>
-</div>
-                    <div class="call-to-action" :class="{'mobile': window.width <=1023}">
-    <div class="call-to-action-left" v-if="window.width > 1023"></div>
-    <div class="call-to-action-right">
-        <div class="call-to-action-text">для среднего и крупного бизнеса</div>
-        <div class="call-to-action-button modal_opener" v-if="window.width > 1023">
-            <!-- TODO сделать аномацию кнопки https://videinfra.com/ -->
-            <a href="#" class="button button--main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><div class="text">Стать клиентом</div></a>
+                    <div class="first-screen">
+    <div class="first-screen__content" class="first-screen__img" :class="[{'isTable': window.width === 769}, {'isMobile': window.width <= 360}]">
+        <img src="/img/svg/first-screen-text.svg" alt="" class="first-screen__img" :class="[{'isTable': window.width === 769}, {'isMobile': window.width <= 360}]">
+        <div class="first-screen__box" :class="[{'isTable': window.width === 769}, {'isMobile': window.width <= 360}]">
+            <span class="first-screen__description" :class="[{'isTable': window.width === 769}, {'isMobile': window.width <= 360}]">Мы растем, пока другие усыхают и чахнут</span>
+            <span class="button button--main first-screen__btn" :class="[{'isTable': window.width === 769}, {'isMobile': window.width <= 360}]">
+                <span class="button__text">Стать клиентом</span>
+            </span>
         </div>
     </div>
 </div>
                 </section>
             </div>
+            <section class="industry-specialization">
+    <div class="industry-specialization__content">
+        <h2 class="industry-specialization__title" :class="[{'isTable': window.width === 769}, {'isMobile': window.width <= 360}]">отраслевая специализация</h2>
+
+        <div class="industry-specialization__row" :class="[{'isTable': window.width === 769}, {'isMobile': window.width <= 360}]">
+            <div class="industry-specialization-slider-nav industry-specialization__slider-nav">
+                <span class="industry-specialization-slider-nav__btn industry-specialization-slider-nav__btn--prev">
+                    <svg class="industry-specialization-slider-nav__btn-icon" viewBox="0 0 11 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.97634 0.332279C5.71304 0.0690076 5.28619 0.0690077 5.02292 0.332279L0.732611 4.62259C0.469337 4.88586 0.469337 5.31274 0.732611 5.57601C0.995888 5.83928 1.42274 5.83928 1.68601 5.57601L5.49963 1.76238L9.31322 5.57601C9.5765 5.83928 10.0034 5.83928 10.2666 5.57601C10.5299 5.31274 10.5299 4.88586 10.2666 4.62259L5.97634 0.332279ZM6.17378 24L6.17378 0.808988L4.82547 0.808988L4.82547 24L6.17378 24Z" fill="currentColor"/>
+                    </svg>                        
+                </span>
+                <div class="industry-specialization-slider-nav__list">
+                    <span class="industry-specialization-slider-nav__item">
+                        <span class="industry-specialization-slider-nav__item-content"
+                             :class="[{'isTable': window.width === 769}, {'isMobile': window.width <= 360}]">
+                             Банки и Финтех
+                        </span>
+                    </span>
+                    <span class="industry-specialization-slider-nav__item">
+                        <span class="industry-specialization-slider-nav__item-content"
+                             :class="[{'isTable': window.width === 769}, {'isMobile': window.width <= 360}]">
+                             Retail, E-commerce
+                        </span>
+                    </span>
+                    <span class="industry-specialization-slider-nav__item">
+                        <span class="industry-specialization-slider-nav__item-content"
+                             :class="[{'isTable': window.width === 769}, {'isMobile': window.width <= 360}]">
+                             IT и Телеком
+                        </span>
+                    </span>
+                    <span class="industry-specialization-slider-nav__item">
+                        <span class="industry-specialization-slider-nav__item-content"
+                             :class="[{'isTable': window.width === 769}, {'isMobile': window.width <= 360}]">
+                             Транспорт и логистика
+                        </span>
+                    </span>
+                    <span class="industry-specialization-slider-nav__item">
+                        <span class="industry-specialization-slider-nav__item-content"
+                             :class="[{'isTable': window.width === 769}, {'isMobile': window.width <= 360}]">
+                             Строительство и недвижимость
+                        </span>
+                    </span>
+                </div>
+                <span class="industry-specialization-slider-nav__btn industry-specialization-slider-nav__btn--next">
+                    <svg class="industry-specialization-slider-nav__btn-icon" viewBox="0 0 11 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.97634 23.6677C5.71304 23.931 5.28619 23.931 5.02292 23.6677L0.732612 19.3774C0.469339 19.1141 0.469339 18.6873 0.732612 18.424C0.99589 18.1607 1.42274 18.1607 1.68602 18.424L5.49963 22.2376L9.31323 18.424C9.5765 18.1607 10.0034 18.1607 10.2666 18.424C10.5299 18.6873 10.5299 19.1141 10.2666 19.3774L5.97634 23.6677ZM6.17378 -1.28599e-07L6.17378 23.191L4.82547 23.191L4.82547 -1.87536e-07L6.17378 -1.28599e-07Z" fill="currentColor"/>
+                    </svg>                        
+                </span>
+            </div>
+
+            <div class="industry-specialization-slider-for industry-specialization__slider-for">
+                <div class="industry-specialization-slider-for__list">
+                    <div class="industry-specialization-slider-for__item">
+                        <div class="industry-specialization-slider-for__item-content">
+                            <img src="https://source.unsplash.com/random" alt="" class="industry-specialization-slider-for__item-img">
+                            <div class="industry-specialization-slider-for__item-bottom"
+                                :class="[{'isTable': window.width === 769}, {'isMobile': window.width <= 360}]">
+                                <span class="industry-specialization-slider-for__item-title"
+                                    :class="[{'isTable': window.width === 769}, {'isMobile': window.width <= 360}]">
+                                    Строительство и недвижимость
+                                </span>
+                                <span class="industry-specialization-slider-for__item-description"
+                                    :class="[{'isTable': window.width === 769}, {'isMobile': window.width <= 360}]">
+                                    5 проектов 
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="industry-specialization-slider-for__item">
+                        <div class="industry-specialization-slider-for__item-content">
+                            <img src="https://source.unsplash.com/random" alt="" class="industry-specialization-slider-for__item-img">
+                            <div class="industry-specialization-slider-for__item-bottom"
+                                :class="[{'isTable': window.width === 769}, {'isMobile': window.width <= 360}]">
+                                <span class="industry-specialization-slider-for__item-title"
+                                    :class="[{'isTable': window.width === 769}, {'isMobile': window.width <= 360}]">
+                                    Строительство и недвижимость
+                                </span>
+                                <span class="industry-specialization-slider-for__item-description"
+                                    :class="[{'isTable': window.width === 769}, {'isMobile': window.width <= 360}]">
+                                    5 проектов 
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="industry-specialization-slider-for__item">
+                        <div class="industry-specialization-slider-for__item-content">
+                            <img src="https://source.unsplash.com/random" alt="" class="industry-specialization-slider-for__item-img">
+                            <div class="industry-specialization-slider-for__item-bottom"
+                                :class="[{'isTable': window.width === 769}, {'isMobile': window.width <= 360}]">
+                                <span class="industry-specialization-slider-for__item-title"
+                                    :class="[{'isTable': window.width === 769}, {'isMobile': window.width <= 360}]">
+                                    Строительство и недвижимость
+                                </span>
+                                <span class="industry-specialization-slider-for__item-description"
+                                    :class="[{'isTable': window.width === 769}, {'isMobile': window.width <= 360}]">
+                                    5 проектов 
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="industry-specialization-slider-for__item">
+                        <div class="industry-specialization-slider-for__item-content">
+                            <img src="https://source.unsplash.com/random" alt="" class="industry-specialization-slider-for__item-img">
+                            <div class="industry-specialization-slider-for__item-bottom"
+                                :class="[{'isTable': window.width === 769}, {'isMobile': window.width <= 360}]">
+                                <span class="industry-specialization-slider-for__item-title"
+                                    :class="[{'isTable': window.width === 769}, {'isMobile': window.width <= 360}]">
+                                    Строительство и недвижимость
+                                </span>
+                                <span class="industry-specialization-slider-for__item-description"
+                                    :class="[{'isTable': window.width === 769}, {'isMobile': window.width <= 360}]">
+                                    5 проектов 
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="industry-specialization-slider-for__item">
+                        <div class="industry-specialization-slider-for__item-content">
+                            <img src="https://source.unsplash.com/random" alt="" class="industry-specialization-slider-for__item-img">
+                            <div class="industry-specialization-slider-for__item-bottom"
+                                :class="[{'isTable': window.width === 769}, {'isMobile': window.width <= 360}]">
+                                <span class="industry-specialization-slider-for__item-title"
+                                    :class="[{'isTable': window.width === 769}, {'isMobile': window.width <= 360}]">
+                                    Строительство и недвижимость
+                                </span>
+                                <span class="industry-specialization-slider-for__item-description"
+                                    :class="[{'isTable': window.width === 769}, {'isMobile': window.width <= 360}]">
+                                    5 проектов 
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
             <section class="web" v-if="window.width > 1023">
     <div class="web-tentacle">
         <img src="img/svg/tentacle_static.svg" width="100%" alt="" v-if="isSafary">
@@ -345,17 +481,54 @@
 </section>
             <div class="trigger-wrapper-about">
                 <section class="main-about" :class="{'mobile': window.width <=1023}">
-    <div class="main-about-info">
+    <div class="main-about__content">
+        <div class="main-about__circle"></div>
+        <div class="main-about__top">
+            <h2 class="main-about__title">о нас</h2>
+            <p class="main-about__description">
+                <span class="main-about__description-bold">Осьминожка</span> - это <span class="main-about__description-medium">digital агентство</span> полного цикла. Мы креативны и амбициозны, а значит, готовы воплотить самые нестандартные решения и задумки.
+            </p>
+        </div>
+
+        <div class="main-about__bottom">
+            <div class="main-about__statistics-list">
+                <div class="main-about__statistics-block">
+                    <div class="main-about-statistics-item main-about__statistics-item main-about__statistics-item--1">
+                        <span class="main-about-statistics-item__title">75%</span>
+                        <span class="main-about-statistics-item__description">клиентов<br> остаются с нами</span>
+                    </div>
+                    
+                    <div class="main-about-statistics-item main-about__statistics-item main-about__statistics-item--2">
+                        <span class="main-about-statistics-item__title">5</span>
+                        <span class="main-about-statistics-item__description">лет работы</span>
+                    </div>
+                </div>
+
+                <div class="main-about__statistics-block">
+                    <div class="main-about-statistics-item main-about__statistics-item main-about__statistics-item--3">
+                        <span class="main-about-statistics-item__title">35</span>
+                        <span class="main-about-statistics-item__description">сотрудников</span>
+                    </div>
+                    
+                    <div class="main-about-statistics-item main-about__statistics-item main-about__statistics-item--4">
+                        <span class="main-about-statistics-item__title">79</span>
+                        <span class="main-about-statistics-item__description">завершенных<br>проектов</span>
+                    </div>
+                </div>
+            </div>
+
+            <img src="/img/main-about-team.png" alt="" class="main-about__team">
+        </div>
+    </div>
+    <!-- <div class="main-about-info">
         <div class="main-about-circle"></div>
         <div class="main-about-left">
             <h1 class="main-about-title">о нас</h1>
         </div>
         <div class="main-about-right">
-            <div class="main-about-name">Осьминожка</div>
+            <div class="main-about-name"></div>
             <div class="main-about-text">
-                - это прогрессивное дизайнерское агентство, обладающее техническими и творческими навыками, чтобы воплотить ваш бренд
-                стал лучше. Наш подход к дизайну и разработке создает впечатляющие, привлекательные бренды, которые возвращают вам
-                творческий потенциал.
+                <span class="main-about-text__bold">Осьминожка</span> - это <span class="main-about-text__medium">digital агентство</span> полного цикла. Мы креативны и амбициозны, а значит, готовы воплотить самые нестандартные решения и задумки.
             </div>
             <div class="main-about-video">
                 <div class="main-about-preview">
@@ -381,7 +554,7 @@
             <div class="count">10</div>
             <div class="text">Сотрудников</div>
         </div>
-    </div>
+    </div> -->
 </section>
                 <section class="main-question fileLoaderMain" :class="{'mobile': window.width <=1023}">
     <div class="main-question-tentacle" v-if="!isSafary">
@@ -1184,8 +1357,8 @@
 </div>
 
         </div>
-        <script src="js/main_page.js"></script>
-        <script src="js/vendor.js"></script>
-        <script src="js/custom.js"></script>
+        <script src="js/main_page.min.js"></script>
+        <script src="js/vendor.min.js"></script>
+        <script src="js/custom.min.js"></script>
     </body>
 </html>

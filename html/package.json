@@ -23,8 +23,6 @@
         "lint:styles --fix": "stylelint \"src/**/*.scss\" --syntax=scss --fix",
         "lint:scripts": "eslint --color ./src/blocks",
         "lint:scripts --fix": "eslint --fix --color ./src/blocks",
-        "bem-c": "bem create $* -l src/blocks/components",
-        "bem-m": "bem create $* -l src/blocks/modules",
         "deploy": "npm run build && gh-pages -d dist"
     },
     "devDependencies": {
@@ -36,8 +34,6 @@
         "babel-loader": "^8.0.5",
         "babel-preset-es2015": "^6.24.1",
         "babel-preset-stage-0": "^6.24.1",
-        "bem-tools-core": "bem-tools/bem-tools-core",
-        "bem-tools-create": "bem-tools/bem-tools-create",
         "browser-sync": "^2.23.6",
         "del": "^5.1.0",
         "gulp": "^4.0.0",
