@@ -494,6 +494,40 @@ var cursorAnimation = /*#__PURE__*/function () {
 
 /***/ }),
 
+/***/ "./src/blocks/modules/first-screen/first-screen.js":
+/*!*********************************************************!*\
+  !*** ./src/blocks/modules/first-screen/first-screen.js ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return FirstScreen; });
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+var FirstScreen = /*#__PURE__*/function () {
+  function FirstScreen() {
+    _classCallCheck(this, FirstScreen);
+  }
+  _createClass(FirstScreen, [{
+    key: "init",
+    value: function init() {
+      gsap__WEBPACK_IMPORTED_MODULE_0__["gsap"].to('.first-screen__tentacles', {
+        duration: 1,
+        left: 0
+      });
+    }
+  }]);
+  return FirstScreen;
+}();
+
+
+/***/ }),
+
 /***/ "./src/blocks/modules/footer/footer.js":
 /*!*********************************************!*\
   !*** ./src/blocks/modules/footer/footer.js ***!
@@ -702,7 +736,7 @@ var IndustrySpecialization = /*#__PURE__*/function () {
       var $for = $(".industry-specialization-slider-for");
       var $forSlider = $for.find(".industry-specialization-slider-for__list");
       if ($navSlider && $forSlider) {
-        var forSlider = $forSlider.slick({
+        $forSlider.slick({
           slidesToShow: 1,
           slidesToScroll: 1,
           arrows: false,
@@ -710,7 +744,7 @@ var IndustrySpecialization = /*#__PURE__*/function () {
           vertical: true,
           swipe: false
         });
-        var navSlider = $navSlider.slick({
+        $navSlider.slick({
           slidesToShow: 5,
           slidesToScroll: 1,
           asNavFor: $forSlider,
@@ -730,7 +764,7 @@ var IndustrySpecialization = /*#__PURE__*/function () {
               $(this).addClass('industry-specialization__tabs-item--active');
             });
           } else {
-            $navSlider.slick({
+            $navSlider.not('.slick-initialized').slick({
               slidesToShow: 1,
               slidesToScroll: 1,
               arrows: false,
@@ -2034,8 +2068,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_header_header__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! %modules%/header/header */ "./src/blocks/modules/header/header.js");
 /* harmony import */ var _modules_cases_cases__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! %modules%/cases/cases */ "./src/blocks/modules/cases/cases.js");
 /* harmony import */ var _modules_industry_specialization_industry_specialization__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! %modules%/industry-specialization/industry-specialization */ "./src/blocks/modules/industry-specialization/industry-specialization.js");
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
-/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
+/* harmony import */ var _modules_first_screen_first_screen__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! %modules%/first-screen/first-screen */ "./src/blocks/modules/first-screen/first-screen.js");
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
 
 
 
@@ -2053,7 +2088,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-gsap__WEBPACK_IMPORTED_MODULE_15__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_16__["ScrollTrigger"]);
+
+gsap__WEBPACK_IMPORTED_MODULE_16__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_17__["ScrollTrigger"]);
 window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
   data: function data() {
@@ -2105,7 +2141,8 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
         }
       },
       isSafary: false,
-      industrySpecialization: new _modules_industry_specialization_industry_specialization__WEBPACK_IMPORTED_MODULE_14__["default"]()
+      industrySpecialization: new _modules_industry_specialization_industry_specialization__WEBPACK_IMPORTED_MODULE_14__["default"](),
+      firstScreen: new _modules_first_screen_first_screen__WEBPACK_IMPORTED_MODULE_15__["default"]()
     };
   },
   mounted: function mounted() {
@@ -2118,6 +2155,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       var preloader = document.querySelector('.preloader svg animateTransform');
       preloader.addEventListener('endEvent', function () {
         _this.isPreloaderHidden = true;
+        _this.firstScreen.init();
       });
       _this.isMounted = true;
       // this.mainCases.init();
@@ -2186,7 +2224,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       event.target.appendChild(circle);
       event.target.children[1].style.left = x + 'px';
       event.target.children[1].style.top = y + 'px';
-      gsap__WEBPACK_IMPORTED_MODULE_15__["default"].to(event.target.children[1], 0.5, {
+      gsap__WEBPACK_IMPORTED_MODULE_16__["default"].to(event.target.children[1], 0.5, {
         width: 800,
         height: 800,
         x: -400,
@@ -2198,7 +2236,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       var y = event.offsetY;
       event.target.children[1].style.left = x + 'px';
       event.target.children[1].style.top = y + 'px';
-      gsap__WEBPACK_IMPORTED_MODULE_15__["default"].to(event.target.children[1], 0.3, {
+      gsap__WEBPACK_IMPORTED_MODULE_16__["default"].to(event.target.children[1], 0.3, {
         width: 0,
         height: 0,
         x: 0,
@@ -2211,7 +2249,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     animateTitles: function animateTitles() {
       if (document.querySelectorAll(".animated-title")) {
         document.querySelectorAll(".animated-title").forEach(function (item, i) {
-          gsap__WEBPACK_IMPORTED_MODULE_15__["default"].to(item, {
+          gsap__WEBPACK_IMPORTED_MODULE_16__["default"].to(item, {
             scrollTrigger: {
               trigger: item,
               start: 'top bottom',
@@ -2220,11 +2258,11 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
               // markers: true,
               onUpdate: function onUpdate(item) {
                 if (item.progress > 0.1) {
-                  gsap__WEBPACK_IMPORTED_MODULE_15__["default"].to(item.trigger, 2.5, {
+                  gsap__WEBPACK_IMPORTED_MODULE_16__["default"].to(item.trigger, 2.5, {
                     transform: "translateX(".concat(-item.progress * 200 + 100, "%)")
                   });
                 } else {
-                  gsap__WEBPACK_IMPORTED_MODULE_15__["default"].to(item.trigger, 2.5, {
+                  gsap__WEBPACK_IMPORTED_MODULE_16__["default"].to(item.trigger, 2.5, {
                     transform: "translateX(120%)"
                   });
                 }
@@ -2239,7 +2277,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       if (document.querySelectorAll(".animated-title-top")) {
         document.querySelectorAll(".animated-title-top").forEach(function (item, i) {
           if (window.innerWidth > 1023) {
-            gsap__WEBPACK_IMPORTED_MODULE_15__["default"].to(item, {
+            gsap__WEBPACK_IMPORTED_MODULE_16__["default"].to(item, {
               scrollTrigger: {
                 trigger: item,
                 start: 'top center+=100',
@@ -2248,11 +2286,11 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
                 // markers: true,
                 onUpdate: function onUpdate(item) {
                   if (item.progress > 0.1) {
-                    gsap__WEBPACK_IMPORTED_MODULE_15__["default"].to(item.trigger, 2.5, {
+                    gsap__WEBPACK_IMPORTED_MODULE_16__["default"].to(item.trigger, 2.5, {
                       transform: "translateX(".concat(-item.progress * 200 + 100, "%)")
                     });
                   } else {
-                    gsap__WEBPACK_IMPORTED_MODULE_15__["default"].to(item.trigger, 2.5, {
+                    gsap__WEBPACK_IMPORTED_MODULE_16__["default"].to(item.trigger, 2.5, {
                       transform: "translateX(120%)"
                     });
                   }
@@ -2262,7 +2300,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
               // x: '-100%'
             });
           } else {
-            gsap__WEBPACK_IMPORTED_MODULE_15__["default"].to(item, {
+            gsap__WEBPACK_IMPORTED_MODULE_16__["default"].to(item, {
               scrollTrigger: {
                 trigger: item,
                 start: 'top top+=325',
@@ -2271,11 +2309,11 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
                 // markers: true,
                 onUpdate: function onUpdate(item) {
                   if (item.progress > 0.1) {
-                    gsap__WEBPACK_IMPORTED_MODULE_15__["default"].to(item.trigger, 2.5, {
+                    gsap__WEBPACK_IMPORTED_MODULE_16__["default"].to(item.trigger, 2.5, {
                       transform: "translateX(".concat(-item.progress * 200 + 100, "%)")
                     });
                   } else {
-                    gsap__WEBPACK_IMPORTED_MODULE_15__["default"].to(item.trigger, 2.5, {
+                    gsap__WEBPACK_IMPORTED_MODULE_16__["default"].to(item.trigger, 2.5, {
                       transform: "translateX(120%)"
                     });
                   }
