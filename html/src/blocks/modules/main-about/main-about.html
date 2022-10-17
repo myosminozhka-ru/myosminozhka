@@ -1,76 +1,43 @@
-<section class="main-about" :class="{'mobile': window.width <=1023}">
+<section class="main-about" :class="{'isMobile': window.width <=1023}">
     <div class="main-about__content">
-        <div class="main-about__circle"></div>
-        <div class="main-about__top">
-            <h2 class="main-about__title">о нас</h2>
-            <p class="main-about__description">
+        <div class="main-about__circle" :class="{'isMobile': window.width <=1023}"></div>
+        <div class="main-about__top" :class="{'isMobile': window.width <=1023}">
+            <h2 class="main-about__title" :class="{'isMobile': window.width <=1023}">о нас</h2>
+            <p class="main-about__description" :class="{'isMobile': window.width <=1023}">
                 <span class="main-about__description-bold">Осьминожка</span> - это <span class="main-about__description-medium">digital агентство</span> полного цикла. Мы креативны и амбициозны, а значит, готовы воплотить самые нестандартные решения и задумки.
             </p>
         </div>
 
-        <div class="main-about__bottom">
-            <div class="main-about__statistics-list">
-                <div class="main-about__statistics-block">
-                    <div class="main-about-statistics-item main-about__statistics-item main-about__statistics-item--1">
-                        <span class="main-about-statistics-item__title">75%</span>
-                        <span class="main-about-statistics-item__description">клиентов<br> остаются с нами</span>
+        <div class="main-about__bottom" :class="{'isMobile': window.width <=1023}">
+            <div class="main-about__statistics-list" :class="{'isMobile': window.width <=1023}">
+                <div class="main-about__statistics-block" :class="{'isMobile': window.width <=1023}">
+                    <div class="main-about-statistics-item main-about__statistics-item main-about__statistics-item--1" :class="{'isMobile': window.width <=1023}">
+                        <span class="main-about-statistics-item__title" :class="{'isMobile': window.width <=1023}">75%</span>
+                        <span class="main-about-statistics-item__description" :class="{'isMobile': window.width <=1023}">клиентов<br> остаются с нами</span>
                     </div>
                     
-                    <div class="main-about-statistics-item main-about__statistics-item main-about__statistics-item--2">
-                        <span class="main-about-statistics-item__title">5</span>
-                        <span class="main-about-statistics-item__description">лет работы</span>
+                    <div class="main-about-statistics-item main-about__statistics-item main-about__statistics-item--2" :class="{'isMobile': window.width <=1023}">
+                        <span class="main-about-statistics-item__title" :class="{'isMobile': window.width <=1023}">5</span>
+                        <span class="main-about-statistics-item__description" :class="{'isMobile': window.width <=1023}">лет работы</span>
                     </div>
                 </div>
 
-                <div class="main-about__statistics-block">
-                    <div class="main-about-statistics-item main-about__statistics-item main-about__statistics-item--3">
-                        <span class="main-about-statistics-item__title">35</span>
-                        <span class="main-about-statistics-item__description">сотрудников</span>
+                <div class="main-about__statistics-block" :class="{'isMobile': window.width <=1023}">
+                    <div class="main-about-statistics-item main-about__statistics-item main-about__statistics-item--3" :class="{'isMobile': window.width <=1023}">
+                        <span class="main-about-statistics-item__title" :class="{'isMobile': window.width <=1023}">35</span>
+                        <span class="main-about-statistics-item__description" :class="{'isMobile': window.width <=1023}">сотрудников</span>
                     </div>
                     
-                    <div class="main-about-statistics-item main-about__statistics-item main-about__statistics-item--4">
-                        <span class="main-about-statistics-item__title">79</span>
-                        <span class="main-about-statistics-item__description">завершенных<br>проектов</span>
+                    <div class="main-about-statistics-item main-about__statistics-item main-about__statistics-item--4" :class="{'isMobile': window.width <=1023}">
+                        <span class="main-about-statistics-item__title" :class="{'isMobile': window.width <=1023}">79</span>
+                        <span class="main-about-statistics-item__description" :class="{'isMobile': window.width <=1023}">завершенных<br>проектов</span>
                     </div>
                 </div>
             </div>
 
-            <img src="/img/main-about-team.png" alt="" class="main-about__team">
-        </div>
-    </div>
-    <!-- <div class="main-about-info">
-        <div class="main-about-circle"></div>
-        <div class="main-about-left">
-            <h1 class="main-about-title">о нас</h1>
-        </div>
-        <div class="main-about-right">
-            <div class="main-about-name"></div>
-            <div class="main-about-text">
-                <span class="main-about-text__bold">Осьминожка</span> - это <span class="main-about-text__medium">digital агентство</span> полного цикла. Мы креативны и амбициозны, а значит, готовы воплотить самые нестандартные решения и задумки.
-            </div>
-            <div class="main-about-video">
-                <div class="main-about-preview">
-                    <div class="main-about-play">
-                        <img src="img/svg/play.svg" width="100%" alt="">
-                    </div>
-                    <img width="100%" src="img/video_preview.png" alt="">
-                </div>
-                <div class="main-about-video-shadow"></div>
+            <div class="main-about__wrapper-team" :class="{'isMobile': window.width <=1023}">
+                <img src="/img/main-about-team.png" alt="" class="main-about__team">
             </div>
         </div>
     </div>
-    <div class="main-about-advantages">
-        <div class="main-about-advantage">
-            <div class="count">3</div>
-            <div class="text">Года работы</div>
-        </div>
-        <div class="main-about-advantage">
-            <div class="count">159</div>
-            <div class="text">Проектов</div>
-        </div>
-        <div class="main-about-advantage">
-            <div class="count">10</div>
-            <div class="text">Сотрудников</div>
-        </div>
-    </div> -->
 </section>
