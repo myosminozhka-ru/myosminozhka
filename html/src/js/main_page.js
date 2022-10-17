@@ -12,6 +12,7 @@ import applicationForm from "%modules%/application-form/application-form";
 import mainQuestionForm from "%modules%/main-question/main-question";
 import header from "%modules%/header/header";
 import casesUpdated from "%modules%/cases/cases";
+import IndustrySpecialization from "%modules%/industry-specialization/industry-specialization";
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -65,7 +66,8 @@ window.app = new Vue({
                 height: window.innerHeight
             }
         },
-        isSafary: false
+        isSafary: false,
+        industrySpecialization: new IndustrySpecialization()
     }),
     mounted() {
         // setTimeout(() => {
@@ -116,6 +118,7 @@ window.app = new Vue({
             }))
             
             this.isSafary = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+            this.industrySpecialization.init();
         }, 250);
         setTimeout(this.animateTitles(), 500)
     },

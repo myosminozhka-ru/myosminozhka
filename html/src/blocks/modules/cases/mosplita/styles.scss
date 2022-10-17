@@ -22,7 +22,7 @@
 }
 @for $i from 1 through 26 {
     .mosplita__image:nth-child(#{$i}) { 
-      transition: .3s opacity #{$i / 20}s ease;
+      transition: .3s opacity #{math.div($i, 20)}s ease;
     }
 }
 .mosplita__image:nth-child(1) {
@@ -107,7 +107,7 @@
 .mosplita:hover .mosplita__image {
     @for $i from 1 through 26 {
         &:nth-child(#{$i}) { 
-          transition: .3s opacity #{$i / 8}s ease;
+          transition: .3s opacity #{math.div($i, 8)}s ease;
           opacity: 1;
         }
     }

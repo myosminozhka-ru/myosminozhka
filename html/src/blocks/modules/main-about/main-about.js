@@ -39,11 +39,11 @@ const mainAbout = class MainAbout {
         if (!document.querySelector('.main-about')) return;
         let self = this;
         if (window.innerWidth > 1023) {
-            gsap.to('.main-about-circle', {
+            gsap.to('.main-about__circle', {
                 scrollTrigger: {
                     trigger: '.trigger-wrapper-about',
-                    start: 'top top',
-                    end: 'top+=400 top',
+                    start: 'top-=500',
+                    end: 'top',
                     scrub: 1,
                     // markers: true
                 },
@@ -57,72 +57,63 @@ const mainAbout = class MainAbout {
                     self.onCircleAnimationEnd();
                 }
             })
-            gsap.to('.main-about-title', {
+            gsap.to('.main-about__title', {
                 scrollTrigger: {
                     trigger: '.trigger-wrapper-about',
-                    start: 'top+=600 top',
-                    end: 'top+=1000 top',
+                    start: 'top-=500',
+                    end: 'top',
                     scrub: 1,
                 },
-                y: () => {
-                    return -100 * 100 / window.innerWidth + 'vw'
-                },
-                color: '#afa3a3'
+                color: '#121423'
             })
-            gsap.to('.main-about-name', {
+            gsap.to('.main-about__description', {
                 scrollTrigger: {
                     trigger: '.trigger-wrapper-about',
-                    start: 'top+=500 top',
-                    end: 'top+=900 top',
+                    start: 'top-=500',
+                    end: 'top',
                     scrub: 1,
                 },
-                y: () => {
-                    return -350 * 100 / window.innerWidth + 'vw'
-                },
+                color: '#121423'
             })
-            gsap.to('.main-about-text', {
+            
+            gsap.to('.main-about__statistics-item--1', {
                 scrollTrigger: {
                     trigger: '.trigger-wrapper-about',
-                    start: 'top+=530 top',
-                    end: 'top+=930 top',
+                    start: 'top-=100',
+                    end: 'top+=100',
                     scrub: 1,
                 },
-                y: () => {
-                    return -350 * 100 / window.innerWidth + 'vw'
-                },
+                opacity: 1,
             })
-            gsap.to('.main-about-video-shadow', {
+
+            gsap.to('.main-about__statistics-item--2', {
                 scrollTrigger: {
                     trigger: '.trigger-wrapper-about',
-                    start: 'top+=530 top',
-                    end: 'top+=930 top',
+                    start: 'top',
+                    end: 'top+=200',
                     scrub: 1,
                 },
-                left: 0,
-                top: 0,
+                opacity: 1,
             })
-            gsap.to('.main-about-video', {
+
+            gsap.to('.main-about__statistics-item--3', {
                 scrollTrigger: {
                     trigger: '.trigger-wrapper-about',
-                    start: 'top+=560 top',
-                    end: 'top+=960 top',
+                    start: 'top+=100',
+                    end: 'top+=300',
                     scrub: 1,
                 },
-                y: () => {
-                    return -350 * 100 / window.innerWidth + 'vw'
-                },
+                opacity: 1,
             })
-            gsap.to('.main-about-advantages', {
+
+            gsap.to('.main-about__statistics-item--4', {
                 scrollTrigger: {
                     trigger: '.trigger-wrapper-about',
-                    start: 'top top',
-                    end: 'bottom center',
+                    start: 'top+=200',
+                    end: 'top+=400',
                     scrub: 1,
-                    // markers: true,
-                    pin: true,
-                    // pinSpacing: false
                 },
-                right: '100%'
+                opacity: 1,
             })
         }
     }

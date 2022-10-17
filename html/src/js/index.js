@@ -28,6 +28,7 @@ import case_page from "%modules%/case_page/case_page";
 // import postBlog from "%modules%/posts-blog/posts-blog";
 import footer from "%modules%/footer/footer";
 import cookiesForm from "%modules%/cookie-form/cookie-form";
+import IndustrySpecialization from "%modules%/industry-specialization/industry-specialization";
 import $ from "jquery";
 import 'slick-carousel';
 $(function() {
@@ -123,7 +124,8 @@ window.app = new Vue({
                 height: window.innerHeight
             }
         },
-        isSafary: false
+        isSafary: false,
+        industrySpecialization: new IndustrySpecialization()
     }),
     mounted() {
         
@@ -142,6 +144,7 @@ window.app = new Vue({
             // this.cursorAnimation.init();
             // this.mainCarousel.init();
             // this.newsAndTrends.init();
+            this.industrySpecialization.init();
             this.mainQuestionFormModal.init();
             this.mainQuestionFormFirst.init();
             this.mainQuestionFormSecond.init();
