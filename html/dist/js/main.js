@@ -1578,7 +1578,7 @@ var IndustrySpecialization = /*#__PURE__*/function () {
       var $for = $(".industry-specialization-slider-for");
       var $forSlider = $for.find(".industry-specialization-slider-for__list");
       if ($navSlider && $forSlider) {
-        var forSlider = $forSlider.slick({
+        $forSlider.slick({
           slidesToShow: 1,
           slidesToScroll: 1,
           arrows: false,
@@ -1586,7 +1586,7 @@ var IndustrySpecialization = /*#__PURE__*/function () {
           vertical: true,
           swipe: false
         });
-        var navSlider = $navSlider.slick({
+        $navSlider.slick({
           slidesToShow: 5,
           slidesToScroll: 1,
           asNavFor: $forSlider,
@@ -1606,7 +1606,7 @@ var IndustrySpecialization = /*#__PURE__*/function () {
               $(this).addClass('industry-specialization__tabs-item--active');
             });
           } else {
-            $navSlider.slick({
+            $navSlider.not('.slick-initialized').slick({
               slidesToShow: 1,
               slidesToScroll: 1,
               arrows: false,

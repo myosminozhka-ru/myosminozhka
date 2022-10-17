@@ -18678,7 +18678,7 @@ html.overflowed body {
 }
 
 .first-screen__content.isMobile {
-  padding-top: 90px;
+  padding-top: 215px;
   padding-bottom: 55px;
 }
 
@@ -18690,8 +18690,13 @@ html.overflowed body {
 .first-screen__tentacles {
   position: absolute;
   top: -5.7291666667vw;
-  left: 0;
+  left: -100%;
   width: 50%;
+  min-width: 295px;
+}
+
+.first-screen__tentacles.isMobile {
+  top: -30px;
 }
 
 .first-screen__top-box {
@@ -18701,6 +18706,12 @@ html.overflowed body {
   margin-right: 28.07%;
   margin-bottom: 4.4270833333vw;
   max-width: 100%;
+}
+
+.first-screen__top-box.isMobile {
+  padding-left: 16px;
+  margin-bottom: 10px;
+  margin-right: 0;
 }
 
 .first-screen__integr {
@@ -18717,11 +18728,23 @@ html.overflowed body {
   align-items: flex-start;
   padding-left: 3.125vw;
   position: relative;
+  padding-bottom: 7.5vw;
+}
+
+.first-screen__bottom-box.isMobile {
+  flex-direction: column;
+  padding-left: 16px;
+  padding-bottom: 20px;
 }
 
 .first-screen__web {
   margin-right: 7.4479166667vw;
   width: 55.74%;
+}
+
+.first-screen__web.isMobile {
+  margin-right: 0;
+  margin-bottom: 13px;
 }
 
 .first-screen__img {
@@ -18748,15 +18771,11 @@ html.overflowed body {
 }
 
 .first-screen__box.isTable {
-  left: unset;
-  bottom: unset;
   align-self: flex-start;
   padding-left: 88px;
 }
 
 .first-screen__box.isMobile {
-  left: unset;
-  bottom: unset;
   justify-content: center;
   align-items: center;
   align-self: center;

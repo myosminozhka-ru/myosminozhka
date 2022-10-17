@@ -11,7 +11,7 @@ export default class IndustrySpecialization {
 
         if($navSlider && $forSlider) {
 
-            const forSlider = $forSlider.slick({
+            $forSlider.slick({
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 arrows: false,
@@ -20,7 +20,7 @@ export default class IndustrySpecialization {
                 swipe: false
             });
 
-            const navSlider = $navSlider.slick({
+            $navSlider.slick({
                 slidesToShow: 5,
                 slidesToScroll: 1,
                 asNavFor: $forSlider,
@@ -44,7 +44,7 @@ export default class IndustrySpecialization {
                     })
                 }
                 else {
-                    $navSlider.slick({
+                    $navSlider.not('.slick-initialized').slick({
                         slidesToShow: 1,
                         slidesToScroll: 1,
                         arrows: false,
