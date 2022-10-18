@@ -1,0 +1,40 @@
+.tabs-tags {
+    overflow: hidden;
+}
+
+.tabs-tags__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: vw(-8) vw(-16);
+
+    &.mobile {
+        margin: -6px -8px;
+    }
+}
+
+.tabs-tags__item {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: vw(25);
+    line-height: 160%;
+    color: $white;
+    margin: vw(8) vw(16);
+    padding: vw(16) vw(24);
+    border: vw(1) solid $darkGray;
+    border-radius: vw(10);
+    cursor: pointer;
+
+    &.mobile {
+        padding: 12px 16px;
+        font-size: 14px;
+        margin: 6px 8px;
+        border-radius: 10px;
+    }
+
+    &--active {
+        pointer-events: none;
+        color: $white;
+        background-color: $wildWatermelon;
+    }
+}
