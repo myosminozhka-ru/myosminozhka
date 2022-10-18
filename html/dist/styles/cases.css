@@ -24,10 +24,6 @@
   width: 100%;
 }
 
-.cases__item * {
-  pointer-events: none;
-}
-
 .cases__item:after {
   content: "";
   display: block;

@@ -18818,6 +18818,55 @@ html.overflowed body {
   line-height: 25px;
 }
 
+.footer--hidden {
+  display: none;
+}
+
+.cases__tags {
+  padding: 1.6666666667vw;
+  z-index: 1;
+}
+
+.cases__tags.mobile {
+  padding: 32px;
+}
+
+.cases-item-tags {
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.cases-item-tags__content {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.15625vw;
+}
+
+.cases-item-tags__content.mobile {
+  margin: -3px;
+}
+
+.cases-item-tags__item {
+  font-family: "Montserrat";
+  font-size: 0.8333333333vw;
+  line-height: 160%;
+  color: #ffffff;
+  margin: 0.15625vw;
+  padding: 0.8333333333vw 1.25vw;
+  background: #FF4978;
+  border: 0.0520833333vw solid #D94168;
+  border-radius: 0.5208333333vw;
+}
+
+.cases-item-tags__item.mobile {
+  font-size: 16px;
+  margin: 3px;
+  padding: 16px 24px;
+  border: 1px solid #D94168;
+  border-radius: 10px;
+}
+
 @media all and (min-width: 481px) {
   .header-phone_opener {
     position: relative;
