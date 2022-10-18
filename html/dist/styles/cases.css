@@ -18,6 +18,7 @@
   display: block;
   position: relative;
   overflow: hidden;
+  text-decoration: none;
 }
 
 .cases__item.mobile {
@@ -33,6 +34,10 @@
 
 .cases__item.mobile:after {
   padding-top: 60%;
+}
+
+.cases__item:hover {
+  text-decoration: none !important;
 }
 
 .cases__item-bottom {

@@ -5539,6 +5539,14 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
   color: #fff;
 }
 
+.main-cases__tags {
+  padding: 1.6666666667vw;
+}
+
+.main-cases__tags.mobile {
+  padding: 32px;
+}
+
 .main-resume.main-question.dropped {
   min-height: 26.0416666667vw;
 }
@@ -8491,6 +8499,16 @@ body.company .company-ceo:not(.mobile) {
 .cases-items.mobile .cases-items-post-category {
   font-size: 13px;
   line-height: 1.2;
+}
+
+.cases-items-post__tags {
+  position: absolute;
+  z-index: 2;
+  padding: 1.6666666667vw;
+}
+
+.cases-items-post__tags.mobile {
+  padding: 32px;
 }
 
 .job-first {
@@ -18838,7 +18856,6 @@ html.overflowed body {
 }
 
 .cases-item-tags {
-  position: relative;
   overflow: hidden;
   text-decoration: none;
 }
@@ -18868,6 +18885,7 @@ html.overflowed body {
   border: 0.0520833333vw solid #FF4978;
   border-radius: 0.5208333333vw;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .cases-item-tags__item span {
@@ -18885,6 +18903,10 @@ html.overflowed body {
   padding: 16px 24px;
   border: 1px solid #D94168;
   border-radius: 10px;
+}
+
+.cases-item-tags__item--active {
+  pointer-events: none;
 }
 
 @media all and (min-width: 481px) {

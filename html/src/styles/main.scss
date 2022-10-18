@@ -20,7 +20,6 @@
 }
 
 .cases-item-tags {
-    position: relative;
     overflow: hidden;
     text-decoration: none;
 }
@@ -50,6 +49,7 @@
     border: vw(1) solid $wildWatermelon;
     border-radius: vw(10);
     overflow: hidden;
+    cursor: pointer;
 
     span {
         position: relative;
@@ -66,5 +66,9 @@
         padding: 16px 24px;
         border: 1px solid #D94168;
         border-radius: 10px;
+    }
+
+    &--active {
+        pointer-events: none;
     }
 }

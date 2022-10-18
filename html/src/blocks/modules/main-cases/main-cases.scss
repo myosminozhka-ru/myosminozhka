@@ -234,3 +234,11 @@
         }
     }
 }
+
+.main-cases__tags {
+    padding: vw(32);
+
+    &.mobile {
+        padding: 32px;
+    }
+}

@@ -16,6 +16,8 @@
         display: block;
         position: relative;
         overflow: hidden;
+        text-decoration: none;
+
         &.mobile {
             width: 100%;
         }
@@ -30,6 +32,10 @@
         }
         &.mobile:after {
             padding-top: 60%;
+        }
+
+        &:hover {
+            text-decoration: none !important;
         }
     }
     &__item-bottom {
