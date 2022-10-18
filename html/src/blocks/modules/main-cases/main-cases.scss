@@ -235,10 +235,33 @@
     }
 }
 
+.main-cases-item__tags {
+    position: absolute;
+    padding: vw(32);
+
+    &.mobile {
+        padding: 16px;
+    }
+
+    .cases-item-tags__item {
+        &.mobile {
+            font-size: 12px;
+            padding: 8px 12px;
+        }
+    }
+}
+
 .main-cases__tags {
     padding: vw(32);
 
     &.mobile {
         padding: 32px;
+    }
+
+    .cases-item-tags__item {
+        &.mobile {
+            font-size: 14px;
+            padding: 12px 16px;
+        }
     }
 }

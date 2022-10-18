@@ -5539,12 +5539,31 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
   color: #fff;
 }
 
+.main-cases-item__tags {
+  position: absolute;
+  padding: 1.6666666667vw;
+}
+
+.main-cases-item__tags.mobile {
+  padding: 16px;
+}
+
+.main-cases-item__tags .cases-item-tags__item.mobile {
+  font-size: 12px;
+  padding: 8px 12px;
+}
+
 .main-cases__tags {
   padding: 1.6666666667vw;
 }
 
 .main-cases__tags.mobile {
   padding: 32px;
+}
+
+.main-cases__tags .cases-item-tags__item.mobile {
+  font-size: 14px;
+  padding: 12px 16px;
 }
 
 .main-resume.main-question.dropped {
@@ -18853,6 +18872,11 @@ html.overflowed body {
 
 .cases__tags.mobile {
   padding: 32px;
+}
+
+.cases__tags .cases-item-tags__item.mobile {
+  font-size: 12px;
+  padding: 8px 12px;
 }
 
 .cases-item-tags {
