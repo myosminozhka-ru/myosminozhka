@@ -859,88 +859,22 @@
 </section>
                 <!-- <div class="news-and-trends-screen"></div> -->
             </div>
-            <section class="main-cases" :class="{'mobile': window.width <=1023}">
-    <div class="main-cases-bg" v-if="false"></div>
-    <h1 class="main-cases-title">
-        Кейсы
-    </h1>
-    <div class="main-cases-items" v-if="window.width > 1023">
-        <!-- <div class="main-cases-items-in" style="--count: 7;">
-            
-                <a href="#" class="main-cases-item">
-                    <div class="image" style="--image: url('https://picsum.photos/300')">
-                        <img src="https://picsum.photos/300" width="100%" alt="">
-                    </div>
-                    <div class="title">Название проекта</div>
-                    <div class="text">Краткое описание</div>
-                </a>
-            
-                <a href="#" class="main-cases-item">
-                    <div class="image" style="--image: url('https://picsum.photos/301')">
-                        <img src="https://picsum.photos/301" width="100%" alt="">
-                    </div>
-                    <div class="title">Название проекта</div>
-                    <div class="text">Краткое описание</div>
-                </a>
-            
-                <a href="#" class="main-cases-item">
-                    <div class="image" style="--image: url('https://picsum.photos/302')">
-                        <img src="https://picsum.photos/302" width="100%" alt="">
-                    </div>
-                    <div class="title">Название проекта</div>
-                    <div class="text">Краткое описание</div>
-                </a>
-            
-                <a href="#" class="main-cases-item">
-                    <div class="image" style="--image: url('https://picsum.photos/303')">
-                        <img src="https://picsum.photos/303" width="100%" alt="">
-                    </div>
-                    <div class="title">Название проекта</div>
-                    <div class="text">Краткое описание</div>
-                </a>
-            
-                <a href="#" class="main-cases-item">
-                    <div class="image" style="--image: url('https://picsum.photos/304')">
-                        <img src="https://picsum.photos/304" width="100%" alt="">
-                    </div>
-                    <div class="title">Название проекта</div>
-                    <div class="text">Краткое описание</div>
-                </a>
-            
-                <a href="#" class="main-cases-item">
-                    <div class="image" style="--image: url('https://picsum.photos/305')">
-                        <img src="https://picsum.photos/305" width="100%" alt="">
-                    </div>
-                    <div class="title">Название проекта</div>
-                    <div class="text">Краткое описание</div>
-                </a>
-            
-                <a href="#" class="main-cases-item">
-                    <div class="image" style="--image: url('https://picsum.photos/306')">
-                        <img src="https://picsum.photos/306" width="100%" alt="">
-                    </div>
-                    <div class="title">Название проекта</div>
-                    <div class="text">Краткое описание</div>
-                </a>
-            
-        </div>
-        <div class="main-cases-items-scroller" style="height: 250vh;"></div> -->
-        <div class="cases-item-tags main-cases__tags" :class="{'mobile': window.width <=1023}">
-            <div class="cases-item-tags__content" :class="{'mobile': window.width <=1023}">
-                <div class="cases-item-tags__item" :class="{'mobile': window.width <=1023}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
-                    <span>
-                        еуые
-                    </span>
-                </div>
-    
-                <div class="cases-item-tags__item" :class="{'mobile': window.width <=1023}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
-                    <span>
-                        asdfasdf
-                    </span>
-                </div>
+            <div class="main-cases" :class="{'mobile': window.width <=1023}">
+    <img class="main-cases__top-decoration" :class="{'mobile': window.width <=1023}" src="img/svg/main-cases-decoration.svg" alt="">
+    <div class="main-cases__content" :class="{'mobile': window.width <=1023}">
+        <h2 class="main-cases__title" :class="{'mobile': window.width <=1023}">Кейсы</h2>
+
+        <div class="tabs-tags main-cases__tabs-tags" :class="{'mobile': window.width <=1023}">
+            <div class="tabs-tags__list" :class="{'mobile': window.width <=1023}">
+                <span class="tabs-tags__item tabs-tags__item--active" :class="{'mobile': window.width <=1023}">E-commers</span>
+                <span class="tabs-tags__item" :class="{'mobile': window.width <=1023}">IT и телеком</span>
+                <span class="tabs-tags__item" :class="{'mobile': window.width <=1023}">Банки и Финтех</span>
+                <span class="tabs-tags__item" :class="{'mobile': window.width <=1023}">Транспорт и логистика</span>
+                <span class="tabs-tags__item" :class="{'mobile': window.width <=1023}">Строительство и недвижимость</span>
             </div>
         </div>
-        <div class="cases__items" :class="{'mobile': window.width <=1023}">
+
+        <div class="main-cases__list" :class="{'mobile': window.width <=1023}">
             <a href="#" class="cases__item careof" :class="{'mobile': window.width <=1023}">
     <div class="cases-item-tags cases__tags" :class="{'mobile': window.width <=1023}">
         <div class="cases-item-tags__content" :class="{'mobile': window.width <=1023}">
@@ -991,7 +925,6 @@
         </div>
     </div>
 </a>
-            
             <a href="#" class="cases__item cases__item--lightonhover malina" :class="{'mobile': window.width <=1023}">
     <div class="cases__item-image malina__image">
         <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 960 727" fill="none">
@@ -1034,186 +967,13 @@
         </div>
     </div>
 </a>
-            
         </div>
+
+        <a href="#" class="set-white-bg-on-hover main-cases__more" :class="{'mobile': window.width <=1023}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
+            <span class="set-white-bg-on-hover__text">Больше кейсов</span>
+        </a>
     </div>
-    <div class="main-cases-items main-cases-slider" v-if="window.width <= 1023">
-        <div class="glide__track  main-cases-items-in" data-glide-el="track">
-            <div class="glide__slides">
-                
-                    <a href="#" class="main-cases-item">
-                        <div class="cases-item-tags main-cases-item__tags" :class="{'mobile': window.width <=1023}">
-                            <div class="cases-item-tags__content" :class="{'mobile': window.width <=1023}">
-                                <div class="cases-item-tags__item" :class="{'mobile': window.width <=1023}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
-                                    <span>
-                                        еуые
-                                    </span>
-                                </div>
-                    
-                                <div class="cases-item-tags__item" :class="{'mobile': window.width <=1023}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
-                                    <span>
-                                        asdfasdf
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="image" style="--image: url('https://picsum.photos/300')">
-                            <img src="https://picsum.photos/300" width="100%" alt="">
-                        </div>
-                        <div class="title">Название проекта</div>
-                        <div class="text">Краткое описание</div>
-                    </a>
-                
-                    <a href="#" class="main-cases-item">
-                        <div class="cases-item-tags main-cases-item__tags" :class="{'mobile': window.width <=1023}">
-                            <div class="cases-item-tags__content" :class="{'mobile': window.width <=1023}">
-                                <div class="cases-item-tags__item" :class="{'mobile': window.width <=1023}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
-                                    <span>
-                                        еуые
-                                    </span>
-                                </div>
-                    
-                                <div class="cases-item-tags__item" :class="{'mobile': window.width <=1023}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
-                                    <span>
-                                        asdfasdf
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="image" style="--image: url('https://picsum.photos/301')">
-                            <img src="https://picsum.photos/301" width="100%" alt="">
-                        </div>
-                        <div class="title">Название проекта</div>
-                        <div class="text">Краткое описание</div>
-                    </a>
-                
-                    <a href="#" class="main-cases-item">
-                        <div class="cases-item-tags main-cases-item__tags" :class="{'mobile': window.width <=1023}">
-                            <div class="cases-item-tags__content" :class="{'mobile': window.width <=1023}">
-                                <div class="cases-item-tags__item" :class="{'mobile': window.width <=1023}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
-                                    <span>
-                                        еуые
-                                    </span>
-                                </div>
-                    
-                                <div class="cases-item-tags__item" :class="{'mobile': window.width <=1023}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
-                                    <span>
-                                        asdfasdf
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="image" style="--image: url('https://picsum.photos/302')">
-                            <img src="https://picsum.photos/302" width="100%" alt="">
-                        </div>
-                        <div class="title">Название проекта</div>
-                        <div class="text">Краткое описание</div>
-                    </a>
-                
-                    <a href="#" class="main-cases-item">
-                        <div class="cases-item-tags main-cases-item__tags" :class="{'mobile': window.width <=1023}">
-                            <div class="cases-item-tags__content" :class="{'mobile': window.width <=1023}">
-                                <div class="cases-item-tags__item" :class="{'mobile': window.width <=1023}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
-                                    <span>
-                                        еуые
-                                    </span>
-                                </div>
-                    
-                                <div class="cases-item-tags__item" :class="{'mobile': window.width <=1023}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
-                                    <span>
-                                        asdfasdf
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="image" style="--image: url('https://picsum.photos/303')">
-                            <img src="https://picsum.photos/303" width="100%" alt="">
-                        </div>
-                        <div class="title">Название проекта</div>
-                        <div class="text">Краткое описание</div>
-                    </a>
-                
-                    <a href="#" class="main-cases-item">
-                        <div class="cases-item-tags main-cases-item__tags" :class="{'mobile': window.width <=1023}">
-                            <div class="cases-item-tags__content" :class="{'mobile': window.width <=1023}">
-                                <div class="cases-item-tags__item" :class="{'mobile': window.width <=1023}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
-                                    <span>
-                                        еуые
-                                    </span>
-                                </div>
-                    
-                                <div class="cases-item-tags__item" :class="{'mobile': window.width <=1023}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
-                                    <span>
-                                        asdfasdf
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="image" style="--image: url('https://picsum.photos/304')">
-                            <img src="https://picsum.photos/304" width="100%" alt="">
-                        </div>
-                        <div class="title">Название проекта</div>
-                        <div class="text">Краткое описание</div>
-                    </a>
-                
-                    <a href="#" class="main-cases-item">
-                        <div class="cases-item-tags main-cases-item__tags" :class="{'mobile': window.width <=1023}">
-                            <div class="cases-item-tags__content" :class="{'mobile': window.width <=1023}">
-                                <div class="cases-item-tags__item" :class="{'mobile': window.width <=1023}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
-                                    <span>
-                                        еуые
-                                    </span>
-                                </div>
-                    
-                                <div class="cases-item-tags__item" :class="{'mobile': window.width <=1023}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
-                                    <span>
-                                        asdfasdf
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="image" style="--image: url('https://picsum.photos/305')">
-                            <img src="https://picsum.photos/305" width="100%" alt="">
-                        </div>
-                        <div class="title">Название проекта</div>
-                        <div class="text">Краткое описание</div>
-                    </a>
-                
-                    <a href="#" class="main-cases-item">
-                        <div class="cases-item-tags main-cases-item__tags" :class="{'mobile': window.width <=1023}">
-                            <div class="cases-item-tags__content" :class="{'mobile': window.width <=1023}">
-                                <div class="cases-item-tags__item" :class="{'mobile': window.width <=1023}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
-                                    <span>
-                                        еуые
-                                    </span>
-                                </div>
-                    
-                                <div class="cases-item-tags__item" :class="{'mobile': window.width <=1023}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
-                                    <span>
-                                        asdfasdf
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="image" style="--image: url('https://picsum.photos/306')">
-                            <img src="https://picsum.photos/306" width="100%" alt="">
-                        </div>
-                        <div class="title">Название проекта</div>
-                        <div class="text">Краткое описание</div>
-                    </a>
-                
-            </div>
-        </div>
-        <div class="web-slider-arrows" data-glide-el="controls">
-            <button class="web-slider-arrow web-slider-arrow--prev" data-glide-dir="<">
-                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 89 38" fill="#121423"><path d="M87.7678 20.7678C88.7441 19.7914 88.7441 18.2085 87.7678 17.2322L71.8579 1.32232C70.8816 0.346014 69.2986 0.346014 68.3223 1.32232C67.346 2.29864 67.346 3.88155 68.3223 4.85786L82.4645 19L68.3223 33.1421C67.346 34.1184 67.346 35.7014 68.3223 36.6777C69.2986 37.654 70.8816 37.654 71.8579 36.6777L87.7678 20.7678ZM2.18557e-07 21.5L86 21.5L86 16.5L-2.18557e-07 16.5L2.18557e-07 21.5Z"></path></svg>
-            </button>
-            <button class="web-slider-arrow web-slider-arrow web-slider-arrow--next" data-glide-dir=">">
-                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 89 38" fill="#121423"><path d="M87.7678 20.7678C88.7441 19.7914 88.7441 18.2085 87.7678 17.2322L71.8579 1.32232C70.8816 0.346014 69.2986 0.346014 68.3223 1.32232C67.346 2.29864 67.346 3.88155 68.3223 4.85786L82.4645 19L68.3223 33.1421C67.346 34.1184 67.346 35.7014 68.3223 36.6777C69.2986 37.654 70.8816 37.654 71.8579 36.6777L87.7678 20.7678ZM2.18557e-07 21.5L86 21.5L86 16.5L-2.18557e-07 16.5L2.18557e-07 21.5Z"></path></svg>
-            </button>
-        </div> 
-    </div>
-</section>
+</div>
             <section class="main-resume main-resume--light main-question fileLoaderSecond" :class="{'mobile': window.width <=1023}">
     <h4 class="main-resume-title">Обратная связь</h4>
     <form action="#">

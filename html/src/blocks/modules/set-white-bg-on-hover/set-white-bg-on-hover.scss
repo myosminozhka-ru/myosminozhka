@@ -1,0 +1,26 @@
+.set-white-bg-on-hover {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat';
+    text-decoration: none;
+    border-radius: vw(10);
+    background-color: $wildWatermelon;
+    color: $white;
+    overflow: hidden;
+
+    &.mobile {
+        border-radius: 10px;
+    }
+
+    &:hover {
+        color: $wildWatermelon;
+        text-decoration: none !important;
+    }
+}
+
+.set-white-bg-on-hover__text {
+    position: relative;
+    z-index: 1;
+}
