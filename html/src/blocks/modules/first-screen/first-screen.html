@@ -10,7 +10,7 @@
                 <img class="first-screen__web" :class="{'isMobile': window.width <=1023}" src="img/svg/web.svg" alt="" >
                 <div class="first-screen__box" :class="{'isMobile': window.width <=1023}">
                     <span class="first-screen__description" :class="{'isMobile': window.width <=1023}">Мы растем, пока другие усыхают и чахнут</span>
-                    <span class="button button--main first-screen__btn" :class="{'isMobile': window.width <=1023}">
+                    <span class="button button--main first-screen__btn" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave" :class="{'isMobile': window.width <=1023}">
                         <span class="button__text">Стать клиентом</span>
                     </span>
                 </div>

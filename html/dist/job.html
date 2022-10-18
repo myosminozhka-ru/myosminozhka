@@ -868,6 +868,21 @@
         <div class="main-cases-items-scroller" style="height: 250vh;"></div> -->
         <div class="cases__items" :class="{'mobile': window.width <=1023}">
             <a href="#" class="cases__item careof" :class="{'mobile': window.width <=1023}">
+    <div class="cases-item-tags cases__tags" :class="{'mobile': window.width <=1023}">
+        <div class="cases-item-tags__content" :class="{'mobile': window.width <=1023}">
+            <div class="cases-item-tags__item" :class="{'mobile': window.width <=1023}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
+                <span>
+                    еуые
+                </span>
+            </div>
+
+            <div class="cases-item-tags__item" :class="{'mobile': window.width <=1023}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
+                <span>
+                    asdfasdf
+                </span>
+            </div>
+        </div>
+    </div>
     <div class="cases__item-image careof__image">
         <img src="img/careof.png" width="100%" alt="">
     </div>

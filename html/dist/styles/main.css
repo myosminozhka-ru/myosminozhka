@@ -18808,14 +18808,20 @@ html.overflowed body {
 }
 
 .first-screen__btn .button__text {
+  position: relative;
   font-size: 1.3020833333vw;
   line-height: 1.3020833333vw;
+  z-index: 1;
 }
 
 .first-screen__btn.isTable .button__text,
 .first-screen__btn.isMobile .button__text {
   font-size: 24px;
   line-height: 25px;
+}
+
+.first-screen__btn:hover {
+  color: #FF4978;
 }
 
 .footer--hidden {
@@ -18848,15 +18854,29 @@ html.overflowed body {
 }
 
 .cases-item-tags__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: "Montserrat";
   font-size: 0.8333333333vw;
   line-height: 160%;
   color: #ffffff;
   margin: 0.15625vw;
   padding: 0.8333333333vw 1.25vw;
-  background: #FF4978;
-  border: 0.0520833333vw solid #D94168;
+  background-color: #FF4978;
+  border: 0.0520833333vw solid #FF4978;
   border-radius: 0.5208333333vw;
+  overflow: hidden;
+}
+
+.cases-item-tags__item span {
+  position: relative;
+  z-index: 1;
+}
+
+.cases-item-tags__item:hover {
+  color: #FF4978;
 }
 
 .cases-item-tags__item.mobile {
