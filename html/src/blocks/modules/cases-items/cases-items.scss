@@ -146,3 +146,13 @@
         }
     }
 }
+
+.cases-items-post__tags {
+    position: absolute;
+    z-index: 2;
+    padding: vw(32);
+
+    &.mobile {
+        padding: 32px;
+    }
+}
