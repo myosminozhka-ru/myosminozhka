@@ -18462,6 +18462,14 @@ html.overflowed body {
   background-color: #000;
 }
 
+.industry-specialization {
+  padding-bottom: 7.5vw;
+}
+
+.industry-specialization.isMobile {
+  padding-bottom: 76px;
+}
+
 .industry-specialization__title {
   text-transform: uppercase;
   font-family: "Montserrat";
