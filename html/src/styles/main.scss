@@ -36,15 +36,29 @@
 }
 
 .cases-item-tags__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: 'Montserrat';
     font-size: vw(16);
     line-height: 160%;
     color: #ffffff;
     margin: vw(3);
     padding: vw(16) vw(24);
-    background: #FF4978;
-    border: vw(1) solid #D94168;
+    background-color: $wildWatermelon;
+    border: vw(1) solid $wildWatermelon;
     border-radius: vw(10);
+    overflow: hidden;
+
+    span {
+        position: relative;
+        z-index: 1;
+    }
+
+    &:hover {
+        color: $wildWatermelon;
+    }
 
     &.mobile {
         font-size: 16px;

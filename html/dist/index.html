@@ -176,7 +176,7 @@
                 <img class="first-screen__web" :class="{'isMobile': window.width <=1023}" src="img/svg/web.svg" alt="" >
                 <div class="first-screen__box" :class="{'isMobile': window.width <=1023}">
                     <span class="first-screen__description" :class="{'isMobile': window.width <=1023}">Мы растем, пока другие усыхают и чахнут</span>
-                    <span class="button button--main first-screen__btn" :class="{'isMobile': window.width <=1023}">
+                    <span class="button button--main first-screen__btn" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave" :class="{'isMobile': window.width <=1023}">
                         <span class="button__text">Стать клиентом</span>
                     </span>
                 </div>
@@ -927,6 +927,21 @@
         <div class="main-cases-items-scroller" style="height: 250vh;"></div> -->
         <div class="cases__items" :class="{'mobile': window.width <=1023}">
             <a href="#" class="cases__item careof" :class="{'mobile': window.width <=1023}">
+    <div class="cases-item-tags cases__tags" :class="{'mobile': window.width <=1023}">
+        <div class="cases-item-tags__content" :class="{'mobile': window.width <=1023}">
+            <div class="cases-item-tags__item" :class="{'mobile': window.width <=1023}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
+                <span>
+                    еуые
+                </span>
+            </div>
+
+            <div class="cases-item-tags__item" :class="{'mobile': window.width <=1023}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
+                <span>
+                    asdfasdf
+                </span>
+            </div>
+        </div>
+    </div>
     <div class="cases__item-image careof__image">
         <img src="img/careof.png" width="100%" alt="">
     </div>

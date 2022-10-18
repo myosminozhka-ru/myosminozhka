@@ -142,8 +142,10 @@
 
 .first-screen__btn {
     .button__text {
+        position: relative;
         font-size: vw(25);
         line-height: vw(25);
+        z-index: 1;
     }
 
     &.isTable,
@@ -152,5 +154,9 @@
             font-size: 24px;
             line-height: 25px;
         }
+    }
+
+    &:hover {
+        color: $wildWatermelon;
     }
 }
