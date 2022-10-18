@@ -1,3 +1,11 @@
+.industry-specialization {
+    padding-bottom: vw(144);
+
+    &.isMobile {
+        padding-bottom: 76px;
+    }
+}
+
 .industry-specialization__title {
     text-transform: uppercase;
     font-family: 'Montserrat';
