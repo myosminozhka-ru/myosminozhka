@@ -5,3 +5,52 @@
 @import "base/fonts";
 @import "base/general";
 @import "../blocks/modules";
+
+.footer--hidden {
+    display: none;
+}
+
+.cases__tags {
+    padding: vw(32);
+    z-index: 1;
+
+    &.mobile {
+        padding: 32px;
+    }
+}
+
+.cases-item-tags {
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.cases-item-tags__content {
+    display: flex;
+    flex-wrap: wrap;
+    margin: vw(-3);
+
+    &.mobile {
+        margin: -3px;
+    }
+}
+
+.cases-item-tags__item {
+    font-family: 'Montserrat';
+    font-size: vw(16);
+    line-height: 160%;
+    color: #ffffff;
+    margin: vw(3);
+    padding: vw(16) vw(24);
+    background: #FF4978;
+    border: vw(1) solid #D94168;
+    border-radius: vw(10);
+
+    &.mobile {
+        font-size: 16px;
+        margin: 3px;
+        padding: 16px 24px;
+        border: 1px solid #D94168;
+        border-radius: 10px;
+    }
+}
