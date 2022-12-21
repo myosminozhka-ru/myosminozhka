@@ -68,6 +68,25 @@
     li {
       display: inline-block;
       vertical-align: top;
+      position: relative;
+
+      .header-phone_modal_in {
+        width: max-content;
+
+        .header-phone_modal_phones {
+          a {
+            padding: 0;
+            color: #ffffff;
+          }
+        }
+      }
+
+      &:hover {
+        .header-phone_modal {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
     }
     a {
       text-decoration: none;
@@ -171,7 +190,7 @@
     transform: translateY(-150%);
     flex: 1 1 auto;
     z-index: 12;
-    overflow: auto;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -179,6 +198,18 @@
     &.isOpened {
       position: relative;
       transform: translateY(0);
+
+      ul {
+        overflow: auto;
+
+        li {
+          ul.header-phone_modal {
+            overflow: hidden;
+            height: 0;
+            transition: all .5s ease;
+          }
+        }
+      }
     }
     ul {
       list-style: none;

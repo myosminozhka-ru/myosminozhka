@@ -2,6 +2,7 @@
   position: relative;
   overflow: hidden;
   padding-top: vw(228);
+  z-index: 5;
 
   &.isTable {
     padding-top: 64px;
@@ -43,6 +44,7 @@
   font-family: 'Montserrat';
   align-items: center;
   padding-left: vw(50);
+  padding-right: vw(50);
   margin-bottom: vw(200);
 
   &.isTable {
@@ -54,7 +56,7 @@
 
   &.isMobile {
     padding-left: 16px;
-    padding-right: 28px;
+    padding-right: 16px;
     margin-bottom: 24px;
     grid-template-columns: 1fr;
     grid-gap: 12px 0;
@@ -105,31 +107,30 @@
     font-size: 14px;
     line-height: 24px;
     color: $blueMain;
+    max-width: unset;
   }
 }
 
 .main-about__bottom {
-  padding-left: vw(105);
-  padding-right: vw(60);
   display: flex;
   flex-direction: column;
   position: relative;
-
-  &.isTable,
-  &.isMobile {
-    padding-left: 0;
-    padding-right: 0;
-  }
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .main-about__statistics-list {
   display: grid;
   grid-template-columns: max-content auto max-content;
   margin-bottom: vw(-200);
+  padding-left: vw(90);
+  padding-right: vw(90);
+  z-index: 1;
 
   &.isMobile {
     grid-template-columns: 1fr;
-    margin-bottom: 0;
+    padding-left: 16px;
+    padding-right: 16px;
     margin-bottom: 24px;
   }
 }
@@ -223,16 +224,22 @@
 }
 
 .main-about__wrapper-team {
-  border-radius: vw(58);
+  position: relative;
   overflow: hidden;
 
-  &.isMobile {
-    border-radius: 0;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(18, 20, 35, 0) 66.88%, #121423 81.78%);
   }
 }
 
 .main-about__team {
-  max-width: 100%;
+  width: 100%;
 }
 
 // .main-about {

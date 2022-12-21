@@ -19,7 +19,7 @@ const argv = yargs.argv,
 gulp.task("images", () => {
     return gulp.src(paths.images.src)
         .pipe(newer(paths.images.dist))
-        .pipe(gulpif(production, imagemin([
+        .pipe(gulpif(false, imagemin([
             imageminGiflossy({
                 optimizationLevel: 3,
                 optimize: 3,

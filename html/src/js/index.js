@@ -28,7 +28,7 @@ import case_page from "%modules%/case_page/case_page";
 // import postBlog from "%modules%/posts-blog/posts-blog";
 import footer from "%modules%/footer/footer";
 import cookiesForm from "%modules%/cookie-form/cookie-form";
-import IndustrySpecialization from "%modules%/industry-specialization/industry-specialization";
+// import IndustrySpecialization from "%modules%/industry-specialization/industry-specialization";
 import $ from "jquery";
 import 'slick-carousel';
 $(function() {
@@ -53,7 +53,7 @@ $(function() {
         dots: true, 
         fade: true
     });
-    $('a[href^="#"').on('click', function(e) {
+    $('a[href^="#"]').on('click', function(e) {
         e.preventDefault;
         if (!$(this).attr('data-tab-id')) {
             let href = $(this).attr('href');
@@ -125,7 +125,7 @@ window.app = new Vue({
             }
         },
         isSafary: false,
-        industrySpecialization: new IndustrySpecialization()
+        // industrySpecialization: new IndustrySpecialization()
     }),
     mounted() {
         
@@ -144,7 +144,7 @@ window.app = new Vue({
             // this.cursorAnimation.init();
             // this.mainCarousel.init();
             // this.newsAndTrends.init();
-            this.industrySpecialization.init();
+            // this.industrySpecialization.init();
             this.mainQuestionFormModal.init();
             this.mainQuestionFormFirst.init();
             this.mainQuestionFormSecond.init();

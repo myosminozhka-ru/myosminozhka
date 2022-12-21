@@ -1,0 +1,136 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+
+  &__content {
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .5s ease;
+  }
+
+  &__text {
+    position: relative;
+
+  }
+
+  &--border-pink,
+  &--pink {
+    font-size: vw(25);
+
+    .btn__content {
+      padding: vw(30) vw(60);
+      border-radius: vw(10);
+    }
+
+    &.btn--small {
+      font-size: vw(14);
+
+      .btn__content {
+        padding: vw(12);
+        border-radius: vw(8);
+      }
+
+      &.mobile {
+        font-size: 14px;
+
+        .btn__content {
+          padding: 12px;
+          border-radius: 8px;
+        }
+      }
+    }
+
+    &.mobile {
+      font-size: 24px;
+
+      .btn__content {
+        padding: 20px 24px;
+      }
+    }
+
+    .btn__content {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        transform-origin: center;
+        border-radius: 100%;
+        width: 110%;
+        padding-bottom: 100%;
+        opacity: 0;
+        transition: all .5s ease;
+      }
+    }
+
+    &:hover {
+      .btn__content {
+        &::before {
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(1);
+        }
+      }
+    }
+
+    &.active {
+      .btn__content {
+        &::before {
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(1);
+        }
+      }
+    }
+  }
+
+  &--border-pink {
+    color: $white;
+
+    .btn__content {
+      background-color: transparent;
+      border: vw(1) solid $darkGray;
+
+      &::before {
+        background-color: $mainColor;
+      }
+    }
+
+    &.mobile {
+      .btn__content {
+        border-width: 1px;
+      }
+    }
+
+    &.active {
+      color: $white;
+    }
+  }
+
+  &--pink {
+    color: $white;
+
+    .btn__content {
+      background-color: $mainColor;
+
+      &::before {
+        background-color: $white;
+      }
+    }
+
+    &:hover {
+      color: $mainColor;
+    }
+
+    &.active {
+      color: $mainColor;
+    }
+  }
+}
