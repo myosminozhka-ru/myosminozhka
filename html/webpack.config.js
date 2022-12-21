@@ -17,6 +17,12 @@ module.exports = {
         main: "./src/js/index.js",
         main_page: "./src/js/main_page.js",
         custom: "./src/js/custom.js",
+        preloader: './src/blocks/modules/preloader/module.preloader.js',
+        'header': './src/blocks/modules/header/module.header.js',
+        'first-screen': './src/blocks/modules/first-screen/module.first-screen.js',
+        'industry-specialization': './src/blocks/modules/industry-specialization/module.industry-specialization.js',
+        'main-about': './src/blocks/modules/main-about/module.main-about.js',
+        footer: './src/blocks/modules/footer/module.footer.js',
     },
 
     output: {

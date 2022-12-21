@@ -1,128 +1,331 @@
-<section class="industry-specialization" :class="{'isMobile': window.width <=1023}">
-    <div class="industry-specialization__content">
-        <h2 class="industry-specialization__title" :class="{'isMobile': window.width <=1023}">отраслевая специализация</h2>
-
-        <div class="industry-specialization__row" :class="{'isMobile': window.width <=1023}">
-            <div class="industry-specialization-slider-nav industry-specialization__slider-nav" :class="{'isMobile': window.width <=1023}">
-                <span class="industry-specialization-slider-nav__btn industry-specialization-slider-nav__btn--prev">
-                    <svg class="industry-specialization-slider-nav__btn-icon" viewBox="0 0 11 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5.97634 0.332279C5.71304 0.0690076 5.28619 0.0690077 5.02292 0.332279L0.732611 4.62259C0.469337 4.88586 0.469337 5.31274 0.732611 5.57601C0.995888 5.83928 1.42274 5.83928 1.68601 5.57601L5.49963 1.76238L9.31322 5.57601C9.5765 5.83928 10.0034 5.83928 10.2666 5.57601C10.5299 5.31274 10.5299 4.88586 10.2666 4.62259L5.97634 0.332279ZM6.17378 24L6.17378 0.808988L4.82547 0.808988L4.82547 24L6.17378 24Z" fill="currentColor"/>
-                    </svg>                        
-                </span>
-                <div class="industry-specialization-slider-nav__list" :class="{'isMobile': window.width <=1023}">
-                    <span class="industry-specialization-slider-nav__item">
-                        <span class="industry-specialization-slider-nav__item-content" :class="{'isMobile': window.width <=1023}">
-                             Банки и Финтех
+<section id="industry-specialization" class="industry-specialization" :class="{'mobile': window.width <=1023}">
+    <div class="industry-specialization__content" :class="{'mobile': window.width <=1023}">
+        <div class="industry-specialization__column" :class="{'mobile': window.width <=1023}">
+            <h2 class="industry-specialization__title" :class="{'mobile': window.width <=1023}">отраслевая<br>специализация</h2>
+            <div class="industry-specialization-tab__wrapper-navigation" :class="{'mobile': window.width <=1023}">
+                <div class="industry-specialization-tab__navigation" :class="{'mobile': window.width <=1023}">
+                    <button class="btn btn--border-pink btn--small industry-specialization-tab__navigation-item"
+                            :class="[
+                                {'active': idActiveTab === 0 },
+                                {'mobile': window.width <=1023}
+                            ]"
+                            @click="onClickToNavigationTab(0)">
+                        <span class="btn__content">
+                            <span class="btn__text">Банки и Финтех</span>
                         </span>
-                    </span>
-                    <span class="industry-specialization-slider-nav__item">
-                        <span class="industry-specialization-slider-nav__item-content" :class="{'isMobile': window.width <=1023}">
-                             Retail, E-commerce
+                    </button>
+                    <button class="btn btn--border-pink btn--small industry-specialization-tab__navigation-item"
+                            :class="[
+                                {'active': idActiveTab === 1 },
+                                {'mobile': window.width <=1023}
+                            ]"
+                            @click="onClickToNavigationTab(1)">
+                        <span class="btn__content">
+                            <span class="btn__text">Retail, E-commerce</span>
                         </span>
-                    </span>
-                    <span class="industry-specialization-slider-nav__item">
-                        <span class="industry-specialization-slider-nav__item-content" :class="{'isMobile': window.width <=1023}">
-                             IT и Телеком
+                    </button>
+                    <button class="btn btn--border-pink btn--small industry-specialization-tab__navigation-item"
+                            :class="[
+                                {'active': idActiveTab === 2 },
+                                {'mobile': window.width <=1023}
+                            ]"
+                            @click="onClickToNavigationTab(2)">
+                        <span class="btn__content">
+                            <span class="btn__text">IT и Телеком</span>
                         </span>
-                    </span>
-                    <span class="industry-specialization-slider-nav__item">
-                        <span class="industry-specialization-slider-nav__item-content" :class="{'isMobile': window.width <=1023}">
-                             Транспорт и логистика
+                    </button>
+                    <button class="btn btn--border-pink btn--small industry-specialization-tab__navigation-item"
+                            :class="[
+                                {'active': idActiveTab === 3 },
+                                {'mobile': window.width <=1023}
+                            ]"
+                            @click="onClickToNavigationTab(3)">
+                        <span class="btn__content">
+                            <span class="btn__text">Транспорт и логистика</span>
                         </span>
-                    </span>
-                    <span class="industry-specialization-slider-nav__item">
-                        <span class="industry-specialization-slider-nav__item-content" :class="{'isMobile': window.width <=1023}">
-                             Строительство и недвижимость
+                    </button>
+                    <button class="btn btn--border-pink btn--small industry-specialization-tab__navigation-item"
+                            :class="[
+                                {'active': idActiveTab === 4 },
+                                {'mobile': window.width <=1023}
+                            ]"
+                            @click="onClickToNavigationTab(4)">
+                        <span class="btn__content">
+                            <span class="btn__text">Строительство и недвижимость</span>
                         </span>
-                    </span>
+                    </button>
                 </div>
-                <span class="industry-specialization-slider-nav__btn industry-specialization-slider-nav__btn--next">
-                    <svg class="industry-specialization-slider-nav__btn-icon" viewBox="0 0 11 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5.97634 23.6677C5.71304 23.931 5.28619 23.931 5.02292 23.6677L0.732612 19.3774C0.469339 19.1141 0.469339 18.6873 0.732612 18.424C0.99589 18.1607 1.42274 18.1607 1.68602 18.424L5.49963 22.2376L9.31323 18.424C9.5765 18.1607 10.0034 18.1607 10.2666 18.424C10.5299 18.6873 10.5299 19.1141 10.2666 19.3774L5.97634 23.6677ZM6.17378 -1.28599e-07L6.17378 23.191L4.82547 23.191L4.82547 -1.87536e-07L6.17378 -1.28599e-07Z" fill="currentColor"/>
-                    </svg>                        
-                </span>
-
-
             </div>
 
-            <div class="industry-specialization__tabs" :class="{'isMobile': window.width <=1023}">
-                <div class="industry-specialization__tabs-content">
-                    <span class="industry-specialization__tabs-item">Банки и Финтех</span>
-                    <span class="industry-specialization__tabs-item">Retail, E-commerce</span>
-                    <span class="industry-specialization__tabs-item">IT и Телеком</span>
-                    <span class="industry-specialization__tabs-item">Транспорт и логистика</span>
-                    <span class="industry-specialization__tabs-item">Строительство и недвижимость</span>
+            <div class="industry-specialization-tab__content">
+                <div v-show="idActiveTab === 0" key="content-item-0" class="industry-specialization-tab__content-item">
+                    <div class="industry-specialization-tab__grid-row-hidden"
+                         :style="`marginBottom: ${-2 * dynamicStyle}px`"
+                         :class="{'mobile': window.width <=1023}">
+                        <div class="industry-specialization-tab__grid-row-scroll"
+                             :style="`paddingBottom: ${2 * dynamicStyle}px`"
+                             :class="{'mobile': window.width <=1023}">
+                            <div class="industry-specialization-tab__grid-row" :class="{'mobile': window.width <=1023}">
+                                <a href="#" class="industry-specialization-tab-link-item" :class="{'mobile': window.width <=1023}">
+                                    <div class="industry-specialization-tab-link-item__wrapper-content">
+                                        <img src="img/industry-specialization/logo-1.png" alt="" class="industry-specialization-tab-link-item__img" :class="{'mobile': window.width <=1023}">
+                                    </div>
+                                </a>
+
+                                <a href="#" class="industry-specialization-tab-link-item">
+                                    <div class="industry-specialization-tab-link-item__wrapper-content">
+                                        <img src="img/industry-specialization/logo-2.png" alt="" class="industry-specialization-tab-link-item__img" :class="{'mobile': window.width <=1023}">
+                                    </div>
+                                </a>
+
+                                <a href="#" class="industry-specialization-tab-link-item">
+                                    <div class="industry-specialization-tab-link-item__wrapper-content">
+                                        <img src="img/industry-specialization/logo-3.png" alt="" class="industry-specialization-tab-link-item__img" :class="{'mobile': window.width <=1023}">
+                                    </div>
+                                </a>
+
+                                <a href="#" class="industry-specialization-tab-link-item">
+                                    <div class="industry-specialization-tab-link-item__wrapper-content">
+                                        <img src="img/industry-specialization/logo-4.png" alt="" class="industry-specialization-tab-link-item__img" :class="{'mobile': window.width <=1023}">
+                                    </div>
+                                </a>
+
+                                <a href="#" class="industry-specialization-tab-link-item">
+                                    <div class="industry-specialization-tab-link-item__wrapper-content">
+                                        <div class="industry-specialization-tab-link-item__content">
+                                            <span class="industry-specialization-tab-link-item__title" :class="{'mobile': window.width <=1023}">+5</span>
+                                            <span class="industry-specialization-tab-link-item__description" :class="{'mobile': window.width <=1023}">Проектов</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div v-show="idActiveTab === 1" key="content-item-1" class="industry-specialization-tab__content-item">
+                    <div class="industry-specialization-tab__grid-row-hidden"
+                         :style="`marginBottom: ${-2 * dynamicStyle}px`"
+                         :class="{'mobile': window.width <=1023}">
+                        <div class="industry-specialization-tab__grid-row-scroll"
+                             :style="`paddingBottom: ${2 * dynamicStyle}px`"
+                             :class="{'mobile': window.width <=1023}">
+                            <div class="industry-specialization-tab__grid-row" :class="{'mobile': window.width <=1023}">
+                                <a href="#" class="industry-specialization-tab-link-item">
+                                    <div class="industry-specialization-tab-link-item__wrapper-content">
+                                        <img src="img/industry-specialization/logo-5.png" alt="" class="industry-specialization-tab-link-item__img" :class="{'mobile': window.width <=1023}">
+                                    </div>
+                                </a>
+
+                                <a href="#" class="industry-specialization-tab-link-item">
+                                    <div class="industry-specialization-tab-link-item__wrapper-content">
+                                        <img src="img/industry-specialization/logo-6.png" alt="" class="industry-specialization-tab-link-item__img" :class="{'mobile': window.width <=1023}">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div v-show="idActiveTab === 2" key="content-item-2" class="industry-specialization-tab__content-item">
+                    <div class="industry-specialization-tab__grid-row-hidden"
+                         :style="`marginBottom: ${-2 * dynamicStyle}px`"
+                         :class="{'mobile': window.width <=1023}">
+                        <div class="industry-specialization-tab__grid-row-scroll"
+                             :style="`paddingBottom: ${2 * dynamicStyle}px`"
+                             :class="{'mobile': window.width <=1023}">
+                            <div class="industry-specialization-tab__grid-row" :class="{'mobile': window.width <=1023}">
+                                <a href="#" class="industry-specialization-tab-link-item">
+                                    <div class="industry-specialization-tab-link-item__wrapper-content">
+                                        <img src="img/industry-specialization/logo-7.png" alt="" class="industry-specialization-tab-link-item__img" :class="{'mobile': window.width <=1023}">
+                                    </div>
+                                </a>
+
+                                <a href="#" class="industry-specialization-tab-link-item">
+                                    <div class="industry-specialization-tab-link-item__wrapper-content">
+                                        <img src="img/industry-specialization/logo-8.png" alt="" class="industry-specialization-tab-link-item__img" :class="{'mobile': window.width <=1023}">
+                                    </div>
+                                </a>
+
+                                <a href="#" class="industry-specialization-tab-link-item">
+                                    <div class="industry-specialization-tab-link-item__wrapper-content">
+                                        <img src="img/industry-specialization/logo-9.png" alt="" class="industry-specialization-tab-link-item__img" :class="{'mobile': window.width <=1023}">
+                                    </div>
+                                </a>
+
+                                <a href="#" class="industry-specialization-tab-link-item">
+                                    <div class="industry-specialization-tab-link-item__wrapper-content">
+                                        <img src="img/industry-specialization/logo-10.png" alt="" class="industry-specialization-tab-link-item__img" :class="{'mobile': window.width <=1023}">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div v-show="idActiveTab === 3" key="content-item-3" class="industry-specialization-tab__content-item">
+                    <div class="industry-specialization-tab__grid-row-hidden"
+                         :style="`marginBottom: ${-2 * dynamicStyle}px`"
+                         :class="{'mobile': window.width <=1023}">
+                        <div class="industry-specialization-tab__grid-row-scroll"
+                             :style="`paddingBottom: ${2 * dynamicStyle}px`"
+                             :class="{'mobile': window.width <=1023}">
+                            <div class="industry-specialization-tab__grid-row" :class="{'mobile': window.width <=1023}">
+                                <a href="#" class="industry-specialization-tab-link-item">
+                                    <div class="industry-specialization-tab-link-item__wrapper-content">
+                                        <img src="img/industry-specialization/logo-11.png" alt="" class="industry-specialization-tab-link-item__img" :class="{'mobile': window.width <=1023}">
+                                    </div>
+                                </a>
+
+                                <a href="#" class="industry-specialization-tab-link-item">
+                                    <div class="industry-specialization-tab-link-item__wrapper-content">
+                                        <img src="img/industry-specialization/logo-12.png" alt="" class="industry-specialization-tab-link-item__img" :class="{'mobile': window.width <=1023}">
+                                    </div>
+                                </a>
+
+                                <a href="#" class="industry-specialization-tab-link-item">
+                                    <div class="industry-specialization-tab-link-item__wrapper-content">
+                                        <img src="" alt="" class="industry-specialization-tab-link-item__img" :class="{'mobile': window.width <=1023}">
+                                    </div>
+                                </a>
+
+                                <a href="#" class="industry-specialization-tab-link-item">
+                                    <div class="industry-specialization-tab-link-item__wrapper-content">
+                                        <img src="" alt="" class="industry-specialization-tab-link-item__img" :class="{'mobile': window.width <=1023}">
+                                    </div>
+                                </a>
+
+                                <a href="#" class="industry-specialization-tab-link-item">
+                                    <div class="industry-specialization-tab-link-item__wrapper-content">
+                                        <div class="industry-specialization-tab-link-item__content">
+                                            <span class="industry-specialization-tab-link-item__title" :class="{'mobile': window.width <=1023}">+5</span>
+                                            <span class="industry-specialization-tab-link-item__description" :class="{'mobile': window.width <=1023}">Проектов</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div v-show="idActiveTab === 4" key="content-item-4" class="industry-specialization-tab__content-item">
+                    <div class="industry-specialization-tab__grid-row-hidden"
+                         :style="`marginBottom: ${-2 * dynamicStyle}px`"
+                         :class="{'mobile': window.width <=1023}">
+                        <div class="industry-specialization-tab__grid-row-scroll"
+                             :style="`paddingBottom: ${2 * dynamicStyle}px`"
+                             :class="{'mobile': window.width <=1023}">
+                            <div class="industry-specialization-tab__grid-row" :class="{'mobile': window.width <=1023}">
+                                <a href="#" class="industry-specialization-tab-link-item">
+                                    <div class="industry-specialization-tab-link-item__wrapper-content">
+                                        <img src="" alt="" class="industry-specialization-tab-link-item__img" :class="{'mobile': window.width <=1023}">
+                                    </div>
+                                </a>
+
+                                <a href="#" class="industry-specialization-tab-link-item">
+                                    <div class="industry-specialization-tab-link-item__wrapper-content">
+                                        <img src="" alt="" class="industry-specialization-tab-link-item__img" :class="{'mobile': window.width <=1023}">
+                                    </div>
+                                </a>
+
+                                <a href="#" class="industry-specialization-tab-link-item">
+                                    <div class="industry-specialization-tab-link-item__wrapper-content">
+                                        <img src="" alt="" class="industry-specialization-tab-link-item__img" :class="{'mobile': window.width <=1023}">
+                                    </div>
+                                </a>
+
+                                <a href="#" class="industry-specialization-tab-link-item">
+                                    <div class="industry-specialization-tab-link-item__wrapper-content">
+                                        <img src="" alt="" class="industry-specialization-tab-link-item__img" :class="{'mobile': window.width <=1023}">
+                                    </div>
+                                </a>
+
+                                <a href="#" class="industry-specialization-tab-link-item">
+                                    <div class="industry-specialization-tab-link-item__wrapper-content">
+                                        <div class="industry-specialization-tab-link-item__content">
+                                            <span class="industry-specialization-tab-link-item__title" :class="{'mobile': window.width <=1023}">+5</span>
+                                            <span class="industry-specialization-tab-link-item__description" :class="{'mobile': window.width <=1023}">Проектов</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <div class="industry-specialization-slider-for industry-specialization__slider-for">
-                <div class="industry-specialization-slider-for__list">
-                    <div class="industry-specialization-slider-for__item">
-                        <div class="industry-specialization-slider-for__item-content">
-                            <img src="https://source.unsplash.com/random" alt="" class="industry-specialization-slider-for__item-img">
-                            <div class="industry-specialization-slider-for__item-bottom" :class="{'isMobile': window.width <=1023}">
-                                <span class="industry-specialization-slider-for__item-title" :class="{'isMobile': window.width <=1023}">
-                                    Строительство и недвижимость
-                                </span>
-                                <span class="industry-specialization-slider-for__item-description" :class="{'isMobile': window.width <=1023}">
-                                    5 проектов 
-                                </span>
+        <div class="industry-specialization__column" :class="{'mobile': window.width <=1023}">
+            <div class="industry-specialization-tab__content">
+                <div v-show="idActiveTab === 0" key="content-item-img-0" class="industry-specialization-tab__content-item">
+                    <div class="industry-specialization-tab-picture-item">
+                        <div class="industry-specialization-tab-picture-item__content" :class="{'mobile': window.width <=1023}">
+                            <div class="industry-specialization-tab-picture-item__wrapper-img">
+                                <img src="img/industry-specialization/1.png" alt="" class="industry-specialization-tab-picture-item__img">
+                            </div>
+
+                            <div class="industry-specialization-tab-picture-item__wrapper-text" :class="{'mobile': window.width <=1023}">
+                                <span class="industry-specialization-tab-picture-item__text" :class="{'mobile': window.width <=1023}">Банки и Финтех</span>
+                                <span class="industry-specialization-tab-picture-item__count" :class="{'mobile': window.width <=1023}">5 проектов </span>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="industry-specialization-slider-for__item">
-                        <div class="industry-specialization-slider-for__item-content">
-                            <img src="https://source.unsplash.com/random" alt="" class="industry-specialization-slider-for__item-img">
-                            <div class="industry-specialization-slider-for__item-bottom" :class="{'isMobile': window.width <=1023}">
-                                <span class="industry-specialization-slider-for__item-title" :class="{'isMobile': window.width <=1023}">
-                                    Строительство и недвижимость
-                                </span>
-                                <span class="industry-specialization-slider-for__item-description" :class="{'isMobile': window.width <=1023}">
-                                    5 проектов 
-                                </span>
+                <div v-show="idActiveTab === 1" key="content-item-img-1" class="industry-specialization-tab__content-item">
+                    <div class="industry-specialization-tab-picture-item">
+                        <div class="industry-specialization-tab-picture-item__content" :class="{'mobile': window.width <=1023}">
+                            <div class="industry-specialization-tab-picture-item__wrapper-img">
+                                <img src="img/industry-specialization/2.png" alt="" class="industry-specialization-tab-picture-item__img">
+                            </div>
+
+                            <div class="industry-specialization-tab-picture-item__wrapper-text" :class="{'mobile': window.width <=1023}">
+                                <span class="industry-specialization-tab-picture-item__text" :class="{'mobile': window.width <=1023}">Retail, e-commerce</span>
+                                <span class="industry-specialization-tab-picture-item__count" :class="{'mobile': window.width <=1023}">5 проектов </span>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="industry-specialization-slider-for__item">
-                        <div class="industry-specialization-slider-for__item-content">
-                            <img src="https://source.unsplash.com/random" alt="" class="industry-specialization-slider-for__item-img">
-                            <div class="industry-specialization-slider-for__item-bottom" :class="{'isMobile': window.width <=1023}">
-                                <span class="industry-specialization-slider-for__item-title" :class="{'isMobile': window.width <=1023}">
-                                    Строительство и недвижимость
-                                </span>
-                                <span class="industry-specialization-slider-for__item-description" :class="{'isMobile': window.width <=1023}">
-                                    5 проектов 
-                                </span>
+                <div v-show="idActiveTab === 2" key="content-item-img-2" class="industry-specialization-tab__content-item">
+                    <div class="industry-specialization-tab-picture-item">
+                        <div class="industry-specialization-tab-picture-item__content" :class="{'mobile': window.width <=1023}">
+                            <div class="industry-specialization-tab-picture-item__wrapper-img">
+                                <img src="img/industry-specialization/3.png" alt="" class="industry-specialization-tab-picture-item__img">
+                            </div>
+
+                            <div class="industry-specialization-tab-picture-item__wrapper-text" :class="{'mobile': window.width <=1023}">
+                                <span class="industry-specialization-tab-picture-item__text" :class="{'mobile': window.width <=1023}">it и телеком</span>
+                                <span class="industry-specialization-tab-picture-item__count" :class="{'mobile': window.width <=1023}">5 проектов </span>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="industry-specialization-slider-for__item">
-                        <div class="industry-specialization-slider-for__item-content">
-                            <img src="https://source.unsplash.com/random" alt="" class="industry-specialization-slider-for__item-img">
-                            <div class="industry-specialization-slider-for__item-bottom" :class="{'isMobile': window.width <=1023}">
-                                <span class="industry-specialization-slider-for__item-title" :class="{'isMobile': window.width <=1023}">
-                                    Строительство и недвижимость
-                                </span>
-                                <span class="industry-specialization-slider-for__item-description" :class="{'isMobile': window.width <=1023}">
-                                    5 проектов 
-                                </span>
+                <div v-show="idActiveTab === 3" key="content-item-img-3" class="industry-specialization-tab__content-item">
+                    <div class="industry-specialization-tab-picture-item">
+                        <div class="industry-specialization-tab-picture-item__content" :class="{'mobile': window.width <=1023}">
+                            <div class="industry-specialization-tab-picture-item__wrapper-img">
+                                <img src="img/industry-specialization/4.png" alt="" class="industry-specialization-tab-picture-item__img">
+                            </div>
+
+                            <div class="industry-specialization-tab-picture-item__wrapper-text" :class="{'mobile': window.width <=1023}">
+                                <span class="industry-specialization-tab-picture-item__text" :class="{'mobile': window.width <=1023}">транспорт и логистика</span>
+                                <span class="industry-specialization-tab-picture-item__count" :class="{'mobile': window.width <=1023}">5 проектов </span>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="industry-specialization-slider-for__item">
-                        <div class="industry-specialization-slider-for__item-content">
-                            <img src="https://source.unsplash.com/random" alt="" class="industry-specialization-slider-for__item-img">
-                            <div class="industry-specialization-slider-for__item-bottom" :class="{'isMobile': window.width <=1023}">
-                                <span class="industry-specialization-slider-for__item-title" :class="{'isMobile': window.width <=1023}">
-                                    Строительство и недвижимость
-                                </span>
-                                <span class="industry-specialization-slider-for__item-description" :class="{'isMobile': window.width <=1023}">
-                                    5 проектов 
-                                </span>
+                <div v-show="idActiveTab === 4" key="content-item-img-4" class="industry-specialization-tab__content-item">
+                    <div class="industry-specialization-tab-picture-item">
+                        <div class="industry-specialization-tab-picture-item__content" :class="{'mobile': window.width <=1023}">
+                            <div class="industry-specialization-tab-picture-item__wrapper-img">
+                                <img src="img/industry-specialization/5.png" alt="" class="industry-specialization-tab-picture-item__img">
+                            </div>
+
+                            <div class="industry-specialization-tab-picture-item__wrapper-text" :class="{'mobile': window.width <=1023}">
+                                <span class="industry-specialization-tab-picture-item__text" :class="{'mobile': window.width <=1023}">Строительство и недвижимость</span>
                             </div>
                         </div>
                     </div>
