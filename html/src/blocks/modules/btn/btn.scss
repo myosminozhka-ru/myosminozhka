@@ -5,6 +5,7 @@
   cursor: pointer;
   background-color: transparent;
   border: none;
+  text-decoration: none;
   padding: 0;
 
   &__content {
@@ -18,7 +19,7 @@
 
   &__text {
     position: relative;
-
+    text-align: center;
   }
 
   &--border-pink,
@@ -28,6 +29,13 @@
     .btn__content {
       padding: vw(30) vw(60);
       border-radius: vw(10);
+    }
+
+    &.mobile {
+      .btn__content {
+        border-radius: 10px;
+        padding: 20px 24px;
+      }
     }
 
     &.btn--small {
@@ -73,6 +81,8 @@
     }
 
     &:hover {
+      text-decoration: none;
+
       .btn__content {
         &::before {
           opacity: 1;
@@ -127,6 +137,7 @@
 
     &:hover {
       color: $mainColor;
+      text-decoration: none;
     }
 
     &.active {

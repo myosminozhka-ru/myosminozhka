@@ -1,4 +1,4 @@
-<section class="main-question fileLoaderMain" :class="{'mobile': window.width <=1023}">
+<section id="main-question" class="main-question fileLoaderMain" :class="{'mobile': window.width <=1023}">
     <div class="main-question-tentacle" v-if="!isSafary">
         <img v-if="window.width > 1023" src="img/svg/big_tentacle.svg" alt="">
         <img v-if="window.width <=1023" src="img/svg/main-question-mobile.svg" alt="">

@@ -11,7 +11,10 @@ window.preloader = new Vue({
             let preloader = document.querySelector('.preloader svg animateTransform');
             preloader.addEventListener('endEvent', () => {
                 this.isPreloaderHidden = true;
+                if (window.firstScreen) {
+                    window.firstScreen.isShowTentacles = true;
+                }
             })
-        }, 250)
+        }, 0)
     }
 })
