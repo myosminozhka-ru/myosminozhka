@@ -13,7 +13,7 @@ window.header = new Vue({
         window.addEventListener('resize', this.setHeaderWavePositionOnLoad)
         setTimeout(() => {
             this.setHeaderWavePositionOnLoad();
-        }, 250)
+        }, 0)
     },
     destroyed() {
         window.removeEventListener('resize', this.setHeaderWavePositionOnLoad)

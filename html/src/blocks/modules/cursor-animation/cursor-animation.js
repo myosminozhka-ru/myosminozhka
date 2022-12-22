@@ -52,7 +52,7 @@ const cursorAnimation = class CursorAnimation {
         this.circles.push(circle)
     }
     animate({x, y}) {
-        if (!this.canvas) return;
+        if (!this.canvas || window.innerWidth <= 1023) return;
         this.pushCircleObject(x, y)
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         this.ctx.fillStyle = this.gradient;
