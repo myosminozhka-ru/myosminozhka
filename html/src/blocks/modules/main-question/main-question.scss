@@ -1,6 +1,8 @@
 .main-question {
-  $root: &;
+  z-index: 5;
   position: relative;
+  $root: &;
+  
   &:not(.main-resume) {
     background: #fff;
   }
@@ -10,9 +12,18 @@
       margin-bottom: vw(-140);
     }
   }
-  &.mobile {
+  &.mobile:not([id]) {
     padding: 56px 20px 173px !important;
   }
+
+  &#main-question {
+    padding: 0 0 vw(514);
+
+    &.mobile {
+      padding: 0 0 173px;
+    }
+  }
+
   &-tentacle {
     position: absolute;
     z-index: 1;
@@ -69,6 +80,11 @@
       object-position: 50% 100%;
       object-fit: cover;
     }
+  }
+
+  &__content {
+    background-color: $bgColor;
+    padding: vw(120) vw(50) 0;
   }
   &-title {
     text-transform: uppercase;
@@ -280,13 +296,13 @@
       height: 20px;
       margin-right: 10px;
     }
-    button {
-      margin: 0 auto;
-      font-size: 25px;
-      line-height: 25px;
-      padding-left: 30px;
-      padding-right: 30px;
-    }
+    // button {
+    //   margin: 0 auto;
+    //   font-size: 25px;
+    //   line-height: 25px;
+    //   padding-left: 30px;
+    //   padding-right: 30px;
+    // }
   }
 
   

@@ -1,12 +1,27 @@
 
-<section class="news-and-trends news-and-trends-right-slider" :class="{'mobile': window.width <=1023}">
+<section id="news-and-trends" class="news-and-trends-trigger news-and-trends news-and-trends-right-slider" :class="{'mobile': window.width <=1023}">
     <h1 class="news-and-trends-title">Новости и тренды</h1>
     <div class="career-blog-buttons news-and-trends-buttons__wrap">
         <div class="news-and-trends-buttons">
-            <button class="news-and-trends-button news-and-trends-button__main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave" data-news="6"><span>Тренды</span></button>
-            <button class="news-and-trends-button news-and-trends-button__mint" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave" data-news="7"><span>Новости</span></button>
-            <button class="news-and-trends-button news-and-trends-button__green" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave" data-news="all"><span>Тренды</span></button>
+            <button class="btn btn--pink news-and-trends-button" :class="{'mobile': window.width <=1023}" data-news="6">
+                <div class="btn__content">
+                    <span class="btn__text">Новости</span>
+                </div>
+            </button>
+
+            <button class="btn btn--pink news-and-trends-button" :class="{'mobile': window.width <=1023}" data-news="7">
+                <div class="btn__content">
+                    <span class="btn__text">Подкасты</span>
+                </div>
+            </button>
+
+            <button class="btn btn--pink news-and-trends-button" :class="{'mobile': window.width <=1023}" data-news="all">
+                <div class="btn__content">
+                    <span class="btn__text">Статьи</span>
+                </div>
+            </button>
         </div>
+
         <div class="news-and-trends-arrows" data-glide-el="controls">
             <div class="arrow prev" data-glide-dir="<">
                 <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 89 38" fill="#121423">
@@ -48,31 +63,7 @@
                         }
                     </div>
                 </div>
-            </div>
-            
-            
-            <div class="news-and-trends-more" v-if="false">
-                <button type="submit" class="button button--main button--main-border" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
-                    <div class="text">Показать еще</div>
-                </button>
-            </div>
-            <form action="#" class="news-and-trends-form">
-                <div class="news-and-trends-form__in">
-                    <div class="closer">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 12 12" fill="none">
-                            <path d="M7 6L12 1L11 0L6 5L1 0L0 1L5 6L0 11L1 12L6 7L11 12L12 11L7 6Z" fill="white"/>
-                        </svg>
-                    </div>
-                    <div class="title">Подпишись на наши рассылки</div>
-                    <div class="input">
-                        <input type="email" placeholder="E-mail:">
-                    </div>
-                    <button type="submit" class="button button--main button--main-border" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
-                        <div class="text">Подписаться</div>
-                    </button>
-                </div>
-            </form>
+            </div>            
         </div>
     </div>
-    <!-- <div class="news-and-trends-scroller" style="height: 100vh;" v-if="window.width > 1023"></div> -->
 </section>

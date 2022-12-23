@@ -791,7 +791,474 @@
         </div>
     </div>
 </section>
+        <section id="main-question" class="main-question fileLoaderMain" :class="{'mobile': window.width <=1023}">
+    <div class="main-question-tentacle" v-if="!isSafary">
+        <img v-if="window.width > 1023" src="img/svg/big_tentacle.svg" alt="">
+        <img v-if="window.width <=1023" src="img/svg/main-question-mobile.svg" alt="">
+    </div>
+    <div class="main-question-tentacle" v-else>
+        <img v-if="window.width > 1023" src="img/svg/big_tentacle_static.svg" alt="">
+        <img v-if="window.width <=1023" src="img/svg/main-question-mobile.svg" alt="">
+    </div>
+    <div class="main-question__content">
+        <h4 class="main-question-title">Вы все еще здесь?</h4>
+        <div class="main-question-subtitle">Тогда вам точно что-то нужно!</div>
+        <form action="#">
+            <div class="main-question-form">
+                <div class="main-question-inputs">
+                    <input type="text" placeholder="Название компании">
+                    <input type="text" placeholder="Телефон">
+                    <input type="email" placeholder="Email">
+                    <textarea placeholder="Примечание"></textarea>
+                    <!-- <input type="text" placeholder="Ваше сообщение"> -->
+                    <label class="main-question-form-item file">
+                        <input type="file" @change="onChange('main', $event)">
+                        <span v-if="Boolean(mainQuestionFormMain) ? !mainQuestionFormMain.hasFile : !forms.main.uploadFile">+ Прикрепить файл</span>
+                        <span v-if="Boolean(mainQuestionFormMain) ? mainQuestionFormMain.hasFile && mainQuestionFormMain.file.name : forms.main.uploadFile && forms.main.uploadFile.name">
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 20 26" fill="none">
+                                    <path d="M18.1 8.57612C18.4228 8.57612 18.589 8.20323 18.3824 7.97037L18.4727 8.05909C18.8103 8.39089 19 8.84096 19 9.31025V22.7308C19 23.7079 18.1941 24.5 17.2 24.5H2.8C1.80589 24.5 1 23.7079 1 22.7308L1 3.26925C1 2.29204 1.80601 1.49989 2.8002 1.5L11.054 1.50089C11.5312 1.50094 11.9889 1.6873 12.3264 2.01898L12.409 2.10015C12.1717 1.90644 11.8 2.06966 11.8 2.38376M18.1 8.57612H13.6C12.6059 8.57612 11.8 7.784 11.8 6.80687V2.38376M18.1 8.57612C18.4321 8.57612 18.5984 8.18112 18.3636 7.95029L12.4364 2.12436C12.2015 1.89353 11.8 2.05732 11.8 2.38376" stroke="#FF4978" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="text">{{Boolean(mainQuestionFormMain) ? mainQuestionFormMain.file.name : forms.main.uploadFile.name}}</div>
+                        </span>
+                    </label>
+                    <div class="main-question-form-item button">
+                        <button type="submit" class="btn btn--pink" :class="{'mobile': window.width <=1023}">
+                            <div class="btn__content">
+                                <div class="btn__text">Отправить</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+</section>  
+        <section id="main-carousel" class="main-carousel" :class="{'mobile': window.width <=1023}">
+    <div class="main-carousel__title">Награды</div>
+    <div class="main-carousel__body">
+        <div class="main-carousel-scene">
+            <div class="main-carousel-carousel">
+              
+                <div class="main-carousel-cell" data-cell-index="1">
+                  <div class="main-carousel-cell-text">1</div>
+                  <div class="main-carousel-cell-image">
+                    <img src="https://picsum.photos/600/800?random=1" alt="">
+                  </div>
+                </div>
+              
+                <div class="main-carousel-cell" data-cell-index="2">
+                  <div class="main-carousel-cell-text">2</div>
+                  <div class="main-carousel-cell-image">
+                    <img src="https://picsum.photos/600/800?random=2" alt="">
+                  </div>
+                </div>
+              
+                <div class="main-carousel-cell" data-cell-index="3">
+                  <div class="main-carousel-cell-text">3</div>
+                  <div class="main-carousel-cell-image">
+                    <img src="https://picsum.photos/600/800?random=3" alt="">
+                  </div>
+                </div>
+              
+                <div class="main-carousel-cell" data-cell-index="4">
+                  <div class="main-carousel-cell-text">4</div>
+                  <div class="main-carousel-cell-image">
+                    <img src="https://picsum.photos/600/800?random=4" alt="">
+                  </div>
+                </div>
+              
+                <div class="main-carousel-cell" data-cell-index="5">
+                  <div class="main-carousel-cell-text">5</div>
+                  <div class="main-carousel-cell-image">
+                    <img src="https://picsum.photos/600/800?random=5" alt="">
+                  </div>
+                </div>
+              
+                <div class="main-carousel-cell" data-cell-index="6">
+                  <div class="main-carousel-cell-text">6</div>
+                  <div class="main-carousel-cell-image">
+                    <img src="https://picsum.photos/600/800?random=6" alt="">
+                  </div>
+                </div>
+              
+                <div class="main-carousel-cell" data-cell-index="7">
+                  <div class="main-carousel-cell-text">7</div>
+                  <div class="main-carousel-cell-image">
+                    <img src="https://picsum.photos/600/800?random=7" alt="">
+                  </div>
+                </div>
+              
+                
+            </div>
+        </div>
         
+        <div class="glide main-carousel__text">
+          <div class="main-carousel__text-item">
+            <div class="main-carousel__text-item_titles">
+              
+                <div class="title" data-title-id="0">Высший грейд А+ RUWARD в заказной разработке</div>
+              
+                <div class="title" data-title-id="1">Высший грейд А+ RUWARD в заказной разработке</div>
+              
+                <div class="title" data-title-id="2">Высший грейд А+ RUWARD в заказной разработке</div>
+              
+                <div class="title" data-title-id="3">Высший грейд А+ RUWARD в заказной разработке</div>
+              
+                <div class="title" data-title-id="4">Высший грейд А+ RUWARD в заказной разработке</div>
+              
+                <div class="title" data-title-id="5">Высший грейд А+ RUWARD в заказной разработке</div>
+              
+                <div class="title" data-title-id="6">Высший грейд А+ RUWARD в заказной разработке</div>
+              
+                <div class="title" data-title-id="7">Высший грейд А+ RUWARD в заказной разработке</div>
+              
+            </div>
+            <div class="main-carousel__text-item_texts">
+              
+                <div class="text" data-text-id="0">
+                  Отмечена центром сертификации наивысшим рейтингом. Отмечена центром сертификации наивысшим рейтингом
+                </div>
+              
+                <div class="text" data-text-id="1">
+                  Отмечена центром сертификации наивысшим рейтингом. Отмечена центром сертификации наивысшим рейтингом
+                </div>
+              
+                <div class="text" data-text-id="2">
+                  Отмечена центром сертификации наивысшим рейтингом. Отмечена центром сертификации наивысшим рейтингом
+                </div>
+              
+                <div class="text" data-text-id="3">
+                  Отмечена центром сертификации наивысшим рейтингом. Отмечена центром сертификации наивысшим рейтингом
+                </div>
+              
+                <div class="text" data-text-id="4">
+                  Отмечена центром сертификации наивысшим рейтингом. Отмечена центром сертификации наивысшим рейтингом
+                </div>
+              
+                <div class="text" data-text-id="5">
+                  Отмечена центром сертификации наивысшим рейтингом. Отмечена центром сертификации наивысшим рейтингом
+                </div>
+              
+                <div class="text" data-text-id="6">
+                  Отмечена центром сертификации наивысшим рейтингом. Отмечена центром сертификации наивысшим рейтингом
+                </div>
+              
+                <div class="text" data-text-id="7">
+                  Отмечена центром сертификации наивысшим рейтингом. Отмечена центром сертификации наивысшим рейтингом
+                </div>
+              
+            </div>
+            <div class="main-carousel__text-item_gifts">
+                <div class="gift">
+                  <div class="gift_in">
+                    <div class="left">
+                      <div class="left__in">
+                        <div class="badge">120</div>
+                      </div>
+                    </div>
+                    <div class="right">Награды</div>
+                  </div>
+                </div>
+            </div>
+            <div class="main-carousel__arrows">
+              <div class="main-carousel__arrow main-carousel__arrow--prev previous-button" @click="onClickPrevent()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 101 38" fill="none">
+                  <path d="M1.23212 17.2322C0.255814 18.2086 0.255814 19.7915 1.23212 20.7678L17.142 36.6777C18.1183 37.654 19.7013 37.654 20.6776 36.6777C21.6539 35.7014 21.6539 34.1185 20.6776 33.1421L6.53543 19L20.6776 4.85787C21.6539 3.88156 21.6539 2.29865 20.6776 1.32234C19.7013 0.346026 18.1183 0.346026 17.142 1.32234L1.23212 17.2322ZM100.944 16.5L2.99989 16.5L2.99989 21.5L100.944 21.5L100.944 16.5Z" fill="#121423"/>
+                  </svg>
+              </div>
+              <div class="main-carousel__grades">
+                <span class="from">0</span>°
+                - 
+                <span class="to">360°</span>
+              </div>
+              <div class="main-carousel__arrow main-carousel__arrow--next next-button" @click="onClickNext()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 101 38" fill="none">
+                  <path d="M1.23212 17.2322C0.255814 18.2086 0.255814 19.7915 1.23212 20.7678L17.142 36.6777C18.1183 37.654 19.7013 37.654 20.6776 36.6777C21.6539 35.7014 21.6539 34.1185 20.6776 33.1421L6.53543 19L20.6776 4.85787C21.6539 3.88156 21.6539 2.29865 20.6776 1.32234C19.7013 0.346026 18.1183 0.346026 17.142 1.32234L1.23212 17.2322ZM100.944 16.5L2.99989 16.5L2.99989 21.5L100.944 21.5L100.944 16.5Z" fill="#121423"/>
+                  </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-options">
+          <p>
+            <label>
+              Картинок: 
+              <input class="cells-range" type="range" min="3" max="11" value="6" @change="changeCarousel()" @input="changeCarousel()" />
+            </label>
+          </p>
+          <p>
+            <button class="previous-button">Пред</button>
+            <button class="next-button">След</button>
+          </p>
+          <p>
+            Orientation:
+            <label>
+              <input type="radio" name="orientation" value="horizontal" checked />
+              horizontal
+            </label>
+            <label>
+              <input type="radio" name="orientation" value="vertical" />
+              vertical
+            </label>
+          </p>
+        </div>
+    </div>
+</section>
+        
+<section id="news-and-trends" class="news-and-trends-trigger news-and-trends news-and-trends-right-slider" :class="{'mobile': window.width <=1023}">
+    <h1 class="news-and-trends-title">Новости и тренды</h1>
+    <div class="career-blog-buttons news-and-trends-buttons__wrap">
+        <div class="news-and-trends-buttons">
+            <button class="btn btn--pink news-and-trends-button" :class="{'mobile': window.width <=1023}" data-news="6">
+                <div class="btn__content">
+                    <span class="btn__text">Новости</span>
+                </div>
+            </button>
+
+            <button class="btn btn--pink news-and-trends-button" :class="{'mobile': window.width <=1023}" data-news="7">
+                <div class="btn__content">
+                    <span class="btn__text">Подкасты</span>
+                </div>
+            </button>
+
+            <button class="btn btn--pink news-and-trends-button" :class="{'mobile': window.width <=1023}" data-news="all">
+                <div class="btn__content">
+                    <span class="btn__text">Статьи</span>
+                </div>
+            </button>
+        </div>
+
+        <div class="news-and-trends-arrows" data-glide-el="controls">
+            <div class="arrow prev" data-glide-dir="<">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 89 38" fill="#121423">
+                    <path d="M87.7678 20.7678C88.7441 19.7914 88.7441 18.2085 87.7678 17.2322L71.8579 1.32232C70.8816 0.346014 69.2986 0.346014 68.3223 1.32232C67.346 2.29864 67.346 3.88155 68.3223 4.85786L82.4645 19L68.3223 33.1421C67.346 34.1184 67.346 35.7014 68.3223 36.6777C69.2986 37.654 70.8816 37.654 71.8579 36.6777L87.7678 20.7678ZM2.18557e-07 21.5L86 21.5L86 16.5L-2.18557e-07 16.5L2.18557e-07 21.5Z"/>
+                </svg>
+            </div>
+            <div class="arrow next" data-glide-dir=">">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 89 38" fill="#121423">
+                    <path d="M87.7678 20.7678C88.7441 19.7914 88.7441 18.2085 87.7678 17.2322L71.8579 1.32232C70.8816 0.346014 69.2986 0.346014 68.3223 1.32232C67.346 2.29864 67.346 3.88155 68.3223 4.85786L82.4645 19L68.3223 33.1421C67.346 34.1184 67.346 35.7014 68.3223 36.6777C69.2986 37.654 70.8816 37.654 71.8579 36.6777L87.7678 20.7678ZM2.18557e-07 21.5L86 21.5L86 16.5L-2.18557e-07 16.5L2.18557e-07 21.5Z"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div class="news-and-trends-items">
+        <div class="news-and-trends-right">
+            <div class="glide">
+                <div class="glide__track" data-glide-el="track">
+                    <div class="glide__slides">
+                        
+                            <article data-id-news="6" class="news-and-trends-item news-and-trends-item-trend">
+                                <div class="news-and-trends-item_image">
+                                    <img src="img/main_news_image.png" alt="">
+                                </div>
+                            </article>
+                        
+                            <article data-id-news="6" class="news-and-trends-item news-and-trends-item-trend">
+                                <div class="news-and-trends-item_image">
+                                    <img src="img/main_news_image.png" alt="">
+                                </div>
+                            </article>
+                        
+                            <article data-id-news="6" class="news-and-trends-item news-and-trends-item-trend">
+                                <div class="news-and-trends-item_image">
+                                    <img src="img/main_news_image.png" alt="">
+                                </div>
+                            </article>
+                        
+                            <article data-id-news="6" class="news-and-trends-item news-and-trends-item-trend">
+                                <div class="news-and-trends-item_image">
+                                    <img src="img/main_news_image.png" alt="">
+                                </div>
+                            </article>
+                        
+                            <article data-id-news="6" class="news-and-trends-item news-and-trends-item-trend">
+                                <div class="news-and-trends-item_image">
+                                    <img src="img/main_news_image.png" alt="">
+                                </div>
+                            </article>
+                        
+                        
+                            <article data-id-news="7" class="news-and-trends-item news-and-trends-item-news">
+                                <div class="news-and-trends-item_image">
+                                    <img src="img/main_news_image.png" alt="">
+                                </div>
+                            </article>
+                        
+                            <article data-id-news="7" class="news-and-trends-item news-and-trends-item-news">
+                                <div class="news-and-trends-item_image">
+                                    <img src="img/main_news_image.png" alt="">
+                                </div>
+                            </article>
+                        
+                        
+                            <article class="news-and-trends-item news-and-trends-item-green">
+                                <div class="news-and-trends-item_image">
+                                    <img src="img/main_news_image.png" alt="">
+                                </div>
+                            </article>
+                        
+                            <article class="news-and-trends-item news-and-trends-item-green">
+                                <div class="news-and-trends-item_image">
+                                    <img src="img/main_news_image.png" alt="">
+                                </div>
+                            </article>
+                        
+                            <article class="news-and-trends-item news-and-trends-item-green">
+                                <div class="news-and-trends-item_image">
+                                    <img src="img/main_news_image.png" alt="">
+                                </div>
+                            </article>
+                        
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+</section>
+        <div id="main-cases" class="main-cases" :class="{'mobile': window.width <=1023}">
+    <img class="main-cases__top-decoration" :class="{'mobile': window.width <=1023}" src="img/svg/main-cases-decoration.svg" alt="">
+    <div class="main-cases__content" :class="{'mobile': window.width <=1023}">
+        <h2 class="main-cases__title" :class="{'mobile': window.width <=1023}">Кейсы</h2>
+
+        <div class="tabs-tags main-cases__tabs-tags" :class="{'mobile': window.width <=1023}">
+            <div class="tabs-tags__list" :class="{'mobile': window.width <=1023}">
+                <span class="btn btn--small btn--border-pink tabs-tags__item active" :class="{'mobile': window.width <=1023}">
+                    <span class="btn__content">
+                        <span class="btn__text">E-commers</span>
+                    </span>
+                </span>
+
+                <span class="btn btn--small btn--border-pink tabs-tags__item" :class="{'mobile': window.width <=1023}">
+                    <span class="btn__content">
+                        <span class="btn__text">IT и телеком</span>
+                    </span>
+                </span>
+
+                <span class="btn btn--small btn--border-pink tabs-tags__item" :class="{'mobile': window.width <=1023}">
+                    <span class="btn__content">
+                        <span class="btn__text">Банки и Финтех</span>
+                    </span>
+                </span>
+
+                <span class="btn btn--small btn--border-pink tabs-tags__item" :class="{'mobile': window.width <=1023}">
+                    <span class="btn__content">
+                        <span class="btn__text">Транспорт и логистика</span>
+                    </span>
+                </span>
+
+                <span class="btn btn--small btn--border-pink tabs-tags__item" :class="{'mobile': window.width <=1023}">
+                    <span class="btn__content">
+                        <span class="btn__text">Строительство и недвижимость</span>
+                    </span>
+                </span>
+            </div>
+        </div>
+
+        <div class="main-cases__list" :class="{'mobile': window.width <=1023}">
+            <a href="#" class="cases__item careof" :class="{'mobile': window.width <=1023}">
+    <div class="cases-item-tags cases__tags" :class="{'mobile': window.width <=1023}">
+        <div class="cases-item-tags__content" :class="{'mobile': window.width <=1023}">
+            <div class="btn btn--pink cases-item-tags__item" :class="{'mobile': window.width <=1023}">
+                <span class="btn__content">
+                    <span class="btn__text">еуые</span>
+                </span>
+            </div>
+
+            <div class="btn btn--pink cases-item-tags__item" :class="{'mobile': window.width <=1023}">
+                <span class="btn__content">
+                    <span class="btn__text">asdfasdf</span>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="cases__item-image careof__image">
+        <img src="img/careof.png" width="100%" alt="">
+    </div>
+    <div class="cases__item-bottom">
+        <div class="cases__item-title">Care/of</div>
+        <div class="cases__item-text">
+            Интернет-магазин для американской компании БАДов и витаминов
+        </div>
+    </div>
+</a>
+            <a href="#" class="cases__item zorge" :class="{'mobile': window.width <=1023}">
+    <div class="cases__item-shadow zorge__shadow"></div>
+    <div class="cases__item-shadow zorge__shadow--hover"></div>
+    <div class="cases__item-bottom">
+        <div class="cases__item-title">Зорге №9</div>
+        <div class="cases__item-text">
+            Сайт для девелопера апартаментов бизнес-класса в престижном районе Москвы
+        </div>
+    </div>
+</a>
+            <a href="#" class="cases__item bioline" :class="{'mobile': window.width <=1023}">
+    <div class="cases__item-image bioline__image">
+        <img src="img/bioline.png" width="100%" alt="">
+    </div>
+    <div class="cases__item-image bioline__image bioline__image--hidden">
+        <img src="img/bioline2.png" width="100%" alt="">
+    </div>
+    <div class="cases__item-bottom bioline__bottom">
+        <div class="cases__item-title">Bio Line</div>
+        <div class="cases__item-text">
+            Лендинг для сети трихологических центров
+        </div>
+    </div>
+</a>
+            <a href="#" class="cases__item cases__item--lightonhover malina" :class="{'mobile': window.width <=1023}">
+    <div class="cases__item-image malina__image">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 960 727" fill="none">
+            <rect width="960" height="727" fill="#F5F5F5"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M496.456 300H518.133H531.139V325.894L518.133 338.841V311.043L383.737 425.154H349.055L496.456 300ZM574.492 300H596.169H609.175V425.154H596.169V311.043L461.773 425.154H427.091L574.492 300Z" fill="#FF3B3B"/>
+        </svg>
+    </div>
+    <div class="cases__item-bottom malina__bottom">
+        <div class="cases__item-title">Malina property</div>
+        <div class="cases__item-text">
+            Сайт для компании по аренде и продаже коммерческой недвижимости в Москве
+        </div>
+    </div>
+</a>
+            <a href="#" class="cases__item cases__item--lightonhover mmcite" :class="{'mobile': window.width <=1023}">
+    <div class="cases__item-bottom mmcite__bottom">
+        <div class="cases__item-title">Mmcite</div>
+        <div class="cases__item-text">
+            B2B-портал для разработчика эстетичной уличной мебели
+        </div>
+    </div>
+</a>
+            <a href="#" class="cases__item cases__item--dark mukomol" data-is_paralaxed="true" :class="{'mobile': window.width <=1023}">
+    <div class="cases__item-image mukomol__image mukomol__image--center">
+        <img src="img/mukomol1.png" alt="">
+    </div>
+    <div class="cases__item-image mukomol__image mukomol__image--left">
+        <img src="img/mukomol2.png" alt="">
+    </div>
+    <div class="cases__item-image mukomol__image mukomol__image--right">
+        <img src="img/mukomol3.png" alt="">
+    </div>
+    <div class="cases__item-image mukomol__image mukomol__image--accessuars" data-speed="12">
+        <img src="img/mukomol_access.png" alt="">
+    </div>
+    <div class="cases__item-bottom mukomol__bottom">
+        <div class="cases__item-title">Мукомольный комбинат Володарский</div>
+        <div class="cases__item-text">
+            B2B-портал и редизайн сайта для крупного производителя муки в Володарске
+        </div>
+    </div>
+</a>
+        </div>
+
+        <a href="#" class="btn btn--pink main-cases__more" :class="{'mobile': window.width <=1023}">
+            <div class="btn__content">
+                <span class="btn__text">Больше кейсов</span>
+            </div>
+        </a>
+    </div>
+</div>
         <footer id="footer" class="footer" :class="{'mobile': window.width <=1023}">
     <div class="footer-tentacle">
         <img src="img/svg/footer_tentacle.svg" width="100%" alt="">
@@ -970,6 +1437,9 @@
     <script src="js/main-web.min.js" defer></script>
     <script src="js/main-about.min.js" defer></script>
     <script src="js/main-question.min.js" defer></script>
+    <script src="js/main-carousel.min.js" defer></script>
+    <script src="js/news-and-trends.min.js" defer></script>
+    <script src="js/main-cases.min.js" defer></script>
     <script src="js/footer.min.js" defer></script>
 </body>
 </html>

@@ -852,18 +852,42 @@
         </div>
     </div>
 </section>
-            <div class="main-cases" :class="{'mobile': window.width <=1023}">
+            <div id="main-cases" class="main-cases" :class="{'mobile': window.width <=1023}">
     <img class="main-cases__top-decoration" :class="{'mobile': window.width <=1023}" src="img/svg/main-cases-decoration.svg" alt="">
     <div class="main-cases__content" :class="{'mobile': window.width <=1023}">
         <h2 class="main-cases__title" :class="{'mobile': window.width <=1023}">Кейсы</h2>
 
         <div class="tabs-tags main-cases__tabs-tags" :class="{'mobile': window.width <=1023}">
             <div class="tabs-tags__list" :class="{'mobile': window.width <=1023}">
-                <span class="tabs-tags__item tabs-tags__item--active" :class="{'mobile': window.width <=1023}">E-commers</span>
-                <span class="tabs-tags__item" :class="{'mobile': window.width <=1023}">IT и телеком</span>
-                <span class="tabs-tags__item" :class="{'mobile': window.width <=1023}">Банки и Финтех</span>
-                <span class="tabs-tags__item" :class="{'mobile': window.width <=1023}">Транспорт и логистика</span>
-                <span class="tabs-tags__item" :class="{'mobile': window.width <=1023}">Строительство и недвижимость</span>
+                <span class="btn btn--small btn--border-pink tabs-tags__item active" :class="{'mobile': window.width <=1023}">
+                    <span class="btn__content">
+                        <span class="btn__text">E-commers</span>
+                    </span>
+                </span>
+
+                <span class="btn btn--small btn--border-pink tabs-tags__item" :class="{'mobile': window.width <=1023}">
+                    <span class="btn__content">
+                        <span class="btn__text">IT и телеком</span>
+                    </span>
+                </span>
+
+                <span class="btn btn--small btn--border-pink tabs-tags__item" :class="{'mobile': window.width <=1023}">
+                    <span class="btn__content">
+                        <span class="btn__text">Банки и Финтех</span>
+                    </span>
+                </span>
+
+                <span class="btn btn--small btn--border-pink tabs-tags__item" :class="{'mobile': window.width <=1023}">
+                    <span class="btn__content">
+                        <span class="btn__text">Транспорт и логистика</span>
+                    </span>
+                </span>
+
+                <span class="btn btn--small btn--border-pink tabs-tags__item" :class="{'mobile': window.width <=1023}">
+                    <span class="btn__content">
+                        <span class="btn__text">Строительство и недвижимость</span>
+                    </span>
+                </span>
             </div>
         </div>
 
@@ -871,15 +895,15 @@
             <a href="#" class="cases__item careof" :class="{'mobile': window.width <=1023}">
     <div class="cases-item-tags cases__tags" :class="{'mobile': window.width <=1023}">
         <div class="cases-item-tags__content" :class="{'mobile': window.width <=1023}">
-            <div class="cases-item-tags__item" :class="{'mobile': window.width <=1023}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
-                <span>
-                    еуые
+            <div class="btn btn--pink cases-item-tags__item" :class="{'mobile': window.width <=1023}">
+                <span class="btn__content">
+                    <span class="btn__text">еуые</span>
                 </span>
             </div>
 
-            <div class="cases-item-tags__item" :class="{'mobile': window.width <=1023}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
-                <span>
-                    asdfasdf
+            <div class="btn btn--pink cases-item-tags__item" :class="{'mobile': window.width <=1023}">
+                <span class="btn__content">
+                    <span class="btn__text">asdfasdf</span>
                 </span>
             </div>
         </div>
@@ -962,8 +986,10 @@
 </a>
         </div>
 
-        <a href="#" class="set-white-bg-on-hover main-cases__more" :class="{'mobile': window.width <=1023}" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
-            <span class="set-white-bg-on-hover__text">Больше кейсов</span>
+        <a href="#" class="btn btn--pink main-cases__more" :class="{'mobile': window.width <=1023}">
+            <div class="btn__content">
+                <span class="btn__text">Больше кейсов</span>
+            </div>
         </a>
     </div>
 </div>

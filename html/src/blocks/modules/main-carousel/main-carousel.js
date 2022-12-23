@@ -88,8 +88,6 @@ const mainCarousel = class MainCarousel {
         cellsRange.addEventListener( 'change', changeCarousel );
         cellsRange.addEventListener( 'input', changeCarousel );
 
-
-
         function changeCarousel() {
         cellCount = cellsRange.value;
         theta = 360 / cellCount;

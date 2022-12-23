@@ -24,6 +24,9 @@ module.exports = {
         'main-web': './src/blocks/modules/main-web/module.main-web.js',
         'main-about': './src/blocks/modules/main-about/module.main-about.js',
         'main-question': './src/blocks/modules/main-question/module.main-question.js',
+        'main-carousel': './src/blocks/modules/main-carousel/module.main-carousel.js',
+        'news-and-trends': './src/blocks/modules/main-news-and-trends/module.main-news-and-trends.js',
+        'main-cases': './src/blocks/modules/main-cases/module.main-cases.js',
         footer: './src/blocks/modules/footer/module.footer.js',
     },
 
