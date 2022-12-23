@@ -5,6 +5,8 @@
 }
 
 .main-cases__top-decoration {
+    width: 100%;
+    
     &.mobile {
         display: none;
     }
@@ -77,7 +79,7 @@
 }
 
 .main-cases__more {
-    padding: vw(30) vw(60);
+    // padding: vw(30) vw(60);
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
@@ -87,9 +89,15 @@
     margin-right: auto;
 
     &.mobile {
-        padding: 30px 60px;
+        // 
         font-size: 24px;
         line-height: 25px;
+
+        &.btn {
+            .btn__content {
+                padding: 30px 60px;
+            }
+        }
     }
 }
 
