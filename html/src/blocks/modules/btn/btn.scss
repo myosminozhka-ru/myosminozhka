@@ -23,6 +23,7 @@
   }
 
   &--border-pink,
+  &--border-grey,
   &--pink {
     font-size: vw(25);
 
@@ -118,6 +119,33 @@
     }
   }
 
+  &--border-grey {
+    color: #929292;
+
+    .btn__content {
+      background-color: transparent;
+      border: vw(1) solid #929292;
+
+      &::before {
+        background-color: $mainColor;
+      }
+    }
+
+    &.mobile {
+      .btn__content {
+        border-width: 1px;
+      }
+    }
+
+    &:hover {
+      color: $white;
+    }
+
+    &.active {
+      color: $white;
+    }
+  }
+
   &--pink {
     color: $white;
 
@@ -143,6 +171,7 @@
 @media (max-width: 1023px) {
   .btn:not(.mobile) {
     &.btn--border-pink,
+    &.btn--border-grey,
     &.btn--pink {
       font-size: 24px;
 
