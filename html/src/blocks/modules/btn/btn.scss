@@ -32,6 +32,8 @@
     }
 
     &.mobile {
+      font-size: 24px;
+
       .btn__content {
         border-radius: 10px;
         padding: 20px 24px;
@@ -53,14 +55,6 @@
           padding: 12px;
           border-radius: 8px;
         }
-      }
-    }
-
-    &.mobile {
-      font-size: 24px;
-
-      .btn__content {
-        padding: 20px 24px;
       }
     }
 
@@ -142,6 +136,29 @@
 
     &.active {
       color: $mainColor;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .btn:not(.mobile) {
+    &.btn--border-pink,
+    &.btn--pink {
+      font-size: 24px;
+
+      .btn__content {
+        border-radius: 10px;
+        padding: 20px 24px;
+      }
+
+      &.btn--small {
+        font-size: 14px;
+
+        .btn__content {
+          padding: 12px;
+            border-radius: 8px;
+        }
+      }
     }
   }
 }

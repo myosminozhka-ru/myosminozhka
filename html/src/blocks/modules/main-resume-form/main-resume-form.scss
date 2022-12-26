@@ -74,3 +74,80 @@
         padding: 20px;
     }
 }
+
+@media (max-width: 1023px) {
+    .main-resume {
+        padding: 0 20px 50px;
+
+        .main-question-form {
+            position: relative;
+            z-index: 4;
+
+            .main-question-inputs {
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                flex-wrap: wrap;
+
+                input[type=text]::placeholder,
+                input[type=email]::placeholder,
+                input[type=tel]::placeholder,
+                textarea::placeholder {
+                    font-size: 20px;
+                    line-height: 20px;
+                }
+
+                input[type=text],
+                input[type=email],
+                input[type=tel],
+                textarea {
+                    width: 100%;
+                    max-width: unset;
+                    margin-right: 0;
+                    font-size: 20px;
+                    line-height: 20px;
+                    min-width: unset;
+                    padding: 20px 0;
+                }
+    
+                input[type=text],
+                input[type=email],
+                input[type=tel] {
+                    margin-bottom: 10px;
+                }
+
+                > textarea.textarea {
+                    margin-right: 0;
+                    max-height: unset;
+                    margin-bottom: 30px;
+                }
+
+                > label.main-question-form-item.file {
+                    width: 100%;
+                    margin-right: 0;
+                    max-width: unset;
+                    min-width: unset;
+                    margin-bottom: 40px;
+
+                    .icon {
+                        width: 20px;
+                        height: 20px;
+                        margin-right: 10px;
+                    }
+                }
+
+                .upload-form-file__no-file,
+                .upload-form-file__file {
+                    font-size: 20px;
+                    line-height: 20px;
+                }
+
+                .button {
+                    width: 100%;
+                    max-width: unset;
+                    min-width: unset;
+                }
+            }
+        }
+    }
+}
