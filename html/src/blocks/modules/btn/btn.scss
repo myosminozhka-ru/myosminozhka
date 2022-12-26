@@ -126,6 +126,7 @@
     .btn__content {
       background-color: transparent;
       border: vw(1) solid #929292;
+      border-width: vw(1);
 
       &::before {
         background-color: $mainColor;
