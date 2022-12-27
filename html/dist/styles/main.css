@@ -18938,7 +18938,7 @@ html.overflowed body {
   transform: translate(-50%, -50%) scale(0);
   transform-origin: center;
   border-radius: 100%;
-  width: 110%;
+  width: 200%;
   padding-bottom: 100%;
   opacity: 0;
   transition: all 0.5s ease;
