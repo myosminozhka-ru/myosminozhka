@@ -1,7 +1,7 @@
-<div class="cookie-form" :class="{'mobile': window.width <= 1023}" v-if="!cookiesForm.isClosedOnce">
+<div id="cookie-form" class="cookie-form" :class="{'mobile': window.width <= 1023}" v-if="!cookiesForm.isClosedOnce">
     <div class="cookie-form__in">
         <div class="cookie-form__message">Мы используем куки на всех своих сайтах, включая этот, потому что без кук вообще весь интернет работал бы через жопу</div>
-        <div class="cookie-form__button" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
+        <div class="cookie-form__button" @click="closeForm()">
             <span>Понятно</span>
         </div>
     </div>
