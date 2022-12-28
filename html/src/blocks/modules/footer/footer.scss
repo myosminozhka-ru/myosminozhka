@@ -15,11 +15,11 @@
     &:not(.mobile) &-tentacle {
         top: -39.020833vw;
     }
-    @media all and (min-width: 1024px) {
-        &-tentacle {
-            transform: scale(1.1);
-        }
-    }
+    // @media all and (min-width: 1024px) {
+    //     &-tentacle {
+    //         transform: scale(1.1);
+    //     }
+    // }
     @media all and (max-width: 1023px) {
         &-tentacle {
             bottom: calc(100% - 450px);
