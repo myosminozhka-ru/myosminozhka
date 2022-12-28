@@ -29,6 +29,7 @@ module.exports = {
         'main-cases': './src/blocks/modules/main-cases/module.main-cases.js',
         'upload-form-file': './src/blocks/modules/upload-form-file/module.upload-form-file.js',
         'cookie-form': './src/blocks/modules/cookie-form/module.cookie-form.js',
+        'map': './src/blocks/modules/map/module.map.js',
         footer: './src/blocks/modules/footer/module.footer.js',
     },
 

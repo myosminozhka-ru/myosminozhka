@@ -19152,10 +19152,6 @@ html.overflowed body {
     line-height: 1.3020833333vw;
   }
 
-  .footer-tentacle {
-    transform: scale(1.1);
-  }
-
   .block_caseg .career-first-title {
     white-space: nowrap;
     width: max-content;
