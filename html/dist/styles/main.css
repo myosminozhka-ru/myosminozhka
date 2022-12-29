@@ -10384,6 +10384,10 @@ html:root body.posts .post_info__code--in {
   left: 0;
 }
 
+.footer:not(.mobile) .footer-tentacle {
+  top: -39.020833vw;
+}
+
 .footer__content {
   padding-right: 4.0625vw;
   padding-left: 7.2395833333vw;
@@ -19160,6 +19164,10 @@ html.overflowed body {
     padding: 1.5625vw 3.125vw;
     font-size: 1.3020833333vw;
     line-height: 1.3020833333vw;
+  }
+
+  .footer-tentacle {
+    transform: scale(1.1);
   }
 
   .block_caseg .career-first-title {
