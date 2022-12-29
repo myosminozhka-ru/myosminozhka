@@ -147,7 +147,7 @@ var CasesFilter = /*#__PURE__*/function () {
             return btn.classList.contains('active');
           }).at(-1)) === null || _Array$from$filter$at2 === void 0 ? void 0 : _Array$from$filter$at2.classList.remove('active');
           event.target.closest('.btn').classList.add('active');
-          _this2.activeId = ((_event$target$closest = event.target.closest('.btn')) === null || _event$target$closest === void 0 ? void 0 : _event$target$closest.dataset.casesFilterBtn) || -1;
+          _this2.activeId = parseInt((_event$target$closest = event.target.closest('.btn')) === null || _event$target$closest === void 0 ? void 0 : _event$target$closest.dataset.casesFilterBtn) || -1;
           _this2.onFilter();
         });
       });

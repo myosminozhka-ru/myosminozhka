@@ -33,7 +33,7 @@ class CasesFilter {
             btn.addEventListener('click', (event) => {
                 Array.from(this.btns).filter((btn) => btn.classList.contains('active')).at(-1)?.classList.remove('active')
                 event.target.closest('.btn').classList.add('active')
-                this.activeId = event.target.closest('.btn')?.dataset.casesFilterBtn || -1;
+                this.activeId = parseInt(event.target.closest('.btn')?.dataset.casesFilterBtn) || -1;
                 this.onFilter()
             })
         })
