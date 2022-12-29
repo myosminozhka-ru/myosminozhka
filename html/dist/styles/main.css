@@ -19105,6 +19105,14 @@ html.overflowed body {
   padding-bottom: 70px;
 }
 
+.cases-detail.mobile {
+  padding-bottom: 50px;
+}
+
+.job-stages-management.mobile {
+  padding-bottom: 50px;
+}
+
 .job-stages-management:not(.mobile) {
   margin-bottom: 140px;
 }
