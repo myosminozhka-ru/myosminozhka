@@ -19100,6 +19100,15 @@ html.overflowed body {
   padding: 16px 24px;
 }
 
+.cases-detail:not(.mobile) {
+  margin-bottom: 70px;
+  padding-bottom: 70px;
+}
+
+.job-stages-management:not(.mobile) {
+  margin-bottom: 140px;
+}
+
 @media all and (min-width: 481px) {
   .header-phone_opener {
     position: relative;
