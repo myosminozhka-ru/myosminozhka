@@ -755,10 +755,15 @@ width: 70px;
 body.main .main-resume.mobile {
     padding-bottom: 40px !important;
 }
-.main-question:not(.mobile) .main-question-inputs textarea.inputtext {
+
+.main-question.mobile .main-question-inputs textarea.inputtext {
     overflow-x: hidden;
     max-height: unset;
     margin-right: 0;
+}
+
+.main-question:not(.mobile) .main-question-inputs textarea.inputtext {
+    overflow-x: hidden;
 }
 .company-team.mobile .company-team-item-more .text {
     text-align: center;
