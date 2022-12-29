@@ -87,3 +87,8 @@
     //     pointer-events: none;
     // }
 }
+
+.cases-detail:not(.mobile) {
+    margin-bottom: 70px;
+    padding-bottom: 70px;
+}
