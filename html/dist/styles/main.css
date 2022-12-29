@@ -19345,7 +19345,8 @@ html.overflowed body {
   }
 
   .header-logo:not(.mobile) {
-    padding-top: 1.4vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
   }
 
   .main-words:not(.mobile) {
