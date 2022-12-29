@@ -18322,10 +18322,6 @@ html.overflowed body {
   display: none !important;
 }
 
-.career-page .footer:not(.mobile) .footer-tentacle {
-  top: -27.45833vw !important;
-}
-
 .services-page .career-first.mobile,
 .internet-marketing-page .career-first.mobile,
 .branding-page .career-first.mobile {
