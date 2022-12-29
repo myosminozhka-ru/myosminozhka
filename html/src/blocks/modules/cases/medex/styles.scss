@@ -11,6 +11,8 @@
     right: 0;
     bottom: 0;
     pointer-events: none;
+    z-index: -1;
+    
     video {
         width: 100%;
         height: 100%;
