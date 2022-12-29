@@ -10373,10 +10373,6 @@ html:root body.posts .post_info__code--in {
   left: 0;
 }
 
-.footer:not(.mobile) .footer-tentacle {
-  top: -39.020833vw;
-}
-
 .footer__content {
   padding-right: 4.0625vw;
   padding-left: 7.2395833333vw;
