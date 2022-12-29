@@ -19344,7 +19344,7 @@ html.overflowed body {
     margin: 0;
   }
 
-  .header-logo:not(.mobile) {
+  a.header-logo:not(.mobile) {
     padding-top: 1vw;
     padding-bottom: 1vw;
   }
