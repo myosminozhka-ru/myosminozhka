@@ -1116,31 +1116,31 @@
 
         <div class="tabs-tags main-cases__tabs-tags" :class="{'mobile': window.width <=1023}">
             <div class="tabs-tags__list" :class="{'mobile': window.width <=1023}">
-                <span class="btn btn--small btn--border-pink tabs-tags__item active" :class="{'mobile': window.width <=1023}">
+                <span class="btn btn--small btn--border-pink tabs-tags__item" data-cases-filter-btn="1" :class="{'mobile': window.width <=1023}">
                     <span class="btn__content">
                         <span class="btn__text">E-commers</span>
                     </span>
                 </span>
 
-                <span class="btn btn--small btn--border-pink tabs-tags__item" :class="{'mobile': window.width <=1023}">
+                <span class="btn btn--small btn--border-pink tabs-tags__item" data-cases-filter-btn="2" :class="{'mobile': window.width <=1023}">
                     <span class="btn__content">
                         <span class="btn__text">IT и телеком</span>
                     </span>
                 </span>
 
-                <span class="btn btn--small btn--border-pink tabs-tags__item" :class="{'mobile': window.width <=1023}">
+                <span class="btn btn--small btn--border-pink tabs-tags__item" data-cases-filter-btn="3" :class="{'mobile': window.width <=1023}">
                     <span class="btn__content">
                         <span class="btn__text">Банки и Финтех</span>
                     </span>
                 </span>
 
-                <span class="btn btn--small btn--border-pink tabs-tags__item" :class="{'mobile': window.width <=1023}">
+                <span class="btn btn--small btn--border-pink tabs-tags__item" data-cases-filter-btn="4" :class="{'mobile': window.width <=1023}">
                     <span class="btn__content">
                         <span class="btn__text">Транспорт и логистика</span>
                     </span>
                 </span>
 
-                <span class="btn btn--small btn--border-pink tabs-tags__item" :class="{'mobile': window.width <=1023}">
+                <span class="btn btn--small btn--border-pink tabs-tags__item" data-cases-filter-btn="5" :class="{'mobile': window.width <=1023}">
                     <span class="btn__content">
                         <span class="btn__text">Строительство и недвижимость</span>
                     </span>
@@ -1149,7 +1149,7 @@
         </div>
 
         <div class="main-cases__list" :class="{'mobile': window.width <=1023}">
-            <a href="#" class="cases__item careof" :class="{'mobile': window.width <=1023}">
+            <a href="#" class="cases__item careof" data-cases-filter-item="2, 4" :class="{'mobile': window.width <=1023}">
     <div class="cases-item-tags cases__tags" :class="{'mobile': window.width <=1023}">
         <div class="cases-item-tags__content" :class="{'mobile': window.width <=1023}">
             <div class="btn btn--pink cases-item-tags__item" :class="{'mobile': window.width <=1023}">
@@ -1175,7 +1175,7 @@
         </div>
     </div>
 </a>
-            <a href="#" class="cases__item zorge" :class="{'mobile': window.width <=1023}">
+            <a href="#" class="cases__item zorge" data-cases-filter-item="3" :class="{'mobile': window.width <=1023}">
     <div class="cases__item-shadow zorge__shadow"></div>
     <div class="cases__item-shadow zorge__shadow--hover"></div>
     <div class="cases__item-bottom">
@@ -1185,7 +1185,7 @@
         </div>
     </div>
 </a>
-            <a href="#" class="cases__item bioline" :class="{'mobile': window.width <=1023}">
+            <a href="#" class="cases__item bioline" data-cases-filter-item="4" :class="{'mobile': window.width <=1023}">
     <div class="cases__item-image bioline__image">
         <img src="img/bioline.png" width="100%" alt="">
     </div>
@@ -1199,7 +1199,7 @@
         </div>
     </div>
 </a>
-            <a href="#" class="cases__item cases__item--lightonhover malina" :class="{'mobile': window.width <=1023}">
+            <a href="#" class="cases__item cases__item--lightonhover malina" data-cases-filter-item="1" :class="{'mobile': window.width <=1023}">
     <div class="cases__item-image malina__image">
         <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 960 727" fill="none">
             <rect width="960" height="727" fill="#F5F5F5"/>
@@ -1213,7 +1213,7 @@
         </div>
     </div>
 </a>
-            <a href="#" class="cases__item cases__item--lightonhover mmcite" :class="{'mobile': window.width <=1023}">
+            <a href="#" class="cases__item cases__item--lightonhover mmcite" data-cases-filter-item="2" :class="{'mobile': window.width <=1023}">
     <div class="cases__item-bottom mmcite__bottom">
         <div class="cases__item-title">Mmcite</div>
         <div class="cases__item-text">
@@ -1221,7 +1221,7 @@
         </div>
     </div>
 </a>
-            <a href="#" class="cases__item cases__item--dark mukomol" data-is_paralaxed="true" :class="{'mobile': window.width <=1023}">
+            <a href="#" class="cases__item cases__item--dark mukomol" data-is_paralaxed="true" data-cases-filter-item="5" :class="{'mobile': window.width <=1023}">
     <div class="cases__item-image mukomol__image mukomol__image--center">
         <img src="img/mukomol1.png" alt="">
     </div>
