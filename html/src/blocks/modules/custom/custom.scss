@@ -757,6 +757,8 @@ body.main .main-resume.mobile {
 }
 .main-question:not(.mobile) .main-question-inputs textarea {
     overflow-x: hidden;
+    max-height: unset;
+    margin-right: 0;
 }
 .company-team.mobile .company-team-item-more .text {
     text-align: center;
