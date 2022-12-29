@@ -19049,7 +19049,7 @@ html.overflowed body {
 .cases__tags {
   position: relative;
   padding: 1.6666666667vw;
-  z-index: 1;
+  z-index: 3;
 }
 
 .cases__tags.mobile {
