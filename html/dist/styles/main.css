@@ -23612,6 +23612,7 @@ html.overflowed body {
     line-height: 20px;
     min-width: unset;
     padding: 20px 0;
+    max-height: unset;
   }
 
   .main-resume .main-question-form .main-question-inputs input[type=text],
