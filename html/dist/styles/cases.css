@@ -241,6 +241,7 @@
   right: 0;
   bottom: 0;
   pointer-events: none;
+  z-index: -1;
 }
 
 .cases__wrapper .medex__video video,
