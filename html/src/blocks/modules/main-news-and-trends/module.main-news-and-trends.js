@@ -34,7 +34,9 @@ window.mainNewsAndTrends = new Vue({
                             $(`.news-and-trends-right-slider .news-and-trends-item:not([data-id-news="${item.dataset.news}"])`).remove();
                         }
                         
-                        this.initSlider();
+                        setTimeout(() => {
+                            this.initSlider();
+                        }, 100)
                     })
                 })
             }

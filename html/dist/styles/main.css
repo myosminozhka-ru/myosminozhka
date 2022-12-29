@@ -3005,6 +3005,7 @@ html {
 .company-principles-text .counter,
 .news-and-trends:not(.mobile) .news-and-trends-big .text,
 .news-and-trends:not(.mobile) .news-and-trends-big .gradient,
+.header-phone_opener svg,
 .header-phone_opener > svg,
 .header-mobile-menu,
 .header-lang a,
@@ -3458,6 +3459,16 @@ body .en-version .footer:not(.mobile) .footer-presentation a {
 
 .jb_lnks {
   flex-wrap: wrap;
+}
+
+.header-phone_opener svg {
+  width: 30px;
+  height: 75px;
+  stroke: #fff;
+}
+
+.header-phone_opener svg:hover {
+  stroke: #FF4978;
 }
 
 .main-words {
@@ -10371,6 +10382,10 @@ html:root body.posts .post_info__code--in {
   position: absolute;
   right: 0;
   left: 0;
+}
+
+.footer:not(.mobile) .footer-tentacle {
+  top: -39.020833vw;
 }
 
 .footer__content {
@@ -19146,6 +19161,10 @@ html.overflowed body {
     padding: 1.5625vw 3.125vw;
     font-size: 1.3020833333vw;
     line-height: 1.3020833333vw;
+  }
+
+  .footer-tentacle {
+    transform: scale(1.1);
   }
 
   .block_caseg .career-first-title {

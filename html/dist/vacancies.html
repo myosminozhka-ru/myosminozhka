@@ -34,7 +34,7 @@
     <body class="vacan">
         <div class="wrapper" id="app">
             <div class="first__fullscreen_frame" :class="{ 'mobile': window.width <= 1023 }">
-                <header id="header" class="header" :class="{'isOpened': Boolean(header) ? header.isOpened : isOpened, 'mobile': window.width <=1023}">
+                <header id="header" class="header" :class="{'isOpened': isOpened, 'mobile': window.width <=1023}">
     <div class="header-blur"></div>
     <div class="header-in">
         <a href="/" class="header-logo" :class="{'mobile': window.width <=1023}">
@@ -42,23 +42,13 @@
         </a>
         <ul class="header__phones_mobile" v-if="window.width <= 1023">
             <li class="header-phone_opener">
-                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none">
-                    <path d="M19.0264 20.9929C20.0722 21.0873 21.0036 20.2223 20.9994 19.1864V16.4767C21.0104 16.0337 20.8579 15.6021 20.5709 15.264C19.7615 14.3106 16.9855 13.7008 15.8851 13.935C15.0273 14.1176 14.4272 14.9788 13.8405 15.5644C12.6172 14.8702 11.5075 14.005 10.5426 13M8.41019 10.1448C8.9969 9.55929 9.85987 8.96036 10.0428 8.10428C10.2771 7.00777 9.66813 4.24949 8.72131 3.43684C8.38828 3.151 7.96247 2.99577 7.52325 3.00009H4.80811C3.77358 3.00106 2.91287 3.92895 3.00706 4.96919C3.00081 12.9038 8.48251 19.3497 15.9999 20.7226" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <div class="header-phone_modal" :class="{ 'isOpened': Boolean(header) ? header.isPhonesOpened : isPhonesOpened }">
-                    <div class="header-phone_modal_in">
-                        <div class="header-phone_modal_closer">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 12 12" fill="none"><path d="M7 6L12 1L11 0L6 5L1 0L0 1L5 6L0 11L1 12L6 7L11 12L12 11L7 6Z" fill="#fff"></path></svg>
-                        </div>
-                        <div class="header-phone_modal_phones">
-                            <a href="tel:+74952780708">+7 (495) 278-07-08</a>
-                            <div class="delim"></div>
-                            <a href="tel:+74952780708">+7 (495) 278-07-08</a>
-                        </div>
-                    </div>
-                </div>
+                <a href="tel:+74952780708">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none">
+                        <path d="M19.0264 20.9929C20.0722 21.0873 21.0036 20.2223 20.9994 19.1864V16.4767C21.0104 16.0337 20.8579 15.6021 20.5709 15.264C19.7615 14.3106 16.9855 13.7008 15.8851 13.935C15.0273 14.1176 14.4272 14.9788 13.8405 15.5644C12.6172 14.8702 11.5075 14.005 10.5426 13M8.41019 10.1448C8.9969 9.55929 9.85987 8.96036 10.0428 8.10428C10.2771 7.00777 9.66813 4.24949 8.72131 3.43684C8.38828 3.151 7.96247 2.99577 7.52325 3.00009H4.80811C3.77358 3.00106 2.91287 3.92895 3.00706 4.96919C3.00081 12.9038 8.48251 19.3497 15.9999 20.7226" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
             </li>
-            <li class="header-menu-opener" :class="{'isOpened': Boolean(header) ? header.isOpened : isOpened}" @click="Boolean(header) ? header.openMobileHeader() : openMobileHeader()" v-if="window.width <= 1023">
+            <li class="header-menu-opener" :class="{'isOpened': isOpened}" @click="openMobileHeader" v-if="window.width <= 1023">
                 <div></div>
                 <div></div>
                 <div></div>
@@ -67,7 +57,7 @@
         
         <nav class="header-menu" v-if="window.width > 1023">
             <ul>
-                <li class="isActive" @mouseenter="Boolean(header) ? header.setHeaderWavePosition : setHeaderWavePosition()" @mouseleave="Boolean(header) ? header.setHeaderWavePositionOnLoad : setHeaderWavePositionOnLoad()">
+                <li class="isActive" @mouseenter="setHeaderWavePosition" @mouseleave="setHeaderWavePositionOnLoad">
                     <a href="job.html">Услуги</a>
                     <ul class="header-phone_modal">
                         <li class="header-phone_modal_in">
@@ -82,22 +72,22 @@
                         </li>
                     </ul>
                 </li>
-                <li @mouseenter="Boolean(header) ? header.setHeaderWavePosition : setHeaderWavePosition()" @mouseleave="Boolean(header) ? header.setHeaderWavePositionOnLoad : setHeaderWavePositionOnLoad()">
+                <li @mouseenter="setHeaderWavePosition" @mouseleave="setHeaderWavePositionOnLoad">
                     <a href="cases.html">Портфолио</a>
                 </li>
-                <li @mouseenter="Boolean(header) ? header.setHeaderWavePosition : setHeaderWavePosition()" @mouseleave="Boolean(header) ? header.setHeaderWavePositionOnLoad : setHeaderWavePositionOnLoad()">
+                <li @mouseenter="setHeaderWavePosition" @mouseleave="setHeaderWavePositionOnLoad">
                     <a href="company.html">О компании</a>
                 </li>
-                <li @mouseenter="Boolean(header) ? header.setHeaderWavePosition : setHeaderWavePosition()" @mouseleave="Boolean(header) ? header.setHeaderWavePositionOnLoad : setHeaderWavePositionOnLoad()">
+                <li @mouseenter="setHeaderWavePosition" @mouseleave="setHeaderWavePositionOnLoad">
                     <a href="contacts.html">Контакты</a>
                 </li>
-                <li @mouseenter="Boolean(header) ? header.setHeaderWavePosition : setHeaderWavePosition()" @mouseleave="Boolean(header) ? header.setHeaderWavePositionOnLoad : setHeaderWavePositionOnLoad()">
+                <li @mouseenter="setHeaderWavePosition" @mouseleave="setHeaderWavePositionOnLoad">
                     <a href="career.html">Карьера</a>
                 </li>
-                <li @mouseenter="Boolean(header) ? header.setHeaderWavePosition : setHeaderWavePosition()" @mouseleave="Boolean(header) ? header.setHeaderWavePositionOnLoad : setHeaderWavePositionOnLoad()">
+                <li @mouseenter="setHeaderWavePosition" @mouseleave="setHeaderWavePositionOnLoad">
                     <a href="vacancies.html">Вакансии</a>
                 </li>
-                <li @mouseenter="Boolean(header) ? header.setHeaderWavePosition : setHeaderWavePosition()" @mouseleave="Boolean(header) ? header.setHeaderWavePositionOnLoad : setHeaderWavePositionOnLoad()">
+                <li @mouseenter="setHeaderWavePosition" @mouseleave="setHeaderWavePositionOnLoad">
                     <a href="blog.html">Блог</a>
                 </li>
             </ul>
@@ -110,30 +100,20 @@
         </nav>
         <ul class="header-lang" v-if="window.width > 1023">
             <li class="header-phone_opener">
-                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none">
-                    <path d="M19.0264 20.9929C20.0722 21.0873 21.0036 20.2223 20.9994 19.1864V16.4767C21.0104 16.0337 20.8579 15.6021 20.5709 15.264C19.7615 14.3106 16.9855 13.7008 15.8851 13.935C15.0273 14.1176 14.4272 14.9788 13.8405 15.5644C12.6172 14.8702 11.5075 14.005 10.5426 13M8.41019 10.1448C8.9969 9.55929 9.85987 8.96036 10.0428 8.10428C10.2771 7.00777 9.66813 4.24949 8.72131 3.43684C8.38828 3.151 7.96247 2.99577 7.52325 3.00009H4.80811C3.77358 3.00106 2.91287 3.92895 3.00706 4.96919C3.00081 12.9038 8.48251 19.3497 15.9999 20.7226" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <div class="header-phone_modal" :class="{ 'isOpened': Boolean(header) ? header.isPhonesOpened : isPhonesOpened }">
-                    <div class="header-phone_modal_in">
-                        <div class="header-phone_modal_closer">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 12 12" fill="none"><path d="M7 6L12 1L11 0L6 5L1 0L0 1L5 6L0 11L1 12L6 7L11 12L12 11L7 6Z" fill="#fff"></path></svg>
-                        </div>
-                        <div class="header-phone_modal_phones">
-                            <a href="tel:+74952780708">+7 (495) 278-07-08</a>
-                            <div class="delim"></div>
-                            <a href="tel:+74952780708">+7 (495) 278-07-08</a>
-                        </div>
-                    </div>
-                </div>
+                <a href="tel:+74952780708">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none">
+                        <path d="M19.0264 20.9929C20.0722 21.0873 21.0036 20.2223 20.9994 19.1864V16.4767C21.0104 16.0337 20.8579 15.6021 20.5709 15.264C19.7615 14.3106 16.9855 13.7008 15.8851 13.935C15.0273 14.1176 14.4272 14.9788 13.8405 15.5644C12.6172 14.8702 11.5075 14.005 10.5426 13M8.41019 10.1448C8.9969 9.55929 9.85987 8.96036 10.0428 8.10428C10.2771 7.00777 9.66813 4.24949 8.72131 3.43684C8.38828 3.151 7.96247 2.99577 7.52325 3.00009H4.80811C3.77358 3.00106 2.91287 3.92895 3.00706 4.96919C3.00081 12.9038 8.48251 19.3497 15.9999 20.7226" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
             </li>
             <li class="active"><a href="#">Ru</a></li>
             <li class="header-lang__delim">/</li>
             <li><a href="#">En</a></li>
         </ul>
     </div>
-    <nav class="header-mobile-menu" :class="{'isOpened': Boolean(header) ? header.isOpened : isOpened}" v-if="window.width <= 1023">
+    <nav class="header-mobile-menu" :class="{'isOpened': isOpened}" v-if="window.width <= 1023">
         <ul>
-            <li @mouseenter="Boolean(header) ? header.setHeaderWavePosition : setHeaderWavePosition" @mouseleave="Boolean(header) ? header.setHeaderWavePositionOnLoad : setHeaderWavePositionOnLoad">
+            <li @mouseenter="setHeaderWavePosition" @mouseleave="setHeaderWavePositionOnLoad">
                 <a href="job.html" @click="onClickMobileMenuLink">Услуги</a>
                 <ul class="header-phone_modal">
                     <li class="header-phone_modal_in">
@@ -148,26 +128,26 @@
                     </li>
                 </ul>
             </li>
-            <li @mouseenter="Boolean(header) ? header.setHeaderWavePosition : setHeaderWavePosition" @mouseleave="Boolean(header) ? header.setHeaderWavePositionOnLoad : setHeaderWavePositionOnLoad">
+            <li @mouseenter="setHeaderWavePosition" @mouseleave="setHeaderWavePositionOnLoad">
                 <a href="cases.html" @click="onClickMobileMenuLink">Портфолио</a>
             </li>
-            <li @mouseenter="Boolean(header) ? header.setHeaderWavePosition : setHeaderWavePosition" @mouseleave="Boolean(header) ? header.setHeaderWavePositionOnLoad : setHeaderWavePositionOnLoad">
+            <li @mouseenter="setHeaderWavePosition" @mouseleave="setHeaderWavePositionOnLoad">
                 <a href="company.html" @click="onClickMobileMenuLink">О компании</a>
             </li>
             <!-- <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="#">Команда</a></li> -->
-            <li class="isActive" @mouseenter="Boolean(header) ? header.setHeaderWavePosition : setHeaderWavePosition" @mouseleave="Boolean(header) ? header.setHeaderWavePositionOnLoad : setHeaderWavePositionOnLoad">
+            <li class="isActive" @mouseenter="setHeaderWavePosition" @mouseleave="setHeaderWavePositionOnLoad">
                 <a href="#" @click="onClickMobileMenuLink">Отзывы</a>
             </li>
-            <li @mouseenter="Boolean(header) ? header.setHeaderWavePosition : setHeaderWavePosition" @mouseleave="Boolean(header) ? header.setHeaderWavePositionOnLoad : setHeaderWavePositionOnLoad">
+            <li @mouseenter="setHeaderWavePosition" @mouseleave="setHeaderWavePositionOnLoad">
                 <a href="contacts.html" @click="onClickMobileMenuLink">Контакты</a>
             </li>
-            <li @mouseenter="Boolean(header) ? header.setHeaderWavePosition : setHeaderWavePosition" @mouseleave="Boolean(header) ? header.setHeaderWavePositionOnLoad : setHeaderWavePositionOnLoad">
+            <li @mouseenter="setHeaderWavePosition" @mouseleave="setHeaderWavePositionOnLoad">
                 <a href="career.html" @click="onClickMobileMenuLink">Карьера</a>
             </li>
-            <li @mouseenter="Boolean(header) ? header.setHeaderWavePosition : setHeaderWavePosition" @mouseleave="Boolean(header) ? header.setHeaderWavePositionOnLoad : setHeaderWavePositionOnLoad">
+            <li @mouseenter="setHeaderWavePosition" @mouseleave="setHeaderWavePositionOnLoad">
                 <a href="vacancies.html" @click="onClickMobileMenuLink">Вакансии</a>
             </li>
-            <li @mouseenter="Boolean(header) ? header.setHeaderWavePosition : setHeaderWavePosition" @mouseleave="Boolean(header) ? header.setHeaderWavePositionOnLoad : setHeaderWavePositionOnLoad">
+            <li @mouseenter="setHeaderWavePosition" @mouseleave="setHeaderWavePositionOnLoad">
                 <a href="blog.html" @click="onClickMobileMenuLink">Блог</a>
             </li>
         </ul>

@@ -352,3 +352,16 @@
 .jb_lnks {
   flex-wrap: wrap;
 }
+
+.header-phone_opener {
+  svg {
+    width: 30px;
+    height: 75px;
+    stroke: #fff;
+      @extend %transition;
+
+      &:hover {
+        stroke: $mainColor;
+      }
+  }
+}
