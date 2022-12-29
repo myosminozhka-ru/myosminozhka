@@ -23594,7 +23594,8 @@ html.overflowed body {
   .main-resume .main-question-form .main-question-inputs input[type=text]::placeholder,
   .main-resume .main-question-form .main-question-inputs input[type=email]::placeholder,
   .main-resume .main-question-form .main-question-inputs input[type=tel]::placeholder,
-  .main-resume .main-question-form .main-question-inputs textarea::placeholder {
+  .main-resume .main-question-form .main-question-inputs textarea::placeholder,
+  .main-resume .main-question-form .main-question-inputs textarea.inputtext::placeholder {
     font-size: 20px;
     line-height: 20px;
   }
@@ -23602,7 +23603,8 @@ html.overflowed body {
   .main-resume .main-question-form .main-question-inputs input[type=text],
   .main-resume .main-question-form .main-question-inputs input[type=email],
   .main-resume .main-question-form .main-question-inputs input[type=tel],
-  .main-resume .main-question-form .main-question-inputs textarea {
+  .main-resume .main-question-form .main-question-inputs textarea,
+  .main-resume .main-question-form .main-question-inputs textarea.inputtext {
     width: 100%;
     max-width: unset;
     margin-right: 0;
