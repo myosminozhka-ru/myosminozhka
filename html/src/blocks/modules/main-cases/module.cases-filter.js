@@ -11,7 +11,7 @@ class CasesFilter {
     }
 
     findActiveBtn() {
-        this.activeId = Array.from(this.btns).filter((btn) => btn.classList.contains('active')).at(-1)?.dataset.casesFilterBtn || -1;
+        this.activeId = parseInt(Array.from(this.btns).filter((btn) => btn.classList.contains('active')).at(-1)?.dataset.casesFilterBtn) || -1;
         this.onFilter()
     }
 

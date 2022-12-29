@@ -116,7 +116,7 @@ var CasesFilter = /*#__PURE__*/function () {
     key: "findActiveBtn",
     value: function findActiveBtn() {
       var _Array$from$filter$at;
-      this.activeId = ((_Array$from$filter$at = Array.from(this.btns).filter(function (btn) {
+      this.activeId = parseInt((_Array$from$filter$at = Array.from(this.btns).filter(function (btn) {
         return btn.classList.contains('active');
       }).at(-1)) === null || _Array$from$filter$at === void 0 ? void 0 : _Array$from$filter$at.dataset.casesFilterBtn) || -1;
       this.onFilter();
