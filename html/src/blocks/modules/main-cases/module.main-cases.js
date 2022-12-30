@@ -67,6 +67,9 @@ window.mainCases = new Vue({
                     });
                 });
             }
+
+            this.animationBioline()
+            this.animationMedex()
         }, 0)
     },
     methods: {
@@ -78,6 +81,29 @@ window.mainCases = new Vue({
         destroyMobileSlider() {
             if (!document.querySelector('.main-cases-slider')) return;
             this.slider.destroy();
+        },
+
+        animationBioline() {
+            document.querySelectorAll('.cases__item.bioline').forEach((item) => {
+                item.addEventListener('mousemove', (event) => {
+                    item.querySelector('.bioline__image--hidden').style.clipPath = `polygon(0% 0%, ${event.offsetX}px 0%, ${event.offsetX}px 100%, 0% 100%`
+                });
+                item.addEventListener('mouseleave', (event) => {
+                    item.querySelector('.bioline__image--hidden').style.clipPath = 'polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)'
+                });
+            });
+        },
+
+        animationMedex() {
+            document.querySelectorAll(".medex").forEach((item) => {
+                const videoItem = item.getElementsByTagName('video')
+                item.addEventListener('mouseover', () => {
+                    videoItem[0].play();
+                });
+                item.addEventListener('mouseout', () => {
+                    videoItem[0].pause();
+                });
+            })
         }
     }
 })
