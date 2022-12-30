@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Осьминожка-Кейс</title>
+        <meta name="theme-color" content="#fff">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+        <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+        <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+        <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+        <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+        <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap&family=Lora&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                AOS.init({
+                    once: true
+                });
+            });
+        </script>
+    </head>
+    <body class="case_page vineta">
+        <div class="wrapper" id="app">
+            <section class="intro">
+  <div class="container">
+    <div class="intro__wrapper">
+      <div class="intro__top">
+        <div class="intro__top-logo-vineta">
+          <img src="./img/svg/logo_vineta.svg" alt="logo_vinetat" />
+        </div>
+        <div class="intro__top-logo-osmi">
+          <img src="./img/svg/logo_white_osmi.svg" alt="logo_white_osmi" />
+        </div>
+      </div>
+      <div class="intro__bottom">
+        <h1 class="intro__title">
+          Сайт для машиностроительного предприятия “Винета”
+        </h1>
+        <a href="#" class="btn"
+          ><span>Перейти на сайт </span>
+          <img src="./img/svg/open_link.svg" alt="open_link"
+        /></a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="about">
+  <div class="container">
+    <p class="suptitle">Проект</p>
+    <h2 class="title">О Компании</h2>
+    <div class="about__wrapper">
+      <div class="about__block about__block-left">
+        Наш заказчик, машиностроительное предприятие «Винета», существует на
+        рынке с 1996 года. С тех пор изменилась не только сама компания, но и её
+        позиционирование. Очевидно, что и веб-ресурс — визитная карточка любого
+        предприятия — должен не только отражать изменения, которые произошли в
+        структуре бизнеса, но и соответствовать представлениям о современном
+        корпоративном портале.
+      </div>
+      <div class="about__block about__block-right">
+        А ещё такие ресурсы являются инструментом для автоматизации работы и
+        оптимизации бизнес-процессов, поэтому к их разработке нужно подойти с
+        особой внимательностью. Мы смогли найти решение, которое позволило
+        систематизировать большой объём представленной на сайте информации, а
+        также добавили визуал, который соответствует трендам в промышленном
+        секторе.
+      </div>
+    </div>
+  </div>
+</section>
+<section class="task">
+  <div class="container">
+    <p class="suptitle">Проект</p>
+    <h2 class="title">ЗАДАЧИ & Решения</h2>
+    <div class="task__wrapper">
+      <div class="task__card">
+        <div class="task__card-top">
+          Сделать удобный ресурс для партнёров и клиентов компании
+        </div>
+        <div class="task__card-bottom">
+          Представили главную страницу портала в виде презентации — удобный
+          формат для работы с заказчиками, который отражает современную
+          прогрессивную компанию
+        </div>
+      </div>
+      <div class="task__card">
+        <div class="task__card-top">Разработать обновлённый дизайн ресурса</div>
+        <div class="task__card-bottom">
+          Разработали дизайн портала, основываясь на обновлённом брендбуке
+          компании и на современных тенденциях веб-разработки в промышленном
+          секторе
+        </div>
+      </div>
+      <div class="task__card">
+        <div class="task__card-top">
+          Упростить работу проектировщиков, которые будут подбирать детали для
+          своих проектов
+        </div>
+        <div class="task__card-bottom">
+          Разработали оформление каталога, в котором исчерпывающе представлена
+          продукция «Винеты» в виде 3D-моделей
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="steps">
+  <div class="container">
+    <div class="steps__wrapper">
+      <div class="steps__left">
+        <p class="suptitle">Проект</p>
+        <h2 class="title">
+          Какие этапы мы проходим в процессе реализации проекта
+        </h2>
+      </div>
+      <div class="steps__right">
+        <p class="steps__right-text">
+          В процессе разработки мы проходим десятки этапов — от аналитики,
+          создания прототипа страницы и его тестирования до разработки анимации,
+          вёрстки страниц и SEO-оптимизации. Каждый этап не менее важен, чем
+          предыдущий или следующий. Мы всегда на связи с заказчиком:
+          ориентируемся на его пожелания, изучаем метрики, предлагаем свои
+          решения, воплощаем в реальность задуманное.
+        </p>
+        <div class="steps__profile">
+          <img
+            class="steps__profile-img"
+            src="./img/profile_img.png"
+            alt="profile_img"
+          />
+          <div class="steps__profile-content">
+            <div class="steps__profile-name">Владислав Парасий</div>
+            <div class="steps__profile-pos">Account-manager</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="steps__topics">
+      <img src="./img/vineta_topics.png" alt="vineta_topics" />
+    </div>
+  </div>
+</section>
+<section class="begin">
+  <div class="container">
+    <div class="begin__wrapper">
+      <div class="begin__left">
+        <div class="begin__left-text">Проект</div>
+      </div>
+      <div class="begin__right">
+        <h2 class="begin__right-title">Первые шаги</h2>
+        <p class="begin__right-text">
+          Работу над любым проектом мы начинаем с проведения аналитики: изучаем
+          нишу, исследуем целевую аудиторию, разбираем техническое задание и
+          прочие вводные, представленные клиентом. Случай с «Винетой»
+          исключением не был. На начальном этапе нам были важны несколько
+          моментов:
+        </p>
+        <ul class="begin__right-list">
+          <li>
+            Дизайнерское решение нужно было разработать с учетом брендбука,
+            который предоставил заказчик.
+          </li>
+          <li>
+            Важно было сделать особый акцент на каталоге продукции — самой
+            популярной странице сайта.
+          </li>
+          <li>
+            Разработать такое дизайнерское решение, которое не только привлечёт
+            внимание посетителей ресурса и будет выгодно смотреться в формате
+            презентации, но и позволит выделить «Винету» среди других порталов
+            других промышленных компаний.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <img
+    class="begin__book"
+    src="./img/vineta_responsible.jpg"
+    alt="vineta_responsible"
+  />
+</section>
+<section class="typografy">
+  <div class="container">
+    <div class="typografy__top">
+      <div class="typografy__top-left">Дизайн система</div>
+      <div class="typografy__top-right">
+        <div class="typografy__top-title">ТИпографика</div>
+        <div class="typografy__top-text">
+          Типография является центральным элементом дизайна в системе
+          идентификации бренда. Guardian Sans Cy - хороший выбор для
+          промышленной отрасли
+        </div>
+      </div>
+    </div>
+    <div class="typografy__middle">
+      <img
+        class="typografy__middle-img"
+        src="./img/svg/guardian.svg"
+        alt="guardian"
+      />
+      <div class="typografy__middle-title">Guardian Sans Cy</div>
+      <ul class="typografy__middle-weight">
+        <li>Bold</li>
+        <li>Semibold</li>
+        <li>Regular</li>
+      </ul>
+      <ul class="typografy__middle-size">
+        <li>30 px</li>
+        <li>22 px</li>
+        <li>20 px</li>
+        <li>18 px</li>
+        <li>16 px</li>
+        <li>14 px</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="colors">
+  <div class="container">
+    <div class="typografy__top colors__top">
+      <div class="typografy__top-left colors__top-left">Дизайн система</div>
+      <div class="typografy__top-right colors__top-right">
+        <div class="typografy__top-title colors__top-title">
+          Цветовая палитра
+        </div>
+        <div class="typografy__top-text colors__top-text">
+          При разработке сайта мы использовали готовую палитру, опираясь на
+          фирменный стиль компании «Винета»
+        </div>
+      </div>
+    </div>
+    <div class="colors__wrapper">
+      <div class="colors__card card-blue">
+        <div class="colors__card-top">Основной цвет</div>
+        <div class="colors__card-bottom">
+          <p>RGB: 46 85 153</p>
+          <p>#2E5599</p>
+        </div>
+      </div>
+      <div class="colors__card card-darkblue">
+        <div class="colors__card-top">Цвет текста</div>
+        <div class="colors__card-bottom">
+          <p>RGB: 23 34 66</p>
+          <p>#172242</p>
+        </div>
+      </div>
+      <div class="colors__card card-gray">
+        <div class="colors__card-top">Второй цвет текста</div>
+        <div class="colors__card-bottom">
+          <p>RGB: 85 95 118</p>
+          <p>#555F76</p>
+        </div>
+      </div>
+      <div class="colors__card card-red">
+        <div class="colors__card-top">Цвет кнопок</div>
+        <div class="colors__card-bottom">
+          <p>RGB: 255 0 64</p>
+          <p>#FF0040</p>
+        </div>
+      </div>
+      <div class="colors__card card-white">
+        <div class="colors__card-top">Цвет фона</div>
+        <div class="colors__card-bottom">
+          <p>RGB: 242 242 242</p>
+          <p>#F2F2F2</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="grid">
+  <div class="container">
+    <div class="typografy__top grid__top">
+      <div class="typografy__top-left grid__top-left">Дизайн система</div>
+      <div class="typografy__top-right">
+        <div class="typografy__top-title grid__top-title">Сетка</div>
+        <div class="typografy__top-text grid__top-text">
+          Сетка подбирается в соответствии с публикуемым контентом. В работе с
+          «Винетой» мы использовали сетку из 12 колонок (102 рх) с отступами
+          между ними 20рх.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="grid__block">
+    <img
+      src="./img/grid_vineta.jpg"
+      alt="grid_vineta"
+      class="grid__block-img"
+    />
+  </div>
+</section>
+
+<section class="proto">
+  <div class="container">
+    <div class="typografy__top grid__top">
+      <div class="typografy__top-left grid__top-left">Визуал</div>
+      <div class="typografy__top-right">
+        <div class="typografy__top-title grid__top-title">Прототипы</div>
+        <div class="typografy__top-text grid__top-text">
+          В разработке мы уделяем много времени созданию каркасов и
+          интерактивных прототипов. Они помогают создать простой в использовании
+          продукт и обеспечить наилучший пользовательский опыт.
+        </div>
+      </div>
+    </div>
+  </div>
+  <img src="./img/proto_vineta.png" alt="proto_vineta" class="proto__img" />
+</section>
+
+<section class="portal">
+  <div class="container">
+    <div class="typografy__top grid__top">
+      <div class="typografy__top-left grid__top-left">Результат</div>
+      <div class="typografy__top-right">
+        <div class="typografy__top-title grid__top-title">
+          мы создали B2B-портал, привлекающий две целевые аудитории:
+        </div>
+        <div class="typografy__top-text grid__top-text">
+          <b>Партнёров</b> компании, которым важно узнать о её работе,
+          <b>и сотрудников</b>, которых интересуют конкретные детали. Для
+          удобства восприятия информации, мы отошли от классической структуры
+          сайта, и оформили его в виде презентации. Так, попадая на главную
+          страницу, можно узнать больше об истории компании, её работе и
+          сотрудниках, а можно сразу перейти к изучению каталога.
+          <br />
+          <br />
+          Более того, главная страница сайта решает задачу по сегментированию
+          аудитории сайта. Для партнёров, которым важно узнать историю компании
+          и познакомиться с командой, мы поместили всю информацию на главную
+          страницу. Оформлена она в виде презентации, которую можно при
+          необходимости представить коллегам. Для сотрудников, которым важно
+          изучить продукцию предприятия, есть кнопка перехода в каталог, которая
+          визуально заметна и привлекательна. Получается, что любому
+          пользователю интуитивно понятно, какую информацию и где он может
+          получить на портале.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="main_page">
+  <div class="container">
+    <div class="typografy__top grid__top">
+      <div class="typografy__top-left grid__top-left">Визуальный дизайн</div>
+      <div class="typografy__top-right">
+        <div class="typografy__top-title grid__top-title">
+          Визуальный дизайн
+        </div>
+        <div class="typografy__top-text grid__top-text">
+          Представлена в горизонтальном формате в виде презентации. Такой формат
+          выбран для удобства изучения информации и перехода на нужную страницу.
+        </div>
+      </div>
+    </div>
+    <div class="main_page-video">
+      <video autoplay loop muted>
+        <source src="./videos/vineta_1.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </div>
+  <div class="main__page-visual">
+    <img src="./img/visual_vineta_disign.png" alt="visual_vineta_disign" />
+  </div>
+</section>
+
+<section class="catalog">
+  <div class="container">
+    <div class="typografy__top grid__top">
+      <div class="typografy__top-left grid__top-left">Визуальный дизайн</div>
+      <div class="typografy__top-right">
+        <div class="typografy__top-title grid__top-title">Каталог товаров</div>
+        <div class="typografy__top-text grid__top-text">
+          Оформлен таким образом, чтобы можно было быстро найти нужную категорию
+           и продукцию. Для удобства изучения мы представили не только подробные
+          характеристики, но и добавили возможность скачать pdf-файл с этой
+          информацией.
+        </div>
+      </div>
+    </div>
+    <div class="main_page-video">
+      <video autoplay loop muted>
+        <source src="./videos/vineta_2.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </div>
+</section>
+
+<section class="not_found">
+  <div class="container">
+    <div class="typografy__top grid__top">
+      <div class="typografy__top-left grid__top-left">Визуальный дизайн</div>
+      <div class="typografy__top-right">
+        <div class="typografy__top-title grid__top-title">404 Страница</div>
+        <div class="typografy__top-text grid__top-text">
+          Когда пользователь попадает на страницу с ошибкой, он чувствует себя
+          подавленным или раздражённым, словно потерпел неудачу. Но всё можно
+          исправить — помочь ему вернуться на главную страницу целым, невредимым
+          и в хорошем настроении.
+        </div>
+      </div>
+    </div>
+    <div class="not_found-img">
+      <img src="./img/vineta_404.jpg" alt="vineta_404" />
+    </div>
+  </div>
+</section>
+
+<div class="d_model">
+  <video autoplay loop muted>
+    <source src="./videos/vineta_3.mp4" type="video/mp4" />
+  </video>
+</div>
+<section class="d3_model">
+  <div class="container">
+    <div class="typografy__top grid__top">
+      <div class="typografy__top-left grid__top-left">Визуальный дизайн</div>
+      <div class="typografy__top-right">
+        <div class="typografy__top-title grid__top-title">3d Модель</div>
+        <div class="typografy__top-text grid__top-text">
+          B2B-порталы в промышленном секторе нацелены на то, чтобы представить
+          на сайте в полной мере своё оборудование. Особый акцент делается на
+          3D-моделях. В случае с «Винетой» мы не только представили каждую
+          позицию в каталоге в виде такой модели, но и оформили главную страницу
+          с использованием 3D-элементов.
+          <br />
+          <br />
+          Мы поместили 3D-модели на главную страницу портала. Во-первых, это
+          было изящным решением для компании, которая захотела обновить свой
+          интернет-ресурс в честь крупного юбилея. Во-вторых, это опять же
+          помогло нам выделить «Винету» среди прочего числа ресурсов
+          промышленного сектора и сделать запоминающийся дизайн, который при
+          этом удобен в восприятии.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tech">
+  <div class="container">
+    <div class="tech__wrapper">
+      <div class="tech__content">
+        <p class="suptitle">Проект</p>
+        <h2 class="title">Технические особенности</h2>
+        <ul class="tech__content-list">
+          <li>
+            3D-модели были разработаны на основе фотографий предприятия. Наша
+            команда делала эскизы, предлагала цветовую гамму, обсуждала движение
+            камер между объектами.
+          </li>
+          <li>
+            После создания и загрузки моделей на портал получилась критическая
+            нагрузка на сайт. Мы перерисовывали объекты в SVG, что позволило
+            увеличить скорость загрузки. Это важно, когда мы работаем с сайтами
+            с большим количеством пользователей. К слову, не у всех есть мощные
+            устройства, которые могут обрабатывать большой объём информации.
+          </li>
+          <li>
+            С заказчиком мы работали по методологии Waterfall, которая
+            подразумевает последовательную разработку продукта с согласованием
+            на каждом из этапов. Внутри команды мы использовали методологию
+            Kanban и работали по еженедельным спринтам, что позволило нам точно
+            распределить сроки и свои ресурсы. Для заказчика такой подход был
+            максимально прозрачен и позволял следить за результатами работы на
+            еженедельной основе.
+          </li>
+        </ul>
+      </div>
+      <img src="./img/tech_vineta.png" alt="tech_vineta" class="tech__img" />
+    </div>
+  </div>
+</section>
+
+<footer class="v-footer">
+  <div class="container">
+    <div class="v-footer__wrapper">
+      <div class="v-footer__left">
+        <div class="v-footer__suptitle">Конец</div>
+        <h2 class="v-footer__title">
+          Спасибо <br />
+          за просмотр
+          <img
+            src="./img/svg/VictoryHand.svg"
+            alt="VictoryHand"
+            class="v-footer__hand"
+          />
+        </h2>
+        <a href="#" class="btn"
+          ><span>Перейти на сайт </span>
+          <img src="./img/svg/open_link.svg" alt="open_link"
+        /></a>
+      </div>
+      <div class="v-footer__right">
+        <ul class="v-footer-list">
+          <li>
+            <span>CEO</span>
+            <p>Михаил Шрайбман</p>
+          </li>
+          <li>
+            <span>UX / UI Дизайнер</span>
+            <p>Артем попеня</p>
+          </li>
+        </ul>
+        <ul class="v-footer-list">
+          <li>
+            <span>CTO</span>
+            <p>Денис Нагаев</p>
+          </li>
+          <li>
+            <span>Аналитик</span>
+            <p>АВладислав Кольца</p>
+          </li>
+        </ul>
+        <ul class="v-footer-list">
+          <li>
+            <span>Аккаунт-менеджер</span>
+            <p>Владислав Парасий</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+            <div id="cookie-form" class="cookie-form" :class="{'mobile': window.width <= 1023}" v-show="!isClosedOnce">
+    <div class="cookie-form__in">
+        <div class="cookie-form__message">Мы используем куки на всех своих сайтах, включая этот, потому что без кук вообще весь интернет работал бы через жопу</div>
+        <div class="cookie-form__button" @click="closeForm()">
+            <span>Понятно</span>
+        </div>
+    </div>
+</div>
+            <div id="preloader" class="preloader" :class="{'isHidden': isPreloaderHidden, 'mobile': window.width <= 1023}">
+    <div class="preloader__in">
+        <div class="preloader__image">
+            <svg width="100%" height="100%" viewBox="0 0 94 109" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="94" height="109">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M84.0126 46.5004C84.5126 46.3004 85.1127 46.7004 85.3127 47.3004C85.5127 47.9004 85.3127 48.6004 84.9127 48.8004C84.4127 49.0004 83.8127 48.6004 83.6127 48.0004C83.3127 47.4004 83.5126 46.7004 84.0126 46.5004ZM81.9127 40.1004C82.5127 39.4004 83.8127 39.5004 84.6127 40.4004C85.5127 41.2004 85.7126 42.4004 85.0126 43.1004C84.4126 43.8004 83.1127 43.7004 82.3127 42.8004C81.4127 42.0004 81.2127 40.8004 81.9127 40.1004ZM78.4127 40.8004C77.6127 40.7004 77.0127 40.2004 77.1127 39.6004C77.2127 39.0004 77.8127 38.6004 78.6127 38.7004C79.4127 38.8004 80.0127 39.3004 79.9127 39.9004C79.8127 40.4004 79.1127 40.8004 78.4127 40.8004ZM86.7126 52.4004C87.1126 52.0004 87.6127 52.0004 87.8127 52.2004C88.1127 52.5004 88.0126 53.0004 87.7126 53.3004C87.3126 53.7004 86.8127 53.7004 86.6127 53.5004C86.3127 53.3004 86.3126 52.8004 86.7126 52.4004ZM87.9127 44.9004C88.5127 44.7004 89.1127 45.2004 89.3127 46.0004C89.5127 46.7004 89.2127 47.5004 88.6127 47.7004C88.0127 47.9004 87.4126 47.4004 87.2126 46.6004C87.0126 45.8004 87.3127 45.1004 87.9127 44.9004ZM63.1127 15.8004C64.8127 17.8004 65.6127 21.2004 64.3127 26.6004C64.1127 25.2004 63.2126 20.5004 62.2126 18.6004L63.1127 15.8004ZM58.7126 13.6004C54.6126 9.30036 47.9126 6.30036 37.9126 9.20036C37.9126 9.20036 44.2126 4.90036 51.7126 6.20036C55.1126 6.80036 58.2126 8.80036 60.5126 11.6004L58.7126 13.6004ZM51.1127 36.3004C55.4127 35.7004 61.1127 30.5004 61.1127 30.5004C61.0127 39.9004 52.9127 40.4004 51.1127 36.3004ZM50.9127 105C50.5127 104.9 50.3127 104.5 50.4127 104C50.5127 103.5 50.9126 103.2 51.2126 103.2C51.6126 103.3 51.8126 103.7 51.7126 104.2C51.7126 104.7 51.3127 105.1 50.9127 105ZM46.7126 98.2004C46.2126 98.8004 45.4126 98.9004 45.0126 98.5004C44.5126 98.1004 44.6127 97.3004 45.1127 96.7004C45.6127 96.1004 46.4126 96.0004 46.8126 96.4004C47.3126 96.8004 47.2126 97.6004 46.7126 98.2004ZM48.0126 102.4C47.6126 102.3 47.4126 101.8 47.5126 101.3C47.6126 100.8 48.0127 100.5 48.4127 100.6C48.8127 100.7 49.0127 101.2 48.9127 101.7C48.8127 102.1 48.4126 102.4 48.0126 102.4ZM44.1127 93.6004C43.2127 93.3004 42.8127 92.2004 43.2127 91.0004C43.6127 89.9004 44.6126 89.1004 45.5126 89.4004C46.4126 89.7004 46.8127 90.8004 46.4127 92.0004C45.9127 93.2004 44.9127 93.9004 44.1127 93.6004ZM44.1127 85.2004C44.3127 84.4004 44.9126 83.9004 45.5126 84.1004C46.1126 84.2004 46.4126 85.0004 46.2126 85.7004C46.0126 86.5004 45.4126 87.0004 44.8126 86.8004C44.2126 86.7004 43.9127 86.0004 44.1127 85.2004ZM35.1127 30.1004C35.1127 30.1004 40.7127 35.7004 45.1127 36.3004C43.2127 40.4004 35.7127 40.7004 35.1127 30.1004ZM65.9127 55.2004C67.0127 55.2004 67.8127 55.9004 67.8127 56.7004C67.8127 57.5004 66.9127 58.2004 65.9127 58.2004C64.8127 58.2004 64.0126 57.5004 64.0126 56.7004C64.0126 55.9004 64.9127 55.2004 65.9127 55.2004ZM68.3127 62.8004C68.9127 63.0004 69.3126 63.8004 69.0126 64.6004C68.8126 65.4004 68.1127 66.0004 67.4127 65.8004C66.8127 65.6004 66.4126 64.8004 66.7126 64.0004C66.9126 63.1004 67.6127 62.6004 68.3127 62.8004ZM69.7126 58.3004C70.3126 58.0004 71.1126 58.3004 71.5126 59.0004C71.9126 59.7004 71.9127 60.6004 71.3127 60.9004C70.7127 61.2004 69.9126 60.9004 69.5126 60.2004C69.0126 59.5004 69.1126 58.7004 69.7126 58.3004ZM29.0126 91.1004C28.7126 91.3004 28.2126 91.1004 27.9126 90.7004C27.7126 90.3004 27.7127 89.8004 28.1127 89.6004C28.4127 89.4004 28.9127 89.6004 29.2127 90.0004C29.4127 90.4004 29.3126 90.9004 29.0126 91.1004ZM26.9126 81.5004C26.7126 81.2004 26.9126 80.7004 27.3126 80.4004C27.7126 80.1004 28.2126 80.2004 28.4126 80.5004C28.6126 80.8004 28.4126 81.3004 28.0126 81.6004C27.6126 81.8004 27.1126 81.8004 26.9126 81.5004ZM26.3126 86.7004C25.6126 87.1004 24.7127 86.7004 24.2127 85.8004C23.7127 84.9004 23.9126 84.0004 24.5126 83.6004C25.2126 83.2004 26.1127 83.6004 26.6127 84.5004C27.2127 85.3004 27.0126 86.3004 26.3126 86.7004ZM23.2127 81.0004C22.6127 81.0004 22.1127 80.4004 22.1127 79.6004C22.1127 78.8004 22.6127 78.2004 23.2127 78.2004C23.8127 78.2004 24.3126 78.8004 24.3126 79.6004C24.3126 80.3004 23.8127 81.0004 23.2127 81.0004ZM26.5126 73.3004C26.9126 72.9004 27.4127 72.9004 27.6127 73.1004C27.9127 73.4004 27.8126 73.9004 27.5126 74.2004C27.1126 74.6004 26.6126 74.6004 26.4126 74.4004C26.0126 74.2004 26.1126 73.7004 26.5126 73.3004ZM14.0126 64.6004C13.8126 65.3004 13.3127 65.8004 12.7127 65.6004C12.2127 65.5004 11.9126 64.8004 12.0126 64.1004C12.2126 63.4004 12.7126 62.9004 13.3126 63.1004C13.8126 63.2004 14.1126 63.9004 14.0126 64.6004ZM8.11265 65.6004C7.01265 65.9004 5.81265 64.9004 5.41265 63.4004C5.11265 61.9004 5.71265 60.5004 6.91265 60.2004C8.01265 59.9004 9.21265 60.9004 9.61265 62.4004C9.91265 63.9004 9.21265 65.3004 8.11265 65.6004ZM6.11265 55.6004C6.41265 54.6004 7.21265 54.0004 7.91265 54.2004C8.61265 54.4004 9.01265 55.3004 8.81265 56.3004C8.51265 57.3004 7.71265 57.9004 7.01265 57.7004C6.21265 57.5004 5.81265 56.6004 6.11265 55.6004ZM90.9127 63.9004C92.2127 64.6004 91.3127 70.7004 86.6127 70.3004C81.7127 69.8004 84.2126 65.9004 88.2126 59.9004C98.1126 45.1004 84.8127 33.1004 73.9127 36.7004C70.8127 37.7004 66.6126 40.5004 63.7126 43.2004C77.5126 20.8004 68.0127 -0.0996426 47.9127 0.000357406C47.9127 0.000357406 47.8126 0.000357406 47.7126 0.000357406C47.6126 0.000357406 47.5126 0.000357406 47.5126 0.000357406C45.0126 0.100357 26.1127 1.80036 25.6127 23.0004C25.4127 31.2004 29.2126 36.3004 32.4126 43.5004C36.3126 52.2004 35.5127 61.7004 23.2127 60.2004C26.5127 59.6004 28.6126 58.4004 29.9126 56.9004C28.4126 56.8004 26.6126 55.7004 25.0126 53.6004C22.8126 50.7004 22.6127 49.5004 20.2127 48.2004C10.5127 42.7004 0.612652 52.4004 3.11265 63.0004C5.81265 74.6004 14.6126 75.6004 11.4126 82.1004C8.21265 88.6004 -2.18735 83.8004 2.91265 75.0004C-1.38735 78.6004 -0.187351 84.5004 1.81265 87.5004C4.81265 92.0004 14.6126 93.2004 18.8126 87.2004C16.0126 80.6004 12.9126 69.0004 24.8126 66.5004C38.9126 63.6004 34.7126 64.1004 37.5126 61.4004C35.7126 68.7004 26.0126 65.2004 22.0126 70.2004C17.5126 75.9004 20.6127 83.6004 20.7127 84.0004C22.3127 87.5004 25.3126 91.3004 30.0126 95.0004C31.4126 96.7004 32.7126 98.7004 32.3126 101.2C31.7126 104.9 25.8127 105 25.6127 100.1C25.1127 102.1 25.3127 105.9 29.6127 106.7C33.9127 107.6 39.9126 101.4 38.3126 95.2004C36.7126 88.9004 36.0127 88.3004 36.2127 84.6004C36.6127 77.6004 44.3126 73.8004 46.7126 73.7004C34.3126 80.8004 38.8126 108.9 58.0126 108.9C74.0126 108.9 73.0126 90.4004 63.5126 91.8004C57.5126 92.7004 57.6127 96.8004 57.6127 96.8004C57.6127 96.8004 60.4127 95.8004 62.6127 96.5004C66.1127 97.6004 66.7126 102.4 62.8126 104.4C58.1126 106.9 50.4126 102.4 56.3126 91.6004C56.8126 90.7004 57.5126 90.1004 58.2126 89.4004C56.0126 88.9004 52.8127 87.3004 51.9127 81.8004C50.8127 74.8004 55.1127 69.2004 52.4127 69.0004C54.3127 64.8004 60.2127 63.9004 57.6127 69.3004C56.7127 71.2004 47.5127 82.5004 59.1127 88.4004C68.2127 90.9004 82.2126 81.0004 83.0126 89.0004C82.4126 92.3004 78.8127 93.8004 77.1127 93.0004C78.2127 93.6004 81.9126 95.1004 85.0126 92.5004C91.6126 86.7004 87.5127 77.0004 77.1127 78.7004C64.7127 80.7004 63.6126 75.4004 69.2126 70.5004C73.8126 66.4004 75.1127 62.2004 74.3127 58.7004C74.2127 58.6004 74.1127 58.5004 74.1127 58.4004C72.8127 54.0004 65.2126 46.4004 53.8126 56.6004C55.4126 54.8004 59.3127 51.1004 64.6127 50.3004C68.0127 49.8004 72.4127 50.6004 74.9127 53.3004C76.6127 50.0004 78.8127 51.3004 79.3127 53.1004C79.8127 55.2004 72.3127 66.9004 76.8127 71.8004C81.4127 76.7004 89.5127 74.9004 92.1127 71.7004C95.7127 67.2004 92.8127 64.6004 90.9127 63.9004Z" fill="#E73D6D"/>
+                </mask>
+                <g mask="url(#mask0)">
+                    <g>
+                        <path transform="translate(-30, 0)" d="M-103.918 103.251L-111.597 106.542C-115.893 108.383 -120.834 107.888 -124.679 105.231C-133.696 99.001 -146 105.455 -146 116.415V271.5H188L185.42 125.291C185.294 118.155 175.992 115.512 172.133 121.516C169.552 125.53 163.856 125.979 160.678 122.42L150.079 110.549C145.864 105.828 138.409 106.058 134.493 111.029C131.345 115.023 125.732 116.082 121.346 113.507L115.539 110.099C109.79 106.725 102.558 107.233 97.3384 111.378C92.2806 115.395 85.3148 116.008 79.6331 112.937L78.546 112.349C73.4895 109.616 67.4318 109.461 62.2422 111.932L59.3335 113.317C53.4388 116.124 46.4152 114.915 41.7986 110.299C38.1732 106.673 32.9831 105.087 27.9504 106.065L24.5725 106.722C20.3331 107.546 15.9387 106.817 12.1932 104.666L4.60699 100.311C-2.14313 96.4364 -12.2167 102 -20 102C-20.686 102 -39.6829 101.265 -53.5949 94.4337C-57.0458 92.7392 -61.5327 93.8527 -63.131 97.3492C-65.1563 101.779 -71.3533 102.039 -73.7414 97.793L-76.2138 93.3976C-78.9116 88.6016 -85.3795 87.5811 -89.4229 91.3134L-98.667 99.8465C-100.211 101.272 -101.987 102.423 -103.918 103.251Z" fill="#E73D6D">
+                
+                            <animateTransform
+                                attributeName="transform"
+                                type="translate"
+                                dur="1s"
+                                repeatCount="1"
+                                values="0, 0; 10, -10; -15, -20; 0, -30; 20, -40; 0, -70; -10, -120;"
+                                fill="freeze"
+                            />
+                        </path>
+                        <animateTransform
+                            attributeName="transform"
+                            type="rotate"
+                            dur="1s"
+                            repeatCount="1"
+                            values="0; 2; -3; -4; 0; 5; -6; 0;"
+                            fill="freeze"
+                        />
+                    </g>
+                </g>
+            </svg>                
+        </div>
+    </div>
+</div>
+        </div>
+        
+        <script src="js/main.js"></script>
+        <script src="js/vendor.js"></script>
+        <script src="js/custom.js"></script>  
+    </body>
+</html>
