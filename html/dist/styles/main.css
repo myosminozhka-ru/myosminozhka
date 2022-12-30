@@ -17955,6 +17955,9 @@ html:root body.posts .post_info__code--in {
   text-align: center;
   text-transform: uppercase;
   color: #595965;
+  max-width: 51.9791666667vw;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .case-not-found.mobile .case-not-found__subtitle {
@@ -17962,6 +17965,9 @@ html:root body.posts .post_info__code--in {
   font-weight: 700;
   font-size: 20px;
   margin-bottom: 15px;
+  max-width: 320px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .case-not-found__wait {
