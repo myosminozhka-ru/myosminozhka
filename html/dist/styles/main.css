@@ -19057,7 +19057,7 @@ html.overflowed body {
 }
 
 .cases__tags {
-  position: relative;
+  position: absolute;
   padding: 1.6666666667vw;
   z-index: 3;
 }
