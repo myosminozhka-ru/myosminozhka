@@ -204,9 +204,13 @@ window.mainNewsAndTrends = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
               event.preventDefault();
               jquery__WEBPACK_IMPORTED_MODULE_5___default()(".news-and-trends-right-slider .news-and-trends-item:not([data-id-news=\"".concat(item.dataset.news, "\"])")).remove();
             }
+<<<<<<< HEAD
             setTimeout(function () {
               _this.initSlider();
             }, 100);
+=======
+            _this.initSlider();
+>>>>>>> feature/fayzulla
           });
         });
       }
