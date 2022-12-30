@@ -27,6 +27,10 @@ module.exports = {
         'main-carousel': './src/blocks/modules/main-carousel/module.main-carousel.js',
         'news-and-trends': './src/blocks/modules/main-news-and-trends/module.main-news-and-trends.js',
         'main-cases': './src/blocks/modules/main-cases/module.main-cases.js',
+        'cases-filter': './src/blocks/modules/main-cases/module.cases-filter.js',
+        'upload-form-file': './src/blocks/modules/upload-form-file/module.upload-form-file.js',
+        'cookie-form': './src/blocks/modules/cookie-form/module.cookie-form.js',
+        'map': './src/blocks/modules/map/module.map.js',
         footer: './src/blocks/modules/footer/module.footer.js',
     },
 
