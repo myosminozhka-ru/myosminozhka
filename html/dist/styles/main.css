@@ -10687,6 +10687,8 @@ html:root body.posts .post_info__code--in {
 .footer-socials.mobile a.footer-social svg {
   max-width: 16px;
   max-height: 16px;
+  width: 100%;
+  height: 100%;
 }
 
 .footer-social {
@@ -10706,6 +10708,8 @@ html:root body.posts .post_info__code--in {
 .footer-social svg {
   max-width: 2.6041666667vw;
   max-height: 2.0833333333vw;
+  width: 100%;
+  height: 100%;
 }
 
 .footer-social:hover {
@@ -20847,13 +20851,13 @@ html.overflowed body {
   .footer-tentacle {
     bottom: calc(100% - 450px);
     transform: rotateY(180deg);
-    z-index: 3;
+    z-index: 5;
   }
 
   .footer-tentacle {
     bottom: calc(100% - 380px);
     transform: rotateY(180deg);
-    z-index: 3;
+    z-index: 5;
   }
 
   .more_cases {
@@ -25200,7 +25204,7 @@ html.overflowed body {
   .footer-tentacle {
     bottom: calc(100% - 310px);
     transform: rotateY(180deg);
-    z-index: 3;
+    z-index: 5;
   }
 }
 
@@ -25414,7 +25418,7 @@ html.overflowed body {
   .footer-tentacle {
     bottom: calc(100% - 240px);
     transform: rotateY(180deg);
-    z-index: 3;
+    z-index: 5;
   }
 
   .lonmandi .case_page__in.mobile .no-padding .case_page__bls--l {
@@ -26246,7 +26250,7 @@ html.overflowed body {
   .footer-tentacle {
     bottom: calc(100% - 190px);
     transform: rotateY(180deg);
-    z-index: 3;
+    z-index: 5;
   }
 }
 

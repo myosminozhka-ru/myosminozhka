@@ -44,7 +44,7 @@ const companyReviews = class companyReviews {
                             self.allElementsWidth += (item.offsetWidth + 100);
                         }
                     })
-                    self.translate += self.allElementsWidth - self.elementWidth * 2;
+                    self.translate += self.allElementsWidth - self.elementWidth * 1;
                 } 
                 self.index = self.slider.index;
                 
