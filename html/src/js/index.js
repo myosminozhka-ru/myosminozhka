@@ -186,7 +186,7 @@ window.app = new Vue({
             window.addEventListener("orientationchange", function(event) {
                 location.reload();
             });
-            document.querySelector('.footer-bank .copy').addEventListener('click', () => this.footer.copyText({
+            document.querySelector('.footer-bank .copy')?.addEventListener('click', () => this.footer.copyText({
                 text: 'ИНН/КПП: 6317139806/631701001 Банк: АО "Тинькофф Банк" БИК: 044525974 Р/С: 40702810010000559615 Р/С: 40702810010000559615'
             }))
             
