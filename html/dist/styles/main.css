@@ -5792,6 +5792,10 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
   background: #121423;
 }
 
+.company-ceo.mobile .web-slider-item {
+  border-bottom: 1px solid transparent;
+}
+
 .company-ceo.mobile .web-slider-image-in {
   padding-top: 80%;
 }
@@ -5814,6 +5818,10 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
 .company-ceo.mobile .web-slider-title,
 .company-ceo.mobile .web-slider-text {
   padding-right: 10px;
+}
+
+.company-ceo.mobile .web-slider-text {
+  margin-bottom: 50px;
 }
 
 .company-ceo-titles {
