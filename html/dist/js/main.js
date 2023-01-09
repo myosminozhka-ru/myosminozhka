@@ -1532,10 +1532,11 @@ var header = /*#__PURE__*/function () {
       this.setHeaderWavePositionOnLoad();
       this.onInit();
       if (document.querySelector('.header-phone_opener')) {
+        var _document$querySelect;
         document.querySelector('.header-phone_opener').addEventListener('click', function () {
           _this.openPhonesModal();
         });
-        document.querySelector('.header-phone_modal_closer').addEventListener('click', function (event) {
+        (_document$querySelect = document.querySelector('.header-phone_modal_closer')) === null || _document$querySelect === void 0 ? void 0 : _document$querySelect.addEventListener('click', function (event) {
           event.stopPropagation();
           _this.closePhonesModal();
         });

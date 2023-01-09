@@ -10476,7 +10476,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "checkPrefix", function() { return _checkPropPrefix; });
 /* harmony import */ var _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./gsap-core.js */ "./node_modules/gsap/gsap-core.js");
 /*!
- * CSSPlugin 3.11.4
+ * CSSPlugin 3.11.3
  * https://greensock.com
  *
  * Copyright 2008-2022, GreenSock. All rights reserved.
@@ -11891,7 +11891,7 @@ var CSSPlugin = {
           }
 
           if (p === "scale") {
-            this._pt = new _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["PropTween"](this._pt, cache, "scaleY", cache.scaleY, (relative ? Object(_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["_parseRelative"])(cache.scaleY, relative + endNum) : endNum) - cache.scaleY || 0, _renderCSSProp);
+            this._pt = new _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["PropTween"](this._pt, cache, "scaleY", startNum, (relative ? Object(_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["_parseRelative"])(startNum, relative + endNum) : endNum) - startNum || 0, _renderCSSProp);
             this._pt.u = 0;
             props.push("scaleY", p);
             p += "X";
@@ -11952,7 +11952,7 @@ var CSSPlugin = {
           if (p in target) {
             //maybe it's not a style - it could be a property added directly to an element in which case we'll try to animate that.
             this.add(target, p, startValue || target[p], relative ? relative + endValue : endValue, index, targets);
-          } else if (p !== "parseTransform") {
+          } else {
             Object(_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__["_missingPlugin"])(p, endValue);
 
             continue;
@@ -12048,7 +12048,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 /*!
- * Observer 3.11.4
+ * Observer 3.11.3
  * https://greensock.com
  *
  * @license Copyright 2008-2022, GreenSock. All rights reserved.
@@ -12071,7 +12071,6 @@ var gsap,
     _root,
     _normalizer,
     _eventTypes,
-    _context,
     _getGSAP = function _getGSAP() {
   return gsap || typeof window !== "undefined" && (gsap = window.gsap) && gsap.registerPlugin && gsap;
 },
@@ -12258,9 +12257,6 @@ var gsap,
     _body = _doc.body;
     _root = [_win, _doc, _docEl, _body];
     _clamp = gsap.utils.clamp;
-
-    _context = gsap.core.context || function () {};
-
     _pointerType = "onpointerenter" in _body ? "pointer" : "mouse"; // isTouch is 0 if no touch, 1 if ONLY touch, and 2 if it can accommodate touch but also other types like mouse/pointer.
 
     _isTouch = Observer.isTouch = _win.matchMedia && _win.matchMedia("(hover: none), (pointer: coarse)").matches ? 1 : "ontouchstart" in _win || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0 ? 2 : 0;
@@ -12507,12 +12503,11 @@ var Observer = /*#__PURE__*/function () {
 
       _removeListener(isNormalizer ? target : ownerDoc, _eventTypes[1], _onDrag, true);
 
-      var isTrackingDrag = !isNaN(self.y - self.startY),
-          wasDragging = self.isDragging && (Math.abs(self.x - self.startX) > 3 || Math.abs(self.y - self.startY) > 3),
+      var wasDragging = self.isDragging && (Math.abs(self.x - self.startX) > 3 || Math.abs(self.y - self.startY) > 3),
           // some touch devices need some wiggle room in terms of sensing clicks - the finger may move a few pixels.
       eventData = _getEvent(e);
 
-      if (!wasDragging && isTrackingDrag) {
+      if (!wasDragging) {
         self._vx.reset();
 
         self._vy.reset();
@@ -12602,8 +12597,6 @@ var Observer = /*#__PURE__*/function () {
     self.scrollY = scrollFuncY;
     self.isDragging = self.isGesturing = self.isPressed = false;
 
-    _context(this);
-
     self.enable = function (e) {
       if (!self.isEnabled) {
         _addListener(isViewport ? ownerDoc : target, "scroll", _onScroll);
@@ -12679,7 +12672,7 @@ var Observer = /*#__PURE__*/function () {
       }
     };
 
-    self.kill = self.revert = function () {
+    self.kill = function () {
       self.disable();
 
       var i = _observers.indexOf(self);
@@ -12708,7 +12701,7 @@ var Observer = /*#__PURE__*/function () {
 
   return Observer;
 }();
-Observer.version = "3.11.4";
+Observer.version = "3.11.3";
 
 Observer.create = function (vars) {
   return new Observer(vars);
@@ -12744,7 +12737,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ScrollTrigger; });
 /* harmony import */ var _Observer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Observer.js */ "./node_modules/gsap/Observer.js");
 /*!
- * ScrollTrigger 3.11.4
+ * ScrollTrigger 3.11.3
  * https://greensock.com
  *
  * @license Copyright 2008-2022, GreenSock. All rights reserved.
@@ -13569,12 +13562,6 @@ _getTweenCreator = function _getTweenCreator(scroller, direction) {
       return lastScroll1 = Math.round(value);
     };
 
-    vars.onUpdate = function () {
-      _Observer_js__WEBPACK_IMPORTED_MODULE_0__["_scrollers"].cache++;
-
-      _updateAll();
-    };
-
     vars.onComplete = function () {
       getTween.tween = 0;
       onComplete && onComplete.call(tween);
@@ -13682,7 +13669,6 @@ var ScrollTrigger = /*#__PURE__*/function () {
         spacingStart,
         spacerState,
         markerStartSetter,
-        pinMoves,
         markerEndSetter,
         cs,
         snap1,
@@ -13945,11 +13931,11 @@ var ScrollTrigger = /*#__PURE__*/function () {
           self.update(r); // make sure the pin is back in its original position so that all the measurements are correct. do this BEFORE swapping the pin out
         }
 
-        if (pin && (!pinReparent || !self.isActive)) {
+        if (pin) {
           if (r) {
             _swapPinOut(pin, spacer, pinOriginalState);
           } else {
-            _swapPinIn(pin, spacer, _getComputedStyle(pin), spacerState);
+            (!pinReparent || !self.isActive) && _swapPinIn(pin, spacer, _getComputedStyle(pin), spacerState);
           }
         }
 
@@ -14008,8 +13994,7 @@ var ScrollTrigger = /*#__PURE__*/function () {
           curPin,
           oppositeScroll,
           initted,
-          revertedPins,
-          forcedOverflow;
+          revertedPins;
 
       while (i--) {
         // user might try to pin the same element more than once, so we must find any prior triggers with the same pin, revert them, and determine how long they're pinning so that we can offset things appropriately. Make sure we revert from last to first so that things "rewind" properly.
@@ -14086,16 +14071,7 @@ var ScrollTrigger = /*#__PURE__*/function () {
         scroll = scrollFunc(); // recalculate because the triggers can affect the scroll
 
         pinStart = parseFloat(pinGetter(direction.a)) + otherPinOffset;
-
-        if (!max && end > 1) {
-          // makes sure the scroller has a scrollbar, otherwise if something has width: 100%, for example, it would be too big (exclude the scrollbar). See https://greensock.com/forums/topic/25182-scrolltrigger-width-of-page-increase-where-markers-are-set-to-false/
-          forcedOverflow = (isViewport ? _doc.scrollingElement || _docEl : scroller).style;
-          forcedOverflow = {
-            style: forcedOverflow,
-            value: forcedOverflow["overflow" + direction.a.toUpperCase()]
-          };
-          forcedOverflow["overflow" + direction.a.toUpperCase()] = "scroll";
-        }
+        !max && end > 1 && ((isViewport ? _body : scroller).style["overflow-" + direction.a] = "scroll"); // makes sure the scroller has a scrollbar, otherwise if something has width: 100%, for example, it would be too big (exclude the scrollbar). See https://greensock.com/forums/topic/25182-scrolltrigger-width-of-page-increase-where-markers-are-set-to-false/
 
         _swapPinIn(pin, spacer, cs);
 
@@ -14151,8 +14127,7 @@ var ScrollTrigger = /*#__PURE__*/function () {
 
           animation.render(animation.duration(), true, true);
           pinChange = pinGetter(direction.a) - pinStart + change + otherPinOffset;
-          pinMoves = Math.abs(change - pinChange) > 1;
-          useFixedPosition && pinMoves && pinActiveState.splice(pinActiveState.length - 2, 2); // transform is the last property/value set in the state Array. Since the animation is controlling that, we should omit it.
+          change !== pinChange && useFixedPosition && pinActiveState.splice(pinActiveState.length - 2, 2); // transform is the last property/value set in the state Array. Since the animation is controlling that, we should omit it.
 
           animation.render(0, true, true);
           initted || animation.invalidate(true);
@@ -14162,8 +14137,6 @@ var ScrollTrigger = /*#__PURE__*/function () {
         } else {
           pinChange = change;
         }
-
-        forcedOverflow && (forcedOverflow.value ? forcedOverflow.style["overflow" + direction.a.toUpperCase()] = forcedOverflow.value : forcedOverflow.style.removeProperty("overflow-" + direction.a));
       } else if (trigger && scrollFunc() && !containerAnimation) {
         // it may be INSIDE a pinned element, so walk up the tree and look for any elements with _pinOffset to compensate because anything with pinSpacing that's already scrolled would throw off the measurements in getBoundingClientRect()
         bounds = trigger.parentNode;
@@ -14297,7 +14270,7 @@ var ScrollTrigger = /*#__PURE__*/function () {
 
         if (!isToggle) {
           if (scrubTween && !_refreshing && !_startup) {
-            scrubTween._dp._time - scrubTween._start !== scrubTween._time && scrubTween.render(scrubTween._dp._time - scrubTween._start); // if there's a scrub on both the container animation and this one (or a ScrollSmoother), the update order would cause this one not to have rendered yet, so it wouldn't make any progress before we .restart() it heading toward the new progress so it'd appear stuck thus we force a render here.
+            (containerAnimation || _primary && _primary !== self) && scrubTween.render(scrubTween._dp._time - scrubTween._start); // if there's a scrub on both the container animation and this one (or a ScrollSmoother), the update order would cause this one not to have rendered yet, so it wouldn't make any progress before we .restart() it heading toward the new progress so it'd appear stuck thus we force a render here.
 
             if (scrubTween.resetTo) {
               scrubTween.resetTo("totalProgress", clipped, animation._tTime / animation._tDur);
@@ -14332,7 +14305,7 @@ var ScrollTrigger = /*#__PURE__*/function () {
 
             _setState(isActive || isAtMax ? pinActiveState : pinState);
 
-            pinMoves && clipped < 1 && isActive || pinSetter(pinStart + (clipped === 1 && !isAtMax ? pinChange : 0));
+            pinChange !== change && clipped < 1 && isActive || pinSetter(pinStart + (clipped === 1 && !isAtMax ? pinChange : 0));
           }
         }
 
@@ -14755,7 +14728,7 @@ var ScrollTrigger = /*#__PURE__*/function () {
   };
 
   ScrollTrigger.killAll = function killAll(allowListeners) {
-    _triggers.slice(0).forEach(function (t) {
+    _triggers.forEach(function (t) {
       return t.vars.id !== "ScrollSmoother" && t.kill();
     });
 
@@ -14770,7 +14743,7 @@ var ScrollTrigger = /*#__PURE__*/function () {
 
   return ScrollTrigger;
 }();
-ScrollTrigger.version = "3.11.4";
+ScrollTrigger.version = "3.11.3";
 
 ScrollTrigger.saveStyles = function (targets) {
   return targets ? _toArray(targets).forEach(function (target) {
@@ -14797,10 +14770,7 @@ ScrollTrigger.refresh = function (safe) {
   return safe ? _onResize() : (_coreInitted || ScrollTrigger.register()) && _refreshAll(true);
 };
 
-ScrollTrigger.update = function (force) {
-  return ++_Observer_js__WEBPACK_IMPORTED_MODULE_0__["_scrollers"].cache && _updateAll(force === true ? 2 : 0);
-};
-
+ScrollTrigger.update = _updateAll;
 ScrollTrigger.clearScrollMemory = _clearScrollMemory;
 
 ScrollTrigger.maxScroll = function (element, horizontal) {
@@ -14917,11 +14887,11 @@ var _clampScrollAndGetDurationMultiplier = function _clampScrollAndGetDurationMu
 
   if (!cache._isScrollT || time - cache._isScrollT > 2000) {
     // cache for 2 seconds to improve performance.
-    while (node && node !== _body && (node.scrollHeight <= node.clientHeight && node.scrollWidth <= node.clientWidth || !(_overflow[(cs = _getComputedStyle(node)).overflowY] || _overflow[cs.overflowX]))) {
+    while (node && node.scrollHeight <= node.clientHeight) {
       node = node.parentNode;
     }
 
-    cache._isScroll = node && node !== target && !_isViewport(node) && (_overflow[(cs = _getComputedStyle(node)).overflowY] || _overflow[cs.overflowX]);
+    cache._isScroll = node && !_isViewport(node) && node !== target && (_overflow[(cs = _getComputedStyle(node)).overflowY] || _overflow[cs.overflowX]);
     cache._isScrollT = time;
   }
 
@@ -15305,7 +15275,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 /*!
- * GSAP 3.11.4
+ * GSAP 3.11.3
  * https://greensock.com
  *
  * @license Copyright 2008-2022, GreenSock. All rights reserved.
@@ -15490,9 +15460,9 @@ _parseRelative = function _parseRelative(start, value) {
   }
 },
     _lazySafeRender = function _lazySafeRender(animation, time, suppressEvents, force) {
-  _lazyTweens.length && !_reverting && _lazyRender();
+  _lazyTweens.length && _lazyRender();
   animation.render(time, suppressEvents, force || _reverting && time < 0 && (animation._initted || animation._startAt));
-  _lazyTweens.length && !_reverting && _lazyRender(); //in case rendering caused any tweens to lazy-init, we should render them because typically when someone calls seek() or time() or progress(), they expect an immediate render.
+  _lazyTweens.length && _lazyRender(); //in case rendering caused any tweens to lazy-init, we should render them because typically when someone calls seek() or time() or progress(), they expect an immediate render.
 },
     _numericIfPossible = function _numericIfPossible(value) {
   var n = parseFloat(value);
@@ -16652,9 +16622,9 @@ _tickerActive,
       _req = _emptyFunc;
     },
     lagSmoothing: function lagSmoothing(threshold, adjustedLag) {
-      _lagThreshold = threshold || Infinity; // zero should be interpreted as basically unlimited
+      _lagThreshold = threshold || 1 / _tinyNum; //zero should be interpreted as basically unlimited
 
-      _adjustedLag = Math.min(adjustedLag || 33, _lagThreshold);
+      _adjustedLag = Math.min(adjustedLag, _lagThreshold, 0);
     },
     fps: function fps(_fps) {
       _gap = 1000 / (_fps || 240);
@@ -17151,7 +17121,7 @@ var Animation = /*#__PURE__*/function () {
       animation = animation._dp;
     }
 
-    return !this.parent && this._sat ? this._sat.vars.immediateRender ? -1 : this._sat.globalTime(rawTime) : time; // the _startAt tweens for .fromTo() and .from() that have immediateRender should always be FIRST in the timeline (important for context.revert()). "_sat" stands for _startAtTween, referring to the parent tween that created the _startAt. We must discern if that tween had immediateRender so that we can know whether or not to prioritize it in revert().
+    return !this.parent && this.vars.immediateRender ? -1 : time; // the _startAt tweens for .fromTo() and .from() that have immediateRender should always be FIRST in the timeline (important for Recording.revert())
   };
 
   _proto.repeat = function repeat(value) {
@@ -18224,7 +18194,7 @@ _forceAllPropTweens,
         overwrite: false,
         parent: parent,
         immediateRender: true,
-        lazy: !prevStartAt && _isNotFalse(lazy),
+        lazy: _isNotFalse(lazy),
         startAt: null,
         delay: 0,
         onUpdate: onUpdate,
@@ -18235,8 +18205,6 @@ _forceAllPropTweens,
 
 
       tween._startAt._dp = 0; // don't allow it to get put back into root timeline! Like when revert() is called and totalTime() gets set.
-
-      tween._startAt._sat = tween; // used in globalTime(). _sat stands for _startAtTween
 
       time < 0 && (_reverting || !immediateRender && !autoRevert) && tween._startAt.revert(_revertConfigNoKill); // rare edge case, like if a render is forced in the negative direction of a non-initted tween.
 
@@ -18256,7 +18224,7 @@ _forceAllPropTweens,
           overwrite: false,
           data: "isFromStart",
           //we tag the tween with as "isFromStart" so that if [inside a plugin] we need to only do something at the very END of a tween, we have a way of identifying this tween as merely the one that's setting the beginning values for a "from()" tween. For example, clearProps in CSSPlugin should only get applied at the very END of a tween and without this tag, from(...{height:100, clearProps:"height", delay:1}) would wipe the height at the beginning of the tween and after 1 second, it'd kick back in.
-          lazy: immediateRender && !prevStartAt && _isNotFalse(lazy),
+          lazy: immediateRender && _isNotFalse(lazy),
           immediateRender: immediateRender,
           //zero-duration tweens render immediately by default, but if we're not specifically instructed to render this tween immediately, we should skip this and merely _init() to record the starting values (rendering them immediately would push them to completion which is wasteful in that case - we'd have to render(-1) immediately after)
           stagger: 0,
@@ -18268,8 +18236,6 @@ _forceAllPropTweens,
         _removeFromParent(tween._startAt = Tween.set(targets, p));
 
         tween._startAt._dp = 0; // don't allow it to get put back into root timeline!
-
-        tween._startAt._sat = tween; // used in globalTime()
 
         time < 0 && (_reverting ? tween._startAt.revert(_revertConfigNoKill) : tween._startAt.render(-1, true));
         tween._zTime = time;
@@ -19207,11 +19173,6 @@ var Context = /*#__PURE__*/function () {
   var _proto5 = Context.prototype;
 
   _proto5.add = function add(name, func, scope) {
-    // possible future addition if we need the ability to add() an animation to a context and for whatever reason cannot create that animation inside of a context.add(() => {...}) function.
-    // if (name && _isFunction(name.revert)) {
-    // 	this.data.push(name);
-    // 	return (name._ctx = this);
-    // }
     if (_isFunction(name)) {
       scope = func;
       func = name;
@@ -19281,7 +19242,7 @@ var Context = /*#__PURE__*/function () {
         return b.g - a.g || -1;
       }).forEach(function (o) {
         return o.t.revert(revert);
-      }); // note: all of the _startAt tweens should be reverted in reverse order that they were created, and they'll all have the same globalTime (-1) so the " || -1" in the sort keeps the order properly.
+      }); // note: all of the _startAt tweens should be reverted in reverse order that thy were created, and they'll all have the same globalTime (-1) so the " || -1" in the sort keeps the order properly.
 
       this.data.forEach(function (e) {
         return !(e instanceof Animation) && e.revert && e.revert(revert);
@@ -19719,7 +19680,7 @@ var gsap = _gsap.registerPlugin({
   }
 }, _buildModifierPlugin("roundProps", _roundModifier), _buildModifierPlugin("modifiers"), _buildModifierPlugin("snap", snap)) || _gsap; //to prevent the core plugins from being dropped via aggressive tree shaking, we must include them in the variable declaration in this way.
 
-Tween.version = Timeline.version = gsap.version = "3.11.4";
+Tween.version = Timeline.version = gsap.version = "3.11.3";
 _coreReady = 1;
 _windowExists() && _wake();
 var Power0 = _easeMap.Power0,
@@ -19991,7 +19952,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
- * jQuery JavaScript Library v3.6.3
+ * jQuery JavaScript Library v3.6.1
  * https://jquery.com/
  *
  * Includes Sizzle.js
@@ -20001,7 +19962,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
  * Released under the MIT license
  * https://jquery.org/license
  *
- * Date: 2022-12-20T21:28Z
+ * Date: 2022-08-26T17:52Z
  */
 ( function( global, factory ) {
 
@@ -20143,7 +20104,7 @@ function toType( obj ) {
 
 
 var
-	version = "3.6.3",
+	version = "3.6.1",
 
 	// Define a local copy of jQuery
 	jQuery = function( selector, context ) {
@@ -20514,14 +20475,14 @@ function isArrayLike( obj ) {
 }
 var Sizzle =
 /*!
- * Sizzle CSS Selector Engine v2.3.9
+ * Sizzle CSS Selector Engine v2.3.6
  * https://sizzlejs.com/
  *
  * Copyright JS Foundation and other contributors
  * Released under the MIT license
  * https://js.foundation/
  *
- * Date: 2022-12-19
+ * Date: 2021-02-16
  */
 ( function( window ) {
 var i,
@@ -20871,27 +20832,6 @@ function Sizzle( selector, context, results, seed ) {
 				}
 
 				try {
-
-					// `qSA` may not throw for unrecognized parts using forgiving parsing:
-					// https://drafts.csswg.org/selectors/#forgiving-selector
-					// like the `:has()` pseudo-class:
-					// https://drafts.csswg.org/selectors/#relational
-					// `CSS.supports` is still expected to return `false` then:
-					// https://drafts.csswg.org/css-conditional-4/#typedef-supports-selector-fn
-					// https://drafts.csswg.org/css-conditional-4/#dfn-support-selector
-					if ( support.cssSupportsSelector &&
-
-						// eslint-disable-next-line no-undef
-						!CSS.supports( "selector(:is(" + newSelector + "))" ) ) {
-
-						// Support: IE 11+
-						// Throw to get to the same code path as an error directly in qSA.
-						// Note: once we only support browser supporting
-						// `CSS.supports('selector(...)')`, we can most likely drop
-						// the `try-catch`. IE doesn't implement the API.
-						throw new Error();
-					}
-
 					push.apply( results,
 						newContext.querySelectorAll( newSelector )
 					);
@@ -21187,31 +21127,6 @@ setDocument = Sizzle.setDocument = function( node ) {
 			!el.querySelectorAll( ":scope fieldset div" ).length;
 	} );
 
-	// Support: Chrome 105+, Firefox 104+, Safari 15.4+
-	// Make sure forgiving mode is not used in `CSS.supports( "selector(...)" )`.
-	//
-	// `:is()` uses a forgiving selector list as an argument and is widely
-	// implemented, so it's a good one to test against.
-	support.cssSupportsSelector = assert( function() {
-		/* eslint-disable no-undef */
-
-		return CSS.supports( "selector(*)" ) &&
-
-			// Support: Firefox 78-81 only
-			// In old Firefox, `:is()` didn't use forgiving parsing. In that case,
-			// fail this test as there's no selector to test against that.
-			// `CSS.supports` uses unforgiving parsing
-			document.querySelectorAll( ":is(:jqfake)" ) &&
-
-			// `*` is needed as Safari & newer Chrome implemented something in between
-			// for `:has()` - it throws in `qSA` if it only contains an unsupported
-			// argument but multiple ones, one of which is supported, are fine.
-			// We want to play safe in case `:is()` gets the same treatment.
-			!CSS.supports( "selector(:is(*,:jqfake))" );
-
-		/* eslint-enable */
-	} );
-
 	/* Attributes
 	---------------------------------------------------------------------- */
 
@@ -21478,17 +21393,6 @@ setDocument = Sizzle.setDocument = function( node ) {
 		} );
 	}
 
-	if ( !support.cssSupportsSelector ) {
-
-		// Support: Chrome 105+, Safari 15.4+
-		// `:has()` uses a forgiving selector list as an argument so our regular
-		// `try-catch` mechanism fails to catch `:has()` with arguments not supported
-		// natively like `:has(:contains("Foo"))`. Where supported & spec-compliant,
-		// we now use `CSS.supports("selector(:is(SELECTOR_TO_BE_TESTED))")`, but
-		// outside that we mark `:has` as buggy.
-		rbuggyQSA.push( ":has" );
-	}
-
 	rbuggyQSA = rbuggyQSA.length && new RegExp( rbuggyQSA.join( "|" ) );
 	rbuggyMatches = rbuggyMatches.length && new RegExp( rbuggyMatches.join( "|" ) );
 
@@ -21501,14 +21405,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 	// As in, an element does not contain itself
 	contains = hasCompare || rnative.test( docElem.contains ) ?
 		function( a, b ) {
-
-			// Support: IE <9 only
-			// IE doesn't have `contains` on `document` so we need to check for
-			// `documentElement` presence.
-			// We need to fall back to `a` when `documentElement` is missing
-			// as `ownerDocument` of elements within `<template/>` may have
-			// a null one - a default behavior of all modern browsers.
-			var adown = a.nodeType === 9 && a.documentElement || a,
+			var adown = a.nodeType === 9 ? a.documentElement : a,
 				bup = b && b.parentNode;
 			return a === bup || !!( bup && bup.nodeType === 1 && (
 				adown.contains ?
@@ -22298,7 +22195,7 @@ Expr = Sizzle.selectors = {
 			return elem.nodeName.toLowerCase() === "input" &&
 				elem.type === "text" &&
 
-				// Support: IE <10 only
+				// Support: IE<8
 				// New HTML5 attribute values (e.g., "search") appear with elem.type === "text"
 				( ( attr = elem.getAttribute( "type" ) ) == null ||
 					attr.toLowerCase() === "text" );
@@ -26664,37 +26561,17 @@ function curCSS( elem, name, computed ) {
 	//   .css('filter') (IE 9 only, trac-12537)
 	//   .css('--customProperty) (gh-3144)
 	if ( computed ) {
-
-		// Support: IE <=9 - 11+
-		// IE only supports `"float"` in `getPropertyValue`; in computed styles
-		// it's only available as `"cssFloat"`. We no longer modify properties
-		// sent to `.css()` apart from camelCasing, so we need to check both.
-		// Normally, this would create difference in behavior: if
-		// `getPropertyValue` returns an empty string, the value returned
-		// by `.css()` would be `undefined`. This is usually the case for
-		// disconnected elements. However, in IE even disconnected elements
-		// with no styles return `"none"` for `getPropertyValue( "float" )`
 		ret = computed.getPropertyValue( name ) || computed[ name ];
 
-		if ( isCustomProp && ret ) {
+		// trim whitespace for custom property (issue gh-4926)
+		if ( isCustomProp ) {
 
-			// Support: Firefox 105+, Chrome <=105+
-			// Spec requires trimming whitespace for custom properties (gh-4926).
-			// Firefox only trims leading whitespace. Chrome just collapses
-			// both leading & trailing whitespace to a single space.
-			//
-			// Fall back to `undefined` if empty string returned.
-			// This collapses a missing definition with property defined
-			// and set to an empty string but there's no standard API
-			// allowing us to differentiate them without a performance penalty
-			// and returning `undefined` aligns with older jQuery.
-			//
-			// rtrimCSS treats U+000D CARRIAGE RETURN and U+000C FORM FEED
+			// rtrim treats U+000D CARRIAGE RETURN and U+000C FORM FEED
 			// as whitespace while CSS does not, but this is not a problem
 			// because CSS preprocessing replaces them with U+000A LINE FEED
 			// (which *is* CSS whitespace)
 			// https://www.w3.org/TR/css-syntax-3/#input-preprocessing
-			ret = ret.replace( rtrimCSS, "$1" ) || undefined;
+			ret = ret.replace( rtrimCSS, "$1" );
 		}
 
 		if ( ret === "" && !isAttached( elem ) ) {

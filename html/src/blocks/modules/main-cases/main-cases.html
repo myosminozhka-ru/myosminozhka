@@ -5,31 +5,31 @@
 
         <div class="tabs-tags main-cases__tabs-tags" :class="{'mobile': window.width <=1023}">
             <div class="tabs-tags__list" :class="{'mobile': window.width <=1023}">
-                <span class="btn btn--small btn--border-pink tabs-tags__item active" :class="{'mobile': window.width <=1023}">
+                <span class="btn btn--small btn--border-pink tabs-tags__item" data-cases-filter-btn="1" :class="{'mobile': window.width <=1023}">
                     <span class="btn__content">
                         <span class="btn__text">E-commers</span>
                     </span>
                 </span>
 
-                <span class="btn btn--small btn--border-pink tabs-tags__item" :class="{'mobile': window.width <=1023}">
+                <span class="btn btn--small btn--border-pink tabs-tags__item" data-cases-filter-btn="2" :class="{'mobile': window.width <=1023}">
                     <span class="btn__content">
                         <span class="btn__text">IT и телеком</span>
                     </span>
                 </span>
 
-                <span class="btn btn--small btn--border-pink tabs-tags__item" :class="{'mobile': window.width <=1023}">
+                <span class="btn btn--small btn--border-pink tabs-tags__item" data-cases-filter-btn="3" :class="{'mobile': window.width <=1023}">
                     <span class="btn__content">
                         <span class="btn__text">Банки и Финтех</span>
                     </span>
                 </span>
 
-                <span class="btn btn--small btn--border-pink tabs-tags__item" :class="{'mobile': window.width <=1023}">
+                <span class="btn btn--small btn--border-pink tabs-tags__item" data-cases-filter-btn="4" :class="{'mobile': window.width <=1023}">
                     <span class="btn__content">
                         <span class="btn__text">Транспорт и логистика</span>
                     </span>
                 </span>
 
-                <span class="btn btn--small btn--border-pink tabs-tags__item" :class="{'mobile': window.width <=1023}">
+                <span class="btn btn--small btn--border-pink tabs-tags__item" data-cases-filter-btn="5" :class="{'mobile': window.width <=1023}">
                     <span class="btn__content">
                         <span class="btn__text">Строительство и недвижимость</span>
                     </span>
@@ -40,6 +40,7 @@
         <div class="main-cases__list" :class="{'mobile': window.width <=1023}">
             @@include("../cases/careof/index.html")
             @@include("../cases/zorge/index.html")
+            @@include("../cases/medex/index.html")
             @@include("../cases/bioline/index.html")
             @@include("../cases/malina/index.html")
             @@include("../cases/mmcite/index.html")

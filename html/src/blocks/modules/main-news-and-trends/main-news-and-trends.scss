@@ -96,16 +96,28 @@
             }
         }
         &__mint {
-            background: #00B4A9;
+
+            background: $mainColor;
             &:hover {
-                color: #00B4A9;
+                color: $mainColor;
             }
+
+            //background: #00B4A9;
+            //&:hover {
+            //    color: #00B4A9;
+            //}
         }
         &__green {
-            background: #31A500;
+
+            background: $mainColor;
             &:hover {
-                color: #31A500;
+                color: $mainColor;
             }
+
+            //background: #31A500;
+            //&:hover {
+            //    color: #31A500;
+            //}
         }
         &__purple {
             background: #9958A2;

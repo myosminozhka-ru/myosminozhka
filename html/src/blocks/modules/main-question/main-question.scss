@@ -22,6 +22,10 @@
     &.mobile {
       padding: 0 0 173px;
     }
+
+    .main-question__content {
+      padding-top: 0;
+    }
   }
 
   &-tentacle {
@@ -84,7 +88,7 @@
 
   &__content {
     background-color: $bgColor;
-    padding: vw(120) vw(50) 0;
+    padding: vw(50) vw(50) 0;
   }
   &-title {
     text-transform: uppercase;
