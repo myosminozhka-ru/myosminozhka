@@ -32,8 +32,7 @@
         <link rel="stylesheet" href="styles/main.css">
     </head>
     <body class="company">
-        <div class="wrapper" id="app">
-            <header id="header" class="header" :class="{'isOpened': isOpened, 'mobile': window.width <=1023}">
+        <header id="header" class="header" :class="{'isOpened': isOpened, 'mobile': window.width <=1023}">
     <div class="header-blur"></div>
     <div class="header-in">
         <a href="/" class="header-logo" :class="{'mobile': window.width <=1023}">
@@ -153,6 +152,7 @@
     </nav>
     
 </header>
+        <div class="wrapper" id="app">
             <template v-if="window.width <=1023">
                 <section class="career-first" :class="{'mobile': window.width <=1023}">
     <h1 class="career-first-title">О нас</h1>
@@ -374,7 +374,20 @@
 </section>
 
 <section class="web company-ceo" :class="{'mobile': window.width <=1023}" v-if="window.width <= 1023">
-    <div class="web-slider">
+    <div class="web-slider-item">
+        <div class="web-slider-image">
+            <div class="web-slider-image-in">
+                <img src="img/ceo.jpg" alt="">
+            </div>
+        </div>
+        <div class="web-slider-title">
+            Вступительное слово директора
+        </div>
+        <div class="web-slider-text">
+            Это прогрессивное дизайнерское агентство, обладающее техническими и творческими навыками, чтобы воплотить ваш бренд стал лучше. Наш подход к дизайну и разработке создает впечатляющие, привлекательные бренды, которые возвращают вам творческий потенциал.
+        </div>
+    </div>
+    <!-- <div class="web-slider">
         <div class="web-slider-arrows" data-glide-el="controls">
             <button class="web-slider-arrow web-slider-arrow--prev" data-glide-dir="<">
                 <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 89 38" fill="#121423"><path d="M87.7678 20.7678C88.7441 19.7914 88.7441 18.2085 87.7678 17.2322L71.8579 1.32232C70.8816 0.346014 69.2986 0.346014 68.3223 1.32232C67.346 2.29864 67.346 3.88155 68.3223 4.85786L82.4645 19L68.3223 33.1421C67.346 34.1184 67.346 35.7014 68.3223 36.6777C69.2986 37.654 70.8816 37.654 71.8579 36.6777L87.7678 20.7678ZM2.18557e-07 21.5L86 21.5L86 16.5L-2.18557e-07 16.5L2.18557e-07 21.5Z"></path></svg>
@@ -464,7 +477,7 @@
                 
             </ul>
         </div>
-    </div>
+    </div> -->
 </section>
             <section class="company-principles" :class="{'mobile': window.width <=1023}">
     <h1 class="company-principles-title animated-title">Принципы работы</h1>
@@ -1678,7 +1691,65 @@
         </div>
     </div>
 </section>
-            <footer id="footer" class="footer" :class="{'mobile': window.width <=1023}">
+            
+            <div class="application-form" :class="{ 'mobile': window.width <= 1023 }">
+    <div class="application-form__in">
+        <div class="application-form__form">
+            <div class="application-form__form-closer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 12 12" fill="none">
+                    <path d="M7 6L12 1L11 0L6 5L1 0L0 1L5 6L0 11L1 12L6 7L11 12L12 11L7 6Z" fill="white"/>
+                </svg>
+            </div>
+            <section class="main-resume main-question modal fileLoaderModal" :class="{'mobile': window.width <=1023}">
+    <h4 class="main-resume-title">Откликнуться на вакансию</h4>
+    <form action="#">
+        <div class="main-question-form">
+            <div class="main-question-inputs">
+                <input type="text" placeholder="Ваше имя">
+                <input type="text" placeholder="Телефон">
+                <input type="email" placeholder="Email">
+                <!-- <textarea placeholder="Расскажите о себе"></textarea> -->
+                <input type="text" placeholder="Компания">
+                <label class="main-question-form-item file">
+                    <input type="file">
+                    <span v-if="!mainQuestionFormModal.hasFile">+ Прикрепить файл</span>
+                    <span v-if="mainQuestionFormModal.hasFile && mainQuestionFormModal.file.name">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 20 26" fill="none">
+                                <path d="M18.1 8.57612C18.4228 8.57612 18.589 8.20323 18.3824 7.97037L18.4727 8.05909C18.8103 8.39089 19 8.84096 19 9.31025V22.7308C19 23.7079 18.1941 24.5 17.2 24.5H2.8C1.80589 24.5 1 23.7079 1 22.7308L1 3.26925C1 2.29204 1.80601 1.49989 2.8002 1.5L11.054 1.50089C11.5312 1.50094 11.9889 1.6873 12.3264 2.01898L12.409 2.10015C12.1717 1.90644 11.8 2.06966 11.8 2.38376M18.1 8.57612H13.6C12.6059 8.57612 11.8 7.784 11.8 6.80687V2.38376M18.1 8.57612C18.4321 8.57612 18.5984 8.18112 18.3636 7.95029L12.4364 2.12436C12.2015 1.89353 11.8 2.05732 11.8 2.38376" stroke="#FF4978" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="text">{{mainQuestionFormModal.file.name}}</div>
+                    </span>
+                </label>
+                <label class="main-question-form-item checkbox" v-if="window.width <= 1023">
+                    <input type="checkbox">
+                    <div class="main-question-form-checkbox"></div>
+                    <div class="main-question-form-text">
+                        Я согласен на обработку <a href="privacy.html">моих персональных данных</a> и ознакомился с <a href="privacy.html">политикой обработки персональных данных</a>
+                    </div>
+                </label>
+                <div class="main-question-form-item button">
+                    <button type="submit" class="button button--main"  @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
+                        <div class="text">Отправить заявку</div>
+                    </button>
+                </div>
+                <label class="main-question-form-item checkbox" v-if="window.width > 1023">
+                    <input type="checkbox" name="checkbox" value="1">
+                    <div class="main-question-form-checkbox"></div>
+                    <div class="main-question-form-text">
+                        Я согласен на обработку <a href="privacy.html">моих персональных данных</a> и ознакомился с <a href="privacy.html">политикой обработки персональных данных</a>
+                    </div>
+                </label>
+            </div>
+        </div>
+    </form>
+</section>
+        </div>
+    </div>
+</div>
+        </div>
+        <footer id="footer" class="footer" :class="{'mobile': window.width <=1023}">
     <div class="footer-tentacle">
         <img src="img/svg/footer_tentacle.svg" width="100%" alt="">
     </div>
@@ -1848,7 +1919,7 @@
         </div>
     </div>
 </footer>
-            <div id="cookie-form" class="cookie-form" :class="{'mobile': window.width <= 1023}" v-show="!isClosedOnce">
+        <div id="cookie-form" class="cookie-form" :class="{'mobile': window.width <= 1023}" v-show="!isClosedOnce">
     <div class="cookie-form__in">
         <div class="cookie-form__message">Мы используем куки на всех своих сайтах, включая этот, потому что без кук вообще весь интернет работал бы через жопу</div>
         <div class="cookie-form__button" @click="closeForm()">
@@ -1856,7 +1927,7 @@
         </div>
     </div>
 </div>
-            <div id="preloader" class="preloader" :class="{'isHidden': isPreloaderHidden, 'mobile': window.width <= 1023}">
+        <div id="preloader" class="preloader" :class="{'isHidden': isPreloaderHidden, 'mobile': window.width <= 1023}">
     <div class="preloader__in">
         <div class="preloader__image">
             <svg width="100%" height="100%" viewBox="0 0 94 109" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1890,65 +1961,12 @@
         </div>
     </div>
 </div>
-            <div class="application-form" :class="{ 'mobile': window.width <= 1023 }">
-    <div class="application-form__in">
-        <div class="application-form__form">
-            <div class="application-form__form-closer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 12 12" fill="none">
-                    <path d="M7 6L12 1L11 0L6 5L1 0L0 1L5 6L0 11L1 12L6 7L11 12L12 11L7 6Z" fill="white"/>
-                </svg>
-            </div>
-            <section class="main-resume main-question modal fileLoaderModal" :class="{'mobile': window.width <=1023}">
-    <h4 class="main-resume-title">Откликнуться на вакансию</h4>
-    <form action="#">
-        <div class="main-question-form">
-            <div class="main-question-inputs">
-                <input type="text" placeholder="Ваше имя">
-                <input type="text" placeholder="Телефон">
-                <input type="email" placeholder="Email">
-                <!-- <textarea placeholder="Расскажите о себе"></textarea> -->
-                <input type="text" placeholder="Компания">
-                <label class="main-question-form-item file">
-                    <input type="file">
-                    <span v-if="!mainQuestionFormModal.hasFile">+ Прикрепить файл</span>
-                    <span v-if="mainQuestionFormModal.hasFile && mainQuestionFormModal.file.name">
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 20 26" fill="none">
-                                <path d="M18.1 8.57612C18.4228 8.57612 18.589 8.20323 18.3824 7.97037L18.4727 8.05909C18.8103 8.39089 19 8.84096 19 9.31025V22.7308C19 23.7079 18.1941 24.5 17.2 24.5H2.8C1.80589 24.5 1 23.7079 1 22.7308L1 3.26925C1 2.29204 1.80601 1.49989 2.8002 1.5L11.054 1.50089C11.5312 1.50094 11.9889 1.6873 12.3264 2.01898L12.409 2.10015C12.1717 1.90644 11.8 2.06966 11.8 2.38376M18.1 8.57612H13.6C12.6059 8.57612 11.8 7.784 11.8 6.80687V2.38376M18.1 8.57612C18.4321 8.57612 18.5984 8.18112 18.3636 7.95029L12.4364 2.12436C12.2015 1.89353 11.8 2.05732 11.8 2.38376" stroke="#FF4978" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <div class="text">{{mainQuestionFormModal.file.name}}</div>
-                    </span>
-                </label>
-                <label class="main-question-form-item checkbox" v-if="window.width <= 1023">
-                    <input type="checkbox">
-                    <div class="main-question-form-checkbox"></div>
-                    <div class="main-question-form-text">
-                        Я согласен на обработку <a href="privacy.html">моих персональных данных</a> и ознакомился с <a href="privacy.html">политикой обработки персональных данных</a>
-                    </div>
-                </label>
-                <div class="main-question-form-item button">
-                    <button type="submit" class="button button--main"  @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
-                        <div class="text">Отправить заявку</div>
-                    </button>
-                </div>
-                <label class="main-question-form-item checkbox" v-if="window.width > 1023">
-                    <input type="checkbox" name="checkbox" value="1">
-                    <div class="main-question-form-checkbox"></div>
-                    <div class="main-question-form-text">
-                        Я согласен на обработку <a href="privacy.html">моих персональных данных</a> и ознакомился с <a href="privacy.html">политикой обработки персональных данных</a>
-                    </div>
-                </label>
-            </div>
-        </div>
-    </form>
-</section>
-        </div>
-    </div>
-</div>
-        </div>
         <script src="js/main.js"></script>
         <script src="js/vendor.js"></script>
+        <script src="js/preloader.js" defer></script>
+        <script src="js/header.js" defer></script>
+        <script src="js/footer.js" defer></script>
+        <script src="js/cookie-form.js" defer></script>
         <script src="js/custom.js"></script>
     </body>
 </html>

@@ -2114,6 +2114,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     // }, 1500);
 
     setTimeout(function () {
+      var _document$querySelect;
       var preloader = document.querySelector('.preloader svg animateTransform');
       preloader.addEventListener('endEvent', function () {
         _this.isPreloaderHidden = true;
@@ -2154,7 +2155,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       window.addEventListener("orientationchange", function (event) {
         location.reload();
       });
-      document.querySelector('.footer-bank .copy').addEventListener('click', function () {
+      (_document$querySelect = document.querySelector('.footer-bank .copy')) === null || _document$querySelect === void 0 ? void 0 : _document$querySelect.addEventListener('click', function () {
         return _this.footer.copyText({
           text: 'ИНН/КПП: 6317139806/631701001 Банк: АО "Тинькофф Банк" БИК: 044525974 Р/С: 40702810010000559615 Р/С: 40702810010000559615'
         });
