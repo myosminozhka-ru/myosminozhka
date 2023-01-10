@@ -544,14 +544,6 @@
   </div>
 </footer>
 
-            <div class="cookie-form" :class="{'mobile': window.width <= 1023}" v-if="!cookiesForm.isClosedOnce">
-    <div class="cookie-form__in">
-        <div class="cookie-form__message">Мы используем куки на всех своих сайтах, включая этот, потому что без кук вообще весь интернет работал бы через жопу</div>
-        <div class="cookie-form__button" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
-            <span>Понятно</span>
-        </div>
-    </div>
-</div>
             <div id="preloader" class="preloader" :class="{'isHidden': isPreloaderHidden, 'mobile': window.width <= 1023}">
     <div class="preloader__in">
         <div class="preloader__image">
