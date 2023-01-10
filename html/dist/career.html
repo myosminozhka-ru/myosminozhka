@@ -277,11 +277,15 @@
     <div class="glide career-blog-items">
         <div class="career-blog-buttons">
             <div class="career-blog-buttons-left">
-                <button class="news-and-trends-button news-and-trends-button__main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
-                    <span>Команда</span>
+                <button class="news-and-trends-button btn btn--pink" :class="{'mobile': window.width <= 1023}">
+                    <span class="btn__content">
+                        <span class="btn__text">Команда</span>
+                    </span>
                 </button>
-                <button class="news-and-trends-button news-and-trends-button__mint" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
-                    <span>Разработка</span>
+                <button class="news-and-trends-button btn btn--pink" :class="{'mobile': window.width <= 1023}">
+                    <span class="btn__content">
+                        <span class="btn__text">Разработка</span>
+                    </span>
                 </button>
             </div>
             <div data-glide-el="controls" class="glide__arrows company-reviews-arrows">
@@ -486,8 +490,6 @@
                     <path d="M0.261719 42.3773V44.0234H1.96517H3.66862V42.3773V40.7311H1.96517H0.261719V42.3773Z" fill="currentColor"/>
                     </svg>
             </a>
-
-
 
             <a href="#" class="footer-social">
                 <svg viewBox="0 0 50 32" fill="none" xmlns="http://www.w3.org/2000/svg">

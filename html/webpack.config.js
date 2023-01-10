@@ -31,6 +31,7 @@ module.exports = {
         'upload-form-file': './src/blocks/modules/upload-form-file/module.upload-form-file.js',
         'cookie-form': './src/blocks/modules/cookie-form/module.cookie-form.js',
         'map': './src/blocks/modules/map/module.map.js',
+        'company-reviews': './src/blocks/modules/company-reviews/module.company-reviews.js',
         footer: './src/blocks/modules/footer/module.footer.js',
     },
 
