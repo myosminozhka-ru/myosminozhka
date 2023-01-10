@@ -1,5 +1,12 @@
+import Glide from '@glidejs/glide';
 class CompanyReviews {
     constructor() {
+        this.slider;
+        this.translate = 0;
+        this.index = 0;
+        this.elementWidth = 0;
+        this.allElementsWidth = 0;
+
         this.companyReviewsItems = document.querySelectorAll('.company-reviews-item');
         this.companyReviewsModal = document.querySelector('.company-reviews-item-modal');
         this.companyReviewsModalClose = this.companyReviewsModal?.querySelector('.company-reviews-item-modal__close');
@@ -8,9 +15,44 @@ class CompanyReviews {
     }
 
     onInit() {
+        this.onInitSlider();
         this.onClickShowMore();
         this.onClickCloseModal();
         this.onClickCompanyReviewsModal();
+    }
+
+    /**
+     * Ширина слайда
+     */
+    countElementWidth() {
+        this.elementWidth = document.querySelector('.company-reviews-item:not(glide__slide--active)').offsetWidth + 100;
+    }
+
+    /**
+     * Инициализация слайдера
+     */
+    onInitSlider() {
+        if (!document.querySelector('.company-reviews__slider')) return;
+
+        this.slider = new Glide('.company-reviews__slider', {
+            type: 'carousel',
+            startAt: 1,
+            perView: 1.5,
+            gap: 100,
+            breakpoints: {
+                1023: {
+                    perView: 1
+                }
+            }
+        });
+
+        if (window.innerWidth > 1023) {
+            this.slider.mount();
+            this.index = this.slider.index;
+            this.countElementWidth();
+        } else {
+            this.slider.mount();
+        }
     }
 
     /**
