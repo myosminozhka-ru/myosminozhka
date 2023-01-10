@@ -70,7 +70,7 @@ const header = class Header {
             document.querySelector('.header-phone_opener').addEventListener('click', () => {
                 this.openPhonesModal();
             })
-            document.querySelector('.header-phone_modal_closer').addEventListener('click', (event) => {
+            document.querySelector('.header-phone_modal_closer')?.addEventListener('click', (event) => {
                 event.stopPropagation();
                 this.closePhonesModal();
             })

@@ -11,8 +11,9 @@
 }
 
 .cases__tags {
+    position: absolute;
     padding: vw(32);
-    z-index: 1;
+    z-index: 3;
 
     &.mobile {
         padding: 15px 20px;
@@ -85,4 +86,21 @@
     // &--active {
     //     pointer-events: none;
     // }
+}
+
+.cases-detail:not(.mobile) {
+    margin-bottom: 70px;
+    padding-bottom: 70px;
+}
+
+.cases-detail.mobile {
+    padding-bottom: 50px;
+}
+
+.job-stages-management.mobile {
+    padding-bottom: 50px;
+}
+
+.job-stages-management:not(.mobile) {
+    margin-bottom: 140px;
 }

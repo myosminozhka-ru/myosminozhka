@@ -22,7 +22,12 @@
     text-align: center;
   }
 
+  &__icon {
+    position: relative;
+  }
+
   &--border-pink,
+  &--border-grey,
   &--pink {
     font-size: vw(25);
 
@@ -32,6 +37,8 @@
     }
 
     &.mobile {
+      font-size: 24px;
+
       .btn__content {
         border-radius: 10px;
         padding: 20px 24px;
@@ -56,14 +63,6 @@
       }
     }
 
-    &.mobile {
-      font-size: 24px;
-
-      .btn__content {
-        padding: 20px 24px;
-      }
-    }
-
     .btn__content {
       &::before {
         content: "";
@@ -73,7 +72,7 @@
         transform: translate(-50%, -50%) scale(0);
         transform-origin: center;
         border-radius: 100%;
-        width: 110%;
+        width: 200%;
         padding-bottom: 100%;
         opacity: 0;
         transition: all .5s ease;
@@ -86,6 +85,7 @@
       .btn__content {
         &::before {
           opacity: 1;
+          border-radius: 0;
           transform: translate(-50%, -50%) scale(1);
         }
       }
@@ -107,6 +107,7 @@
     .btn__content {
       background-color: transparent;
       border: vw(1) solid $darkGray;
+      border-width: vw(1);
 
       &::before {
         background-color: $mainColor;
@@ -117,6 +118,34 @@
       .btn__content {
         border-width: 1px;
       }
+    }
+
+    &.active {
+      color: $white;
+    }
+  }
+
+  &--border-grey {
+    color: #929292;
+
+    .btn__content {
+      background-color: transparent;
+      border: vw(1) solid #929292;
+      border-width: vw(1);
+
+      &::before {
+        background-color: $mainColor;
+      }
+    }
+
+    &.mobile {
+      .btn__content {
+        border-width: 1px;
+      }
+    }
+
+    &:hover {
+      color: $white;
     }
 
     &.active {
@@ -142,6 +171,30 @@
 
     &.active {
       color: $mainColor;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .btn:not(.mobile) {
+    &.btn--border-pink,
+    &.btn--border-grey,
+    &.btn--pink {
+      font-size: 24px;
+
+      .btn__content {
+        border-radius: 10px;
+        padding: 20px 24px;
+      }
+
+      &.btn--small {
+        font-size: 14px;
+
+        .btn__content {
+          padding: 12px;
+            border-radius: 8px;
+        }
+      }
     }
   }
 }

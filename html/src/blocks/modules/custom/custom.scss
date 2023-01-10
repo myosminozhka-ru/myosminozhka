@@ -225,7 +225,8 @@ body:not(.main) .wrapper:not(.services-page):not(.internet-marketing-page):not(.
     border-color: #31A500 !important;
 }
 .news-and-trends-item-green {
-    border: 0.26042vw solid #31A500;
+    // border: 0.26042vw solid #31A500;
+    border: 0.26042vw solid #FF4978;
 }
 .news-and-trends-button__brown {
     border-color: #A37300 !important;
@@ -754,7 +755,14 @@ width: 70px;
 body.main .main-resume.mobile {
     padding-bottom: 40px !important;
 }
-.main-question:not(.mobile) .main-question-inputs textarea {
+
+.main-question.mobile .main-question-inputs textarea.inputtext {
+    overflow-x: hidden;
+    max-height: unset;
+    margin-right: 0;
+}
+
+.main-question:not(.mobile) .main-question-inputs textarea.inputtext {
     overflow-x: hidden;
 }
 .company-team.mobile .company-team-item-more .text {
@@ -1118,8 +1126,9 @@ margin:0 30px;
     .header-lang__delim {
         margin: 0;
     }
-    .header-logo:not(.mobile) {
-        padding-top: 1.4vw;
+    a.header-logo:not(.mobile) {
+        padding-top: 1vw;
+        padding-bottom: 1vw;
     }
     .main-words:not(.mobile) {
         padding-top: 17.42083vw;
@@ -1448,9 +1457,9 @@ html.overflowed body {
 .career-blog.mobile .more_cases {
     display: none !important;
 }
-.career-page .footer:not(.mobile) .footer-tentacle {
-    top: -27.45833vw !important;
-}
+// .career-page .footer:not(.mobile) .footer-tentacle {
+//     top: -27.45833vw !important;
+// }
 .services-page .job-first,
 .internet-marketing-page .job-first,
 .branding-page .job-first {

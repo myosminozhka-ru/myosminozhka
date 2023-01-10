@@ -189,11 +189,6 @@ window.mainQuestion = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
     setTimeout(function () {
       _this.isSafary = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
     }, 0);
-  },
-  methods: {
-    onChange: function onChange(formName, event) {
-      this.forms[formName].uploadFile = event.target.files[0];
-    }
   }
 });
 

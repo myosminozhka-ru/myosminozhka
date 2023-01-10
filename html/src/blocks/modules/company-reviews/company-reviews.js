@@ -4,9 +4,9 @@ const companyReviews = class companyReviews {
     constructor(sliderClass) {
         this.slider = new Glide('.company-reviews-slider', {
             type: 'carousel',
-            focusAt: 'center',
+            // focusAt: 'center',
             startAt: 1,
-            perView: 2,
+            perView: 1.5,
             gap: 100,
             breakpoints: {
                 1023: {

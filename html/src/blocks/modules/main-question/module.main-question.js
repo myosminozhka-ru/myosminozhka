@@ -19,9 +19,4 @@ window.mainQuestion = new Vue({
             this.isSafary = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
         }, 0)
     },
-    methods: {
-        onChange(formName, event) {
-            this.forms[formName].uploadFile = event.target.files[0];
-        }
-    }
 })

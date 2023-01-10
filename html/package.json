@@ -82,7 +82,7 @@
         "moment": "^2.29.1",
         "slick-carousel": "^1.8.1",
         "smart-grid": "^2.1.2",
-        "vue": "^2.6.14"
+        "vue": "^2.7.12"
     },
     "lint-staged": {
         "!(_*).scss": [

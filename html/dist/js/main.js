@@ -715,9 +715,9 @@ var companyReviews = /*#__PURE__*/function () {
     _classCallCheck(this, companyReviews);
     this.slider = new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.company-reviews-slider', {
       type: 'carousel',
-      focusAt: 'center',
+      // focusAt: 'center',
       startAt: 1,
-      perView: 2,
+      perView: 1.5,
       gap: 100,
       breakpoints: {
         1023: {
@@ -862,9 +862,9 @@ var companyVideo = /*#__PURE__*/function () {
             autoplay: true,
             aspectRatio: '16:9',
             muted: true,
-            // poster: '../local/img/video_preview.png',
+            // poster: '/img/video_preview.png',
             sources: [{
-              src: '../local/videos/pl1.mp4',
+              src: '/videos/pl1.mp4',
               type: 'video/mp4'
             }]
           });
@@ -880,9 +880,9 @@ var companyVideo = /*#__PURE__*/function () {
             autoplay: true,
             aspectRatio: '16:9',
             muted: true,
-            // poster: '../local/img/video_preview.png',
+            // poster: '/img/video_preview.png',
             sources: [{
-              src: '../local/videos/pl2.mp4',
+              src: '/videos/pl2.mp4',
               type: 'video/mp4'
             }]
           });
@@ -898,9 +898,9 @@ var companyVideo = /*#__PURE__*/function () {
             autoplay: true,
             aspectRatio: '16:9',
             muted: true,
-            // poster: '../local/img/video_preview.png',
+            // poster: '/img/video_preview.png',
             sources: [{
-              src: '../local/videos/pl3.mp4',
+              src: '/videos/pl3.mp4',
               type: 'video/mp4'
             }]
           });
@@ -916,9 +916,9 @@ var companyVideo = /*#__PURE__*/function () {
             autoplay: true,
             aspectRatio: '16:9',
             muted: true,
-            // poster: '../local/img/video_preview.png',
+            // poster: '/img/video_preview.png',
             sources: [{
-              src: '../local/videos/pl4.mp4',
+              src: '/videos/pl4.mp4',
               type: 'video/mp4'
             }]
           });
@@ -934,9 +934,9 @@ var companyVideo = /*#__PURE__*/function () {
             autoplay: true,
             aspectRatio: '16:9',
             muted: true,
-            // poster: '../local/img/video_preview.png',
+            // poster: '/img/video_preview.png',
             sources: [{
-              src: '../local/videos/pl5.mp4',
+              src: '/videos/pl5.mp4',
               type: 'video/mp4'
             }]
           });
@@ -952,9 +952,9 @@ var companyVideo = /*#__PURE__*/function () {
             autoplay: true,
             aspectRatio: '16:9',
             muted: true,
-            // poster: '../local/img/video_preview.png',
+            // poster: '/img/video_preview.png',
             sources: [{
-              src: '../local/videos/pl7.mp4',
+              src: '/videos/pl7.mp4',
               type: 'video/mp4'
             }]
           });
@@ -970,9 +970,9 @@ var companyVideo = /*#__PURE__*/function () {
             autoplay: true,
             aspectRatio: '16:9',
             muted: true,
-            // poster: '../local/img/video_preview.png',
+            // poster: '/img/video_preview.png',
             sources: [{
-              src: '../local/videos/pl8.mp4',
+              src: '/videos/pl8.mp4',
               type: 'video/mp4'
             }]
           });
@@ -988,9 +988,9 @@ var companyVideo = /*#__PURE__*/function () {
             autoplay: true,
             aspectRatio: '16:9',
             muted: true,
-            // poster: '../local/img/video_preview.png',
+            // poster: '/img/video_preview.png',
             sources: [{
-              src: '../local/videos/pl9.mp4',
+              src: '/videos/pl9.mp4',
               type: 'video/mp4'
             }]
           });
@@ -1006,9 +1006,9 @@ var companyVideo = /*#__PURE__*/function () {
             autoplay: true,
             aspectRatio: '16:9',
             muted: true,
-            // poster: '../local/img/video_preview.png',
+            // poster: '/img/video_preview.png',
             sources: [{
-              src: '../local/videos/pl10.mp4',
+              src: '/videos/pl10.mp4',
               type: 'video/mp4'
             }]
           });
@@ -1024,9 +1024,9 @@ var companyVideo = /*#__PURE__*/function () {
             autoplay: true,
             aspectRatio: '16:9',
             muted: true,
-            // poster: '../local/img/video_preview.png',
+            // poster: '/img/video_preview.png',
             sources: [{
-              src: '../local/videos/pl11.mp4',
+              src: '/videos/pl11.mp4',
               type: 'video/mp4'
             }]
           });
@@ -1042,9 +1042,9 @@ var companyVideo = /*#__PURE__*/function () {
             autoplay: true,
             aspectRatio: '16:9',
             muted: true,
-            // poster: '../local/img/video_preview.png',
+            // poster: '/img/video_preview.png',
             sources: [{
-              src: '../local/videos/pl12.mp4',
+              src: '/videos/pl12.mp4',
               type: 'video/mp4'
             }]
           });
@@ -1060,9 +1060,9 @@ var companyVideo = /*#__PURE__*/function () {
             autoplay: true,
             aspectRatio: '16:9',
             muted: true,
-            // poster: '../local/img/video_preview.png',
+            // poster: '/img/video_preview.png',
             sources: [{
-              src: '../local/videos/pl13.mp4',
+              src: '/videos/pl13.mp4',
               type: 'video/mp4'
             }]
           });
@@ -1078,9 +1078,9 @@ var companyVideo = /*#__PURE__*/function () {
             autoplay: true,
             aspectRatio: '16:9',
             muted: true,
-            // poster: '../local/img/video_preview.png',
+            // poster: '/img/video_preview.png',
             sources: [{
-              src: '../local/videos/pl14.mp4',
+              src: '/videos/pl14.mp4',
               type: 'video/mp4'
             }]
           });
@@ -1096,9 +1096,9 @@ var companyVideo = /*#__PURE__*/function () {
             autoplay: true,
             aspectRatio: '16:9',
             muted: true,
-            // poster: '../local/img/video_preview.png',
+            // poster: '/img/video_preview.png',
             sources: [{
-              src: '../local/videos/pl15.mp4',
+              src: '/videos/pl15.mp4',
               type: 'video/mp4'
             }]
           });
@@ -1114,9 +1114,9 @@ var companyVideo = /*#__PURE__*/function () {
             autoplay: true,
             aspectRatio: '16:9',
             muted: true,
-            // poster: '../local/img/video_preview.png',
+            // poster: '/img/video_preview.png',
             sources: [{
-              src: '../local/videos/pl16.mp4',
+              src: '/videos/pl16.mp4',
               type: 'video/mp4'
             }]
           });
@@ -1132,9 +1132,9 @@ var companyVideo = /*#__PURE__*/function () {
             autoplay: true,
             aspectRatio: '16:9',
             muted: true,
-            // poster: '../local/img/video_preview.png',
+            // poster: '/img/video_preview.png',
             sources: [{
-              src: '../local/videos/pl17.mp4',
+              src: '/videos/pl17.mp4',
               type: 'video/mp4'
             }]
           });
@@ -1150,9 +1150,9 @@ var companyVideo = /*#__PURE__*/function () {
             autoplay: true,
             aspectRatio: '16:9',
             muted: true,
-            // poster: '../local/img/video_preview.png',
+            // poster: '/img/video_preview.png',
             sources: [{
-              src: '../local/videos/medex.mp4',
+              src: '/videos/medex.mp4',
               type: 'video/mp4'
             }]
           });
@@ -1168,9 +1168,9 @@ var companyVideo = /*#__PURE__*/function () {
             autoplay: true,
             aspectRatio: '16:9',
             muted: true,
-            // poster: '../local/img/video_preview.png',
+            // poster: '/img/video_preview.png',
             sources: [{
-              src: '../local/videos/pl18.mp4',
+              src: '/videos/pl18.mp4',
               type: 'video/mp4'
             }]
           });
@@ -1186,9 +1186,9 @@ var companyVideo = /*#__PURE__*/function () {
             autoplay: true,
             aspectRatio: '16:9',
             muted: true,
-            // poster: '../local/img/video_preview.png',
+            // poster: '/img/video_preview.png',
             sources: [{
-              src: '../local/videos/pl19.mp4',
+              src: '/videos/pl19.mp4',
               type: 'video/mp4'
             }]
           });
@@ -1204,9 +1204,9 @@ var companyVideo = /*#__PURE__*/function () {
             autoplay: true,
             aspectRatio: '16:9',
             muted: true,
-            // poster: '../local/img/video_preview.png',
+            // poster: '/img/video_preview.png',
             sources: [{
-              src: '../local/videos/pl20.mp4',
+              src: '/videos/pl20.mp4',
               type: 'video/mp4'
             }]
           });
@@ -1532,10 +1532,11 @@ var header = /*#__PURE__*/function () {
       this.setHeaderWavePositionOnLoad();
       this.onInit();
       if (document.querySelector('.header-phone_opener')) {
+        var _document$querySelect;
         document.querySelector('.header-phone_opener').addEventListener('click', function () {
           _this.openPhonesModal();
         });
-        document.querySelector('.header-phone_modal_closer').addEventListener('click', function (event) {
+        (_document$querySelect = document.querySelector('.header-phone_modal_closer')) === null || _document$querySelect === void 0 ? void 0 : _document$querySelect.addEventListener('click', function (event) {
           event.stopPropagation();
           _this.closePhonesModal();
         });
@@ -3453,6 +3454,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       _this.isPreloaderHidden = true;
     });
     setTimeout(function () {
+      var _document$querySelect;
       _this.isMounted = true;
       _this.mainCases.init();
       // this.mainWords.countPosition();
@@ -3504,7 +3506,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       window.addEventListener("orientationchange", function (event) {
         location.reload();
       });
-      document.querySelector('.footer-bank .copy').addEventListener('click', function () {
+      (_document$querySelect = document.querySelector('.footer-bank .copy')) === null || _document$querySelect === void 0 ? void 0 : _document$querySelect.addEventListener('click', function () {
         return _this.footer.copyText({
           text: 'ИНН/КПП: 6317139806/631701001 Банк: АО "Тинькофф Банк" БИК: 044525974 Р/С: 40702810010000559615 Р/С: 40702810010000559615'
         });
