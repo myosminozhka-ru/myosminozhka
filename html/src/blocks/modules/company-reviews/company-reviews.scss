@@ -23,128 +23,127 @@
         font-size: 45px;
         line-height: 55px;
     }
-    
     &-track, &-track *,
     &__track, &__track * {
         overflow: visible;
     }
-    // &-item {
-    //     background: #FFFFFF;
+    &-item {
+        background: #FFFFFF;
            
-    // }
-    // &:not(.mobile) &-item {
-    //     display: flex;
-    //     padding: vw(40);
-    //     box-shadow: 0px vw(4) vw(10) rgba(64, 64, 64, 0.34);
-    //     border-radius: vw(10);
-    //     width: 100%;
-    //     // &:not(.glide__slide--active) {
-    //     //     width: vw(247) !important;
-    //     // }
-    //     // &.glide__slide--active {
-    //     //     width: calc(100vw - #{vw(100)} - 200px - #{vw(247)} * 2 ) !important;
-    //     //     .company-reviews-item-right {
-    //     //         opacity: 1 !important;
-    //     //     }
-    //     // }
-    // }
-    // &.mobile  &-item {
-    //     padding: 20px;
-    //     box-shadow: 0px 4px 10px rgba(64, 64, 64, 0.34);
-    //     border-radius: 10px;
-    // }
-    // &-item-left {
-    //     box-sizing: border-box;
-    // }
-    // &:not(.mobile) &-item-left {
-    //     width: vw(187);
-    //     padding-right: vw(40);
-    // }
-    // &.mobile &-item-left {
-    //     width: 100%;
-    //     margin-bottom: 10px;
-    //     .image {
-    //         width: 126px;
-    //     }
-    // }
-    // &-item-right {
-    //     box-sizing: border-box;
-    //     overflow: hidden;        
-    // }
-    // &:not(.mobile) &-item-right {
-    //     width: calc(100% - #{vw(187)});
-    //     padding-left: vw(40);
-    //     border-left: vw(3) solid rgba(79, 79, 79, 0.6);
-    //     // transition: .2s width .2s ease, 0.6s opacity 0.6s ease;
-    //     // opacity: 0;
-    //     // max-height: vw(450);
-    // }
-    // &.mobile &-item-right {
-    //     width: 100%;
-    //     padding-top: 20px;
-    //     border-top: 3px solid rgba(79, 79, 79, 0.6);
+    }
+    &:not(.mobile) &-item {
+        display: flex;
+        padding: vw(40);
+        box-shadow: 0px vw(4) vw(10) rgba(64, 64, 64, 0.34);
+        border-radius: vw(10);
+        width: 100%;
+        // &:not(.glide__slide--active) {
+        //     width: vw(247) !important;
+        // }
+        // &.glide__slide--active {
+        //     width: calc(100vw - #{vw(100)} - 200px - #{vw(247)} * 2 ) !important;
+        //     .company-reviews-item-right {
+        //         opacity: 1 !important;
+        //     }
+        // }
+    }
+    &.mobile  &-item {
+        padding: 20px;
+        box-shadow: 0px 4px 10px rgba(64, 64, 64, 0.34);
+        border-radius: 10px;
+    }
+    &-item-left {
+        box-sizing: border-box;
+    }
+    &:not(.mobile) &-item-left {
+        width: vw(187);
+        padding-right: vw(40);
+    }
+    &.mobile &-item-left {
+        width: 100%;
+        margin-bottom: 10px;
+        .image {
+            width: 126px;
+        }
+    }
+    &-item-right {
+        box-sizing: border-box;
+        overflow: hidden;        
+    }
+    &:not(.mobile) &-item-right {
+        width: calc(100% - #{vw(187)});
+        padding-left: vw(40);
+        border-left: vw(3) solid rgba(79, 79, 79, 0.6);
+        // transition: .2s width .2s ease, 0.6s opacity 0.6s ease;
+        // opacity: 0;
+        // max-height: vw(450);
+    }
+    &.mobile &-item-right {
+        width: 100%;
+        padding-top: 20px;
+        border-top: 3px solid rgba(79, 79, 79, 0.6);
         
-    // }
-    // &-item-name {
-    //     font-weight: 500;
-    //     color: $bgColor;
-    //     // transition: .2s all .2s ease;
-    // }
-    // .button {
-    //     overflow: hidden;
-    // }
-    // &:not(.mobile) &-item-name {
-    //     font-size: vw(50);
-    //     line-height: vw(60);
-    //     margin-bottom: vw(15);
-    // }
-    // &.mobile &-item-name {
-    //     font-size: 30px;
-    //     line-height: 30px;
-    //     margin-bottom: 15px;        
-    // }
-    // &-item-position {
-    //     font-weight: normal;         
-    // }
-    // &:not(.mobile) &-item-position {
-    //     font-size: vw(25);
-    //     line-height: vw(25);
-    //     margin-bottom: vw(30);
-    //     // transition: .2s all .2s ease;
-    // }
-    // &.mobile &-item-position {
-    //     font-size: 20px;
-    //     line-height: 20px;
-    //     margin-bottom: 30px;     
-    // }
-    // &-item-text {
-    //     font-weight: normal;
-    // }
-    // &:not(.mobile) &-item-text {
-    //     font-size: vw(20);
-    //     line-height: vw(30);
-    //     margin-bottom: vw(40);
-    //     // transition: .2s all .2s ease; 
-    // }
-    // &.mobile &-item-text {
-    //     font-size: 16px;
-    //     line-height: 22px;
-    //     margin-bottom: 30px;     
-    // }
-    // &:not(.mobile) &-item-button {
-    //     max-width: vw(400);
-    //     .button {
-    //         border: 1px solid transparent;
-    //     }
-    // }
-    // &.mobile &-item-button {
-    //     button, a {
-    //         padding: 25px;
-    //         max-width: 390px;
-    //         width: 100%;
-    //         font-size: 20px;
-    //     }
-    // }
+    }
+    &-item-name {
+        font-weight: 500;
+        color: $bgColor;
+        // transition: .2s all .2s ease;
+    }
+    .button {
+        overflow: hidden;
+    }
+    &:not(.mobile) &-item-name {
+        font-size: vw(50);
+        line-height: vw(60);
+        margin-bottom: vw(15);
+    }
+    &.mobile &-item-name {
+        font-size: 30px;
+        line-height: 30px;
+        margin-bottom: 15px;        
+    }
+    &-item-position {
+        font-weight: normal;         
+    }
+    &:not(.mobile) &-item-position {
+        font-size: vw(25);
+        line-height: vw(25);
+        margin-bottom: vw(30);
+        // transition: .2s all .2s ease;
+    }
+    &.mobile &-item-position {
+        font-size: 20px;
+        line-height: 20px;
+        margin-bottom: 30px;     
+    }
+    &-item-text {
+        font-weight: normal;
+    }
+    &:not(.mobile) &-item-text {
+        font-size: vw(20);
+        line-height: vw(30);
+        margin-bottom: vw(40);
+        // transition: .2s all .2s ease; 
+    }
+    &.mobile &-item-text {
+        font-size: 16px;
+        line-height: 22px;
+        margin-bottom: 30px;     
+    }
+    &:not(.mobile) &-item-button {
+        max-width: vw(400);
+        .button {
+            border: 1px solid transparent;
+        }
+    }
+    &.mobile &-item-button {
+        button, a {
+            padding: 25px;
+            max-width: 390px;
+            width: 100%;
+            font-size: 20px;
+        }
+    }
     // &-item:not(.glide__slide--active) &-item-left {
     //     padding-left: 0;
     //     padding-right: 0;
@@ -224,7 +223,7 @@
 
 
 
-.company-reviews-item {
+.company-reviews-item-stage-2 {
     padding-left: vw(20);
     padding-bottom: vw(20);
 
@@ -234,7 +233,7 @@
     }
 }
 
-.company-reviews-item__content {
+.company-reviews-item-stage-2__content {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -269,7 +268,7 @@
     }
 }
 
-.company-reviews-item__wrapper-logo {
+.company-reviews-item-stage-2__wrapper-logo {
     position: relative;
     width: vw(160);
     height: vw(125);
@@ -283,7 +282,7 @@
     }
 }
 
-.company-reviews-item__img {
+.company-reviews-item-stage-2__logo {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -293,7 +292,7 @@
     object-fit: cover;
 }
 
-.company-reviews-item__name {
+.company-reviews-item-stage-2__name {
     font-weight: 700;
     font-size: vw(50);
     line-height: 120%;
@@ -307,7 +306,7 @@
     }
 }
 
-.company-reviews-item__text {
+.company-reviews-item-stage-2__text {
     font-size: vw(20);
     line-height: 150%;
     margin-bottom: vw(16);
@@ -324,7 +323,7 @@
     }
 }
 
-.company-reviews-item__show-more {
+.company-reviews-item-stage-2__show-more {
     font-size: vw(20);
     font-weight: 400;
     line-height: 150%;
@@ -344,7 +343,7 @@
     }
 }
 
-.company-reviews-item__btn {
+.company-reviews-item-stage-2__btn {
     font-weight: 500;
 
     &.btn {
@@ -354,7 +353,7 @@
     }
 }
 
-.company-reviews-item__decor {
+.company-reviews-item-stage-2__decor {
     position: absolute;
     right: 0;
     bottom: 0;
