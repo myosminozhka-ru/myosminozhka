@@ -17127,7 +17127,7 @@ html:root body.posts .post_info__code--in {
 }
 
 .vineta .container {
-  max-width: 1810px;
+  max-width: 1850px;
   padding: 0 15px;
   margin: 0 auto;
 }
@@ -17176,6 +17176,10 @@ html:root body.posts .post_info__code--in {
   overflow: hidden;
   position: relative;
   width: 100%;
+}
+
+.vineta .intro .cookie-form__button {
+  display: none;
 }
 
 .vineta .intro::after {
@@ -17449,6 +17453,7 @@ html:root body.posts .post_info__code--in {
   font-weight: 600;
   font-size: 16px;
   line-height: 1.3;
+  padding-top: 15px;
 }
 
 .vineta .begin__right {
@@ -17540,6 +17545,7 @@ html:root body.posts .post_info__code--in {
   font-weight: 600;
   font-size: 16px;
   line-height: 1.3;
+  padding-top: 15px;
 }
 
 .vineta .typografy__top-right {
@@ -17774,9 +17780,8 @@ html:root body.posts .post_info__code--in {
 .vineta .main_page-video {
   overflow: hidden;
   width: 100%;
-  max-width: 1700px;
-  margin: 0 auto;
-  margin-bottom: 88px;
+  max-width: 1647px;
+  margin: 0 auto 20px;
 }
 
 .vineta .main_page-video::after {
@@ -17942,6 +17947,7 @@ html:root body.posts .post_info__code--in {
   position: absolute;
   bottom: -55px;
   right: -139px;
+  z-index: -1;
 }
 
 .vineta .v-footer::before {
@@ -21056,6 +21062,30 @@ html.overflowed body {
 @media (max-width: 1870px) {
   .vineta .intro::after {
     right: -200px;
+  }
+
+  .vineta .intro::before {
+    left: 15px;
+  }
+
+  .vineta .begin::before {
+    left: 15px;
+  }
+
+  .vineta .typografy::before {
+    left: 15px;
+  }
+
+  .vineta .colors:before {
+    left: 15px;
+  }
+
+  .vineta .main_page:before {
+    left: 15px;
+  }
+
+  .vineta .v-footer::before {
+    left: 15px;
   }
 }
 
@@ -25874,6 +25904,10 @@ html.overflowed body {
     gap: 16px;
   }
 
+  .vineta .task__card-bottom {
+    min-height: 125px;
+  }
+
   .vineta .begin {
     padding-top: 88px !important;
   }
@@ -26515,17 +26549,26 @@ html.overflowed body {
     max-width: 80%;
   }
 
+  .vineta .steps__right {
+    max-width: 100%;
+  }
+
   .vineta .steps__right::before {
-    width: 51px;
+    transform: scale(0.7);
+    left: -14px;
+    top: 23px;
   }
 
   .vineta .steps__right::after {
-    width: 51px;
+    transform: scale(0.7);
+    right: 0;
+    bottom: 100px;
   }
 
   .vineta .steps__right-text {
     font-size: 14px;
-    margin-bottom: 48px;
+    max-width: 80%;
+    margin: 0 auto 48px;
   }
 
   .vineta .steps__topics {
@@ -27094,6 +27137,12 @@ html.overflowed body {
   .medex .medex_brendbook__color {
     width: 60px;
     height: 60px;
+  }
+}
+
+@media (max-width: 360px) {
+  .vineta .tech {
+    background: #F2F2F2 !important;
   }
 }
 
