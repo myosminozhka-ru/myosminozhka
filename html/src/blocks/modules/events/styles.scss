@@ -458,10 +458,12 @@
       @include _767-block{
         font-size: 18px;
         max-width: 180px;
+        margin-bottom: 0;
+        line-height: 1.3;
       }
       @include _575-block{
         font-size: 14px;
-        max-width: 102px;
+        max-width: 102px;      
       }
     }
     

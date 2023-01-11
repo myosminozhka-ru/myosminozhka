@@ -6904,25 +6904,31 @@ body.company .company-ceo:not(.mobile) {
 }
 
 .company-reviews-track,
-.company-reviews-track * {
+.company-reviews-track *,
+.company-reviews__track,
+.company-reviews__track * {
   overflow: visible;
 }
 
-.company-reviews-arrows {
+.company-reviews-arrows,
+.company-reviews__arrows {
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 
-.company-reviews-arrows button {
+.company-reviews-arrows button,
+.company-reviews__arrows button {
   position: static;
 }
 
-.company-reviews.mobile .company-reviews-arrows {
+.company-reviews.mobile .company-reviews-arrows,
+.company-reviews.mobile .company-reviews__arrows {
   margin-top: 30px;
 }
 
-.company-reviews-arrow {
+.company-reviews-arrow,
+.company-reviews__arrow {
   border: none;
   background: none;
   font-size: 0;
@@ -6932,34 +6938,41 @@ body.company .company-ceo:not(.mobile) {
   transition: all 0.3s ease;
 }
 
-.company-reviews-arrow svg {
+.company-reviews-arrow svg,
+.company-reviews__arrow svg {
   fill: #A0A0A0;
   transition: fill;
 }
 
-.company-reviews-arrow:hover {
+.company-reviews-arrow:hover,
+.company-reviews__arrow:hover {
   transform: scale(1.1);
 }
 
-.company-reviews-arrow:hover svg {
+.company-reviews-arrow:hover svg,
+.company-reviews__arrow:hover svg {
   fill: #121423;
 }
 
-.company-reviews-arrow--prev {
+.company-reviews-arrow--prev,
+.company-reviews__arrow--prev {
   transform: rotate(180deg);
 }
 
-.company-reviews-arrow--prev:hover {
+.company-reviews-arrow--prev:hover,
+.company-reviews__arrow--prev:hover {
   transform: rotate(180deg) scale(1.1);
 }
 
-.company-reviews:not(.mobile) .company-reviews-arrow {
+.company-reviews:not(.mobile) .company-reviews-arrow,
+.company-reviews:not(.mobile) .company-reviews__arrow {
   width: 3.125vw;
   height: 1.5625vw;
   padding: 2.34375vw;
 }
 
-.company-reviews.mobile .company-reviews-arrow {
+.company-reviews.mobile .company-reviews-arrow,
+.company-reviews.mobile .company-reviews__arrow {
   width: 86px;
   height: 32px;
   padding: 20px;
@@ -26061,6 +26074,8 @@ html.overflowed body {
   .events_slider-subtitle {
     font-size: 18px;
     max-width: 180px;
+    margin-bottom: 0;
+    line-height: 1.3;
   }
 }
 
