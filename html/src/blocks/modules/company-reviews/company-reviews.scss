@@ -23,7 +23,9 @@
         font-size: 45px;
         line-height: 55px;
     }
-    &-track, &-track * {
+    
+    &-track, &-track *,
+    &__track, &__track * {
         overflow: visible;
     }
     // &-item {
@@ -157,7 +159,8 @@
     //     // }
     // }
     
-    &-arrows {
+    &-arrows,
+    &__arrows {
         display: flex;
         align-items: center;
         justify-content: flex-end;
@@ -165,10 +168,12 @@
             position: static;
         }
     }
-    &.mobile &-arrows {
+    &.mobile &-arrows,
+    &.mobile &__arrows {
         margin-top: 30px;
     }
-    &-arrow {
+    &-arrow,
+    &__arrow {
         border: none;
         background: none;
         font-size: 0;
@@ -194,12 +199,14 @@
             }
         }
     }
-    &:not(.mobile) &-arrow {
+    &:not(.mobile) &-arrow,
+    &:not(.mobile) &__arrow {
         width: vw(60);
         height: vw(30);
         padding: vw(45);
     }
-    &.mobile &-arrow {
+    &.mobile &-arrow,
+    &.mobile &__arrow {
         width: 86px;
         height: 32px;
         padding: 20px;
