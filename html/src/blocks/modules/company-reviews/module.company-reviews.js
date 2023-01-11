@@ -7,7 +7,10 @@ class CompanyReviews {
         this.elementWidth = 0;
         this.allElementsWidth = 0;
 
-        this.companyReviewsItems = document.querySelectorAll('.company-reviews-item');
+        this.className = 'company-reviews-item-stage-2';
+
+        this.companyReviewsItems = document.querySelectorAll(`.${this.className}`);
+
         this.companyReviewsModal = document.querySelector('.company-reviews-item-modal');
         this.companyReviewsModalClose = this.companyReviewsModal?.querySelector('.company-reviews-item-modal__close');
         this.companyReviewsModalName = this.companyReviewsModal?.querySelector('.company-reviews-item-modal__name');
@@ -25,7 +28,7 @@ class CompanyReviews {
      * Ширина слайда
      */
     countElementWidth() {
-        this.elementWidth = document.querySelector('.company-reviews-item:not(glide__slide--active)').offsetWidth + 100;
+        this.elementWidth = document.querySelector(`.${this.className}:not(glide__slide--active)`).offsetWidth + 100;
     }
 
     /**
@@ -61,12 +64,12 @@ class CompanyReviews {
     onClickShowMore() {
         const self = this;
 
-        self.companyReviewsItems.forEach(item => {
-            const showMore = item.querySelector('.company-reviews-item__show-more');
+        this.companyReviewsItems.forEach(item => {
+            const showMore = item.querySelector(`.${self.className}__show-more`);
 
             showMore.addEventListener('click', function() {
-                const name = this.closest('.company-reviews-item').querySelector('.company-reviews-item__name').innerHTML;
-                const text = this.closest('.company-reviews-item').querySelector('.company-reviews-item__text').innerHTML;
+                const name = this.closest(`.${self.className}`).querySelector(`.${self.className}__name`).innerHTML;
+                const text = this.closest(`.${self.className}`).querySelector(`.${self.className}__text`).innerHTML;
 
                 if (self.companyReviewsModal) {
                     self.companyReviewsModalName.innerHTML = name;
@@ -112,7 +115,7 @@ class CompanyReviews {
             
             if (
                     openCompanyReviewsItemModal && 
-                    !e.target.classList.contains('company-reviews-item__show-more') && 
+                    !e.target.classList.contains(`${self.className}__show-more`) && 
                     !e.target.classList.contains('company-reviews-item-modal__content') && 
                     !e.target.closest('.company-reviews-item-modal__content')
                 ) {

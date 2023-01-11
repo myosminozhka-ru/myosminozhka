@@ -181,7 +181,8 @@ var CompanyReviews = /*#__PURE__*/function () {
     this.index = 0;
     this.elementWidth = 0;
     this.allElementsWidth = 0;
-    this.companyReviewsItems = document.querySelectorAll('.company-reviews-item');
+    this.className = 'company-reviews-item-stage-2';
+    this.companyReviewsItems = document.querySelectorAll(".".concat(this.className));
     this.companyReviewsModal = document.querySelector('.company-reviews-item-modal');
     this.companyReviewsModalClose = (_this$companyReviewsM = this.companyReviewsModal) === null || _this$companyReviewsM === void 0 ? void 0 : _this$companyReviewsM.querySelector('.company-reviews-item-modal__close');
     this.companyReviewsModalName = (_this$companyReviewsM2 = this.companyReviewsModal) === null || _this$companyReviewsM2 === void 0 ? void 0 : _this$companyReviewsM2.querySelector('.company-reviews-item-modal__name');
@@ -202,7 +203,7 @@ var CompanyReviews = /*#__PURE__*/function () {
   }, {
     key: "countElementWidth",
     value: function countElementWidth() {
-      this.elementWidth = document.querySelector('.company-reviews-item:not(glide__slide--active)').offsetWidth + 100;
+      this.elementWidth = document.querySelector(".".concat(this.className, ":not(glide__slide--active)")).offsetWidth + 100;
     }
 
     /**
@@ -239,11 +240,11 @@ var CompanyReviews = /*#__PURE__*/function () {
     key: "onClickShowMore",
     value: function onClickShowMore() {
       var self = this;
-      self.companyReviewsItems.forEach(function (item) {
-        var showMore = item.querySelector('.company-reviews-item__show-more');
+      this.companyReviewsItems.forEach(function (item) {
+        var showMore = item.querySelector(".".concat(self.className, "__show-more"));
         showMore.addEventListener('click', function () {
-          var name = this.closest('.company-reviews-item').querySelector('.company-reviews-item__name').innerHTML;
-          var text = this.closest('.company-reviews-item').querySelector('.company-reviews-item__text').innerHTML;
+          var name = this.closest(".".concat(self.className)).querySelector(".".concat(self.className, "__name")).innerHTML;
+          var text = this.closest(".".concat(self.className)).querySelector(".".concat(self.className, "__text")).innerHTML;
           if (self.companyReviewsModal) {
             self.companyReviewsModalName.innerHTML = name;
             self.companyReviewsModalText.innerHTML = text;
@@ -287,7 +288,7 @@ var CompanyReviews = /*#__PURE__*/function () {
       var self = this;
       document.addEventListener('click', function (e) {
         var openCompanyReviewsItemModal = this.querySelector('.company-reviews-item-modal--is-active');
-        if (openCompanyReviewsItemModal && !e.target.classList.contains('company-reviews-item__show-more') && !e.target.classList.contains('company-reviews-item-modal__content') && !e.target.closest('.company-reviews-item-modal__content')) {
+        if (openCompanyReviewsItemModal && !e.target.classList.contains("".concat(self.className, "__show-more")) && !e.target.classList.contains('company-reviews-item-modal__content') && !e.target.closest('.company-reviews-item-modal__content')) {
           self.onCloseModal();
         }
       });
