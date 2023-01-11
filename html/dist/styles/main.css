@@ -26074,6 +26074,8 @@ html.overflowed body {
   .events_slider-subtitle {
     font-size: 18px;
     max-width: 180px;
+    margin-bottom: 0;
+    line-height: 1.3;
   }
 }
 
