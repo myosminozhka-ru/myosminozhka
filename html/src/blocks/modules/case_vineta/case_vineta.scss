@@ -55,7 +55,7 @@
   }
 
   .container {
-    max-width: 1810px;
+    max-width: 1850px;
     padding: 0 15px;
     margin: 0 auto;
   }
@@ -127,6 +127,9 @@
     overflow: hidden;
     position: relative;
     width: 100%;
+    .cookie-form__button{
+      display: none;
+    }
 
     &::after {
       content: url(../img/intro_screens.png);
@@ -158,6 +161,9 @@
       bottom: 30px;
       left: 30px;
       display: block;
+      @media (max-width: 1870px){
+        left: 15px;
+      }
       @include _575-block {
         left: 15px;
         bottom: 15px;
@@ -373,6 +379,9 @@
         max-height: 154px;
         height: 100%;
         margin-top: -5px;
+        @include _767-block{
+          min-height: 125px;
+        }
         @include _575-block {
           height: auto;
           max-height: max-content;
@@ -428,6 +437,9 @@
         max-width: 80%;
         margin: 0 auto;
       }
+      @include _575-block{
+        max-width: 100%;
+      }
       &::before {
         content: url(../img/svg/quote_open.svg);
         display: block;
@@ -435,7 +447,9 @@
         left: -71px;
         top: 38px;
         @include _575-block {
-          width: 51px;
+          transform: scale(0.7);
+          left: -14px;
+          top: 23px;
         }
       }
       &::after {
@@ -445,7 +459,9 @@
         right: -61px;
         bottom: 60px;
         @include _575-block {
-          width: 51px;
+          transform: scale(0.7);
+          right: 0;
+          bottom: 100px;
         }
       }
       &-text {
@@ -457,7 +473,8 @@
         font-style: italic;
         @include _575-block {
           font-size: 14px;
-          margin-bottom: 48px;
+          max-width: 80%;
+          margin: 0 auto 48px;
         }
       }
     }
@@ -514,6 +531,9 @@
       left: 30px;
       top: 30px;
       display: block;
+      @media (max-width: 1870px){
+        left: 15px;
+      }
       @include _575-block {
         left: 15px;
         right: 15px;
@@ -546,6 +566,7 @@
         font-weight: 600;
         font-size: 16px;
         line-height: 1.3;
+        padding-top: 15px;
       }
     }
     &__right {
@@ -650,6 +671,9 @@
       left: 30px;
       top: 30px;
       display: block;
+      @media (max-width: 1870px){
+        left: 15px;
+      }
       @include _575-block {
         left: 15px;
         top: 15px;
@@ -673,6 +697,7 @@
         font-weight: 600;
         font-size: 16px;
         line-height: 1.3;
+        padding-top: 15px;
         @include _575-block {
           font-size: 14px;
           margin-bottom: 8px;
@@ -783,6 +808,9 @@
       left: 30px;
       top: 30px;
       display: block;
+      @media (max-width: 1870px){
+        left: 15px;
+      }
       @include _575-block {
         top: 15px;
         left: 15px;
@@ -992,6 +1020,9 @@
       left: 30px;
       top: 30px;
       display: block;
+      @media (max-width: 1870px){
+        left: 15px;
+      }
       @include _575-block {
         top: 15px;
         left: 15px;
@@ -1000,8 +1031,8 @@
     &-video {
       overflow: hidden;
       width: 100%;
-      max-width: 1700px;
-      margin: 0 auto;
+      max-width: 1647px;
+      margin: 0 auto 20px;
       &::after {
         content: "";
         display: block;
@@ -1018,7 +1049,6 @@
         left: -6px;
         right: -6px;
       }
-      margin-bottom: 88px;
       @include _767-block {
         margin-bottom: 32px;
       }
@@ -1132,6 +1162,9 @@
       margin-top: -20px;
       padding-bottom: 70px;
     }
+    @media(max-width: 360px){
+      background: #F2F2F2 !important;
+    }
     &__wrapper {
       display: flex;
       justify-content: space-between;
@@ -1195,6 +1228,7 @@
       position: absolute;
       bottom: -55px;
       right: -139px;
+      z-index: -1;
       @include _767-block {
         display: none;
       }
@@ -1205,6 +1239,9 @@
       left: 30px;
       top: 30px;
       display: block;
+      @media (max-width: 1870px){
+        left: 15px;
+      }
       @include _575-block {
         left: 15px;
         right: 15px;
