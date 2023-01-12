@@ -5834,6 +5834,10 @@ input[type=checkbox]:checked + .main-question-form-checkbox:after {
   line-height: 5.7291666667vw;
 }
 
+.web.mobile .web-slider-item {
+  border-bottom: 1px solid transparent;
+}
+
 .company-principles {
   overflow: hidden;
   background: #fff;
