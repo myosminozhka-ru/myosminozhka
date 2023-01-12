@@ -170,6 +170,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 /* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
 /* harmony import */ var _glidejs_glide__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @glidejs/glide */ "./node_modules/@glidejs/glide/dist/glide.esm.js");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 
 
 
@@ -180,9 +186,9 @@ window.mainWeb = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
   el: '#main-web',
   data: function data() {
     return {
-      element: '.web-tentacle',
-      trigger: '.first-frame',
-      slider: null,
+      // element: '.web-tentacle',
+      // trigger: '.first-frame',
+      // slider: null,
       isSafary: null
     };
   },
@@ -190,45 +196,137 @@ window.mainWeb = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
     var _this = this;
     setTimeout(function () {
       _this.isSafary = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-      _this.onInit();
-      window.addEventListener('resize', function () {
-        return _this.onInit();
-      });
+
+      // this.onInit()
+
+      // window.addEventListener('resize', () => this.onInit())           
     }, 0);
   },
   methods: {
-    onInit: function onInit() {
-      if (document.querySelector('.web-slider')) {
-        this.slider = new _glidejs_glide__WEBPACK_IMPORTED_MODULE_4__["default"]('.web-slider', {
-          type: 'carousel',
-          startAt: 1,
-          perView: 1,
-          gap: 0
-        });
-      }
+    // onInit() {
+    //     // if (document.querySelector('.web-slider')) {
+    //     //     this.slider = new Glide('.web-slider', {
+    //     //         type: 'carousel',
+    //     //         startAt: 1,
+    //     //         perView: 1,
+    //     //         gap: 0,
+    //     //     });
+    //     // }
+
+    //     // this.animateElement()
+    // },
+
+    // mobileSlider() {
+    //     if (!this.slider) return;
+    //     if (window.innerWidth < 1023) {
+    //         this.slider.mount();
+    //     } else {
+    //         this.slider.destroy();
+    //     }
+    // },
+
+    // animateElement() {
+    //     this.mobileSlider();
+    //     if (!document.querySelector('.web-right-image')) return;
+    //     gsap.utils.toArray(".web-right-image").forEach((item, i) => {
+    //         ScrollTrigger.create({
+    //             trigger: item,
+    //             start: "top center", 
+    //             end: 'bottom bottom',
+    //             // scrub: 4,
+    //             // markers: true,
+    //             // pin: true, 
+    //             // pinSpacing: false,
+    //             // snap: 1,
+    //             onUpdate: (item) => {
+    //                 if (item.progress > 0) {
+    //                     if (document.querySelector(`.web-subtitles`)) {
+    //                         document.querySelectorAll(`.web-subtitle`).forEach(item => {
+    //                             item.classList.remove('isActive');
+    //                         })
+    //                         document.querySelector(`.web-subtitle[data-item-id="${item.trigger.dataset.itemId}"]`).classList.add('isActive');
+    //                     }
+    //                     if (document.querySelector(`.web-titles`)) {
+    //                         document.querySelectorAll(`.web-title`).forEach(item => {
+    //                             item.classList.remove('isActive');
+    //                         })
+    //                         document.querySelector(`.web-title[data-item-id="${item.trigger.dataset.itemId}"]`).classList.add('isActive');
+    //                     }
+    //                     if (document.querySelector(`.web-texts`)) {
+    //                         document.querySelectorAll(`.web-text`).forEach(item => {
+    //                             item.classList.remove('isActive');
+    //                         })
+    //                         document.querySelector(`.web-text[data-item-id="${item.trigger.dataset.itemId}"]`).classList.add('isActive');
+    //                     }
+    //                     if (document.querySelector(`.web-buttons`)) {
+    //                         document.querySelectorAll(`.web-button`).forEach(item => {
+    //                             item.classList.remove('isActive');
+    //                         })
+    //                         document.querySelector(`.web-button[data-item-id="${item.trigger.dataset.itemId}"]`).classList.add('isActive');
+    //                     }
+    //                 }
+    //             }
+    //         });
+    //     });
+    //     gsap.to('.web-data-in', {
+    //         scrollTrigger: {
+    //             trigger: '.web-data',
+    //             start: 'top top',
+    //             end: 'bottom bottom',
+    //             scrub: 1,
+    //             pin: true,
+    //             pinSpacing: false
+    //             // markers: true
+    //         },
+    //         x: 0,
+    //     })
+    // }
+  }
+});
+var MainWeb = /*#__PURE__*/function () {
+  function MainWeb() {
+    _classCallCheck(this, MainWeb);
+    this.slider;
+    this.element = '.web-tentacle';
+    this.trigger = '.first-frame';
+  }
+  _createClass(MainWeb, [{
+    key: "onInit",
+    value: function onInit() {
+      this.onInitSlider();
       this.animateElement();
-    },
-    mobileSlider: function mobileSlider() {
-      if (!this.slider) return;
+    }
+
+    /**
+     * Инициализация слайдера
+     */
+  }, {
+    key: "onInitSlider",
+    value: function onInitSlider() {
+      if (!document.querySelector('.web-slider')) return;
+      this.slider = new _glidejs_glide__WEBPACK_IMPORTED_MODULE_4__["default"]('.web-slider', {
+        type: 'carousel',
+        startAt: 1,
+        perView: 1,
+        gap: 0
+      });
       if (window.innerWidth < 1023) {
         this.slider.mount();
-      } else {
-        this.slider.destroy();
       }
-    },
-    animateElement: function animateElement() {
-      this.mobileSlider();
-      if (!document.querySelector('.web-right-image')) return;
+    }
+
+    /**
+     * Анимация колонок
+     */
+  }, {
+    key: "animateElement",
+    value: function animateElement() {
+      if (!document.querySelector('.web-right-image') || window.innerWidth < 1023) return;
       gsap__WEBPACK_IMPORTED_MODULE_2__["gsap"].utils.toArray(".web-right-image").forEach(function (item, i) {
         gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_3__["ScrollTrigger"].create({
           trigger: item,
           start: "top center",
           end: 'bottom bottom',
-          // scrub: 4,
-          // markers: true,
-          // pin: true, 
-          // pinSpacing: false,
-          // snap: 1,
           onUpdate: function onUpdate(item) {
             if (item.progress > 0) {
               if (document.querySelector(".web-subtitles")) {
@@ -273,8 +371,11 @@ window.mainWeb = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
         x: 0
       });
     }
-  }
-});
+  }]);
+  return MainWeb;
+}();
+var mainWebClass = new MainWeb();
+mainWebClass.onInit();
 
 /***/ }),
 
