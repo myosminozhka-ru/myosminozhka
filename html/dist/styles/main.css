@@ -18626,6 +18626,160 @@ html:root body.posts .post_info__code--in {
   font-size: 18px;
 }
 
+.absolut .preloader {
+  display: none;
+}
+
+.absolut .conatiner_absolute {
+  max-width: 1833px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+
+.absolut .cookie-form {
+  display: none;
+}
+
+.absolut .case_page__bls--l {
+  padding: 0;
+}
+
+.absolut .case_page__bls--l img {
+  width: 100%;
+  max-width: unset;
+}
+
+.absolut .block_pal {
+  z-index: 2;
+}
+
+.absolut .case_page-research {
+  flex-direction: column;
+}
+
+.absolut .case_page-research .case_page__reds--l {
+  margin-bottom: 80px;
+}
+
+.absolut .case_page-research--title {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 100%;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.absolut .case_page-research--list {
+  padding-left: 30px;
+}
+
+.absolut .case_page-research--list li {
+  color: #E2E2E2;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 1.6;
+}
+
+.absolut .case_page-research--list li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.absolut .case_page-research--img {
+  max-width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-left: 0;
+}
+
+.absolut .case_page-research--img img {
+  display: block;
+  width: 100%;
+}
+
+.absolut .case_page-overall {
+  padding-bottom: 0;
+  margin-bottom: -50%;
+}
+
+.absolut .case_page-overall--text {
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 1.6;
+  color: #FFFFFF;
+  margin-bottom: 80px;
+}
+
+.absolut .case_page-overall--img {
+  padding: 10px;
+  width: 100%;
+  box-shadow: 0px 13px 60px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.absolut .case_page-overall--img img {
+  display: block;
+  width: 100%;
+}
+
+.absolut .case_page__about {
+  padding-top: 50%;
+}
+
+.absolut .case_page__about--work {
+  padding-top: 0;
+}
+
+.absolut .case_page__style--title {
+  margin-bottom: 80px;
+}
+
+.absolut .case_page__style--subtitle {
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 160%;
+  color: #4F4F4F;
+  margin-bottom: 100px;
+}
+
+.absolut .case_page__style-list--maintitle {
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #121423;
+  margin-bottom: 30px;
+}
+
+.absolut .case_page__style-list--title {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #121423;
+  margin-bottom: 20px;
+}
+
+.absolut .case_page__style-list--text {
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 160%;
+  color: #4F4F4F;
+  margin-bottom: 30px;
+}
+
+.absolut .case_page__style-list--img {
+  width: 100%;
+  margin-bottom: 100px;
+}
+
+.absolut .case_page__style-list--img img {
+  display: block;
+  width: 100%;
+}
+
 .absolut .case_frst__subtitle {
   max-width: 100%;
 }
@@ -25752,6 +25906,14 @@ html.overflowed body {
     margin-bottom: 130px;
   }
 
+  .absolut .case_page-research {
+    padding-bottom: 80px;
+  }
+
+  .absolut .case_page__about {
+    padding-top: 50% !important;
+  }
+
   .btn:not(.mobile).btn--border-pink,
   .btn:not(.mobile).btn--border-grey,
   .btn:not(.mobile).btn--pink {
@@ -27054,6 +27216,65 @@ html.overflowed body {
 
   .events_slider-arrow.slider-next {
     right: 17px;
+  }
+
+  .absolut .case_page__bls--l {
+    box-shadow: 0px 70px 60px -60px #CCAD86, inset 0px -16px 29px rgba(151, 113, 65, 0.2), inset 0px 10px 20px rgba(255, 255, 255, 0.15);
+    height: 291px;
+    overflow: hidden !important;
+    border-radius: 5px !important;
+    padding-bottom: 0 !important;
+  }
+
+  .absolut .case_page-research--title {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .absolut .case_page-research--list {
+    padding-left: 10px;
+  }
+
+  .absolut .case_page-research--list li {
+    font-size: 12px;
+  }
+
+  .absolut .case_page-research--img {
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 5px;
+  }
+
+  .absolut .case_page-overall--text {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .absolut .case_page-overall--img {
+    border-radius: 5px;
+  }
+
+  .absolut .case_page__style--subtitle {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  .absolut .case_page__style-list--maintitle {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .absolut .case_page__style-list--title {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .absolut .case_page__style-list--text {
+    font-size: 14px;
+  }
+
+  .absolut .case_page__style-list--img {
+    margin-bottom: 50px;
   }
 }
 
