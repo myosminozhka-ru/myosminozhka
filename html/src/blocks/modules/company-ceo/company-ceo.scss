@@ -43,3 +43,11 @@
         line-height: vw(110);
     }
 }
+
+.web {
+    &.mobile {
+        .web-slider-item {
+            border-bottom: 1px solid transparent;
+        }
+    }
+}
