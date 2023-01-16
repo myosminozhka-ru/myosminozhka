@@ -18148,6 +18148,323 @@ html:root body.posts .post_info__code--in {
   line-height: 1.3;
 }
 
+.happy_baby .job-stages-item-text {
+  padding-top: 195px;
+}
+
+.happy_baby .job-stages__logo {
+  display: block;
+  width: 63px;
+  height: 63px;
+  margin-bottom: 33px;
+}
+
+.happy_baby .ui_container {
+  padding: 10px;
+  box-shadow: 0px 13px 60px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.happy_baby .case_page__bls--title {
+  z-index: 5;
+  position: relative;
+}
+
+.happy_baby .case_page__about--rlist li {
+  padding-left: 0;
+}
+
+.happy_baby .case_page__about--rlist li:before {
+  display: none;
+}
+
+.happy_baby .case_page__style--title {
+  padding: 0;
+}
+
+.happy_baby .career-blocks {
+  margin-bottom: 0;
+}
+
+.happy_baby .happy_research--img {
+  padding: 10px;
+  width: 100%;
+  box-shadow: 0px 13px 60px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.happy_baby .happy_research--img img {
+  display: block;
+  width: 100%;
+}
+
+.happy_baby .happy_chair {
+  background: #dd2f44;
+  padding-top: 50%;
+  margin-top: -50%;
+}
+
+.happy_baby .happy_chair--wrapper {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 5;
+}
+
+.happy_baby .happy_chair--text {
+  color: #fff;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 1.4;
+  max-width: 1053px;
+  width: 100%;
+  margin-right: 450px;
+  padding-top: 130px;
+  padding-bottom: 100px;
+}
+
+.happy_baby .happy_chair--img {
+  max-width: 450px;
+  width: 100%;
+  position: absolute;
+  top: -25px;
+  right: 15px;
+}
+
+.happy_baby .happy_fonts {
+  padding: 100px 0 120px;
+}
+
+.happy_baby .happy_fonts--inner {
+  display: flex;
+  gap: 0 155px;
+}
+
+.happy_baby .happy_fonts--img {
+  max-width: 458px;
+  width: 100%;
+  display: block;
+}
+
+.happy_baby .happy_fonts--colors {
+  padding-top: 40px;
+}
+
+.happy_baby .happy_fonts--colors-title {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 100%;
+  color: #121423;
+  margin-bottom: 30px;
+}
+
+.happy_baby .happy_fonts--colors-colors {
+  display: flex;
+  gap: 0 20px;
+}
+
+.happy_baby .happy_fonts--colors-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.happy_baby .happy_fonts--colors-item span {
+  border-radius: 1px 20px;
+  width: 80px;
+  height: 80px;
+}
+
+.happy_baby .happy_fonts--colors-item span.happy_red {
+  background: #dd2f44;
+}
+
+.happy_baby .happy_fonts--colors-item span.happy_blue {
+  background: #006daa;
+}
+
+.happy_baby .happy_fonts--colors-item span.happy_lightgray {
+  background: #dfcfb7;
+}
+
+.happy_baby .happy_fonts--colors-item span.happy_lightblue {
+  background: #f0f0f0;
+}
+
+.happy_baby .happy_fonts--colors-item p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #121423;
+  margin: 0;
+}
+
+.happy_baby .block_pal:before {
+  display: none;
+}
+
+.happy_baby .ui_ref-img {
+  padding-right: 50px;
+  padding-left: 50px;
+}
+
+.happy_baby .case_happy_about {
+  padding-top: 150px !important;
+}
+
+.happy_baby .happy_ui {
+  padding-top: 190px !important;
+  padding-bottom: 16vh;
+}
+
+.happy_baby .happy_ui .case_page__about--wtitle {
+  margin-bottom: 80px;
+}
+
+.happy_baby .happy_ui--wrapper {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  margin-bottom: 152px !important;
+}
+
+.happy_baby .happy_ui--l {
+  width: 50%;
+}
+
+.happy_baby .happy_ui--l-text {
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 1.4;
+  color: #4f4f4f;
+  margin-bottom: 30px;
+}
+
+.happy_baby .happy_ui--l-list {
+  font-weight: 400;
+  padding-left: 30px;
+  list-style: none;
+  margin-bottom: 65px;
+}
+
+.happy_baby .happy_ui--l-list li {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.4;
+  color: #4f4f4f;
+  position: relative;
+}
+
+.happy_baby .happy_ui--l-list li:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.happy_baby .happy_ui--l-list li::before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  background: #4f4f4f;
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -15px;
+}
+
+.happy_baby .happy_ui--l-container {
+  position: relative;
+  height: 100%;
+}
+
+.happy_baby .happy_ui--l-container::before {
+  content: "";
+  position: absolute;
+  width: 872px;
+  height: 872px;
+  background: #dd2f44;
+  display: block;
+  left: 254px;
+  border-radius: 50%;
+  top: 5%;
+  z-index: -1;
+}
+
+.happy_baby .happy_ui--l-img {
+  max-width: 334px;
+  width: 100%;
+  position: absolute;
+}
+
+.happy_baby .happy_ui--l-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.happy_baby .happy_ui--l-img1 {
+  left: 0;
+  top: 0;
+}
+
+.happy_baby .happy_ui--l-img2 {
+  right: 100px;
+  bottom: 28%;
+}
+
+.happy_baby .happy_ui--r {
+  width: 50%;
+  z-index: 5;
+}
+
+.happy_baby .happy_ui--r img {
+  display: block;
+  width: 100%;
+}
+
+.happy_baby .happy_basket {
+  margin-top: 52px;
+  width: 100%;
+  display: block;
+}
+
+.happy_baby .no_overall {
+  margin-bottom: -42% !important;
+}
+
+.happy_baby .career-blocks-pad {
+  padding-top: 40% !important;
+}
+
+.happy_baby .result_list {
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 1.6;
+  color: #4f4f4f;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 80px;
+}
+
+.happy_baby .result_list li::before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  background: #4f4f4f;
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -15px;
+}
+
 .events {
   position: relative;
   padding-bottom: 350px;
