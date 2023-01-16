@@ -172,6 +172,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _glidejs_glide__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @glidejs/glide */ "./node_modules/@glidejs/glide/dist/glide.esm.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_5__);
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 
 
 
@@ -183,38 +192,76 @@ window.mainNewsAndTrends = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
   el: '#news-and-trends',
   data: function data() {
     return {
-      slider: null,
-      sliderItems: null,
-      html: null
+      // slider: null,
+      // sliderItems: null,
+      // html: null
     };
   },
   mounted: function mounted() {
-    var _this = this;
-    setTimeout(function () {
-      if (document.querySelector('.news-and-trends')) {
-        _this.html = jquery__WEBPACK_IMPORTED_MODULE_5___default()('.news-and-trends-right-slider .glide').clone();
-        _this.initSlider();
-        document.querySelectorAll('.news-and-trends .news-and-trends-button').forEach(function (item) {
-          item.addEventListener('click', function (event) {
-            if (_this.slider) {
-              _this.slider.destroy();
-            }
-            jquery__WEBPACK_IMPORTED_MODULE_5___default()('.news-and-trends-right-slider .glide').replaceWith(jquery__WEBPACK_IMPORTED_MODULE_5___default()(_this.html).clone());
-            if (item.dataset.news != 'all') {
-              event.preventDefault();
-              jquery__WEBPACK_IMPORTED_MODULE_5___default()(".news-and-trends-right-slider .news-and-trends-item:not([data-id-news=\"".concat(item.dataset.news, "\"])")).remove();
-            }
-            setTimeout(function () {
-              _this.initSlider();
-            }, 100);
-          });
-        });
-      }
-    });
+    // setTimeout(() => {
+    //     if (document.querySelector('.news-and-trends')) {
+    //         this.html = $('.news-and-trends-right-slider .glide').clone();
+    //         this.initSlider();
+    //
+    //         document.querySelectorAll('.news-and-trends .news-and-trends-button').forEach(item => {
+    //             item.addEventListener('click', (event) => {
+    //                 if (this.slider) {
+    //                     this.slider.destroy();
+    //                 }
+    //
+    //                 $('.news-and-trends-right-slider .glide').replaceWith($(this.html).clone());
+    //
+    //                 if (item.dataset.news != 'all') {
+    //                     event.preventDefault();
+    //                     $(`.news-and-trends-right-slider .news-and-trends-item:not([data-id-news="${item.dataset.news}"])`).remove();
+    //                 }
+    //
+    //                 setTimeout(() => {
+    //                     this.initSlider();
+    //                 }, 100)
+    //             })
+    //         })
+    //     }
+    // })
   },
   methods: {
-    initSlider: function initSlider() {
-      this.sliderItems = document.querySelectorAll('.news-and-trends-item');
+    // initSlider() {
+    //     this.sliderItems = document.querySelectorAll('.news-and-trends-item');
+    //
+    //     this.slider = new Glide('.news-and-trends-right-slider', {
+    //         type: 'carousel',
+    //         startAt: 0,
+    //         perView: 3,
+    //         breakpoints: {
+    //             800: {
+    //                 perView: 2
+    //             },
+    //             600: {
+    //                 perView: 1
+    //             }
+    //         }
+    //     }).mount();
+    // }
+  }
+});
+var MainNewsAndTrends = /*#__PURE__*/function () {
+  function MainNewsAndTrends() {
+    _classCallCheck(this, MainNewsAndTrends);
+    this.btns = document.querySelectorAll('.news-and-trends-button[data-news]');
+    this.cloneHtmlGlideSlidesBeforeInitSlider = null;
+    this.slider = null;
+  }
+  _createClass(MainNewsAndTrends, [{
+    key: "init",
+    value: function init() {
+      this.cloneHtmlGlideSlidesBeforeInitSlider = document.querySelector('.news-and-trends-right-slider .glide__slides').innerHTML;
+      console.log('this.cloneHtmlGlideSlidesBeforeInitSlider: ', this.cloneHtmlGlideSlidesBeforeInitSlider);
+      this.onInitSlider();
+      this.onClickBtn();
+    }
+  }, {
+    key: "onInitSlider",
+    value: function onInitSlider() {
       this.slider = new _glidejs_glide__WEBPACK_IMPORTED_MODULE_4__["default"]('.news-and-trends-right-slider', {
         type: 'carousel',
         startAt: 0,
@@ -229,8 +276,51 @@ window.mainNewsAndTrends = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
         }
       }).mount();
     }
-  }
-});
+  }, {
+    key: "onClickBtn",
+    value: function onClickBtn() {
+      var self = this;
+      this.btns.forEach(function (item) {
+        item.addEventListener('click', function (event) {
+          var _this$dataset;
+          self.btns.forEach(function (btn) {
+            btn.classList.remove('active');
+          });
+          this.classList.add('active');
+          var news = ((_this$dataset = this.dataset) === null || _this$dataset === void 0 ? void 0 : _this$dataset.news) || 'all';
+          self.onFilter(news);
+        });
+      });
+    }
+  }, {
+    key: "onFilter",
+    value: function onFilter(news) {
+      if (this.slider) {
+        this.slider.destroy();
+      }
+      document.querySelector('.news-and-trends-right-slider .glide__slides').innerHTML = this.cloneHtmlGlideSlidesBeforeInitSlider;
+      if (news !== 'all') {
+        var items = document.querySelectorAll(".news-and-trends-right-slider .news-and-trends-item:not([data-id-news=\"".concat(news, "\"])"));
+        var _iterator = _createForOfIteratorHelper(items),
+          _step;
+        try {
+          for (_iterator.s(); !(_step = _iterator.n()).done;) {
+            var item = _step.value;
+            item.remove();
+          }
+        } catch (err) {
+          _iterator.e(err);
+        } finally {
+          _iterator.f();
+        }
+      }
+      this.onInitSlider();
+    }
+  }]);
+  return MainNewsAndTrends;
+}();
+var mainNewsAndTrendsClass = new MainNewsAndTrends();
+mainNewsAndTrendsClass.init();
 
 /***/ }),
 
