@@ -21,7 +21,6 @@ class MainNewsAndTrends {
 
     init(){
         this.cloneHtmlGlideSlidesBeforeInitSlider = document.querySelector('.news-and-trends-right-slider .glide__slides').innerHTML;
-        console.log('this.cloneHtmlGlideSlidesBeforeInitSlider: ', this.cloneHtmlGlideSlidesBeforeInitSlider)
         this.onInitSlider();
         this.onClickBtn();
     }
@@ -66,12 +65,20 @@ class MainNewsAndTrends {
         if (news !== 'all') {
             const items = document.querySelectorAll(`.news-and-trends-right-slider .news-and-trends-item:not([data-id-news="${news}"])`);
 
-            for (const item of items) {
-                item.remove()
-            }
-        }
+            new Promise(function(resolve, reject) {
+                for (const [i, item] of items.entries()) {
+                    item.remove();
 
-        this.onInitSlider()
+                    if (i === items.length - 1) {
+                        resolve(true)
+                    }
+                }
+            }).then(() => {
+                this.onInitSlider()
+            })
+        } else {
+            this.onInitSlider()
+        }
     }
 }
 
