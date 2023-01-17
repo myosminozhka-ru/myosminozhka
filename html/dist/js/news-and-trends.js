@@ -170,8 +170,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 /* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
 /* harmony import */ var _glidejs_glide__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @glidejs/glide */ "./node_modules/@glidejs/glide/dist/glide.esm.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_5__);
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
@@ -186,62 +184,11 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
 
 
 
-
 gsap__WEBPACK_IMPORTED_MODULE_2__["gsap"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_3__["ScrollTrigger"]);
 window.mainNewsAndTrends = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
   el: '#news-and-trends',
   data: function data() {
-    return {
-      // slider: null,
-      // sliderItems: null,
-      // html: null
-    };
-  },
-  mounted: function mounted() {
-    // setTimeout(() => {
-    //     if (document.querySelector('.news-and-trends')) {
-    //         this.html = $('.news-and-trends-right-slider .glide').clone();
-    //         this.initSlider();
-    //
-    //         document.querySelectorAll('.news-and-trends .news-and-trends-button').forEach(item => {
-    //             item.addEventListener('click', (event) => {
-    //                 if (this.slider) {
-    //                     this.slider.destroy();
-    //                 }
-    //
-    //                 $('.news-and-trends-right-slider .glide').replaceWith($(this.html).clone());
-    //
-    //                 if (item.dataset.news != 'all') {
-    //                     event.preventDefault();
-    //                     $(`.news-and-trends-right-slider .news-and-trends-item:not([data-id-news="${item.dataset.news}"])`).remove();
-    //                 }
-    //
-    //                 setTimeout(() => {
-    //                     this.initSlider();
-    //                 }, 100)
-    //             })
-    //         })
-    //     }
-    // })
-  },
-  methods: {
-    // initSlider() {
-    //     this.sliderItems = document.querySelectorAll('.news-and-trends-item');
-    //
-    //     this.slider = new Glide('.news-and-trends-right-slider', {
-    //         type: 'carousel',
-    //         startAt: 0,
-    //         perView: 3,
-    //         breakpoints: {
-    //             800: {
-    //                 perView: 2
-    //             },
-    //             600: {
-    //                 perView: 1
-    //             }
-    //         }
-    //     }).mount();
-    // }
+    return {};
   }
 });
 var MainNewsAndTrends = /*#__PURE__*/function () {
