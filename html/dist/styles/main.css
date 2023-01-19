@@ -18249,6 +18249,15 @@ html:root body.posts .post_info__code--in {
   gap: 0 155px;
 }
 
+.happy_baby .happy_fonts--title {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #121423;
+  margin-bottom: 47px;
+}
+
 .happy_baby .happy_fonts--img {
   max-width: 458px;
   width: 100%;
@@ -21776,6 +21785,12 @@ html.overflowed body {
   }
 }
 
+@media (max-width: 1473px) {
+  .happy_baby .happy_fonts {
+    padding-top: 35%;
+  }
+}
+
 @media (max-width: 1470px) {
   .vineta .v-footer__wrapper {
     gap: 0 100px;
@@ -21877,6 +21892,24 @@ html.overflowed body {
   .vineta .tech__wrapper {
     flex-direction: column;
     gap: 24px;
+  }
+
+  .happy_baby .happy_chair--text {
+    margin-right: 0;
+    max-width: 100%;
+    padding-bottom: 30%;
+    padding-top: 0;
+  }
+
+  .happy_baby .happy_chair--img {
+    top: 50%;
+    right: unset;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .happy_baby .happy_fonts {
+    padding-top: 80%;
   }
 }
 
@@ -26608,6 +26641,12 @@ html.overflowed body {
     height: 52px;
   }
 
+  .happy_baby .happy_chair--img {
+    top: 70%;
+    max-width: 310px;
+    border-radius: 10px;
+  }
+
   .events {
     padding-bottom: 160px;
   }
@@ -26710,6 +26749,12 @@ html.overflowed body {
 @media all and (max-width: 668px) {
   .career-blog.mobile .career-blog-item[style="display: inline;"]:last-of-type {
     margin-bottom: 260px;
+  }
+}
+
+@media (max-width: 663px) {
+  .happy_baby .happy_fonts {
+    padding-top: 100%;
   }
 }
 
@@ -27422,6 +27467,42 @@ html.overflowed body {
     font-size: 14px;
   }
 
+  .happy_baby .happy_chair--text {
+    font-size: 14px;
+  }
+
+  .happy_baby .happy_fonts {
+    padding-top: 120%;
+  }
+
+  .happy_baby .happy_fonts--title {
+    font-size: 16px;
+    max-width: 320px;
+    margin: 0 auto 20px;
+  }
+
+  .happy_baby .happy_fonts--img {
+    margin-bottom: 30px;
+    max-width: 320px;
+  }
+
+  .happy_baby .happy_fonts--colors {
+    padding-top: 0;
+  }
+
+  .happy_baby .happy_fonts--colors-title {
+    font-size: 20px;
+  }
+
+  .happy_baby .happy_fonts--colors-item span {
+    width: 65px;
+    height: 54px;
+  }
+
+  .happy_baby .happy_fonts--colors-item p {
+    font-size: 14px;
+  }
+
   .events {
     padding-bottom: 50px;
   }
@@ -27739,6 +27820,12 @@ html.overflowed body {
   }
 }
 
+@media (max-width: 479px) {
+  .happy_baby .happy_fonts {
+    padding-top: 140%;
+  }
+}
+
 @media all and (max-width: 440px) {
   .zorge9 .block_yel {
     background-size: 520px;
@@ -27750,6 +27837,12 @@ html.overflowed body {
     bottom: calc(100% - 190px);
     transform: rotateY(180deg);
     z-index: 5;
+  }
+}
+
+@media (max-width: 407px) {
+  .happy_baby .happy_fonts {
+    padding-top: 160%;
   }
 }
 
@@ -27822,6 +27915,12 @@ html.overflowed body {
 @media (max-width: 360px) {
   .vineta .tech {
     background: #F2F2F2 !important;
+  }
+}
+
+@media (max-width: 350px) {
+  .happy_baby .happy_fonts {
+    padding-top: 180%;
   }
 }
 
