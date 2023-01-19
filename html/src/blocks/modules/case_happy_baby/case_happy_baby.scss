@@ -22,6 +22,7 @@
       z-index: 5;
       position: relative;
     }
+
     &__about--rlist {
       li {
         padding-left: 0;
@@ -70,6 +71,15 @@
       margin-right: 450px;
       padding-top: 130px;
       padding-bottom: 100px;
+      @include _1199-block {
+        margin-right: 0;
+        max-width: 100%;
+        padding-bottom: 30%;
+        padding-top: 0;
+      }
+      @include _575-block {
+        font-size: 14px;
+      }
     }
     &--img {
       max-width: 450px;
@@ -77,27 +87,82 @@
       position: absolute;
       top: -25px;
       right: 15px;
+      @include _1199-block {
+        top: 50%;
+        right: unset;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      @include _767-block {
+        top: 70%;
+        max-width: 310px;
+        border-radius: 10px;
+      }
     }
   }
   .happy_fonts {
+    @media (max-width: 1473px) {
+      padding-top: 35%;
+    }
+    @include _1199-block {
+      padding-top: 80%;
+    }
+    @media (max-width: 663px) {
+      padding-top: 100%;
+    }
+    @include _575-block {
+      padding-top: 120%;
+    }
+    @media (max-width: 479px) {
+      padding-top: 140%;
+    }
+    @media (max-width: 407px) {
+      padding-top: 160%;
+    }
+    @media (max-width: 350px) {
+      padding-top: 180%;
+    }
     padding: 100px 0 120px;
     &--inner {
       display: flex;
       gap: 0 155px;
     }
+    &--title {
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 100%;
+      text-transform: uppercase;
+      color: #121423;
+      margin-bottom: 47px;
+      @include _575-block {
+        font-size: 16px;
+        max-width: 320px;
+        margin: 0 auto 20px;
+      }
+    }
     &--img {
       max-width: 458px;
       width: 100%;
       display: block;
+      @include _575-block {
+        margin-bottom: 30px;
+        max-width: 320px;
+      }
     }
     &--colors {
       padding-top: 40px;
+      @include _575-block {
+        padding-top: 0;
+      }
       &-title {
         font-weight: 700;
         font-size: 30px;
         line-height: 100%;
         color: #121423;
         margin-bottom: 30px;
+        @include _575-block {
+          font-size: 20px;
+        }
       }
       &-colors {
         display: flex;
@@ -111,6 +176,10 @@
           border-radius: 1px 20px;
           width: 80px;
           height: 80px;
+          @include _575-block {
+            width: 65px;
+            height: 54px;
+          }
           &.happy_red {
             background: #dd2f44;
           }
@@ -132,6 +201,9 @@
           text-transform: uppercase;
           color: #121423;
           margin: 0;
+          @include _575-block {
+            font-size: 14px;
+          }
         }
       }
     }
