@@ -7051,6 +7051,7 @@ body.company .company-ceo:not(.mobile) {
 .company-reviews.mobile .company-reviews-arrows,
 .company-reviews.mobile .company-reviews__arrows {
   margin-top: 30px;
+  justify-content: center;
 }
 
 .company-reviews-arrow,
@@ -7769,14 +7770,14 @@ body.company .company-ceo:not(.mobile) {
   padding-top: 100%;
   position: relative;
   margin-bottom: 30px;
-  overflow: hidden;
+  overflow: visible;
+  border-radius: 0 !important;
 }
 
 .career-blog.mobile .career-blog-item-image img {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
   height: 100%;
   object-fit: cover;
 }
