@@ -7907,6 +7907,10 @@ body.company .company-ceo:not(.mobile) {
   height: 0;
 }
 
+.test {
+  display: none;
+}
+
 .vacan {
   background: none;
 }

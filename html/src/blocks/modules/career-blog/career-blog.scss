@@ -120,6 +120,7 @@
         margin-bottom: 30px;
         overflow: visible;
         border-radius: 0 !important;
+        
         img {
             position: static !important;
             height: 100%;
@@ -142,6 +143,7 @@
     &-item-title {
         font-weight: 600;
         // color: $mainColor;
+        // background-color: red;
         color: #fff;
     }
     &:not(.mobile) &-item-title {
@@ -242,4 +244,7 @@
     &::-webkit-scrollbar {
         height: 0;
     }
+}
+.test{
+    display: none;
 }
