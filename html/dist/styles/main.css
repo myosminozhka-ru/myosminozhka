@@ -7720,7 +7720,7 @@ body.company .company-ceo:not(.mobile) {
 
 .career-blog.mobile .career-blog-items-slides {
   display: block;
-  margin-bottom: 60px;
+  margin-bottom: 0;
 }
 
 .career-blog-item {
@@ -7905,10 +7905,6 @@ body.company .company-ceo:not(.mobile) {
 
 .career-blog.mobile .career-blog-buttons::-webkit-scrollbar {
   height: 0;
-}
-
-.test {
-  display: none;
 }
 
 .vacan {
@@ -20285,7 +20281,7 @@ body.main .main-resume.mobile {
 }
 
 .company .career-blog.mobile .career-blog-button {
-  margin-top: 30px;
+  margin-top: 0;
 }
 
 .main .web.mobile {
