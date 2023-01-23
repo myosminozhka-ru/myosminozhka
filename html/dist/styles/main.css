@@ -7769,7 +7769,6 @@ body.company .company-ceo:not(.mobile) {
 }
 
 .career-blog.mobile .career-blog-item-image {
-  padding-top: 100%;
   position: relative;
   margin-bottom: 30px;
   overflow: visible;
@@ -7777,11 +7776,9 @@ body.company .company-ceo:not(.mobile) {
 }
 
 .career-blog.mobile .career-blog-item-image img {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: static !important;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain !important;
 }
 
 .career-blog-item-date {
@@ -19707,7 +19704,7 @@ header.header.mobile ul.header-lang {
 }
 
 .career-blog.mobile {
-  padding: 0 0 18px 0;
+  padding: 0 0 18px 0 !important;
 }
 
 /* body.company .career-blog.mobile {
