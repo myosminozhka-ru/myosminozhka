@@ -50,6 +50,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        padding: 0 20px;
     }
     &:not(.mobile) &-buttons {
         margin-bottom: vw(60);
@@ -76,6 +77,7 @@
     }
     &.mobile &-items-slides {
         display: block;
+        margin-bottom: 60px;
     }
     &-item {
         text-decoration: none;
@@ -154,6 +156,7 @@
         font-size: 25px;
         line-height: 25px;
         margin-bottom: 15px;
+        padding: 0 20px;
     }
     &-item[data-ctegory="team"], &-item[data-ctegory="team"] &-item-title {
         // color: $mainColor !important;
@@ -177,6 +180,7 @@
         font-size: 16px;
         line-height: 16px;
         mix-blend-mode: difference;
+        padding: 0 20px;
     }
     &:not(.mobile) .company-reviews-arrows {
         max-width: 50%;
