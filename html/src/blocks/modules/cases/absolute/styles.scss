@@ -1,0 +1,76 @@
+.case_absolute {
+  background: #f7dd85;
+  position: relative;
+  overflow: hidden;
+  .cases__item-title,
+  .cases__item-text{
+    color: #121423;
+  }
+  &:hover {
+    .case_absolute-logo {
+      top: -100%;
+    }
+    .case_absolute-katya {
+      left: 30%;
+      @media (max-width: 1500px) {
+        left: 28%;
+      }
+    }
+    .case_absolute-lyutik {
+      right: 18%;
+      @media (max-width: 1500px) {
+        right: 15%;
+      }
+    }
+    .case_absolute-circle {
+      width: 0;
+      height: 0;
+    }
+  }
+  &-img {
+    position: absolute;
+    transition: all 0.5s ease-in-out;
+  }
+  &-logo {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30vw;
+    max-width: 200px;
+    z-index: 10;
+  }
+  &-katya {
+    width: 12vw;
+    top: 55%;
+    transform: translateY(-55%);
+    left: -100%;
+    z-index: 10;
+    @media (max-width: 1023px) {
+      width: 25vw;
+      top: 60%;
+      transform: translateY(-60%);
+    }
+  }
+  &-lyutik {
+    width: 15vw;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -100%;
+    z-index: 10;
+    @media (max-width: 1023px) {
+      width: 33vw;
+    }
+  }
+  &-circle {
+    background: #fff4ce;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    transition: all 0.5s ease-in-out;
+    width: 1200px;
+    height: 1200px;
+  }
+}
